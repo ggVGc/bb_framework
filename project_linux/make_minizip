@@ -1,0 +1,18 @@
+
+
+OUTEXECUTABLE=libminizip
+
+SOURCES= $(wildcard ../framework/deps_src/minizip/*.c)
+
+
+CFLAGS= 
+LDFLAGS= 
+OBJECTS=$(SOURCES:.c=.o)
+
+all: $(SOURCES) $(OUTEXECUTABLE)
+
+$(OUTEXECUTABLE): $(OBJECTS)
+	gcc $(LDFLAGS) $(OBJECTS) -o $@
+
+.c:.o
+	gcc $(CFLAGS) $< -o $@

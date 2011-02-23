@@ -1,0 +1,27 @@
+
+OUTEXECUTABLE=framework
+
+SOURCES= \
+		$(wildcard ../framework/src/common/*.c) \
+		$(wildcard ../framework/src/common/framework/*.c) \
+		$(wildcard ../framework/src/linux/*.c) \
+		$(wildcard ../framework/src/linux/framework/*.c) 
+
+CFLAGS= \
+		-I ../framework/src/common \
+		-I ../framework/src/common/framework \
+		-I ../framework/deps_src/lua \
+		-I ../framework/deps_src/gles_headers \
+		-I ../framework/deps_src/minizip 
+
+
+LDFLAGS= -lSDL -lliblua -llibminizip -llibpng
+OBJECTS=$(SOURCES:.c=.o)
+
+all: $(SOURCES) $(OUTEXECUTABLE)
+
+$(OUTEXECUTABLE): $(OBJECTS)
+	gcc $(LDFLAGS) $(OBJECTS) -o $@
+
+.c:.o
+	gcc $(CFLAGS) $< -o $@

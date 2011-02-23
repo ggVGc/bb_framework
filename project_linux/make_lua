@@ -1,0 +1,19 @@
+
+OUTEXECUTABLE=liblua
+
+SOURCES= $(wildcard ../framework/deps_src/lua/*.c)
+
+CFLAGS= 
+LDFLAGS= -lm -ldl
+OBJECTS=$(SOURCES:.c=.o)
+
+all: $(SOURCES) $(OUTEXECUTABLE)
+
+$(OUTEXECUTABLE): $(OBJECTS)
+	gcc $(LDFLAGS) $(OBJECTS) -o $@
+
+.c:.o
+	gcc $(CFLAGS) $< -o $(CURDIR)/obj/$@
+
+clean:
+	rm -rf ../framework/deps_src/lua/*o liblua
