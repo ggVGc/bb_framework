@@ -8,7 +8,7 @@ function Main.new()
     inp = framework.Input.new()
   end
 
-  function M.update(deltaMs)
+  function M.doFrame(deltaMs)
     inp.update()
     if inp.cursorPressed() then
       print("PRESS")
@@ -18,10 +18,9 @@ function Main.new()
       print("RELEASE")
       print(inp.releasePos.x.." "..inp.releasePos.y)
     end
+    print(framework.Input.cursorX(), framework.Input.cursorY())
   end
 
-  function M.draw()
-  end
 
   init()
   return M

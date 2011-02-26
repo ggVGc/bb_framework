@@ -64,7 +64,7 @@ int main()
       }
       else if (e.Type == sf::Event::MouseMoved)
       {
-        setCursorPos(e.MouseButton.X, e.MouseButton.Y);
+        setCursorPos(e.MouseMove.X, e.MouseMove.Y);
       }
     }
     long curTime = _getTime();
