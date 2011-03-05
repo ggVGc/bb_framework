@@ -3,6 +3,8 @@ extern "C"
   #include "app.h"
   #include "framework/input.h"
 }
+
+
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <sys/time.h>
@@ -23,8 +25,6 @@ extern "C"
 const int SCREEN_WIDTH = 800; //screen dimesions
 const int SCREEN_HEIGHT = 480;
 
-
-
   static long
 _getTime(void)
 {
@@ -37,20 +37,18 @@ _getTime(void)
 
 int main()
 {
-  sf::Window App(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "SFML OpenGL", sf::Style::Close);
-
+  sf::Window wnd(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "SFML OpenGL", sf::Style::Close);
 
   appInit("assets.zip", 1);
 
-
   long lastTime = 0;
-  while (App.IsOpened())
+  while (wnd.IsOpened())
   {
     sf::Event e;
-    while (App.GetEvent(e))
+    while (wnd.GetEvent(e))
     {
       if (e.Type == sf::Event::Closed)
-        App.Close();
+        wnd.Close();
 
       if (e.Type == sf::Event::MouseButtonPressed)
       {
@@ -73,7 +71,7 @@ int main()
 
     appRender(delta, SCREEN_WIDTH, SCREEN_HEIGHT);
     glError();
-    App.Display();
+    wnd.Display();
   }
 
   appDeinit();
