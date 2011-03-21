@@ -105,43 +105,43 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
 
 def buildLua():
-  buildLib("libluaa.a", ["./../framework/deps_src/lua"], [], "")
+  buildLib("libluaa.a", ["./../deps_src/lua"], [], "")
 
 def buildMinizip():
   files =[
-      "./../framework/deps_src/minizip/unzip.c",
-      "./../framework/deps_src/minizip/mztools.c",
-      "./../framework/deps_src/minizip/ioapi.c"
+      "./../deps_src/minizip/unzip.c",
+      "./../deps_src/minizip/mztools.c",
+      "./../deps_src/minizip/ioapi.c"
       ]
 
   buildLib("libminizipa.a", [], files, "")
 
 def buildPng():
-  buildLib("libpnga.a", ["./../framework/deps_src/libpng"], [], "")
+  buildLib("libpnga.a", ["./../deps_src/libpng"], [], "")
 
 
 def buildFramework():
   srcDirs = [
-      "./../framework/src/common",
-      "./../framework/src/common/framework",
-      "./../framework/src/linux",
-      "./../framework/src/linux/framework"
+      "./../src/common",
+      "./../src/common/framework",
+      "./../src/linux",
+      "./../src/linux/framework"
       ]
  
   srcFiles = [
-      " ./../framework/src/win32/framework/util.c",
-      " ./../framework/src/gles_imp.c",
-      #" ./../framework/src/common/framework_wrap.cxx"
+      " ./../src/win32/framework/util.c",
+      " ./../src/gles_imp.c",
+      #" ./../src/common/framework_wrap.cxx"
       ]
 
 
   cflags =" ".join([
-      "-I./../framework/deps_src/gles_headers",
-      "-I./../framework/deps_src/libpng",
-      "-I./../framework/deps_src/lua",
-      "-I./../framework/deps_src/minizip",
-      "-I./../framework/src/common",
-      "-I./../framework/src/common/framework",
+      "-I./../deps_src/gles_headers",
+      "-I./../deps_src/libpng",
+      "-I./../deps_src/lua",
+      "-I./../deps_src/minizip",
+      "-I./../src/common",
+      "-I./../src/common/framework",
       ])
   
   return buildApp("framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+" -lm -ldl -lzip -lpnga -lminizipa -lluaa -lGL -lGLU -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio")

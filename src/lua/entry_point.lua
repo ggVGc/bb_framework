@@ -26,7 +26,9 @@ function framework.init()
 end
 
 function framework.doFrame(deltaMs)
+  local d
+  if deltaMs>0 then d = deltaMs else d = 0 end
   if _c_framework.isAppBroken() == 0 then
-    main.doFrame(deltaMs)
+    main.doFrame(d)
   end
 end
