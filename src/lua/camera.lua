@@ -51,7 +51,6 @@ end
 
 function framework.Camera.createDefault(width)
   local aspect = framework.Window.getHeight()/framework.Window.getWidth()
-  print("Aspect: "..aspect)
   local w = width or (480*2)
   local h = w * aspect
   return framework.Camera.new(w, h)

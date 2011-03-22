@@ -1,6 +1,6 @@
 if !exists("s:didScript") 
-  let s:didScript = 0
-  exec "cd ".g:projectScriptDir
+  let s:didScript = 1
+  exec "lcd ".g:projectScriptDir
 
 python<<EOF
 
@@ -29,9 +29,9 @@ endif
 
 function! RunJumpz()
   let curDir=getcwd()
-  exec "cd ".g:projectScriptDir."/project_linux/"
+  exec "lcd ".g:projectScriptDir."/project_linux/"
   silent !xterm -e sh zipbuildrun.sh &
-  silent exec "cd "curDir
+  silent exec "lcd "curDir
 endfun
 
 map <buffer>  <F5> :call RunJumpz()<CR>
