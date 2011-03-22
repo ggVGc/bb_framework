@@ -6,7 +6,7 @@ python<<EOF
 
 import vim
 import os
-exts = 'c cpp lua py sh vim sh'.split()
+exts = 'c h cpp lua py sh vim sh'.split()
 ig = []
 p = vim.eval("g:projectScriptDir")
 for root, dirs, files in os.walk(p):
@@ -37,5 +37,10 @@ endfun
 map <buffer>  <F5> :call RunJumpz()<CR>
 
 
-let cmd = "set path+=".fnamemodify(g:projectScriptDir, ":p")."/framework/deps_src/lua"
-exec cmd
+let s:x = fnamemodify(g:projectScriptDir, ":p")
+exec "set path+=".s:x."src/common/"
+exec "set path+=".s:x."src/lua/"
+exec "set path+=".s:x."src/android/"
+exec "set path+=".s:x."src/linux/"
+exec "set path+=".s:x."src/win3/"
+exec "set path+=".s:x."/deps_src/lua"
