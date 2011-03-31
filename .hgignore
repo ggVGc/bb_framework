@@ -28,11 +28,11 @@ glob:depsbin
 glob:*.orig
 glob:*.obj
 glob:*.tlog
-glob:project_linux/*.a
-glob:project_linux/framework
+glob:*/*.a
+glob:*/framework*
 glob:*.swp
 glob:*.userprefs
 glob:*.pidb
 glob:*.pidb
 glob:*.mdb
-
+glob:.DS_Store

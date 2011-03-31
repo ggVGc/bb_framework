@@ -2,8 +2,14 @@
 #include <Windows.h>
 #endif
 #include <GLES/gl.h>
-/*#undef __gl_h_*/
-#include <GL/gl.h>
+  /*#undef __gl_h_*/
+#ifdef __APPLE__
+  #include <OpenGl/gl.h>
+#else
+  #include <GLES/gl.h>
+  /*#undef __gl_h_*/
+  #include <GL/gl.h>
+#endif
 
 
 
