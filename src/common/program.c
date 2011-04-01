@@ -13,7 +13,6 @@
 #include "app.h"
 #include "framework_lua_wrappers.h"
 #include "framework/graphics.h"
-/*#include "framework/resource_loading.h"*/
 
 #ifdef ANDROID_NDK
 #include <android/log.h>
@@ -92,8 +91,7 @@ int loadfile_lua(lua_State* s)
 
 int require_lua(lua_State* s)
 {
-    // eliminate warning
-    s = s;
+    s = s; // eliminate warning
     trace("WARNING: REQUIRE IS NOT IMPLEMENTED. Use dofile instead.");
     return 0;
 }

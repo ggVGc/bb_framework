@@ -12,6 +12,6 @@ def zipDir(out, r, pref=""):
 
 
 outFile = zipfile.ZipFile("assets.zip", "w")
-zipDir(outFile, "../framework/src/lua", "framework")
+zipDir(outFile, "../src/lua", "framework")
 zipDir(outFile, "../../bounce")
 outFile.close() 

@@ -105,44 +105,44 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
 
 def buildLua():
-  buildLib("libluaa.a", ["./../deps_src/lua"], [], "")
+  buildLib("libluaa.a", ["./../framework/deps_src/lua"], [], "")
 
 def buildMinizip():
   files =[
-      "./../deps_src/minizip/unzip.c",
-      "./../deps_src/minizip/mztools.c",
-      "./../deps_src/minizip/ioapi.c"
+      "./../framework/deps_src/minizip/unzip.c",
+      "./../framework/deps_src/minizip/mztools.c",
+      "./../framework/deps_src/minizip/ioapi.c"
       ]
 
   buildLib("libminizipa.a", [], files, "")
 
 def buildPng():
-  buildLib("libpnga.a", ["./../deps_src/libpng"], [], "")
+  buildLib("libpnga.a", ["./../framework/deps_src/libpng"], [], "")
 
 
 def buildFramework():
   srcDirs = [
-      "./../src/common",
-      "./../src/common/framework",
-      "./../src/linux",
-      "./../src/linux/framework"
+      "./../framework/src/common",
+      "./../framework/src/common/framework",
+      "./../framework/src/linux",
+      "./../framework/src/linux/framework"
       ]
  
   srcFiles = [
-      " ./../src/win32/framework/util.c",
-      " ./../src/gles_imp.c",
-      #" ./../src/common/framework_wrap.cxx"
+      " ./../framework/src/win32/framework/util.c",
+      " ./../framework/src/gles_imp.c",
+      #" ./../framework/src/common/framework_wrap.cxx"
       ]
 
 
   cflags =" ".join([
       "-I$HOME/sfml/include/",
-      "-I./../deps_src/gles_headers",
-      "-I./../deps_src/libpng",
-      "-I./../deps_src/lua",
-      "-I./../deps_src/minizip",
-      "-I./../src/common",
-      "-I./../src/common/framework",
+      "-I./../framework/deps_src/gles_headers",
+      "-I./../framework/deps_src/libpng",
+      "-I./../framework/deps_src/lua",
+      "-I./../framework/deps_src/minizip",
+      "-I./../framework/src/common",
+      "-I./../framework/src/common/framework",
       ])
   
   return buildApp("framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+" -lm -ldl -lpnga -lminizipa -lluaa -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")

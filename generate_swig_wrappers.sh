@@ -1,1 +1,1 @@
-swig -lua  -includeall  -ignoremissing ./framework/src/common/framework.i 
+swig -lua  -includeall  -ignoremissing ./src/common/framework.i 
