@@ -144,7 +144,7 @@ def buildFramework():
       "-I./../src/common/framework",
       ])
   
-  return buildApp("framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+" -lm -ldl -lzip -lpnga -lminizipa -lluaa -lGL -lGLU -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio")
+  return buildApp("framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+" -lm -ldl -lpnga -lminizipa -lluaa -lGL -lGLU -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio")
 
 
 
