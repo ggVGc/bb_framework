@@ -11,7 +11,13 @@ def zipDir(out, r, pref=""):
         out.write(p, os.path.join("assets", pref, rp))
 
 
-outFile = zipfile.ZipFile("assets.zip", "w")
-zipDir(outFile, "../src/lua", "framework")
-zipDir(outFile, "../../bounce")
+
+
+APPLICATION_PATH = os.path.join("..", "bounce")
+
+if not os.path.exists("bin"):
+  os.mkdir("bin")
+outFile = zipfile.ZipFile("bin/assets.zip", "w")
+zipDir(outFile, "src/lua", "framework")
+zipDir(outFile, APPLICATION_PATH)
 outFile.close() 

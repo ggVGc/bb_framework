@@ -2,7 +2,7 @@
 import os
 
 def buildLib(outfile, srcDirs, srcFiles, cflags):
-  objDir = outfile+"_obj"
+  objDir = os.path.join("obj", os.path.split(outfile)[1])
 
   if not os.path.exists(objDir):
     os.mkdir(objDir)
@@ -50,9 +50,9 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
   ret = 0
   ofiles = ""
   for f in cfiles:
-    if not os.path.exists("obj"):
-      os.mkdir("obj")
-    out = os.path.join("obj", os.path.split(f)[1]+".o")
+    if not os.path.exists("obj/framework"):
+      os.mkdir("obj/framework")
+    out = os.path.join("obj","framework", os.path.split(f)[1]+".o")
     ofiles += " "+out
     ofiles
     cmd = "gcc "+cflags+" -c "+f+" -o "+out
@@ -105,51 +105,60 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
 
 def buildLua():
-  buildLib("libluaa.a", ["./../deps_src/lua"], [], "")
+  buildLib("bin/libluaa.a", ["./deps/common/lua"], [], "")
 
 def buildMinizip():
   files =[
-      "./../deps_src/minizip/unzip.c",
-      "./../deps_src/minizip/mztools.c",
-      "./../deps_src/minizip/ioapi.c"
+      "./deps/common/minizip/unzip.c",
+      "./deps/common/minizip/mztools.c",
+      "./deps/common/minizip/ioapi.c"
       ]
 
-  buildLib("libminizipa.a", [], files, "")
+  buildLib("bin/libminizipa.a", [], files, "")
 
 def buildPng():
-  buildLib("libpnga.a", ["./../deps_src/libpng"], [], "")
+  buildLib("bin/libpnga.a", ["./deps/common/libpng"], [], "")
 
 
 def buildFramework():
   srcDirs = [
-      "./../src/common",
-      "./../src/common/framework",
-      "./../src/linux",
-      "./../src/linux/framework"
+      "./src/common",
+      "./src/common/framework",
+      "./src/linux",
+      "./src/linux/framework"
       ]
  
   srcFiles = [
-      " ./../src/win32/framework/util.c",
-      " ./../src/gles_imp.c",
-      #" ./../src/common/framework_wrap.cxx"
+      " ./src/gles_imp.c",
+      #" ./src/common/framework_wrap.cxx"
       ]
 
 
   cflags =" ".join([
-      "-I$HOME/sfml/include/",
-      "-I./../deps_src/gles_headers",
-      "-I./../deps_src/libpng",
-      "-I./../deps_src/lua",
-      "-I./../deps_src/minizip",
-      "-I./../src/common",
-      "-I./../src/common/framework",
+      "-I./deps/common/gles_headers",
+      "-I./deps/common/libpng",
+      "-I./deps/common/lua",
+      "-I./deps/common/minizip",
+      "-I./src/common",
+      "-I./src/common/framework",
       ])
+
+
+  ####################
+  #MAC OS
+  #####################
+
+  #return buildApp("framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+" -lm -ldl -lpnga -lminizipa -lluaa -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
   
-  return buildApp("framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+" -lm -ldl -lpnga -lminizipa -lluaa -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
+  return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin -lm -ldl -lpnga -lminizipa -lluaa -lGL -lGLU -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio")
 
 
 
 if __name__ == '__main__':
+  if not os.path.exists("obj"):
+    os.mkdir("obj")
+  if not os.path.exists("bin"):
+    os.mkdir("bin")
   import sys
   compileLibs = True
   if len(sys.argv) >= 2 and sys.argv[1] == "only_exe":
