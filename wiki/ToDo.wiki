@@ -1,5 +1,10 @@
 
 
+* Make lua wrapper release texture handles
+
+
+= When building win32 port: =
+  * Make win32 build use SFML
 
 
 

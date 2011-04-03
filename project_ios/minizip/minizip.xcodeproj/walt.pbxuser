@@ -1,0 +1,88 @@
+// !$*UTF8*$!
+{
+	0867D690FE84028FC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeTarget = D2AAC07D0554694100DB518D /* minizip */;
+		addToTargets = (
+			D2AAC07D0554694100DB518D /* minizip */,
+		);
+		codeSenseManager = B3B7862E134825310079B206 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 323495197;
+			PBXWorkspaceStateSaveDate = 323495197;
+		};
+		perUserProjectItems = {
+			B3B786E813482CEF0079B206 /* PBXTextBookmark */ = B3B786E813482CEF0079B206 /* PBXTextBookmark */;
+			B3B786E913482CEF0079B206 /* PBXTextBookmark */ = B3B786E913482CEF0079B206 /* PBXTextBookmark */;
+		};
+		sourceControlManager = B3B7862D134825310079B206 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	B3B78617134825310079B206 /* iowin32.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {495, 260}}";
+			sepNavSelRange = "{260, 0}";
+			sepNavVisRange = "{0, 322}";
+		};
+	};
+	B3B7862D134825310079B206 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	B3B7862E134825310079B206 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	B3B786E813482CEF0079B206 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B3B78617134825310079B206 /* iowin32.h */;
+		name = "iowin32.h: 10";
+		rLen = 0;
+		rLoc = 260;
+		rType = 0;
+		vrLen = 413;
+		vrLoc = 0;
+	};
+	B3B786E913482CEF0079B206 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B3B78617134825310079B206 /* iowin32.h */;
+		name = "iowin32.h: 10";
+		rLen = 0;
+		rLoc = 260;
+		rType = 0;
+		vrLen = 413;
+		vrLoc = 0;
+	};
+	D2AAC07D0554694100DB518D /* minizip */ = {
+		activeExec = 0;
+	};
+}
