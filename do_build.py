@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import os
+import sys
 
 def buildLib(outfile, srcDirs, srcFiles, cflags):
   objDir = os.path.join("obj", os.path.split(outfile)[1])
@@ -144,14 +145,12 @@ def buildFramework():
       "-I./src/common/framework",
       ])
 
+  if sys.platform == "darwin":
+    cflags += " -I/Users/walt/sfml/include "
 
-  ####################
-  #MAC OS
-  #####################
-
-  #return buildApp("framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+" -lm -ldl -lpnga -lminizipa -lluaa -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
-  
-  return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin -lm -ldl -lpnga -lminizipa -lluaa -lGL -lGLU -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin -lm -ldl -lpnga -lminizipa -lluaa -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
+  else:
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin -lm -ldl -lpnga -lminizipa -lluaa -lGL -lGLU -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio")
 
 
 
