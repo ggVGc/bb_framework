@@ -1,3 +1,5 @@
+# !sh
+
 python zip_assets.py
 python do_build.py only_exe
 rc=$?

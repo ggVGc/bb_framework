@@ -1,3 +1,6 @@
+# !sh
+
+
 #rm jumpz/assets/data/sheet.png
 #rm jumpz/assets/data/sheet.txt
 rm ../bounce/data/sheet.png
