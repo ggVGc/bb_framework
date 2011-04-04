@@ -1,16 +1,12 @@
-glob:objs/*
 glob:*.o
 glob:*.o.d
 glob:*.class
-glob:pipeline_proto/main.exe
 glob:*.suo
 glob:*.log
 glob:bin/classes/*
 glob:*.user
 glob:*.ipch
 glob:*.apk
-glob:framework-test/bin/
-glob:gen/
 glob:*.pdb
 glob:Release/
 glob:*.sdf
@@ -29,7 +25,6 @@ glob:*.orig
 glob:*.obj
 glob:*.tlog
 glob:*/*.a
-glob:*/framework*
 glob:*.swp
 glob:*.userprefs
 glob:*.pidb
@@ -37,3 +32,4 @@ glob:*.pidb
 glob:*.mdb
 glob:.DS_Store
 glob:project_ios/*/build
+glob:bin
