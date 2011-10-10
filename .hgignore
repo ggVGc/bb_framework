@@ -32,4 +32,7 @@ glob:*.pidb
 glob:*.mdb
 glob:.DS_Store
 glob:project_ios/*/build
+glob:build/ios/*/build/*
+glob:*.mode1v3
+glob:*.pbxuser
 glob:bin
