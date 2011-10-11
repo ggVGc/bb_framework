@@ -9,29 +9,31 @@
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* minizip_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* minizip_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		B3B78620134825310079B206 /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B78613134825310079B206 /* crypt.h */; };
-		B3B78621134825310079B206 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = B3B78614134825310079B206 /* ioapi.c */; };
-		B3B78622134825310079B206 /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B78615134825310079B206 /* ioapi.h */; };
-		B3B78624134825310079B206 /* iowin32.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B78617134825310079B206 /* iowin32.h */; };
-		B3B78627134825310079B206 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = B3B7861A134825310079B206 /* mztools.c */; };
-		B3B78628134825310079B206 /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B7861B134825310079B206 /* mztools.h */; };
-		B3B78629134825310079B206 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = B3B7861C134825310079B206 /* unzip.c */; };
-		B3B7862A134825310079B206 /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B7861D134825310079B206 /* unzip.h */; };
-		B3B7862C134825310079B206 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = B3B7861F134825310079B206 /* zip.h */; };
+		B39208421443BDDA0006E503 /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = B39208381443BDDA0006E503 /* crypt.h */; };
+		B39208431443BDDA0006E503 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = B39208391443BDDA0006E503 /* ioapi.c */; };
+		B39208441443BDDA0006E503 /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = B392083A1443BDDA0006E503 /* ioapi.h */; };
+		B39208451443BDDA0006E503 /* iowin32.h in Headers */ = {isa = PBXBuildFile; fileRef = B392083B1443BDDA0006E503 /* iowin32.h */; };
+		B39208461443BDDA0006E503 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = B392083C1443BDDA0006E503 /* mztools.c */; };
+		B39208471443BDDA0006E503 /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = B392083D1443BDDA0006E503 /* mztools.h */; };
+		B39208481443BDDA0006E503 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = B392083E1443BDDA0006E503 /* unzip.c */; };
+		B39208491443BDDA0006E503 /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = B392083F1443BDDA0006E503 /* unzip.h */; };
+		B392084A1443BDDA0006E503 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = B39208401443BDDA0006E503 /* zip.c */; };
+		B392084B1443BDDA0006E503 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = B39208411443BDDA0006E503 /* zip.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* minizip_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minizip_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B3B78613134825310079B206 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = ../../deps_src/minizip/crypt.h; sourceTree = SOURCE_ROOT; };
-		B3B78614134825310079B206 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = ../../deps_src/minizip/ioapi.c; sourceTree = SOURCE_ROOT; };
-		B3B78615134825310079B206 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = ../../deps_src/minizip/ioapi.h; sourceTree = SOURCE_ROOT; };
-		B3B78617134825310079B206 /* iowin32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iowin32.h; path = ../../deps_src/minizip/iowin32.h; sourceTree = SOURCE_ROOT; };
-		B3B7861A134825310079B206 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = ../../deps_src/minizip/mztools.c; sourceTree = SOURCE_ROOT; };
-		B3B7861B134825310079B206 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = ../../deps_src/minizip/mztools.h; sourceTree = SOURCE_ROOT; };
-		B3B7861C134825310079B206 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = ../../deps_src/minizip/unzip.c; sourceTree = SOURCE_ROOT; };
-		B3B7861D134825310079B206 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = ../../deps_src/minizip/unzip.h; sourceTree = SOURCE_ROOT; };
-		B3B7861F134825310079B206 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = ../../deps_src/minizip/zip.h; sourceTree = SOURCE_ROOT; };
+		B39208381443BDDA0006E503 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = ../../../deps/common/minizip/crypt.h; sourceTree = SOURCE_ROOT; };
+		B39208391443BDDA0006E503 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = ../../../deps/common/minizip/ioapi.c; sourceTree = SOURCE_ROOT; };
+		B392083A1443BDDA0006E503 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = ../../../deps/common/minizip/ioapi.h; sourceTree = SOURCE_ROOT; };
+		B392083B1443BDDA0006E503 /* iowin32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iowin32.h; path = ../../../deps/common/minizip/iowin32.h; sourceTree = SOURCE_ROOT; };
+		B392083C1443BDDA0006E503 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = ../../../deps/common/minizip/mztools.c; sourceTree = SOURCE_ROOT; };
+		B392083D1443BDDA0006E503 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = ../../../deps/common/minizip/mztools.h; sourceTree = SOURCE_ROOT; };
+		B392083E1443BDDA0006E503 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = ../../../deps/common/minizip/unzip.c; sourceTree = SOURCE_ROOT; };
+		B392083F1443BDDA0006E503 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = ../../../deps/common/minizip/unzip.h; sourceTree = SOURCE_ROOT; };
+		B39208401443BDDA0006E503 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = ../../../deps/common/minizip/zip.c; sourceTree = SOURCE_ROOT; };
+		B39208411443BDDA0006E503 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zip.h; path = ../../../deps/common/minizip/zip.h; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libminizip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libminizip.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,15 +86,16 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B3B78613134825310079B206 /* crypt.h */,
-				B3B78614134825310079B206 /* ioapi.c */,
-				B3B78615134825310079B206 /* ioapi.h */,
-				B3B78617134825310079B206 /* iowin32.h */,
-				B3B7861A134825310079B206 /* mztools.c */,
-				B3B7861B134825310079B206 /* mztools.h */,
-				B3B7861C134825310079B206 /* unzip.c */,
-				B3B7861D134825310079B206 /* unzip.h */,
-				B3B7861F134825310079B206 /* zip.h */,
+				B39208381443BDDA0006E503 /* crypt.h */,
+				B39208391443BDDA0006E503 /* ioapi.c */,
+				B392083A1443BDDA0006E503 /* ioapi.h */,
+				B392083B1443BDDA0006E503 /* iowin32.h */,
+				B392083C1443BDDA0006E503 /* mztools.c */,
+				B392083D1443BDDA0006E503 /* mztools.h */,
+				B392083E1443BDDA0006E503 /* unzip.c */,
+				B392083F1443BDDA0006E503 /* unzip.h */,
+				B39208401443BDDA0006E503 /* zip.c */,
+				B39208411443BDDA0006E503 /* zip.h */,
 				AA747D9E0F9514B9006C5449 /* minizip_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -106,12 +109,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* minizip_Prefix.pch in Headers */,
-				B3B78620134825310079B206 /* crypt.h in Headers */,
-				B3B78622134825310079B206 /* ioapi.h in Headers */,
-				B3B78624134825310079B206 /* iowin32.h in Headers */,
-				B3B78628134825310079B206 /* mztools.h in Headers */,
-				B3B7862A134825310079B206 /* unzip.h in Headers */,
-				B3B7862C134825310079B206 /* zip.h in Headers */,
+				B39208421443BDDA0006E503 /* crypt.h in Headers */,
+				B39208441443BDDA0006E503 /* ioapi.h in Headers */,
+				B39208451443BDDA0006E503 /* iowin32.h in Headers */,
+				B39208471443BDDA0006E503 /* mztools.h in Headers */,
+				B39208491443BDDA0006E503 /* unzip.h in Headers */,
+				B392084B1443BDDA0006E503 /* zip.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3B78621134825310079B206 /* ioapi.c in Sources */,
-				B3B78627134825310079B206 /* mztools.c in Sources */,
-				B3B78629134825310079B206 /* unzip.c in Sources */,
+				B39208431443BDDA0006E503 /* ioapi.c in Sources */,
+				B39208461443BDDA0006E503 /* mztools.c in Sources */,
+				B39208481443BDDA0006E503 /* unzip.c in Sources */,
+				B392084A1443BDDA0006E503 /* zip.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
