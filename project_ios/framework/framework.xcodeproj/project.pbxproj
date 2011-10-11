@@ -40,51 +40,6 @@
 		B3B786C0134829EE0079B206 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = B3B786BF134829EE0079B206 /* util.c */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B3B7849B1348204E0079B206 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3B784971348204E0079B206 /* lua.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = lua;
-		};
-		B3B784C9134821260079B206 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3B784971348204E0079B206 /* lua.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = lua;
-		};
-		B3B78602134824FA0079B206 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3B785FE134824FA0079B206 /* libpng.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = libpng;
-		};
-		B3B78604134825040079B206 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3B785FE134824FA0079B206 /* libpng.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = libpng;
-		};
-		B3B78646134825C20079B206 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3B78642134825C20079B206 /* minizip.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = minizip;
-		};
-		B3B78648134825CA0079B206 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B3B78642134825C20079B206 /* minizip.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = minizip;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* frameworkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frameworkAppDelegate.h; sourceTree = "<group>"; };
@@ -104,9 +59,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* framework_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* framework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "framework-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		B3B784971348204E0079B206 /* lua.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = lua.xcodeproj; path = ../lua/lua.xcodeproj; sourceTree = SOURCE_ROOT; };
-		B3B785FE134824FA0079B206 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
-		B3B78642134825C20079B206 /* minizip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = minizip.xcodeproj; path = ../minizip/minizip.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B3B78654134826560079B206 /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = app.h; path = ../../src/common/app.h; sourceTree = SOURCE_ROOT; };
 		B3B78656134826560079B206 /* bitmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitmap.c; sourceTree = "<group>"; };
 		B3B78657134826560079B206 /* bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitmap.h; sourceTree = "<group>"; };
@@ -195,9 +147,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				B3B78642134825C20079B206 /* minizip.xcodeproj */,
-				B3B785FE134824FA0079B206 /* libpng.xcodeproj */,
-				B3B784971348204E0079B206 /* lua.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				2514C27610084DB600A42282 /* Shaders */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -244,30 +193,6 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B3B784981348204E0079B206 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B3B7849C1348204E0079B206 /* liblua.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B3B785FF134824FA0079B206 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B3B78603134824FA0079B206 /* liblibpng.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B3B78643134825C20079B206 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B3B78647134825C20079B206 /* libminizip.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B3B78655134826560079B206 /* framework */ = {
@@ -319,9 +244,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B3B784CA134821260079B206 /* PBXTargetDependency */,
-				B3B78605134825040079B206 /* PBXTargetDependency */,
-				B3B78649134825CA0079B206 /* PBXTargetDependency */,
 			);
 			name = framework;
 			productName = framework;
@@ -345,50 +267,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B3B785FF134824FA0079B206 /* Products */;
-					ProjectRef = B3B785FE134824FA0079B206 /* libpng.xcodeproj */;
-				},
-				{
-					ProductGroup = B3B784981348204E0079B206 /* Products */;
-					ProjectRef = B3B784971348204E0079B206 /* lua.xcodeproj */;
-				},
-				{
-					ProductGroup = B3B78643134825C20079B206 /* Products */;
-					ProjectRef = B3B78642134825C20079B206 /* minizip.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* framework */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B3B7849C1348204E0079B206 /* liblua.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = liblua.a;
-			remoteRef = B3B7849B1348204E0079B206 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B3B78603134824FA0079B206 /* liblibpng.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = liblibpng.a;
-			remoteRef = B3B78602134824FA0079B206 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B3B78647134825C20079B206 /* libminizip.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libminizip.a;
-			remoteRef = B3B78646134825C20079B206 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -432,24 +316,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B3B784CA134821260079B206 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = lua;
-			targetProxy = B3B784C9134821260079B206 /* PBXContainerItemProxy */;
-		};
-		B3B78605134825040079B206 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libpng;
-			targetProxy = B3B78604134825040079B206 /* PBXContainerItemProxy */;
-		};
-		B3B78649134825CA0079B206 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = minizip;
-			targetProxy = B3B78648134825CA0079B206 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {

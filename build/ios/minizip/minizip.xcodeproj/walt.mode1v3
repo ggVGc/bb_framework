@@ -340,7 +340,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>21 175 751 580 0 0 1280 778 </string>
+						<string>160 167 751 580 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -375,14 +375,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {543, 174}}</string>
+								<string>{{0, 0}, {543, 160}}</string>
 								<key>RubberWindowFrame</key>
-								<string>21 175 751 580 0 0 1280 778 </string>
+								<string>160 167 751 580 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>174pt</string>
+							<string>160pt</string>
 						</dict>
 						<dict>
 							<key>BecomeActive</key>
@@ -397,14 +397,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 179}, {543, 360}}</string>
+								<string>{{0, 165}, {543, 374}}</string>
 								<key>RubberWindowFrame</key>
-								<string>21 175 751 580 0 0 1280 778 </string>
+								<string>160 167 751 580 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>360pt</string>
+							<string>374pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -423,9 +423,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>B39208351443BD770006E503</string>
+				<string>B3920A541443C5000006E503</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>B39208361443BD770006E503</string>
+				<string>B3920A551443C5000006E503</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -567,7 +567,7 @@
 		<string>/Users/walt/stuff/framework/build/ios/minizip/minizip.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>21 175 751 580 0 0 1280 778 </string>
+	<string>160 167 751 580 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -605,8 +605,6 @@
 							<string>218pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -646,7 +644,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>B3B78635134825470079B206</string>
-				<string>B39208371443BD770006E503</string>
+				<string>B3920A561443C5000006E503</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

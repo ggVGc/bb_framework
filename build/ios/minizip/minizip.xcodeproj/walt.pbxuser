@@ -2,6 +2,7 @@
 {
 	0867D690FE84028FC02AAC07 /* Project object */ = {
 		activeBuildConfigurationName = Debug;
+		activeSDKPreference = iphonesimulator4.3;
 		activeTarget = D2AAC07D0554694100DB518D /* minizip */;
 		addToTargets = (
 			D2AAC07D0554694100DB518D /* minizip */,
@@ -30,8 +31,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 339983714;
-			PBXWorkspaceStateSaveDate = 339983714;
+			PBXPerProjectTemplateStateSaveDate = 339985653;
+			PBXWorkspaceStateSaveDate = 339985653;
 		};
 		sourceControlManager = B3B7862D134825310079B206 /* Source Control */;
 		userBuildSettings = {
