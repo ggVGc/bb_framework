@@ -3,6 +3,7 @@
 
 
 void trace(const char* msg);
+void traceNoNL(const char* msg);
 void traceInt(int);
 
 #endif

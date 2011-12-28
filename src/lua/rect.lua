@@ -1,7 +1,8 @@
+framework = framework or {}
 
-Rect = {}
+framework.Rect = {}
 
-function Rect.new(x, y, w, h)
+function framework.Rect.new(x, y, w, h)
   local M = {}
   M.x = x
   M.y = y
@@ -12,11 +13,11 @@ function Rect.new(x, y, w, h)
 end
 
 
-function Rect.contains(r, x, y)
+function framework.Rect.containsPoint(rx, ry, rw, rh, x, y)
   return
-    x > r.x and
-    x < r.x + r.w and
-    y > r.y and
-    y < r.y + r.h
+    x > rx and
+    x < rx + rw and
+    y > ry and
+    y < ry + rh
 end
 

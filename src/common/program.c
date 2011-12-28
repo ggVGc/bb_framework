@@ -10,6 +10,7 @@
 #include <lualib.h>
 
 #include "framework/util.h"
+#include "framework/input.h"
 #include "app.h"
 #include "framework_lua_wrappers.h"
 #include "framework/graphics.h"
@@ -56,8 +57,10 @@ int dofile_lua(lua_State* s)
   if( BREAK_ON_FIRST_ERROR && appBroken)
     return 0;
   const char* filePath = lua_tostring(s, -1);
-  trace("DoFile: ");
-  trace(filePath);
+  if(strncmp("framework", filePath, 9)){
+    traceNoNL("DoFile: ");
+    trace(filePath);
+  }
   if(dofile(filePath)!=0)
   {
     const char* msg = lua_tostring(vm, -1);
@@ -77,7 +80,7 @@ int loadfile_lua(lua_State* s)
     return 0;
 
   filePath = lua_tostring(s, -1);
-  trace("LoadFile: ");
+  traceNoNL("LoadFile: ");
   trace(filePath);
 
   str = loadAscii(filePath, 0);
@@ -156,6 +159,7 @@ int callFunc(int nParams)
 
 void appInit(const char* resourcePath, int useAssetZip)
 {
+  inputInit();
   setResourcePath(resourcePath, useAssetZip);
 
   appBroken = 0;

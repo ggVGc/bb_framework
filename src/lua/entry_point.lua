@@ -6,6 +6,7 @@ dofile("framework/input.lua");
 dofile("framework/texture_sheet.lua");
 dofile("framework/input.lua");
 dofile("framework/window.lua");
+dofile("framework/rect.lua");
 
 
 

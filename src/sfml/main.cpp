@@ -70,6 +70,12 @@ int main()
       {
         setCursorPos(e.MouseMove.X, e.MouseMove.Y);
       }
+      else if( e.Type == sf::Event::KeyPressed){
+        setKeyPressed(e.Key.Code);
+      }
+      else if( e.Type == sf::Event::KeyReleased){
+        setKeyReleased(e.Key.Code);
+      }
     }
     long curTime = _getTime();
     long delta = curTime-lastTime;

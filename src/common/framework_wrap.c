@@ -2969,6 +2969,26 @@ fail:
 }
 
 
+static int _wrap_keyDown(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  int result;
+  
+  SWIG_check_num_args("keyDown",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("keyDown",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  result = (int)keyDown(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_setCursorPos(lua_State* L) {
   int SWIG_arg = 0;
   int arg1 ;
@@ -2999,6 +3019,44 @@ static int _wrap_setCursorDownState(lua_State* L) {
   if(!lua_isnumber(L,1)) SWIG_fail_arg("setCursorDownState",1,"int");
   arg1 = (int)lua_tonumber(L, 1);
   setCursorDownState(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_setKeyPressed(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  
+  SWIG_check_num_args("setKeyPressed",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("setKeyPressed",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  setKeyPressed(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_setKeyReleased(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  
+  SWIG_check_num_args("setKeyReleased",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("setKeyReleased",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  setKeyReleased(arg1);
   
   return SWIG_arg;
   
@@ -3240,8 +3298,11 @@ static const struct luaL_reg swig_commands[] = {
     { "cursorX", _wrap_cursorX},
     { "cursorY", _wrap_cursorY},
     { "cursorDown", _wrap_cursorDown},
+    { "keyDown", _wrap_keyDown},
     { "setCursorPos", _wrap_setCursorPos},
     { "setCursorDownState", _wrap_setCursorDownState},
+    { "setKeyPressed", _wrap_setKeyPressed},
+    { "setKeyReleased", _wrap_setKeyReleased},
     { "streamingAudioLoad", _wrap_streamingAudioLoad},
     { "streamingAudioPlay", _wrap_streamingAudioPlay},
     { "streamingAudioSetLooping", _wrap_streamingAudioSetLooping},
@@ -3260,6 +3321,7 @@ static swig_lua_var_info swig_variables[] = {
 };
 
 static swig_lua_const_info swig_constants[] = {
+{ SWIG_LUA_INT,     (char *)"MAX_KEYS", (long) 512, 0, 0, 0},
     {0,0,0,0,0,0}
 };
 

@@ -126,8 +126,8 @@ def buildFramework():
   srcDirs = [
       "./src/common",
       "./src/common/framework",
-      "./src/linux",
-      "./src/linux/framework"
+      "./src/sfml",
+      "./src/sfml/framework"
       ]
  
   srcFiles = [
