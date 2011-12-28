@@ -20,7 +20,7 @@ function framework.Bitmap.new(path)
   M.bmData, M.tex = createTexture()
 
   function M.draw(x, y, rot, pivotX, pivotY)
-    _c_framework.quadDraw(x or 0, y or 0, M.tex.width, M.tex.height, M.tex, rot or 0, pivotX or 0.5, pivotY or 0.5)
+    _c_framework.quadDrawTex(x or 0, y or 0, M.tex.width, M.tex.height, M.tex, rot or 0, pivotX or 0.5, pivotY or 0.5)
   end
 
 

@@ -2825,7 +2825,7 @@ fail:
 }
 
 
-static int _wrap_quadDraw(lua_State* L) {
+static int _wrap_quadDrawTex(lua_State* L) {
   int SWIG_arg = 0;
   float arg1 ;
   float arg2 ;
@@ -2836,28 +2836,77 @@ static int _wrap_quadDraw(lua_State* L) {
   float arg7 ;
   float arg8 ;
   
-  SWIG_check_num_args("quadDraw",8,8)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("quadDraw",1,"float");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("quadDraw",2,"float");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("quadDraw",3,"float");
-  if(!lua_isnumber(L,4)) SWIG_fail_arg("quadDraw",4,"float");
-  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("quadDraw",5,"Texture *");
-  if(!lua_isnumber(L,6)) SWIG_fail_arg("quadDraw",6,"float");
-  if(!lua_isnumber(L,7)) SWIG_fail_arg("quadDraw",7,"float");
-  if(!lua_isnumber(L,8)) SWIG_fail_arg("quadDraw",8,"float");
+  SWIG_check_num_args("quadDrawTex",8,8)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("quadDrawTex",1,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("quadDrawTex",2,"float");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("quadDrawTex",3,"float");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("quadDrawTex",4,"float");
+  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("quadDrawTex",5,"Texture *");
+  if(!lua_isnumber(L,6)) SWIG_fail_arg("quadDrawTex",6,"float");
+  if(!lua_isnumber(L,7)) SWIG_fail_arg("quadDrawTex",7,"float");
+  if(!lua_isnumber(L,8)) SWIG_fail_arg("quadDrawTex",8,"float");
   arg1 = (float)lua_tonumber(L, 1);
   arg2 = (float)lua_tonumber(L, 2);
   arg3 = (float)lua_tonumber(L, 3);
   arg4 = (float)lua_tonumber(L, 4);
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&arg5,SWIGTYPE_p_Texture,0))){
-    SWIG_fail_ptr("quadDraw",5,SWIGTYPE_p_Texture);
+    SWIG_fail_ptr("quadDrawTex",5,SWIGTYPE_p_Texture);
   }
   
   arg6 = (float)lua_tonumber(L, 6);
   arg7 = (float)lua_tonumber(L, 7);
   arg8 = (float)lua_tonumber(L, 8);
-  quadDraw(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+  quadDrawTex(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_quadDrawCol(lua_State* L) {
+  int SWIG_arg = 0;
+  float arg1 ;
+  float arg2 ;
+  float arg3 ;
+  float arg4 ;
+  float arg5 ;
+  float arg6 ;
+  float arg7 ;
+  float arg8 ;
+  float arg9 ;
+  float arg10 ;
+  float arg11 ;
+  
+  SWIG_check_num_args("quadDrawCol",11,11)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("quadDrawCol",1,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("quadDrawCol",2,"float");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("quadDrawCol",3,"float");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("quadDrawCol",4,"float");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("quadDrawCol",5,"float");
+  if(!lua_isnumber(L,6)) SWIG_fail_arg("quadDrawCol",6,"float");
+  if(!lua_isnumber(L,7)) SWIG_fail_arg("quadDrawCol",7,"float");
+  if(!lua_isnumber(L,8)) SWIG_fail_arg("quadDrawCol",8,"float");
+  if(!lua_isnumber(L,9)) SWIG_fail_arg("quadDrawCol",9,"float");
+  if(!lua_isnumber(L,10)) SWIG_fail_arg("quadDrawCol",10,"float");
+  if(!lua_isnumber(L,11)) SWIG_fail_arg("quadDrawCol",11,"float");
+  arg1 = (float)lua_tonumber(L, 1);
+  arg2 = (float)lua_tonumber(L, 2);
+  arg3 = (float)lua_tonumber(L, 3);
+  arg4 = (float)lua_tonumber(L, 4);
+  arg5 = (float)lua_tonumber(L, 5);
+  arg6 = (float)lua_tonumber(L, 6);
+  arg7 = (float)lua_tonumber(L, 7);
+  arg8 = (float)lua_tonumber(L, 8);
+  arg9 = (float)lua_tonumber(L, 9);
+  arg10 = (float)lua_tonumber(L, 10);
+  arg11 = (float)lua_tonumber(L, 11);
+  quadDrawCol(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11);
   
   return SWIG_arg;
   
@@ -3186,7 +3235,8 @@ static const struct luaL_reg swig_commands[] = {
     { "rawBitmapDataCleanup", _wrap_rawBitmapDataCleanup},
     { "bitmapDataInit", _wrap_bitmapDataInit},
     { "textureInit", _wrap_textureInit},
-    { "quadDraw", _wrap_quadDraw},
+    { "quadDrawTex", _wrap_quadDrawTex},
+    { "quadDrawCol", _wrap_quadDrawCol},
     { "cursorX", _wrap_cursorX},
     { "cursorY", _wrap_cursorY},
     { "cursorDown", _wrap_cursorDown},

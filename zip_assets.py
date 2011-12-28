@@ -15,7 +15,10 @@ def zipDir(out, r, pref=""):
 
 
 
-APPLICATION_PATH = os.path.join("..", "bounce")
+import sys
+#APPLICATION_PATH = os.path.join("..", "bounce")
+APPLICATION_PATH = sys.argv[1]
+print APPLICATION_PATH
 
 if not os.path.exists("bin"):
   os.mkdir("bin")

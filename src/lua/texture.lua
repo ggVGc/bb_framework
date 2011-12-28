@@ -14,7 +14,7 @@ function framework.Texture.new(tex)
     local w = scaleX or 1
     local h = scaleY or 1
 
-    _c_framework.quadDraw(
+    _c_framework.quadDrawTex(
     x or 0, y or 0,
     (scaleX or 1)*tex.width, (scaleY or 1)*tex.height, 
     tex, rot or 0,

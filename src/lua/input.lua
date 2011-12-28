@@ -19,7 +19,7 @@ framework.Input =
   new=function()
     local M = {}
 
-    M.pressPos = {x=0,y=0}
+    M.downPos = {x=0,y=0}
     M.releasePos = {x=0,y=0}
 
     lastState = framework.Input.State.new()
