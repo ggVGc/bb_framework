@@ -1,0 +1,53 @@
+Vector = {}
+
+Vector.mt = {}
+
+
+function Vector.mt.__index(t,k)
+  if k=="x" then return t[1]
+  elseif k=="y" then return t[2] 
+  else return Vector[k]
+  end
+end
+
+function Vector.mt.__newindex(t,k,v)
+  if k=="x" then t[1] = v
+  elseif k=="y" then t[2] = v
+  end
+end
+
+function Vector.mt.__add(a,b) 
+  a[1] = a[1] + b[1]
+  a[2] = a[2] + b[2]
+  return a
+end
+
+function Vector.mt.__mul(vec,x)
+  local r = Vector.new()
+  if type(x)=="table" then
+    r[1] = vec[1] * x[1]
+    r[2] = vec[2] * x[2]
+  else
+    r[1] = vec[1] * x
+    r[2] = vec[2] * x
+  end
+  return r
+end
+
+
+function Vector.new(x,y)
+  local o = {
+    x or 0,y or 0,
+  }
+  setmetatable(o, Vector.mt)
+  return o
+end
+
+
+
+Vector.Down = Vector.new(0,-1)
+Vector.Up = Vector.new(0,1)
+Vector.Left = Vector.new(-1,0)
+Vector.Right = Vector.new(1,0)
+
+

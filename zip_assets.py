@@ -24,5 +24,6 @@ if not os.path.exists("bin"):
   os.mkdir("bin")
 outFile = zipfile.ZipFile("bin/assets.zip", "w")
 zipDir(outFile, "src/lua", "framework")
+zipDir(outFile, "src/luatest", "framework/test")
 zipDir(outFile, APPLICATION_PATH)
 outFile.close() 
