@@ -15,6 +15,8 @@ void bitmapDataInit(BitmapData* data, RawBitmapData* rawData)
   glTexImage2D(
       GL_TEXTURE_2D, 0, GL_RGBA, rawData->width, rawData->height,
       0, GL_RGBA, GL_UNSIGNED_BYTE, rawData->data);
+
+  glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 

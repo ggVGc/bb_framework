@@ -21,7 +21,7 @@ cmd = "setlocal wildignore+=%s" % (",".join(ig))
 vim.command(cmd)
 
 EOF
-setlocal wildignore+=deps_*
+setlocal wildignore+=*deps*
 
 CommandTFlush
 
@@ -38,9 +38,10 @@ map <buffer>  <F5> :call RunJumpz()<CR>
 
 
 let s:x = fnamemodify(g:projectScriptDir, ":p")
-exec "set path+=".s:x."src/common/"
-exec "set path+=".s:x."src/lua/"
 exec "set path+=".s:x."src/android/"
-exec "set path+=".s:x."src/linux/"
-exec "set path+=".s:x."src/win3/"
-exec "set path+=".s:x."/deps_src/lua"
+exec "set path+=".s:x."src/common/"
+exec "set path+=".s:x."src/ios/"
+exec "set path+=".s:x."src/lua/"
+exec "set path+=".s:x."src/sfml/"
+exec "set path+=".s:x."src/windows/"
+exec "set path+=".s:x."/deps/common/lua"

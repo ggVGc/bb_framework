@@ -1,4 +1,4 @@
-function list_iter (t)
+function list_iter(t)
   local i = 0
   local n = table.getn(t)
   return function ()
