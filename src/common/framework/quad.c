@@ -30,12 +30,13 @@ void quadDrawCommon(float x, float y, float width, float height, float rot, floa
 }
 void quadDrawTex(float x, float y, float width, float height, Texture* tex, float rot, float pivX, float pivY)
 {
+  glColor4f(1,1,1,1);
   glEnableClientState(GL_TEXTURE_COORD_ARRAY);
   glBindTexture(GL_TEXTURE_2D, tex->data->glTexHandle);
   glTexCoordPointer(2, GL_FLOAT, 0, tex->uvCoords);
   quadDrawCommon(x, y, width, height, rot, pivX, pivY);
   glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-
+  glBindTexture(GL_TEXTURE_2D,0);
 }
 
 

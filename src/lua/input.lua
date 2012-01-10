@@ -8,6 +8,7 @@ framework.Input =
   cursorX= function() return _c_framework.cursorX()/framework.Window.getWidth() end,
   cursorY= function() return 1-(_c_framework.cursorY()/framework.Window.getHeight()) end,
   keyDown= function(code) return not(_c_framework.keyDown(code)==0) end,
+  charDown= function(char) return framework.Input.keyDown(string.byte(char))end,
 
   State = {
     new=function(x, y, cursorDown)
