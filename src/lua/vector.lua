@@ -17,9 +17,18 @@ function Vector.mt.__newindex(t,k,v)
 end
 
 function Vector.mt.__add(a,b) 
-  a[1] = a[1] + b[1]
-  a[2] = a[2] + b[2]
-  return a
+  local r = Vector.new()
+  r[1] = a[1] + b[1]
+  r[2] = a[2] + b[2]
+  return r
+end
+
+
+function Vector.mt.__sub(a,b) 
+  local r = Vector.new()
+  r[1] = a[1] - b[1]
+  r[2] = a[2] - b[2]
+  return r
 end
 
 function Vector.mt.__mul(vec,x)
@@ -41,6 +50,18 @@ function Vector.new(x,y)
   }
   setmetatable(o, Vector.mt)
   return o
+end
+
+function Vector.len(v)
+  return math.sqrt((v.x * v.x) + (v.y * v.y))
+end
+
+function Vector.normalise(v)
+  local r = Vector.new()
+  local l = Vector.len(v)
+  r.x = v.x/l
+  r.y = v.y/l
+  return r
 end
 
 
