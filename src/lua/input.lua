@@ -56,6 +56,10 @@ framework.Input =
       return not(lastState.keysDown[code]) and curState.keysDown[code]
     end
 
+    function M.charPressed(ch)
+      return M.keyPressed(string.byte(ch))
+    end
+
     return M
   end
 }
