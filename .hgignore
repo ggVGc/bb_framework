@@ -36,3 +36,5 @@ glob:build/ios/*/build/*
 glob:*.mode1v3
 glob:*.pbxuser
 glob:bin
+glob:deps/win/SFML-1.6
+glob:build/windows/*/Debug

@@ -15,40 +15,108 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\framework\src\win32\main.cpp">
+    <ClInclude Include="..\..\..\src\common\app.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\bitmap.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\bitmapdata.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\camera.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\graphics.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\input.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\quad.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\random.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\rawbitmapdata.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\rect.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\resource_loading.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\streaming_audio.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\texture.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework\util.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\common\framework_lua_wrappers.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\common\framework\bitmap.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\win32\GLContextControl.cpp">
+    <ClCompile Include="..\..\..\src\common\framework\bitmapdata.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\win32\framework\util.c">
+    <ClCompile Include="..\..\..\src\common\framework\camera.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\common\program.c">
+    <ClCompile Include="..\..\..\src\common\framework\graphics.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\common\framework\bitmap.c">
+    <ClCompile Include="..\..\..\src\common\framework\input.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\common\framework\graphics.c">
+    <ClCompile Include="..\..\..\src\common\framework\quad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\common\framework\resource_loading.c">
+    <ClCompile Include="..\..\..\src\common\framework\random.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\common\framework\camera.c">
+    <ClCompile Include="..\..\..\src\common\framework\rawbitmapdata.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\win32\Window.cpp">
+    <ClCompile Include="..\..\..\src\common\framework\rect.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\common\framework_lua_wrappers.c">
+    <ClCompile Include="..\..\..\src\common\framework\resource_loading.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\common\framework\input.c">
+    <ClCompile Include="..\..\..\src\common\framework\texture.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\framework\src\gles_imp.c">
+    <ClCompile Include="..\..\..\src\common\framework\util.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\common\framework_lua_wrappers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\common\framework_wrap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\common\program.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sfml\framework\StreamingAudio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sfml\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\gles_imp.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

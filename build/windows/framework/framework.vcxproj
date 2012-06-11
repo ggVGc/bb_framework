@@ -11,18 +11,42 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\framework\src\common\framework\bitmap.c" />
-    <ClCompile Include="..\..\framework\src\common\framework\camera.c" />
-    <ClCompile Include="..\..\framework\src\common\framework\graphics.c" />
-    <ClCompile Include="..\..\framework\src\common\framework\input.c" />
-    <ClCompile Include="..\..\framework\src\common\framework\resource_loading.c" />
-    <ClCompile Include="..\..\framework\src\common\framework_lua_wrappers.c" />
-    <ClCompile Include="..\..\framework\src\common\program.c" />
-    <ClCompile Include="..\..\framework\src\gles_imp.c" />
-    <ClCompile Include="..\..\framework\src\win32\framework\util.c" />
-    <ClCompile Include="..\..\framework\src\win32\GLContextControl.cpp" />
-    <ClCompile Include="..\..\framework\src\win32\main.cpp" />
-    <ClCompile Include="..\..\framework\src\win32\Window.cpp" />
+    <ClInclude Include="..\..\..\src\common\app.h" />
+    <ClInclude Include="..\..\..\src\common\framework\bitmap.h" />
+    <ClInclude Include="..\..\..\src\common\framework\bitmapdata.h" />
+    <ClInclude Include="..\..\..\src\common\framework\camera.h" />
+    <ClInclude Include="..\..\..\src\common\framework\graphics.h" />
+    <ClInclude Include="..\..\..\src\common\framework\input.h" />
+    <ClInclude Include="..\..\..\src\common\framework\quad.h" />
+    <ClInclude Include="..\..\..\src\common\framework\random.h" />
+    <ClInclude Include="..\..\..\src\common\framework\rawbitmapdata.h" />
+    <ClInclude Include="..\..\..\src\common\framework\rect.h" />
+    <ClInclude Include="..\..\..\src\common\framework\resource_loading.h" />
+    <ClInclude Include="..\..\..\src\common\framework\streaming_audio.h" />
+    <ClInclude Include="..\..\..\src\common\framework\test.h" />
+    <ClInclude Include="..\..\..\src\common\framework\texture.h" />
+    <ClInclude Include="..\..\..\src\common\framework\util.h" />
+    <ClInclude Include="..\..\..\src\common\framework_lua_wrappers.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\common\framework\bitmap.c" />
+    <ClCompile Include="..\..\..\src\common\framework\bitmapdata.c" />
+    <ClCompile Include="..\..\..\src\common\framework\camera.c" />
+    <ClCompile Include="..\..\..\src\common\framework\graphics.c" />
+    <ClCompile Include="..\..\..\src\common\framework\input.c" />
+    <ClCompile Include="..\..\..\src\common\framework\quad.c" />
+    <ClCompile Include="..\..\..\src\common\framework\random.c" />
+    <ClCompile Include="..\..\..\src\common\framework\rawbitmapdata.c" />
+    <ClCompile Include="..\..\..\src\common\framework\rect.c" />
+    <ClCompile Include="..\..\..\src\common\framework\resource_loading.c" />
+    <ClCompile Include="..\..\..\src\common\framework\texture.c" />
+    <ClCompile Include="..\..\..\src\common\framework\util.c" />
+    <ClCompile Include="..\..\..\src\common\framework_lua_wrappers.c" />
+    <ClCompile Include="..\..\..\src\common\framework_wrap.c" />
+    <ClCompile Include="..\..\..\src\common\program.c" />
+    <ClCompile Include="..\..\..\src\gles_imp.c" />
+    <ClCompile Include="..\..\..\src\sfml\framework\StreamingAudio.cpp" />
+    <ClCompile Include="..\..\..\src\sfml\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4331482C-45C7-4D04-8552-BDAF004293B7}</ProjectGuid>
@@ -65,13 +89,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\framework\src\common;$(SolutionDir)\..\framework\deps_win32\zlib-1.2.5;$(SolutionDir)\..\framework\deps_win32\libpng\include;$(SolutionDir)\..\framework\deps_src\minizip;$(SolutionDir)\..\framework\deps_src\lua;$(SolutionDir)\..\framework\src\win32\framework;$(SolutionDir)\..\framework\deps_src\gles_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\win\SFML-1.6\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.5;$(SolutionDir)\..\..\deps\win\libpng\include;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\lua;$(SolutionDir)\..\..\deps\common\gles_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\depsbin\;$(SolutionDir)\..\framework\deps_win32\zlib-1.2.5\BUILD_debug;$(SolutionDir)\..\framework\deps_win32\OGLES\WindowsPC\Lib;$(SolutionDir)\..\framework\deps_win32\libpng\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;liblua.lib;minizip.lib;libpng.lib;zlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\deps\win\zlib-1.2.5\BUILD_debug;$(SolutionDir)\..\..\deps\win\SFML-1.6\lib;$(SolutionDir)\depsbin;$(SolutionDir)\..\..\deps\win\libpng\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;liblua.lib;minizip.lib;libpng.lib;zlibd.lib;sfml-main-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;sfml-graphics-s-d.lib;sfml-audio-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

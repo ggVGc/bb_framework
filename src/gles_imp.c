@@ -2,12 +2,14 @@
 #include <Windows.h>
 #endif
 #include <GLES/gl.h>
-/*#undef __gl_h_*/
+
 #ifdef __APPLE__
   #include <OpenGl/GL.h>
 #else
+  #undef __gl_h_
   #include <GL/gl.h>
 #endif
+
 
 
 

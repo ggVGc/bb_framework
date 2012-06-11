@@ -11,19 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\framework\deps_src\minizip\ioapi.c" />
-    <ClCompile Include="..\..\framework\deps_src\minizip\iowin32.c" />
-    <ClCompile Include="..\..\framework\deps_src\minizip\mztools.c" />
-    <ClCompile Include="..\..\framework\deps_src\minizip\unzip.c" />
-    <ClCompile Include="..\..\framework\deps_src\minizip\zip.c" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="..\..\framework\deps_src\minizip\crypt.h" />
     <ClInclude Include="..\..\framework\deps_src\minizip\ioapi.h" />
     <ClInclude Include="..\..\framework\deps_src\minizip\iowin32.h" />
     <ClInclude Include="..\..\framework\deps_src\minizip\mztools.h" />
     <ClInclude Include="..\..\framework\deps_src\minizip\unzip.h" />
     <ClInclude Include="..\..\framework\deps_src\minizip\zip.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\deps\common\minizip\ioapi.c" />
+    <ClCompile Include="..\..\..\deps\common\minizip\iowin32.c" />
+    <ClCompile Include="..\..\..\deps\common\minizip\mztools.c" />
+    <ClCompile Include="..\..\..\deps\common\minizip\unzip.c" />
+    <ClCompile Include="..\..\..\deps\common\minizip\zip.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{20ECF666-2A0B-443D-B6B3-B2DD3C49C140}</ProjectGuid>
@@ -53,7 +53,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)\..\framework\deps_win32\zlib-1.2.5;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\..\..\deps\win\zlib-1.2.5;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)\depsbin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

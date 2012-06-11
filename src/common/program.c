@@ -54,9 +54,10 @@ int dofile(const char* filePath)
 
 int dofile_lua(lua_State* s)
 {
+  const char* filePath;
   if( BREAK_ON_FIRST_ERROR && appBroken)
     return 0;
-  const char* filePath = lua_tostring(s, -1);
+  filePath = lua_tostring(s, -1);
   if(strncmp("framework", filePath, 9)){
     traceNoNL("DoFile: ");
     trace(filePath);
@@ -231,6 +232,7 @@ void appDeinit(void)
 
 void appRender(long tick, int width, int height)
 {
+	traceInt(tick);
   if(!vm)
     return;
 

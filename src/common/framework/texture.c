@@ -12,13 +12,6 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect)
   float h = sourceRect.h;
   float right = x + w;
   float top =  y + h; 
-
-  tex->data = data;
-
-  tex->width = w*data->width;
-  tex->height = h*data->height;
-
-
   GLfloat texCoords[12] = {
     x, top,
     right, top,
@@ -27,6 +20,14 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect)
     right,  y,
     x,  y
   };
+
+  tex->data = data;
+
+  tex->width = w*data->width;
+  tex->height = h*data->height;
+
+
+  
 
   memcpy(tex->uvCoords, texCoords, sizeof(GLfloat)*12);
 

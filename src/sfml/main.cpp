@@ -9,11 +9,15 @@ extern "C"
   #include <OpenGl/GL.h>
   #include <OpenGl/glu.h>
 #else
+  #include <Windows.h>
   #include <GL/gl.h>
   #include <GL/glu.h>
 #endif
 
-#include <sys/time.h>
+#ifndef WIN32
+	#include <sys/time.h>
+#endif
+
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
@@ -31,13 +35,17 @@ extern "C"
 const int SCREEN_WIDTH = 800; //screen dimesions
 const int SCREEN_HEIGHT = 480;
 
+
   static long
 _getTime(void)
 {
-  struct timeval  now;
-
-  gettimeofday(&now, NULL);
-  return (long)(now.tv_sec*1000 + now.tv_usec/1000);
+#ifdef WIN32
+	return timeGetTime();
+#else
+  struct timespec now;
+  clock_gettime(CLOCK_MONOTONIC, &now)
+  return (long)(now.tv_sec*1000 + now.tv_nsec/1000);
+#endif
 }
 
 
@@ -54,8 +62,11 @@ int main()
     while (wnd.GetEvent(e))
     {
       if (e.Type == sf::Event::Closed)
+	  {
         wnd.Close();
-
+		appDeinit();
+		return 0;
+	  }
       if (e.Type == sf::Event::MouseButtonPressed)
       {
           setCursorPos(e.MouseButton.X, e.MouseButton.Y);
@@ -79,6 +90,7 @@ int main()
     }
     long curTime = _getTime();
     long delta = curTime-lastTime;
+
     lastTime = curTime;
 
     appRender(delta, SCREEN_WIDTH, SCREEN_HEIGHT);
