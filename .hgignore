@@ -41,3 +41,4 @@ glob:*.idb
 glob:framework.ilk
 glob:framework.exp
 glob:framework.lib
+glob:*.cache
