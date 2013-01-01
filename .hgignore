@@ -35,5 +35,9 @@ glob:project_ios/*/build
 glob:build/ios/*/build/*
 glob:*.mode1v3
 glob:*.pbxuser
-glob:bin
-glob:build/windows/*
+glob:build/windows/framework/Debug/*
+glob:*.lastbuildstate
+glob:*.idb
+glob:framework.ilk
+glob:framework.exp
+glob:framework.lib
