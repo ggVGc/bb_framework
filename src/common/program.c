@@ -47,6 +47,9 @@ int dofile(const char* filePath)
 {
   int ret;
   char* file = loadAscii(filePath, 0);
+  if(!file){
+	  return -1;
+  }
   ret = doStringWithName(vm, file, filePath);
   free(file);
   return ret;
@@ -205,7 +208,10 @@ void appInit(const char* resourcePath, int useAssetZip)
   if(dofile("framework/entry_point.lua")!=0)
   {
     const char* msg = lua_tostring(vm, -1);
-    trace(msg);
+	trace("Init error");
+	if(msg){
+	    trace(msg);
+	}
     appBroken = 1;
   }
   else
@@ -232,7 +238,6 @@ void appDeinit(void)
 
 void appRender(long tick, int width, int height)
 {
-	traceInt(tick);
   if(!vm)
     return;
 
@@ -246,7 +251,7 @@ void appRender(long tick, int width, int height)
 
   lua_getglobal(vm, "framework");
 
-  if (didInit == 0)
+  if (didInit == 0 && appBroken==0)
   {
     didInit = 1;
     /*lua_getglobal(vm, "framework.init");*/

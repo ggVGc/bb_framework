@@ -98,7 +98,10 @@ char* loadAsciiFromZip(const char* inPath, int* size)
     unz_file_info* info = (unz_file_info*)malloc(sizeof(unz_file_info));
 
     unzLocateFile(uf, path, 0);
-
+	if(!uf){
+		return NULL;
+	}
+		
     unzGetCurrentFileInfo(uf, info, NULL, 0, NULL, 0, NULL, 0);
 
 
