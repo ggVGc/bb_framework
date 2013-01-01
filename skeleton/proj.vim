@@ -28,7 +28,7 @@ function! RUNN()
   redraw!
 endfun
 
-map <buffer>  <F5> :call RUNN()<CR>
+map <buffer>  <F5> :w<CR>:call RUNN()<CR>
 
 
 let s:p = fnamemodify(g:projectScriptDir, ":p")
