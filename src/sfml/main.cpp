@@ -94,11 +94,13 @@ int main()
     lastTime = curTime;
 
     appRender(delta, SCREEN_WIDTH, SCREEN_HEIGHT);
+	fflush(stdout);
     glError();
     wnd.Display();
   }
 
   appDeinit();
+  fflush(stdout);
 
   return 0;
 }

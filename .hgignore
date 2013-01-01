@@ -42,3 +42,5 @@ glob:framework.ilk
 glob:framework.exp
 glob:framework.lib
 glob:*.cache
+glob:bin/framework.exe
+glob:bin/*.dll

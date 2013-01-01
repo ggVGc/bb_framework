@@ -23,7 +23,6 @@ vim.command(cmd)
 EOF
 setlocal wildignore+=*deps*
 
-CommandTFlush
 
 endif
 
