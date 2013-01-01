@@ -12,7 +12,6 @@ glob:Release/
 glob:*.sdf
 glob:*.opensdf
 glob:tags
-glob:proj.vim
 glob:framework-test/assets/luac.out
 glob:buildoutput.txt
 glob:obj/*
