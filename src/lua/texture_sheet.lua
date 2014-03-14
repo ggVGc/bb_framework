@@ -63,7 +63,7 @@ end
 
 
 function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPath)
-  local layoutData = _c_framework.loadAscii(layoutInfoPath, nil)
+  local layoutData = _c_framework.loadBytes(layoutInfoPath, nil)
   local imageData = _c_framework.loadImage(imagePath)
   local bmData = _c_framework.BitmapData()
 

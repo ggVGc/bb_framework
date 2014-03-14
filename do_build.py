@@ -143,6 +143,7 @@ def buildFramework():
       "-I./deps/common/minizip",
       "-I./src/common",
       "-I./src/common/framework",
+      "-I./SFML-1.6/include"
       ])
 
   if sys.platform == "darwin":
@@ -150,7 +151,7 @@ def buildFramework():
 
     return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin -lm -ldl -lpnga -lz -lminizipa -lluaa -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
   else:
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin -lm -ldl -lpnga -lz -lminizipa -lluaa -lGL -lGLU -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio")
+      return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin -lm -ldl -lpnga -lz -lminizipa -lluaa -lGL -lGLU -l:libsfml-graphics.so.1.6 -l:libsfml-window.so.1.6 -l:libsfml-system.so.1.6 -l:libsfml-audio.so.1.6")
 
 
 

@@ -16,8 +16,8 @@ def zipDir(out, r, pref=""):
 
 
 import sys
-#APPLICATION_PATH = os.path.join("..", "bounce")
-APPLICATION_PATH = sys.argv[1]
+APPLICATION_PATH = os.path.join("..", "bounce")
+#APPLICATION_PATH = sys.argv[1]
 print APPLICATION_PATH
 
 if not os.path.exists("bin"):

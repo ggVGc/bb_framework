@@ -26,13 +26,9 @@
 
 extern int luaopen__c_framework(lua_State*);
 
-
 static lua_State* vm = 0;
-
 static int appBroken = 0;
-
 static int didInit = 0;
-
 
 
 int loadstringWithName(lua_State *L, const char *s, const char* name) {
@@ -43,10 +39,9 @@ int loadstringWithName(lua_State *L, const char *s, const char* name) {
 	(loadstringWithName(L, s, name) || lua_pcall(L, 0, LUA_MULTRET, 0))
 
 
-int dofile(const char* filePath)
-{
+int dofile(const char* filePath){
   int ret;
-  char* file = loadAscii(filePath, 0);
+  char* file = loadBytes(filePath, 0);
   if(!file){
 	  return -1;
   }
@@ -87,7 +82,7 @@ int loadfile_lua(lua_State* s)
   traceNoNL("LoadFile: ");
   trace(filePath);
 
-  str = loadAscii(filePath, 0);
+  str = loadBytes(filePath, 0);
 
   lua_pushstring(s, str);
   free(str);
@@ -251,26 +246,21 @@ void appRender(long tick, int width, int height)
 
   lua_getglobal(vm, "framework");
 
-  if (didInit == 0 && appBroken==0)
-  {
+  if (didInit == 0 && appBroken==0){
     didInit = 1;
     /*lua_getglobal(vm, "framework.init");*/
     lua_pushstring(vm, "init");
     lua_gettable(vm, -2);
-    if(callFunc(0) != 0)
-    {
+    if(callFunc(0) != 0){
       appBroken = 1;
       return;
     }
   }
 
-  if(appBroken != 0)
-  {
+  if(appBroken != 0){
     lua_settop(vm, 0);
     return;
-  }
-  else
-  {
+  }else{
     /*lua_getglobal(vm, "framework.doFrame");*/
     lua_pushstring(vm, "doFrame");
     lua_gettable(vm, -2);
@@ -287,25 +277,23 @@ void appRender(long tick, int width, int height)
 static int screenW = 0;
 static int screenH = 0;
 
-int screenWidth(void)
-{
+int screenWidth(void){
   return screenW;
 }
-int screenHeight(void)
-{
+
+int screenHeight(void){
   return screenH;
 }
-void setScreenWidth(int w)
-{
+
+void setScreenWidth(int w){
   screenW = w;
 }
-void setScreenHeight(int h)
-{
+
+void setScreenHeight(int h){
   screenH = h;
 }
 
-int isAppBroken(void)
-{
+int isAppBroken(void){
   return appBroken;
 }
 

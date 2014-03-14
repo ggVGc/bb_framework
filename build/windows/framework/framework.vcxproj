@@ -108,13 +108,15 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\framework\deps_win32\libpng\zlib-1.2.5;$(SolutionDir)\..\framework\deps_win32\libpng\include;$(SolutionDir)\..\framework\deps_src\minizip;$(SolutionDir)\..\framework\deps_src\lua;$(SolutionDir)\..\framework\deps_win32\OGLES\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\win\SFML-1.6\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.5;$(SolutionDir)\..\..\deps\win\libpng\include;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\lua;$(SolutionDir)\..\..\deps\common\gles_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;liblua.lib;minizip.lib;libpng.lib;zlib.lib;sfml-main.lib;sfml-system-s.lib;sfml-window-s.lib;sfml-graphics-s.lib;sfml-audio-s.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\deps\win\zlib-1.2.5\BUILD_debug;$(SolutionDir)\depsbin;$(SolutionDir)\..\..\deps\win\libpng\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

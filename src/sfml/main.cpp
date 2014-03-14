@@ -9,13 +9,15 @@ extern "C"
   #include <OpenGl/GL.h>
   #include <OpenGl/glu.h>
 #else
-  #include <Windows.h>
+  #ifdef WIN32
+    #include <Windows.h>
+  #endif
   #include <GL/gl.h>
   #include <GL/glu.h>
 #endif
 
 #ifndef WIN32
-	#include <sys/time.h>
+  #include <sys/time.h>
 #endif
 
 #include <SFML/System.hpp>
@@ -43,8 +45,8 @@ _getTime(void)
 	return timeGetTime();
 #else
   struct timespec now;
-  clock_gettime(CLOCK_MONOTONIC, &now)
-  return (long)(now.tv_sec*1000 + now.tv_nsec/1000);
+  clock_gettime(CLOCK_MONOTONIC, &now);
+  return (long)(now.tv_sec*1000 + now.tv_nsec/1000000);
 #endif
 }
 
@@ -89,7 +91,7 @@ int main()
       }
     }
     long curTime = _getTime();
-    long delta = curTime-lastTime;
+    long delta =(curTime-lastTime);
 
     lastTime = curTime;
 

@@ -17,7 +17,7 @@ extern "C" StreamingAudio* streamingAudioLoad(const char* path)
 {
   int sz;
   StreamingAudio* ret = new StreamingAudio();
-  ret->data = loadAscii(path, &sz);
+  ret->data = loadBytes(path, &sz);
   ret->m.OpenFromMemory(ret->data, sz);
   return ret;
 }

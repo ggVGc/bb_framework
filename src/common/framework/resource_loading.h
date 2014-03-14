@@ -9,7 +9,7 @@ void setResourcePath(const char* path, int useZip);
 void resourcesCleanUp(void);
 
 
-char* loadAscii(const char* path, int* sz);
+char* loadBytes(const char* path, int* sz);
 RawBitmapData* loadImage(const char* filePath);
 
 #endif

@@ -57,7 +57,8 @@
     <OutDir>$(SolutionDir)\depsbin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)\..\framework\deps_win32\zlib-1.2.5;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\..\..\deps\win\zlib-1.2.5;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)\depsbin\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

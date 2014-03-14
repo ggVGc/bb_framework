@@ -43,3 +43,4 @@ glob:framework.lib
 glob:*.cache
 glob:bin/framework.exe
 glob:bin/*.dll
+glob:bin/framework
