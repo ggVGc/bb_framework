@@ -1,6 +1,4 @@
 
-
-
 framework = framework or {}
 
 framework.Camera = {}

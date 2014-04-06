@@ -143,7 +143,7 @@ def buildFramework():
       "-I./deps/common/minizip",
       "-I./src/common",
       "-I./src/common/framework",
-      "-I./SFML-1.6/include"
+      "-I./deps/win/SFML-1.6/include"
       ])
 
   if sys.platform == "darwin":

@@ -8,7 +8,8 @@ function string:split(sSeparator, nMax, bRegexp)
 		local bPlain = not bRegexp
 		nMax = nMax or -1
 
-		local nField=1 nStart=1
+		local nField=1 
+        local nStart=1
 		local nFirst,nLast = self:find(sSeparator, nStart, bPlain)
 		while nFirst and nMax ~= 0 do
 			aRecord[nField] = self:sub(nStart, nFirst-1)

@@ -50,8 +50,7 @@ int dofile(const char* filePath){
   return ret;
 }
 
-int dofile_lua(lua_State* s)
-{
+int dofile_lua(lua_State* s) {
   const char* filePath;
   if( BREAK_ON_FIRST_ERROR && appBroken)
     return 0;
@@ -60,8 +59,7 @@ int dofile_lua(lua_State* s)
     traceNoNL("DoFile: ");
     trace(filePath);
   }
-  if(dofile(filePath)!=0)
-  {
+  if(dofile(filePath)!=0) {
     const char* msg = lua_tostring(vm, -1);
     trace(msg);
     appBroken = 1;
@@ -70,8 +68,7 @@ int dofile_lua(lua_State* s)
 }
 
 
-int loadfile_lua(lua_State* s)
-{
+int loadfile_lua(lua_State* s) {
   char* str;
   const char* filePath;
 
@@ -94,7 +91,8 @@ int loadfile_lua(lua_State* s)
 int require_lua(lua_State* s)
 {
     s = s; // eliminate warning
-    trace("WARNING: REQUIRE IS NOT IMPLEMENTED. Use dofile instead.");
+    trace("ERROR: REQUIRE IS NOT IMPLEMENTED. Use dofile instead.");
+    appBroken = 1;
     return 0;
 }
 
@@ -156,8 +154,7 @@ int callFunc(int nParams)
 
 #define RegLuaFuncGlobal(fname) lua_pushcfunction(vm, fname##_lua); lua_setglobal(vm, #fname);
 
-void appInit(const char* resourcePath, int useAssetZip)
-{
+void appInit(const char* resourcePath, int useAssetZip) {
   inputInit();
   setResourcePath(resourcePath, useAssetZip);
 
@@ -172,9 +169,6 @@ void appInit(const char* resourcePath, int useAssetZip)
   luaopen__c_framework(vm);
 
   RegLuaFuncGlobal(require);
-  RegLuaFuncGlobal(dofile);
-  RegLuaFuncGlobal(loadfile);
-
 
   /*lua_newtable(vm);*/
 
@@ -200,8 +194,7 @@ void appInit(const char* resourcePath, int useAssetZip)
   /*RegLuaFunc(screenWidth);*/
 
   /*lua_setglobal(vm, "framework");*/
-  if(dofile("framework/entry_point.lua")!=0)
-  {
+  if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);
 	trace("Init error");
 	if(msg){
@@ -209,15 +202,13 @@ void appInit(const char* resourcePath, int useAssetZip)
 	}
     appBroken = 1;
   }
-  else
-  {
+  else {
     initRender();
   }
 }
 
 
-void appDeinit(void)
-{
+void appDeinit(void) {
   trace("---- APP CLEANUP ---");
 
   if(vm)
@@ -231,8 +222,7 @@ void appDeinit(void)
 }
 
 
-void appRender(long tick, int width, int height)
-{
+void appRender(long tick, int width, int height) {
   if(!vm)
     return;
 

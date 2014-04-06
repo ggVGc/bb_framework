@@ -27,7 +27,7 @@ function framework.TextureSheet.new(map, errorTexPath)
     local t = map[path]
     if not t then
       if not(errorTexPath == nil) then
-        t = map[errorTexPath] -- Warning: This will actually get modified
+        t = map[errortexpath] -- warning: this will actually get modified
       else
         error("Invalid key: "..path)
       end
@@ -44,7 +44,7 @@ function framework.TextureSheet.new(map, errorTexPath)
     end
 
     _c_framework.rectInit(tmpRect, t.rect.x/t.data.width, 
-                            t.rect.y/t.data.height, t.rect.w/t.data.width, t.rect.h/t.data.height)
+        t.rect.y/t.data.height, t.rect.w/t.data.width, t.rect.h/t.data.height)
 
     local tex = _c_framework.Texture()
     _c_framework.textureInit(tex, t.data, tmpRect)
@@ -79,7 +79,7 @@ function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPat
   _c_framework.rawBitmapDataCleanup(imageData)
     
 
-  map = {}
+  local map = {}
   local spl = layoutData:split(" ")
   for i, line in ipairs(layoutData:split("\n")) do 
     local spl = line:split(" ")

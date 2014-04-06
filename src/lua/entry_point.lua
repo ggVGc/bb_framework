@@ -1,13 +1,37 @@
 
 
-dofile("framework/bitmap.lua")
+function loadfile(path)
+  local codeString = _c_framework.loadBytes(path, nil)
+  local ret, err = loadstring(codeString, path)
+  if ret then
+    return ret
+  else
+    print(err)
+    return nil
+  end
+end
+
+function dofile(path)
+  local f = loadfile(path);
+  if f then
+    return f()
+  end
+  return nil
+end
+
+dofile("framework/strict.lua")
+
+framework = {}
+
 dofile("framework/camera.lua");
+dofile("framework/bitmap.lua")
 dofile("framework/input.lua");
 dofile("framework/texture_sheet.lua");
 dofile("framework/input.lua");
 dofile("framework/window.lua");
 dofile("framework/rect.lua");
 dofile("framework/extensions.lua");
+
 dofile("framework/graphics.lua");
 dofile("framework/vector.lua");
 
