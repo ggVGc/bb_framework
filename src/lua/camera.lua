@@ -41,15 +41,11 @@ function framework.Camera.new(width, height)
   end
 
   setmetatable(M, mt)
-
-
   return M
 end
 
 
 function framework.Camera.createDefault(width)
   local aspect = framework.Window.getHeight()/framework.Window.getWidth()
-  local w = width or (480*2)
-  local h = w * aspect
-  return framework.Camera.new(w, h)
+  return framework.Camera.new(width, width * aspect)
 end

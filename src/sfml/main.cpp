@@ -34,8 +34,8 @@ extern "C"
     } \
 }
 
-const int SCREEN_WIDTH = 800; //screen dimesions
-const int SCREEN_HEIGHT = 480;
+const int SCREEN_WIDTH = 960; //screen dimesions
+const int SCREEN_HEIGHT = 640;
 
 
   static long

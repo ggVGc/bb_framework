@@ -117,8 +117,7 @@ int luaErrorHandler(lua_State *L)
   return 1;
 }
 
-int callFunc(int nParams)
-{
+int callFunc(int nParams) {
   int result = 0;
   int size0 = lua_gettop(vm);
   int error_index = lua_gettop(vm) - nParams;
@@ -127,8 +126,7 @@ int callFunc(int nParams)
   lua_insert(vm, error_index);
 
   result = lua_pcall(vm, nParams, 0, error_index);
-  if( result != 0)
-  {
+  if( result != 0) {
     const char* msg = lua_tostring(vm, -1);
     trace("\n");
     trace(msg);
@@ -137,8 +135,7 @@ int callFunc(int nParams)
 
   lua_remove(vm, error_index);
 
-  if((lua_gettop(vm) + (int)nParams  + 1) != size0)
-  {
+  if((lua_gettop(vm) + (int)nParams  + 1) != size0) {
     trace("Stack size changed!");
   }
 
@@ -170,30 +167,6 @@ void appInit(const char* resourcePath, int useAssetZip) {
 
   RegLuaFuncGlobal(require);
 
-  /*lua_newtable(vm);*/
-
-  /*RegLuaFunc(bitmapCreate)*/
-  /*RegLuaFunc(bitmapDraw)*/
-  /*RegLuaFunc(trace);*/
-  /*RegLuaFunc(cursorX);*/
-  /*RegLuaFunc(cursorY);*/
-  /*RegLuaFunc(cursorDown);*/
-
-  /*RegLuaFunc(cameraSetActive);*/
-  /*RegLuaFunc(cameraCreate);*/
-  /*RegLuaFunc(cameraSetY);*/
-  /*RegLuaFunc(cameraSetX);*/
-  /*RegLuaFunc(cameraGetX);*/
-  /*RegLuaFunc(cameraGetY);*/
-  /*RegLuaFunc(cameraSetWidth);*/
-  /*RegLuaFunc(cameraSetHeight);*/
-  /*RegLuaFunc(cameraGetWidth);*/
-  /*RegLuaFunc(cameraGetHeight);*/
-
-  /*RegLuaFunc(screenHeight);*/
-  /*RegLuaFunc(screenWidth);*/
-
-  /*lua_setglobal(vm, "framework");*/
   if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);
 	trace("Init error");
@@ -211,14 +184,14 @@ void appInit(const char* resourcePath, int useAssetZip) {
 void appDeinit(void) {
   trace("---- APP CLEANUP ---");
 
-  if(vm)
-  {
+  if(vm) {
     lua_close(vm);
     resourcesCleanUp();
     vm = 0;
   }
-  else
+  else{
     trace("Called deinit while not initialised");
+  }
 }
 
 
@@ -238,7 +211,6 @@ void appRender(long tick, int width, int height) {
 
   if (didInit == 0 && appBroken==0){
     didInit = 1;
-    /*lua_getglobal(vm, "framework.init");*/
     lua_pushstring(vm, "init");
     lua_gettable(vm, -2);
     if(callFunc(0) != 0){
@@ -251,7 +223,6 @@ void appRender(long tick, int width, int height) {
     lua_settop(vm, 0);
     return;
   }else{
-    /*lua_getglobal(vm, "framework.doFrame");*/
     lua_pushstring(vm, "doFrame");
     lua_gettable(vm, -2);
     lua_pushnumber(vm, tick);
