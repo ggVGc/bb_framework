@@ -1,4 +1,4 @@
-framework = framework || {};
+framework = framework or {}
 framework.Graphics = {}
 
 function framework.Graphics.drawQuad(x,y,w,h,colour,rot,pivot)

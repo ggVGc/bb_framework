@@ -19,9 +19,9 @@ function dofile(path)
   return nil
 end
 
-dofile("framework/strict.lua")
+local strict = dofile("framework/strict.lua")
+strict.make_all_strict(_G)
 
-framework = {}
 
 dofile("framework/camera.lua");
 dofile("framework/bitmap.lua")
@@ -31,11 +31,8 @@ dofile("framework/input.lua");
 dofile("framework/window.lua");
 dofile("framework/rect.lua");
 dofile("framework/extensions.lua");
-
 dofile("framework/graphics.lua");
 dofile("framework/vector.lua");
-
-
 
 dofile("main.lua")
 --dofile("bitmap_jest.lua")

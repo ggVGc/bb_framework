@@ -10,44 +10,37 @@ framework = framework or {}
 
 
 framework.TextureSheet = {}
-framework.TextureSheet.mt = {}
-function framework.TextureSheet.mt.foo()
-  print("LKJL")
-end
 
 
-function framework.TextureSheet.new(map, errorTexPath)
+function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
   local M = {}
-  setmetatable(M, framework.TextureSheet.mt)
-
-  local tmpRect = _c_framework.Rect()
-
 
   function M.createTexture(path, expectedWidth, expectedHeight)
-    local t = map[path]
-    if not t then
+    local texRect = rectMap[path]
+    if not texRect then
       if not(errorTexPath == nil) then
-        t = map[errorTexPath] -- Warning: This will actually get modified
+        texRect = rectMap[errorTexPath] -- Warning: This will actually get modified
       else
         error("Invalid key: "..path)
       end
     else 
-      if expectedWidth == nil then expectedWidth = t.rect.w end
-      if expectedHeight == nil then expectedHeight = t.rect.h end
+      if expectedWidth == nil then expectedWidth = texRect.w end
+      if expectedHeight == nil then expectedHeight = texRect.h end
 
-      if math.floor(expectedWidth) ~= math.floor(t.rect.w) then  
-        error("expected width: "..expectedWidth.." does not match actual width: "..(t.rect.w))
+      if math.floor(expectedWidth) ~= math.floor(texRect.w) then  
+        error("expected width: "..expectedWidth.." does not match actual width: "..(texRect.w))
       end
-      if math.floor(expectedHeight) ~= math.floor(t.rect.h) then
-        error("expected height: "..expectedHeight.." does not match actual height: "..(t.rect.h))
+      if math.floor(expectedHeight) ~= math.floor(texRect.h) then
+        error("expected height: "..expectedHeight.." does not match actual height: "..(texRect.h))
       end
     end
 
-    _c_framework.rectInit(tmpRect, t.rect.x/t.data.width, 
-                            t.rect.y/t.data.height, t.rect.w/t.data.width, t.rect.h/t.data.height)
+    local tmpRect = _c_framework.Rect()
+    _c_framework.rectInit(tmpRect, texRect.x/bmData.width, 
+          texRect.y/bmData.height, texRect.w/bmData.width, texRect.h/bmData.height)
 
     local tex = _c_framework.Texture()
-    _c_framework.textureInit(tex, t.data, tmpRect)
+    _c_framework.textureInit(tex, bmData, tmpRect)
     if expectedHeight ~= nil then
       tex.width = expectedWidth
     end
@@ -79,7 +72,7 @@ function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPat
   _c_framework.rawBitmapDataCleanup(imageData)
     
 
-  local map = {}
+  local rectMap = {}
   local spl = layoutData:split(" ")
   for i, line in ipairs(layoutData:split("\n")) do 
     local spl = line:split(" ")
@@ -92,21 +85,20 @@ function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPat
       local h = tonumber(spl[6])
 
 
-      local t = {}
-      t.data = bmData
-      t.rect = {
+      local rect = {}
+      rect = {
         x = x,
         w = w,
         h = h
       }
-      t.rect.y = bmData.height - y- t.rect.h 
-      map[name] = t
+      rect.y = bmData.height - y- rect.h 
+      rectMap[name] = rect
     end
   end
 
 
 
-  return framework.TextureSheet.new(map, errorTexPath)
+  return framework.TextureSheet.new(rectMap, bmData, errorTexPath)
 end
 
 
