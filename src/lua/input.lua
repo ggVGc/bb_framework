@@ -1,7 +1,4 @@
-dofile("framework/Window.lua")
-
 framework = framework or {}
-
 
 framework.Input = 
 {
@@ -27,8 +24,8 @@ framework.Input =
     M.downPos = {x=0,y=0}
     M.releasePos = {x=0,y=0}
 
-    lastState = framework.Input.State.new()
-    curState = framework.Input.State.new()
+    local lastState = framework.Input.State.new()
+    local curState = framework.Input.State.new()
 
     function M.update()
       lastState = curState

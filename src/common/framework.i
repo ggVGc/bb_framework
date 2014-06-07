@@ -28,6 +28,7 @@
 int screenWidth(void);
 int screenHeight(void);
 int isAppBroken(void);
+void setAppBroken(int);
 
 char* loadBytes(const char* path, int* sz);
 RawBitmapData* loadImage(const char* filePath);

@@ -46,6 +46,7 @@ extern void setScreenWidth(int);
 extern void setScreenHeight(int);
 
 extern int isAppBroken(void);
+extern void setAppBroken(int isBroken);
 
 
 

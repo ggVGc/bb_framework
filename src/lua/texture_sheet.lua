@@ -4,16 +4,13 @@ dofile("framework/xml_pretty.lua")
 dofile("framework/texture.lua")
 dofile("framework/string_extensions.lua")
 
-
 framework = framework or {}
-
-
-
 framework.TextureSheet = {}
-
 
 function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
   local M = {}
+
+  local cache = {}
 
   function M.createTexture(path, expectedWidth, expectedHeight)
     local texRect = rectMap[path]
@@ -39,6 +36,7 @@ function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
     _c_framework.rectInit(tmpRect, texRect.x/bmData.width, 
           texRect.y/bmData.height, texRect.w/bmData.width, texRect.h/bmData.height)
 
+
     local tex = _c_framework.Texture()
     _c_framework.textureInit(tex, bmData, tmpRect)
     if expectedHeight ~= nil then
@@ -48,7 +46,12 @@ function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
       tex.height = expectedHeight
     end
 
-    return framework.Texture.new(tex)
+    local ret = cache[path]
+    if not ret then
+      ret = framework.Texture.new(tex) 
+      cache[path] = ret
+    end
+    return ret
   end
 
   return M

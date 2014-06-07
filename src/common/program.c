@@ -43,13 +43,14 @@ int dofile(const char* filePath){
   int ret;
   char* file = loadBytes(filePath, 0);
   if(!file){
-	  return -1;
+	return -1;
   }
   ret = doStringWithName(vm, file, filePath);
   free(file);
   return ret;
 }
 
+/*
 int dofile_lua(lua_State* s) {
   const char* filePath;
   if( BREAK_ON_FIRST_ERROR && appBroken)
@@ -67,7 +68,9 @@ int dofile_lua(lua_State* s) {
   return 0;
 }
 
+*/
 
+/*
 int loadfile_lua(lua_State* s) {
   char* str;
   const char* filePath;
@@ -87,7 +90,9 @@ int loadfile_lua(lua_State* s) {
   return 1;
 }
 
+*/
 
+/*
 int require_lua(lua_State* s)
 {
     s = s; // eliminate warning
@@ -96,9 +101,9 @@ int require_lua(lua_State* s)
     return 0;
 }
 
+*/
 
-int luaErrorHandler(lua_State *L) 
-{
+  int luaErrorHandler(lua_State *L) {
   trace("\n------- STACK TRACE ----------");
   lua_getfield(L, LUA_GLOBALSINDEX, "debug");
   if (!lua_istable(L, -1)) {
@@ -136,6 +141,7 @@ int callFunc(int nParams) {
   lua_remove(vm, error_index);
 
   if((lua_gettop(vm) + (int)nParams  + 1) != size0) {
+    result = -1;
     trace("Stack size changed!");
   }
 
@@ -161,17 +167,19 @@ void appInit(const char* resourcePath, int useAssetZip) {
 
   trace("---- APP INIT ----");
 
-  vm = lua_open();
+  vm = luaL_newstate();
   luaL_openlibs(vm);
   luaopen__c_framework(vm);
 
+  /*
   RegLuaFuncGlobal(require);
+  */
 
   if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);
 	trace("Init error");
 	if(msg){
-	    trace(msg);
+	  trace(msg);
 	}
     appBroken = 1;
   }
@@ -199,7 +207,7 @@ void appRender(long tick, int width, int height) {
   if(!vm)
     return;
 
-  // fix warning
+  // suppress warning
   tick = tick;
 
   setScreenWidth(width);
@@ -226,8 +234,7 @@ void appRender(long tick, int width, int height) {
     lua_pushstring(vm, "doFrame");
     lua_gettable(vm, -2);
     lua_pushnumber(vm, tick);
-    if(callFunc(1) != 0)
-    {
+    if(callFunc(1) != 0) {
       appBroken = 1;
       return;
     }
@@ -256,6 +263,11 @@ void setScreenHeight(int h){
 
 int isAppBroken(void){
   return appBroken;
+}
+
+void setAppBroken(int isBroken){
+  trace("SETTING APP BROKEN");
+  appBroken = isBroken;
 }
 
 

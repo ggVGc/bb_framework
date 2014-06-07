@@ -81,7 +81,6 @@ char* loadBytesFromZip(const char* inPath, int* size){
   // TODO: Should check for overflow.
   char path[1024];
   sprintf(path, "assets/%s\0", inPath);
- 
   uf = unzOpen(apkPath);
 
   /*if (!file)*/
@@ -96,9 +95,9 @@ char* loadBytesFromZip(const char* inPath, int* size){
     char* data;
     unz_file_info* info = (unz_file_info*)malloc(sizeof(unz_file_info));
 
-    unzLocateFile(uf, path, 0);
-	if(!uf){
-		return NULL;
+    if(unzLocateFile(uf, path, 0)){
+      // Invalid file path
+	  return NULL;
 	}
 		
     unzGetCurrentFileInfo(uf, info, NULL, 0, NULL, 0, NULL, 0);

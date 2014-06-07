@@ -33,7 +33,7 @@ function! RunJumpz()
   silent exec "lcd "curDir
 endfun
 
-map <buffer>  <F5> :call RunJumpz()<CR>
+"map <buffer>  <F5> :call RunJumpz()<CR>
 
 
 let s:x = fnamemodify(g:projectScriptDir, ":p")

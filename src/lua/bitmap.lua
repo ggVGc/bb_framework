@@ -22,9 +22,5 @@ function framework.Bitmap.new(path)
   function M.draw(x, y, rot, pivotX, pivotY)
     _c_framework.quadDrawTex(x or 0, y or 0, M.tex.width, M.tex.height, M.tex, rot or 0, pivotX or 0.5, pivotY or 0.5)
   end
-
-
-
   return M
-
 end

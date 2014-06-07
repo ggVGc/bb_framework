@@ -9,7 +9,6 @@ function framework.Camera.new(width, height)
 
   _c_framework.cameraInit(cam, 0, 0, width, height)
 
-
   local mt = {}
 
   mt.__index = function(table, key)
@@ -43,7 +42,6 @@ function framework.Camera.new(width, height)
   setmetatable(M, mt)
   return M
 end
-
 
 function framework.Camera.createDefault(width)
   local aspect = framework.Window.getHeight()/framework.Window.getWidth()
