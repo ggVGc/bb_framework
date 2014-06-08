@@ -19,17 +19,13 @@
 #include <android/log.h>
 #endif
 
-
-
 #define BREAK_ON_FIRST_ERROR 1
-
 
 extern int luaopen__c_framework(lua_State*);
 
 static lua_State* vm = 0;
 static int appBroken = 0;
 static int didInit = 0;
-
 
 int loadstringWithName(lua_State *L, const char *s, const char* name) {
   return luaL_loadbuffer(L, s, strlen(s), name);
@@ -122,7 +118,7 @@ int require_lua(lua_State* s)
   return 1;
 }
 
-int callFunc(int nParams) {
+int callFunc(int nParams, int nRet) {
   int result = 0;
   int size0 = lua_gettop(vm);
   int error_index = lua_gettop(vm) - nParams;
@@ -130,7 +126,7 @@ int callFunc(int nParams) {
   lua_pushcfunction(vm, luaErrorHandler);
   lua_insert(vm, error_index);
 
-  result = lua_pcall(vm, nParams, 0, error_index);
+  result = lua_pcall(vm, nParams, nRet, error_index);
   if( result != 0) {
     const char* msg = lua_tostring(vm, -1);
     trace("\n");
@@ -140,7 +136,7 @@ int callFunc(int nParams) {
 
   lua_remove(vm, error_index);
 
-  if((lua_gettop(vm) + (int)nParams  + 1) != size0) {
+  if((lua_gettop(vm) + (int)nParams -(int)nRet + 1) != size0) {
     result = -1;
     trace("Stack size changed!");
   }
@@ -203,43 +199,52 @@ void appDeinit(void) {
 }
 
 
-void appRender(long tick, int width, int height) {
-  if(!vm)
-    return;
+int appRender(long tick, int width, int height) {
+  if(!vm){
+    return 0;
+  }
 
   // suppress warning
   tick = tick;
 
   setScreenWidth(width);
   setScreenHeight(height);
-  
-  beginRenderFrame(width, height);
 
+  beginRenderFrame(width, height);
   lua_getglobal(vm, "framework");
 
   if (didInit == 0 && appBroken==0){
     didInit = 1;
     lua_pushstring(vm, "init");
     lua_gettable(vm, -2);
-    if(callFunc(0) != 0){
+    if(callFunc(0,0) != 0){
       appBroken = 1;
-      return;
+      return 0;
     }
   }
 
   if(appBroken != 0){
     lua_settop(vm, 0);
-    return;
+    return 0;
   }else{
     lua_pushstring(vm, "doFrame");
     lua_gettable(vm, -2);
     lua_pushnumber(vm, tick);
-    if(callFunc(1) != 0) {
+    if(callFunc(1,1) != 0) {
       appBroken = 1;
-      return;
+      return 0;
+    }
+    int ret = lua_tonumber(vm, -1);
+    lua_pop(vm, 1);
+    if(ret != 0){
+      lua_settop(vm, 0);
+      return ret;
     }
   }
+
+  lua_pop(vm, 1);
   lua_gc(vm, LUA_GCSTEP, 1);
+  return 0;
 }
 
 static int screenW = 0;

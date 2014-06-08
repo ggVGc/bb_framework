@@ -1,12 +1,5 @@
-
-
-
-
 framework = framework or {}
-
 framework.Texture = {}
-
-
 
 function framework.Texture.new(tex)
   local M = {}
@@ -32,6 +25,3 @@ function framework.Texture.new(tex)
 
   return M
 end
-
-
-

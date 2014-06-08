@@ -10,11 +10,11 @@ def translateMapping(originalString):
   lines = originalString.split('\n') 
   ret = ''
   for l in lines:
-    m = re.search('([0-9]+):\[.*([0-9]+):', l)
+    m = re.search('([0-9]+):\[.* ([0-9]+):', l)
     if m:
       luaInd = m.group(1)
       moonInd = m.group(2)
-      ret += '["%s"]=%s,'%(luaInd, moonInd)
+      ret += '{%s,%s},'%(luaInd, moonInd)
   return ret
 
 def translateCompileErrorMapping(originalString):
@@ -37,7 +37,7 @@ def handleMoonFiles(zipOut, r, prefix, filePaths):
       msg, rowNum = translateCompileErrorMapping(output)
       with open(luaFilePath, 'w') as out:
         out.write("error('%s')"%msg)
-      sourceMappings+='["%s"]={["1"]=%s},'%(fileKey, rowNum)
+      sourceMappings+='["%s"]={{1,%s}},'%(fileKey, rowNum)
 
     zipOut.write(luaFilePath, os.path.join("assets", prefix, rp))
     os.remove(luaFilePath)

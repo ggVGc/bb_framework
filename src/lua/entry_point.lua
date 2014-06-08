@@ -39,12 +39,22 @@ function rewriteErrorMsg(errMsg)
   ind2 = errMsg:find(':', ind1+1)
   local errNum = tonumber(errMsg:sub(ind1+1, ind2-1))
   local data = dofile_raw('moon_source_mappings.lua', true)
+  local lineNum = nil
   if(data and data[fileKey]) then
-    for k,v in pairs(data[fileKey]) do
-      local n = tonumber(k)
-      if errNum >= n then
-        return errMsg:gsub(':'..tostring(errNum)..':', ':'..tostring(v)..':'):gsub('%.lua', '.moon')
+    for _,entry in ipairs(data[fileKey]) do
+      local luaLine, moonLine = entry[1], entry[2]
+      if lineNum==nil then
+        if errNum >= luaLine then lineNum = moonLine end
+      else
+        if errNum<luaLine then
+          break
+        else
+          lineNum = moonLine
+        end
       end
+    end
+    if lineNum then
+      return errMsg:gsub(':'..tostring(errNum)..':', ':'..tostring(lineNum)..':'):gsub('%.lua', '.moon')
     end
   end
   return errMsg
@@ -54,7 +64,8 @@ end
 local function doCall(func)
   local e = nil
   local function handler(err)
-    e = err
+    print(debug.traceback(rewriteErrorMsg(err), 2))
+    _c_framework.setAppBroken(1);
   end
   local ret;
   xpcall(function()
@@ -62,8 +73,6 @@ local function doCall(func)
   end, handler)
 
   if e then
-    print(debug.traceback(rewriteErrorMsg(e), 2))
-    _c_framework.setAppBroken(1);
   end
 
   return ret;
@@ -104,7 +113,7 @@ dofile("framework/window.lua");
 dofile("framework/rect.lua");
 dofile("framework/extensions.lua");
 dofile("framework/graphics.lua");
-dofile("framework/bitmap_animation.lua");
+dofile("framework/bitmap_animation.moon");
 dofile("framework/vector.lua");
 
 dofile("main.lua")
@@ -115,6 +124,7 @@ dofile("main.lua")
 --dofile("framework/test/screen_test.lua")
 --dofile("framework/test/camera_test.lua")
 --dofile("framework/test/vector_test.lua")
+--dofile("framework/test/bitmap_animation_test.moon")
 
 framework = framework or {}
 
@@ -124,12 +134,19 @@ function framework.init()
   main = doCall(Main.new)
 end
 
+
+local running = true
+framework.exit = function()
+  running = false
+end
 function framework.doFrame(deltaMs)
   local d
   if deltaMs>0 then d = deltaMs else d = 0 end
-  if _c_framework.isAppBroken() == 0 then
+  if running and _c_framework.isAppBroken() == 0 then
     doCall(function()
       main.doFrame(d)
     end)
+  else
+    return 1
   end
 end

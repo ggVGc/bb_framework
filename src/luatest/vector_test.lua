@@ -2,6 +2,7 @@
 Main = {}
 
 local v = Vector.new(100,200)
+local done = false
 local function f()
   if not done then 
     assert(v[1] == v.x)

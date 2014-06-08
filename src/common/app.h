@@ -38,7 +38,7 @@ extern "C" {
 // The simple framework expects the application code to define these functions.
 extern void appInit(const char* assetPath, int useAssetZip);
 extern void appDeinit(void);
-extern void appRender(long tick, int width, int height);
+extern int appRender(long tick, int width, int height);
 
 extern int screenWidth(void);
 extern int screenHeight(void);
@@ -47,8 +47,6 @@ extern void setScreenHeight(int);
 
 extern int isAppBroken(void);
 extern void setAppBroken(int isBroken);
-
-
 
 #ifdef __cplusplus
 }

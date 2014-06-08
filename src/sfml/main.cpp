@@ -4,7 +4,6 @@ extern "C"
   #include "framework/input.h"
 }
 
-
 #ifdef __APPLE__
   #include <OpenGl/GL.h>
   #include <OpenGl/glu.h>
@@ -34,13 +33,13 @@ extern "C"
     } \
 }
 
+typedef  sf::Event E;
+
 const int SCREEN_WIDTH = 960; //screen dimesions
 const int SCREEN_HEIGHT = 640;
 
 
-  static long
-_getTime(void)
-{
+static long _getTime(void) {
 #ifdef WIN32
 	return timeGetTime();
 #else
@@ -51,43 +50,38 @@ _getTime(void)
 }
 
 
-int main()
-{
+int main() {
   sf::Window wnd(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "SFML OpenGL", sf::Style::Close);
 
   appInit("assets.zip", 1);
 
   long lastTime = 0;
-  while (wnd.IsOpened())
-  {
-    sf::Event e;
-    while (wnd.GetEvent(e))
-    {
-      if (e.Type == sf::Event::Closed)
-	  {
-        wnd.Close();
-		appDeinit();
-		return 0;
-	  }
-      if (e.Type == sf::Event::MouseButtonPressed)
-      {
+  while (wnd.IsOpened()) {
+    E e;
+    while (wnd.GetEvent(e)) {
+      switch(e.Type){
+        case E::Closed:
+          wnd.Close();
+          appDeinit();
+          return 0;
+        break;
+        case E::MouseButtonPressed:
           setCursorPos(e.MouseButton.X, e.MouseButton.Y);
           setCursorDownState(1);
-      }
-      else if(e.Type == sf::Event::MouseButtonReleased)
-      {
+        break;
+        case E::MouseButtonReleased:
           setCursorPos(e.MouseButton.X, e.MouseButton.Y);
           setCursorDownState(0);
-      }
-      else if (e.Type == sf::Event::MouseMoved)
-      {
-        setCursorPos(e.MouseMove.X, e.MouseMove.Y);
-      }
-      else if( e.Type == sf::Event::KeyPressed){
-        setKeyPressed(e.Key.Code);
-      }
-      else if( e.Type == sf::Event::KeyReleased){
-        setKeyReleased(e.Key.Code);
+        break;
+        case E::MouseMoved:
+          setCursorPos(e.MouseMove.X, e.MouseMove.Y);
+        break;
+        case E::KeyPressed:
+          setKeyPressed(e.Key.Code);
+        break;
+        case E::KeyReleased:
+          setKeyReleased(e.Key.Code);
+        break;
       }
     }
     long curTime = _getTime();
@@ -95,10 +89,14 @@ int main()
 
     lastTime = curTime;
 
-    appRender(delta, SCREEN_WIDTH, SCREEN_HEIGHT);
-	fflush(stdout);
-    glError();
-    wnd.Display();
+    if(appRender(delta, SCREEN_WIDTH, SCREEN_HEIGHT)){
+      wnd.Close();
+      break;
+    }else{
+      fflush(stdout);
+      glError();
+      wnd.Display();
+    }
   }
 
   appDeinit();

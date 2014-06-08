@@ -1,8 +1,6 @@
 framework = framework or {}
 
-framework.Input = 
-{
-
+framework.Input = {
   MAX_KEYS = 512,
 
   cursorDown= function() return not(_c_framework.cursorDown()==0) end,
@@ -16,7 +14,6 @@ framework.Input =
       return {x=x, y=y, cursorDown=cursorDown, keysDown={}}
     end
   },
-
 
   new=function()
     local M = {}
