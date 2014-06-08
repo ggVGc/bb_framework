@@ -1,14 +1,11 @@
 export Main = {new: ->
-  sheet = framework.TextureSheet.fromFiles("data/sheet.png", "data/sheet.txt")
-  frame = sheet.createTexture 'jumper.png'
+  sheet = framework.TextureSheet.fromFiles "data/sheet.png", "data/sheet.txt"
+  frames = [sheet.createTexture 'jumper.png' for x=0,5]
   cam = framework.Camera.createDefault 960
-  i =0
+  anim = framework.BitmapAnimation.new frames
   doFrame: (deltaMs)->
-    i+=1
-    print 'draw', i
     cam.apply!
-    frame.draw()
-    return 0
+    anim.draw 200,200
 }
 
 

@@ -117,6 +117,7 @@ dofile("framework/bitmap_animation.moon");
 dofile("framework/vector.lua");
 
 dofile("main.lua")
+--dofile("framework/test/bitmap_animation_test.moon")
 --dofile("bitmap_test.lua")
 --dofile("framework/test/xmltest.lua")
 --dofile("framework/test/texture_sheet_test.lua")
@@ -124,7 +125,6 @@ dofile("main.lua")
 --dofile("framework/test/screen_test.lua")
 --dofile("framework/test/camera_test.lua")
 --dofile("framework/test/vector_test.lua")
---dofile("framework/test/bitmap_animation_test.moon")
 
 framework = framework or {}
 

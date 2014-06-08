@@ -10,10 +10,9 @@ framework.BitmapAnimation = {
 new:(frames)->
   curFrame = 1
   with {}
-    .draw = ->
-      frames[curFrame].draw!
-      --curFrame = incWrap curFrame, #frames, 1
-      print curFrame
+    .draw = (x,y)->
+      frames[curFrame].draw x, y
+      curFrame = incWrap curFrame, #frames, 1
 }
 
 framework.BitmapAnimation

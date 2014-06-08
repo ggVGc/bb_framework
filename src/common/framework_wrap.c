@@ -4557,22 +4557,6 @@ fail:
 }
 
 
-static int _wrap_close(lua_State* L) {
-  int SWIG_arg = 0;
-  
-  SWIG_check_num_args("close",0,0)
-  close();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_loadBytes(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
@@ -4655,7 +4639,6 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},
     { "setAppBroken", _wrap_setAppBroken},
-    { "close", _wrap_close},
     { "loadBytes", _wrap_loadBytes},
     { "loadImage", _wrap_loadImage},
     {0,0}

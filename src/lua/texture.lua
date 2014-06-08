@@ -1,8 +1,16 @@
 framework = framework or {}
 framework.Texture = {}
 
-function framework.Texture.new(tex)
+function framework.Texture.new(bmData, x, y, w, h)
   local M = {}
+  local tex = _c_framework.Texture()
+
+  local tmpRect = _c_framework.Rect()
+  _c_framework.rectInit(tmpRect, x/bmData.width, 
+      y/bmData.height, w/bmData.width, h/bmData.height)
+  _c_framework.textureInit(tex, bmData, tmpRect)
+
+  M._bmDataRef = bmData --  keep ref to prevent GC
 
   local mt = {}
   function mt.__index(t,k)

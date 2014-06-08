@@ -4,8 +4,7 @@
 #include <GLES/gl.h>
 #include "texture.h"
 
-void textureInit(Texture* tex, BitmapData* data, Rect sourceRect)
-{
+void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
   float x = sourceRect.x;
   float y = sourceRect.y;
   float w = sourceRect.w;
@@ -26,9 +25,5 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect)
   tex->width = w*data->width;
   tex->height = h*data->height;
 
-
-  
-
   memcpy(tex->uvCoords, texCoords, sizeof(GLfloat)*12);
-
 }

@@ -9,7 +9,6 @@ framework.TextureSheet = {}
 
 function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
   local M = {}
-
   local cache = {}
 
   function M.createTexture(path, expectedWidth, expectedHeight)
@@ -32,23 +31,15 @@ function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
       end
     end
 
-    local tmpRect = _c_framework.Rect()
-    _c_framework.rectInit(tmpRect, texRect.x/bmData.width, 
-          texRect.y/bmData.height, texRect.w/bmData.width, texRect.h/bmData.height)
 
-
-    local tex = _c_framework.Texture()
-    _c_framework.textureInit(tex, bmData, tmpRect)
-    if expectedHeight ~= nil then
-      tex.width = expectedWidth
-    end
-    if expectedHeight ~= nil then
-      tex.height = expectedHeight
-    end
 
     local ret = cache[path]
     if not ret then
-      ret = framework.Texture.new(tex) 
+      local w = texRect.width
+      local h = texRect.height
+      if expectedHeight ~= nil then w = expectedWidth end
+      if expectedHeight ~= nil then h = expectedHeight end
+      ret = framework.Texture.new(bmData, texRect.x, texRect.y, w, h) 
       cache[path] = ret
     end
     return ret
