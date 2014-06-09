@@ -11,6 +11,10 @@ function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
   local M = {}
   local cache = {}
 
+  function M.exists(path)
+    return rectMap[path] ~= nil
+  end
+
   function M.createTexture(path, expectedWidth, expectedHeight)
     local texRect = rectMap[path]
     if not texRect then
@@ -30,8 +34,6 @@ function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
         error("expected height: "..expectedHeight.." does not match actual height: "..(texRect.h))
       end
     end
-
-
 
     local ret = cache[path]
     if not ret then
