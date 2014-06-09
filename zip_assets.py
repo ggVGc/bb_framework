@@ -18,8 +18,11 @@ def translateMapping(originalString):
   return ret
 
 def translateCompileErrorMapping(originalString):
+  msg = originalString
   m = re.search('\[([0-9]+)\]', originalString)
-  return 'Parse error', m.group(1)
+  if m:
+    msg = m.group(1)
+  return 'Parse error', msg
 
 
 def handleMoonFiles(zipOut, r, prefix, filePaths):

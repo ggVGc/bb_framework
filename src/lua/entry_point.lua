@@ -99,7 +99,6 @@ dofile "framework/moon.lua"
 local strict = dofile("framework/strict.lua")
 strict.make_all_strict(_G)
 
-
 --Add Moses globally as undescore
 _ = dofile("framework/libs/moses.lua");
 
@@ -115,6 +114,7 @@ dofile("framework/extensions.lua");
 dofile("framework/graphics.lua");
 dofile("framework/bitmap_animation.moon");
 dofile("framework/vector.lua");
+dofile("framework/level.moon");
 
 dofile("main.lua")
 --dofile("framework/test/bitmap_animation_test.moon")
