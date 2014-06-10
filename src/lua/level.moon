@@ -1,7 +1,7 @@
 framework = framework or {}
 
 framework.Level = {
-new:(levelDefinition, texCreator, screenWidth, screenHeight)-> with {}
+new: maker (levelDefinition, texCreator, screenWidth, screenHeight) =>
   offsetParsers = {
     {
       c: (o,w,h)-> o.x,o.y = w/2, h/2
@@ -36,18 +36,16 @@ new:(levelDefinition, texCreator, screenWidth, screenHeight)-> with {}
       .x = (data.left or data.right) and ((data.left and data.left-off.x) or screenWidth-off.x-data.right)
       .y = (data.bottom or data.top) and ((data.bottom and data.bottom-off.y) or screenHeight-off.y-data.top)
 
+  images = pipe levelDefinition, {fun.map, makeImageEntry}, rejectNil, fun.totable
+  updatableObjects = pipe images, {fun.filter, (o)->o.texture.update}, fun.totable
 
+  @update = (deltaMs) ->
+    o.texture.update deltaMs for o in *updatableObjects
 
-  images = fun.totable fun.filter(fun.op.truth, fun.map(makeImageEntry, levelDefinition))
-
-  images = chain levelDefinition, {map, makeImageEntry}, {filter, op.truth}, totable
-
-
-
-
-  .draw =->
+  @draw =->
     for img in *images
       with img do .texture.draw(.x,.y,0,0)
 }
+
 
 framework.Level

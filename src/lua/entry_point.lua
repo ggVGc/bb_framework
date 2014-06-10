@@ -101,13 +101,8 @@ strict.make_all_strict(_G)
 
 --Add Moses globally as undescore
 _ = dofile("framework/libs/moses.lua");
+
 fun = dofile("framework/libs/fun.lua");
-for k,v in pairs(dofile("framework/fun_additions.moon")) do
-  print (k)
-  fun[k] = v
-end
-
-
 
 framework = {}
 dofile("framework/globals.moon");

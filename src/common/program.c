@@ -200,7 +200,9 @@ void appDeinit(void) {
 
 
 int appRender(long tick, int width, int height) {
-  if(!vm){
+	int ret;
+	
+	if(!vm){
     return 0;
   }
 
@@ -234,7 +236,7 @@ int appRender(long tick, int width, int height) {
       appBroken = 1;
       return 0;
     }
-    int ret = lua_tonumber(vm, -1);
+    ret = lua_tonumber(vm, -1);
     lua_pop(vm, 1);
     if(ret != 0){
       lua_settop(vm, 0);

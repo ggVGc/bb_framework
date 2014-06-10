@@ -28,7 +28,7 @@ def translateCompileErrorMapping(originalString):
 def handleMoonFiles(zipOut, r, prefix, filePaths):
   sourceMappings = ''
   for path in filePaths:
-    proc = subprocess.Popen(['moonc', path], stderr=subprocess.PIPE)
+    proc = subprocess.Popen(['./moonscript/bin/moonc', path], stderr=subprocess.PIPE)
     output =  proc.communicate()[1]
     ret = proc.returncode
 
@@ -46,7 +46,7 @@ def handleMoonFiles(zipOut, r, prefix, filePaths):
     os.remove(luaFilePath)
 
     if ret == 0:
-      mapping = subprocess.check_output(['moonc', '-X', path]) 
+      mapping = subprocess.check_output(['./moonscript/bin/moonc', '-X', path]) 
       sourceMappings+='["%s"]={%s},'%(fileKey, translateMapping(mapping))
 
   return sourceMappings
