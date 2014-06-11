@@ -32,7 +32,10 @@ export compose = (...) ->
             fn = _.bindn(fn[1], unpack(_.slice(fn, 2)))
           else
             fn = wrap fn
-        _temp = _temp and fn(_temp) or fn(...)
+        if _temp
+          _temp = fn(_temp)
+        else
+          _temp = fn(...)
       _temp
 
 export pipe=(...) -> compose(...)!
