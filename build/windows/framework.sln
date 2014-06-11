@@ -17,6 +17,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sfml-system", "..\..\deps\w
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sfml-window", "..\..\deps\win\SFML-1.6\build\vc2008\sfml-window.vcxproj", "{0F9CE5F0-4D89-4314-9147-8AAB1B8842ED}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lpeg", "lpeg\lpeg.vcxproj", "{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua\lua.vcxproj", "{91973F7E-3ABE-41CA-82D6-3784FC305A68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug DLL|Win32 = Debug DLL|Win32
@@ -123,6 +127,30 @@ Global
 		{0F9CE5F0-4D89-4314-9147-8AAB1B8842ED}.Release static|Win32.Build.0 = Release static|Win32
 		{0F9CE5F0-4D89-4314-9147-8AAB1B8842ED}.Release|Win32.ActiveCfg = Release static|Win32
 		{0F9CE5F0-4D89-4314-9147-8AAB1B8842ED}.Release|Win32.Build.0 = Release static|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Debug DLL|Win32.ActiveCfg = Debug|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Debug DLL|Win32.Build.0 = Debug|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Debug static|Win32.ActiveCfg = Debug|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Debug static|Win32.Build.0 = Debug|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Debug|Win32.ActiveCfg = Debug|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Debug|Win32.Build.0 = Debug|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Release DLL|Win32.ActiveCfg = Release|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Release DLL|Win32.Build.0 = Release|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Release static|Win32.ActiveCfg = Release|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Release static|Win32.Build.0 = Release|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Release|Win32.ActiveCfg = Release|Win32
+		{707DE1B1-BE8C-4CB2-9E90-D7CF5347AD67}.Release|Win32.Build.0 = Release|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Debug DLL|Win32.ActiveCfg = Debug|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Debug DLL|Win32.Build.0 = Debug|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Debug static|Win32.ActiveCfg = Debug|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Debug static|Win32.Build.0 = Debug|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Debug|Win32.ActiveCfg = Debug|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Debug|Win32.Build.0 = Debug|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Release DLL|Win32.ActiveCfg = Release|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Release DLL|Win32.Build.0 = Release|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Release static|Win32.ActiveCfg = Release|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Release static|Win32.Build.0 = Release|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Release|Win32.ActiveCfg = Release|Win32
+		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
