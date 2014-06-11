@@ -113,8 +113,8 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
   #os.system(cmd)
 
 
-#def buildLpeg():
-  #buildLib("bin/liblpega.a", ["./deps/common/lpeg-0.12"], [], "")
+
+
 
 def buildLua():
   return buildLib("bin/libluaa.a", ["./deps/common/lua"], [], "")
@@ -175,7 +175,6 @@ if __name__ == '__main__':
   if len(sys.argv) >= 2 and sys.argv[1] == "only_exe":
     compileLibs = False
   if compileLibs:
-    #buildLpeg()
     ret = buildLua()
     if ret == 0:
       ret = buildMinizip()

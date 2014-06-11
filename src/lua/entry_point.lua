@@ -61,20 +61,140 @@ function rewriteErrorMsg(errMsg)
 end
 
 
+
+local trim
+trim = function(str)
+  return str:match("^%s*(.-)%s*$")
+end
+
+local split
+split = function(str, delim)
+  if str == "" then
+    return { }
+  end
+  str = str .. delim
+  local _accum_0 = { }
+  local _len_0 = 1
+  for m in str:gmatch("(.-)" .. delim) do
+    _accum_0[_len_0] = m
+    _len_0 = _len_0 + 1
+  end
+  return _accum_0
+end
+
+
+local lineTab = {}
+
+local rewrite_traceback
+rewrite_traceback = function(text, err)
+  local line_tables = lineTab
+  local V, S, Ct, C
+  V, S, Ct, C = lpeg.V, lpeg.S, lpeg.Ct, lpeg.C
+  local header_text = "stack traceback:"
+  local Header, Line = V("Header"), V("Line")
+  local Break = lpeg.S("\n")
+  local g = lpeg.P({
+    Header,
+    Header = header_text * Break * Ct(Line ^ 1),
+    Line = "\t" * C((1 - Break) ^ 0) * (Break + -1)
+  })
+  local cache = { }
+  local rewrite_single
+  rewrite_single = function(trace)
+    local fname, line, msg = trace:match('^(.-):(%d+): (.*)$')
+    local tbl = line_tables["@" .. tostring(fname)]
+    if fname and tbl then
+      return table.concat({
+        fname,
+        ":",
+        reverse_line_number(fname, tbl, line, cache),
+        ": ",
+        "(",
+        line,
+        ") ",
+        msg
+      })
+    else
+      return trace
+    end
+  end
+  err = rewrite_single(err)
+  local match = g:match(text)
+  if not (match) then
+    return nil
+  end
+  for i, trace in ipairs(match) do
+    match[i] = rewrite_single(trace)
+  end
+  return table.concat({
+    "moon: " .. err,
+    header_text,
+    "\t" .. table.concat(match, "\n\t")
+  }, "\n")
+end
+
+
+
+local truncate_traceback
+truncate_traceback = function(traceback, chunk_func)
+  if chunk_func == nil then
+    chunk_func = "moonscript_chunk"
+  end
+  traceback = split(traceback, "\n")
+  local stop = #traceback
+  while stop > 1 do
+    if traceback[stop]:match(chunk_func) then
+      break
+    end
+    stop = stop - 1
+  end
+  do
+    local _accum_0 = { }
+    local _len_0 = 1
+    local _max_0 = stop
+    for _index_0 = 1, _max_0 < 0 and #traceback + _max_0 or _max_0 do
+      local t = traceback[_index_0]
+      _accum_0[_len_0] = t
+      _len_0 = _len_0 + 1
+    end
+    traceback = _accum_0
+  end
+  local rep = "function '" .. chunk_func .. "'"
+  traceback[#traceback] = traceback[#traceback]:gsub(rep, "main chunk")
+  return table.concat(traceback, "\n")
+end
+
 local function doCall(func)
-  local e = nil
-  local function handler(err)
-    print(debug.traceback(rewriteErrorMsg(err), 2))
+  local err = nil
+  local trace
+  local function handler(e)
+    err = e
+    trace = debug.traceback('', 2)
     _c_framework.setAppBroken(1);
   end
+
   local ret;
   xpcall(function()
     ret = func()
   end, handler)
 
-  if e then
-  end
+  if err then
+      --local truncated = truncate_traceback(trim(trace))
+      --local rewritten = rewrite_traceback(truncated, err)
+      --local rewritten = rewrite_traceback(truncated, err)
 
+
+      local rewritten = rewriteErrorMsg(err)..'\n'..trace
+
+      if rewritten then
+        print 'printing rewritten'
+        print(rewritten)
+      else
+        print 'failed rewrite'
+          -- faield to rewrite, show original
+          print(err..'\n'..trim(trace))
+      end
+  end
   return ret;
 end
 
