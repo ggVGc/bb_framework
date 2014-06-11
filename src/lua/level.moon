@@ -26,7 +26,7 @@ new: maker (levelDefinition, texCreator, screenWidth, screenHeight) =>
     texName = data[1]..'.png'
     O = {
       x:0,y:0,
-      texture: texCreator texName
+      texture: texCreator texName, data
     }
     if not O.texture
       print 'Invalid asset: '..texName

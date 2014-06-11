@@ -7,15 +7,22 @@ incWrap=(index, len, start=0)->
     index+1
 
 framework.BitmapAnimation = {
-new: maker (frames, timePerFrame=1) =>
-  timePerFrame*=1000
+new: maker (frames, frameTimes={1}) =>
+  if not _.isArray frameTimes
+    frameTimes = {frameTimes}
   curFrame = 1
-  curFrameTime = 0
+  frameTimeCounter = 0
   @update = (deltaMs) ->
-    curFrameTime = curFrameTime+deltaMs
-    if curFrameTime>=timePerFrame
+    frameTimeCounter += deltaMs
+    curFrameTime = do
+      if curFrame <= #frameTimes
+        frameTimes[curFrame]
+      else
+        frameTimes[#frameTimes]
+
+    if frameTimeCounter>= curFrameTime*1000
       curFrame = incWrap curFrame, #frames, 1
-      curFrameTime = 0
+      frameTimeCounter = 0
   @draw = (x,y)->
     frames[curFrame].draw x, y
 }
