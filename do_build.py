@@ -4,6 +4,10 @@ import os
 import sys
 
 def buildLib(outfile, srcDirs, srcFiles, cflags):
+
+  if os.path.exists(outfile):
+    print 'removing ', outfile
+    os.remove(outfile)
   objDir = os.path.join("obj", os.path.split(outfile)[1])
 
   if not os.path.exists(objDir):
@@ -19,17 +23,21 @@ def buildLib(outfile, srcDirs, srcFiles, cflags):
     objFiles += " "+objFile
     cmd = ("cc "+cflags+" -c -o "+objFile+" "+fullPath)
     print cmd
-    os.system(cmd)
+    return os.system(cmd)
 
+  ret = 0
   for d in srcDirs:
     for x in os.listdir(d):
       if x.endswith(".c"):
-        compile(os.path.join(d, x))
+        ret = compile(os.path.join(d, x))
+        if ret != 0:
+          return ret
         
   for f in srcFiles:
-    print objFiles+" 2"
-    compile(f)
-
+    print objFiles+" "
+    ret = compile(f)
+    if ret != 0:
+      return ret
 
   cmd = "ar -cvq "+outfile+" "+objFiles
   print cmd
@@ -105,9 +113,11 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
   #os.system(cmd)
 
 
+#def buildLpeg():
+  #buildLib("bin/liblpega.a", ["./deps/common/lpeg-0.12"], [], "")
 
 def buildLua():
-  buildLib("bin/libluaa.a", ["./deps/common/lua"], [], "")
+  return buildLib("bin/libluaa.a", ["./deps/common/lua"], [], "")
 
 def buildMinizip():
   files =[
@@ -116,10 +126,10 @@ def buildMinizip():
       "./deps/common/minizip/ioapi.c"
       ]
 
-  buildLib("bin/libminizipa.a", [], files, "")
+  return buildLib("bin/libminizipa.a", [], files, "")
 
 def buildPng():
-  buildLib("bin/libpnga.a", ["./deps/common/libpng"], [], "")
+  return buildLib("bin/libpnga.a", ["./deps/common/libpng"], [], "")
 
 
 def buildFramework():
@@ -146,12 +156,12 @@ def buildFramework():
       "-I./deps/win/SFML-1.6/include"
       ])
 
+  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lluaa'
   if sys.platform == "darwin":
     cflags += " -I/Users/walt/sfml/include "
-
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin -lm -ldl -lpnga -lz -lminizipa -lluaa -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
   else:
-      return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin -lm -ldl -lpnga -lz -lminizipa -lluaa -lGL -lGLU -l:libsfml-graphics.so.1.6 -l:libsfml-window.so.1.6 -l:libsfml-system.so.1.6 -l:libsfml-audio.so.1.6")
+      return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin "+commonLibString+" -lGL -lGLU -l:libsfml-graphics.so.1.6 -l:libsfml-window.so.1.6 -l:libsfml-system.so.1.6 -l:libsfml-audio.so.1.6")
 
 
 
@@ -165,10 +175,16 @@ if __name__ == '__main__':
   if len(sys.argv) >= 2 and sys.argv[1] == "only_exe":
     compileLibs = False
   if compileLibs:
-    buildLua()
-    buildMinizip()
-    buildPng()
-  ret = buildFramework()
+    #buildLpeg()
+    ret = buildLua()
+    if ret == 0:
+      ret = buildMinizip()
+    if ret == 0:
+      ret = buildPng()
+  if ret == 0 and not 'only_libs' in sys.argv:
+    ret = buildFramework()
+  else:
+    sys.exit(0)
   if ret >=255:
     ret = 255
   print ret
