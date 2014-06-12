@@ -101,6 +101,7 @@ int require_lua(lua_State* s)
 
   int luaErrorHandler(lua_State *L) {
   trace("\n------- STACK TRACE ----------");
+  /*
   lua_getfield(L, LUA_GLOBALSINDEX, "debug");
   if (!lua_istable(L, -1)) {
     lua_pop(L, 1);
@@ -114,6 +115,7 @@ int require_lua(lua_State* s)
   lua_pushvalue(L, 1);
   lua_pushinteger(L, 2);
   lua_call(L, 2, 1);
+  */
 
   return 1;
 }

@@ -174,6 +174,7 @@ if __name__ == '__main__':
   compileLibs = True
   if len(sys.argv) >= 2 and sys.argv[1] == "only_exe":
     compileLibs = False
+  ret = 0
   if compileLibs:
     ret = buildLua()
     if ret == 0:

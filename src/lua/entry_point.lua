@@ -11,7 +11,7 @@ function loadfile(path, ignoreInvalid, errorReportOffset)
       return nil
     end
   end
-  local ret, err = loadstring(codeString, path)
+  local ret, err = load(codeString, path)
   if ret then
     return ret
   else
@@ -216,30 +216,35 @@ dofile "framework/moon.lua"
 
 ]]
 
-local strict = dofile("framework/strict.lua")
-strict.make_all_strict(_G)
 
 --Add Moses globally as undescore
-_ = dofile("framework/libs/moses.lua");
+do 
+  local oldUnpack = unpack
+  unpack = table.unpack
+   _ = dofile "framework/libs/moses.lua";
+   unpack = oldUnpack
+end
 
-fun = dofile("framework/libs/fun.lua");
+dofile("framework/strict.lua").make_all_strict(_G)
+
+fun = dofile "framework/libs/fun.lua";
 
 framework = {}
-dofile("framework/globals.moon");
-dofile("framework/camera.lua");
-dofile("framework/bitmap.lua")
-dofile("framework/input.lua");
-dofile("framework/texture_sheet.lua");
-dofile("framework/input.lua");
-dofile("framework/window.lua");
-dofile("framework/rect.lua");
-dofile("framework/extensions.lua");
-dofile("framework/graphics.lua");
-dofile("framework/bitmap_animation.moon");
-dofile("framework/vector.lua");
-dofile("framework/level.moon");
+dofile "framework/globals.moon";
+dofile "framework/camera.lua";
+dofile "framework/bitmap.lua"
+dofile "framework/input.lua";
+dofile "framework/texture_sheet.lua";
+dofile "framework/input.lua";
+dofile "framework/window.lua";
+dofile "framework/rect.lua";
+dofile "framework/extensions.lua";
+dofile "framework/graphics.lua";
+dofile "framework/bitmap_animation.moon";
+dofile "framework/vector.lua";
+dofile "framework/level.moon";
 
-dofile("main.lua")
+dofile "main.lua"
 --dofile("framework/test/bitmap_animation_test.moon")
 --dofile("bitmap_test.lua")
 --dofile("framework/test/xmltest.lua")
