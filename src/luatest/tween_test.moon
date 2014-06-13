@@ -1,14 +1,15 @@
 export Main = {new: ->
-  a = {5,3,4,6,7,8,4,23,44,2,3,5,6,6,2}
-  s = block ->
-    for x in *a
-      return x if x>10
-
-  print s
-
+  obj = {x:1}
+  t = Tween.get obj, {loop:true}
+  --t.wait(2000).call(f).to({x:100}, 5000).wait(1).to({x:30}, 10000)
+  with t
+    .wait 1000
+    .to {x:200}, 3000
+    .to {x:1}, 500
   doFrame: (deltaMs)->
-    t = Tween.get {}
-    Tween.tick 10, false
+    if deltaMs<1000
+      Tween.tick deltaMs, false
+      print obj.x
 }
 
 
