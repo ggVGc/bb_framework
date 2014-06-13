@@ -10,6 +10,78 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\deps\common\lua\lapi.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lauxlib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lbaselib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lbitlib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lcode.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lcorolib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lctype.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\ldblib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\ldebug.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\ldo.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\ldump.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lfunc.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lgc.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\linit.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\liolib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\llex.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lmathlib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lmem.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\loadlib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lobject.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lopcodes.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\loslib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lparser.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lpcap.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lpcode.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lpprint.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lptree.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lpvm.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lstate.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lstring.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lstrlib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\ltable.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\ltablib.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\ltm.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lua.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lundump.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lvm.c" />
+    <ClCompile Include="..\..\..\deps\common\lua\lzio.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\deps\common\lua\lapi.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lauxlib.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lcode.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lctype.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\ldebug.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\ldo.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lfunc.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lgc.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\llex.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\llimits.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lmem.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lobject.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lopcodes.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lparser.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lpcap.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lpcode.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lpprint.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lptree.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lptypes.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lpvm.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lstate.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lstring.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\ltable.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\ltm.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lua.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\luaconf.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lualib.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lundump.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lvm.h" />
+    <ClInclude Include="..\..\..\deps\common\lua\lzio.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{91973F7E-3ABE-41CA-82D6-3784FC305A68}</ProjectGuid>
     <RootNamespace>lua</RootNamespace>
@@ -47,8 +119,9 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>lpeg.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\depsbin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -64,64 +137,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\deps\common\lua\lapi.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lauxlib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lbaselib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lcode.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ldblib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ldebug.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ldo.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ldump.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lfunc.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lgc.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\linit.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\liolib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\llex.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lmathlib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lmem.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\loadlib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lobject.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lopcodes.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\loslib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lparser.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lstate.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lstring.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lstrlib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ltable.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ltablib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ltm.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lua.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lundump.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lvm.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lzio.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\print.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\deps\common\lua\lapi.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lauxlib.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lcode.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\ldebug.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\ldo.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lfunc.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lgc.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\llex.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\llimits.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lmem.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lobject.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lopcodes.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lparser.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lstate.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lstring.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\ltable.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\ltm.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lua.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\luaconf.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lualib.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lundump.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lvm.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lzio.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -48,7 +48,7 @@ int luaopen_lpeg (lua_State *L);
 ** these libs are preloaded and must be required before used
 */
 static const luaL_Reg preloadedlibs[] = {
-  {LUA_DBLIBNAME, luaopen_lpeg},
+  {"lpeg", luaopen_lpeg},
   {NULL, NULL}
 };
 
