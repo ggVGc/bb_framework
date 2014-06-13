@@ -1,6 +1,6 @@
 # !sh
 
-python zip_assets.py
+python zip_assets.py test
 python do_build.py only_exe
 rc=$?
 if test $rc -eq 0 

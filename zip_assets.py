@@ -33,31 +33,24 @@ def translateCompileErrorMapping(originalString):
 
 def handleMoonFiles(zipOut, r, prefix, filePaths):
   sourceMappings = ''
-
-
-  proc = subprocess.Popen([LUA_EXE, MOON_COMPILER]+filePaths, stderr=subprocess.PIPE)
-  output =  proc.communicate()[1]
-  print(output)
-  ret = proc.returncode
-
   for path in filePaths:
     luaFilePath = path.replace('.moon', '.lua')
     rp = os.path.relpath(luaFilePath, r)
     fileKey = (os.path.join(prefix, os.path.splitext(rp)[0]))
 
+    proc = subprocess.Popen([LUA_EXE, MOON_COMPILER]+[path], stderr=subprocess.PIPE)
+    output =  proc.communicate()[1]
+    ret = proc.returncode
     if ret != 0:
       msg, rowNum = translateCompileErrorMapping(output)
       with open(luaFilePath, 'w') as out:
         out.write("error('%s')"%msg)
-      os.remove(luaFilePath)
       sourceMappings+='["%s"]={{1,%s}},'%(fileKey, rowNum)
-
-    zipOut.write(luaFilePath, os.path.join("assets", prefix, rp))
-    os.remove(luaFilePath)
-
-    if ret == 0:
+    else:
       mapping = subprocess.check_output([LUA_EXE, MOON_COMPILER, '-X', path])
       sourceMappings+='["%s"]={%s},'%(fileKey, translateMapping(mapping))
+    zipOut.write(luaFilePath, os.path.join("assets", prefix, rp))
+    os.remove(luaFilePath)
 
   return sourceMappings
 
@@ -67,7 +60,7 @@ def zipDir(zipOut, r, prefix=""):
     for f in files:
       p = os.path.join(root, f)
       rp = os.path.relpath(p, r)
-      if not rp.startswith(".") and not 'moonscript' in p and not p.endswith('.zip') and (p.endswith('.lua') or p.endswith('.moon') or p.endswith('.png') or p.endswith('.xml') or p.endswith('.txt')):
+      if not rp.startswith(".") and not 'moonscript' in p and p.endswith(('.lua','.moon', '.png', '.xml','.txt')):
         if p.endswith('.moon'):
           moonFiles.append(p)
         else:
@@ -80,12 +73,15 @@ import sys
 appPath = os.path.join("..", "bounce")
 outZipPath = os.path.join('bin', 'assets.zip')
 frameworkSrcPath = os.path.join('src', 'lua')
-if len(sys.argv) > 1:
-  appPath = sys.argv[1]
-if len(sys.argv) > 2:
-  outZipPath = sys.argv[2]
-if len(sys.argv) > 3:
-  frameworkSrcPath = sys.argv[3]
+offs = 0
+if len(sys.argv) > 1 and sys.argv[1] == 'test':
+  offs = 1
+if len(sys.argv) > 1+offs: 
+  appPath = sys.argv[1+offs]
+if len(sys.argv) > 2+offs:
+  outZipPath = sys.argv[2+offs]
+if len(sys.argv) > 3+offs:
+  frameworkSrcPath = sys.argv[3+offs]
 
 if not os.path.exists(appPath):
   raise Exception('Invalid path: %s'%appPath)
@@ -95,7 +91,8 @@ print 'Zip path:', outZipPath
 
 zipOutFile = zipfile.ZipFile(outZipPath, "w")
 moonSourceMappings = zipDir(zipOutFile, frameworkSrcPath, "framework")
-#moonSourceMappings += zipDir(zipOutFile, "src/luatest", "framework/test")
+if 'test' in sys.argv:
+  moonSourceMappings += zipDir(zipOutFile, "src/luatest", "framework/test")
 moonSourceMappings += zipDir(zipOutFile, appPath)
 
 with open('moon_source_mappings.lua', 'w') as out:

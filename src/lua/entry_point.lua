@@ -243,8 +243,10 @@ dofile "framework/graphics.lua";
 dofile "framework/bitmap_animation.moon";
 dofile "framework/vector.lua";
 dofile "framework/level.moon";
+dofile 'framework/tween/tween.moon'
 
-dofile "main.lua"
+dofile "main.moon"
+--dofile("framework/test/tween_test.moon")
 --dofile("framework/test/bitmap_animation_test.moon")
 --dofile("bitmap_test.lua")
 --dofile("framework/test/xmltest.lua")
