@@ -1,4 +1,3 @@
-
 Ticker = {
   addEventListener: ->
 }
@@ -8,9 +7,19 @@ NONE: 0
 LOOP: 1
 REVERSE: 2
 IGNORE: {}
+
 _tweens: {}
 _plugins: {}
+
 new: maker (target, props, pluginData)=>
+  @ignoreGlobalPause = props and not not props.ignoreGlobalPause
+  @loop = props and not not props.loop
+  @duration = 0
+  @pluginData = pluginData or {}
+  @target = @_target
+  @position = nil
+  @passive = false
+
   @_paused = props and not not props.paused
   @_curQueueProps = {}
   @_initQueueProps = {}
@@ -22,14 +31,6 @@ new: maker (target, props, pluginData)=>
   @_target = target
   @_useTicks = props and not not props.useTicks
   @_inited = false
-
-  @ignoreGlobalPause = props and not not props.ignoreGlobalPause
-  @loop = props and not not props.loop
-  @duration = 0
-  @pluginData = pluginData or {}
-  @target = @_target
-  @position = nil
-  @passive = false
 
 
   if props
@@ -92,60 +93,59 @@ new: maker (target, props, pluginData)=>
   @s = @set
 
   @setPosition = (value, actionsMode=1)->
-      if value and value < 0
-        value = 0
+    if value and value < 0
+      value = 0
 
-      -- normalize position:
-      t = value
-      isEnd = false
-      if t >= @duration
-        if @loop
-          t = t%@duration
-        else
-          t = @duration
-          isEnd = true
-      if t == @_prevPos
-        return isEnd
-
-      prevPos = @_prevPos
-      @_prevPos = t
-      @position = @_prevPos -- set new position in advance in case an action modifies position.
-      @_prevPosition = value
-
-      -- handle tweens:
-      if @_target
-        if isEnd
-          -- addresses problems with an ending zero length step.
-          @._updateTargetProps nil,1
-        elseif #@_steps > 0
-          -- find our new tween index:
-          step = @_steps[#@_steps]
-          for i=1,#@_steps
-            if @_steps[i].t > t
-              step = @_steps[i-1]
-              break
-          @_stepPosition = t-step.t
-          @._updateTargetProps step, @_stepPosition/step.d
-
-      -- run actions:
-      if actionsMode != 0 and #@_actions> 0
-        if @_useTicks
-            -- only run the actions we landed on.
-            @._runActions t,t
-        elseif actionsMode == 1 and t<prevPos
-            unless prevPos == @duration
-              @._runActions prevPos, @duration
-            @._runActions 0, t, true
-        else
-            @._runActions prevPos, t
-
-      if isEnd then @.setPaused true
-
-      -- TODO: Implement EventDispatcher and uncomment this
-      -- @.dispatchEvent "change"
-
+    -- normalize position:
+    t = value
+    isEnd = false
+    if t >= @duration
+      if @loop
+        t = t%@duration
+      else
+        t = @duration
+        isEnd = true
+    if t == @_prevPos
       return isEnd
 
+    prevPos = @_prevPos
+    @_prevPos = t
+    @position = @_prevPos -- set new position in advance in case an action modifies position.
+    @_prevPosition = value
+
+    -- handle tweens:
+    if @_target
+      if isEnd
+        -- addresses problems with an ending zero length step.
+        @._updateTargetProps nil,1
+      elseif #@_steps > 0
+        -- find our new tween index:
+        step = @_steps[#@_steps]
+        for i=1,#@_steps
+          if @_steps[i].t > t
+            step = @_steps[i-1]
+            break
+        @_stepPosition = t-step.t
+        @._updateTargetProps step, @_stepPosition/step.d
+
+    -- run actions:
+    if actionsMode != 0 and #@_actions> 0
+      if @_useTicks
+          -- only run the actions we landed on.
+          @._runActions t,t
+      elseif actionsMode == 1 and t<prevPos
+          unless prevPos == @duration
+            @._runActions prevPos, @duration
+          @._runActions 0, t, true
+      else
+          @._runActions prevPos, t
+
+    if isEnd then @.setPaused true
+
+    -- TODO: Implement EventDispatcher and uncomment this
+    -- @.dispatchEvent "change"
+
+    return isEnd
 
 
   @_runActions = (startPos, endPos, includeStart)->
@@ -199,7 +199,6 @@ new: maker (target, props, pluginData)=>
     return @_curQueueProps
 
 
-
   @_addStep = (o) ->
     if o.d > 0
       o.t = @duration
@@ -212,14 +211,11 @@ new: maker (target, props, pluginData)=>
       o[n] = props[n]
 
 
-
   @_cloneProps = (props) ->
     o = {}
     for k,v in pairs props
       o[k] = v
     return o
-
-
 
   
   @_addAction = (o)->
@@ -303,6 +299,25 @@ removeTweens: (target) ->
 hasActiveTweens: (target) ->
   return target.tweenjs_count if target
   return Tween._tweens and not not #Tween._tweens
+
+installPlugin: (plugin, properties) ->
+  priority = plugin.priority
+  if priority == nil
+    priority = 0
+    plugin.priority = priority
+  p=Tween._plugins
+  for i=1,#properties
+    n = properties[i]
+    if not p[n]
+      p[n] = {plugin}
+    else
+      arr = p[n]
+      j=1
+      while j<=#arr
+        if priority < arr[j].priority
+          break
+      table.remove p[n], j, 0
+      table.insert p[n], 0, plugin
 
 
 _register: (tween, value) ->
