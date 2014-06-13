@@ -36,15 +36,29 @@ new: maker (levelDefinition, texCreator, screenWidth, screenHeight) =>
       .x = (data.left or data.right) and ((data.left and data.left-off.x) or screenWidth-off.x-data.right)
       .y = (data.bottom or data.top) and ((data.bottom and data.bottom-off.y) or screenHeight-off.y-data.top)
 
-  images = pipe levelDefinition, {fun.map, makeImageEntry}, rejectNil, fun.totable
+
+  images = {}
+  for i, v in ipairs levelDefinition
+    o = makeImageEntry v
+    if o != nil
+      _.push images, o
   updatableObjects = pipe images, {fun.filter, (o)->o.texture.update}, fun.totable
+
+  
+  children = {}
+  for k,v in pairs levelDefinition
+    if not _.isNumber k
+      @[k] = framework.Level.new v, texCreator, screenWidth, screenHeight
+      _.push children, @[k]
 
   @update = (deltaMs) ->
     o.texture.update deltaMs for o in *updatableObjects
+    c.update deltaMs for c in *children
 
   @draw =->
     for img in *images
       with img do .texture.draw(.x,.y,0,0)
+    c.draw for c in *children
 }
 
 
