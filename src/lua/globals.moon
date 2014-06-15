@@ -1,6 +1,4 @@
 
-export lastIndexOf = (str, findStr)->
-  #str - string.find(string.reverse(str), findStr)+1
 
 
 export block = (fn)->fn!

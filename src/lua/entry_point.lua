@@ -231,6 +231,7 @@ fun = dofile "framework/libs/fun.lua";
 
 framework = {}
 dofile "framework/globals.moon";
+dofile "framework/string_additions.moon";
 dofile "framework/camera.lua";
 dofile "framework/bitmap.lua"
 dofile "framework/input.lua";
@@ -244,6 +245,7 @@ dofile "framework/bitmap_animation.moon";
 dofile "framework/vector.lua";
 dofile "framework/level.moon";
 dofile 'framework/tween/tween.moon'
+dofile 'framework/draw_states.moon'
 
 dofile "main.moon"
 --dofile("framework/test/tween_test.moon")

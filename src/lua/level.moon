@@ -36,12 +36,8 @@ new: maker (levelDefinition, texCreator, screenWidth, screenHeight) =>
       .x = (data.left or data.right) and ((data.left and data.left-off.x) or screenWidth-off.x-data.right)
       .y = (data.bottom or data.top) and ((data.bottom and data.bottom-off.y) or screenHeight-off.y-data.top)
 
-
-  images = {}
-  for i, v in ipairs levelDefinition
-    o = makeImageEntry v
-    if o != nil
-      _.push images, o
+  images = pipe [v for _,v in ipairs levelDefinition],
+    {fun.map, makeImageEntry}, rejectNil, fun.totable
   updatableObjects = pipe images, {fun.filter, (o)->o.texture.update}, fun.totable
 
   

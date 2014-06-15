@@ -8,6 +8,14 @@ LOOP: 1
 REVERSE: 2
 IGNORE: {}
 
+defaultProps: {
+  useTicks: false
+  loop: false
+  override: false
+  paused: false
+  position: nil
+}
+
 _tweens: {}
 _plugins: {}
 
@@ -33,13 +41,14 @@ new: maker (target, props, pluginData)=>
   @_inited = false
 
 
-  if props
-    if props.onChange then @.addEventListener "change", props.onChange
-    if props.override then Tween.removeTweens target
+  props = _.extend {}, Tween.defaultProps, props
+
+  if props.onChange then @.addEventListener "change", props.onChange
+  if props.override then Tween.removeTweens target
 
   unless @_paused
     Tween._register @, true
-  if props and props.position
+  if props.position
     @.setPosition props.position, Tween.NONE
 
 

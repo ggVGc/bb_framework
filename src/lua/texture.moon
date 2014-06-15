@@ -21,9 +21,9 @@ new: (bmData, x, y, w, h)->
       _c_framework.quadDrawTex x or 0, y or 0,(scaleX or 1)*tex.width,
         (scaleY or 1)*tex.height,tex, rot or 0,pivotX or 0.5, pivotY or 0.5
 
-fromFile: (path, errorOnInvalid)->
-  if errorOnInvalid == nil
-    errorOnInvalid=true
+fromFile: (path, errorOnInvalid=true)->
+  if not string.endsWith path, '.png'
+    path = path..'.png'
   imageData = _c_framework.loadImage(path)
   if not imageData
     if errorOnInvalid
