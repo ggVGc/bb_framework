@@ -10,19 +10,21 @@ framework.BitmapAnimation = {
 new: maker (frames, frameTimes={1}) =>
   if not _.isArray frameTimes
     frameTimes = {frameTimes}
-  curFrame = 1
-  frameTimeCounter = 0
-  @update = (deltaMs) ->
-    frameTimeCounter += deltaMs
-    curFrameTime = do
-      if curFrame <= #frameTimes
-        frameTimes[curFrame]
-      else
-        frameTimes[#frameTimes]
 
-    if frameTimeCounter>= curFrameTime*1000
-      curFrame = incWrap curFrame, #frames, 1
-      frameTimeCounter = 0
+  local curFrame
+  tween = with Tween.get({},{loop:true})
+    .call -> curFrame=1
+    lastW = 0
+    for i=1,#frames
+      t = frameTimes[i] or lastW
+      lastW = t
+      .wait(t*1000).call -> curFrame+=1 if curFrame!=#frames
+
+    .tick 0
+
+  @update = (deltaMs) ->
+    tween.tick deltaMs, false
+
   @draw = (x,y)->
     frames[curFrame].draw x, y
 }
