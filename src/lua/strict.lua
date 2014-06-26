@@ -8,9 +8,7 @@
 --
 -- @module pl.strict
 
---[[
-  dofile 'debug' -- for Lua 5.2
-]]
+dofile 'debug' -- for Lua 5.2
 local getinfo, error, rawset, rawget = debug.getinfo, error, rawset, rawget
 local strict = {}
 

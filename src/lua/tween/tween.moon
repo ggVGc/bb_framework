@@ -295,7 +295,7 @@ handleEvent: (event) ->
 
 
 removeTweens: (target) ->
-  return if not target.tweenjs_count
+  return if target.tweenjs_count == 0
   tweens = Tween._tweens
   for i=#tweens, 1, -1
       with tweens[i]
@@ -307,7 +307,7 @@ removeTweens: (target) ->
 
 hasActiveTweens: (target) ->
   return target.tweenjs_count if target
-  return Tween._tweens and not not #Tween._tweens
+  return Tween._tweens and #Tween._tweens>0
 
 installPlugin: (plugin, properties) ->
   priority = plugin.priority

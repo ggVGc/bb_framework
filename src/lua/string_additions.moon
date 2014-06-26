@@ -4,3 +4,4 @@ string.lastIndexOf = (str, findStr)->
 string.endsWith = (str, ending)->
   s,e = string.find str, ending
   e == #str
+

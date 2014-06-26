@@ -199,7 +199,22 @@ local function doCall(func)
 end
 
 
+local origDoFile = dofile
 function dofile(path) 
+  if path == 'debug' then
+    print 'loading debug'
+    origDoFile('debug')
+    return
+  end
+  if type(path) == 'table' then
+    local ret = {}
+    for i,p in ipairs(path) do
+      ret[i] = doCall(function()
+        return dofile_raw(p)
+      end)
+    end
+    return ret
+  end
   return doCall(function()
     return dofile_raw(path)
   end)
@@ -246,6 +261,7 @@ dofile "framework/vector.lua";
 dofile "framework/level.moon";
 dofile 'framework/tween/tween.moon'
 dofile 'framework/draw_states.moon'
+dofile 'framework/asset_loader.moon'
 
 dofile "main.moon"
 --dofile("framework/test/tween_test.moon")
