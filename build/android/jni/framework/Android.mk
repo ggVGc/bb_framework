@@ -25,7 +25,7 @@ LOCAL_CFLAGS := -DANDROID_NDK \
 
 LOCAL_MODULE    := 	jumpz_framework
 
-LOCAL_PATH := $(LOCAL_PATH)/../../../framework/
+LOCAL_PATH := $(LOCAL_PATH) ../../../../../framework/
 
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/deps_src/minizip/

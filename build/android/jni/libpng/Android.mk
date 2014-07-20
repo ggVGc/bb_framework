@@ -20,7 +20,7 @@ LOCAL_MODULE    := libpng
 
 
 
-LOCAL_PATH := $(LOCAL_PATH)/../../../framework/deps_src/libpng/
+LOCAL_PATH := $(LOCAL_PATH)/../../../../deps/common/libpng
 
 LOCAL_SRC_FILES :=\
 	png.c \
@@ -44,7 +44,7 @@ LOCAL_SRC_FILES :=\
 
 
 
-LOCAL_LDLIBS := -lz
+#LOCAL_LDLIBS := -lz
 
 #include $(BUILD_SHARED_LIBRARY)
 include $(BUILD_STATIC_LIBRARY)

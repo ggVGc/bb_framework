@@ -18,12 +18,12 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := minizip
 
-LOCAL_PATH := $(LOCAL_PATH)/../../../framework/deps_src/minizip/
+LOCAL_PATH := $(LOCAL_PATH)/../../../../deps/common/minizip
 
 LOCAL_SRC_FILES := unzip.c mztools.c ioapi.c
 
 
-LOCAL_LDLIBS := -lzip
+#LOCAL_LDLIBS := -lzip
 
 #include $(BUILD_SHARED_LIBRARY)
 include $(BUILD_STATIC_LIBRARY)

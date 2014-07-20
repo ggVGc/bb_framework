@@ -14,9 +14,9 @@ if len(errlines) == 0:
   #os.system("/cygdrive/c/android-ndk-r4b/ndk-build")
   if os.path.exists("assets"):
     shutil.rmtree("assets")
-  shutil.copytree("../jumpz/assets", "assets") 
+  shutil.copytree("../../../bounce", "assets") 
   os.system("ant debug")
-  os.system("adb install -r bin/FrameworkTest-debug.apk")
+  os.system("~/stuff/work/android/adt-bundle-linux-x86_64-20131030/sdk/platform-tools/adb install -r bin/FrameworkTest-debug.apk")
   #os.system("adb lolcat")
 else:
   for e in errlines:

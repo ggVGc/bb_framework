@@ -1,7 +1,0 @@
-set solib-search-path /home/walt/stuff/VCS/jumpz_main/project_android/obj/local/armeabi
-directory /home/walt/android-ndk-r4b/build/platforms/android-8/arch-arm/usr/include
-directory /home/walt/stuff/VCS/jumpz_main/project_android/jni/minizip/../../../framework/deps_src/minizip/
-directory /home/walt/stuff/VCS/jumpz_main/project_android/jni/minizip/../../../framework/deps_src/minizip/
-directory /home/walt/stuff/VCS/jumpz_main/project_android/jni/minizip/../../../framework/deps_src/minizip/
-directory /home/walt/stuff/VCS/jumpz_main/project_android/jni/minizip/../../../framework/deps_src/minizip/
-directory /home/walt/stuff/VCS/jumpz_main/project_android/jni/minizip/../../../framework/deps_src/minizip/

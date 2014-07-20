@@ -19,9 +19,9 @@ include $(CLEAR_VARS)
 LOCAL_MODULE    := bstring
 
 
-LOCAL_PATH := $(LOCAL_PATH)/ ../../../framework/deps_src/bstring/
+LOCAL_PATH := $(LOCAL_PATH)/../../../../deps/common/bstring
 
-MY_SOURCES := $(wildcard $(LOCAL_PATH)/*.c)
+MY_SOURCES := bsafe.c bstest.c bstraux.c bstrlib.c
 
 LOCAL_SRC_FILES := $(MY_SOURCES:$(LOCAL_PATH)%=%)
 
