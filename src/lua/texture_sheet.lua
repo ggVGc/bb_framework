@@ -12,10 +12,12 @@ function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
   local cache = {}
 
   function M.exists(path)
+    path = framework.Texture.fixPath(path)
     return rectMap[path] ~= nil
   end
 
   function M.createTexture(path, expectedWidth, expectedHeight)
+    path = framework.Texture.fixPath(path)
     local texRect = rectMap[path]
     if not texRect then
       if not(errorTexPath == nil) then

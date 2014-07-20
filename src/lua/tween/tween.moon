@@ -18,6 +18,7 @@ defaultProps: {
 
 _tweens: {}
 _plugins: {}
+_inited: false
 
 new: maker (target, props, pluginData)=>
   @ignoreGlobalPause = props and not not props.ignoreGlobalPause
@@ -38,7 +39,6 @@ new: maker (target, props, pluginData)=>
   @_prevPos = -1
   @_target = target
   @_useTicks = props and not not props.useTicks
-  @_inited = false
 
 
   props = _.extend {}, Tween.defaultProps, props

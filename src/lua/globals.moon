@@ -1,10 +1,4 @@
 
-export AHOO = (obj) ->
-  e = _.clone _ENV, true
-  e.ME = 'MEMEME'
-  _ENV = e
-  obj
-
 export block = (fn)->fn!
 
 export let = (obj, fn)-> fn(obj)

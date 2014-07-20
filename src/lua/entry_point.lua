@@ -199,11 +199,9 @@ local function doCall(func)
 end
 
 
-local origDoFile = dofile
 function dofile(path) 
   if path == 'debug' then
-    print 'loading debug'
-    origDoFile('debug')
+    require 'debug'
     return
   end
   if type(path) == 'table' then
@@ -240,7 +238,7 @@ do
    unpack = oldUnpack
 end
 
-dofile("framework/strict.lua").make_all_strict(_G)
+local strict = dofile("framework/strict.lua")
 
 fun = dofile "framework/libs/fun.lua";
 
@@ -298,3 +296,5 @@ function framework.doFrame(deltaMs)
     return 1
   end
 end
+
+strict.make_all_strict(_G)

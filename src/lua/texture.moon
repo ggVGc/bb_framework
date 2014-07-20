@@ -22,8 +22,7 @@ new: (bmData, x, y, w, h)->
         (scaleY or 1)*tex.height,tex, rot or 0,pivotX or 0.5, pivotY or 0.5
 
 fromFile: (path, errorOnInvalid=true)->
-  if not string.endsWith path, '.png'
-    path = path..'.png'
+  path = framework.Texture.fixPath path
   imageData = _c_framework.loadImage(path)
   if not imageData
     if errorOnInvalid
@@ -33,4 +32,9 @@ fromFile: (path, errorOnInvalid=true)->
   _c_framework.bitmapDataInit(bmData, imageData)
   _c_framework.rawBitmapDataCleanup(imageData)
   framework.Texture.new(bmData, 0, 0, bmData.width, bmData.height)
+
+fixPath: (path) ->
+  if not string.endsWith path, '.png'
+    path = path..'.png'
+  path
 }

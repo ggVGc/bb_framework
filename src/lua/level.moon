@@ -23,7 +23,7 @@ new: maker (levelDefinition, texCreator, screenWidth, screenHeight) =>
     ret
 
   makeImageEntry=(data)->
-    texName = data[1]..'.png'
+    texName = data[1]
     O = {
       x:0,y:0,
       texture: texCreator texName, data

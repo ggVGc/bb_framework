@@ -1,33 +1,31 @@
 framework = framework or {}
 
+framework.AssetLoader = {
+new: maker (texSheets) =>
 
-framework.AssetLoader = AHOO {
-  --new: maker () =>
-  --texCreator=(path, args)->
-    --if sheet.exists path
-      --sheet.createTexture path
-    --else
-      --img = framework.Texture.fromFile 'data/'..path, false
-      --if not img
-        --path = string.sub path, 1, path\lastIndexOf('%.')-1
-        --frame1 = framework.Texture.fromFile 'data/'..path..'/1.png', false
-        --if frame1
-          --frames = for index in fun.duplicate!
-            --tex = framework.Texture.fromFile 'data/'..path..'/'..tostring(index)..'.png', false
-            --if not tex
-              --break
-            --tex
-          --framework.BitmapAnimation.new frames, args.time
+  @getTexture = (path, errorOnInvalid) ->
+    framework.AssetLoader.tryGetTexFromSheets(path, texSheets) or framework.Texture.fromFile(path, errorOnInvalid)
 
---.getAnimationFrames = (path) ->
-  --print 'asd'
+  @getAnimationFrames = (path) ->
+    frame1 = framework.Texture.fromFile path..'/1', false
+    if frame1
+      return for index in fun.duplicate!
+        tex = framework.Texture.fromFile path..'/'..tostring(index), false
+        if not tex
+          break
+        tex
+    nil
 
-getAnimation: (path, ...)->
-  print ME
-  --framework.BitmapAnimation.new (.getAnimationFrames path), ...
+  @getAnimation = (path, ...)->
+    frames = @.getAnimationFrames path
+    if frames
+      return framework.BitmapAnimation.new frames, ...
 
 
+tryGetTexFromSheets: (path, sheets)->
+  for s in *sheets
+    if s.exists path
+      return s.createTexture path
 }
-
 
 framework.AssetLoader
