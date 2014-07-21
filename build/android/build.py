@@ -45,7 +45,7 @@ if len(errlines) == 0:
       if f.endswith('.moon'):
         handleMoonFile(os.path.join(root, f))
 
-  os.system("ant debug")
+  os.system("ant release")
   adb = "~/stuff/work/android/adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb "
   os.system(adb+"install -r bin/FrameworkTest-debug.apk")
   os.system(adb+"shell am kill com.jumpz.frameworktest/.FrameworkTest")

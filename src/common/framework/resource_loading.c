@@ -85,8 +85,10 @@ char* loadBytesFromZip(const char* inPath, int* size){
   char path[2048];
   sprintf(path, "assets/%s\0", inPath);
   char msg[2048];
+  /*
   sprintf(msg, "Loading from zip: %s", path);
   trace(msg);
+  */
   uf = unzOpen(apkPath);
 
   if(!uf){
