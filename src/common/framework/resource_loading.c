@@ -10,7 +10,7 @@
 
 //static struct zip* APKArchive;
 static struct zip_file* file = 0;
-static const char* apkPath = 0;
+static const char apkPath[2048];
 static int usingZip = 0;
 
 
@@ -33,7 +33,10 @@ void png_zip_read(png_structp png_ptr, png_bytep data, png_size_t length) {
 
 void setResourcePath(const char* p, int useZip)
 {
-  apkPath = p;
+  char msg[2048];
+  sprintf(msg, "Setting resource path: %s", p);
+  trace(msg);
+  sprintf(apkPath, "%s", p);
   usingZip = useZip;
 }
 
@@ -45,7 +48,7 @@ void setResourcePath(const char* p, int useZip)
   /*//unzFile uf;*/
   /*//struct zip* APKArchive;*/
 
-  /*apkPath = (char*)malloc(1024);*/
+  /*apkPath = (char*)malloc(2048);*/
   /*strcpy(apkPath,apk);*/
 
   /*//uf = unzOpen(apkPath);*/
@@ -79,9 +82,18 @@ char* loadBytesFromZip(const char* inPath, int* size){
   unzFile uf;
 
   // TODO: Should check for overflow.
-  char path[1024];
+  char path[2048];
   sprintf(path, "assets/%s\0", inPath);
+  char msg[2048];
+  /*sprintf(msg, "Loading from zip: %s, apk: %s", path, apkPath);*/
+  trace(msg);
   uf = unzOpen(apkPath);
+
+  if(!uf){
+    sprintf(msg, "Invalid resource zip: %s", apkPath);
+    trace(msg);
+  }
+
 
   /*if (!file)*/
   /*{*/
@@ -125,7 +137,7 @@ char* loadBytesFromZip(const char* inPath, int* size){
 char* loadBytesFromDisk(const char* inPath)
 {
   // TODO: Should check for overflow.
-  char path[1024];
+  char path[2048];
   sprintf(path, "assets/%s\0", inPath);
 
   /*TODO: Implement!*/
@@ -162,7 +174,7 @@ RawBitmapData* loadImage(const char* inFilename){
   png_byte *image_data;
   int i, width, height;
   RawBitmapData* d;
-  char filename[1024];
+  char filename[2048];
   sprintf(filename, "assets/%s", inFilename);
 
 

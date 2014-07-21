@@ -20,7 +20,7 @@ LOCAL_MODULE    := lua
 
 LOCAL_PATH := $(LOCAL_PATH)/../../../../deps/common/lua
 
-MY_SOURCES := lapi.c lauxlib.c lbaselib.c lbitlib.c lcode.c lcorolib.c lctype.c ldblib.c ldebug.c ldo.c ldump.c lfunc.c lgc.c linit.c liolib.c llex.c lmathlib.c lmem.c loadlib.c lobject.c lopcodes.c loslib.c lparser.c lpcap.c lpcode.c lpprint.c lptree.c lpvm.c lstate.c lstring.c ltable.c ltablib.c ltm.c lua.c lundump.c lvm.c lzio.c
+MY_SOURCES := lapi.c lauxlib.c lbaselib.c lbitlib.c lcode.c lcorolib.c lctype.c ldblib.c ldebug.c ldo.c ldump.c lfunc.c lgc.c linit.c liolib.c llex.c lmathlib.c lmem.c loadlib.c lobject.c lopcodes.c loslib.c lparser.c lpcap.c lpcode.c lpprint.c lptree.c lpvm.c lstate.c lstring.c ltable.c ltablib.c ltm.c lua.c lundump.c lvm.c lzio.c lstrlib.c
 
 LOCAL_SRC_FILES := $(MY_SOURCES:$(LOCAL_PATH)%=%)
 

@@ -25,23 +25,37 @@ LOCAL_CFLAGS := -DANDROID_NDK \
 
 LOCAL_MODULE    := 	jumpz_framework
 
-LOCAL_PATH := $(LOCAL_PATH) ../../../../../framework/
+LOCAL_PATH := $(LOCAL_PATH)/../../../..
 
-
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/deps_src/minizip/
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps_src/lua/
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps_src/libpng/
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps_src/bstring/
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/deps/common/lua/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/minizip/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libpng/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/bstring/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/common/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/android/
 
+MY_SOURCES := src/common/program.c \
+  src/common/framework_wrap.c \
+  src/common/framework/bitmap.c \
+  src/common/framework/bitmapdata.c \
+  src/common/framework/camera.c \
+  src/common/framework/graphics.c \
+  src/common/framework/input.c \
+  src/common/framework/quad.c \
+  src/common/framework/random.c \
+  src/common/framework/rawbitmapdata.c \
+  src/common/framework/rect.c \
+  src/common/framework/resource_loading.c \
+  src/common/framework/texture.c \
+  src/android/app_android.c \
+  src/android/framework/util.c \
+  src/android/framework/streaming_audio.c
 
-MY_SOURCES := $(wildcard $(LOCAL_PATH)/src/common/*.c)
-MY_SOURCES += $(wildcard $(LOCAL_PATH)/src/common/framework/*.c)
-MY_SOURCES += $(wildcard $(LOCAL_PATH)/src/android/*.c)
-MY_SOURCES += $(wildcard $(LOCAL_PATH)/src/android/framework/*.c)
 
-LOCAL_SRC_FILES := $(MY_SOURCES:$(LOCAL_PATH)%=%)
+#MY_SOURCES += $(wildcard src/android/framework/*.c)
+
+#LOCAL_SRC_FILES := $(MY_SOURCES:$(LOCAL_PATH)%=%)
+LOCAL_SRC_FILES := $(MY_SOURCES)
 
 
 LOCAL_LDLIBS := -lGLESv1_CM -ldl -llog -lz

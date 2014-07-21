@@ -546,6 +546,13 @@
 */
 
 
+// Added for android build
+#if !defined(getlocaledecpoint)
+#define getlocaledecpoint() ('.') //Code-monkey style
+#endif
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 #endif
 

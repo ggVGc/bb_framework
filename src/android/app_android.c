@@ -53,8 +53,8 @@ Java_com_jumpz_frameworktest_GLRenderer_nativeInit( JNIEnv*  env, jobject thiz, 
 
   path = (*env)->GetStringUTFChars(env, apkPath, NULL);
   /*loadAPK(path);*/
-  (*env)->ReleaseStringUTFChars(env, apkPath, path);
   appInit(path, 1);
+  (*env)->ReleaseStringUTFChars(env, apkPath, path);
 }
 
   void

@@ -21,6 +21,9 @@
 
 #define BREAK_ON_FIRST_ERROR 1
 
+
+#define RegLuaFuncGlobal(fname) lua_pushcfunction(vm, fname##_lua); lua_setglobal(vm, #fname);
+
 extern int luaopen__c_framework(lua_State*);
 
 static lua_State* vm = 0;
@@ -35,10 +38,21 @@ int loadstringWithName(lua_State *L, const char *s, const char* name) {
 	(loadstringWithName(L, s, name) || lua_pcall(L, 0, LUA_MULTRET, 0))
 
 
+void print_lua(lua_State* s){
+  const char* msg;
+  msg = lua_tostring(s, -1);
+  trace("APP OUTPUT:");
+  trace(msg);
+}
+
 int dofile(const char* filePath){
   int ret;
   char* file = loadBytes(filePath, 0);
   if(!file){
+    // yeye, overflow, who cares
+    char msg[2048];
+    sprintf(msg, "Failed loading: %s", filePath);
+    trace(msg);
 	return -1;
   }
   ret = doStringWithName(vm, file, filePath);
@@ -153,9 +167,9 @@ int callFunc(int nParams, int nRet) {
   lua_settable(vm, -3);
 
 
-#define RegLuaFuncGlobal(fname) lua_pushcfunction(vm, fname##_lua); lua_setglobal(vm, #fname);
 
 void appInit(const char* resourcePath, int useAssetZip) {
+  trace("---- APP INIT ----");
   inputInit();
   setResourcePath(resourcePath, useAssetZip);
 
@@ -163,7 +177,6 @@ void appInit(const char* resourcePath, int useAssetZip) {
   vm = 0;
   didInit = 0;
 
-  trace("---- APP INIT ----");
 
   vm = luaL_newstate();
   luaL_openlibs(vm);
@@ -172,10 +185,11 @@ void appInit(const char* resourcePath, int useAssetZip) {
   /*
   RegLuaFuncGlobal(require);
   */
+  RegLuaFuncGlobal(print);
 
   if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);
-	trace("Init error");
+	trace("Failed running entry point");
 	if(msg){
 	  trace(msg);
 	}
@@ -225,6 +239,7 @@ int appRender(long tick, int width, int height) {
       appBroken = 1;
       return 0;
     }
+    trace("Init finished");
   }
 
   if(appBroken != 0){
@@ -276,7 +291,7 @@ int isAppBroken(void){
 
 void setAppBroken(int isBroken){
   trace("SETTING APP BROKEN");
-  appBroken = isBroken;
+  appBroken = 1;
 }
 
 

@@ -52,6 +52,7 @@
 /media/data/vmshare/bitbucket/framework/build/android/assets/framework/bitmap_animation.moon \
 /media/data/vmshare/bitbucket/framework/build/android/assets/framework/camera.lua \
 /media/data/vmshare/bitbucket/framework/build/android/assets/framework/draw_states.moon \
+/media/data/vmshare/bitbucket/framework/build/android/assets/framework/entry_old.lua \
 /media/data/vmshare/bitbucket/framework/build/android/assets/framework/entry_point.lua \
 /media/data/vmshare/bitbucket/framework/build/android/assets/framework/extensions.lua \
 /media/data/vmshare/bitbucket/framework/build/android/assets/framework/globals.moon \

@@ -16,7 +16,10 @@ if len(errlines) == 0:
     shutil.rmtree("assets")
   shutil.copytree("../../../bounce", "assets") 
   os.system("ant debug")
-  os.system("~/stuff/work/android/adt-bundle-linux-x86_64-20131030/sdk/platform-tools/adb install -r bin/FrameworkTest-debug.apk")
+  adb = "~/stuff/work/android/adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb "
+  os.system(adb+"install -r bin/FrameworkTest-debug.apk")
+  os.system(adb+"shell am kill com.jumpz.frameworktest/.FrameworkTest")
+  os.system(adb+"shell am start -n com.jumpz.frameworktest/.FrameworkTest")
   #os.system("adb lolcat")
 else:
   for e in errlines:
