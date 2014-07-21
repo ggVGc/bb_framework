@@ -95,6 +95,7 @@ class GLView extends GLSurfaceView
   {
     super(context);
     System.out.println("GLView created");
+    super.setEGLConfigChooser(8 , 8, 8, 8, 16, 0);
     renderer = new GLRenderer(context);
     setRenderer(renderer);
   }

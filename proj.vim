@@ -6,7 +6,7 @@ python<<EOF
 
 import vim
 import os
-exts = 'mk c h cpp lua py sh vim sh moon js'.split()
+exts = 'java mk c h cpp lua py sh vim sh moon js'.split()
 ig = []
 p = vim.eval("g:projectScriptDir")
 for root, dirs, files in os.walk(p):

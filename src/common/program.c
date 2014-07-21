@@ -41,7 +41,6 @@ int loadstringWithName(lua_State *L, const char *s, const char* name) {
 void print_lua(lua_State* s){
   const char* msg;
   msg = lua_tostring(s, -1);
-  trace("APP OUTPUT:");
   trace(msg);
 }
 

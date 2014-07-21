@@ -11,7 +11,9 @@ printSourceMapping = false
 
 -- convert .moon to .lua
 function convert_path(path)
-	return (path:gsub("%.moon$", ".lua"))
+	local ret = path:gsub("%.moon$", ".lua")
+    print(ret)
+    return ret
 end
 
 function log_msg(...)
@@ -101,7 +103,7 @@ if #inputs == 0 then
 	print("No files specified")
 end
 
-local target_dir = "./"
+local target_dir = ""
 
 local files = inputs
 

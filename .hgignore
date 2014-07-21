@@ -44,3 +44,7 @@ glob:*.cache
 glob:bin/framework.exe
 glob:bin/*.dll
 glob:bin/framework
+glob:build/android/libs
+glob:build/android/bin
+glob:build/android/gen
+glob:*.pyc

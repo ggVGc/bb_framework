@@ -69,37 +69,38 @@ def zipDir(zipOut, r, prefix=""):
   return handleMoonFiles(zipOut, r, prefix, moonFiles)
 
 
-import sys
-appPath = os.path.join("..", "bounce")
-outZipPath = os.path.join('bin', 'assets.zip')
-frameworkSrcPath = os.path.join('src', 'lua')
-offs = 0
-if len(sys.argv) > 1 and sys.argv[1] == 'test':
-  offs = 1
-if len(sys.argv) > 1+offs: 
-  appPath = sys.argv[1+offs]
-if len(sys.argv) > 2+offs:
-  outZipPath = sys.argv[2+offs]
-if len(sys.argv) > 3+offs:
-  frameworkSrcPath = sys.argv[3+offs]
+if __name__ == '__main__':
+  import sys
+  appPath = os.path.join("..", "bounce")
+  outZipPath = os.path.join('bin', 'assets.zip')
+  frameworkSrcPath = os.path.join('src', 'lua')
+  offs = 0
+  if len(sys.argv) > 1 and sys.argv[1] == 'test':
+    offs = 1
+  if len(sys.argv) > 1+offs: 
+    appPath = sys.argv[1+offs]
+  if len(sys.argv) > 2+offs:
+    outZipPath = sys.argv[2+offs]
+  if len(sys.argv) > 3+offs:
+    frameworkSrcPath = sys.argv[3+offs]
 
-if not os.path.exists(appPath):
-  raise Exception('Invalid path: %s'%appPath)
+  if not os.path.exists(appPath):
+    raise Exception('Invalid path: %s'%appPath)
 
-print 'Application path:', appPath
-print 'Zip path:', outZipPath
+  print 'Application path:', appPath
+  print 'Zip path:', outZipPath
 
-zipOutFile = zipfile.ZipFile(outZipPath, "w")
-moonSourceMappings = zipDir(zipOutFile, frameworkSrcPath, "framework")
-if 'test' in sys.argv:
-  moonSourceMappings += zipDir(zipOutFile, "src/luatest", "framework/test")
-moonSourceMappings += zipDir(zipOutFile, appPath)
+  zipOutFile = zipfile.ZipFile(outZipPath, "w")
+  moonSourceMappings = zipDir(zipOutFile, frameworkSrcPath, "framework")
+  if 'test' in sys.argv:
+    moonSourceMappings += zipDir(zipOutFile, "src/luatest", "framework/test")
+  moonSourceMappings += zipDir(zipOutFile, appPath)
 
-with open('moon_source_mappings.lua', 'w') as out:
-  out.write('return {%s}'%moonSourceMappings);
-zipOutFile.write('moon_source_mappings.lua', os.path.join('assets', 'moon_source_mappings.lua'))
-os.remove('moon_source_mappings.lua')
+  with open('moon_source_mappings.lua', 'w') as out:
+    out.write('return {%s}'%moonSourceMappings);
+  zipOutFile.write('moon_source_mappings.lua', os.path.join('assets', 'moon_source_mappings.lua'))
+  os.remove('moon_source_mappings.lua')
 
-zipOutFile.close() 
-print ''
-print 'DONE'
+  zjipOutFile.close() 
+  print ''
+  print 'DONE'

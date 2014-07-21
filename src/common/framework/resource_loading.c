@@ -85,7 +85,7 @@ char* loadBytesFromZip(const char* inPath, int* size){
   char path[2048];
   sprintf(path, "assets/%s\0", inPath);
   char msg[2048];
-  /*sprintf(msg, "Loading from zip: %s, apk: %s", path, apkPath);*/
+  sprintf(msg, "Loading from zip: %s", path);
   trace(msg);
   uf = unzOpen(apkPath);
 
@@ -108,7 +108,7 @@ char* loadBytesFromZip(const char* inPath, int* size){
     unz_file_info* info = (unz_file_info*)malloc(sizeof(unz_file_info));
 
     if(unzLocateFile(uf, path, 0)){
-      // Invalid file path
+      trace("Invalid file path");
 	  return NULL;
 	}
 		
