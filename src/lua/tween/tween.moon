@@ -2,7 +2,7 @@ Ticker = {
   addEventListener: ->
 }
 
-export Tween = {
+Tween = {
 NONE: 0
 LOOP: 1
 REVERSE: 2
@@ -347,3 +347,5 @@ _register: (tween, value) ->
         table.remove tweens, i, 1
         return
 }
+
+framework.Tween = Tween
