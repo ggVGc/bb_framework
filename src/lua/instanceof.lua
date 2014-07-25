@@ -1,3 +1,4 @@
+--[[
 -- Hack to get table address as unique id
 function gettableid(obj)
     -- Check if is table
@@ -42,3 +43,4 @@ function instanceof (object, class)
     return false
 end
  
+]]

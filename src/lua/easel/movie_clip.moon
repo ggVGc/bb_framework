@@ -147,14 +147,15 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
         offset = tween._stepPosition
 
         --if instanceof(target, framework.DisplayObject)
-          --@._addManagedChild(target, offset)
+        @._addManagedChild(target, offset)
+        --else
           --@._setState(target.state, offset)
 
       kids = @children
       for i=#kids, 1, -1
         id = kids[i].id
         if @_managed[id] == 1
-          @removeChildAt i
+          @.removeChildAt i
           @_managed[id] = nil
 
   
@@ -166,17 +167,17 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
       props = o.p
       for k, v in pairs props
         target[k] = v
-      @_addManagedChild target, offset
+      @._addManagedChild target, offset
 
   
   @_addManagedChild = (child, offset)->
     return if child._off
-    @addChildAt child, 0
+    @.addChildAt child, 1
 
-    if instanceof(child, MovieClip)
-      child._synchOffset = offset
-      if child.mode == MovieClip.INDEPENDENT and child.autoReset and not @_managed[child.id]
-        child._reset!
+    --if instanceof(child, MovieClip)
+      --child._synchOffset = offset
+      --if child.mode == MovieClip.INDEPENDENT and child.autoReset and not @_managed[child.id]
+        --child._reset!
     @_managed[child.id] = 2
   
   

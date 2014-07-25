@@ -3,11 +3,11 @@ local lib = {}
 lib.cloud_1= {}
 lib.cloud_1.new = function()
   --return framework.Bitmap.new(img.cloud_1)
-  return {
-    draw= function()
-      print 'drarar'
+  local this = framework.DisplayObject.new()
+    this.draw= function()
     end
-  }
+    this.isVisible = function() return true end
+  return this
 end
 
 lib.cloud = {}

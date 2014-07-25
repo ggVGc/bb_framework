@@ -5,8 +5,12 @@ export Main = {new: ->
   print level
   --mc = framework.MovieClip.new!
   --mc._tick!
+  level.gotoAndPlay(0)
   doFrame: (deltaMs)->
-    level.draw!
+    level._tick {delta:deltaMs/2}
+    print level.instance.x
+    level.draw()
+    --print 'frame'
 }
 
 

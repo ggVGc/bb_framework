@@ -6,7 +6,9 @@ new: maker ()=>
   @mouseChildren = true
   @tickChildren = true
 
-  --displayObj = framework.DisplayObject.new!
+  displayObj = framework.DisplayObject.new!
+  setmetatable(@, {__index:displayObj})
+
   @isVisible = ->
     hasContent = @cacheCanvas or #@children>0
     return not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0 and hasContent)
@@ -14,14 +16,16 @@ new: maker ()=>
   @draw = (ctx, ignoreCache)->
     --if displayObj.draw(ctx, ignoreCache)
       --return true
-    
+  
+    --print 'Container draw, count:', #@children
+
     for i=1, #@children
       child = @children[i]
       if not child.isVisible()
         continue
       
       --ctx.save!
-      child.updateContext ctx
+      --child.updateContext ctx
       child.draw ctx
       --ctx.restore!
     return true
@@ -45,19 +49,23 @@ new: maker ()=>
     return child
 
   
-  --p.addChildAt = function(child, index) {
-      --var l = arguments.length;
-      --var indx = arguments[l-1]; 
-      --if (indx < 0 || indx > @children.length) { return arguments[l-2]; }
-      --if (l > 2) {
-          --for (var i=0; i<l-1; i++) { @.addChildAt(arguments[i], indx+i); }
-          --return arguments[l-2];
-      --}
-      --if (child.parent) { child.parent.removeChild(child); }
-      --child.parent = this;
-      --@children.splice(index, 0, child);
-      --return child;
-  --};
+  @addChildAt = (...)->
+    arguments = {...}
+    child = arguments[1]
+    index = arguments[2]
+    l = #arguments
+    indx = arguments[l]
+    if indx < 1 or indx > #@children+1
+      return arguments[l-1]
+    if l > 2
+      for i=1,l-1
+        @.addChildAt(arguments[i], indx+i)
+      return arguments[l-1]
+    if child.parent
+      child.parent.removeChild(child)
+    child.parent = @
+    table.insert @children, index, child
+    return child
 
   
   @removeChild = (...)->
