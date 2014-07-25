@@ -2,147 +2,136 @@
 local Container
 Container = {
 new: maker ()=>
+  @children = {}
+  @mouseChildren = true
+  @tickChildren = true
 
-  --p.children = null;
-  
-  
-  --p.mouseChildren = true;
-  
-  
-  --p.tickChildren = true;
+  --displayObj = framework.DisplayObject.new!
+  @isVisible = ->
+    hasContent = @cacheCanvas or #@children>0
+    return not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0 and hasContent)
 
-  --p.DisplayObject_initialize = p.initialize;
-  
-  --p.initialize = function() {
-      --this.DisplayObject_initialize();
-      --this.children = [];
-  --};
-
-
-
-  
-  --p.isVisible = function() {
-      --var hasContent = this.cacheCanvas || this.children.length;
-      --return !!(this.visible && this.alpha > 0 && this.scaleX != 0 && this.scaleY != 0 && hasContent);
-  --};
-
-  
-  --p.DisplayObject_draw = p.draw;
-
-  
-  --p.draw = function(ctx, ignoreCache) {
-      --if (this.DisplayObject_draw(ctx, ignoreCache)) { return true; }
+  @draw = (ctx, ignoreCache)->
+    --if displayObj.draw(ctx, ignoreCache)
+      --return true
+    
+    for i=1, #@children
+      child = @children[i]
+      if not child.isVisible()
+        continue
       
-      --var list = this.children.slice(0);
-      --for (var i=0,l=list.length; i<l; i++) {
-          --var child = list[i];
-          --if (!child.isVisible()) { continue; }
-          
-          
-          --ctx.save();
-          --child.updateContext(ctx);
-          --child.draw(ctx);
-          --ctx.restore();
-      --}
-      --return true;
-  --};
+      --ctx.save!
+      child.updateContext ctx
+      child.draw ctx
+      --ctx.restore!
+    return true
   
   
-  --p.addChild = function(child) {
-      --if (child == null) { return child; }
-      --var l = arguments.length;
-      --if (l > 1) {
-          --for (var i=0; i<l; i++) { this.addChild(arguments[i]); }
-          --return arguments[l-1];
-      --}
-      --if (child.parent) { child.parent.removeChild(child); }
-      --child.parent = this;
-      --this.children.push(child);
-      --return child;
-  --};
+  @addChild = (...)->
+    arguments = {...}
+    child = arguments[1]
+    if child == nil
+      return child
+    l = #arguments
+    if l > 1
+      for i=1,l
+        @.addChild arguments[i]
+      return arguments[l-1]
+    
+    if child.parent
+      child.parent.removeChild child
+    child.parent = @
+    _.push @children, child
+    return child
 
   
   --p.addChildAt = function(child, index) {
       --var l = arguments.length;
       --var indx = arguments[l-1]; 
-      --if (indx < 0 || indx > this.children.length) { return arguments[l-2]; }
+      --if (indx < 0 || indx > @children.length) { return arguments[l-2]; }
       --if (l > 2) {
-          --for (var i=0; i<l-1; i++) { this.addChildAt(arguments[i], indx+i); }
+          --for (var i=0; i<l-1; i++) { @.addChildAt(arguments[i], indx+i); }
           --return arguments[l-2];
       --}
       --if (child.parent) { child.parent.removeChild(child); }
       --child.parent = this;
-      --this.children.splice(index, 0, child);
+      --@children.splice(index, 0, child);
       --return child;
   --};
 
   
-  --p.removeChild = function(child) {
-      --var l = arguments.length;
-      --if (l > 1) {
-          --var good = true;
-          --for (var i=0; i<l; i++) { good = good && this.removeChild(arguments[i]); }
-          --return good;
-      --}
-      --return this.removeChildAt(createjs.indexOf(this.children, child));
-  --};
+  @removeChild = (...)->
+    arguments = {...}
+    child = arguments[1]
+    l = #arguments
+    if l > 1
+      good = true
+      for i=1,l
+        good = good and @.removeChild(arguments[i])
+      return good
+    return @.removeChildAt(_.indexOf(@children, child))
 
   
-  --p.removeChildAt = function(index) {
-      --var l = arguments.length;
-      --if (l > 1) {
-          --var a = [];
-          --for (var i=0; i<l; i++) { a[i] = arguments[i]; }
-          --a.sort(function(a, b) { return b-a; });
-          --var good = true;
-          --for (var i=0; i<l; i++) { good = good && this.removeChildAt(a[i]); }
-          --return good;
-      --}
-      --if (index < 0 || index > this.children.length-1) { return false; }
-      --var child = this.children[index];
-      --if (child) { child.parent = null; }
-      --this.children.splice(index, 1);
-      --return true;
-  --};
+  @removeChildAt = (...)->
+    arguments = {...}
+    index = arguments[1]
+    l = #arguments
+    if l > 1
+      a = {}
+      for i=1,l
+        a[i] = arguments[i]
+      table.sort(a, (a, b)->b-a>0)
+      good = true
+      for i=1,l
+        good = good and @.removeChildAt(a[i])
+      return good
+    
+    if index < 1 or index > #@children
+      return false
+    child = @children[index]
+    if child
+      child.parent = nil
+    table.remove(@children, index)
+    return true
 
   
   --p.removeAllChildren = function() {
-      --var kids = this.children;
-      --while (kids.length) { kids.pop().parent = null; }
+      --var kids = @children;
+      --while (kids.length) { kids.pop().parent = nil; }
   --};
 
   
   --p.getChildAt = function(index) {
-      --return this.children[index];
+      --return @children[index];
   --};
   
   
   --p.getChildByName = function(name) {
-      --var kids = this.children;
+      --var kids = @children;
       --for (var i=0,l=kids.length;i<l;i++) {
           --if(kids[i].name == name) { return kids[i]; }
       --}
-      --return null;
+      --return nil;
   --};
 
   
   --p.sortChildren = function(sortFunction) {
-      --this.children.sort(sortFunction);
+      --@children.sort(sortFunction);
   --};
 
   
   --p.getChildIndex = function(child) {
-      --return createjs.indexOf(this.children, child);
+      --return createjs.indexOf(@children, child);
   --};
 
   
   --p.getNumChildren = function() {
-      --return this.children.length;
+      --return @children.length;
   --};
   
   
   --p.swapChildrenAt = function(index1, index2) {
-      --var kids = this.children;
+      --var kids = @children;
       --var o1 = kids[index1];
       --var o2 = kids[index2];
       --if (!o1 || !o2) { return; }
@@ -152,12 +141,12 @@ new: maker ()=>
   
   
   --p.swapChildren = function(child1, child2) {
-      --var kids = this.children;
+      --var kids = @children;
       --var index1,index2;
       --for (var i=0,l=kids.length;i<l;i++) {
           --if (kids[i] == child1) { index1 = i; }
           --if (kids[i] == child2) { index2 = i; }
-          --if (index1 != null && index2 != null) { break; }
+          --if (index1 != nil && index2 != nil) { break; }
       --}
       --if (i==l) { return; } 
       --kids[index1] = child2;
@@ -166,7 +155,7 @@ new: maker ()=>
   
   
   --p.setChildIndex = function(child, index) {
-      --var kids = this.children, l=kids.length;
+      --var kids = @children, l=kids.length;
       --if (child.parent != this || index < 0 || index >= l) { return; }
       --for (var i=0;i<l;i++) {
           --if (kids[i] == child) { break; }
@@ -188,21 +177,21 @@ new: maker ()=>
   
   --p.hitTest = function(x, y) {
       
-      --return (this.getObjectUnderPoint(x, y) != null);
+      --return (@.getObjectUnderPoint(x, y) != nil);
   --};
 
   
   --p.getObjectsUnderPoint = function(x, y) {
       --var arr = [];
-      --var pt = this.localToGlobal(x, y);
-      --this._getObjectsUnderPoint(pt.x, pt.y, arr);
+      --var pt = @.localToGlobal(x, y);
+      --@._getObjectsUnderPoint(pt.x, pt.y, arr);
       --return arr;
   --};
 
   
   --p.getObjectUnderPoint = function(x, y) {
-      --var pt = this.localToGlobal(x, y);
-      --return this._getObjectsUnderPoint(pt.x, pt.y);
+      --var pt = @.localToGlobal(x, y);
+      --return @._getObjectsUnderPoint(pt.x, pt.y);
   --};
   
   
@@ -210,23 +199,23 @@ new: maker ()=>
   
   
   --p.getBounds = function() {
-      --return this._getBounds(null, true);
+      --return @._getBounds(nil, true);
   --};
   
   
   
   --p.getTransformedBounds = function() {
-      --return this._getBounds();
+      --return @._getBounds();
   --};
 
   
   --p.clone = function(recursive) {
       --var o = new Container();
-      --this.cloneProps(o);
+      --@.cloneProps(o);
       --if (recursive) {
           --var arr = o.children = [];
-          --for (var i=0, l=this.children.length; i<l; i++) {
-              --var clone = this.children[i].clone(recursive);
+          --for (var i=0, l=@children.length; i<l; i++) {
+              --var clone = @children[i].clone(recursive);
               --clone.parent = o;
               --arr.push(clone);
           --}
@@ -236,39 +225,34 @@ new: maker ()=>
 
   
   --p.toString = function() {
-      --return "[Container (name="+  this.name +")]";
+      --return "[Container (name="+  @name +")]";
   --};
 
 
   
-  --p.DisplayObject__tick = p._tick;
-  
-  
-  --p._tick = function(props) {
-      --if (this.tickChildren) {
-          --for (var i=this.children.length-1; i>=0; i--) {
-              --var child = this.children[i];
-              --if (child.tickEnabled && child._tick) { child._tick(props); }
-          --}
-      --}
-      --this.DisplayObject__tick(props);
-  --};
+  @_tick = (props) ->
+    if @tickChildren
+      for i=#@children, 1, -1
+        child = @children[i]
+        if child.tickEnabled and child._tick
+          child._tick props
+    --displayObj._tick(props)
 
   
   --p._getObjectsUnderPoint = function(x, y, arr, mouse, activeListener) {
       --var ctx = createjs.DisplayObject._hitTestContext;
-      --var mtx = this._matrix;
-      --activeListener = activeListener || (mouse&&this._hasMouseEventListener());
+      --var mtx = @_matrix;
+      --activeListener = activeListener || (mouse&&@._hasMouseEventListener());
 
       
-      --var children = this.children;
+      --var children = @children;
       --var l = children.length;
       --for (var i=l-1; i>=0; i--) {
           --var child = children[i];
           --var hitArea = child.hitArea, mask = child.mask;
           --if (!child.visible || (!hitArea && !child.isVisible()) || (mouse && !child.mouseEnabled)) { continue; }
           --if (!hitArea && mask && mask.graphics && !mask.graphics.isEmpty()) {
-              --var maskMtx = mask.getMatrix(mask._matrix).prependMatrix(this.getConcatenatedMatrix(mtx));
+              --var maskMtx = mask.getMatrix(mask._matrix).prependMatrix(@.getConcatenatedMatrix(mtx));
               --ctx.setTransform(maskMtx.a,  maskMtx.b, maskMtx.c, maskMtx.d, maskMtx.tx-x, maskMtx.ty-y);
               
               
@@ -277,7 +261,7 @@ new: maker ()=>
               --ctx.fill();
               
               
-              --if (!this._testHit(ctx)) { continue; }
+              --if (!@._testHit(ctx)) { continue; }
               --ctx.setTransform(1, 0, 0, 1, 0, 0);
               --ctx.clearRect(0, 0, 2, 2);
           --}
@@ -285,7 +269,7 @@ new: maker ()=>
           
           --if (!hitArea && child instanceof Container) {
               --var result = child._getObjectsUnderPoint(x, y, arr, mouse, activeListener);
-              --if (!arr && result) { return (mouse && !this.mouseChildren) ? this : result; }
+              --if (!arr && result) { return (mouse && !@mouseChildren) ? this : result; }
           --} else {
               --if (mouse && !activeListener && !child._hasMouseEventListener()) { continue; }
               
@@ -299,37 +283,37 @@ new: maker ()=>
               --ctx.globalAlpha = mtx.alpha;
               --ctx.setTransform(mtx.a,  mtx.b, mtx.c, mtx.d, mtx.tx-x, mtx.ty-y);
               --(hitArea||child).draw(ctx);
-              --if (!this._testHit(ctx)) { continue; }
+              --if (!@._testHit(ctx)) { continue; }
               --ctx.setTransform(1, 0, 0, 1, 0, 0);
               --ctx.clearRect(0, 0, 2, 2);
               --if (arr) { arr.push(child); }
-              --else { return (mouse && !this.mouseChildren) ? this : child; }
+              --else { return (mouse && !@mouseChildren) ? this : child; }
           --}
       --}
-      --return null;
+      --return nil;
   --};
   
   
   --p._getBounds = function(matrix, ignoreTransform) {
-      --var bounds = this.DisplayObject_getBounds();
-      --if (bounds) { return this._transformBounds(bounds, matrix, ignoreTransform); }
+      --var bounds = @.DisplayObject_getBounds();
+      --if (bounds) { return @._transformBounds(bounds, matrix, ignoreTransform); }
       
       --var minX, maxX, minY, maxY;
-      --var mtx = ignoreTransform ? this._matrix.identity() : this.getMatrix(this._matrix);
+      --var mtx = ignoreTransform ? @_matrix.identity() : @.getMatrix(@_matrix);
       --if (matrix) { mtx.prependMatrix(matrix); }
       
-      --var l = this.children.length;
+      --var l = @children.length;
       --for (var i=0; i<l; i++) {
-          --var child = this.children[i];
+          --var child = @children[i];
           --if (!child.visible || !(bounds = child._getBounds(mtx))) { continue; }
           --var x1=bounds.x, y1=bounds.y, x2=x1+bounds.width, y2=y1+bounds.height;
-          --if (x1 < minX || minX == null) { minX = x1; }
-          --if (x2 > maxX || maxX == null) { maxX = x2; }
-          --if (y1 < minY || minY == null) { minY = y1; }
-          --if (y2 > maxY || maxY == null) { maxY = y2; }
+          --if (x1 < minX || minX == nil) { minX = x1; }
+          --if (x2 > maxX || maxX == nil) { maxX = x2; }
+          --if (y1 < minY || minY == nil) { minY = y1; }
+          --if (y2 > maxY || maxY == nil) { maxY = y2; }
       --}
       
-      --return (maxX == null) ? null : this._rectangle.initialize(minX, minY, maxX-minX, maxY-minY);
+      --return (maxX == nil) ? nil : @_rectangle.initialize(minX, minY, maxX-minX, maxY-minY);
   --};
 
 }

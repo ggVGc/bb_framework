@@ -187,7 +187,7 @@ void appInit(const char* resourcePath, int useAssetZip) {
   /*
   RegLuaFuncGlobal(require);
   */
-  RegLuaFuncGlobal(print);
+  /*RegLuaFuncGlobal(print);*/
 
   if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);

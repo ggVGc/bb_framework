@@ -35,10 +35,10 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
     not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0)
   
   @draw = (ctx, ignoreCache)->
-    if @DisplayObject_draw ctx, ignoreCache
-      return true
+    --if @DisplayObject_draw ctx, ignoreCache
+      --return true
     @_updateTimeline!
-    @Container_draw(ctx, ignoreCache)
+    container.draw(ctx, ignoreCache)
     true
   
   @play = ->
@@ -77,7 +77,6 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
     frames = t
     @_t = t-frames
     
-    frames -= 1
     while frames>0
       frames -= 1
       if not @paused
@@ -103,8 +102,8 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
     "[MovieClip (name=#{@name})]"
 
   @_tick = (props)->
-    @advance(props and props.delta)
-    container.tick(props)
+    @.advance(props and props.delta)
+    container._tick(props)
   
   @_goto = (positionOrLabel)->
     pos = @timeline.resolve positionOrLabel
@@ -142,14 +141,14 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
         @_managed[n] = 1
 
       tweens = tl._tweens
-      for tween in #tweens
+      for tween in *tweens
         target = tween._target
         continue if target == @ or tween.passive
         offset = tween._stepPosition
 
-        if instanceof(target, framework.DisplayObject)
-          @_addManagedChild(target, offset)
-          @_setState(target.state, offset)
+        --if instanceof(target, framework.DisplayObject)
+          --@._addManagedChild(target, offset)
+          --@._setState(target.state, offset)
 
       kids = @children
       for i=#kids, 1, -1
@@ -181,15 +180,15 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
     @_managed[child.id] = 2
   
   
-  @_getBounds = (matrix, ignoreTransform)->
-      bounds = @DisplayObject_getBounds!
-      if not bounds
-        @_updateTimeline!
-        if @frameBounds
-          bounds = @_rectangle.copy(@frameBounds[@currentFrame+1])
-      if bounds
-        return @_transformBounds(bounds, matrix, ignoreTransform)
-      return @Container__getBounds(matrix, ignoreTransform)
+  --@_getBounds = (matrix, ignoreTransform)->
+      --bounds = @DisplayObject_getBounds!
+      --if not bounds
+        --@_updateTimeline!
+        --if @frameBounds
+          --bounds = @_rectangle.copy(@frameBounds[@currentFrame+1])
+      --if bounds
+        --return @._transformBounds(bounds, matrix, ignoreTransform)
+      --return @.Container__getBounds(matrix, ignoreTransform)
 
 --createjs.MovieClip = MovieClip;
   

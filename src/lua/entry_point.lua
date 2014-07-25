@@ -267,6 +267,7 @@ dofile 'framework/easel/movie_clip.moon'
 
 --dofile "main.moon"
 dofile("framework/test/movie_clip_test.moon")
+--dofile("framework/test/timeline_test.moon")
 --dofile("framework/test/tween_test.moon")
 --dofile("framework/test/bitmap_animation_test.moon")
 --dofile("bitmap_test.lua")

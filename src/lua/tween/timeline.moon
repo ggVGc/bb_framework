@@ -1,224 +1,189 @@
 
 local Timeline
 Timeline = {
-
 new: maker (tweens, labels, props) =>
+    @ignoreGlobalPause = false
+    @duration = 0
+    @loop = false
+    @position = nil
+    @_paused = false
+    @_tweens = {}
+    @_labels = nil
+    @_labelList = nil
+    @_prevPosition = 0
+    @_prevPos = -1
+    @_useTicks = false
+    if props
+      @_useTicks = props.useTicks
+      @loop = props.loop
+      @ignoreGlobalPause = props.ignoreGlobalPause
+      if props.onChange
+        @addEventListener "change", props.onChange
+    if tweens
+      @addTween.apply(@, tweens)
 
 
---var Timeline = function(tweens, labels, props) {
-  --this.initialize(tweens, labels, props);
---};
---var p = Timeline.prototype = new createjs.EventDispatcher();
-	
-	--p.ignoreGlobalPause = false;
+    @setLabels = (o)->
+      if o
+        @_labels = o
+      else
+        @_labels = {}
 
-	
-	--p.duration = 0;
+    @setLabels labels
 
-	
-	--p.loop = false;
+    @setPaused = (value)->
+      @_paused = not not value
+      framework.Tween._register(@, not value)
 
-	
-	
+    @setPosition = (value, actionsMode)->
+      if value < 0
+        value = 0
+      t = @loop and value%@duration or value
+      ennd = (not @loop) and value >= @duration
+      if t == @_prevPos
+        return ennd
+      @_prevPosition = value
+      @_prevPos = t
+      @position = @_prevPos
+      for i=1,#@_tweens
+        @_tweens[i].setPosition(t, actionsMode)
+        if t ~= @_prevPos
+          return false
 
-	
-	--p.position = null;
+      if ennd
+        @setPaused true
+      --@dispatchEvent "change"
+      return ennd
 
+    if props and props.paused
+      @_paused=true
+    else
+      framework.Tween._register @, true
+    if props and props.position~=nil
+      @.setPosition props.position, framework.Tween.NONE
+    
+    @addTween = (...)->
+      arguments = {...}
+      l = #arguments
+      if (l > 1)
+        for i=1,l
+          @.addTween(arguments[i])
+        return arguments[1]
+      elseif l == 0
+        return nil
+      tween = arguments[1]
+      @.removeTween(tween)
+      _.push @_tweens, tween
+      tween.setPaused(true)
+      tween._paused = false
+      tween._useTicks = @_useTicks
+      if tween.duration > @duration
+        @duration = tween.duration
+      if @_prevPos >= 0
+        tween.setPosition(@_prevPos, framework.Tween.NONE)
+      return tween
 
-	
+    
+    @removeTween = (...) ->
+      arguments = {...}
+      l = #arguments
+      if l > 1
+        good = true
+        for i=1,l
+          good = good and @.removeTween(arguments[i])
+        return good
+      elseif l == 0
+        return false
 
+      tween = arguments[1]
+      tweens = @_tweens
+      i = #tweens+1
+      while i>1
+        i-=1
+        if tweens[i] == tween
+          table.remove tweens, i
+          if tween.duration >= @duration
+            @updateDuration!
+          return true
+      return false
 
+    
+    @addLabel = (label, position)->
+      @_labels[label] = position
+      list = @_labelList
+      if list
+        for i=1,#list
+          if position < list[i].position
+            break
+        table.insert list, i,{label:label, position:position}
 
-	
-	--p._paused = false;
+    
+    
+    
+    --p.getLabels = function() {
+        --var list = @_labelList;
+        --if (!list) {
+            --list = @_labelList = [];
+            --var labels = @_labels;
+            --for (var n in labels) {
+                --list.push({label:n, position:labels[n]});
+            --}
+            --list.sort(function (a,b) { return a.position- b.position; });
+        --}
+        --return list;
+    --};
+    
+    
+    --p.getCurrentLabel = function() {
+        --var labels = @.getLabels();
+        --var pos = @position;
+        --var l = labels.length;
+        --if (l) {
+            --for (var i = 0; i<l; i++) { if (pos < labels[i].position) { break; } }
+            --return (i==0) ? null : labels[i-1].label;
+        --}
+        --return null;
+    --};
+    
+    
+    --@gotoAndPlay = (positionOrLabel)->
+      --@setPaused false
+      --@_goto positionOrLabel
 
-	
-	--p._tweens = null;
+    
+    @gotoAndStop = (positionOrLabel)->
+      @setPaused true
+      @_goto positionOrLabel
 
-	
-	--p._labels = null;
-	
-	
-	--p._labelList = null;
+    
 
-	
-	--p._prevPosition = 0;
+    
 
-	
-	--p._prevPos = -1;
+    
+    @updateDuration = ->
+      @duration = 0
+      for i=1,#@_tweens
+        tween = @_tweens[i]
+        if tween.duration > @duration
+          @duration = tween.duration
 
-	
-	--p._useTicks = false;
+    @tick = (delta)->
+      @.setPosition(@_prevPosition+delta)
 
+    @resolve = (positionOrLabel)->
+      pos = tonumber positionOrLabel
+      if not pos
+        pos = @_labels[positionOrLabel]
+      return pos
 
-	
-	--p.initialize = function(tweens, labels, props) {
-		--this._tweens = [];
-		--if (props) {
-			--this._useTicks = props.useTicks;
-			--this.loop = props.loop;
-			--this.ignoreGlobalPause = props.ignoreGlobalPause;
-			--props.onChange&&this.addEventListener("change", props.onChange);
-		--}
-		--if (tweens) { this.addTween.apply(this, tweens); }
-		--this.setLabels(labels);
-		--if (props&&props.paused) { this._paused=true; }
-		--else { createjs.Tween._register(this,true); }
-		--if (props&&props.position!=null) { this.setPosition(props.position, createjs.Tween.NONE); }
-	--};
+    @toString = -> "[Timeline]"
 
-
-	
-	--p.addTween = function(tween) {
-		--var l = arguments.length;
-		--if (l > 1) {
-			--for (var i=0; i<l; i++) { this.addTween(arguments[i]); }
-			--return arguments[0];
-		--} else if (l == 0) { return null; }
-		--this.removeTween(tween);
-		--this._tweens.push(tween);
-		--tween.setPaused(true);
-		--tween._paused = false;
-		--tween._useTicks = this._useTicks;
-		--if (tween.duration > this.duration) { this.duration = tween.duration; }
-		--if (this._prevPos >= 0) { tween.setPosition(this._prevPos, createjs.Tween.NONE); }
-		--return tween;
-	--};
-
-	
-	--p.removeTween = function(tween) {
-		--var l = arguments.length;
-		--if (l > 1) {
-			--var good = true;
-			--for (var i=0; i<l; i++) { good = good && this.removeTween(arguments[i]); }
-			--return good;
-		--} else if (l == 0) { return false; }
-
-		--var tweens = this._tweens;
-		--var i = tweens.length;
-		--while (i--) {
-			--if (tweens[i] == tween) {
-				--tweens.splice(i, 1);
-				--if (tween.duration >= this.duration) { this.updateDuration(); }
-				--return true;
-			--}
-		--}
-		--return false;
-	--};
-
-	
-	--p.addLabel = function(label, position) {
-		--this._labels[label] = position;
-		--var list = this._labelList;
-		--if (list) {
-			--for (var i= 0,l=list.length; i<l; i++) { if (position < list[i].position) { break; } }
-			--list.splice(i, 0, {label:label, position:position});
-		--}
-	--};
-
-	
-	--p.setLabels = function(o) {
-		--this._labels = o ?  o : {};
-	--};
-	
-	
-	--p.getLabels = function() {
-		--var list = this._labelList;
-		--if (!list) {
-			--list = this._labelList = [];
-			--var labels = this._labels;
-			--for (var n in labels) {
-				--list.push({label:n, position:labels[n]});
-			--}
-			--list.sort(function (a,b) { return a.position- b.position; });
-		--}
-		--return list;
-	--};
-	
-	
-	--p.getCurrentLabel = function() {
-		--var labels = this.getLabels();
-		--var pos = this.position;
-		--var l = labels.length;
-		--if (l) {
-			--for (var i = 0; i<l; i++) { if (pos < labels[i].position) { break; } }
-			--return (i==0) ? null : labels[i-1].label;
-		--}
-		--return null;
-	--};
-	
-	
-	--p.gotoAndPlay = function(positionOrLabel) {
-		--this.setPaused(false);
-		--this._goto(positionOrLabel);
-	--};
-
-	
-	--p.gotoAndStop = function(positionOrLabel) {
-		--this.setPaused(true);
-		--this._goto(positionOrLabel);
-	--};
-
-	
-	--p.setPosition = function(value, actionsMode) {
-		--if (value < 0) { value = 0; }
-		--var t = this.loop ? value%this.duration : value;
-		--var end = !this.loop && value >= this.duration;
-		--if (t == this._prevPos) { return end; }
-		--this._prevPosition = value;
-		--this.position = this._prevPos = t; 
-		--for (var i=0, l=this._tweens.length; i<l; i++) {
-			--this._tweens[i].setPosition(t, actionsMode);
-			--if (t != this._prevPos) { return false; } 
-		--}
-		--if (end) { this.setPaused(true); }
-		--this.dispatchEvent("change");
-		--return end;
-	--};
-
-	
-	--p.setPaused = function(value) {
-		--this._paused = !!value;
-		--createjs.Tween._register(this, !value);
-	--};
-
-	
-	--p.updateDuration = function() {
-		--this.duration = 0;
-		--for (var i=0,l=this._tweens.length; i<l; i++) {
-			--var tween = this._tweens[i];
-			--if (tween.duration > this.duration) { this.duration = tween.duration; }
-		--}
-	--};
-
-	
-	--p.tick = function(delta) {
-		--this.setPosition(this._prevPosition+delta);
-	--};
-
-	
-	--p.resolve = function(positionOrLabel) {
-		--var pos = parseFloat(positionOrLabel);
-		--if (isNaN(pos)) { pos = this._labels[positionOrLabel]; }
-		--return pos;
-	--};
-
-	
-	--p.toString = function() {
-		--return "[Timeline]";
-	--};
-
-	
-	--p.clone = function() {
-		--throw("Timeline can not be cloned.")
-	--};
-
-
-	
-	--p._goto = function(positionOrLabel) {
-		--var pos = this.resolve(positionOrLabel);
-		--if (pos != null) { this.setPosition(pos); }
-	--};
+    @clone = -> error "Timeline can not be cloned."
+    
+    @_goto = (positionOrLabel)->
+      pos = @.resolve(positionOrLabel)
+      if pos ~= nil
+        @.setPosition pos
 
 }
 framework.Timeline = Timeline
