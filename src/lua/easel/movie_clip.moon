@@ -25,7 +25,6 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
   @_managed = {}
 
   container = framework.Container.new!
-  setmetatable(@, {__index:container})
 
   props = {paused:true, position:@startPosition, useTicks:true}
   @timeline = framework.Timeline.new(nil, labels, props)
@@ -34,13 +33,17 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
   @isVisible = ->
     not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0)
   
+
+  contDraw = container.draw
   @draw = (ctx, ignoreCache)->
     --if @DisplayObject_draw ctx, ignoreCache
       --return true
-    @_updateTimeline!
-    container.draw(ctx, ignoreCache)
+    @._updateTimeline!
+    contDraw(ctx, ignoreCache)
     true
   
+  setmetatable(@, {__newindex:container, __index:container})
+
   @play = ->
     @paused = false
   
@@ -84,7 +87,7 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
           @_prevPosition = 0
         else
           @_prevPosition = @_prevPosition+1
-        @_updateTimeline!
+        @._updateTimeline!
   
 
   @getLabels = ->
@@ -92,7 +95,7 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
   
   
   @getCurrentLabel = ->
-    @_updateTimeline!
+    @._updateTimeline!
     @timeline.getCurrentLabel!
   
   @clone = ->
@@ -101,9 +104,10 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
   @toString = ->
     "[MovieClip (name=#{@name})]"
 
+  contTick = container._tick
   @_tick = (props)->
     @.advance(props and props.delta)
-    container._tick(props)
+    contTick(props)
   
   @_goto = (positionOrLabel)->
     pos = @timeline.resolve positionOrLabel
@@ -113,7 +117,7 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
       @_prevPos = NaN
     @_prevPosition = pos
     @_t = 0
-    @_updateTimeline!
+    @._updateTimeline!
   
   
   @_reset = ->

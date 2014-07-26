@@ -7,7 +7,9 @@ new: maker ()=>
   @tickChildren = true
 
   displayObj = framework.DisplayObject.new!
-  setmetatable(@, {__index:displayObj})
+  setmetatable(@, {__newindex:displayObj, __index:displayObj})
+  
+
 
   @isVisible = ->
     hasContent = @cacheCanvas or #@children>0

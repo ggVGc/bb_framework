@@ -2,12 +2,7 @@ local lib = {}
 
 lib.cloud_1= {}
 lib.cloud_1.new = function()
-  --return framework.Bitmap.new(img.cloud_1)
-  local this = framework.DisplayObject.new()
-    this.draw= function()
-    end
-    this.isVisible = function() return true end
-  return this
+  return framework.cjs.Bitmap.new('framework/testdata/jumper.png')
 end
 
 lib.cloud = {}

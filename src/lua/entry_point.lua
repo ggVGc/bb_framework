@@ -263,6 +263,7 @@ dofile 'framework/asset_loader.moon'
 dofile 'framework/tween/tween.moon'
 dofile 'framework/tween/timeline.moon'
 dofile 'framework/easel/display_object.moon'
+dofile 'framework/easel/cjs_bitmap.moon'
 dofile 'framework/easel/container.moon'
 dofile 'framework/easel/movie_clip.moon'
 

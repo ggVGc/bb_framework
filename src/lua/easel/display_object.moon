@@ -8,11 +8,19 @@ new: maker ()=>
   @scaleX = 1
   @scaleY = 1
   @alpha = 1
+  @parent = nil
   @x = 0
   @y = 0
 
   @isVisible = ->
     return not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0)
+
+  @getGlobalPos = ->
+    if @parent ~= nil
+      x,y = @parent.getGlobalPos!
+      return x+@x, y+@y
+    else
+      return @x, @y
 
 }
 

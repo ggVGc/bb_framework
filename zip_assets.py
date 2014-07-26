@@ -94,6 +94,7 @@ if __name__ == '__main__':
   moonSourceMappings = zipDir(zipOutFile, frameworkSrcPath, "framework")
   if 'test' in sys.argv:
     moonSourceMappings += zipDir(zipOutFile, "src/luatest", "framework/test")
+    moonSourceMappings += zipDir(zipOutFile, "src/luatest/data", "framework/testdata")
   moonSourceMappings += zipDir(zipOutFile, appPath)
 
   with open('moon_source_mappings.lua', 'w') as out:
