@@ -34,6 +34,13 @@ function! RunJumpz()
 endfun
 
 "map <buffer>  <F5> :call RunJumpz()<CR>
+function! Runn()
+  wall
+  exec "silent !".g:projectScriptDir."/simple_moon_compile.lua -stdout convert_flash_export.moon | lua"
+  redraw!
+endfunction
+
+map <buffer>  <leader><space> :call Runn()<CR>
 
 
 let s:x = fnamemodify(g:projectScriptDir, ":p")

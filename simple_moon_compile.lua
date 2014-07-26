@@ -9,18 +9,19 @@ local dump_tree = require"moonscript.dump".tree
 printSource = false
 printSourceMapping = false
 
--- convert .moon to .lua
-function convert_path(path)
-	local ret = path:gsub("%.moon$", ".lua")
-    print(ret)
-    return ret
-end
-
 function log_msg(...)
   if not printSource then
     io.stderr:write(table.concat({...}, " ") .. "\n")
   end
 end
+
+-- convert .moon to .lua
+function convert_path(path)
+	local ret = path:gsub("%.moon$", ".lua")
+    log_msg(ret)
+    return ret
+end
+
 
 function write_file(fname, code)
 	if printSource then
@@ -105,7 +106,14 @@ end
 
 local target_dir = ""
 
-local files = inputs
+local files = {}
+for _, fname in ipairs(inputs) do
+  if string.find('-stdout', fname) then
+    printSource = true
+  else
+    table.insert(files, fname)
+  end
+end
 
 files = remove_dups(files)
 
