@@ -2,7 +2,7 @@ Ticker = {
   addEventListener: ->
 }
 
-local Tween
+export Tween
 Tween = {
 NONE: 0
 LOOP: 1

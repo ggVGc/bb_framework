@@ -35,11 +35,11 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
   
 
   contDraw = container.draw
-  @draw = (ctx, ignoreCache)->
+  @draw = (sceneHeight, ctx, ignoreCache)->
     --if @DisplayObject_draw ctx, ignoreCache
       --return true
     @._updateTimeline!
-    contDraw(ctx, ignoreCache)
+    contDraw(sceneHeight, ctx, ignoreCache)
     true
   
   setmetatable(@, {__newindex:container, __index:container})

@@ -9,6 +9,7 @@ new: maker ()=>
   @scaleY = 1
   @alpha = 1
   @parent = nil
+  @rotation = 0
   @x = 0
   @y = 0
 
@@ -21,6 +22,18 @@ new: maker ()=>
       return x+@x, y+@y
     else
       return @x, @y
+  
+  @getGlobalRot = ->
+    if @parent ~= nil
+      r = @parent.getGlobalRot!
+      return @rotation+r
+    else
+      return @rotation
+
+  @setTransform = (x,y,scaleX, scaleY, rot) ->
+    @x = x if x
+    @y = y if y
+    @rotation = rot if rot
 
 }
 

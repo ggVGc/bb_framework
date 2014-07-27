@@ -262,13 +262,14 @@ dofile 'framework/draw_states.moon'
 dofile 'framework/asset_loader.moon'
 dofile 'framework/tween/tween.moon'
 dofile 'framework/tween/timeline.moon'
+dofile 'framework/easel/ticker.moon'
 dofile 'framework/easel/display_object.moon'
 dofile 'framework/easel/cjs_bitmap.moon'
 dofile 'framework/easel/container.moon'
 dofile 'framework/easel/movie_clip.moon'
 
---dofile "main.moon"
-dofile("framework/test/movie_clip_test.moon")
+dofile "main.moon"
+--dofile("framework/test/movie_clip_test.moon")
 --dofile("framework/test/timeline_test.moon")
 --dofile("framework/test/tween_test.moon")
 --dofile("framework/test/bitmap_animation_test.moon")

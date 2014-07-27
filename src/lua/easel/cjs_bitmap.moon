@@ -6,12 +6,10 @@ new: maker (path)=>
   displayObj = framework.DisplayObject.new()
   setmetatable(@, {__newindex:displayObj, __index:displayObj})
   tex = framework.Texture.fromFile path
-  
-  cam = framework.Camera.createDefault 960
-  @draw = ->
-    cam.apply!
+  @draw = (sceneHeight) ->
     x,y = @.getGlobalPos!
-    tex.draw x,y
+    r = @.getGlobalRot!
+    tex.draw x,sceneHeight-y, nil,nil, r
 
 }
 

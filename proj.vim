@@ -40,7 +40,7 @@ function! Runn()
   redraw!
 endfunction
 
-map <buffer>  <leader><space> :call Runn()<CR>
+"map <buffer>  <leader><space> :call Runn()<CR>
 
 
 let s:x = fnamemodify(g:projectScriptDir, ":p")
