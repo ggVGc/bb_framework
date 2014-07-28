@@ -55,9 +55,16 @@ def handleMoonFiles(zipOut, r, prefix, filePaths):
   return sourceMappings
 
 def zipDir(zipOut, r, prefix=""):
+  convertScript = (subprocess.check_output([LUA_EXE, 'simple_moon_compile.lua', '-stdout', 'convert_flash_export.moon']))
+
   moonFiles = []
   for root, dirs, files in os.walk(r):
     for f in files:
+      if f.endswith('.fla'):
+        jsPath = os.path.join(root, f.replace('.fla', '.js'))
+        if os.path.exists(jsPath):
+          p = subprocess.Popen([LUA_EXE, '-', jsPath], stdin=subprocess.PIPE)
+          p.communicate(input=convertScript)
       p = os.path.join(root, f)
       rp = os.path.relpath(p, r)
       if not rp.startswith(".") and not 'moonscript' in p and p.endswith(('.lua','.moon', '.png', '.xml','.txt')):
@@ -98,10 +105,10 @@ if __name__ == '__main__':
   moonSourceMappings += zipDir(zipOutFile, appPath)
 
   with open('moon_source_mappings.lua', 'w') as out:
-    out.write('return {%s}'%moonSourceMappings);
+    out.write('return {%s}'%moonSourceMappings.replace("\\", "/"));
   zipOutFile.write('moon_source_mappings.lua', os.path.join('assets', 'moon_source_mappings.lua'))
   os.remove('moon_source_mappings.lua')
 
-  zjipOutFile.close() 
+  zipOutFile.close() 
   print ''
   print 'DONE'
