@@ -70,6 +70,7 @@ new: maker (target, props, pluginData)=>
     @._addStep {d:duration, p0:o, e:nil, p1:o, v:passive}
 
   @to = (props, duration, ease) ->
+    duration = duration or 0
     if (_.isNaN duration or duration < 0)
       duration = 0
     @._addStep {

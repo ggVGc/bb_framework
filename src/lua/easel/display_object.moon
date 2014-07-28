@@ -12,6 +12,11 @@ new: maker ()=>
   @rotation = 0
   @x = 0
   @y = 0
+  @skewX = 0
+  @regX = 0
+  @regY = 0
+  @skewY = 0
+  @isDisplayObj = true
 
   @isVisible = ->
     return not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0)
@@ -19,9 +24,10 @@ new: maker ()=>
   @getGlobalPos = ->
     if @parent ~= nil
       x,y = @parent.getGlobalPos!
-      return x+@x, y+@y
+      return x+@x-@regX, y+@y-@regY
     else
-      return @x, @y
+      return @x-@regX, @y-@regY
+    
   
   @getGlobalRot = ->
     if @parent ~= nil
@@ -30,11 +36,14 @@ new: maker ()=>
     else
       return @rotation
 
-  @setTransform = (x,y,scaleX, scaleY, rot) ->
+  @setTransform = (x,y,scaleX, scaleY, rot, skewX, skewY, regX, regY) ->
     @x = x if x
     @y = y if y
     @rotation = rot if rot
-
+    @skewX = skewX if skewX
+    @skewY = skewY if skewY
+    @regX = regX if regX
+    @regY = regY if regY
 }
 
 framework.DisplayObject = DisplayObject

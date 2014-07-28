@@ -9,7 +9,7 @@ new: maker (path)=>
   @draw = () ->
     x,y = @.getGlobalPos!
     r = @.getGlobalRot!
-    tex.draw x,y, nil,nil, -r
+    tex.draw x+tex.width/2,y+tex.height/2, 0.5,0.5, -r
 
 }
 

@@ -30,16 +30,19 @@ objectProcessor = (name, content, type) ->
     initContent = 'lib.sourceFolder..\'/images/'..initContent..'.png\''
     type = 'cjs.Bitmap'
   else
-    _,_,initContent = content\find 'this%.initialize%(([%w%u%d_,%{%}%.=:]*)%);'
-  initContent = initContent\gsub ':', '='
+    _,_,initContent = content\find 'this%.initialize%(([%w%u%d_,%{%}%.=:"]*)%);'
+  initContent = (initContent\gsub ':', '=')\gsub '"', ''
 
   content = content\gsub '= function%(mode,startPosition,loop%) {', ''
   content = content\gsub '= function%(%) {\n', ''
-  content = content\gsub 'this%.initialize%([%w%u%d_,%{%}%.=:]*%);', ''
+  content = content\gsub 'this%.initialize%([%w%u%d_,%{%}%.=:"]*%);', ''
   content = content\gsub 'new lib%.([%u%w%d_]*)%(([,%d%w"]*)%);', 'lib.%1.new(%2)'
   content = content\gsub 'cjs.Tween', 'framework.Tween'
   content = content\gsub ';\n', '\n'
   content = content\gsub ':', '='
+  content = content\gsub '%[', '{'
+  content = content\gsub '%]', '}'
+  content = content\gsub 'Tween%.get%(%{%}%)', 'Tween.get({state={}})'
 
   ret = 'lib.'..name..' = {}\n'
   ret=ret..'lib.'..name..'.new = function(mode, startPosition, loop)\n'

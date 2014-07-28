@@ -150,10 +150,10 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
         continue if target == @ or tween.passive
         offset = tween._stepPosition
 
-        --if instanceof(target, framework.DisplayObject)
-        @._addManagedChild(target, offset)
-        --else
-          --@._setState(target.state, offset)
+        if target.isDisplayObj
+          @._addManagedChild(target, offset)
+        else
+          @._setState(target.state, offset)
 
       kids = @children
       for i=#kids, 1, -1
@@ -169,8 +169,9 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
       o = state[i]
       target = o.t
       props = o.p
-      for k, v in pairs props
-        target[k] = v
+      if props
+        for k, v in pairs props
+          target[k] = v
       @._addManagedChild target, offset
 
   
