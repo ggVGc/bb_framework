@@ -54,7 +54,7 @@ objectProcessor = (name, content, type) ->
 initInner = (identifier+S',{}.=')^1
 --contentHeader = P' = function('*initInner*P') {\n\tthis.initialize('*initInner*P');\n'
 contentHeader = P''
-libObjPatt = P'(lib.' * C(identifier^1)*contentHeader*C((anything-P'}).')^1)*P'}).prototype = p = new cjs.'*C(identifier^1)*P'();'
+libObjPatt = P'(lib.' * C(identifier^1)*contentHeader*C((anything-P'}).prototype')^1)*P'}).prototype = p = new cjs.'*C(identifier^1)*P'();'
 middle = P'\np.nominalBounds = new cjs.Rectangle('*((S'-0123456789.,')^1)*P');\n\n'*P'\n'^-1
 
 
