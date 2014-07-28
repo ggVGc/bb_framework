@@ -6,10 +6,10 @@ new: maker (path)=>
   displayObj = framework.DisplayObject.new()
   setmetatable(@, {__newindex:displayObj, __index:displayObj})
   tex = framework.Texture.fromFile path
-  @draw = (sceneHeight) ->
+  @draw = () ->
     x,y = @.getGlobalPos!
     r = @.getGlobalRot!
-    tex.draw x,sceneHeight-y, nil,nil, -r
+    tex.draw x,y, nil,nil, -r
 
 }
 

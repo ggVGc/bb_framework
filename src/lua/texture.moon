@@ -16,9 +16,10 @@ new: (bmData, x, y, w, h)->
         when "height" tex.height)
 
     .draw=(x, y, pivotX, pivotY, rot, scaleX, scaleY)->
+      y = framework.Camera.curAppliedHeight-(y or 0)
       w = scaleX or 1
       h = scaleY or 1
-      _c_framework.quadDrawTex x or 0, y or 0,(scaleX or 1)*tex.width,
+      _c_framework.quadDrawTex x or 0, y,(scaleX or 1)*tex.width,
         (scaleY or 1)*tex.height,tex, rot or 0,pivotX or 0.5, pivotY or 0.5
 
 fromFile: (path, errorOnInvalid=true)->

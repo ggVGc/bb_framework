@@ -3,6 +3,9 @@ framework = framework or {}
 
 framework.Camera = {}
 
+framework.Camera.curAppliedHeight = nil
+
+
 function framework.Camera.new(width, height)
   local M = {}
   local cam = _c_framework.Camera()
@@ -36,6 +39,7 @@ function framework.Camera.new(width, height)
   end
 
   function M.apply()
+    framework.Camera.curAppliedHeight = cam.height
     _c_framework.cameraSetActive(cam)
   end
 

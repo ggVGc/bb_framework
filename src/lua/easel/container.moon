@@ -15,7 +15,7 @@ new: maker ()=>
     hasContent = @cacheCanvas or #@children>0
     return not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0 and hasContent)
 
-  @draw = (sceneHeight, ctx, ignoreCache)->
+  @draw = (ctx, ignoreCache)->
     --if displayObj.draw(ctx, ignoreCache)
       --return true
   
@@ -28,7 +28,7 @@ new: maker ()=>
       
       --ctx.save!
       --child.updateContext ctx
-      child.draw sceneHeight, ctx
+      child.draw ctx
       --ctx.restore!
     return true
   
