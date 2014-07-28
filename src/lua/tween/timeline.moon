@@ -18,9 +18,9 @@ new: maker (tweens, labels, props) =>
       @loop = props.loop
       @ignoreGlobalPause = props.ignoreGlobalPause
       if props.onChange
-        @addEventListener "change", props.onChange
+        @.addEventListener "change", props.onChange
     if tweens
-      @addTween.apply(@, tweens)
+      @.addTween.apply(@, tweens)
 
 
     @setLabels = (o)->
@@ -29,7 +29,7 @@ new: maker (tweens, labels, props) =>
       else
         @_labels = {}
 
-    @setLabels labels
+    @.setLabels labels
 
     @setPaused = (value)->
       @_paused = not not value
@@ -51,7 +51,7 @@ new: maker (tweens, labels, props) =>
           return false
 
       if ennd
-        @setPaused true
+        @.setPaused true
       --@dispatchEvent "change"
       return ennd
 
@@ -103,7 +103,7 @@ new: maker (tweens, labels, props) =>
         if tweens[i] == tween
           table.remove tweens, i
           if tween.duration >= @duration
-            @updateDuration!
+            @.updateDuration!
           return true
       return false
 
@@ -146,14 +146,14 @@ new: maker (tweens, labels, props) =>
     --};
     
     
-    --@gotoAndPlay = (positionOrLabel)->
-      --@setPaused false
-      --@_goto positionOrLabel
+    @gotoAndPlay = (positionOrLabel)->
+      @.setPaused false
+      @._goto positionOrLabel
 
     
     @gotoAndStop = (positionOrLabel)->
-      @setPaused true
-      @_goto positionOrLabel
+      @.setPaused true
+      @._goto positionOrLabel
 
     
 

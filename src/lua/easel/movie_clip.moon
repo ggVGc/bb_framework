@@ -52,11 +52,11 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
   
   @gotoAndPlay = (positionOrLabel)->
     @paused = false
-    @_goto positionOrLabel
+    @._goto positionOrLabel
   
   @gotoAndStop = (positionOrLabel)->
     @paused = true
-    @_goto positionOrLabel
+    @._goto positionOrLabel
   
   
   @advance = (time)->

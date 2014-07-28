@@ -61,7 +61,7 @@ inFileDir = inFilePath\sub 1, ind-1
 ind = inFileDir\find ("/[^/]*$")
 inFileDir = inFileDir\sub ind+1
 
-outContent = 'lib = {}\nlib.sourceFolder=\''..inFileDir..'\'\n'
+outContent = 'local lib = {}\nlib.sourceFolder=\''..inFileDir..'\'\n'
 patt = ((libObjPatt/objectProcessor)*middle)^1
 for obj in *{patt\match(content)}
   outContent = outContent..obj..'\n\n'

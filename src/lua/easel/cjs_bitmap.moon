@@ -9,7 +9,7 @@ new: maker (path)=>
   @draw = (sceneHeight) ->
     x,y = @.getGlobalPos!
     r = @.getGlobalRot!
-    tex.draw x,sceneHeight-y, nil,nil, r
+    tex.draw x,sceneHeight-y, nil,nil, -r
 
 }
 
