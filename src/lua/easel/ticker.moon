@@ -1,27 +1,25 @@
 local Ticker
 Ticker = {
-new: maker (fps, initialListeners)=>
-  @listeners = initialListeners or {}
-  @timePerTick = 1000/(fps or 24)
+new: (fps, initialListeners) ->
+  self = {}
+  self.listeners = initialListeners or {}
+  self.timePerTick = 1000/(fps or 24)
 
-  @addListener = (listener) ->
-    table.insert @listeners, listener
+  self.addListener = (listener) ->
+    table.insert self.listeners, listener
 
-  @_tick = (deltaMs) ->
-    for l in *@listeners
+  self._tick = (deltaMs) ->
+    for l in *self.listeners
       l._tick {}
 
   curTime = 0
-  @update = (deltaMs) ->
+  self.update = (deltaMs) ->
     curTime += deltaMs
-    while curTime>=@timePerTick
-      curTime -= @timePerTick
-      @._tick!
+    while curTime>=self.timePerTick
+      curTime -= self.timePerTick
+      self._tick!
 
-
-
-
-
+  return self
 }
 
 framework.Ticker = Ticker

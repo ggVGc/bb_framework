@@ -21,149 +21,150 @@ _tweens: {}
 _plugins: {}
 _inited: false
 
-new: maker (target, props, pluginData)=>
-  @ignoreGlobalPause = props and not not props.ignoreGlobalPause
-  @loop = props and not not props.loop
-  @duration = 0
-  @pluginData = pluginData or {}
-  @target = @_target
-  @position = nil
-  @passive = false
+new: (target, props, pluginData) ->
+  self = {}
+  self.ignoreGlobalPause = props and not not props.ignoreGlobalPause
+  self.loop = props and not not props.loop
+  self.duration = 0
+  self.pluginData = pluginData or {}
+  self.target = self._target
+  self.position = nil
+  self.passive = false
 
-  @_paused = props and not not props.paused
-  @_curQueueProps = {}
-  @_initQueueProps = {}
-  @_steps = {}
-  @_actions = {}
-  @_prevPosition = 0
-  @_stepPosition = 0 -- this is needed by MovieClip.
-  @_prevPos = -1
-  @_target = target
-  @_useTicks = props and not not props.useTicks
+  self._paused = props and not not props.paused
+  self._curQueueProps = {}
+  self._initQueueProps = {}
+  self._steps = {}
+  self._actions = {}
+  self._prevPosition = 0
+  self._stepPosition = 0 -- this is needed by MovieClip.
+  self._prevPos = -1
+  self._target = target
+  self._useTicks = props and not not props.useTicks
 
 
   props = _.extend {}, Tween.defaultProps, props
 
-  if props.onChange then @.addEventListener "change", props.onChange
+  if props.onChange then self.addEventListener "change", props.onChange
   if props.override then Tween.removeTweens target
 
-  unless @_paused
-    Tween._register @, true
+  unless self._paused
+    Tween._register self, true
   if props.position
-    @.setPosition props.position, Tween.NONE
+    self.setPosition props.position, Tween.NONE
 
 
-  @tick = (delta)->
-    unless @._paused
-      @.setPosition(@_prevPosition+delta)
+  self.tick = (delta)->
+    unless self._paused
+      self.setPosition(self._prevPosition+delta)
 
-  @play = (tween)->
-    @.setPaused false
+  self.play = (tween)->
+    self.setPaused false
 
-  @pause = (tween)->
-    @.setPaused true
+  self.pause = (tween)->
+    self.setPaused true
 
 
-  @wait = (duration, passive) ->
-    return @ if (duration == nil or duration <= 0)
-    o = @._cloneProps @_curQueueProps
-    @._addStep {d:duration, p0:o, e:nil, p1:o, v:passive}
+  self.wait = (duration, passive) ->
+    return self if (duration == nil or duration <= 0)
+    o = self._cloneProps self._curQueueProps
+    self._addStep {d:duration, p0:o, e:nil, p1:o, v:passive}
 
-  @to = (props, duration, ease) ->
+  self.to = (props, duration, ease) ->
     duration = duration or 0
     if (_.isNaN duration or duration < 0)
       duration = 0
-    @._addStep {
+    self._addStep {
       d:duration or 0
-      p0:@._cloneProps @_curQueueProps
+      p0:self._cloneProps self._curQueueProps
       e:ease
-      p1:@._cloneProps @._appendQueueProps(props)
+      p1:self._cloneProps self._appendQueueProps(props)
     }
 
 
-  @call = (callback, params={@}, scope=@_target)->
-    @._addAction {f:callback, p:params, o:scope}
+  self.call = (callback, params={self}, scope=self._target)->
+    self._addAction {f:callback, p:params, o:scope}
 
 
-  @set = (props, target)->
+  self.set = (props, target)->
     if not target
-      target = @_target
-    @._addAction {f:@_set, o:@, p:{props, target}}
+      target = self._target
+    self._addAction {f:self._set, o:self, p:{props, target}}
 
-  @setPaused = (value) ->
-    if @_paused == not not value
-      return @
-    @_paused = not not value
-    Tween._register @, not value
-    return @
+  self.setPaused = (value) ->
+    if self._paused == not not value
+      return self
+    self._paused = not not value
+    Tween._register self, not value
+    return self
 
   -- tiny api (primarily for tool output):
-  @w = @wait
-  @t = @to
-  @c = @call
-  @s = @set
+  self.w = self.wait
+  self.t = self.to
+  self.c = self.call
+  self.s = self.set
 
-  @setPosition = (value, actionsMode=1)->
+  self.setPosition = (value, actionsMode=1)->
     if value and value < 0
       value = 0
 
     -- normalize position:
     t = value
     isEnd = false
-    if t >= @duration
-      if @loop
-        t = t%@duration
+    if t >= self.duration
+      if self.loop
+        t = t%self.duration
       else
-        t = @duration
+        t = self.duration
         isEnd = true
-    if t == @_prevPos
+    if t == self._prevPos
       return isEnd
 
-    prevPos = @_prevPos
-    @_prevPos = t
-    @position = @_prevPos -- set new position in advance in case an action modifies position.
-    @_prevPosition = value
+    prevPos = self._prevPos
+    self._prevPos = t
+    self.position = self._prevPos -- set new position in advance in case an action modifies position.
+    self._prevPosition = value
 
     -- handle tweens:
-    if @_target
+    if self._target
       if isEnd
         -- addresses problems with an ending zero length step.
-        @._updateTargetProps nil,1
-      elseif #@_steps > 0
+        self._updateTargetProps nil,1
+      elseif #self._steps > 0
         -- find our new tween index:
-        step = @_steps[#@_steps]
-        for i=1,#@_steps
-          if @_steps[i].t > t
-            step = @_steps[i-1]
+        step = self._steps[#self._steps]
+        for i=1,#self._steps
+          if self._steps[i].t > t
+            step = self._steps[i-1]
             break
-        @_stepPosition = t-step.t
-        @._updateTargetProps step, @_stepPosition/step.d
+        self._stepPosition = t-step.t
+        self._updateTargetProps step, self._stepPosition/step.d
 
     -- run actions:
-    if actionsMode != 0 and #@_actions> 0
-      if @_useTicks
+    if actionsMode != 0 and #self._actions> 0
+      if self._useTicks
           -- only run the actions we landed on.
-          @._runActions t,t
+          self._runActions t,t
       elseif actionsMode == 1 and t<prevPos
-          unless prevPos == @duration
-            @._runActions prevPos, @duration
-          @._runActions 0, t, true
+          unless prevPos == self.duration
+            self._runActions prevPos, self.duration
+          self._runActions 0, t, true
       else
-          @._runActions prevPos, t
+          self._runActions prevPos, t
 
-    if isEnd then @.setPaused true
+    if isEnd then self.setPaused true
 
     -- TODO: Implement EventDispatcher and uncomment this
-    -- @.dispatchEvent "change"
+    -- self.dispatchEvent "change"
 
     return isEnd
 
 
-  @_runActions = (startPos, endPos, includeStart)->
+  self._runActions = (startPos, endPos, includeStart)->
     sPos = startPos
     ePos = endPos
     i = 0
-    j = #@_actions
+    j = #self._actions
     k = 1
     if startPos > endPos
       -- running backwards, flip everything:
@@ -175,75 +176,75 @@ new: maker (target, props, pluginData)=>
     
     while i != j
       i+=k
-      action = @_actions[i]
+      action = self._actions[i]
       pos = action.t
       if pos == ePos or (pos > sPos and pos < ePos) or (includeStart and pos == startPos)
         action.f action.o, action.p
 
-  @_appendQueueProps = (o)->
+  self._appendQueueProps = (o)->
     local arr,oldValue,i, l, injectProps
     for n,_ in pairs o
-      if @_initQueueProps[n]
-        oldValue = @_curQueueProps[n]
+      if self._initQueueProps[n]
+        oldValue = self._curQueueProps[n]
       else
-        oldValue = @_target[n]
+        oldValue = self._target[n]
         -- init plugins:
         arr = Tween._plugins[n]
         if arr
           for i=1,#arr
-            oldValue = arr[i].init @, n, oldValue
-        @_initQueueProps[n] = if oldValue then oldValue else nil
+            oldValue = arr[i].init self, n, oldValue
+        self._initQueueProps[n] = if oldValue then oldValue else nil
 
     for n,_ in pairs o
-      oldValue = @_curQueueProps[n]
+      oldValue = self._curQueueProps[n]
       arr = Tween._plugins[n]
       if arr
         injectProps = injectProps or {}
         for i=1,#arr
           -- TODO: remove the check for .step in the next version. It's here for backwards compatibility.
           if arr[i].step
-            arr[i].step @, n, oldValue, o[n], injectProps
-      @_curQueueProps[n] = o[n]
+            arr[i].step self, n, oldValue, o[n], injectProps
+      self._curQueueProps[n] = o[n]
 
     if injectProps
-      @._appendQueueProps injectProps
-    return @_curQueueProps
+      self._appendQueueProps injectProps
+    return self._curQueueProps
 
 
-  @_addStep = (o) ->
+  self._addStep = (o) ->
     if o.d > 0
-      o.t = @duration
-      _.push @_steps, o
-      @duration += o.d
-    return @
+      o.t = self.duration
+      _.push self._steps, o
+      self.duration += o.d
+    return self
 
-  @_set = (props, o)->
+  self._set = (props, o)->
     for n,_ in pairs props
       o[n] = props[n]
 
 
-  @_cloneProps = (props) ->
+  self._cloneProps = (props) ->
     o = {}
     for k,v in pairs props
       o[k] = v
     return o
 
   
-  @_addAction = (o)->
-    o.t = @duration
-    _.push @_actions, o
-    return @
+  self._addAction = (o)->
+    o.t = self.duration
+    _.push self._actions, o
+    return self
 
-  @_updateTargetProps = (step, ratio) ->
+  self._updateTargetProps = (step, ratio) ->
     local p0,p1,v,v0,v1,arr
     if not step and ratio == 1
       -- GDS: when does this run? Just at the very end? Shouldn't.
-      @passive = false
-      p1 = @_curQueueProps
+      self.passive = false
+      p1 = self._curQueueProps
       p0 = p1
     else
-      @passive = not not step.v
-      return if @passive -- don't update props.
+      self.passive = not not step.v
+      return if self.passive -- don't update props.
         
       -- apply ease to ratio.
       if step.e
@@ -251,10 +252,10 @@ new: maker (target, props, pluginData)=>
       p0 = step.p0
       p1 = step.p1
 
-    for n,dum in pairs @_initQueueProps
+    for n,dum in pairs self._initQueueProps
       v0 = p0[n]
       if v0 == nil
-        v0 = @_initQueueProps[n]
+        v0 = self._initQueueProps[n]
         p0[n] = v0
       v1 = p1[n]
       if v1 == nil
@@ -270,14 +271,16 @@ new: maker (target, props, pluginData)=>
       arr = Tween._plugins[n]
       if arr
         for i=1,#arr
-          v2 = arr[i].tween @, n, v, p0, p1, ratio, (not not step) and p0==p1, not step
+          v2 = arr[i].tween self, n, v, p0, p1, ratio, (not not step) and p0==p1, not step
           if v2 == Tween.IGNORE
             ignore = true
           else
             v = v2
 
       if not ignore
-        @_target[n] = v
+        self._target[n] = v
+
+  return self
 
 get: (target, props, pluginData, override) ->
   if override then Tween.removeTweens(target)
@@ -335,8 +338,11 @@ _register: (tween, value) ->
   target = tween._target
   tweens = Tween._tweens
   if value
-    if target
-      target.tweenjs_count = let target.tweenjs_count,=> @ and @+1 or 1
+	if target
+      if target.tweenjs_count
+        target.tweenjs_count = target.tweenjs_count+1
+      else
+        target.tweenjs_count = 1
     _.push tweens, tween
     if not Tween._inited and Ticker
       Ticker.addEventListener "tick", Tween

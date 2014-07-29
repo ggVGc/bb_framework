@@ -1,189 +1,192 @@
 
 local Timeline
 Timeline = {
-new: maker (tweens, labels, props) =>
-    @ignoreGlobalPause = false
-    @duration = 0
-    @loop = false
-    @position = nil
-    @_paused = false
-    @_tweens = {}
-    @_labels = nil
-    @_labelList = nil
-    @_prevPosition = 0
-    @_prevPos = -1
-    @_useTicks = false
-    if props
-      @_useTicks = props.useTicks
-      @loop = props.loop
-      @ignoreGlobalPause = props.ignoreGlobalPause
-      if props.onChange
-        @.addEventListener "change", props.onChange
-    if tweens
-      @.addTween.apply(@, tweens)
+new: (tweens, labels, props) ->
+  self = {}
+  self.ignoreGlobalPause = false
+  self.duration = 0
+  self.loop = false
+  self.position = nil
+  self._paused = false
+  self._tweens = {}
+  self._labels = nil
+  self._labelList = nil
+  self._prevPosition = 0
+  self._prevPos = -1
+  self._useTicks = false
+  if props
+    self._useTicks = props.useTicks
+    self.loop = props.loop
+    self.ignoreGlobalPause = props.ignoreGlobalPause
+    if props.onChange
+      self.addEventListener "change", props.onChange
+  if tweens
+    self.addTween.apply(self, tweens)
 
 
-    @setLabels = (o)->
-      if o
-        @_labels = o
-      else
-        @_labels = {}
-
-    @.setLabels labels
-
-    @setPaused = (value)->
-      @_paused = not not value
-      framework.Tween._register(@, not value)
-
-    @setPosition = (value, actionsMode)->
-      if value < 0
-        value = 0
-      t = @loop and value%@duration or value
-      ennd = (not @loop) and value >= @duration
-      if t == @_prevPos
-        return ennd
-      @_prevPosition = value
-      @_prevPos = t
-      @position = @_prevPos
-      for i=1,#@_tweens
-        @_tweens[i].setPosition(t, actionsMode)
-        if t ~= @_prevPos
-          return false
-
-      if ennd
-        @.setPaused true
-      --@dispatchEvent "change"
-      return ennd
-
-    if props and props.paused
-      @_paused=true
+  self.setLabels = (o)->
+    if o
+      self._labels = o
     else
-      framework.Tween._register @, true
-    if props and props.position~=nil
-      @.setPosition props.position, framework.Tween.NONE
-    
-    @addTween = (...)->
-      arguments = {...}
-      l = #arguments
-      if (l > 1)
-        for i=1,l
-          @.addTween(arguments[i])
-        return arguments[1]
-      elseif l == 0
-        return nil
-      tween = arguments[1]
-      @.removeTween(tween)
-      _.push @_tweens, tween
-      tween.setPaused(true)
-      tween._paused = false
-      tween._useTicks = @_useTicks
-      if tween.duration > @duration
-        @duration = tween.duration
-      if @_prevPos >= 0
-        tween.setPosition(@_prevPos, framework.Tween.NONE)
-      return tween
+      self._labels = {}
 
-    
-    @removeTween = (...) ->
-      arguments = {...}
-      l = #arguments
-      if l > 1
-        good = true
-        for i=1,l
-          good = good and @.removeTween(arguments[i])
-        return good
-      elseif l == 0
+  self.setLabels labels
+
+  self.setPaused = (value)->
+    self._paused = not not value
+    framework.Tween._register(self, not value)
+
+  self.setPosition = (value, actionsMode)->
+    if value < 0
+      value = 0
+    t = self.loop and value%self.duration or value
+    ennd = (not self.loop) and value >= self.duration
+    if t == self._prevPos
+      return ennd
+    self._prevPosition = value
+    self._prevPos = t
+    self.position = self._prevPos
+    for i=1,#self._tweens
+      self._tweens[i].setPosition(t, actionsMode)
+      if t ~= self._prevPos
         return false
 
-      tween = arguments[1]
-      tweens = @_tweens
-      i = #tweens+1
-      while i>1
-        i-=1
-        if tweens[i] == tween
-          table.remove tweens, i
-          if tween.duration >= @duration
-            @.updateDuration!
-          return true
+    if ennd
+      self.setPaused true
+    --self.dispatchEvent "change"
+    return ennd
+
+  if props and props.paused
+    self._paused=true
+  else
+    framework.Tween._register self, true
+  if props and props.position~=nil
+    self.setPosition props.position, framework.Tween.NONE
+  
+  self.addTween = (...)->
+    arguments = {...}
+    l = #arguments
+    if (l > 1)
+      for i=1,l
+        self.addTween(arguments[i])
+      return arguments[1]
+    elseif l == 0
+      return nil
+    tween = arguments[1]
+    self.removeTween(tween)
+    _.push self._tweens, tween
+    tween.setPaused(true)
+    tween._paused = false
+    tween._useTicks = self._useTicks
+    if tween.duration > self.duration
+      self.duration = tween.duration
+    if self._prevPos >= 0
+      tween.setPosition(self._prevPos, framework.Tween.NONE)
+    return tween
+
+  
+  self.removeTween = (...) ->
+    arguments = {...}
+    l = #arguments
+    if l > 1
+      good = true
+      for i=1,l
+        good = good and self.removeTween(arguments[i])
+      return good
+    elseif l == 0
       return false
 
-    
-    @addLabel = (label, position)->
-      @_labels[label] = position
-      list = @_labelList
-      if list
-        for i=1,#list
-          if position < list[i].position
-            break
-        table.insert list, i,{label:label, position:position}
+    tween = arguments[1]
+    tweens = self._tweens
+    i = #tweens+1
+    while i>1
+      i-=1
+      if tweens[i] == tween
+        table.remove tweens, i
+        if tween.duration >= self.duration
+          self.updateDuration!
+        return true
+    return false
 
-    
-    
-    
-    --p.getLabels = function() {
-        --var list = @_labelList;
-        --if (!list) {
-            --list = @_labelList = [];
-            --var labels = @_labels;
-            --for (var n in labels) {
-                --list.push({label:n, position:labels[n]});
-            --}
-            --list.sort(function (a,b) { return a.position- b.position; });
-        --}
-        --return list;
-    --};
-    
-    
-    --p.getCurrentLabel = function() {
-        --var labels = @.getLabels();
-        --var pos = @position;
-        --var l = labels.length;
-        --if (l) {
-            --for (var i = 0; i<l; i++) { if (pos < labels[i].position) { break; } }
-            --return (i==0) ? null : labels[i-1].label;
-        --}
-        --return null;
-    --};
-    
-    
-    @gotoAndPlay = (positionOrLabel)->
-      @.setPaused false
-      @._goto positionOrLabel
+  
+  self.addLabel = (label, position)->
+    self._labels[label] = position
+    list = self._labelList
+    if list
+      for i=1,#list
+        if position < list[i].position
+          break
+      table.insert list, i,{label:label, position:position}
 
-    
-    @gotoAndStop = (positionOrLabel)->
-      @.setPaused true
-      @._goto positionOrLabel
+  
+  
+  
+  --p.getLabels = function() {
+      --var list = self._labelList;
+      --if (!list) {
+          --list = self._labelList = [];
+          --var labels = self._labels;
+          --for (var n in labels) {
+              --list.push({label:n, position:labels[n]});
+          --}
+          --list.sort(function (a,b) { return a.position- b.position; });
+      --}
+      --return list;
+  --};
+  
+  
+  --p.getCurrentLabel = function() {
+      --var labels = self.getLabels();
+      --var pos = self.position;
+      --var l = labels.length;
+      --if (l) {
+          --for (var i = 0; i<l; i++) { if (pos < labels[i].position) { break; } }
+          --return (i==0) ? null : labels[i-1].label;
+      --}
+      --return null;
+  --};
+  
+  
+  self.gotoAndPlay = (positionOrLabel)->
+    self.setPaused false
+    self._goto positionOrLabel
 
-    
+  
+  self.gotoAndStop = (positionOrLabel)->
+    self.setPaused true
+    self._goto positionOrLabel
 
-    
+  
 
-    
-    @updateDuration = ->
-      @duration = 0
-      for i=1,#@_tweens
-        tween = @_tweens[i]
-        if tween.duration > @duration
-          @duration = tween.duration
+  
 
-    @tick = (delta)->
-      @.setPosition(@_prevPosition+delta)
+  
+  self.updateDuration = ->
+    self.duration = 0
+    for i=1,#self._tweens
+      tween = self._tweens[i]
+      if tween.duration > self.duration
+        self.duration = tween.duration
 
-    @resolve = (positionOrLabel)->
-      pos = tonumber positionOrLabel
-      if not pos
-        pos = @_labels[positionOrLabel]
-      return pos
+  self.tick = (delta)->
+    self.setPosition(self._prevPosition+delta)
 
-    @toString = -> "[Timeline]"
+  self.resolve = (positionOrLabel)->
+    pos = tonumber positionOrLabel
+    if not pos
+      pos = self._labels[positionOrLabel]
+    return pos
 
-    @clone = -> error "Timeline can not be cloned."
-    
-    @_goto = (positionOrLabel)->
-      pos = @.resolve(positionOrLabel)
-      if pos ~= nil
-        @.setPosition pos
+  self.toString = -> "[Timeline]"
+
+  self.clone = -> error "Timeline can not be cloned."
+  
+  self._goto = (positionOrLabel)->
+    pos = self.resolve(positionOrLabel)
+    if pos ~= nil
+      self.setPosition pos
+
+  return self
 
 }
 framework.Timeline = Timeline

@@ -1,4 +1,3 @@
-
  
 local MovieClip
 MovieClip = {
@@ -6,167 +5,168 @@ INDEPENDENT: "independent"
 SINGLE_FRAME: "single"
 SYNCHED: "synched"
 	
-new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
-  @mode = initialMode or MovieClip.INDEPENDENT
-  @startPosition = initialStartPosition or 0
-  @loop = initialLoop or true
-  @currentFrame = 0
-  @timeline = nil
-  @paused = false
-  @actionsEnabled = true
-  @autoReset = true
-  @frameBounds = nil
-  @framerate = nil
+new: (initialMode, initialStartPosition, initialLoop, labels) ->
+  self = {}
+  self.mode = initialMode or MovieClip.INDEPENDENT
+  self.startPosition = initialStartPosition or 0
+  self.loop = initialLoop or true
+  self.currentFrame = 0
+  self.timeline = nil
+  self.paused = false
+  self.actionsEnabled = true
+  self.autoReset = true
+  self.frameBounds = nil
+  self.framerate = nil
 
-  @_synchOffset = 0
-  @_prevPos = -1
-  @_prevPosition = 0
-  @_t = 0
-  @_managed = {}
+  self._synchOffset = 0
+  self._prevPos = -1
+  self._prevPosition = 0
+  self._t = 0
+  self._managed = {}
 
-  @isMovieClip = true
+  self.isMovieClip = true
 
   container = framework.Container.new!
 
-  props = {paused:true, position:@startPosition, useTicks:true}
-  @timeline = framework.Timeline.new(nil, labels, props)
+  props = {paused:true, position:self.startPosition, useTicks:true}
+  self.timeline = framework.Timeline.new(nil, labels, props)
   
   
-  @isVisible = ->
-    not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0)
+  self.isVisible = ->
+    not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0)
   
 
   contDraw = container.draw
-  @draw = (ctx, ignoreCache)->
-    --if @DisplayObject_draw ctx, ignoreCache
+  self.draw = (ctx, ignoreCache)->
+    --if self.DisplayObject_draw ctx, ignoreCache
       --return true
-    @._updateTimeline!
+    self._updateTimeline!
     contDraw(ctx, ignoreCache)
     true
   
-  setmetatable(@, {__newindex:container, __index:container})
+  setmetatable(self, {__newindex:container, __index:container})
 
-  @play = ->
-    @paused = false
+  self.play = ->
+    self.paused = false
   
-  @stop = ->
-    @paused = true
+  self.stop = ->
+    self.paused = true
   
-  @gotoAndPlay = (positionOrLabel)->
-    @paused = false
-    @._goto positionOrLabel
+  self.gotoAndPlay = (positionOrLabel)->
+    self.paused = false
+    self._goto positionOrLabel
   
-  @gotoAndStop = (positionOrLabel)->
-    @paused = true
-    @._goto positionOrLabel
+  self.gotoAndStop = (positionOrLabel)->
+    self.paused = true
+    self._goto positionOrLabel
   
   
-  @advance = (time)->
-    return unless @mode == MovieClip.INDEPENDENT
+  self.advance = (time)->
+    return unless self.mode == MovieClip.INDEPENDENT
     
-    fps = @framerate
-    o = @
-    o = @parent
+    fps = self.framerate
+    o = self
+    o = self.parent
     while o and fps == nil
       o = o.parent
       if o and o.mode == MovieClip.INDEPENDENT
         fps = o._framerate
-    @_framerate = fps
+    self._framerate = fps
     
     local t
     if fps ~= nil and fps ~= -1 and time ~= nil
-      t = time/(1000/fps) + @_t
+      t = time/(1000/fps) + self._t
     else
       t = 1
 
     frames = t
-    @_t = t-frames
+    self._t = t-frames
     
     while frames>0
       frames -= 1
-      if not @paused
-        if @_prevPos < 0
-          @_prevPosition = 0
+      if not self.paused
+        if self._prevPos < 0
+          self._prevPosition = 0
         else
-          @_prevPosition = @_prevPosition+1
-        @._updateTimeline!
+          self._prevPosition = self._prevPosition+1
+        self._updateTimeline!
   
 
-  @getLabels = ->
-    @timeline.getLabels!
+  self.getLabels = ->
+    self.timeline.getLabels!
   
   
-  @getCurrentLabel = ->
-    @._updateTimeline!
-    @timeline.getCurrentLabel!
+  self.getCurrentLabel = ->
+    self._updateTimeline!
+    self.timeline.getCurrentLabel!
   
-  @clone = ->
+  self.clone = ->
     error "MovieClip cannot be cloned."
   
-  @toString = ->
-    "[MovieClip (name=#{@name})]"
+  self.toString = ->
+    "[MovieClip (name=#{self.name})]"
 
   contTick = container._tick
-  @_tick = (props)->
-    @.advance(props and props.delta)
+  self._tick = (props)->
+    self.advance(props and props.delta)
     contTick(props)
   
-  @_goto = (positionOrLabel)->
-    pos = @timeline.resolve positionOrLabel
+  self._goto = (positionOrLabel)->
+    pos = self.timeline.resolve positionOrLabel
     return if pos == nil
 
 	-- prevent _updateTimeline from overwriting the new position because of a reset:
-    if @_prevPos == -1
-      @_prevPos = NaN
-    @_prevPosition = pos
-    @_t = 0
-    @._updateTimeline!
+    if self._prevPos == -1
+      self._prevPos = NaN
+    self._prevPosition = pos
+    self._t = 0
+    self._updateTimeline!
   
   
-  @_reset = ->
-    @_prevPos = -1
-    @_t = 0
-    @currentFrame = 0
+  self._reset = ->
+    self._prevPos = -1
+    self._t = 0
+    self.currentFrame = 0
   
-  @_updateTimeline = ->
-      tl = @timeline
-      synched = @mode ~= MovieClip.INDEPENDENT
-      tl.loop = @loop==nil and true or @loop
+  self._updateTimeline = ->
+      tl = self.timeline
+      synched = self.mode ~= MovieClip.INDEPENDENT
+      tl.loop = self.loop==nil and true or self.loop
 
       if synched
-        tl.setPosition(@startPosition + (@mode==MovieClip.SINGLE_FRAME and 0 or @_synchOffset), framework.Tween.NONE)
+        tl.setPosition(self.startPosition + (self.mode==MovieClip.SINGLE_FRAME and 0 or self._synchOffset), framework.Tween.NONE)
       else
-        tl.setPosition(@_prevPos < 0 and 0 or @_prevPosition, not @actionsEnabled and framework.Tween.NONE or nil)
+        tl.setPosition(self._prevPos < 0 and 0 or self._prevPosition, not self.actionsEnabled and framework.Tween.NONE or nil)
 
-      @_prevPosition = tl._prevPosition
-      return if @_prevPos == tl._prevPos
+      self._prevPosition = tl._prevPosition
+      return if self._prevPos == tl._prevPos
 
-      @_prevPos = tl._prevPos
-      @currentFrame = @_prevPos
+      self._prevPos = tl._prevPos
+      self.currentFrame = self._prevPos
 
-      for n in pairs @_managed
-        @_managed[n] = 1
+      for n in pairs self._managed
+        self._managed[n] = 1
 
       tweens = tl._tweens
       for tween in *tweens
         target = tween._target
-        continue if target == @ or tween.passive
+        continue if target == self or tween.passive
         offset = tween._stepPosition
 
         if target.isDisplayObj
-          @._addManagedChild(target, offset)
+          self._addManagedChild(target, offset)
         else
-          @._setState(target.state, offset)
+          self._setState(target.state, offset)
 
-      kids = @children
+      kids = self.children
       for i=#kids, 1, -1
         id = kids[i].id
-        if @_managed[id] == 1
-          @.removeChildAt i
-          @_managed[id] = nil
+        if self._managed[id] == 1
+          self.removeChildAt i
+          self._managed[id] = nil
 
   
-  @_setState = (state, offset)->
+  self._setState = (state, offset)->
     return unless state
     for i=#state, 1, -1
       o = state[i]
@@ -176,29 +176,31 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
         for k, v in pairs props
           target[k] = v
 
-      @._addManagedChild target, offset
+      self._addManagedChild target, offset
 
   
-  @_addManagedChild = (child, offset)->
+  self._addManagedChild = (child, offset)->
     return if child._off
-    @.addChildAt child, 1
+    self.addChildAt child, 1
 
     if child.isMovieClip
       child._synchOffset = offset
-      if child.mode == MovieClip.INDEPENDENT and child.autoReset and not @_managed[child.id]
+      if child.mode == MovieClip.INDEPENDENT and child.autoReset and not self._managed[child.id]
         child._reset!
-    @_managed[child.id] = 2
+    self._managed[child.id] = 2
+
+  return self
   
   
-  --@_getBounds = (matrix, ignoreTransform)->
-      --bounds = @DisplayObject_getBounds!
+  --self._getBounds = (matrix, ignoreTransform)->
+      --bounds = self.DisplayObject_getBounds!
       --if not bounds
-        --@_updateTimeline!
-        --if @frameBounds
-          --bounds = @_rectangle.copy(@frameBounds[@currentFrame+1])
+        --self._updateTimeline!
+        --if self.frameBounds
+          --bounds = self._rectangle.copy(self.frameBounds[self.currentFrame+1])
       --if bounds
-        --return @._transformBounds(bounds, matrix, ignoreTransform)
-      --return @.Container__getBounds(matrix, ignoreTransform)
+        --return self._transformBounds(bounds, matrix, ignoreTransform)
+      --return self.Container__getBounds(matrix, ignoreTransform)
 
 --createjs.MovieClip = MovieClip;
   
