@@ -24,6 +24,8 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
   @_t = 0
   @_managed = {}
 
+  @isMovieClip = true
+
   container = framework.Container.new!
 
   props = {paused:true, position:@startPosition, useTicks:true}
@@ -66,8 +68,8 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
     o = @
     o = @parent
     while o and fps == nil
-      o = @parent
-      if o.mode == MovieClip.INDEPENDENT
+      o = o.parent
+      if o and o.mode == MovieClip.INDEPENDENT
         fps = o._framerate
     @_framerate = fps
     
@@ -113,6 +115,7 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
     pos = @timeline.resolve positionOrLabel
     return if pos == nil
 
+	-- prevent _updateTimeline from overwriting the new position because of a reset:
     if @_prevPos == -1
       @_prevPos = NaN
     @_prevPosition = pos
@@ -172,6 +175,7 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
       if props
         for k, v in pairs props
           target[k] = v
+
       @._addManagedChild target, offset
 
   
@@ -179,10 +183,10 @@ new: maker (initialMode, initialStartPosition, initialLoop, labels)=>
     return if child._off
     @.addChildAt child, 1
 
-    --if instanceof(child, MovieClip)
-      --child._synchOffset = offset
-      --if child.mode == MovieClip.INDEPENDENT and child.autoReset and not @_managed[child.id]
-        --child._reset!
+    if child.isMovieClip
+      child._synchOffset = offset
+      if child.mode == MovieClip.INDEPENDENT and child.autoReset and not @_managed[child.id]
+        child._reset!
     @_managed[child.id] = 2
   
   

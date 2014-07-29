@@ -1,4 +1,5 @@
 #include "bitmapdata.h"
+#include "util.h"
 
 
 
@@ -11,6 +12,12 @@ void bitmapDataInit(BitmapData* data, RawBitmapData* rawData)
   glBindTexture(GL_TEXTURE_2D, data->glTexHandle);
   glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR); 
   glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
+
+  /*
+  char buf[2048];
+  sprintf(buf, "%i, %i, %i", rawData->width, rawData->height, sizeof(rawData->data));
+  trace(buf);
+  */
 
   glTexImage2D(
       GL_TEXTURE_2D, 0, GL_RGBA, rawData->width, rawData->height,

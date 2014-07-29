@@ -269,6 +269,7 @@ dofile 'framework/easel/container.moon'
 dofile 'framework/easel/movie_clip.moon'
 
 dofile "main.moon"
+--dofile("framework/test/export_mc_anim_test.moon")
 --dofile("framework/test/movie_clip_test.moon")
 --dofile("framework/test/timeline_test.moon")
 --dofile("framework/test/tween_test.moon")

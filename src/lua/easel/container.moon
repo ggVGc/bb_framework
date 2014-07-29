@@ -10,7 +10,6 @@ new: maker ()=>
   setmetatable(@, {__newindex:displayObj, __index:displayObj})
   
 
-
   @isVisible = ->
     hasContent = @cacheCanvas or #@children>0
     return not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0 and hasContent)

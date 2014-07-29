@@ -43,6 +43,7 @@ objectProcessor = (name, content, type) ->
   content = content\gsub '%[', '{'
   content = content\gsub '%]', '}'
   content = content\gsub 'Tween%.get%(%{%}%)', 'Tween.get({state={}})'
+  content = content\gsub 'synched', 'independent'
 
   ret = 'lib.'..name..' = {}\n'
   ret=ret..'lib.'..name..'.new = function(mode, startPosition, loop)\n'
@@ -55,10 +56,8 @@ objectProcessor = (name, content, type) ->
 
 
 initInner = (identifier+S',{}.=')^1
---contentHeader = P' = function('*initInner*P') {\n\tthis.initialize('*initInner*P');\n'
-contentHeader = P''
-libObjPatt = P'(lib.' * C(identifier^1)*contentHeader*C((anything-P'}).prototype')^1)*P'}).prototype = p = new cjs.'*C(identifier^1)*P'();'
-middle = P'\np.nominalBounds = new cjs.Rectangle('*((S'-0123456789.,')^1)*P');\n\n'*P'\n'^-1
+libObjPatt = P'(lib.' * C(identifier^1)*C((anything-P'}).prototype')^1)*P'}).prototype = p = new cjs.'*C(identifier^1)*P'();'
+middle = P'\np.nominalBounds = '*(P'null'+P'new cjs.Rectangle('*(S('-0123456789.,')^1)*P')')*P';\n\n'*P'\n'^-1
 
 
 inFilePath = inFilePath\gsub '\\', '/'

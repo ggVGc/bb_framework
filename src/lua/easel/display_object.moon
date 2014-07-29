@@ -9,6 +9,7 @@ new: maker ()=>
   @scaleY = 1
   @alpha = 1
   @parent = nil
+  @tickEnabled = true
   @rotation = 0
   @x = 0
   @y = 0
@@ -17,6 +18,7 @@ new: maker ()=>
   @regY = 0
   @skewY = 0
   @isDisplayObj = true
+  @alpha = 1
 
   @isVisible = ->
     return not not (@visible and @alpha > 0 and @scaleX ~= 0 and @scaleY ~= 0)
