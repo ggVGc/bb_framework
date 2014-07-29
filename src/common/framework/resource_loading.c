@@ -307,6 +307,7 @@ RawBitmapData* loadImage(const char* inFilename){
   d = (RawBitmapData*)malloc(sizeof(RawBitmapData));
   d->width = width;
   d->height = height;
+
   d->data = image_data;
  
   png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);

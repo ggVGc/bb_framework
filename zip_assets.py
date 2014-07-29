@@ -61,6 +61,9 @@ def zipDir(zipOut, r, prefix=""):
   for root, dirs, files in os.walk(r):
     for f in files:
       if f.endswith('.fla'):
+        htmlPath = os.path.join(root, f.replace('.fla','.html'))
+        if os.path.exists(htmlPath):
+          os.remove(htmlPath)
         jsPath = os.path.join(root, f.replace('.fla', '.js'))
         if os.path.exists(jsPath):
           p = subprocess.Popen([LUA_EXE, '-', jsPath], stdin=subprocess.PIPE)

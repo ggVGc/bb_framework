@@ -40,6 +40,7 @@ if len(errlines) == 0:
   if os.path.exists("assets"):
     shutil.rmtree("assets")
   shutil.copytree("../../../bounce", "assets") 
+  shutil.copytree("../../src/lua", "assets/framework") 
   for root, dirs, files in os.walk('assets'):
     for f in files:
       if f.endswith('.moon'):
