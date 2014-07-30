@@ -137,6 +137,7 @@ int require_lua(lua_State* s)
 }
 
 int callFunc(int nParams, int nRet) {
+
   int result = 0;
   int size0 = lua_gettop(vm);
   int error_index = lua_gettop(vm) - nParams;
@@ -233,10 +234,20 @@ int appRender(long tick, int width, int height) {
   beginRenderFrame(width, height);
   lua_getglobal(vm, "framework");
 
+
   if (didInit == 0 && appBroken==0){
     didInit = 1;
-    lua_pushstring(vm, "init");
-    lua_gettable(vm, -2);
+    if(lua_isnil(vm, -1)){
+      trace("ERROR: Could not find global framework object");
+      appBroken = 1;
+      return 0;
+    }
+    lua_getfield(vm, -1, "init");
+    if(lua_isnil(vm, -1)){
+      trace("ERROR: framework.init does not exist");
+      appBroken = 1;
+      return 0;
+    }
     if(callFunc(0,0) != 0){
       appBroken = 1;
       return 0;

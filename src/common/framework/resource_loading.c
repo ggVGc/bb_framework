@@ -191,6 +191,7 @@ RawBitmapData* loadImage(const char* inFilename){
   int i, width, height;
   RawBitmapData* d;
   char filename[2048];
+  int x,y;
   sprintf(filename, "assets/%s", inFilename);
 
 
@@ -334,7 +335,7 @@ RawBitmapData* loadImage(const char* inFilename){
 
 
 
-  int x,y;
+  
   for(x=0;x<width;++x){
     for(y=0;y<height;++y){
       multiplyPixelAt(x,y,height, d->data);

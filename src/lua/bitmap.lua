@@ -1,3 +1,4 @@
+--[[
 framework = framework or {}
 
 framework.Bitmap = {}
@@ -24,3 +25,4 @@ function framework.Bitmap.new(path)
   end
   return M
 end
+]]

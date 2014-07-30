@@ -1,6 +1,5 @@
 
 
-
 function loadfile(path, ignoreInvalid, errorReportOffset)
   path = path:gsub('%.moon', '.lua')
   errorReportOffset = errorReportOffset or 0
@@ -245,6 +244,7 @@ fun = dofile "framework/libs/fun.lua";
 
 framework = {}
 dofile "framework/globals.moon";
+dofile "framework/instanceof.lua";
 dofile "framework/string_additions.moon";
 dofile "framework/camera.lua";
 dofile "framework/bitmap.lua"
@@ -258,11 +258,20 @@ dofile "framework/graphics.lua";
 dofile "framework/bitmap_animation.moon";
 dofile "framework/vector.lua";
 dofile "framework/level.moon";
-dofile 'framework/tween/tween.moon'
 dofile 'framework/draw_states.moon'
 dofile 'framework/asset_loader.moon'
+dofile 'framework/tween/tween.moon'
+dofile 'framework/tween/timeline.moon'
+dofile 'framework/easel/ticker.moon'
+dofile 'framework/easel/display_object.moon'
+dofile 'framework/easel/cjs_bitmap.moon'
+dofile 'framework/easel/container.moon'
+dofile 'framework/easel/movie_clip.moon'
 
 dofile "main.moon"
+--dofile("framework/test/export_mc_anim_test.moon")
+--dofile("framework/test/movie_clip_test.moon")
+--dofile("framework/test/timeline_test.moon")
 --dofile("framework/test/tween_test.moon")
 --dofile("framework/test/bitmap_animation_test.moon")
 --dofile("bitmap_test.lua")
@@ -274,6 +283,7 @@ dofile "main.moon"
 --dofile("framework/test/vector_test.lua")
 
 framework = framework or {}
+framework.cjs = framework.cjs or {}
 
 local main
 
