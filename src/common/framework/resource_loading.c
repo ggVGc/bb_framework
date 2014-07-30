@@ -157,6 +157,19 @@ char* loadBytes(const char* path, int* sz){
 }
 
 
+int multiplyPixelAt(int x,int y, int height,unsigned char *data){
+  int off = (x*height+y)*4;
+  float r = data[off];
+  float g = data[off+1];
+  float b = data[off+2];
+  float a = data[off+3];
+  a = a/255;
+  data[off] = r*a;
+  data[off+1] = g*a;
+  data[off+2] = b*a;
+  /*printf("%u %u %u %u\n", data[off], data[off+1], data[off+2], data[off+3]);*/
+}
+
 RawBitmapData* loadImage(const char* inFilename){
     unzFile uf;
     png_structp png_ptr;
@@ -317,6 +330,17 @@ RawBitmapData* loadImage(const char* inFilename){
   
     unzCloseCurrentFile(uf);
     unzClose(uf);
+
+
+
+
+  int x,y;
+  for(x=0;x<width;++x){
+    for(y=0;y<height;++y){
+      multiplyPixelAt(x,y,height, d->data);
+    }
+  }
+
 
   return d;
 }

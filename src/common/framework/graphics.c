@@ -11,7 +11,7 @@ void initRender(void)
   glEnable(GL_TEXTURE_2D);
 
   glEnable(GL_BLEND);
-  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+  glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
 
   glClearColorx((GLfixed)(0.1f * 65536),
       (GLfixed)(0.2f * 65536),
