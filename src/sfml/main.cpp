@@ -19,6 +19,11 @@ extern "C"
   #include <sys/time.h>
 #endif
 
+#ifdef __MACH__
+#include <mach/clock.h>
+#include <mach/mach.h>
+#endif
+
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
@@ -43,15 +48,26 @@ static long _getTime(void) {
 #ifdef WIN32
 	return timeGetTime();
 #else
-  struct timespec now;
-  clock_gettime(CLOCK_MONOTONIC, &now);
-  return (long)(now.tv_sec*1000 + now.tv_nsec/1000000);
+    struct timespec ts;
+  #ifdef __MACH__ // OS X does not have clock_gettime, use clock_get_time
+    clock_serv_t cclock;
+    mach_timespec_t mts;
+    host_get_clock_service(mach_host_self(), CALENDAR_CLOCK, &cclock);
+    clock_get_time(cclock, &mts);
+    mach_port_deallocate(mach_task_self(), cclock);
+    ts.tv_sec = mts.tv_sec;
+    ts.tv_nsec = mts.tv_nsec;
+  #else
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return (long)(ts.tv_sec*1000 + ts.tv_nsec/1000000);
+  #endif
 #endif
 }
 
 
 int main() {
   sf::Window wnd(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "SFML OpenGL", sf::Style::Close);
+  wnd.UseVerticalSync (true);
 
   appInit("assets.zip", 1);
 

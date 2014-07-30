@@ -158,10 +158,9 @@ def buildFramework():
 
   commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lluaa'
   if sys.platform == "darwin":
-    cflags += " -I/Users/walt/sfml/include "
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -F./deps/osx/sfml-1.6/lib64 -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
   else:
-      return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin "+commonLibString+" -lGL -lGLU -l:libsfml-graphics.so.1.6 -l:libsfml-window.so.1.6 -l:libsfml-system.so.1.6 -l:libsfml-audio.so.1.6")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin "+commonLibString+" -lGL -lGLU -l:libsfml-graphics.so.1.6 -l:libsfml-window.so.1.6 -l:libsfml-system.so.1.6 -l:libsfml-audio.so.1.6")
 
 
 

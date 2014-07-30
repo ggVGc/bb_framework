@@ -10,7 +10,7 @@
 
 //static struct zip* APKArchive;
 static struct zip_file* file = 0;
-static const char apkPath[2048];
+static char apkPath[2048];
 static int usingZip = 0;
 
 
@@ -83,8 +83,9 @@ char* loadBytesFromZip(const char* inPath, int* size){
 
   // TODO: Should check for overflow.
   char path[2048];
-  sprintf(path, "assets/%s\0", inPath);
   char msg[2048];
+  sprintf(path, "assets/%s\0", inPath);
+  
   /*
   sprintf(msg, "Loading from zip: %s", path);
   trace(msg);

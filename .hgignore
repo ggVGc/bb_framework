@@ -48,3 +48,4 @@ glob:build/android/libs
 glob:build/android/bin
 glob:build/android/gen
 glob:*.pyc
+glob:deps/osx
