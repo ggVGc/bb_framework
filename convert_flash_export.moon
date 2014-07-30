@@ -24,18 +24,19 @@ anything = P(1)
 
 objectProcessor = (name, content, type) ->
 
+  initContentPattern = '[%w%u%d_%-,%{%}%.=:"]*'
   initContent = ''
   if type == 'Bitmap'
     _,_,initContent = content\find'this%.initialize%(img%.([%w%._%d]*)'
     initContent = 'lib.texLoader, lib.sourceFolder..\'/images/'..initContent..'.png\''
     type = 'cjs.Bitmap'
   else
-    _,_,initContent = content\find 'this%.initialize%(([%w%u%d_,%{%}%.=:"]*)%);'
-  initContent = (initContent\gsub ':', '=')\gsub '"', ''
+    _,_,initContent = content\find 'this%.initialize%(('..initContentPattern..')%);'
+    initContent = (initContent\gsub ':', '=')\gsub('"', '')\gsub '-', '_'
 
   content = content\gsub '= function%(mode,startPosition,loop%) {', ''
   content = content\gsub '= function%(%) {\n', ''
-  content = content\gsub 'this%.initialize%([%w%u%d_,%{%}%.=:"]*%);', ''
+  content = content\gsub 'this%.initialize%('..initContentPattern..'%);', ''
   content = content\gsub 'new lib%.([%u%w%d_]*)%(([,%d%w"]*)%);', 'lib.%1.new(%2)'
   content = content\gsub 'cjs.Tween', 'framework.Tween'
   content = content\gsub ';\n', '\n'

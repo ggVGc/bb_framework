@@ -58,6 +58,7 @@ def zipDir(zipOut, r, prefix=""):
   convertScript = (subprocess.check_output([LUA_EXE, 'simple_moon_compile.lua', '-stdout', 'convert_flash_export.moon']))
 
   moonFiles = []
+
   for root, dirs, files in os.walk(r):
     for f in files:
       if f.endswith('.fla'):
@@ -68,6 +69,9 @@ def zipDir(zipOut, r, prefix=""):
         if os.path.exists(jsPath):
           p = subprocess.Popen([LUA_EXE, '-', jsPath], stdin=subprocess.PIPE)
           p.communicate(input=convertScript)
+
+  for root, dirs, files in os.walk(r):
+    for f in files:
       p = os.path.join(root, f)
       rp = os.path.relpath(p, r)
       if not rp.startswith(".") and not 'moonscript' in p and p.endswith(('.lua','.moon', '.png', '.xml','.txt')):
