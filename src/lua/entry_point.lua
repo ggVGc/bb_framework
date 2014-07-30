@@ -283,6 +283,7 @@ dofile "main.moon"
 --dofile("framework/test/vector_test.lua")
 
 framework = framework or {}
+framework.cjs = framework.cjs or {}
 
 local main
 

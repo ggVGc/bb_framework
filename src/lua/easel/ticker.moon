@@ -15,9 +15,12 @@ new: (fps, initialListeners) ->
   curTime = 0
   self.update = (deltaMs) ->
     curTime += deltaMs
+    ret = false
     while curTime>=self.timePerTick
       curTime -= self.timePerTick
       self._tick!
+      ret = true
+    return ret
 
   return self
 }

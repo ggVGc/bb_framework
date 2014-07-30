@@ -2,11 +2,11 @@
 
 local Bitmap
 Bitmap = {
-new: (path) ->
+new: (texLoader, path) ->
   self = {}
   displayObj = framework.DisplayObject.new()
   setmetatable(self, {__newindex:displayObj, __index:displayObj})
-  tex = framework.Texture.fromFile path
+  tex = texLoader path
   self.draw = () ->
     x,y = self.getGlobalPos!
     r = self.getGlobalRot!

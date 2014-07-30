@@ -117,7 +117,7 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
 
 	-- prevent _updateTimeline from overwriting the new position because of a reset:
     if self._prevPos == -1
-      self._prevPos = NaN
+      self._prevPos = math.nan
     self._prevPosition = pos
     self._t = 0
     self._updateTimeline!

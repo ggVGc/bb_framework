@@ -27,7 +27,7 @@ objectProcessor = (name, content, type) ->
   initContent = ''
   if type == 'Bitmap'
     _,_,initContent = content\find'this%.initialize%(img%.([%w%._%d]*)'
-    initContent = 'lib.sourceFolder..\'/images/'..initContent..'.png\''
+    initContent = 'lib.texLoader, lib.sourceFolder..\'/images/'..initContent..'.png\''
     type = 'cjs.Bitmap'
   else
     _,_,initContent = content\find 'this%.initialize%(([%w%u%d_,%{%}%.=:"]*)%);'
@@ -66,7 +66,7 @@ inFileDir = inFilePath\sub 1, ind-1
 ind = inFileDir\find ("/[^/]*$")
 inFileDir = inFileDir\sub ind+1
 
-outContent = 'local lib = {}\nlib.sourceFolder=\''..inFileDir..'\'\n'
+outContent = 'local lib = {}\nlib.texLoader = framework.cjs.texLoader or function(path)return framework.Texture.fromFile(path) end\nlib.sourceFolder=\''..inFileDir..'\'\n'
 patt = ((libObjPatt/objectProcessor)*middle)^1
 for obj in *{patt\match(content)}
   outContent = outContent..obj..'\n\n'
