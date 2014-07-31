@@ -4561,7 +4561,7 @@ static int _wrap_loadBytes(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
   int *arg2 = (int *) 0 ;
-  char *result = 0 ;
+  unsigned char *result = 0 ;
   
   SWIG_check_num_args("loadBytes",2,2)
   if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("loadBytes",1,"char const *");
@@ -4572,7 +4572,27 @@ static int _wrap_loadBytes(lua_State* L) {
     SWIG_fail_ptr("loadBytes",2,SWIGTYPE_p_int);
   }
   
-  result = (char *)loadBytes((char const *)arg1,arg2);
+  result = (unsigned char *)loadBytes((char const *)arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_loadText(lua_State* L) {
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("loadText",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("loadText",1,"char const *");
+  arg1 = (char *)lua_tostring(L, 1);
+  result = (char *)loadText((char const *)arg1);
   lua_pushstring(L,(const char *)result); SWIG_arg++;
   return SWIG_arg;
   
@@ -4640,6 +4660,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "isAppBroken", _wrap_isAppBroken},
     { "setAppBroken", _wrap_setAppBroken},
     { "loadBytes", _wrap_loadBytes},
+    { "loadText", _wrap_loadText},
     { "loadImage", _wrap_loadImage},
     {0,0}
 };

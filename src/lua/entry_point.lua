@@ -3,7 +3,7 @@
 function loadfile(path, ignoreInvalid, errorReportOffset)
   path = path:gsub('%.moon', '.lua')
   errorReportOffset = errorReportOffset or 0
-  local codeString = _c_framework.loadBytes(path, nil)
+  local codeString = _c_framework.loadText(path)
   if not codeString then
     if not ignoreInvalid then
       error ("Invalid file: "..path, 2+errorReportOffset)

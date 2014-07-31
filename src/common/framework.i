@@ -30,5 +30,6 @@ int screenHeight(void);
 int isAppBroken(void);
 void setAppBroken(int);
 
-char* loadBytes(const char* path, int* sz);
+unsigned char* loadBytes(const char* path, int* sz);
+char* loadText(const char* path);
 RawBitmapData* loadImage(const char* filePath);

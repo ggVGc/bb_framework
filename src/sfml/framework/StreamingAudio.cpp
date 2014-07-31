@@ -15,28 +15,32 @@ struct StreamingAudio_T
 
 extern "C" StreamingAudio* streamingAudioLoad(const char* path)
 {
+  /*
   int sz;
   StreamingAudio* ret = new StreamingAudio();
   ret->data = loadBytes(path, &sz);
   ret->m.OpenFromMemory(ret->data, sz);
   return ret;
+  */
 }
 extern "C" void streamingAudioPlay(StreamingAudio* m)
 {
-  m->m.Play();
+  //m->m.Play();
 }
 extern "C" void streamingAudioSetLooping(StreamingAudio* m, int loop)
 {
-  m->m.SetLoop(loop != 0);
+  //m->m.SetLoop(loop != 0);
 }
 extern "C" void streamingAudioStop(StreamingAudio* m)
 {
-  m->m.Stop();
+  //m->m.Stop();
 }
 extern "C" void streamingAudioFree(StreamingAudio* m)
 {
+  /*
   delete m->data;
   delete m;
+  */
 }
 
 

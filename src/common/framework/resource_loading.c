@@ -78,7 +78,7 @@ void setResourcePath(const char* p, int useZip)
 /*}*/
 
 
-char* loadBytesFromZip(const char* inPath, int* size){
+unsigned char* loadBytesFromZip(const char* inPath, int* size){
   unzFile uf;
 
   // TODO: Should check for overflow.
@@ -137,7 +137,7 @@ char* loadBytesFromZip(const char* inPath, int* size){
   }
 }
 
-char* loadBytesFromDisk(const char* inPath)
+unsigned char* loadBytesFromDisk(const char* inPath)
 {
   // TODO: Should check for overflow.
   char path[2048];
@@ -149,7 +149,7 @@ char* loadBytesFromDisk(const char* inPath)
   return "NOT IMPLEMENTED";
 }
 
-char* loadBytes(const char* path, int* sz){
+unsigned char* loadBytes(const char* path, int* sz){
   if(usingZip)
     return loadBytesFromZip(path, sz);
   else
@@ -347,3 +347,7 @@ RawBitmapData* loadImage(const char* inFilename){
 }
 
 
+char* loadText(const char* path){
+  int sz;
+  return (char*)loadBytes(path, &sz);
+}
