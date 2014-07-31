@@ -230,7 +230,7 @@ dofile "framework/moon.lua"
 ]]
 
 
---Add Moses globally as undescore
+--Add Moses globally as underscore
 do 
   local oldUnpack = unpack
   unpack = table.unpack
@@ -286,6 +286,14 @@ framework = framework or {}
 framework.cjs = framework.cjs or {}
 
 local main
+
+function fromhex(str)
+  return (str:gsub('..', function (cc)
+    return string.char(tonumber(cc, 16))
+  end))
+end
+
+
 
 function framework.init()
   main = doCall(Main.new)

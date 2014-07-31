@@ -19,6 +19,8 @@
 #include <android/log.h>
 #endif
 
+
+
 #define BREAK_ON_FIRST_ERROR 1
 
 
@@ -173,6 +175,7 @@ int callFunc(int nParams, int nRet) {
 
 void appInit(const char* resourcePath, int useAssetZip) {
   trace("---- APP INIT ----");
+
   inputInit();
   setResourcePath(resourcePath, useAssetZip);
 

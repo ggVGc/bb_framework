@@ -18,7 +18,7 @@ end
 -- convert .moon to .lua
 function convert_path(path)
 	local ret = path:gsub("%.moon$", ".lua")
-    log_msg(ret)
+    --log_msg(ret)
     return ret
 end
 

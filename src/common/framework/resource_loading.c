@@ -8,10 +8,41 @@
 #include "rawbitmapdata.h"
 
 
+#include "assets.c"
+
+
 //static struct zip* APKArchive;
 static struct zip_file* file = 0;
 static char apkPath[2048];
 static int usingZip = 0;
+
+
+
+
+unsigned long hex2int(char *a, unsigned int len){
+  int i;
+  unsigned long val = 0;
+
+  for(i=0;i<len;i++)
+     if(a[i] <= 57){
+      val += (a[i]-48)*(1<<(4*(len-1-i)));
+     }else{
+      val += (a[i]-87)*(1<<(4*(len-1-i)));
+     }
+  return val;
+}
+
+char* hexDecode(const char *hexStr){
+  int i;
+  int len = strlen(hexStr);
+  char* ret = (char*)malloc(sizeof(char)*len/2+1);
+  for(i=0;i<len/2;++i){
+    ret[i] = hex2int(hexStr+i*2, 2);
+  }
+  ret[len/2] = '\0';
+  return ret;
+}
+
 
 
 void resourcesCleanUp(void)
@@ -111,7 +142,7 @@ unsigned char* loadBytesFromZip(const char* inPath, int* size){
     unz_file_info* info = (unz_file_info*)malloc(sizeof(unz_file_info));
 
     if(unzLocateFile(uf, path, 0)){
-      trace("Invalid file path");
+      // Invalid file path
 	  return NULL;
 	}
 		
@@ -150,10 +181,23 @@ unsigned char* loadBytesFromDisk(const char* inPath)
 }
 
 unsigned char* loadBytes(const char* path, int* sz){
+  int i;
+  char *ret;
+
   if(usingZip)
-    return loadBytesFromZip(path, sz);
+    ret = loadBytesFromZip(path, sz);
   else
-    return loadBytesFromDisk(path);
+    ret = loadBytesFromDisk(path);
+
+  if(!ret){
+    for(i=0;i<ASSET_COUNT;++i){
+      if(strcmp(path, ASSET_KEYS[i])==0){
+        ret = hexDecode(ASSET_DATA[i]);
+      }
+    }
+  }
+
+  return ret;
 }
 
 
