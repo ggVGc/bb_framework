@@ -14,6 +14,7 @@ def processPath(path, prefix=''):
     for f in files:
       if f.endswith('.lua'):
         fullPath = PJ(root, f)
+        os.system('luac -s -o '+fullPath.replace('.lua', '.luac')+' '+fullPath)
         p = PJ(prefix, os.path.relpath(fullPath, path))
         with open(fullPath) as rf:
           hexDict[p] = toHex(rf.read())

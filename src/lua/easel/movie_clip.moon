@@ -9,7 +9,9 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   self = {}
   self.mode = initialMode or MovieClip.INDEPENDENT
   self.startPosition = initialStartPosition or 0
-  self.loop = initialLoop or true
+  self.loop = true
+  if initialLoop == false
+    self.loop = false
   self.currentFrame = 0
   self.timeline = nil
   self.paused = false

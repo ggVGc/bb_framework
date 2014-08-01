@@ -59,8 +59,8 @@ static long _getTime(void) {
     ts.tv_nsec = mts.tv_nsec;
   #else
     clock_gettime(CLOCK_MONOTONIC, &ts);
-    return (long)(ts.tv_sec*1000 + ts.tv_nsec/1000000);
   #endif
+    return (long)(ts.tv_sec*1000 + ts.tv_nsec/1000000);
 #endif
 }
 

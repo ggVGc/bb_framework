@@ -50,3 +50,4 @@ glob:build/android/gen
 glob:*.pyc
 glob:deps/osx
 glob:src/gen
+glob:*.luac

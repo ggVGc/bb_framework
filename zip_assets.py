@@ -116,8 +116,8 @@ if __name__ == '__main__':
   moonSourceMappings = zipDir(zipOutFile, frameworkSrcPath, stripCode, "framework")
   if ('-t','') in opts:
     print 'Including test sources'
-    moonSourceMappings += zipDir(zipOutFile, "src/luatest", "framework/test", stripCode)
-    moonSourceMappings += zipDir(zipOutFile, "src/luatest/data", "framework/testdata", stripCode)
+    moonSourceMappings += zipDir(zipOutFile, "src/luatest", stripCode, "framework/test")
+    moonSourceMappings += zipDir(zipOutFile, "src/luatest/data", stripCode, "framework/testdata")
   moonSourceMappings += zipDir(zipOutFile, appPath, stripCode)
 
   with open('moon_source_mappings.lua', 'w') as out:
