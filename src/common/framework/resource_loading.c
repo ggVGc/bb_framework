@@ -6,6 +6,7 @@
 #include <unzip.h>
 #include "resource_loading.h"
 #include "rawbitmapdata.h"
+#include "util.h"
 
 
 #include "assets.c"
@@ -18,6 +19,7 @@ static int usingZip = 0;
 
 
 
+/*
 
 unsigned long hex2int(char *a, unsigned int len){
   int i;
@@ -43,6 +45,7 @@ char* hexDecode(const char *hexStr){
   return ret;
 }
 
+*/
 
 
 void resourcesCleanUp(void)
@@ -138,7 +141,7 @@ unsigned char* loadBytesFromZip(const char* inPath, int* size){
   /*}*/
   /*else*/
   {
-    char* data;
+    unsigned char* data;
     unz_file_info* info = (unz_file_info*)malloc(sizeof(unz_file_info));
 
     if(unzLocateFile(uf, path, 0)){
@@ -149,7 +152,7 @@ unsigned char* loadBytesFromZip(const char* inPath, int* size){
     unzGetCurrentFileInfo(uf, info, NULL, 0, NULL, 0, NULL, 0);
 
 
-    data = (char*)malloc(info->uncompressed_size+1);
+    data = (unsigned char*)malloc(info->uncompressed_size+1);
     unzOpenCurrentFile(uf);
     unzReadCurrentFile(uf, data, info->uncompressed_size);
 
@@ -182,7 +185,9 @@ unsigned char* loadBytesFromDisk(const char* inPath)
 
 unsigned char* loadBytes(const char* path, int* sz){
   int i;
-  char *ret;
+  unsigned char *ret;
+
+
 
   if(usingZip)
     ret = loadBytesFromZip(path, sz);
@@ -192,7 +197,9 @@ unsigned char* loadBytes(const char* path, int* sz){
   if(!ret){
     for(i=0;i<ASSET_COUNT;++i){
       if(strcmp(path, ASSET_KEYS[i])==0){
-        ret = hexDecode(ASSET_DATA[i]);
+        ret = (unsigned char*)malloc(sizeof(unsigned char)*(ASSET_SIZES[i]+1));
+		memcpy(ret, ASSET_DATA[i], sizeof(unsigned char)*ASSET_SIZES[i]);
+        ret[ASSET_SIZES[i]] = '\0';
       }
     }
   }

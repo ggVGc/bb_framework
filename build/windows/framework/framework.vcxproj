@@ -89,7 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\win\SFML-1.6\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.5;$(SolutionDir)\..\..\deps\win\libpng\include;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\lua;$(SolutionDir)\..\..\deps\common\gles_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\src\gen;$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\win\SFML-1.6\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.5;$(SolutionDir)\..\..\deps\win\libpng\include;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\lua;$(SolutionDir)\..\..\deps\common\gles_headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>

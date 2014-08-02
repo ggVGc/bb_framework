@@ -14,7 +14,7 @@ def processPath(path, prefix=''):
     for f in files:
       if f.endswith('.lua'):
         fullPath = PJ(root, f)
-        os.system('luac -s -o '+fullPath.replace('.lua', '.luac')+' '+fullPath)
+        #os.system('luac -s -o '+fullPath.replace('.lua', '.luac')+' '+fullPath)
         p = PJ(prefix, os.path.relpath(fullPath, path))
         with open(fullPath) as rf:
           hexDict[p] = toHex(rf.read())
@@ -29,15 +29,37 @@ processPath(frameworkSrcPath, 'framework')
 
 if __name__ == '__main__':
   with open(PJ('src', 'gen', 'assets.c'), 'w') as f:
-    f.write('static const ASSET_COUNT=%i;\n'%len(hexDict.keys()))
+    f.write('static const int ASSET_COUNT=%i;\n'%len(hexDict.keys()))
     f.write('static const char* ASSET_KEYS[] = {')
-    for k in hexDict:
+    keys = hexDict.keys()
+    for k in keys:
       f.write('"%s",'%k)
     f.write('};\n')
-    f.write('static const char* ASSET_DATA[] = {\n')
-    for k in hexDict:
-      f.write('"%s",\n'%hexDict[k])
+    #f.write('static const unsigned char* ASSET_DATA[] = {\n')
+
+    f.write('static const unsigned int ASSET_SIZES[] = {')
+    for k in keys:
+      f.write('%i,'%(len(hexDict[k])/2))
+
     f.write('};\n')
+    for i in range(len(keys)):
+      k = keys[i]
+      s = hexDict[k]
+
+    for i in range(len(keys)):
+      k = keys[i]
+      s = hexDict[k]
+      f.write('static const unsigned char ASSET_%i[] = {'%i)
+      for i in range(0, len(s)/2):
+        f.write('0x%s,'%s[i*2:i*2+2])
+      f.write('};\n')
+
+    #f.write('};\n')
+
+    f.write('static const unsigned char* ASSET_DATA[] = {')
+    for i in range(len(keys)):
+      f.write('ASSET_%i,'%i);
+    f.write('};')
 
   cleanMoonOutputs(appPath)
   cleanMoonOutputs(frameworkSrcPath)

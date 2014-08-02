@@ -22,6 +22,7 @@ extern "C" StreamingAudio* streamingAudioLoad(const char* path)
   ret->m.OpenFromMemory(ret->data, sz);
   return ret;
   */
+	return 0;
 }
 extern "C" void streamingAudioPlay(StreamingAudio* m)
 {
