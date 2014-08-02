@@ -267,6 +267,7 @@ dofile 'framework/easel/display_object.moon'
 dofile 'framework/easel/cjs_bitmap.moon'
 dofile 'framework/easel/container.moon'
 dofile 'framework/easel/movie_clip.moon'
+dofile 'framework/streaming_audio.lua'
 
 dofile "main.moon"
 --dofile("framework/test/export_mc_anim_test.moon")

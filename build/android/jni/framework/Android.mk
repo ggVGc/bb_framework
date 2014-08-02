@@ -33,6 +33,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libpng/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/bstring/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/common/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/android/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/gen/
 
 MY_SOURCES := src/common/program.c \
   src/common/framework_wrap.c \

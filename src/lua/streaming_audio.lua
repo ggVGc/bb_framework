@@ -26,6 +26,8 @@ function framework.StreamingAudio.new(path)
     _c_framework.streamingAudioFree(audio)
   end
 
-  return M
+  if audio then
+    return M
+  end
 end
 

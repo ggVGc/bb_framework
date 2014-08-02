@@ -77,7 +77,7 @@ def zipDir(zipOut, r, stripCode=False, prefix=""):
     for f in files:
       p = os.path.join(root, f)
       rp = os.path.relpath(p, r)
-      if not rp.startswith(".") and not 'moonscript' in p and ((not stripCode and p.endswith('.lua')) or p.endswith(('.moon', '.png', '.xml','.txt'))):
+      if not rp.startswith(".") and not 'moonscript' in p and ((not stripCode and p.endswith('.lua')) or p.endswith(('.moon', '.png', '.xml','.txt', '.wav'))):
         if p.endswith('.moon'):
           moonFiles.append(p)
         else:
