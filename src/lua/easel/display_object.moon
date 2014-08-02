@@ -39,6 +39,14 @@ new: ->
     else
       return self.rotation
 
+  self.getGlobalScale = ->
+    if self.parent ~= nil
+      sx, sy = self.parent.getGlobalScale!
+      return self.scaleX*sx, self.scaleY*sy
+    else
+      return self.scaleX, self.scaleY
+
+
   self.setTransform = (x,y,scaleX, scaleY, rot, skewX, skewY, regX, regY) ->
     self.x = x if x
     self.y = y if y

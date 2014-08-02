@@ -10,7 +10,8 @@ new: (texLoader, path) ->
   self.draw = () ->
     x,y = self.getGlobalPos!
     r = self.getGlobalRot!
-    tex.draw x+tex.width/2,y+tex.height/2, 0.5,0.5, -r
+    sx, sy = self.getGlobalScale!
+    tex.draw x+tex.width/2,y+tex.height/2, 0.5,0.5, -r, sx, sy
 
   return self
 

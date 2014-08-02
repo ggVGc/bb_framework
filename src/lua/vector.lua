@@ -3,6 +3,10 @@ Vector = {}
 Vector.mt = {}
 
 
+function Vector.mt.__tostring(v)
+  return 'Vec: '..(v.x)..','.. v.y
+end
+
 function Vector.mt.__index(t,k)
   if k=="x" then return t[1]
   elseif k=="y" then return t[2] 

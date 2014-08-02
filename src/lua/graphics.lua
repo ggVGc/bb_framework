@@ -2,8 +2,8 @@ framework = framework or {}
 framework.Graphics = {}
 
 function framework.Graphics.drawQuad(x,y,w,h,colour,rot,pivot)
-  px = 0.5
-  py = 0.5
+  local px = 0.5
+  local py = 0.5
   if pivot then
     px = pivot[1] or px
     py = pivot[2] or py
