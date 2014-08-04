@@ -2,7 +2,6 @@ extern "C"
 {
   #include "framework/streaming_audio.h"
   #include "framework/resource_loading.h"
-  #include "util.h"
 
 }
 #include <SFML/Audio.hpp>
