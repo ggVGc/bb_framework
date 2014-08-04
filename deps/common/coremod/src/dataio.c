@@ -23,6 +23,10 @@
 #include "common.h"
 
 
+#ifdef WIN32
+#define inline __inline
+#endif
+
 inline uint8 read8(FILE *f)
 {
 	return (uint8)fgetc(f);

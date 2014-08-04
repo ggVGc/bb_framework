@@ -49,6 +49,10 @@
 #include "extras.h"
 #endif
 
+#ifdef WIN32
+#define inline __inline
+#endif
+
 /* Values for multi-retrig */
 static const struct retrig_control rval[] = {
 	{   0,  1,  1 }, {  -1,  1,  1 }, {  -2,  1,  1 }, {  -4,  1,  1 },

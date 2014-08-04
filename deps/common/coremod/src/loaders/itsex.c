@@ -4,6 +4,10 @@
 
 #include "loader.h"
 
+#ifdef WIN32
+#define inline __inline
+#endif
+
 static inline uint32 read_bits(HIO_HANDLE *ibuf, uint32 *bitbuf, int *bitnum, int n)
 {
 	uint32 retval = 0;

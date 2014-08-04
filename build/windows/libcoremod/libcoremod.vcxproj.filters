@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\dataio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\effects.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\envelope.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\filter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\format.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\hio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\lfo.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\load.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\load_helpers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\mix_all.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\mixer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\period.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\player.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\read_event.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\scan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\smix.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\virtual.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\itsex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\it_load.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\mod_load.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\s3m_load.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\sample.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\xm_load.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\control.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\deps\common\coremod\src\dataio.c.orig">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\dataio.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\effects.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\envelope.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\filter.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\format.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\hio.c.orig">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\hio.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\lfo.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\load.c.orig">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\load.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\load_helpers.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\Makefile">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\mix_all.c.orig">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\mix_all.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\mixer.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\period.c.orig">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\period.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\player.c.orig">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\player.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\read_event.c.orig">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\read_event.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\scan.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\smix.c.orig">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\smix.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\virtual.lo">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\control.c.orig">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\..\..\deps\common\coremod\src\control.lo">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\effects.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\envelope.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\format.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\hio.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\hmn_extras.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\lfo.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\list.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\mixer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\period.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\player.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\precomp_lut.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\virtual.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\it.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\loader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\mod.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\s3m.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\xm.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\common.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

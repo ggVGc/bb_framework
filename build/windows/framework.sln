@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lpeg", "lpeg\lpeg.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua\lua.vcxproj", "{91973F7E-3ABE-41CA-82D6-3784FC305A68}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcoremod", "libcoremod\libcoremod.vcxproj", "{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug DLL|Win32 = Debug DLL|Win32
@@ -151,6 +153,18 @@ Global
 		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Release static|Win32.Build.0 = Release|Win32
 		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Release|Win32.ActiveCfg = Release|Win32
 		{91973F7E-3ABE-41CA-82D6-3784FC305A68}.Release|Win32.Build.0 = Release|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Debug DLL|Win32.ActiveCfg = Debug|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Debug DLL|Win32.Build.0 = Debug|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Debug static|Win32.ActiveCfg = Debug|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Debug static|Win32.Build.0 = Debug|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Debug|Win32.Build.0 = Debug|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Release DLL|Win32.ActiveCfg = Release|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Release DLL|Win32.Build.0 = Release|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Release static|Win32.ActiveCfg = Release|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Release static|Win32.Build.0 = Release|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Release|Win32.ActiveCfg = Release|Win32
+		{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

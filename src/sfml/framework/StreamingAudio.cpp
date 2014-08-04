@@ -3,7 +3,7 @@ extern "C"
   #include "framework/streaming_audio.h"
   #include "framework/resource_loading.h"
   #include "xmp.h"
-  #include "util.h"
+  #include "framework/util.h"
 }
 #include <SFML/Audio.hpp>
 #include <cmath>
@@ -34,7 +34,7 @@ extern "C" StreamingAudio* streamingAudioLoad(const char* path)
   }
 
   xmp_start_player(c, 44100, 0);
-  const int bufSize = 1000*1000*10;
+  const int bufSize = 1000*1000*50;
   int* tmpBuf = (int*)malloc(sizeof(int)*bufSize);
   success = xmp_play_buffer(c, tmpBuf, bufSize, 0);
 
@@ -58,19 +58,13 @@ extern "C" StreamingAudio* streamingAudioLoad(const char* path)
       trace("Failed buffer creation");
   }
   ret->s.SetBuffer(ret->buf);
-  ret->s.SetLoop(true);
-  //ret->s.SetPitch(1.5f);
-  ret->s.Play();
-
-
-
   //ret->m.OpenFromMemory((const char*)ret->data, bufSize);
   return ret;
 }
 extern "C" void streamingAudioPlay(StreamingAudio* m)
 {
-  //trace("PLAY");
-  //m->s.Play();
+  m->s.SetLoop(true);
+  m->s.Play();
 }
 extern "C" void streamingAudioSetLooping(StreamingAudio* m, int loop)
 {

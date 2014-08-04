@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6CE7C7F7-26EA-4B11-B2C3-C35423CE76E4}</ProjectGuid>
+    <RootNamespace>libcoremod</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\depsbin\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\deps\common\coremod\include;$(SolutionDir)..\..\deps\common\coremod\src;$(SolutionDir)..\..\deps\common\coremod\src\loaders;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;LIBXMP_CORE_PLAYER;BUILDING_STATIC</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\deps\common\coremod\src\control.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\dataio.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\effects.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\envelope.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\filter.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\format.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\hio.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\lfo.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\load.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\common.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\itsex.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\it_load.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\mod_load.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\s3m_load.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\sample.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\loaders\xm_load.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\load_helpers.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\mixer.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\mix_all.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\period.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\player.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\read_event.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\scan.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\smix.c" />
+    <ClCompile Include="..\..\..\deps\common\coremod\src\virtual.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\deps\common\coremod\src\control.c.orig" />
+    <None Include="..\..\..\deps\common\coremod\src\control.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\dataio.c.orig" />
+    <None Include="..\..\..\deps\common\coremod\src\dataio.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\effects.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\envelope.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\filter.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\format.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\hio.c.orig" />
+    <None Include="..\..\..\deps\common\coremod\src\hio.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\lfo.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\load.c.orig" />
+    <None Include="..\..\..\deps\common\coremod\src\load.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\load_helpers.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\Makefile" />
+    <None Include="..\..\..\deps\common\coremod\src\mixer.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\mix_all.c.orig" />
+    <None Include="..\..\..\deps\common\coremod\src\mix_all.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\period.c.orig" />
+    <None Include="..\..\..\deps\common\coremod\src\period.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\player.c.orig" />
+    <None Include="..\..\..\deps\common\coremod\src\player.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\read_event.c.orig" />
+    <None Include="..\..\..\deps\common\coremod\src\read_event.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\scan.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\smix.c.orig" />
+    <None Include="..\..\..\deps\common\coremod\src\smix.lo" />
+    <None Include="..\..\..\deps\common\coremod\src\virtual.lo" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\deps\common\coremod\src\common.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\effects.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\envelope.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\format.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\hio.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\hmn_extras.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\lfo.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\list.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\it.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\loader.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\mod.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\s3m.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\loaders\xm.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\mixer.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\period.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\player.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\precomp_lut.h" />
+    <ClInclude Include="..\..\..\deps\common\coremod\src\virtual.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

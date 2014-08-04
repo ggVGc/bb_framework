@@ -31,6 +31,9 @@
 #include "med_extras.h"
 #endif
 
+#ifdef WIN32
+#define inline __inline
+#endif
 
 static inline void copy_channel(struct player_data *p, int to, int from)
 {

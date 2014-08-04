@@ -32,6 +32,10 @@
 #include "common.h"
 #include "hio.h"
 
+#ifdef WIN32
+#define inline __inline
+#endif
+
 inline ptrdiff_t CAN_READ(HIO_HANDLE *h)
 {
 	if (h->size >= 0)

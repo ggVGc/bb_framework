@@ -25,6 +25,12 @@
 #include "common.h"
 #include "period.h"
 
+
+#ifdef WIN32
+#define _USE_MATH_DEFINES // for C
+#define inline __inline
+#endif
+
 #include <math.h>
 
 /* Amiga periods */
