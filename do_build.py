@@ -115,6 +115,8 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
 
 
+def buildCoreMod():
+  return buildLib("bin/libcoremod.a", ["./deps/common/coremod/src", "./deps/common/coremod/src/loaders"], [], "-I./deps/common/coremod/src -DLIBXMP_CORE_PLAYER")
 
 def buildLua():
   return buildLib("bin/libluaa.a", ["./deps/common/lua"], [], "")
@@ -154,10 +156,11 @@ def buildFramework():
       "-I./src/common",
       "-I./src/common/framework",
       "-I./src/gen",
-      "-I./deps/win/SFML-1.6/include"
+      "-I./deps/win/SFML-1.6/include",
+      "-I./deps/coremod/include"
       ])
 
-  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lluaa'
+  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lluaa -lcoremod'
   if sys.platform == "darwin":
     return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -F./deps/osx/sfml-1.6/lib64 -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
   else:
@@ -181,6 +184,8 @@ if __name__ == '__main__':
       ret = buildMinizip()
     if ret == 0:
       ret = buildPng()
+    if ret == 0:
+      ret = buildCoreMod()
   if ret == 0 and not 'only_libs' in sys.argv:
     ret = buildFramework()
   else:
