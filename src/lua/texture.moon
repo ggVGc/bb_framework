@@ -16,11 +16,29 @@ new: (bmData, x, y, w, h)->
         when "height" tex.height)
 
     .draw=(x, y, pivotX, pivotY, rot, scaleX, scaleY)->
-      y = framework.Camera.curAppliedHeight-(y or 0)
-      w = scaleX or 1
-      h = scaleY or 1
-      _c_framework.quadDrawTex x or 0, y,(scaleX or 1)*tex.width,
-        (scaleY or 1)*tex.height,tex, rot or 0,pivotX or 0.5, pivotY or 0.5
+      local m
+      sx = scaleX or 1
+      sy = scaleY or 1
+      w = tex.width*sx
+      h = tex.height*sy
+
+      if type(x) == 'table'
+        m = x
+      else
+        y = framework.Camera.curAppliedHeight-(y or 0)
+        px = pivotX or 0.5
+        py = pivotY or 0.5
+        m = framework.Matrix2D.new!
+        m.translate -w*px, -h*py
+        m.rotate (rot and rot/360 or 0)
+        m.translate w*px, h*py
+        m.translate x-w*px, y-h*py
+
+      m.appendMatrix((framework.Matrix2D.new!).scale(w, h))
+      _c_framework.quadDrawTex m.a, m.b, m.c, m.d, m.tx, m.ty, tex
+
+      --_c_framework.quadDrawTex x or 0, y,(scaleX or 1)*tex.width,
+        --(scaleY or 1)*tex.height,tex, rot or 0,pivotX or 0.5, pivotY or 0.5
 
 fromFile: (path, errorOnInvalid=true)->
   path = framework.Texture.fixPath path

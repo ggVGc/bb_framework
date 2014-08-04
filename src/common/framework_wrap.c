@@ -4119,33 +4119,30 @@ static int _wrap_quadDrawTex(lua_State* L) {
   float arg2 ;
   float arg3 ;
   float arg4 ;
-  Texture *arg5 = (Texture *) 0 ;
+  float arg5 ;
   float arg6 ;
-  float arg7 ;
-  float arg8 ;
+  Texture *arg7 = (Texture *) 0 ;
   
-  SWIG_check_num_args("quadDrawTex",8,8)
+  SWIG_check_num_args("quadDrawTex",7,7)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("quadDrawTex",1,"float");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("quadDrawTex",2,"float");
   if(!lua_isnumber(L,3)) SWIG_fail_arg("quadDrawTex",3,"float");
   if(!lua_isnumber(L,4)) SWIG_fail_arg("quadDrawTex",4,"float");
-  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("quadDrawTex",5,"Texture *");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("quadDrawTex",5,"float");
   if(!lua_isnumber(L,6)) SWIG_fail_arg("quadDrawTex",6,"float");
-  if(!lua_isnumber(L,7)) SWIG_fail_arg("quadDrawTex",7,"float");
-  if(!lua_isnumber(L,8)) SWIG_fail_arg("quadDrawTex",8,"float");
+  if(!SWIG_isptrtype(L,7)) SWIG_fail_arg("quadDrawTex",7,"Texture *");
   arg1 = (float)lua_tonumber(L, 1);
   arg2 = (float)lua_tonumber(L, 2);
   arg3 = (float)lua_tonumber(L, 3);
   arg4 = (float)lua_tonumber(L, 4);
+  arg5 = (float)lua_tonumber(L, 5);
+  arg6 = (float)lua_tonumber(L, 6);
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&arg5,SWIGTYPE_p_Texture,0))){
-    SWIG_fail_ptr("quadDrawTex",5,SWIGTYPE_p_Texture);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,7,(void**)&arg7,SWIGTYPE_p_Texture,0))){
+    SWIG_fail_ptr("quadDrawTex",7,SWIGTYPE_p_Texture);
   }
   
-  arg6 = (float)lua_tonumber(L, 6);
-  arg7 = (float)lua_tonumber(L, 7);
-  arg8 = (float)lua_tonumber(L, 8);
-  quadDrawTex(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+  quadDrawTex(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
   
   return SWIG_arg;
   

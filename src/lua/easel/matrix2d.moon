@@ -1,7 +1,13 @@
 local Matrix2D
+Matrix2D_mt = {
+  __tostring: (this)->
+    return "[Matrix2D (a="..this.a.." b="..this.b.." c="..this.c.." d="..this.d.." tx="..this.tx.." ty="..this.ty..")]"
+
+}
 Matrix2D = {
 new: (a, b, c, d, tx, ty) ->
   this = {}
+  setmetatable(this, Matrix2D_mt)
   
   Matrix2D.identity = nil
   Matrix2D.DEG_TO_RAD = math.pi/180
@@ -259,9 +265,6 @@ new: (a, b, c, d, tx, ty) ->
   this.clone = () ->
     return (Matrix2D.new!).copy(this)
 
-  --this.toString = function() {
-    --return "[Matrix2D (a="+this.a+" b="+this.b+" c="+this.c+" d="+this.d+" tx="+this.tx+" ty="+this.ty+")]"
-  --}
 
   -- this has to be populated after the class is defined:
   return this

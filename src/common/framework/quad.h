@@ -3,7 +3,7 @@
 
 #include "texture.h"
 
-void quadDrawTex(float x, float y, float width, float height, Texture* tex, float rot, float pivX, float pivY);
+void quadDrawTex(float ma, float mb, float mc, float md, float tx, float ty, Texture* tex);
 void quadDrawCol(float x, float y, float width, float height, float red, float green, float blue, float alpha, float rot, float pivX, float pivY);
 
 #endif
