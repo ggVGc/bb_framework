@@ -51,3 +51,4 @@ glob:*.pyc
 glob:deps/osx
 glob:src/gen
 glob:*.luac
+glob:build/android/assets

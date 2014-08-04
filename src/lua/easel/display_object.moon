@@ -20,9 +20,15 @@ new: ->
   self.skewY = 0
   self.isDisplayObj = true
   self.alpha = 1
+  self._matrix = framework.Matrix2D.new!
 
   self.isVisible = ->
     return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0)
+
+  --self.getTransform = ->
+    --o = self
+    --mtx = o._matrix.identity().appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY);
+
 
   self.getGlobalPos = ->
     if self.parent ~= nil
