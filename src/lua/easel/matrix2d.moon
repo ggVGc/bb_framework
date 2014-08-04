@@ -76,10 +76,12 @@ new: (a, b, c, d, tx, ty) ->
 
   
   this.prependTransform = (x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) ->
+    local cos
+    local sin
     if rotation%360 != 0
       r = rotation*Matrix2D.DEG_TO_RAD
-      cos = Math.cos(r)
-      sin = Math.sin(r)
+      cos = math.cos(r)
+      sin = math.sin(r)
     else
       cos = 1
       sin = 0
@@ -94,17 +96,18 @@ new: (a, b, c, d, tx, ty) ->
       skewX *= Matrix2D.DEG_TO_RAD
       skewY *= Matrix2D.DEG_TO_RAD
       this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0)
-      this.prepend(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), x, y)
+      this.prepend(math.cos(skewY), math.sin(skewY), -math.sin(skewX), math.cos(skewX), x, y)
     else
       this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y)
     return this
 
   
   this.appendTransform = (x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY)->
+    local r, cos, sin
     if (rotation%360 != 0)
       r = rotation*Matrix2D.DEG_TO_RAD
-      cos = Math.cos(r)
-      sin = Math.sin(r)
+      cos = math.cos(r)
+      sin = math.sin(r)
     else
       cos = 1
       sin = 0
@@ -113,7 +116,7 @@ new: (a, b, c, d, tx, ty) ->
       -- TODO: can this be combined into a single append?
       skewX *= Matrix2D.DEG_TO_RAD
       skewY *= Matrix2D.DEG_TO_RAD
-      this.append(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), x, y)
+      this.append(math.cos(skewY), math.sin(skewY), -math.sin(skewX), math.cos(skewX), x, y)
       this.append(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0)
     else
       this.append(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y)
@@ -145,7 +148,7 @@ new: (a, b, c, d, tx, ty) ->
   this.skew = (skewX, skewY) ->
     skewX = skewX*Matrix2D.DEG_TO_RAD
     skewY = skewY*Matrix2D.DEG_TO_RAD
-    this.append(Math.cos(skewY), Math.sin(skewY), -Math.sin(skewX), Math.cos(skewX), 0, 0)
+    this.append(math.cos(skewY), math.sin(skewY), -math.sin(skewX), math.cos(skewX), 0, 0)
     return this
 
   

@@ -18,12 +18,14 @@ void initRender(void)
       (GLfixed)(0.3f * 65536), 0x10000);
 }
 
+
 void beginRenderFrame(unsigned int width, unsigned int height)
 {
+  glEnableClientState(GL_VERTEX_ARRAY);
+  glViewport(0, 0, width, height);
+
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
-
-  glViewport(0, 0, width, height);
 
   glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 }

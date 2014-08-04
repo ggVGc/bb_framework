@@ -8,10 +8,12 @@ new: (texLoader, path) ->
   setmetatable(self, {__newindex:displayObj, __index:displayObj})
   tex = texLoader path
   self.draw = () ->
-    x,y = self.getGlobalPos!
-    r = self.getGlobalRot!
-    sx, sy = self.getGlobalScale!
-    tex.draw x+tex.width/2,y+tex.height/2, 0.5,0.5, -r, sx, sy
+    --x,y = self.getGlobalPos!
+    --r = self.getGlobalRot!
+    --sx, sy = self.getGlobalScale!
+    m = self.getConcatenatedMatrix!
+    --tex.draw x+tex.width/2,y+tex.height/2, 0.5,0.5, -r, sx, sy
+    tex.draw m
 
   return self
 

@@ -25,10 +25,22 @@ new: ->
   self.isVisible = ->
     return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0)
 
-  --self.getTransform = ->
-    --o = self
-    --mtx = o._matrix.identity().appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY);
+  self.getMatrix = (matrix) ->
+	o = self
+    m = matrix and matrix.identity! or framework.Matrix2D.new!
+	return m.appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .appendProperties(o.alpha, o.shadow, o.compositeOperation);
 
+
+  self.getConcatenatedMatrix = (matrix)->
+    if (matrix)
+      matrix.identity!
+    else
+      matrix = framework.Matrix2D.new!
+    o = self
+    while (o ~= nil)
+      matrix.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .prependProperties(o.alpha, o.shadow, o.compositeOperation, o.visible)
+      o = o.parent
+    return matrix
 
   self.getGlobalPos = ->
     if self.parent ~= nil
@@ -54,13 +66,15 @@ new: ->
 
 
   self.setTransform = (x,y,scaleX, scaleY, rot, skewX, skewY, regX, regY) ->
-    self.x = x if x
-    self.y = y if y
-    self.rotation = rot if rot
-    self.skewX = skewX if skewX
-    self.skewY = skewY if skewY
-    self.regX = regX if regX
-    self.regY = regY if regY
+    self.x = x and x or 0
+    self.y = y and y or 0
+    self.rotation = rot and rot or 0
+    self.skewX = skewX and skewX or 0
+    self.skewY = skewY and skewY or 0
+    self.regX = regX and regX or 0
+    self.regY = regY and regY or 0
+    self.scaleX = scaleX and scaleX or 1
+    self.scaleY = scaleY and scaleY or 1
 
   return self
 }

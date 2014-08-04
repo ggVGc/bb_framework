@@ -2,12 +2,12 @@
 #include "quad.h"
 
 static GLfloat vertices[12] = {
-  0, 1,
-  1, 1,
   0, 0,
-  1, 1,
   1, 0,
-  0, 0
+  0, 1,
+  1, 0,
+  1, 1,
+  0, 1
 };
 
 static GLfloat transformMatrix[16] = {
@@ -24,8 +24,6 @@ void quadDrawCommon(float ma, float mb, float mc, float md, float tx, float ty){
   transformMatrix[4] = mc;
   transformMatrix[5] = md;
   transformMatrix[12] = tx;
-  /*transformMatrix[1] = ma;*/
-  /*transformMatrix[4] = mb;*/
   transformMatrix[13] = ty;
 
 
@@ -33,22 +31,7 @@ void quadDrawCommon(float ma, float mb, float mc, float md, float tx, float ty){
   glVertexPointer(2, GL_FLOAT, 0, vertices);
 
   glPushMatrix();
-/*
-  glLoadIdentity();
-
-  glTranslatef(x-width*pivX, y-height*pivY, 0);
-  glTranslatef(width*pivX, height*pivY, 0);
-  glRotatef(rot, 0, 0, 1);
-  glTranslatef(-width*pivX, -height*pivY, 0);
-
-*/
-  /*glLoadIdentity();*/
   glLoadMatrixf(transformMatrix);
-
-  /*glScalef(100, 100, 0);*/
-
-
-  /*glScalef(width, height, 1);*/
   glDrawArrays(GL_TRIANGLES, 0, 6);
   glPopMatrix();
 

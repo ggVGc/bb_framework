@@ -17,7 +17,7 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
     x,  y,
     right, top,
     right,  y,
-    x,  y
+    x,  y,
   };
 
   tex->data = data;
