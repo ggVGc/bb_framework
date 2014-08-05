@@ -36,7 +36,7 @@
 #define inline __inline
 #endif
 
-inline ptrdiff_t CAN_READ(HIO_HANDLE *h)
+ptrdiff_t CAN_READ(HIO_HANDLE *h)
 {
 	if (h->size >= 0)
 		return h->pos >= 0 ? h->size - h->pos : 0;

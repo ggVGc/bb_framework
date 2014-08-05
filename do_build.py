@@ -116,7 +116,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
 
 def buildCoreMod():
-  return buildLib("bin/libcoremod.a", ["./deps/common/coremod/src", "./deps/common/coremod/src/loaders"], [], "-I./deps/common/coremod/src -DLIBXMP_CORE_PLAYER")
+  return buildLib("bin/libcoremod.a", ["./deps/common/coremod/src", "./deps/common/coremod/src/loaders"], [], "-I./deps/common/coremod/src -I./deps/common/coremod/include -DLIBXMP_CORE_PLAYER")
 
 def buildLua():
   return buildLib("bin/libluaa.a", ["./deps/common/lua"], [], "")
@@ -157,7 +157,7 @@ def buildFramework():
       "-I./src/common/framework",
       "-I./src/gen",
       "-I./deps/win/SFML-1.6/include",
-      "-I./deps/coremod/include"
+      "-I./deps/common/coremod/include"
       ])
 
   commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lluaa -lcoremod'
