@@ -11,7 +11,6 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.view.Window;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ApplicationInfo;
