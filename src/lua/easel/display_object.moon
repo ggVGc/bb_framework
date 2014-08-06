@@ -42,29 +42,6 @@ new: ->
       o = o.parent
     return matrix
 
-  self.getGlobalPos = ->
-    if self.parent ~= nil
-      x,y = self.parent.getGlobalPos!
-      return x+self.x-self.regX, y+self.y-self.regY
-    else
-      return self.x-self.regX, self.y-self.regY
-    
-  
-  self.getGlobalRot = ->
-    if self.parent ~= nil
-      r = self.parent.getGlobalRot!
-      return self.rotation+r
-    else
-      return self.rotation
-
-  self.getGlobalScale = ->
-    if self.parent ~= nil
-      sx, sy = self.parent.getGlobalScale!
-      return self.scaleX*sx, self.scaleY*sy
-    else
-      return self.scaleX, self.scaleY
-
-
   self.setTransform = (x,y,scaleX, scaleY, rot, skewX, skewY, regX, regY) ->
     self.x = x and x or 0
     self.y = y and y or 0

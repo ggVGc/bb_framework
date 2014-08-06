@@ -278,7 +278,7 @@ int appRender(long tick, int width, int height) {
   }
 
   lua_pop(vm, 1);
-  lua_gc(vm, LUA_GCSTEP, 1);
+  /*lua_gc(vm, LUA_GCSTEP, 1);*/
   return 0;
 }
 
