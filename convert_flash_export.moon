@@ -34,6 +34,7 @@ objectProcessor = (name, content, type) ->
     _,_,initContent = content\find 'this%.initialize%(('..initContentPattern..')%);'
     initContent = (initContent\gsub ':', '=')\gsub('"', '')\gsub '-', '_'
 
+  content = content\gsub 'this%.frame_(%d*) = function%(%) {([%w%.%d_%(%); \n\t]*)}', 'this.frame_%1 = function()\n%2\nend'
   content = content\gsub '= function%(mode,startPosition,loop%) {', ''
   content = content\gsub '= function%(%) {\n', ''
   content = content\gsub 'this%.initialize%('..initContentPattern..'%);', ''
