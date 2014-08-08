@@ -22,6 +22,34 @@ new: ->
   self.alpha = 1
   self._matrix = framework.Matrix2D.new!
 
+
+-- Non-CJS additions
+
+  self.event = {handlers:{}}
+  eventMT = {
+    handlers:{}
+    __index: (obj, k) ->
+      return (...) ->
+        if obj.handlers[k]
+          for f in *obj.handlers[k]
+            f(...)
+        if self.parent
+          self.parent.event[k](...)
+    __newindex: (obj, eventName, func) ->
+      if not obj.handlers[eventName]
+        obj.handlers[eventName] = {}
+      table.insert obj.handlers[eventName], func
+  }
+
+  
+  setmetatable self.event, eventMT
+
+
+
+-- End Non-CJS additions
+
+
+
   self.isVisible = ->
     return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0)
 
@@ -30,6 +58,12 @@ new: ->
     m = matrix and matrix.identity! or framework.Matrix2D.new!
 	return m.appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .appendProperties(o.alpha, o.shadow, o.compositeOperation);
 
+
+  self.localToGlobal = (x, y) ->
+    mtx = self.getConcatenatedMatrix(self._matrix)
+    return nil if not mtx
+    mtx.append(1, 0, 0, 1, x, y)
+    return mtx.tx, mtx.ty
 
   self.getConcatenatedMatrix = (matrix)->
     if (matrix)

@@ -136,12 +136,21 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
       synched = self.mode ~= MovieClip.INDEPENDENT
       tl.loop = self.loop==nil and true or self.loop
 
+      isEnd = false
       if synched
-        tl.setPosition(self.startPosition + (self.mode==MovieClip.SINGLE_FRAME and 0 or self._synchOffset), framework.Tween.NONE)
+        isEnd = tl.setPosition(self.startPosition + (self.mode==MovieClip.SINGLE_FRAME and 0 or self._synchOffset), framework.Tween.NONE)
       else
-        tl.setPosition(self._prevPos < 0 and 0 or self._prevPosition, not self.actionsEnabled and framework.Tween.NONE or nil)
+        isEnd = tl.setPosition(self._prevPos < 0 and 0 or self._prevPosition, not self.actionsEnabled and framework.Tween.NONE or nil)
 
       self._prevPosition = tl._prevPosition
+
+-- Non-CJS addition
+      --if isEnd
+        --self.event.timelineEnd!
+
+-- End non-CJS addition
+
+
       return if self._prevPos == tl._prevPos
 
       self._prevPos = tl._prevPos
