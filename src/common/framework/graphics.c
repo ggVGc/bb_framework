@@ -6,8 +6,7 @@
 #endif
 
 
-void initRender(void)
-{
+void initRender(void) {
   glEnable(GL_TEXTURE_2D);
 
   glEnable(GL_BLEND);
@@ -19,8 +18,7 @@ void initRender(void)
 }
 
 
-void beginRenderFrame(unsigned int width, unsigned int height)
-{
+void beginRenderFrame(unsigned int width, unsigned int height) {
   glEnableClientState(GL_VERTEX_ARRAY);
   glViewport(0, 0, width, height);
 

@@ -18,14 +18,12 @@ static GLfloat transformMatrix[16] = {
 };
 
 void quadDrawCommon(float ma, float mb, float mc, float md, float tx, float ty){
-
   transformMatrix[0] = ma;
   transformMatrix[1] = mb;
   transformMatrix[4] = mc;
   transformMatrix[5] = md;
   transformMatrix[12] = tx;
   transformMatrix[13] = ty;
-
 
   glEnableClientState(GL_VERTEX_ARRAY);
   glVertexPointer(2, GL_FLOAT, 0, vertices);
@@ -38,7 +36,6 @@ void quadDrawCommon(float ma, float mb, float mc, float md, float tx, float ty){
   glDisableClientState(GL_VERTEX_ARRAY);
 }
 
-
 void quadDrawTex(float ma, float mb, float mc, float md, float tx, float ty, Texture* tex){
   glColor4f(1,1,1,1);
   glEnableClientState(GL_TEXTURE_COORD_ARRAY);
@@ -48,7 +45,6 @@ void quadDrawTex(float ma, float mb, float mc, float md, float tx, float ty, Tex
   glDisableClientState(GL_TEXTURE_COORD_ARRAY);
   /*glBindTexture(GL_TEXTURE_2D,0);*/
 }
-
 
 void quadDrawCol(float x, float y, float width, float height, float red, float green, float blue, float alpha, float rot, float pivX, float pivY){
   glBindTexture(GL_TEXTURE_2D,0);
@@ -70,6 +66,5 @@ void quadDrawCol(float x, float y, float width, float height, float red, float g
   glPopMatrix();
 
   glDisableClientState(GL_VERTEX_ARRAY);
-
 }
 

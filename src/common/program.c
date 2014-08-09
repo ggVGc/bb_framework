@@ -51,7 +51,7 @@ void print_lua(lua_State* s){
 
 int dofile(const char* filePath){
   int ret;
-  char* file = loadBytes(filePath, 0);
+  char* file = loadText(filePath);
   if(!file){
     // yeye, overflow, who cares
     char msg[2048];
@@ -139,7 +139,6 @@ int require_lua(lua_State* s)
 }
 
 int callFunc(int nParams, int nRet) {
-
   int result = 0;
   int size0 = lua_gettop(vm);
   int error_index = lua_gettop(vm) - nParams;

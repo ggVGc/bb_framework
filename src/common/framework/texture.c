@@ -27,3 +27,5 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
 
   memcpy(tex->uvCoords, texCoords, sizeof(GLfloat)*12);
 }
+
+
