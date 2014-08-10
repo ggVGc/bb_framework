@@ -114,6 +114,7 @@ void setResourcePath(const char* p, int useZip)
 
 int getFileSizeFromZip(const char* inPath){
   unzFile uf;
+  unz_file_info info;
 
   // TODO: Should check for overflow.
   char path[2048];
@@ -133,7 +134,7 @@ int getFileSizeFromZip(const char* inPath){
     return -1;
   }
 
-  unz_file_info info;
+  
   info.uncompressed_size = -1;
   unzGetCurrentFileInfo(uf, &info, NULL, 0, NULL, 0, NULL, 0);
   return info.uncompressed_size;
@@ -148,21 +149,29 @@ int getFileSize(const char *path){
   }
 }
 
+int loadBytesIntoBuffer(const char *inPath, unsigned char *data, int bufferSize){
+  // TODO: Should check for overflow.
+  char path[2048];
 
-unsigned char* loadBytesFromZipNew(const char* inPath, int* outSize){
-  int size = getFileSize(inPath)+1;
+  int size = getFileSizeFromZip(inPath);
 
-  unsigned char *data = (unsigned char*)malloc(size);
-  int success = loadBytesIntoBuffer(inPath, data, size-1);
-  if(success!=0){
-    return NULL;
+  unzFile uf = unzOpen(apkPath);
+
+  sprintf(path, "assets/%s\0", inPath);
+
+  if(unzLocateFile(uf, path, 0)){
+    // Invalid file path
+    return -1;
   }
-  if(outSize){
-    *outSize = size;
-  }
-  data[size] = '\0';
-  return data;
+  unzOpenCurrentFile(uf);
+  unzReadCurrentFile(uf, data, bufferSize);
+
+  unzCloseCurrentFile(uf);
+  unzClose(uf);
+  return 0;
 }
+
+
 
 
 unsigned char* loadBytesFromZip(const char* inPath, int* outSize){
@@ -190,28 +199,6 @@ unsigned char* loadBytesFromDisk(const char* inPath) {
   return "NOT IMPLEMENTED";
 }
 
-int loadBytesIntoBuffer(const char *inPath, unsigned char *data, int bufferSize){
-  // TODO: Should check for overflow.
-  char path[2048];
-  char msg[2048];
-
-  int size = getFileSizeFromZip(inPath);
-
-  unzFile uf = unzOpen(apkPath);
-
-  sprintf(path, "assets/%s\0", inPath);
-
-  if(unzLocateFile(uf, path, 0)){
-    // Invalid file path
-    return -1;
-  }
-  unzOpenCurrentFile(uf);
-  unzReadCurrentFile(uf, data, bufferSize);
-
-  unzCloseCurrentFile(uf);
-  unzClose(uf);
-  return 0;
-}
 
 
 unsigned char* loadBytes(const char* path, int* sz){

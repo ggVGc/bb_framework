@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\common\app.h" />
-    <ClInclude Include="..\..\..\src\common\framework\bitmap.h" />
     <ClInclude Include="..\..\..\src\common\framework\bitmapdata.h" />
     <ClInclude Include="..\..\..\src\common\framework\camera.h" />
     <ClInclude Include="..\..\..\src\common\framework\graphics.h" />
@@ -29,7 +28,6 @@
     <ClInclude Include="..\..\..\src\common\framework_lua_wrappers.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\common\framework\bitmap.c" />
     <ClCompile Include="..\..\..\src\common\framework\bitmapdata.c" />
     <ClCompile Include="..\..\..\src\common\framework\camera.c" />
     <ClCompile Include="..\..\..\src\common\framework\graphics.c" />
@@ -76,7 +74,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
+    <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

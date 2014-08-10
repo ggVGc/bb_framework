@@ -18,9 +18,6 @@
     <ClInclude Include="..\..\..\src\common\app.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\common\framework\bitmap.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\src\common\framework\bitmapdata.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -65,9 +62,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\common\framework\bitmap.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\common\framework\bitmapdata.c">
       <Filter>Source Files</Filter>
     </ClCompile>
