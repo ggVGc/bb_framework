@@ -12,7 +12,7 @@ export maker = (fn) ->
   (...) ->
     args = {...}
     o = {}
-    fn(o, table.unpack(args))
+    fn(o, unpack(args))
     o
 
 export wrap=(v)->

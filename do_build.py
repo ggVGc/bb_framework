@@ -151,7 +151,7 @@ def buildFramework():
   cflags =" ".join([
       "-I./deps/common/gles_headers",
       "-I./deps/common/libpng",
-      "-I./deps/common/lua",
+      "-I./deps/common/luajit",
       "-I./deps/common/minizip",
       "-I./src/common",
       "-I./src/common/framework",
@@ -160,7 +160,7 @@ def buildFramework():
       "-I./deps/common/coremod/include"
       ])
 
-  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lluaa -lcoremod'
+  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lluajit -lcoremod'
   if sys.platform == "darwin":
     return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -F./deps/osx/sfml-1.6/lib64 -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
   else:
