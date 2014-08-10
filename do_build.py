@@ -21,7 +21,7 @@ def buildLib(outfile, srcDirs, srcFiles, cflags):
     x , fileName = os.path.split(fullPath)
     objFile = os.path.join(objDir, fileName[:-2]+".o")
     objFiles += " "+objFile
-    cmd = ("cc -g "+cflags+" -c -o "+objFile+" "+fullPath)
+    cmd = ("cc "+cflags+" -c -o "+objFile+" "+fullPath)
     print cmd
     return os.system(cmd)
 
@@ -65,7 +65,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
     out = os.path.join("obj","framework", os.path.split(f)[1]+".o")
     ofiles += " "+out
     ofiles
-    cmd = "gcc -g "+cflags+" -c "+f+" -o "+out
+    cmd = "gcc "+cflags+" -c "+f+" -o "+out
     print cmd
     ret = os.system(cmd)
     if ret != 0:
@@ -76,7 +76,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
   files = cppfiles+" "+ofiles
 
-  cmd = "g++ -g "+cflags+" "+files+" -o "+outfile+" "+linkFlags
+  cmd = "g++ "+cflags+" "+files+" -o "+outfile+" "+linkFlags
   print cmd
   return os.system(cmd)
 

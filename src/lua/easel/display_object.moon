@@ -23,7 +23,9 @@ new: ->
   self._matrix = framework.Matrix2D.new!
 
 
+
 -- Non-CJS additions
+  self.freezeTransform = false
 
   self.event = {handlers:{}}
   eventMT = {
@@ -75,6 +77,11 @@ new: ->
       matrix.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .prependProperties(o.alpha, o.shadow, o.compositeOperation, o.visible)
       o = o.parent
     return matrix
+  
+  self.updateTransform = ->
+    return if self.freezeTransform
+    self.getConcatenatedMatrix(self._matrix)
+
 
   self.setTransform = (x,y,scaleX, scaleY, rot, skewX, skewY, regX, regY) ->
     self.x = x and x or 0

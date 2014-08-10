@@ -6,18 +6,16 @@ new: (texLoader, path) ->
   self = {}
   displayObj = framework.DisplayObject.new()
   setmetatable(self, {__newindex:displayObj, __index:displayObj})
-  tex = texLoader path
+  self.tex = texLoader path
+  cacheMat = framework.Matrix2D.new!
   self.draw = () ->
-    --x,y = self.getGlobalPos!
-    --r = self.getGlobalRot!
-    --sx, sy = self.getGlobalScale!
-    m = self.getConcatenatedMatrix!
-    --tex.draw x+tex.width/2,y+tex.height/2, 0.5,0.5, -r, sx, sy
-    tex.draw m
+    Bitmap.drawCounter+=1
+    cacheMat.copy self._matrix
+    self.tex.draw cacheMat
 
   return self
-
 }
+Bitmap.drawCounter = 0
 
 framework.cjs = {}
 framework.cjs.Bitmap = Bitmap

@@ -1,6 +1,7 @@
 #include "GLES/gl.h"
 #include "graphics.h"
-#include "camera.h"
+#include "quad.h"
+
 #ifdef ANDROID_NDK
 #include <android/log.h>
 #endif
@@ -15,6 +16,11 @@ void initRender(void) {
   glClearColorx((GLfixed)(0.1f * 65536),
       (GLfixed)(0.2f * 65536),
       (GLfixed)(0.3f * 65536), 0x10000);
+
+  glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+  glEnableClientState(GL_VERTEX_ARRAY);
+  quadGlobalInit();
+  textureGlobalInit();
 }
 
 

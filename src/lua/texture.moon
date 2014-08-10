@@ -15,6 +15,8 @@ new: (bmData, x, y, w, h)->
         when "width" tex.width
         when "height" tex.height)
 
+
+    cacheMat = framework.Matrix2D.new!
     .draw=(x, y, pivotX, pivotY, rot, scaleX, scaleY)->
       local m
 
@@ -32,9 +34,11 @@ new: (bmData, x, y, w, h)->
         m.rotate (rot and rot/360 or 0)
         m.translate w*px, h*py
         m.translate x-w*px, y-h*py
-        m.appendMatrix((framework.Matrix2D.new!).scale(sx, sy))
+        cacheMat.identity!
+        m.appendMatrix(cacheMat.scale(sx, sy))
 
-      m.appendMatrix((framework.Matrix2D.new!).scale(tex.width, tex.height))
+      cacheMat.identity!
+      m.appendMatrix(cacheMat.scale(tex.width, tex.height))
       _c_framework.quadDrawTex m.a, m.b, m.c, m.d, m.tx, m.ty, tex
 
       --_c_framework.quadDrawTex x or 0, y,(scaleX or 1)*tex.width,

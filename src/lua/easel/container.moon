@@ -19,18 +19,20 @@ new: ->
       --return true
   
     --print 'Container draw, count:', #self.children
-
+    self.updateTransform!
     for i=1, #self.children
       child = self.children[i]
       if not child.isVisible()
         continue
-      
-      --ctx.save!
-      --child.updateContext ctx
-      child.draw ctx
-      --ctx.restore!
+      child.draw!
     return true
   
+  self.updateTransform = ->
+    return if self.freezeTransform
+    for child in *self.children
+      if not child.isVisible!
+        continue
+      child.updateTransform!
   
   self.addChild = (...)->
     arguments = {...}

@@ -4,6 +4,17 @@
 #include <GLES/gl.h>
 #include "texture.h"
 
+
+static GLuint lastHandle;
+static int noLastHandle;
+
+
+void textureGlobalInit(){
+  noLastHandle = 1;
+  lastHandle = (GLuint)-1;
+}
+
+
 void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
   float x = sourceRect.x;
   float y = sourceRect.y;
@@ -28,4 +39,14 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
   memcpy(tex->uvCoords, texCoords, sizeof(GLfloat)*12);
 }
 
+
+void textureApply(Texture *tex){
+  if(noLastHandle || tex->data->glTexHandle != lastHandle){
+    /*trace("BINDING NEW TEX");*/
+    glBindTexture(GL_TEXTURE_2D, tex->data->glTexHandle);
+    lastHandle = tex->data->glTexHandle;
+  }
+  glTexCoordPointer(2, GL_FLOAT, 0, tex->uvCoords);
+  noLastHandle = 0;
+}
 

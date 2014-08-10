@@ -13,6 +13,7 @@ new: (a, b, c, d, tx, ty) ->
   Matrix2D.DEG_TO_RAD = math.pi/180
 
   
+
   this.a = 1
   this.b = 0
   this.c = 0
@@ -26,12 +27,15 @@ new: (a, b, c, d, tx, ty) ->
 
 -- constructor:
   
-  this.a = (a == nil) and 1 or a
-  this.b = b or 0
-  this.c = c or 0
-  this.d = (d == nil) and 1 or d
-  this.tx = tx or 0
-  this.ty = ty or 0
+  this.initialize = (a,b,c,d,tx,ty) ->
+    this.a = (a == nil) and 1 or a
+    this.b = b or 0
+    this.c = c or 0
+    this.d = (d == nil) and 1 or d
+    this.tx = tx or 0
+    this.ty = ty or 0
+
+  this.initialize a, b, c, d, tx, ty
 
 -- public methods:
   

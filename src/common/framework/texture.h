@@ -13,7 +13,10 @@ typedef struct{
 } Texture;
 
 
-void textureInit(Texture* tex, BitmapData* data, Rect sourceRect);
+void textureGlobalInit();
+
+void textureInit(Texture *tex, BitmapData *data, Rect sourceRect);
+void textureApply(Texture *tex);
 
 
 #endif

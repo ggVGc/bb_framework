@@ -17,7 +17,12 @@ static GLfloat transformMatrix[16] = {
   0,0,0,1
 };
 
-void quadDrawCommon(float ma, float mb, float mc, float md, float tx, float ty){
+void quadGlobalInit(){
+  glVertexPointer(2, GL_FLOAT, 0, vertices);
+}
+
+void quadDrawTex(float ma, float mb, float mc, float md, float tx, float ty, Texture* tex){
+  glColor4f(1,1,1,1);
   transformMatrix[0] = ma;
   transformMatrix[1] = mb;
   transformMatrix[4] = mc;
@@ -25,25 +30,12 @@ void quadDrawCommon(float ma, float mb, float mc, float md, float tx, float ty){
   transformMatrix[12] = tx;
   transformMatrix[13] = ty;
 
-  glEnableClientState(GL_VERTEX_ARRAY);
-  glVertexPointer(2, GL_FLOAT, 0, vertices);
+  textureApply(tex);
 
-  glPushMatrix();
+  /*glPushMatrix();*/
   glLoadMatrixf(transformMatrix);
   glDrawArrays(GL_TRIANGLES, 0, 6);
-  glPopMatrix();
-
-  glDisableClientState(GL_VERTEX_ARRAY);
-}
-
-void quadDrawTex(float ma, float mb, float mc, float md, float tx, float ty, Texture* tex){
-  glColor4f(1,1,1,1);
-  glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-  glBindTexture(GL_TEXTURE_2D, tex->data->glTexHandle);
-  glTexCoordPointer(2, GL_FLOAT, 0, tex->uvCoords);
-  quadDrawCommon(ma, mb, mc, md, tx, ty);
-  glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-  /*glBindTexture(GL_TEXTURE_2D,0);*/
+  /*glPopMatrix();*/
 }
 
 void quadDrawCol(float x, float y, float width, float height, float red, float green, float blue, float alpha, float rot, float pivX, float pivY){

@@ -4,8 +4,7 @@
 #include <GLES/gl.h>
 #include "rawbitmapdata.h"
 
-typedef struct BitmapData
-{
+typedef struct BitmapData {
   int width;
   int height;
   GLuint glTexHandle;
