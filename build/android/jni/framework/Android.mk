@@ -37,7 +37,6 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/gen/
 
 MY_SOURCES := src/common/program.c \
   src/common/framework_wrap.c \
-  src/common/framework/bitmap.c \
   src/common/framework/bitmapdata.c \
   src/common/framework/camera.c \
   src/common/framework/graphics.c \
@@ -48,6 +47,7 @@ MY_SOURCES := src/common/program.c \
   src/common/framework/rect.c \
   src/common/framework/resource_loading.c \
   src/common/framework/texture.c \
+  src/common/framework/matrix2.c \
   src/android/app_android.c \
   src/android/framework/util.c \
   src/android/framework/streaming_audio.c

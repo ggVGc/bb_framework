@@ -2,6 +2,7 @@
 
 
 %{
+#include "framework/matrix2.h"
 #include "framework/camera.h"
 #include "framework/quad.h"
 #include "framework/texture.h"
@@ -13,6 +14,7 @@
 %}
 
 
+#include "framework/matrix2.h"
 #include "framework/camera.h"
 #include "framework/quad.h"
 #include "framework/texture.h"

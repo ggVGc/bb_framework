@@ -7,11 +7,11 @@ new: (texLoader, path) ->
   displayObj = framework.DisplayObject.new()
   setmetatable(self, {__newindex:displayObj, __index:displayObj})
   self.tex = texLoader path
-  cacheMat = framework.Matrix2D.new!
+  dispObjDraw = displayObj.draw
   self.draw = () ->
+    dispObjDraw!
     Bitmap.drawCounter+=1
-    cacheMat.copy self._matrix
-    self.tex.draw cacheMat
+    self.tex.draw self._matrix
 
   return self
 }

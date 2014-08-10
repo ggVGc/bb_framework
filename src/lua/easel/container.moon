@@ -14,25 +14,20 @@ new: ->
     hasContent = self.cacheCanvas or #self.children>0
     return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0 and hasContent)
 
-  self.draw = (ctx, ignoreCache)->
+  self.draw = ->
     --if displayObj.draw(ctx, ignoreCache)
       --return true
   
     --print 'Container draw, count:', #self.children
-    self.updateTransform!
     for i=1, #self.children
       child = self.children[i]
       if not child.isVisible()
         continue
+
+      if self.freezeTransform
+        child.freezeTransform = self.freezeTransform
       child.draw!
     return true
-  
-  self.updateTransform = ->
-    return if self.freezeTransform
-    for child in *self.children
-      if not child.isVisible!
-        continue
-      child.updateTransform!
   
   self.addChild = (...)->
     arguments = {...}

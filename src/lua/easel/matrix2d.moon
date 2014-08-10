@@ -6,6 +6,7 @@ Matrix2D_mt = {
 }
 Matrix2D = {
 new: (a, b, c, d, tx, ty) ->
+  cMat = _c_framework.Matrix2!
   this = {}
   setmetatable(this, Matrix2D_mt)
   
@@ -80,6 +81,20 @@ new: (a, b, c, d, tx, ty) ->
 
   
   this.prependTransform = (x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY) ->
+    --cMat = _c_framework.Matrix2!
+    --_c_framework.Matrix2_prependTransform(cMat, x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY)
+
+
+    --_c_framework.Matrix2_init(cMat, this.a, this.b, this.c, this.d, this.tx, this.ty)
+    --this.a = _c_framework.Matrix2_a(cMat)
+    --this.b = _c_framework.Matrix2_b(cMat)
+    --this.c = _c_framework.Matrix2_c(cMat)
+    --this.d = _c_framework.Matrix2_d(cMat)
+    --this.tx = _c_framework.Matrix2_tx(cMat)
+    --this.ty = _c_framework.Matrix2_ty(cMat)
+
+    --return this
+
     local cos
     local sin
     if rotation%360 != 0
@@ -95,14 +110,27 @@ new: (a, b, c, d, tx, ty) ->
       this.tx -= regX
       this.ty -= regY
 
+    _c_framework.Matrix2_init(cMat, this.a, this.b, this.c, this.d, this.tx, this.ty)
+
     if (skewX or skewY)
       -- TODO: can this be combined into a single prepend operation?
       skewX *= Matrix2D.DEG_TO_RAD
       skewY *= Matrix2D.DEG_TO_RAD
-      this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0)
-      this.prepend(math.cos(skewY), math.sin(skewY), -math.sin(skewX), math.cos(skewX), x, y)
+      _c_framework.Matrix2_prepend(cMat, cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0)
+      _c_framework.Matrix2_prepend(cMat,math.cos(skewY), math.sin(skewY), -math.sin(skewX), math.cos(skewX), x, y)
+      --this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, 0, 0)
+      --this.prepend(math.cos(skewY), math.sin(skewY), -math.sin(skewX), math.cos(skewX), x, y)
     else
-      this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y)
+      _c_framework.Matrix2_prepend(cMat,cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y)
+      --this.prepend(cos*scaleX, sin*scaleX, -sin*scaleY, cos*scaleY, x, y)
+
+    --_c_framework.Matrix2_prependTransform(cMat, x, y, scaleX, scaleY, rotation, skewX, skewY, regX, regY)
+    this.a = _c_framework.Matrix2_a(cMat)
+    this.b = _c_framework.Matrix2_b(cMat)
+    this.c = _c_framework.Matrix2_c(cMat)
+    this.d = _c_framework.Matrix2_d(cMat)
+    this.tx = _c_framework.Matrix2_tx(cMat)
+    this.ty = _c_framework.Matrix2_ty(cMat)
     return this
 
   

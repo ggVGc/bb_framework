@@ -39,11 +39,11 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   
 
   contDraw = container.draw
-  self.draw = (ctx, ignoreCache)->
+  self.draw = ->
     --if self.DisplayObject_draw ctx, ignoreCache
       --return true
     self._updateTimeline!
-    contDraw(ctx, ignoreCache)
+    contDraw!
     true
   
   setmetatable(self, {__newindex:container, __index:container})

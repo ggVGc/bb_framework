@@ -21,11 +21,10 @@ new: ->
   self.isDisplayObj = true
   self.alpha = 1
   self._matrix = framework.Matrix2D.new!
-
+  self.freezeTransform = false
 
 
 -- Non-CJS additions
-  self.freezeTransform = false
 
   self.event = {handlers:{}}
   eventMT = {
@@ -51,37 +50,36 @@ new: ->
 -- End Non-CJS additions
 
 
+  self.draw = ->
+    if not self.freezeTransform
+      self.getConcatenatedMatrix self._matrix
+
 
   self.isVisible = ->
     return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0)
 
-  self.getMatrix = (matrix) ->
-	o = self
-    m = matrix and matrix.identity! or framework.Matrix2D.new!
-	return m.appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .appendProperties(o.alpha, o.shadow, o.compositeOperation);
+  --self.getMatrix = (matrix) ->
+	--o = self
+    --m = matrix and matrix.identity! or framework.Matrix2D.new!
+	--return m.appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .appendProperties(o.alpha, o.shadow, o.compositeOperation);
 
 
+  cacheMat = framework.Matrix2D.new!
   self.localToGlobal = (x, y) ->
-    mtx = self.getConcatenatedMatrix(self._matrix)
-    return nil if not mtx
-    mtx.append(1, 0, 0, 1, x, y)
-    return mtx.tx, mtx.ty
+    self.getConcatenatedMatrix(cacheMat)
+    cacheMat.append(1, 0, 0, 1, x, y)
+    return cacheMat.tx, cacheMat.ty
 
   self.getConcatenatedMatrix = (matrix)->
-    if (matrix)
-      matrix.identity!
+    if self.freezeTransform
+      matrix.copy self._matrix
     else
-      matrix = framework.Matrix2D.new!
-    o = self
-    while (o ~= nil)
-      matrix.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .prependProperties(o.alpha, o.shadow, o.compositeOperation, o.visible)
-      o = o.parent
-    return matrix
+      matrix.identity!
+      o = self
+      while (o ~= nil)
+        matrix.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .prependProperties(o.alpha, o.shadow, o.compositeOperation, o.visible)
+        o = o.parent
   
-  self.updateTransform = ->
-    return if self.freezeTransform
-    self.getConcatenatedMatrix(self._matrix)
-
 
   self.setTransform = (x,y,scaleX, scaleY, rot, skewX, skewY, regX, regY) ->
     self.x = x and x or 0

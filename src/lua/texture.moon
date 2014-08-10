@@ -17,11 +17,11 @@ new: (bmData, x, y, w, h)->
 
 
     cacheMat = framework.Matrix2D.new!
+    scaleMat = framework.Matrix2D.new!
     .draw=(x, y, pivotX, pivotY, rot, scaleX, scaleY)->
-      local m
 
       if type(x) == 'table'
-        m = x
+        cacheMat.copy(x)
       else
         px = pivotX or 0.5
         py = pivotY or 0.5
@@ -29,17 +29,17 @@ new: (bmData, x, y, w, h)->
         sy = scaleY or 1
         w = sx*tex.width
         h = sy*tex.height
-        m = framework.Matrix2D.new!
-        m.translate -w*px, -h*py
-        m.rotate (rot and rot/360 or 0)
-        m.translate w*px, h*py
-        m.translate x-w*px, y-h*py
         cacheMat.identity!
-        m.appendMatrix(cacheMat.scale(sx, sy))
+        cacheMat.translate -w*px, -h*py
+        cacheMat.rotate (rot and rot/360 or 0)
+        cacheMat.translate w*px, h*py
+        cacheMat.translate x-w*px, y-h*py
+        scaleMat.identity!
+        cacheMat.appendMatrix(scaleMat.scale(sx, sy))
 
-      cacheMat.identity!
-      m.appendMatrix(cacheMat.scale(tex.width, tex.height))
-      _c_framework.quadDrawTex m.a, m.b, m.c, m.d, m.tx, m.ty, tex
+      scaleMat.identity!
+      cacheMat.appendMatrix(scaleMat.scale(tex.width, tex.height))
+      _c_framework.quadDrawTex cacheMat.a, cacheMat.b, cacheMat.c, cacheMat.d, cacheMat.tx, cacheMat.ty, tex
 
       --_c_framework.quadDrawTex x or 0, y,(scaleX or 1)*tex.width,
         --(scaleY or 1)*tex.height,tex, rot or 0,pivotX or 0.5, pivotY or 0.5
