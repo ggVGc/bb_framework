@@ -4754,23 +4754,6 @@ fail:
 }
 
 
-static int _wrap_getTextureBindCount(lua_State* L) {
-  int SWIG_arg = 0;
-  int result;
-  
-  SWIG_check_num_args("getTextureBindCount",0,0)
-  result = (int)getTextureBindCount();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_textureInit(lua_State* L) {
   int SWIG_arg = 0;
   Texture *arg1 = (Texture *) 0 ;
@@ -4960,6 +4943,22 @@ static int _wrap_quadFlush(lua_State* L) {
   
   SWIG_check_num_args("quadFlush",0,0)
   quadFlush();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_quadEndFrame(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("quadEndFrame",0,0)
+  quadEndFrame();
   
   return SWIG_arg;
   
@@ -5431,7 +5430,6 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "bitmapDataInit", _wrap_bitmapDataInit},
     { "textureGlobalInit", _wrap_textureGlobalInit},
     { "textureBeginFrame", _wrap_textureBeginFrame},
-    { "getTextureBindCount", _wrap_getTextureBindCount},
     { "textureInit", _wrap_textureInit},
     { "textureApply", _wrap_textureApply},
     { "quadGlobalInit", _wrap_quadGlobalInit},
@@ -5439,6 +5437,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "quadDrawTex", _wrap_quadDrawTex},
     { "quadDrawCol", _wrap_quadDrawCol},
     { "quadFlush", _wrap_quadFlush},
+    { "quadEndFrame", _wrap_quadEndFrame},
     { "getDrawCallCount", _wrap_getDrawCallCount},
     { "cursorX", _wrap_cursorX},
     { "cursorY", _wrap_cursorY},

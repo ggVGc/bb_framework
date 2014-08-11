@@ -6,11 +6,6 @@ static int drawCallCount;
 static GLuint texHandle;
 static int noLastHandle;
 
-static int bindCount;
-
-int getTextureBindCount(){
-  return bindCount;
-}
 
 static GLfloat vertices[12] = {
   0, 0,
@@ -36,7 +31,6 @@ static GLfloat texCoordBuf[4096];
 static int quadCount;
 
 void quadGlobalInit(){
-  bindCount = 0;
   noLastHandle = 1;
   texHandle = (GLuint)-1;
   int i;
@@ -48,7 +42,6 @@ void quadGlobalInit(){
 
 void quadBeginFrame(){
   drawCallCount = 0;
-  bindCount = 0;
 }
 
 void quadEndFrame(){
@@ -62,7 +55,6 @@ int getDrawCallCount(){
 void quadFlush(){
   glEnableClientState(GL_VERTEX_ARRAY);
   glBindTexture(GL_TEXTURE_2D, texHandle);
-  ++bindCount;
   glTexCoordPointer(2, GL_FLOAT, 0, texCoordBuf);
   glVertexPointer(2, GL_FLOAT, 0, vertexBuf);
   glDrawArrays(GL_TRIANGLES, 0, quadCount*6);
