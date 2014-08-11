@@ -16,9 +16,17 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE    := libluajit 
+LOCAL_SRC_FILES := $(TARGET_ARCH_ABI)/libluajit.a
+
+include $(PREBUILT_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+
 LOCAL_ARM_MODE  := arm
 
-LOCAL_STATIC_LIBRARIES := minizip lua libpng bstring
+LOCAL_STATIC_LIBRARIES := minizip libluajit libpng bstring
 
 LOCAL_CFLAGS := -DANDROID_NDK \
                 -DDISABLE_IMPORTGL
@@ -27,7 +35,7 @@ LOCAL_MODULE    := 	jumpz_framework
 
 LOCAL_PATH := $(LOCAL_PATH)/../../../..
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/deps/common/lua/
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/deps/common/luajit/src/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/minizip/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libpng/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/bstring/

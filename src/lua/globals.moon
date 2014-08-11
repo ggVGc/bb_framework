@@ -27,7 +27,7 @@ export compose = (...) ->
       for i,fn in pairs(f) do
         if not _.isFunction(fn)
           if _.isArray(fn) and _.isCallable(fn[1])
-            fn = _.bindn(fn[1], table.unpack(_.slice(fn, 2)))
+            fn = _.bindn(fn[1], unpack(_.slice(fn, 2)))
           else
             fn = wrap fn
         if _temp

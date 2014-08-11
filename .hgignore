@@ -23,7 +23,6 @@ glob:depsbin
 glob:*.orig
 glob:*.obj
 glob:*.tlog
-glob:*/*.a
 glob:*.swp
 glob:*.userprefs
 glob:*.pidb
@@ -54,3 +53,4 @@ glob:*.luac
 glob:build/android/assets
 glob:*DS_Store*
 glob:bin/framework.dSYM
+glob:bin/*.a
