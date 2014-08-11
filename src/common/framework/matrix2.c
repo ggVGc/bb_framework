@@ -34,7 +34,7 @@ void Matrix2_identity(Matrix2 *m){
 
 void Matrix2_prepend(Matrix2 *m, double a, double b, double c, double d, double tx, double ty){
   double tx1 = m->tx;
-  if ((int)floor(a) != 1 || (int)floor(b) != 0 || (int)floor(c) != 0 || (int)floor(d) != 1){
+  if (a != 1 || b != 0 || c != 0 || d != 1){
     double a1 = m->a;
     double c1 = m->c;
     m->a  = a1*a+m->b*c;
@@ -72,12 +72,12 @@ void Matrix2_prependTransform(Matrix2 *m, double x, double y, double scaleX, dou
     s = sin(r);
   }
 
-  if ((int)floor(regX)!=0 || (int)floor(regY)!=0){
+  if (regX!=0 || regY!=0){
     m->tx -= regX;
     m->ty -= regY;
   }
 
-  if ((int)floor(skewX)!=0 || (int)floor(skewY)!=0){
+  if (skewX!=0 || skewY!=0){
     skewX *= DEG_TO_RAD;
     skewY *= DEG_TO_RAD;
     Matrix2_prepend(m, c*scaleX, s*scaleX, -s*scaleY, c*scaleY, 0, 0);
