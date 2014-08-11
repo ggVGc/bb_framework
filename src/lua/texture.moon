@@ -16,40 +16,11 @@ new: (bmData, x, y, w, h)->
         when "height" tex.height)
 
 
-    tmpMat = framework.Matrix2D.new!
-    scaleMat = framework.Matrix2D.new!
+    tmpMat = _c_framework.Matrix2!
     .draw=(m)->
-
-      --if type(x) == 'table'
-      tmpMat.a = m.a
-      tmpMat.b = m.b
-      tmpMat.c = m.c
-      tmpMat.d = m.d
-      tmpMat.tx = m.tx
-      tmpMat.ty = m.ty
-      --else
-        --px = pivotX or 0.5
-        --py = pivotY or 0.5
-        --sx = scaleX or 1
-        --sy = scaleY or 1
-        --w = sx*tex.width
-        --h = sy*tex.height
-        --tmpMat.identity!
-        --tmpMat.translate -w*px, -h*py
-        --tmpMat.rotate (rot and rot/360 or 0)
-        --tmpMat.translate w*px, h*py
-        --tmpMat.translate x-w*px, y-h*py
-        --scaleMat.a = sx
-        --scaleMat.d = sy
-        --tmpMat.append(scaleMat.a, scaleMat.b, scaleMat.c, scaleMat.d, scaleMat.tx, scaleMat.ty)
-
-      scaleMat.a = tex.width
-      scaleMat.d = tex.height
-      tmpMat.append(scaleMat.a, scaleMat.b, scaleMat.c, scaleMat.d, scaleMat.tx, scaleMat.ty)
-      _c_framework.quadDrawTex tmpMat.a, tmpMat.b, tmpMat.c, tmpMat.d, tmpMat.tx, tmpMat.ty, tex
-
-      --_c_framework.quadDrawTex x or 0, y,(scaleX or 1)*tex.width,
-        --(scaleY or 1)*tex.height,tex, rot or 0,pivotX or 0.5, pivotY or 0.5
+      _c_framework.Matrix2_copy(tmpMat, m)
+      _c_framework.Matrix2_append(tmpMat, tex.width, 0, 0, tex.height, 0, 0)
+      _c_framework.quadDrawTex tex, tmpMat
 
 fromFile: (path, errorOnInvalid=true)->
   path = framework.Texture.fixPath path

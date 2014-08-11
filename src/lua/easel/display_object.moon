@@ -1,30 +1,72 @@
 NEXT_ID = 0
 local DisplayObject
+
+DisplayObject
+
 DisplayObject = {
+mt: {
+__index: (obj, key) ->
+  switch key
+    when 'x'
+      return rawget(obj, 'dispObj').x
+    when 'y'
+      return rawget(obj, 'dispObj').y
+    when 'regX'
+      return rawget(obj, 'dispObj').regX
+    when 'regY'
+      return rawget(obj, 'dispObj').regY
+    when 'scaleX'
+      return rawget(obj, 'dispObj').scaleX
+    when 'scaleY'
+      return rawget(obj, 'dispObj').scaleY
+    when 'skewX'
+      return rawget(obj, 'dispObj').skewX
+    when 'skewY'
+      return rawget(obj, 'dispObj').skewY
+    when 'rotation'
+      return rawget(obj, 'dispObj').rotation
+    when 'parent'
+      return rawget(obj, '__parent')
+    else
+      return rawget(obj, key)
+
+__newindex: (obj, key, val) ->
+  switch key
+    when 'x'
+      rawget(obj, 'dispObj').x = val
+    when 'y'
+      rawget(obj, 'dispObj').y = val
+    when 'regX'
+      rawget(obj, 'dispObj').regX = val
+    when 'regY'
+      rawget(obj, 'dispObj').regY = val
+    when 'skewX'
+      rawget(obj, 'dispObj').skewX = val
+    when 'skewY'
+      rawget(obj, 'dispObj').skewY= val
+    when 'rotation'
+      rawget(obj, 'dispObj').rotation = val
+    when 'parent'
+      rawget(obj, 'dispObj').parent = val and val.dispObj or nil
+      rawset(obj, '__parent', val)
+    else
+      rawset(obj, key, val)
+}
+
 new: ->
   self = {}
   self.id = NEXT_ID
   NEXT_ID += 1
   self.visible = true
-  self.scaleX = 1
-  self.scaleY = 1
   self.alpha = 1
-  self.parent = nil
   self.tickEnabled = true
-  self.rotation = 0
-  self.x = 0
-  self.y = 0
-  self.skewX = 0
-  self.regX = 0
-  self.regY = 0
-  self.skewY = 0
   self.isDisplayObj = true
   self.alpha = 1
-  self._matrix = framework.Matrix2D.new!
-  self.freezeTransform = false
+  self._matrix = _c_framework.Matrix2!
 
-
--- Non-CJS additions
+  dispObj = _c_framework.DisplayObject()
+  _c_framework.DisplayObject_init dispObj
+  self.dispObj = dispObj
 
   self.event = {handlers:{}}
   eventMT = {
@@ -45,53 +87,34 @@ new: ->
   
   setmetatable self.event, eventMT
 
-
-
--- End Non-CJS additions
-
-
   self.draw = ->
-    if not self.freezeTransform
-      self.getConcatenatedMatrix self._matrix
-
+    _c_framework.DisplayObject_getConcatenatedMatrix(dispObj, self._matrix)
 
   self.isVisible = ->
-    return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0)
+    --return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0)
+    return not not (self.visible and self.alpha > 0)
 
-  --self.getMatrix = (matrix) ->
-	--o = self
-    --m = matrix and matrix.identity! or framework.Matrix2D.new!
-	--return m.appendTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .appendProperties(o.alpha, o.shadow, o.compositeOperation);
-
-
-  cacheMat = framework.Matrix2D.new!
+  cMat = _c_framework.Matrix2!
   self.localToGlobal = (x, y) ->
-    self.getConcatenatedMatrix(cacheMat)
-    cacheMat.append(1, 0, 0, 1, x, y)
-    return cacheMat.tx, cacheMat.ty
+    _c_framework.Matrix2_identity(cMat)
+    _c_framework.DisplayObject_getConcatenatedMatrix(dispObj, cMat)
+    _c_framework.Matrix2_append(cMat, 1, 0, 0, 1, x, y)
+    return cMat.tx, cMat.ty
 
   self.getConcatenatedMatrix = (matrix)->
-    if self.freezeTransform
-      matrix.copy self._matrix
-    else
-      matrix.identity!
-      o = self
-      while (o ~= nil)
-        matrix.prependTransform(o.x, o.y, o.scaleX, o.scaleY, o.rotation, o.skewX, o.skewY, o.regX, o.regY) -- .prependProperties(o.alpha, o.shadow, o.compositeOperation, o.visible)
-        o = o.parent
-  
+    _c_framework.DisplayObject_getConcatenatedMatrix(dispObj, cMat)
+    matrix.a = cMat.a
+    matrix.b = cMat.b
+    matrix.c = cMat.c
+    matrix.d = cMat.d
+    matrix.tx = cMat.tx
+    matrix.ty = cMat.ty
 
-  self.setTransform = (x,y,scaleX, scaleY, rot, skewX, skewY, regX, regY) ->
-    self.x = x and x or 0
-    self.y = y and y or 0
-    self.rotation = rot and rot or 0
-    self.skewX = skewX and skewX or 0
-    self.skewY = skewY and skewY or 0
-    self.regX = regX and regX or 0
-    self.regY = regY and regY or 0
-    self.scaleX = scaleX and scaleX or 1
-    self.scaleY = scaleY and scaleY or 1
+  self.setTransform = (x=0,y=0,scaleX=1, scaleY=1, rot=0, skewX=0, skewY=0, regX=0, regY=0) ->
+    _c_framework.DisplayObject_setTransform(dispObj, x, y, scaleX, scaleY, rot, skewX, skewY, regX, regY)
 
+
+  setmetatable(self, DisplayObject.mt)
   return self
 }
 

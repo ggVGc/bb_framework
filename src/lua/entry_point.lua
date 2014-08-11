@@ -230,13 +230,19 @@ dofile "framework/moon.lua"
 ]]
 
 
+
 --Add Moses globally as underscore
 do 
   local oldUnpack = unpack
-  unpack = table.unpack
+  if oldUnpack then
+    unpack = table.unpack
+  end
    _ = dofile "framework/libs/moses.lua";
-   unpack = oldUnpack
+   if oldUnpack then
+     unpack = oldUnpack
+   end
 end
+
 
 local strict = dofile("framework/strict.lua")
 
@@ -271,6 +277,7 @@ dofile 'framework/easel/movie_clip.moon'
 dofile 'framework/streaming_audio.lua'
 
 dofile "main.moon"
+--dofile("framework/test/display_objects_test.moon")
 --dofile("framework/test/export_mc_anim_test.moon")
 --dofile("framework/test/movie_clip_test.moon")
 --dofile("framework/test/timeline_test.moon")

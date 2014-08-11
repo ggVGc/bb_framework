@@ -1,4 +1,8 @@
 
+
+-- Stay compatible with 5.1 and 5.2
+unpack = unpack or table.unpack
+
 export block = (fn)->fn!
 
 export let = (obj, fn)-> fn(obj)
@@ -7,6 +11,7 @@ export make = (fn)->
   o = {}
   let o, fn
   o
+
 
 export maker = (fn) ->
   (...) ->

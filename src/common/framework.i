@@ -7,6 +7,7 @@
 #include "framework/quad.h"
 #include "framework/texture.h"
 #include "framework/resource_loading.h"
+#include "framework/display_object.h"
 #include "framework/rawbitmapdata.h"
 #include "framework/input.h"
 #include "framework/streaming_audio.h"
@@ -14,7 +15,7 @@
 %}
 
 
-#include "framework/matrix2.h"
+#include "framework/display_object.h"
 #include "framework/camera.h"
 #include "framework/quad.h"
 #include "framework/texture.h"

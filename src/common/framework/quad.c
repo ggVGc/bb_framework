@@ -31,9 +31,9 @@ static GLfloat texCoordBuf[4096];
 static int quadCount;
 
 void quadGlobalInit(){
+  int i;
   noLastHandle = 1;
   texHandle = (GLuint)-1;
-  int i;
   for(i=0;i<4096;++i){
     vertexBuf[i] = '\0';
     texCoordBuf[i] = '\0';
@@ -64,17 +64,17 @@ void quadFlush(){
 }
 
 
-void transformVertices(float a, float b, float c, float d, float tx, float ty, GLfloat *inPoints, GLfloat *outPoints){
+void transformVertices(Matrix2 *m, GLfloat *inPoints, GLfloat *outPoints){
   int i;
   for(i=0;i<6;++i){
     GLfloat x = inPoints[i*2];
     GLfloat y = inPoints[i*2+1];
-    outPoints[i*2] =x*a+y*c+tx;
-    outPoints[i*2+1]=x*b+y*d+ty;
+    outPoints[i*2] =x*m->a+y*m->c+m->tx;
+    outPoints[i*2+1]=x*m->b+y*m->d+m->ty;
   }
 }
 
-void quadDrawTex(float ma, float mb, float mc, float md, float tx, float ty, Texture* tex){
+void quadDrawTex(Texture* tex, Matrix2 *m){
   glColor4f(1,1,1,1);
 
   if(noLastHandle || tex->data->glTexHandle != texHandle){
@@ -83,7 +83,7 @@ void quadDrawTex(float ma, float mb, float mc, float md, float tx, float ty, Tex
     texHandle = tex->data->glTexHandle;
   }
 
-  transformVertices(ma, mb, mc, md, tx, ty, vertices, tmpVerts);
+  transformVertices(m, vertices, tmpVerts);
   memcpy(&vertexBuf[12*quadCount], tmpVerts, sizeof(GLfloat)*12);
   memcpy(&texCoordBuf[12*quadCount], tex->uvCoords, sizeof(GLfloat)*12);
   ++quadCount;
