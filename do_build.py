@@ -151,7 +151,7 @@ def buildFramework():
   cflags =" ".join([
       "-I./deps/common/gles_headers",
       "-I./deps/common/libpng",
-      "-I./deps/common/luajit",
+      "-I./deps/common/luajit/src",
       "-I./deps/common/minizip",
       "-I./src/common",
       "-I./src/common/framework",
@@ -179,9 +179,9 @@ if __name__ == '__main__':
     compileLibs = False
   ret = 0
   if compileLibs:
-    ret = buildLua()
-    if ret == 0:
-      ret = buildMinizip()
+    ret = buildMinizip()
+    #if ret == 0:
+      #ret = buildLua()
     if ret == 0:
       ret = buildPng()
     if ret == 0:

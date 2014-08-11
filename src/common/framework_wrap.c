@@ -2649,17 +2649,17 @@ extern "C" {
 static int _wrap_Matrix2_a_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float arg2 ;
+  double arg2 ;
   
   SWIG_check_num_args("Matrix2::a",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::a",1,"struct Matrix2 *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::a",2,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::a",2,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Matrix2,0))){
     SWIG_fail_ptr("Matrix2_a_set",1,SWIGTYPE_p_Matrix2);
   }
   
-  arg2 = (float)lua_tonumber(L, 2);
+  arg2 = (double)lua_tonumber(L, 2);
   if (arg1) (arg1)->a = arg2;
   
   return SWIG_arg;
@@ -2675,7 +2675,7 @@ fail:
 static int _wrap_Matrix2_a_get(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2::a",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::a",1,"struct Matrix2 *");
@@ -2684,7 +2684,7 @@ static int _wrap_Matrix2_a_get(lua_State* L) {
     SWIG_fail_ptr("Matrix2_a_get",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float) ((arg1)->a);
+  result = (double) ((arg1)->a);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -2699,17 +2699,17 @@ fail:
 static int _wrap_Matrix2_b_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float arg2 ;
+  double arg2 ;
   
   SWIG_check_num_args("Matrix2::b",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::b",1,"struct Matrix2 *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::b",2,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::b",2,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Matrix2,0))){
     SWIG_fail_ptr("Matrix2_b_set",1,SWIGTYPE_p_Matrix2);
   }
   
-  arg2 = (float)lua_tonumber(L, 2);
+  arg2 = (double)lua_tonumber(L, 2);
   if (arg1) (arg1)->b = arg2;
   
   return SWIG_arg;
@@ -2725,7 +2725,7 @@ fail:
 static int _wrap_Matrix2_b_get(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2::b",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::b",1,"struct Matrix2 *");
@@ -2734,7 +2734,7 @@ static int _wrap_Matrix2_b_get(lua_State* L) {
     SWIG_fail_ptr("Matrix2_b_get",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float) ((arg1)->b);
+  result = (double) ((arg1)->b);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -2749,17 +2749,17 @@ fail:
 static int _wrap_Matrix2_c_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float arg2 ;
+  double arg2 ;
   
   SWIG_check_num_args("Matrix2::c",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::c",1,"struct Matrix2 *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::c",2,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::c",2,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Matrix2,0))){
     SWIG_fail_ptr("Matrix2_c_set",1,SWIGTYPE_p_Matrix2);
   }
   
-  arg2 = (float)lua_tonumber(L, 2);
+  arg2 = (double)lua_tonumber(L, 2);
   if (arg1) (arg1)->c = arg2;
   
   return SWIG_arg;
@@ -2775,7 +2775,7 @@ fail:
 static int _wrap_Matrix2_c_get(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2::c",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::c",1,"struct Matrix2 *");
@@ -2784,7 +2784,7 @@ static int _wrap_Matrix2_c_get(lua_State* L) {
     SWIG_fail_ptr("Matrix2_c_get",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float) ((arg1)->c);
+  result = (double) ((arg1)->c);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -2799,17 +2799,17 @@ fail:
 static int _wrap_Matrix2_d_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float arg2 ;
+  double arg2 ;
   
   SWIG_check_num_args("Matrix2::d",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::d",1,"struct Matrix2 *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::d",2,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::d",2,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Matrix2,0))){
     SWIG_fail_ptr("Matrix2_d_set",1,SWIGTYPE_p_Matrix2);
   }
   
-  arg2 = (float)lua_tonumber(L, 2);
+  arg2 = (double)lua_tonumber(L, 2);
   if (arg1) (arg1)->d = arg2;
   
   return SWIG_arg;
@@ -2825,7 +2825,7 @@ fail:
 static int _wrap_Matrix2_d_get(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2::d",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::d",1,"struct Matrix2 *");
@@ -2834,7 +2834,7 @@ static int _wrap_Matrix2_d_get(lua_State* L) {
     SWIG_fail_ptr("Matrix2_d_get",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float) ((arg1)->d);
+  result = (double) ((arg1)->d);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -2849,17 +2849,17 @@ fail:
 static int _wrap_Matrix2_tx_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float arg2 ;
+  double arg2 ;
   
   SWIG_check_num_args("Matrix2::tx",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::tx",1,"struct Matrix2 *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::tx",2,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::tx",2,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Matrix2,0))){
     SWIG_fail_ptr("Matrix2_tx_set",1,SWIGTYPE_p_Matrix2);
   }
   
-  arg2 = (float)lua_tonumber(L, 2);
+  arg2 = (double)lua_tonumber(L, 2);
   if (arg1) (arg1)->tx = arg2;
   
   return SWIG_arg;
@@ -2875,7 +2875,7 @@ fail:
 static int _wrap_Matrix2_tx_get(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2::tx",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::tx",1,"struct Matrix2 *");
@@ -2884,7 +2884,7 @@ static int _wrap_Matrix2_tx_get(lua_State* L) {
     SWIG_fail_ptr("Matrix2_tx_get",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float) ((arg1)->tx);
+  result = (double) ((arg1)->tx);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -2899,17 +2899,17 @@ fail:
 static int _wrap_Matrix2_ty_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float arg2 ;
+  double arg2 ;
   
   SWIG_check_num_args("Matrix2::ty",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::ty",1,"struct Matrix2 *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::ty",2,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2::ty",2,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Matrix2,0))){
     SWIG_fail_ptr("Matrix2_ty_set",1,SWIGTYPE_p_Matrix2);
   }
   
-  arg2 = (float)lua_tonumber(L, 2);
+  arg2 = (double)lua_tonumber(L, 2);
   if (arg1) (arg1)->ty = arg2;
   
   return SWIG_arg;
@@ -2925,7 +2925,7 @@ fail:
 static int _wrap_Matrix2_ty_get(lua_State* L) {
   int SWIG_arg = 0;
   struct Matrix2 *arg1 = (struct Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2::ty",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2::ty",1,"struct Matrix2 *");
@@ -2934,7 +2934,7 @@ static int _wrap_Matrix2_ty_get(lua_State* L) {
     SWIG_fail_ptr("Matrix2_ty_get",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float) ((arg1)->ty);
+  result = (double) ((arg1)->ty);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -3019,32 +3019,32 @@ static swig_lua_class _wrap_class_Matrix2 = { "Matrix2", "Matrix2", &SWIGTYPE_p_
 static int _wrap_Matrix2_init(lua_State* L) {
   int SWIG_arg = 0;
   Matrix2 *arg1 = (Matrix2 *) 0 ;
-  float arg2 ;
-  float arg3 ;
-  float arg4 ;
-  float arg5 ;
-  float arg6 ;
-  float arg7 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  double arg7 ;
   
   SWIG_check_num_args("Matrix2_init",7,7)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2_init",1,"Matrix2 *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2_init",2,"float");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("Matrix2_init",3,"float");
-  if(!lua_isnumber(L,4)) SWIG_fail_arg("Matrix2_init",4,"float");
-  if(!lua_isnumber(L,5)) SWIG_fail_arg("Matrix2_init",5,"float");
-  if(!lua_isnumber(L,6)) SWIG_fail_arg("Matrix2_init",6,"float");
-  if(!lua_isnumber(L,7)) SWIG_fail_arg("Matrix2_init",7,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2_init",2,"double");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("Matrix2_init",3,"double");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("Matrix2_init",4,"double");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("Matrix2_init",5,"double");
+  if(!lua_isnumber(L,6)) SWIG_fail_arg("Matrix2_init",6,"double");
+  if(!lua_isnumber(L,7)) SWIG_fail_arg("Matrix2_init",7,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Matrix2,0))){
     SWIG_fail_ptr("Matrix2_init",1,SWIGTYPE_p_Matrix2);
   }
   
-  arg2 = (float)lua_tonumber(L, 2);
-  arg3 = (float)lua_tonumber(L, 3);
-  arg4 = (float)lua_tonumber(L, 4);
-  arg5 = (float)lua_tonumber(L, 5);
-  arg6 = (float)lua_tonumber(L, 6);
-  arg7 = (float)lua_tonumber(L, 7);
+  arg2 = (double)lua_tonumber(L, 2);
+  arg3 = (double)lua_tonumber(L, 3);
+  arg4 = (double)lua_tonumber(L, 4);
+  arg5 = (double)lua_tonumber(L, 5);
+  arg6 = (double)lua_tonumber(L, 6);
+  arg7 = (double)lua_tonumber(L, 7);
   Matrix2_init(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
   
   return SWIG_arg;
@@ -3060,32 +3060,32 @@ fail:
 static int _wrap_Matrix2_prepend(lua_State* L) {
   int SWIG_arg = 0;
   Matrix2 *arg1 = (Matrix2 *) 0 ;
-  float arg2 ;
-  float arg3 ;
-  float arg4 ;
-  float arg5 ;
-  float arg6 ;
-  float arg7 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  double arg7 ;
   
   SWIG_check_num_args("Matrix2_prepend",7,7)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2_prepend",1,"Matrix2 *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2_prepend",2,"float");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("Matrix2_prepend",3,"float");
-  if(!lua_isnumber(L,4)) SWIG_fail_arg("Matrix2_prepend",4,"float");
-  if(!lua_isnumber(L,5)) SWIG_fail_arg("Matrix2_prepend",5,"float");
-  if(!lua_isnumber(L,6)) SWIG_fail_arg("Matrix2_prepend",6,"float");
-  if(!lua_isnumber(L,7)) SWIG_fail_arg("Matrix2_prepend",7,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2_prepend",2,"double");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("Matrix2_prepend",3,"double");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("Matrix2_prepend",4,"double");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("Matrix2_prepend",5,"double");
+  if(!lua_isnumber(L,6)) SWIG_fail_arg("Matrix2_prepend",6,"double");
+  if(!lua_isnumber(L,7)) SWIG_fail_arg("Matrix2_prepend",7,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Matrix2,0))){
     SWIG_fail_ptr("Matrix2_prepend",1,SWIGTYPE_p_Matrix2);
   }
   
-  arg2 = (float)lua_tonumber(L, 2);
-  arg3 = (float)lua_tonumber(L, 3);
-  arg4 = (float)lua_tonumber(L, 4);
-  arg5 = (float)lua_tonumber(L, 5);
-  arg6 = (float)lua_tonumber(L, 6);
-  arg7 = (float)lua_tonumber(L, 7);
+  arg2 = (double)lua_tonumber(L, 2);
+  arg3 = (double)lua_tonumber(L, 3);
+  arg4 = (double)lua_tonumber(L, 4);
+  arg5 = (double)lua_tonumber(L, 5);
+  arg6 = (double)lua_tonumber(L, 6);
+  arg7 = (double)lua_tonumber(L, 7);
   Matrix2_prepend(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
   
   return SWIG_arg;
@@ -3101,41 +3101,41 @@ fail:
 static int _wrap_Matrix2_prependTransform(lua_State* L) {
   int SWIG_arg = 0;
   Matrix2 *arg1 = (Matrix2 *) 0 ;
-  float arg2 ;
-  float arg3 ;
-  float arg4 ;
-  float arg5 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
   int arg6 ;
-  float arg7 ;
-  float arg8 ;
-  float arg9 ;
-  float arg10 ;
+  double arg7 ;
+  double arg8 ;
+  double arg9 ;
+  double arg10 ;
   
   SWIG_check_num_args("Matrix2_prependTransform",10,10)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2_prependTransform",1,"Matrix2 *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2_prependTransform",2,"float");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("Matrix2_prependTransform",3,"float");
-  if(!lua_isnumber(L,4)) SWIG_fail_arg("Matrix2_prependTransform",4,"float");
-  if(!lua_isnumber(L,5)) SWIG_fail_arg("Matrix2_prependTransform",5,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Matrix2_prependTransform",2,"double");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("Matrix2_prependTransform",3,"double");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("Matrix2_prependTransform",4,"double");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("Matrix2_prependTransform",5,"double");
   if(!lua_isnumber(L,6)) SWIG_fail_arg("Matrix2_prependTransform",6,"int");
-  if(!lua_isnumber(L,7)) SWIG_fail_arg("Matrix2_prependTransform",7,"float");
-  if(!lua_isnumber(L,8)) SWIG_fail_arg("Matrix2_prependTransform",8,"float");
-  if(!lua_isnumber(L,9)) SWIG_fail_arg("Matrix2_prependTransform",9,"float");
-  if(!lua_isnumber(L,10)) SWIG_fail_arg("Matrix2_prependTransform",10,"float");
+  if(!lua_isnumber(L,7)) SWIG_fail_arg("Matrix2_prependTransform",7,"double");
+  if(!lua_isnumber(L,8)) SWIG_fail_arg("Matrix2_prependTransform",8,"double");
+  if(!lua_isnumber(L,9)) SWIG_fail_arg("Matrix2_prependTransform",9,"double");
+  if(!lua_isnumber(L,10)) SWIG_fail_arg("Matrix2_prependTransform",10,"double");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Matrix2,0))){
     SWIG_fail_ptr("Matrix2_prependTransform",1,SWIGTYPE_p_Matrix2);
   }
   
-  arg2 = lua_tonumber(L, 2);
-  arg3 = lua_tonumber(L, 3);
-  arg4 = lua_tonumber(L, 4);
-  arg5 = lua_tonumber(L, 5);
-  arg6 = lua_tonumber(L, 6);
-  arg7 = lua_tonumber(L, 7);
-  arg8 = lua_tonumber(L, 8);
-  arg9 = lua_tonumber(L, 9);
-  arg10 = lua_tonumber(L, 10);
+  arg2 = (double)lua_tonumber(L, 2);
+  arg3 = (double)lua_tonumber(L, 3);
+  arg4 = (double)lua_tonumber(L, 4);
+  arg5 = (double)lua_tonumber(L, 5);
+  arg6 = (int)lua_tonumber(L, 6);
+  arg7 = (double)lua_tonumber(L, 7);
+  arg8 = (double)lua_tonumber(L, 8);
+  arg9 = (double)lua_tonumber(L, 9);
+  arg10 = (double)lua_tonumber(L, 10);
   Matrix2_prependTransform(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
   
   return SWIG_arg;
@@ -3151,7 +3151,7 @@ fail:
 static int _wrap_Matrix2_a(lua_State* L) {
   int SWIG_arg = 0;
   Matrix2 *arg1 = (Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2_a",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2_a",1,"Matrix2 *");
@@ -3160,7 +3160,7 @@ static int _wrap_Matrix2_a(lua_State* L) {
     SWIG_fail_ptr("Matrix2_a",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float)Matrix2_a(arg1);
+  result = (double)Matrix2_a(arg1);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -3175,7 +3175,7 @@ fail:
 static int _wrap_Matrix2_b(lua_State* L) {
   int SWIG_arg = 0;
   Matrix2 *arg1 = (Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2_b",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2_b",1,"Matrix2 *");
@@ -3184,7 +3184,7 @@ static int _wrap_Matrix2_b(lua_State* L) {
     SWIG_fail_ptr("Matrix2_b",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float)Matrix2_b(arg1);
+  result = (double)Matrix2_b(arg1);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -3199,7 +3199,7 @@ fail:
 static int _wrap_Matrix2_c(lua_State* L) {
   int SWIG_arg = 0;
   Matrix2 *arg1 = (Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2_c",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2_c",1,"Matrix2 *");
@@ -3208,7 +3208,7 @@ static int _wrap_Matrix2_c(lua_State* L) {
     SWIG_fail_ptr("Matrix2_c",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float)Matrix2_c(arg1);
+  result = (double)Matrix2_c(arg1);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -3223,7 +3223,7 @@ fail:
 static int _wrap_Matrix2_d(lua_State* L) {
   int SWIG_arg = 0;
   Matrix2 *arg1 = (Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2_d",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2_d",1,"Matrix2 *");
@@ -3232,7 +3232,7 @@ static int _wrap_Matrix2_d(lua_State* L) {
     SWIG_fail_ptr("Matrix2_d",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float)Matrix2_d(arg1);
+  result = (double)Matrix2_d(arg1);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -3247,7 +3247,7 @@ fail:
 static int _wrap_Matrix2_tx(lua_State* L) {
   int SWIG_arg = 0;
   Matrix2 *arg1 = (Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2_tx",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2_tx",1,"Matrix2 *");
@@ -3256,7 +3256,7 @@ static int _wrap_Matrix2_tx(lua_State* L) {
     SWIG_fail_ptr("Matrix2_tx",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float)Matrix2_tx(arg1);
+  result = (double)Matrix2_tx(arg1);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -3271,7 +3271,7 @@ fail:
 static int _wrap_Matrix2_ty(lua_State* L) {
   int SWIG_arg = 0;
   Matrix2 *arg1 = (Matrix2 *) 0 ;
-  float result;
+  double result;
   
   SWIG_check_num_args("Matrix2_ty",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Matrix2_ty",1,"Matrix2 *");
@@ -3280,7 +3280,7 @@ static int _wrap_Matrix2_ty(lua_State* L) {
     SWIG_fail_ptr("Matrix2_ty",1,SWIGTYPE_p_Matrix2);
   }
   
-  result = (float)Matrix2_ty(arg1);
+  result = (double)Matrix2_ty(arg1);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -4738,6 +4738,39 @@ fail:
 }
 
 
+static int _wrap_textureBeginFrame(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("textureBeginFrame",0,0)
+  textureBeginFrame();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_getTextureBindCount(lua_State* L) {
+  int SWIG_arg = 0;
+  int result;
+  
+  SWIG_check_num_args("getTextureBindCount",0,0)
+  result = (int)getTextureBindCount();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_textureInit(lua_State* L) {
   int SWIG_arg = 0;
   Texture *arg1 = (Texture *) 0 ;
@@ -4805,6 +4838,22 @@ static int _wrap_quadGlobalInit(lua_State* L) {
   
   SWIG_check_num_args("quadGlobalInit",0,0)
   quadGlobalInit();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_quadBeginFrame(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("quadBeginFrame",0,0)
+  quadBeginFrame();
   
   return SWIG_arg;
   
@@ -4896,6 +4945,39 @@ static int _wrap_quadDrawCol(lua_State* L) {
   arg11 = (float)lua_tonumber(L, 11);
   quadDrawCol(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10,arg11);
   
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_quadFlush(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("quadFlush",0,0)
+  quadFlush();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_getDrawCallCount(lua_State* L) {
+  int SWIG_arg = 0;
+  int result;
+  
+  SWIG_check_num_args("getDrawCallCount",0,0)
+  result = (int)getDrawCallCount();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -5348,11 +5430,16 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "rawBitmapDataCleanup", _wrap_rawBitmapDataCleanup},
     { "bitmapDataInit", _wrap_bitmapDataInit},
     { "textureGlobalInit", _wrap_textureGlobalInit},
+    { "textureBeginFrame", _wrap_textureBeginFrame},
+    { "getTextureBindCount", _wrap_getTextureBindCount},
     { "textureInit", _wrap_textureInit},
     { "textureApply", _wrap_textureApply},
     { "quadGlobalInit", _wrap_quadGlobalInit},
+    { "quadBeginFrame", _wrap_quadBeginFrame},
     { "quadDrawTex", _wrap_quadDrawTex},
     { "quadDrawCol", _wrap_quadDrawCol},
+    { "quadFlush", _wrap_quadFlush},
+    { "getDrawCallCount", _wrap_getDrawCallCount},
     { "cursorX", _wrap_cursorX},
     { "cursorY", _wrap_cursorY},
     { "cursorDown", _wrap_cursorDown},

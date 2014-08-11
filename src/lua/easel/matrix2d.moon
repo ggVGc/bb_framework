@@ -21,10 +21,10 @@ new: (a, b, c, d, tx, ty) ->
   this.d = 1
   this.tx = 0
   this.ty = 0
-  this.alpha = 1
-  this.shadow  = nil
-  this.compositeOperation = nil
-  this.visible = true
+  --this.alpha = 1
+  --this.shadow  = nil
+  --this.compositeOperation = nil
+  --this.visible = true
 
 -- constructor:
   
@@ -70,13 +70,13 @@ new: (a, b, c, d, tx, ty) ->
   
   this.prependMatrix = (matrix)->
     this.prepend(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty)
-    this.prependProperties(matrix.alpha, matrix.shadow,  matrix.compositeOperation, matrix.visible)
+    --this.prependProperties(matrix.alpha, matrix.shadow,  matrix.compositeOperation, matrix.visible)
     return this
 
   
   this.appendMatrix = (matrix)->
     this.append(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty)
-    this.appendProperties(matrix.alpha, matrix.shadow,  matrix.compositeOperation, matrix.visible)
+    --this.appendProperties(matrix.alpha, matrix.shadow,  matrix.compositeOperation, matrix.visible)
     return this
 
   
@@ -203,14 +203,14 @@ new: (a, b, c, d, tx, ty) ->
   this.identity = () ->
     this.d = 1
     this.a = this.d
-    this.alpha = this.a
     this.ty = 0
     this.tx = this.ty
     this.c = this.tx
     this.b = this.c
-    this.compositeOperation = nil
-    this.shadow = this.compositeOperation
-    this.visible = true
+    --this.alpha = this.a
+    --this.compositeOperation = nil
+    --this.shadow = this.compositeOperation
+    --this.visible = true
     return this
 
   
@@ -268,33 +268,33 @@ new: (a, b, c, d, tx, ty) ->
   --}
 
   
-  this.reinitialize = (a, b, c, d, tx, ty, alpha, shadow, compositeOperation, visible)->
+  this.reinitialize = (a, b, c, d, tx, ty)->
     this.initialize(a,b,c,d,tx,ty)
-    this.alpha = alpha == nil and 1 or alpha
-    this.shadow = shadow
-    this.compositeOperation = compositeOperation
-    this.visible = visible == nil and true or visible
+    --this.alpha = alpha == nil and 1 or alpha
+    --this.shadow = shadow
+    --this.compositeOperation = compositeOperation
+    --this.visible = visible == nil and true or visible
     return this
   
   
   this.copy = (matrix) ->
-    return this.reinitialize(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty, matrix.alpha, matrix.shadow, matrix.compositeOperation, matrix.visible)
+    return this.reinitialize(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty)
 
   
-  this.appendProperties = (alpha, shadow, compositeOperation, visible) ->
-    this.alpha *= alpha
-    this.shadow = shadow or this.shadow
-    this.compositeOperation = compositeOperation or this.compositeOperation
-    this.visible = this.visible and visible
-    return this
+  --this.appendProperties = (alpha, shadow, compositeOperation, visible) ->
+    --this.alpha *= alpha
+    --this.shadow = shadow or this.shadow
+    --this.compositeOperation = compositeOperation or this.compositeOperation
+    --this.visible = this.visible and visible
+    --return this
 
   
-  this.prependProperties = (alpha, shadow, compositeOperation, visible) ->
-    this.alpha *= alpha
-    this.shadow = this.shadow or shadow
-    this.compositeOperation = this.compositeOperation or compositeOperation
-    this.visible = this.visible and visible
-    return this
+  --this.prependProperties = (alpha, shadow, compositeOperation, visible) ->
+    --this.alpha *= alpha
+    --this.shadow = this.shadow or shadow
+    --this.compositeOperation = this.compositeOperation or compositeOperation
+    --this.visible = this.visible and visible
+    --return this
 
   
   this.clone = () ->

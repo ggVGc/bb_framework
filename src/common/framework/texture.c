@@ -5,13 +5,11 @@
 #include "texture.h"
 
 
-static GLuint lastHandle;
-static int noLastHandle;
-
 
 void textureGlobalInit(){
-  noLastHandle = 1;
-  lastHandle = (GLuint)-1;
+}
+
+void textureBeginFrame(){
 }
 
 
@@ -41,12 +39,5 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
 
 
 void textureApply(Texture *tex){
-  if(noLastHandle || tex->data->glTexHandle != lastHandle){
-    /*trace("BINDING NEW TEX");*/
-    glBindTexture(GL_TEXTURE_2D, tex->data->glTexHandle);
-    lastHandle = tex->data->glTexHandle;
-  }
-  glTexCoordPointer(2, GL_FLOAT, 0, tex->uvCoords);
-  noLastHandle = 0;
 }
 

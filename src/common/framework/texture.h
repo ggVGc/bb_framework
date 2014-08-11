@@ -14,6 +14,9 @@ typedef struct{
 
 
 void textureGlobalInit();
+void textureBeginFrame();
+
+int getTextureBindCount();
 
 void textureInit(Texture *tex, BitmapData *data, Rect sourceRect);
 void textureApply(Texture *tex);

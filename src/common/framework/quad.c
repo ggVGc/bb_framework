@@ -1,5 +1,16 @@
+#include <string.h>
 #include <GLES/gl.h>
 #include "quad.h"
+
+static int drawCallCount;
+static GLuint texHandle;
+static int noLastHandle;
+
+static int bindCount;
+
+int getTextureBindCount(){
+  return bindCount;
+}
 
 static GLfloat vertices[12] = {
   0, 0,
@@ -10,35 +21,86 @@ static GLfloat vertices[12] = {
   0, 1
 };
 
-static GLfloat transformMatrix[16] = {
-  1,0,0,0,
-  0,1,0,0,
-  0,0,1,0,
-  0,0,0,1
-};
+static GLfloat tmpVerts[12];
+
+static GLfloat vertexBuf[4096];
+static GLfloat texCoordBuf[4096];
+
+/*static GLfloat transformMatrix[16] = {*/
+  /*1,0,0,0,*/
+  /*0,1,0,0,*/
+  /*0,0,1,0,*/
+  /*0,0,0,1*/
+/*};*/
+
+static int quadCount;
 
 void quadGlobalInit(){
-  glVertexPointer(2, GL_FLOAT, 0, vertices);
+  bindCount = 0;
+  noLastHandle = 1;
+  texHandle = (GLuint)-1;
+  int i;
+  for(i=0;i<4096;++i){
+    vertexBuf[i] = '\0';
+    texCoordBuf[i] = '\0';
+  }
+}
+
+void quadBeginFrame(){
+  drawCallCount = 0;
+  bindCount = 0;
+}
+
+void quadEndFrame(){
+  quadFlush();
+}
+
+int getDrawCallCount(){
+  return drawCallCount;
+}
+
+void quadFlush(){
+  glEnableClientState(GL_VERTEX_ARRAY);
+  glBindTexture(GL_TEXTURE_2D, texHandle);
+  ++bindCount;
+  glTexCoordPointer(2, GL_FLOAT, 0, texCoordBuf);
+  glVertexPointer(2, GL_FLOAT, 0, vertexBuf);
+  glDrawArrays(GL_TRIANGLES, 0, quadCount*6);
+  ++drawCallCount;
+  quadCount = 0;
+  glDisableClientState(GL_VERTEX_ARRAY);
+}
+
+
+void transformVertices(float a, float b, float c, float d, float tx, float ty, GLfloat *inPoints, GLfloat *outPoints){
+  int i;
+  for(i=0;i<6;++i){
+    GLfloat x = inPoints[i*2];
+    GLfloat y = inPoints[i*2+1];
+    outPoints[i*2] =x*a+y*c+tx;
+    outPoints[i*2+1]=x*b+y*d+ty;
+  }
 }
 
 void quadDrawTex(float ma, float mb, float mc, float md, float tx, float ty, Texture* tex){
   glColor4f(1,1,1,1);
-  transformMatrix[0] = ma;
-  transformMatrix[1] = mb;
-  transformMatrix[4] = mc;
-  transformMatrix[5] = md;
-  transformMatrix[12] = tx;
-  transformMatrix[13] = ty;
 
-  textureApply(tex);
+  if(noLastHandle || tex->data->glTexHandle != texHandle){
+    glLoadIdentity();
+    quadFlush();
+    texHandle = tex->data->glTexHandle;
+  }
 
-  /*glPushMatrix();*/
-  glLoadMatrixf(transformMatrix);
-  glDrawArrays(GL_TRIANGLES, 0, 6);
-  /*glPopMatrix();*/
+  transformVertices(ma, mb, mc, md, tx, ty, vertices, tmpVerts);
+  memcpy(&vertexBuf[12*quadCount], tmpVerts, sizeof(GLfloat)*12);
+  memcpy(&texCoordBuf[12*quadCount], tex->uvCoords, sizeof(GLfloat)*12);
+  ++quadCount;
+
+  noLastHandle = 0;
 }
 
 void quadDrawCol(float x, float y, float width, float height, float red, float green, float blue, float alpha, float rot, float pivX, float pivY){
+/*
   glBindTexture(GL_TEXTURE_2D,0);
   glColor4f(red, green, blue, alpha);
 
@@ -58,5 +120,6 @@ void quadDrawCol(float x, float y, float width, float height, float red, float g
   glPopMatrix();
 
   glDisableClientState(GL_VERTEX_ARRAY);
+*/
 }
 

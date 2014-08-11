@@ -16,30 +16,37 @@ new: (bmData, x, y, w, h)->
         when "height" tex.height)
 
 
-    cacheMat = framework.Matrix2D.new!
+    tmpMat = framework.Matrix2D.new!
     scaleMat = framework.Matrix2D.new!
-    .draw=(x, y, pivotX, pivotY, rot, scaleX, scaleY)->
+    .draw=(m)->
 
-      if type(x) == 'table'
-        cacheMat.copy(x)
-      else
-        px = pivotX or 0.5
-        py = pivotY or 0.5
-        sx = scaleX or 1
-        sy = scaleY or 1
-        w = sx*tex.width
-        h = sy*tex.height
-        cacheMat.identity!
-        cacheMat.translate -w*px, -h*py
-        cacheMat.rotate (rot and rot/360 or 0)
-        cacheMat.translate w*px, h*py
-        cacheMat.translate x-w*px, y-h*py
-        scaleMat.identity!
-        cacheMat.appendMatrix(scaleMat.scale(sx, sy))
+      --if type(x) == 'table'
+      tmpMat.a = m.a
+      tmpMat.b = m.b
+      tmpMat.c = m.c
+      tmpMat.d = m.d
+      tmpMat.tx = m.tx
+      tmpMat.ty = m.ty
+      --else
+        --px = pivotX or 0.5
+        --py = pivotY or 0.5
+        --sx = scaleX or 1
+        --sy = scaleY or 1
+        --w = sx*tex.width
+        --h = sy*tex.height
+        --tmpMat.identity!
+        --tmpMat.translate -w*px, -h*py
+        --tmpMat.rotate (rot and rot/360 or 0)
+        --tmpMat.translate w*px, h*py
+        --tmpMat.translate x-w*px, y-h*py
+        --scaleMat.a = sx
+        --scaleMat.d = sy
+        --tmpMat.append(scaleMat.a, scaleMat.b, scaleMat.c, scaleMat.d, scaleMat.tx, scaleMat.ty)
 
-      scaleMat.identity!
-      cacheMat.appendMatrix(scaleMat.scale(tex.width, tex.height))
-      _c_framework.quadDrawTex cacheMat.a, cacheMat.b, cacheMat.c, cacheMat.d, cacheMat.tx, cacheMat.ty, tex
+      scaleMat.a = tex.width
+      scaleMat.d = tex.height
+      tmpMat.append(scaleMat.a, scaleMat.b, scaleMat.c, scaleMat.d, scaleMat.tx, scaleMat.ty)
+      _c_framework.quadDrawTex tmpMat.a, tmpMat.b, tmpMat.c, tmpMat.d, tmpMat.tx, tmpMat.ty, tex
 
       --_c_framework.quadDrawTex x or 0, y,(scaleX or 1)*tex.width,
         --(scaleY or 1)*tex.height,tex, rot or 0,pivotX or 0.5, pivotY or 0.5

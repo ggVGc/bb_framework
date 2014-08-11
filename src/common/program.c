@@ -14,6 +14,8 @@
 #include "app.h"
 #include "framework_lua_wrappers.h"
 #include "framework/graphics.h"
+#include "framework/quad.h"
+
 
 #ifdef ANDROID_NDK
 #include <android/log.h>
@@ -275,6 +277,8 @@ int appRender(long tick, int width, int height) {
       return ret;
     }
   }
+
+  quadEndFrame();
 
   lua_pop(vm, 1);
   /*lua_gc(vm, LUA_GCSTEP, 1);*/

@@ -4,7 +4,11 @@ framework.AssetLoader = {
 new: maker (texSheets) =>
 
   @getTexture = (path, errorOnInvalid) ->
-    framework.AssetLoader.tryGetTexFromSheets(path, texSheets) or framework.Texture.fromFile(path, errorOnInvalid)
+    t = framework.AssetLoader.tryGetTexFromSheets(path, texSheets)
+    if not t
+      --print path
+      t = framework.Texture.fromFile(path, errorOnInvalid)
+    return t
 
   @getAnimationFrames = (path) ->
     frame1 = framework.Texture.fromFile path..'/1', false

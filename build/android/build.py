@@ -48,10 +48,10 @@ if len(errlines) == 0:
         handleMoonFile(os.path.join(root, f))
 
   os.system("ant debug")
-  adb = "~/stuff/work/android/adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb "
-  os.system(adb+"install -r bin/FrameworkTest-debug.apk")
-  os.system(adb+"shell am kill com.jumpz.frameworktest/.FrameworkTest")
-  os.system(adb+"shell am start -n com.jumpz.frameworktest/.FrameworkTest")
+  #adb = "~/stuff/work/android/adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb "
+  #os.system(adb+"install -r bin/FrameworkTest-debug.apk")
+  #os.system(adb+"shell am kill com.jumpz.frameworktest/.FrameworkTest")
+  #os.system(adb+"shell am start -n com.jumpz.frameworktest/.FrameworkTest")
 else:
   for e in errlines:
     fileName = e[:e.find(":")]
