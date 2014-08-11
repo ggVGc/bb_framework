@@ -7,12 +7,31 @@ new: ->
   self.mouseChildren = true
   self.tickChildren = true
 
+  self.event = {handlers:{}}
+  eventMT = {
+    handlers:{}
+    __index: (obj, k) ->
+      return (...) ->
+        if obj.handlers[k]
+          for f in *obj.handlers[k]
+            f(...)
+        if self.parentCont
+          self.parentCont.event[k](...)
+    __newindex: (obj, eventName, func) ->
+      if not obj.handlers[eventName]
+        obj.handlers[eventName] = {}
+      table.insert obj.handlers[eventName], func
+  }
+
+  
+  setmetatable self.event, eventMT
+
   displayObj = framework.DisplayObject.new!
-  setmetatable(self, {__newindex:displayObj, __index:displayObj})
   
   self.isVisible = ->
     hasContent = self.cacheCanvas or #self.children>0
-    return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0 and hasContent)
+    --return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0 and hasContent)
+    return not not (self.visible and self.alpha > 0 and hasContent)
 
   self.draw = ->
     --if displayObj.draw(ctx, ignoreCache)
@@ -40,9 +59,10 @@ new: ->
         self.addChild arguments[i]
       return arguments[l-1]
     
-    if child.parent
-      child.parent.removeChild child
-    child.parent = self
+    if child.parentCont
+      child.parentCont.removeChild child
+    child.parentCont = self
+    child.dispObj.parent = self.dispObj
     _.push self.children, child
     return child
 
@@ -59,9 +79,10 @@ new: ->
       for i=1,l-1
         self.addChildAt(arguments[i], indx+i)
       return arguments[l-1]
-    if child.parent
-      child.parent.removeChild(child)
-    child.parent = self
+    if child.parentCont
+      child.parentCont.removeChild(child)
+    child.parentCont = self
+    child.dispObj.parent = self.dispObj
     table.insert self.children, index, child
     return child
 
@@ -96,7 +117,8 @@ new: ->
       return false
     child = self.children[index]
     if child
-      child.parent = nil
+      child.parentCont = nil
+      child.dispObj.parent = nil
     table.remove(self.children, index)
     return true
 
@@ -321,6 +343,8 @@ new: ->
       
       --return (maxX == nil) ? nil : self._rectangle.initialize(minX, minY, maxX-minX, maxY-minY);
   --};
+
+  setmetatable(self, {__newindex:displayObj, __index:displayObj})
   return self
 }
 

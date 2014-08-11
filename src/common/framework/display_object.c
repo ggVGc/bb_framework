@@ -1,4 +1,5 @@
 #include "display_object.h"
+#include "quad.h"
 
 
 void DisplayObject_init(DisplayObject *d){
@@ -19,9 +20,11 @@ void DisplayObject_setTransform(DisplayObject *d, double x, double y, double sca
 }
 
 
-void DisplayObject_draw(DisplayObject *d){
+void DisplayObject_draw(DisplayObject *d, Texture *t){
   Matrix2 m;
   DisplayObject_getConcatenatedMatrix(d, &m);
+  Matrix2_append(&m, t->width, 0, 0, t->height, 0, 0);
+  quadDrawTex(t, &m);
 }
 
 

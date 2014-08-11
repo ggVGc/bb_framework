@@ -5,14 +5,12 @@ Bitmap = {
 new: (texLoader, path) ->
   self = {}
   displayObj = framework.DisplayObject.new()
-  setmetatable(self, {__newindex:displayObj, __index:displayObj})
   self.tex = texLoader path
-  dispObjDraw = displayObj.draw
   self.draw = () ->
-    dispObjDraw!
     Bitmap.drawCounter+=1
-    self.tex.draw self._matrix
+    _c_framework.DisplayObject_draw self.dispObj, self.tex.tex
 
+  setmetatable(self, {__newindex:displayObj, __index:displayObj})
   return self
 }
 Bitmap.drawCounter = 0

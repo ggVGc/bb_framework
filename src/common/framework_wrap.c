@@ -3244,1046 +3244,6 @@ fail:
 }
 
 
-static int _wrap_DisplayObject_x_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double arg2 ;
-  
-  SWIG_check_num_args("DisplayObject::x",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::x",1,"struct DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::x",2,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_x_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  if (arg1) (arg1)->x = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_x_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("DisplayObject::x",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::x",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_x_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (double) ((arg1)->x);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_y_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double arg2 ;
-  
-  SWIG_check_num_args("DisplayObject::y",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::y",1,"struct DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::y",2,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_y_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  if (arg1) (arg1)->y = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_y_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("DisplayObject::y",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::y",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_y_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (double) ((arg1)->y);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_skewX_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double arg2 ;
-  
-  SWIG_check_num_args("DisplayObject::skewX",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::skewX",1,"struct DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::skewX",2,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_skewX_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  if (arg1) (arg1)->skewX = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_skewX_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("DisplayObject::skewX",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::skewX",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_skewX_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (double) ((arg1)->skewX);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_skewY_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double arg2 ;
-  
-  SWIG_check_num_args("DisplayObject::skewY",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::skewY",1,"struct DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::skewY",2,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_skewY_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  if (arg1) (arg1)->skewY = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_skewY_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("DisplayObject::skewY",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::skewY",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_skewY_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (double) ((arg1)->skewY);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_regX_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double arg2 ;
-  
-  SWIG_check_num_args("DisplayObject::regX",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::regX",1,"struct DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::regX",2,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_regX_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  if (arg1) (arg1)->regX = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_regX_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("DisplayObject::regX",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::regX",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_regX_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (double) ((arg1)->regX);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_regY_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double arg2 ;
-  
-  SWIG_check_num_args("DisplayObject::regY",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::regY",1,"struct DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::regY",2,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_regY_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  if (arg1) (arg1)->regY = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_regY_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("DisplayObject::regY",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::regY",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_regY_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (double) ((arg1)->regY);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_rotation_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double arg2 ;
-  
-  SWIG_check_num_args("DisplayObject::rotation",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::rotation",1,"struct DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::rotation",2,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_rotation_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  if (arg1) (arg1)->rotation = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_rotation_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("DisplayObject::rotation",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::rotation",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_rotation_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (double) ((arg1)->rotation);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_scaleX_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double arg2 ;
-  
-  SWIG_check_num_args("DisplayObject::scaleX",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::scaleX",1,"struct DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::scaleX",2,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_scaleX_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  if (arg1) (arg1)->scaleX = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_scaleX_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("DisplayObject::scaleX",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::scaleX",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_scaleX_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (double) ((arg1)->scaleX);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_scaleY_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double arg2 ;
-  
-  SWIG_check_num_args("DisplayObject::scaleY",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::scaleY",1,"struct DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::scaleY",2,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_scaleY_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  if (arg1) (arg1)->scaleY = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_scaleY_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  double result;
-  
-  SWIG_check_num_args("DisplayObject::scaleY",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::scaleY",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_scaleY_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (double) ((arg1)->scaleY);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_parent_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  struct DisplayObject *arg2 = (struct DisplayObject *) 0 ;
-  
-  SWIG_check_num_args("DisplayObject::parent",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::parent",1,"struct DisplayObject *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("DisplayObject::parent",2,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_parent_set",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_DisplayObject,SWIG_POINTER_DISOWN))){
-    SWIG_fail_ptr("DisplayObject_parent_set",2,SWIGTYPE_p_DisplayObject);
-  }
-  
-  if (arg1) (arg1)->parent = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_parent_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
-  struct DisplayObject *result = 0 ;
-  
-  SWIG_check_num_args("DisplayObject::parent",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::parent",1,"struct DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_parent_get",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  result = (struct DisplayObject *) ((arg1)->parent);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_DisplayObject,0); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_new_DisplayObject(lua_State* L) {
-  int SWIG_arg = 0;
-  struct DisplayObject *result = 0 ;
-  
-  SWIG_check_num_args("DisplayObject::DisplayObject",0,0)
-  result = (struct DisplayObject *)calloc(1, sizeof(struct DisplayObject));
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_DisplayObject,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static void swig_delete_DisplayObject(void *obj) {
-struct DisplayObject *arg1 = (struct DisplayObject *) obj;
-free((char *) arg1);
-}
-static int _proxy__wrap_new_DisplayObject(lua_State *L) {
-    assert(lua_istable(L,1));
-    lua_pushcfunction(L,_wrap_new_DisplayObject);
-    assert(!lua_isnil(L,-1));
-    lua_replace(L,1); /* replace our table with real constructor */
-    lua_call(L,lua_gettop(L)-1,1);
-    return 1;
-}
-static swig_lua_attribute swig_DisplayObject_attributes[] = {
-    { "x", _wrap_DisplayObject_x_get, _wrap_DisplayObject_x_set },
-    { "y", _wrap_DisplayObject_y_get, _wrap_DisplayObject_y_set },
-    { "skewX", _wrap_DisplayObject_skewX_get, _wrap_DisplayObject_skewX_set },
-    { "skewY", _wrap_DisplayObject_skewY_get, _wrap_DisplayObject_skewY_set },
-    { "regX", _wrap_DisplayObject_regX_get, _wrap_DisplayObject_regX_set },
-    { "regY", _wrap_DisplayObject_regY_get, _wrap_DisplayObject_regY_set },
-    { "rotation", _wrap_DisplayObject_rotation_get, _wrap_DisplayObject_rotation_set },
-    { "scaleX", _wrap_DisplayObject_scaleX_get, _wrap_DisplayObject_scaleX_set },
-    { "scaleY", _wrap_DisplayObject_scaleY_get, _wrap_DisplayObject_scaleY_set },
-    { "parent", _wrap_DisplayObject_parent_get, _wrap_DisplayObject_parent_set },
-    {0,0,0}
-};
-static swig_lua_method swig_DisplayObject_methods[]= {
-    {0,0}
-};
-static swig_lua_method swig_DisplayObject_meta[] = {
-    {0,0}
-};
-
-static swig_lua_attribute swig_DisplayObject_Sf_SwigStatic_attributes[] = {
-    {0,0,0}
-};
-static swig_lua_const_info swig_DisplayObject_Sf_SwigStatic_constants[]= {
-    {0,0,0,0,0,0}
-};
-static swig_lua_method swig_DisplayObject_Sf_SwigStatic_methods[]= {
-    {0,0}
-};
-static swig_lua_class* swig_DisplayObject_Sf_SwigStatic_classes[]= {
-    0
-};
-
-static swig_lua_namespace swig_DisplayObject_Sf_SwigStatic = {
-    "DisplayObject",
-    swig_DisplayObject_Sf_SwigStatic_methods,
-    swig_DisplayObject_Sf_SwigStatic_attributes,
-    swig_DisplayObject_Sf_SwigStatic_constants,
-    swig_DisplayObject_Sf_SwigStatic_classes,
-    0
-};
-static swig_lua_class *swig_DisplayObject_bases[] = {0};
-static const char *swig_DisplayObject_base_names[] = {0};
-static swig_lua_class _wrap_class_DisplayObject = { "DisplayObject", "DisplayObject", &SWIGTYPE_p_DisplayObject,_proxy__wrap_new_DisplayObject, swig_delete_DisplayObject, swig_DisplayObject_methods, swig_DisplayObject_attributes, &swig_DisplayObject_Sf_SwigStatic, swig_DisplayObject_meta, swig_DisplayObject_bases, swig_DisplayObject_base_names };
-
-static int _wrap_DisplayObject_init(lua_State* L) {
-  int SWIG_arg = 0;
-  DisplayObject *arg1 = (DisplayObject *) 0 ;
-  
-  SWIG_check_num_args("DisplayObject_init",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_init",1,"DisplayObject *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_init",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  DisplayObject_init(arg1);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_setTransform(lua_State* L) {
-  int SWIG_arg = 0;
-  DisplayObject *arg1 = (DisplayObject *) 0 ;
-  double arg2 ;
-  double arg3 ;
-  double arg4 ;
-  double arg5 ;
-  double arg6 ;
-  double arg7 ;
-  double arg8 ;
-  double arg9 ;
-  double arg10 ;
-  
-  SWIG_check_num_args("DisplayObject_setTransform",10,10)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_setTransform",1,"DisplayObject *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject_setTransform",2,"double");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("DisplayObject_setTransform",3,"double");
-  if(!lua_isnumber(L,4)) SWIG_fail_arg("DisplayObject_setTransform",4,"double");
-  if(!lua_isnumber(L,5)) SWIG_fail_arg("DisplayObject_setTransform",5,"double");
-  if(!lua_isnumber(L,6)) SWIG_fail_arg("DisplayObject_setTransform",6,"double");
-  if(!lua_isnumber(L,7)) SWIG_fail_arg("DisplayObject_setTransform",7,"double");
-  if(!lua_isnumber(L,8)) SWIG_fail_arg("DisplayObject_setTransform",8,"double");
-  if(!lua_isnumber(L,9)) SWIG_fail_arg("DisplayObject_setTransform",9,"double");
-  if(!lua_isnumber(L,10)) SWIG_fail_arg("DisplayObject_setTransform",10,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_setTransform",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  arg2 = (double)lua_tonumber(L, 2);
-  arg3 = (double)lua_tonumber(L, 3);
-  arg4 = (double)lua_tonumber(L, 4);
-  arg5 = (double)lua_tonumber(L, 5);
-  arg6 = (double)lua_tonumber(L, 6);
-  arg7 = (double)lua_tonumber(L, 7);
-  arg8 = (double)lua_tonumber(L, 8);
-  arg9 = (double)lua_tonumber(L, 9);
-  arg10 = (double)lua_tonumber(L, 10);
-  DisplayObject_setTransform(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_getConcatenatedMatrix(lua_State* L) {
-  int SWIG_arg = 0;
-  DisplayObject *arg1 = (DisplayObject *) 0 ;
-  Matrix2 *arg2 = (Matrix2 *) 0 ;
-  
-  SWIG_check_num_args("DisplayObject_getConcatenatedMatrix",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_getConcatenatedMatrix",1,"DisplayObject *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("DisplayObject_getConcatenatedMatrix",2,"Matrix2 *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
-    SWIG_fail_ptr("DisplayObject_getConcatenatedMatrix",1,SWIGTYPE_p_DisplayObject);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Matrix2,0))){
-    SWIG_fail_ptr("DisplayObject_getConcatenatedMatrix",2,SWIGTYPE_p_Matrix2);
-  }
-  
-  DisplayObject_getConcatenatedMatrix(arg1,arg2);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_DisplayObject_draw(lua_State* L) {
-  int SWIG_arg = 0;
-  
-  SWIG_check_num_args("DisplayObject_draw",0,0)
-  DisplayObject_draw();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Camera_posX_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct Camera *arg1 = (struct Camera *) 0 ;
-  float arg2 ;
-  
-  SWIG_check_num_args("Camera::posX",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::posX",1,"struct Camera *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Camera::posX",2,"float");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("Camera_posX_set",1,SWIGTYPE_p_Camera);
-  }
-  
-  arg2 = (float)lua_tonumber(L, 2);
-  if (arg1) (arg1)->posX = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Camera_posX_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct Camera *arg1 = (struct Camera *) 0 ;
-  float result;
-  
-  SWIG_check_num_args("Camera::posX",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::posX",1,"struct Camera *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("Camera_posX_get",1,SWIGTYPE_p_Camera);
-  }
-  
-  result = (float) ((arg1)->posX);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Camera_posY_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct Camera *arg1 = (struct Camera *) 0 ;
-  float arg2 ;
-  
-  SWIG_check_num_args("Camera::posY",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::posY",1,"struct Camera *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Camera::posY",2,"float");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("Camera_posY_set",1,SWIGTYPE_p_Camera);
-  }
-  
-  arg2 = (float)lua_tonumber(L, 2);
-  if (arg1) (arg1)->posY = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Camera_posY_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct Camera *arg1 = (struct Camera *) 0 ;
-  float result;
-  
-  SWIG_check_num_args("Camera::posY",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::posY",1,"struct Camera *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("Camera_posY_get",1,SWIGTYPE_p_Camera);
-  }
-  
-  result = (float) ((arg1)->posY);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Camera_width_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct Camera *arg1 = (struct Camera *) 0 ;
-  int arg2 ;
-  
-  SWIG_check_num_args("Camera::width",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::width",1,"struct Camera *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Camera::width",2,"int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("Camera_width_set",1,SWIGTYPE_p_Camera);
-  }
-  
-  arg2 = (int)lua_tonumber(L, 2);
-  if (arg1) (arg1)->width = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Camera_width_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct Camera *arg1 = (struct Camera *) 0 ;
-  int result;
-  
-  SWIG_check_num_args("Camera::width",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::width",1,"struct Camera *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("Camera_width_get",1,SWIGTYPE_p_Camera);
-  }
-  
-  result = (int) ((arg1)->width);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Camera_height_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct Camera *arg1 = (struct Camera *) 0 ;
-  int arg2 ;
-  
-  SWIG_check_num_args("Camera::height",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::height",1,"struct Camera *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Camera::height",2,"int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("Camera_height_set",1,SWIGTYPE_p_Camera);
-  }
-  
-  arg2 = (int)lua_tonumber(L, 2);
-  if (arg1) (arg1)->height = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Camera_height_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct Camera *arg1 = (struct Camera *) 0 ;
-  int result;
-  
-  SWIG_check_num_args("Camera::height",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::height",1,"struct Camera *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("Camera_height_get",1,SWIGTYPE_p_Camera);
-  }
-  
-  result = (int) ((arg1)->height);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_Camera_Foo(lua_State* L) {
-  int SWIG_arg = 0;
-  
-  SWIG_check_num_args("Camera::Camera_Foo",0,0)
-  Camera_Foo();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_new_Camera(lua_State* L) {
-  int SWIG_arg = 0;
-  struct Camera *result = 0 ;
-  
-  SWIG_check_num_args("Camera::Camera",0,0)
-  result = (struct Camera *)calloc(1, sizeof(struct Camera));
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Camera,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static void swig_delete_Camera(void *obj) {
-struct Camera *arg1 = (struct Camera *) obj;
-free((char *) arg1);
-}
-static int _proxy__wrap_new_Camera(lua_State *L) {
-    assert(lua_istable(L,1));
-    lua_pushcfunction(L,_wrap_new_Camera);
-    assert(!lua_isnil(L,-1));
-    lua_replace(L,1); /* replace our table with real constructor */
-    lua_call(L,lua_gettop(L)-1,1);
-    return 1;
-}
-static swig_lua_attribute swig_Camera_attributes[] = {
-    { "posX", _wrap_Camera_posX_get, _wrap_Camera_posX_set },
-    { "posY", _wrap_Camera_posY_get, _wrap_Camera_posY_set },
-    { "width", _wrap_Camera_width_get, _wrap_Camera_width_set },
-    { "height", _wrap_Camera_height_get, _wrap_Camera_height_set },
-    {0,0,0}
-};
-static swig_lua_method swig_Camera_methods[]= {
-    {0,0}
-};
-static swig_lua_method swig_Camera_meta[] = {
-    {0,0}
-};
-
-static swig_lua_attribute swig_Camera_Sf_SwigStatic_attributes[] = {
-    {0,0,0}
-};
-static swig_lua_const_info swig_Camera_Sf_SwigStatic_constants[]= {
-    {0,0,0,0,0,0}
-};
-static swig_lua_method swig_Camera_Sf_SwigStatic_methods[]= {
-    { "Foo", _wrap_Camera_Foo},
-    {0,0}
-};
-static swig_lua_class* swig_Camera_Sf_SwigStatic_classes[]= {
-    0
-};
-
-static swig_lua_namespace swig_Camera_Sf_SwigStatic = {
-    "Camera",
-    swig_Camera_Sf_SwigStatic_methods,
-    swig_Camera_Sf_SwigStatic_attributes,
-    swig_Camera_Sf_SwigStatic_constants,
-    swig_Camera_Sf_SwigStatic_classes,
-    0
-};
-static swig_lua_class *swig_Camera_bases[] = {0};
-static const char *swig_Camera_base_names[] = {0};
-static swig_lua_class _wrap_class_Camera = { "Camera", "Camera", &SWIGTYPE_p_Camera,_proxy__wrap_new_Camera, swig_delete_Camera, swig_Camera_methods, swig_Camera_attributes, &swig_Camera_Sf_SwigStatic, swig_Camera_meta, swig_Camera_bases, swig_Camera_base_names };
-
-static int _wrap_cameraSetActive(lua_State* L) {
-  int SWIG_arg = 0;
-  Camera *arg1 = (Camera *) 0 ;
-  
-  SWIG_check_num_args("cameraSetActive",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cameraSetActive",1,"Camera *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("cameraSetActive",1,SWIGTYPE_p_Camera);
-  }
-  
-  cameraSetActive(arg1);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_cameraInit(lua_State* L) {
-  int SWIG_arg = 0;
-  Camera *arg1 = (Camera *) 0 ;
-  float arg2 ;
-  float arg3 ;
-  int arg4 ;
-  int arg5 ;
-  
-  SWIG_check_num_args("cameraInit",5,5)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cameraInit",1,"Camera *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("cameraInit",2,"float");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("cameraInit",3,"float");
-  if(!lua_isnumber(L,4)) SWIG_fail_arg("cameraInit",4,"int");
-  if(!lua_isnumber(L,5)) SWIG_fail_arg("cameraInit",5,"int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("cameraInit",1,SWIGTYPE_p_Camera);
-  }
-  
-  arg2 = (float)lua_tonumber(L, 2);
-  arg3 = (float)lua_tonumber(L, 3);
-  arg4 = (int)lua_tonumber(L, 4);
-  arg5 = (int)lua_tonumber(L, 5);
-  cameraInit(arg1,arg2,arg3,arg4,arg5);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_Rect_x_set(lua_State* L) {
   int SWIG_arg = 0;
   Rect *arg1 = (Rect *) 0 ;
@@ -5465,6 +4425,1060 @@ fail:
 }
 
 
+static int _wrap_DisplayObject_x_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::x",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::x",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::x",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_x_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->x = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_x_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::x",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::x",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_x_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->x);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_y_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::y",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::y",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::y",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_y_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->y = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_y_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::y",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::y",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_y_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->y);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_skewX_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::skewX",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::skewX",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::skewX",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_skewX_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->skewX = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_skewX_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::skewX",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::skewX",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_skewX_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->skewX);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_skewY_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::skewY",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::skewY",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::skewY",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_skewY_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->skewY = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_skewY_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::skewY",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::skewY",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_skewY_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->skewY);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_regX_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::regX",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::regX",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::regX",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_regX_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->regX = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_regX_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::regX",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::regX",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_regX_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->regX);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_regY_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::regY",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::regY",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::regY",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_regY_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->regY = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_regY_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::regY",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::regY",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_regY_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->regY);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_rotation_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::rotation",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::rotation",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::rotation",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_rotation_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->rotation = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_rotation_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::rotation",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::rotation",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_rotation_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->rotation);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_scaleX_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::scaleX",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::scaleX",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::scaleX",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_scaleX_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->scaleX = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_scaleX_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::scaleX",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::scaleX",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_scaleX_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->scaleX);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_scaleY_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::scaleY",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::scaleY",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::scaleY",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_scaleY_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->scaleY = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_scaleY_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::scaleY",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::scaleY",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_scaleY_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->scaleY);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_parent_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  struct DisplayObject *arg2 = (struct DisplayObject *) 0 ;
+  
+  SWIG_check_num_args("DisplayObject::parent",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::parent",1,"struct DisplayObject *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("DisplayObject::parent",2,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_parent_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_DisplayObject,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("DisplayObject_parent_set",2,SWIGTYPE_p_DisplayObject);
+  }
+  
+  if (arg1) (arg1)->parent = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_parent_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  struct DisplayObject *result = 0 ;
+  
+  SWIG_check_num_args("DisplayObject::parent",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::parent",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_parent_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (struct DisplayObject *) ((arg1)->parent);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_DisplayObject,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_DisplayObject(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *result = 0 ;
+  
+  SWIG_check_num_args("DisplayObject::DisplayObject",0,0)
+  result = (struct DisplayObject *)calloc(1, sizeof(struct DisplayObject));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_DisplayObject,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_DisplayObject(void *obj) {
+struct DisplayObject *arg1 = (struct DisplayObject *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_DisplayObject(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_DisplayObject);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_DisplayObject_attributes[] = {
+    { "x", _wrap_DisplayObject_x_get, _wrap_DisplayObject_x_set },
+    { "y", _wrap_DisplayObject_y_get, _wrap_DisplayObject_y_set },
+    { "skewX", _wrap_DisplayObject_skewX_get, _wrap_DisplayObject_skewX_set },
+    { "skewY", _wrap_DisplayObject_skewY_get, _wrap_DisplayObject_skewY_set },
+    { "regX", _wrap_DisplayObject_regX_get, _wrap_DisplayObject_regX_set },
+    { "regY", _wrap_DisplayObject_regY_get, _wrap_DisplayObject_regY_set },
+    { "rotation", _wrap_DisplayObject_rotation_get, _wrap_DisplayObject_rotation_set },
+    { "scaleX", _wrap_DisplayObject_scaleX_get, _wrap_DisplayObject_scaleX_set },
+    { "scaleY", _wrap_DisplayObject_scaleY_get, _wrap_DisplayObject_scaleY_set },
+    { "parent", _wrap_DisplayObject_parent_get, _wrap_DisplayObject_parent_set },
+    {0,0,0}
+};
+static swig_lua_method swig_DisplayObject_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_DisplayObject_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_DisplayObject_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_DisplayObject_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_DisplayObject_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_DisplayObject_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_DisplayObject_Sf_SwigStatic = {
+    "DisplayObject",
+    swig_DisplayObject_Sf_SwigStatic_methods,
+    swig_DisplayObject_Sf_SwigStatic_attributes,
+    swig_DisplayObject_Sf_SwigStatic_constants,
+    swig_DisplayObject_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_DisplayObject_bases[] = {0};
+static const char *swig_DisplayObject_base_names[] = {0};
+static swig_lua_class _wrap_class_DisplayObject = { "DisplayObject", "DisplayObject", &SWIGTYPE_p_DisplayObject,_proxy__wrap_new_DisplayObject, swig_delete_DisplayObject, swig_DisplayObject_methods, swig_DisplayObject_attributes, &swig_DisplayObject_Sf_SwigStatic, swig_DisplayObject_meta, swig_DisplayObject_bases, swig_DisplayObject_base_names };
+
+static int _wrap_DisplayObject_init(lua_State* L) {
+  int SWIG_arg = 0;
+  DisplayObject *arg1 = (DisplayObject *) 0 ;
+  
+  SWIG_check_num_args("DisplayObject_init",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_init",1,"DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_init",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  DisplayObject_init(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_setTransform(lua_State* L) {
+  int SWIG_arg = 0;
+  DisplayObject *arg1 = (DisplayObject *) 0 ;
+  double arg2 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  double arg7 ;
+  double arg8 ;
+  double arg9 ;
+  double arg10 ;
+  
+  SWIG_check_num_args("DisplayObject_setTransform",10,10)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_setTransform",1,"DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject_setTransform",2,"double");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("DisplayObject_setTransform",3,"double");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("DisplayObject_setTransform",4,"double");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("DisplayObject_setTransform",5,"double");
+  if(!lua_isnumber(L,6)) SWIG_fail_arg("DisplayObject_setTransform",6,"double");
+  if(!lua_isnumber(L,7)) SWIG_fail_arg("DisplayObject_setTransform",7,"double");
+  if(!lua_isnumber(L,8)) SWIG_fail_arg("DisplayObject_setTransform",8,"double");
+  if(!lua_isnumber(L,9)) SWIG_fail_arg("DisplayObject_setTransform",9,"double");
+  if(!lua_isnumber(L,10)) SWIG_fail_arg("DisplayObject_setTransform",10,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_setTransform",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  arg3 = (double)lua_tonumber(L, 3);
+  arg4 = (double)lua_tonumber(L, 4);
+  arg5 = (double)lua_tonumber(L, 5);
+  arg6 = (double)lua_tonumber(L, 6);
+  arg7 = (double)lua_tonumber(L, 7);
+  arg8 = (double)lua_tonumber(L, 8);
+  arg9 = (double)lua_tonumber(L, 9);
+  arg10 = (double)lua_tonumber(L, 10);
+  DisplayObject_setTransform(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_draw(lua_State* L) {
+  int SWIG_arg = 0;
+  DisplayObject *arg1 = (DisplayObject *) 0 ;
+  Texture *arg2 = (Texture *) 0 ;
+  
+  SWIG_check_num_args("DisplayObject_draw",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_draw",1,"DisplayObject *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("DisplayObject_draw",2,"Texture *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_draw",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Texture,0))){
+    SWIG_fail_ptr("DisplayObject_draw",2,SWIGTYPE_p_Texture);
+  }
+  
+  DisplayObject_draw(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_getConcatenatedMatrix(lua_State* L) {
+  int SWIG_arg = 0;
+  DisplayObject *arg1 = (DisplayObject *) 0 ;
+  Matrix2 *arg2 = (Matrix2 *) 0 ;
+  
+  SWIG_check_num_args("DisplayObject_getConcatenatedMatrix",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_getConcatenatedMatrix",1,"DisplayObject *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("DisplayObject_getConcatenatedMatrix",2,"Matrix2 *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_getConcatenatedMatrix",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Matrix2,0))){
+    SWIG_fail_ptr("DisplayObject_getConcatenatedMatrix",2,SWIGTYPE_p_Matrix2);
+  }
+  
+  DisplayObject_getConcatenatedMatrix(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Camera_posX_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Camera *arg1 = (struct Camera *) 0 ;
+  float arg2 ;
+  
+  SWIG_check_num_args("Camera::posX",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::posX",1,"struct Camera *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Camera::posX",2,"float");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("Camera_posX_set",1,SWIGTYPE_p_Camera);
+  }
+  
+  arg2 = (float)lua_tonumber(L, 2);
+  if (arg1) (arg1)->posX = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Camera_posX_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Camera *arg1 = (struct Camera *) 0 ;
+  float result;
+  
+  SWIG_check_num_args("Camera::posX",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::posX",1,"struct Camera *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("Camera_posX_get",1,SWIGTYPE_p_Camera);
+  }
+  
+  result = (float) ((arg1)->posX);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Camera_posY_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Camera *arg1 = (struct Camera *) 0 ;
+  float arg2 ;
+  
+  SWIG_check_num_args("Camera::posY",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::posY",1,"struct Camera *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Camera::posY",2,"float");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("Camera_posY_set",1,SWIGTYPE_p_Camera);
+  }
+  
+  arg2 = (float)lua_tonumber(L, 2);
+  if (arg1) (arg1)->posY = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Camera_posY_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Camera *arg1 = (struct Camera *) 0 ;
+  float result;
+  
+  SWIG_check_num_args("Camera::posY",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::posY",1,"struct Camera *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("Camera_posY_get",1,SWIGTYPE_p_Camera);
+  }
+  
+  result = (float) ((arg1)->posY);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Camera_width_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Camera *arg1 = (struct Camera *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("Camera::width",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::width",1,"struct Camera *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Camera::width",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("Camera_width_set",1,SWIGTYPE_p_Camera);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->width = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Camera_width_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Camera *arg1 = (struct Camera *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("Camera::width",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::width",1,"struct Camera *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("Camera_width_get",1,SWIGTYPE_p_Camera);
+  }
+  
+  result = (int) ((arg1)->width);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Camera_height_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Camera *arg1 = (struct Camera *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("Camera::height",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::height",1,"struct Camera *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Camera::height",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("Camera_height_set",1,SWIGTYPE_p_Camera);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->height = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Camera_height_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Camera *arg1 = (struct Camera *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("Camera::height",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Camera::height",1,"struct Camera *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("Camera_height_get",1,SWIGTYPE_p_Camera);
+  }
+  
+  result = (int) ((arg1)->height);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Camera_Foo(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("Camera::Camera_Foo",0,0)
+  Camera_Foo();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_Camera(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Camera *result = 0 ;
+  
+  SWIG_check_num_args("Camera::Camera",0,0)
+  result = (struct Camera *)calloc(1, sizeof(struct Camera));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Camera,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_Camera(void *obj) {
+struct Camera *arg1 = (struct Camera *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_Camera(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_Camera);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_Camera_attributes[] = {
+    { "posX", _wrap_Camera_posX_get, _wrap_Camera_posX_set },
+    { "posY", _wrap_Camera_posY_get, _wrap_Camera_posY_set },
+    { "width", _wrap_Camera_width_get, _wrap_Camera_width_set },
+    { "height", _wrap_Camera_height_get, _wrap_Camera_height_set },
+    {0,0,0}
+};
+static swig_lua_method swig_Camera_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_Camera_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_Camera_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_Camera_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_Camera_Sf_SwigStatic_methods[]= {
+    { "Foo", _wrap_Camera_Foo},
+    {0,0}
+};
+static swig_lua_class* swig_Camera_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_Camera_Sf_SwigStatic = {
+    "Camera",
+    swig_Camera_Sf_SwigStatic_methods,
+    swig_Camera_Sf_SwigStatic_attributes,
+    swig_Camera_Sf_SwigStatic_constants,
+    swig_Camera_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_Camera_bases[] = {0};
+static const char *swig_Camera_base_names[] = {0};
+static swig_lua_class _wrap_class_Camera = { "Camera", "Camera", &SWIGTYPE_p_Camera,_proxy__wrap_new_Camera, swig_delete_Camera, swig_Camera_methods, swig_Camera_attributes, &swig_Camera_Sf_SwigStatic, swig_Camera_meta, swig_Camera_bases, swig_Camera_base_names };
+
+static int _wrap_cameraSetActive(lua_State* L) {
+  int SWIG_arg = 0;
+  Camera *arg1 = (Camera *) 0 ;
+  
+  SWIG_check_num_args("cameraSetActive",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cameraSetActive",1,"Camera *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("cameraSetActive",1,SWIGTYPE_p_Camera);
+  }
+  
+  cameraSetActive(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cameraInit(lua_State* L) {
+  int SWIG_arg = 0;
+  Camera *arg1 = (Camera *) 0 ;
+  float arg2 ;
+  float arg3 ;
+  int arg4 ;
+  int arg5 ;
+  
+  SWIG_check_num_args("cameraInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cameraInit",1,"Camera *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cameraInit",2,"float");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("cameraInit",3,"float");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("cameraInit",4,"int");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("cameraInit",5,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("cameraInit",1,SWIGTYPE_p_Camera);
+  }
+  
+  arg2 = (float)lua_tonumber(L, 2);
+  arg3 = (float)lua_tonumber(L, 3);
+  arg4 = (int)lua_tonumber(L, 4);
+  arg5 = (int)lua_tonumber(L, 5);
+  cameraInit(arg1,arg2,arg3,arg4,arg5);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_quadGlobalInit(lua_State* L) {
   int SWIG_arg = 0;
   
@@ -6057,13 +6071,6 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "Matrix2_append", _wrap_Matrix2_append},
     { "Matrix2_prependTransform", _wrap_Matrix2_prependTransform},
     { "Matrix2_identity", _wrap_Matrix2_identity},
-    { "DisplayObject_init", _wrap_DisplayObject_init},
-    { "DisplayObject_setTransform", _wrap_DisplayObject_setTransform},
-    { "DisplayObject_getConcatenatedMatrix", _wrap_DisplayObject_getConcatenatedMatrix},
-    { "DisplayObject_draw", _wrap_DisplayObject_draw},
-    { "Camera_Foo", _wrap_Camera_Foo},
-    { "cameraSetActive", _wrap_cameraSetActive},
-    { "cameraInit", _wrap_cameraInit},
     { "rectInit", _wrap_rectInit},
     { "rawBitmapDataCleanup", _wrap_rawBitmapDataCleanup},
     { "bitmapDataInit", _wrap_bitmapDataInit},
@@ -6071,6 +6078,13 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "textureBeginFrame", _wrap_textureBeginFrame},
     { "textureInit", _wrap_textureInit},
     { "textureApply", _wrap_textureApply},
+    { "DisplayObject_init", _wrap_DisplayObject_init},
+    { "DisplayObject_setTransform", _wrap_DisplayObject_setTransform},
+    { "DisplayObject_draw", _wrap_DisplayObject_draw},
+    { "DisplayObject_getConcatenatedMatrix", _wrap_DisplayObject_getConcatenatedMatrix},
+    { "Camera_Foo", _wrap_Camera_Foo},
+    { "cameraSetActive", _wrap_cameraSetActive},
+    { "cameraInit", _wrap_cameraInit},
     { "quadGlobalInit", _wrap_quadGlobalInit},
     { "quadBeginFrame", _wrap_quadBeginFrame},
     { "quadDrawTex", _wrap_quadDrawTex},
@@ -6103,12 +6117,12 @@ static swig_lua_method swig_SwigModule_methods[]= {
 };
 static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_Matrix2,
-&_wrap_class_DisplayObject,
-&_wrap_class_Camera,
 &_wrap_class_Rect,
 &_wrap_class_RawBitmapData,
 &_wrap_class_BitmapData,
 &_wrap_class_Texture,
+&_wrap_class_DisplayObject,
+&_wrap_class_Camera,
     0
 };
 static swig_lua_namespace* swig_SwigModule_namespaces[] = {
