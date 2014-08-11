@@ -13,6 +13,7 @@ new: ->
   self.tickEnabled = true
   self.isDisplayObj = true
   self.alpha = 1
+  self.parent = nil
 
   dispObj = _c_framework.DisplayObject()
   _c_framework.DisplayObject_init dispObj
@@ -72,22 +73,31 @@ new: ->
   __newindex: (obj, key, val) ->
     switch key
       when 'x'
+        --print 'sx'
         dispObj.x = val
       when 'y'
+        --print 'sy'
         dispObj.y = val
       when 'regX'
+        --print 'sregX'
         dispObj.regX = val
       when 'regY'
+        --print 'sregY'
         dispObj.regY = val
       when 'skewX'
+        --print 'sskewX'
         dispObj.skewX = val
       when 'skewY'
+        --print 'sskewY'
         dispObj.skewY= val
       when 'scaleX'
+        --print 'sscaleX'
         dispObj.scaleX = val
       when 'scaleY'
+        --print 'sscaleY'
         dispObj.scaleY= val
       when 'rotation'
+        --print 'srot'
         dispObj.rotation = val
       else
         rawset(obj, key, val)

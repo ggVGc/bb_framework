@@ -15,8 +15,8 @@ new: ->
         if obj.handlers[k]
           for f in *obj.handlers[k]
             f(...)
-        if self.parentCont
-          self.parentCont.event[k](...)
+        if self.parent
+          self.parent.event[k](...)
     __newindex: (obj, eventName, func) ->
       if not obj.handlers[eventName]
         obj.handlers[eventName] = {}
@@ -27,6 +27,7 @@ new: ->
   setmetatable self.event, eventMT
 
   displayObj = framework.DisplayObject.new!
+  setmetatable(self, {__newindex:displayObj, __index:displayObj})
   
   self.isVisible = ->
     hasContent = self.cacheCanvas or #self.children>0
@@ -59,9 +60,9 @@ new: ->
         self.addChild arguments[i]
       return arguments[l-1]
     
-    if child.parentCont
-      child.parentCont.removeChild child
-    child.parentCont = self
+    if child.parent
+      child.parent.removeChild child
+    child.parent = self
     child.dispObj.parent = self.dispObj
     _.push self.children, child
     return child
@@ -79,9 +80,9 @@ new: ->
       for i=1,l-1
         self.addChildAt(arguments[i], indx+i)
       return arguments[l-1]
-    if child.parentCont
-      child.parentCont.removeChild(child)
-    child.parentCont = self
+    if child.parent
+      child.parent.removeChild(child)
+    child.parent = self
     child.dispObj.parent = self.dispObj
     table.insert self.children, index, child
     return child
@@ -117,7 +118,7 @@ new: ->
       return false
     child = self.children[index]
     if child
-      child.parentCont = nil
+      child.parent = nil
       child.dispObj.parent = nil
     table.remove(self.children, index)
     return true
@@ -344,7 +345,6 @@ new: ->
       --return (maxX == nil) ? nil : self._rectangle.initialize(minX, minY, maxX-minX, maxY-minY);
   --};
 
-  setmetatable(self, {__newindex:displayObj, __index:displayObj})
   return self
 }
 
