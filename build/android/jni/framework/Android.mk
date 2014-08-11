@@ -56,6 +56,7 @@ MY_SOURCES := src/common/program.c \
   src/common/framework/resource_loading.c \
   src/common/framework/texture.c \
   src/common/framework/matrix2.c \
+  src/common/framework/display_object.c \
   src/android/app_android.c \
   src/android/framework/util.c \
   src/android/framework/streaming_audio.c

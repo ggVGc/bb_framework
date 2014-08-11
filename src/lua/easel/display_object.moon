@@ -44,6 +44,10 @@ __newindex: (obj, key, val) ->
       rawget(obj, 'dispObj').skewX = val
     when 'skewY'
       rawget(obj, 'dispObj').skewY= val
+    when 'scaleX'
+      rawget(obj, 'dispObj').scaleX = val
+    when 'scaleY'
+      rawget(obj, 'dispObj').scaleY= val
     when 'rotation'
       rawget(obj, 'dispObj').rotation = val
     when 'parent'
@@ -101,18 +105,17 @@ new: ->
     _c_framework.Matrix2_append(cMat, 1, 0, 0, 1, x, y)
     return cMat.tx, cMat.ty
 
-  self.getConcatenatedMatrix = (matrix)->
-    _c_framework.DisplayObject_getConcatenatedMatrix(dispObj, cMat)
-    matrix.a = cMat.a
-    matrix.b = cMat.b
-    matrix.c = cMat.c
-    matrix.d = cMat.d
-    matrix.tx = cMat.tx
-    matrix.ty = cMat.ty
+  --self.getConcatenatedMatrix = (matrix)->
+    --_c_framework.DisplayObject_getConcatenatedMatrix(dispObj, cMat)
+    --matrix.a = cMat.a
+    --matrix.b = cMat.b
+    --matrix.c = cMat.c
+    --matrix.d = cMat.d
+    --matrix.tx = cMat.tx
+    --matrix.ty = cMat.ty
 
   self.setTransform = (x=0,y=0,scaleX=1, scaleY=1, rot=0, skewX=0, skewY=0, regX=0, regY=0) ->
     _c_framework.DisplayObject_setTransform(dispObj, x, y, scaleX, scaleY, rot, skewX, skewY, regX, regY)
-
 
   setmetatable(self, DisplayObject.mt)
   return self

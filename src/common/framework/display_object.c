@@ -26,8 +26,8 @@ void DisplayObject_draw(DisplayObject *d){
 
 
 void DisplayObject_getConcatenatedMatrix(DisplayObject *d, Matrix2 *outMat){
-  Matrix2_identity(outMat);
   DisplayObject *o = d;
+  Matrix2_identity(outMat);
   while (o){
     Matrix2_prependTransform(outMat, o->x, o->y, o->scaleX, o->scaleY, o->rotation, o->skewX, o->skewY, o->regX, o->regY);
     o = o->parent;

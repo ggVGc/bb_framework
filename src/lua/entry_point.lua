@@ -231,6 +231,11 @@ dofile "framework/moon.lua"
 
 
 
+-- Stay compatible with 5.1 and 5.2
+--
+unpack = unpack or table.unpack
+
+
 --Add Moses globally as underscore
 do 
   local oldUnpack = unpack

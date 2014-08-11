@@ -1,4 +1,5 @@
 
+#define _USE_MATH_DEFINES
 #include <math.h>
 #include "matrix2.h"
 
@@ -85,24 +86,3 @@ void Matrix2_prependTransform(Matrix2 *m, double x, double y, double scaleX, dou
     Matrix2_prepend(m,c*scaleX, s*scaleX, -s*scaleY, c*scaleY, x, y);
   }
 }
-
-
-double Matrix2_a(Matrix2 *m){
-  return m->a;
-}
-double Matrix2_b(Matrix2 *m){
-  return m->b;
-}
-double Matrix2_c(Matrix2 *m){
-  return m->c;
-}
-double Matrix2_d(Matrix2 *m){
-  return m->d;
-}
-double Matrix2_tx(Matrix2 *m){
-  return m->tx;
-}
-double Matrix2_ty(Matrix2 *m){
-  return m->ty;
-}
-

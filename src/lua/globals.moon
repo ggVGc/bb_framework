@@ -1,7 +1,5 @@
 
 
--- Stay compatible with 5.1 and 5.2
-unpack = unpack or table.unpack
 
 export block = (fn)->fn!
 

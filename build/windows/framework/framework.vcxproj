@@ -26,10 +26,10 @@
     <ClInclude Include="..\..\..\src\common\framework\texture.h" />
     <ClInclude Include="..\..\..\src\common\framework\util.h" />
     <ClInclude Include="..\..\..\src\common\framework_lua_wrappers.h" />
-    <ClInclude Include="..\..\..\src\common\matrix2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\common\framework\matrix2.c" />
+    <ClCompile Include="..\..\..\src\common\framework\display_object.c" />
     <ClCompile Include="..\..\..\src\common\framework\bitmapdata.c" />
     <ClCompile Include="..\..\..\src\common\framework\camera.c" />
     <ClCompile Include="..\..\..\src\common\framework\graphics.c" />
