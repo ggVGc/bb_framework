@@ -92,7 +92,7 @@ void quadDrawTex(Texture* tex, Matrix2 *m){
 }
 
 void quadDrawCol(float x, float y, float width, float height, float red, float green, float blue, float alpha, float rot, float pivX, float pivY){
-/*
+  quadFlush();
   glBindTexture(GL_TEXTURE_2D,0);
   glColor4f(red, green, blue, alpha);
 
@@ -112,6 +112,5 @@ void quadDrawCol(float x, float y, float width, float height, float red, float g
   glPopMatrix();
 
   glDisableClientState(GL_VERTEX_ARRAY);
-*/
 }
 

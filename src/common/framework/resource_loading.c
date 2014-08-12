@@ -126,12 +126,12 @@ int getFileSizeFromZip(const char* inPath){
   if(!uf){
     sprintf(msg, "Invalid resource zip: %s", apkPath);
     trace(msg);
-    return -1;
+    return 0;
   }
 
   if(unzLocateFile(uf, path, 0)){
     // Invalid file path
-    return -1;
+    return 0;
   }
 
   
@@ -176,6 +176,9 @@ int loadBytesIntoBuffer(const char *inPath, unsigned char *data, int bufferSize)
 
 unsigned char* loadBytesFromZip(const char* inPath, int* outSize){
   int size = getFileSizeFromZip(inPath);
+  if(!size){
+    return NULL;
+  }
   unsigned char* data = (unsigned char*)malloc(size);
   if(loadBytesIntoBuffer(inPath, data, size) !=0){
     return NULL;
@@ -213,9 +216,11 @@ unsigned char* loadBytes(const char* path, int* sz){
   if(!ret){
     for(i=0;i<ASSET_COUNT;++i){
       if(strcmp(path, ASSET_KEYS[i])==0){
-        ret = (unsigned char*)malloc(sizeof(unsigned char)*(ASSET_SIZES[i]+1));
+        if (sz != 0) {
+          *sz = ASSET_SIZES[i];
+        }
+        ret = (unsigned char*)malloc(sizeof(unsigned char)*(ASSET_SIZES[i]));
         memcpy(ret, ASSET_DATA[i], sizeof(unsigned char)*ASSET_SIZES[i]);
-        ret[ASSET_SIZES[i]] = '\0';
       }
     }
   }
@@ -404,10 +409,24 @@ RawBitmapData* loadImage(const char* inFilename){
 
 
 char* loadText(const char* path){
+  int i;
+  unsigned char* data;
   int size = getFileSizeFromZip(path);
-  unsigned char* data = (unsigned char*)malloc(size+1);
-  if(loadBytesIntoBuffer(path, data, size) !=0){
-    return NULL;
+  if(size){
+    data = (unsigned char*)malloc(size+1);
+    if(loadBytesIntoBuffer(path, data, size) !=0){
+      free(data);
+      return NULL;
+    }
+  }else{
+    for(i=0;i<ASSET_COUNT;++i){
+      if(strcmp(path, ASSET_KEYS[i])==0){
+        size = ASSET_SIZES[i];
+        data = (unsigned char*)malloc(sizeof(unsigned char)*(size+1));
+        memcpy(data, ASSET_DATA[i], sizeof(unsigned char)*size);
+        break;
+      }
+    }
   }
   data[size] = '\0';
 

@@ -47,7 +47,6 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
     contDraw!
     true
   
-  setmetatable(self, {__newindex:container, __index:container})
 
   self.play = ->
     self.paused = false
@@ -202,6 +201,7 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
         child._reset!
     self._managed[child.id] = 2
 
+  setmetatable(self, {__newindex:container, __index:container})
   return self
   
   

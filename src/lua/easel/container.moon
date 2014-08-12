@@ -27,7 +27,6 @@ new: ->
   setmetatable self.event, eventMT
 
   displayObj = framework.DisplayObject.new!
-  setmetatable(self, {__newindex:displayObj, __index:displayObj})
   
   self.isVisible = ->
     hasContent = self.cacheCanvas or #self.children>0
@@ -345,6 +344,7 @@ new: ->
       --return (maxX == nil) ? nil : self._rectangle.initialize(minX, minY, maxX-minX, maxY-minY);
   --};
 
+  setmetatable(self, {__newindex:displayObj, __index:displayObj})
   return self
 }
 
