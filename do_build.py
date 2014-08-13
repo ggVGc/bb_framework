@@ -138,8 +138,9 @@ def buildFramework():
   srcDirs = [
       "./src/common",
       "./src/common/framework",
-      "./src/sfml",
-      "./src/sfml/framework"
+      "./src/glfw",
+      #"./src/sfml",
+      #"./src/sfml/framework"
       ]
  
   srcFiles = [
@@ -155,11 +156,11 @@ def buildFramework():
       "-I./src/common",
       "-I./src/common/framework",
       "-I./src/gen",
-      "-I./deps/win/SFML-1.6/include",
+      "-I ./deps/common/glfw/include",
       "-I./deps/common/coremod/include"
       ])
 
-  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod'
+  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3'
   if sys.platform == "darwin":
     commonLibString += ' -lluaa '
     cflags += ' -I./deps/common/lua '
@@ -167,7 +168,7 @@ def buildFramework():
   else:
     cflags += ' -I./deps/common/luajit/src '
     commonLibString += ' -lluajit '
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin "+commonLibString+" -lGL -lGLU -l:libsfml-graphics.so.1.6 -l:libsfml-window.so.1.6 -l:libsfml-system.so.1.6 -l:libsfml-audio.so.1.6")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU ")
 
 
 
