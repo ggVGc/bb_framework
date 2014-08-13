@@ -76,7 +76,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
   files = cppfiles+" "+ofiles
 
-  cmd = "gcc "+cflags+" "+files+" -o "+outfile+" "+linkFlags
+  cmd = "g++ "+cflags+" "+files+" -o "+outfile+" "+linkFlags
   print cmd
   return os.system(cmd)
 
@@ -138,14 +138,11 @@ def buildFramework():
   srcDirs = [
       "./src/common",
       "./src/common/framework",
-      "./src/glfw",
-      #"./src/sfml",
-      #"./src/sfml/framework"
+      "./src/glfw"
       ]
  
   srcFiles = [
       " ./src/gles_imp.c",
-      #" ./src/common/framework_wrap.cxx"
       ]
 
 
