@@ -113,8 +113,9 @@ int main(int argc, char **argv) {
 
   glfwSwapInterval(1);
 
-#ifdef __APPLE__
 {
+#ifdef __APPLE__
+
   char assetPath[2048];
   uint32_t pathSize;
   _NSGetExecutablePath(assetPath, &pathSize);
