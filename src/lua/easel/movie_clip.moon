@@ -1,4 +1,4 @@
- 
+
 local MovieClip
 MovieClip = {
 INDEPENDENT: "independent"
@@ -66,32 +66,38 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   self.advance = (time)->
     return unless self.mode == MovieClip.INDEPENDENT
     
-    fps = self.framerate
-    o = self
-    o = self.parent
-    while o and fps == nil
-      o = o.parent
-      if o and o.mode == MovieClip.INDEPENDENT
-        fps = o._framerate
-    self._framerate = fps
-    
-    local t
-    if fps ~= nil and fps ~= -1 and time ~= nil
-      t = time/(1000/fps) + self._t
-    else
-      t = 1
 
-    frames = t
-    self._t = t-frames
+    -- Keep the commented code!
+    -- Disabled time param for now, and always step one
+    -- Also don't traverse parent hierarchy and set fps
+
+    --fps = self.framerate
+    --o = self
+    --o = self.parent
+    --while o and fps == nil
+      --o = o.parent
+      --if o and o.mode == MovieClip.INDEPENDENT
+        --fps = o._framerate
+    --self._framerate = fps
     
-    while frames>0
-      frames -= 1
-      if not self.paused
-        if self._prevPos < 0
-          self._prevPosition = 0
-        else
-          self._prevPosition = self._prevPosition+1
-        self._updateTimeline!
+    --local t
+    --if fps ~= nil and fps ~= -1 and time ~= nil
+      --t = time/(1000/fps) + self._t
+    --else
+      --t = 1
+
+    --frames = t
+    --self._t = t-frames
+    
+    --frames = 1
+    --while frames>0
+      --frames -= 1
+    if not self.paused
+      if self._prevPos < 0
+        self._prevPosition = 0
+      else
+        self._prevPosition = self._prevPosition+1
+      self._updateTimeline!
   
 
   self.getLabels = ->

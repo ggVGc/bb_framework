@@ -151,7 +151,6 @@ def buildFramework():
   cflags =" ".join([
       "-I./deps/common/gles_headers",
       "-I./deps/common/libpng",
-      "-I./deps/common/luajit/src",
       "-I./deps/common/minizip",
       "-I./src/common",
       "-I./src/common/framework",
@@ -160,10 +159,14 @@ def buildFramework():
       "-I./deps/common/coremod/include"
       ])
 
-  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lluajit -lcoremod'
+  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod'
   if sys.platform == "darwin":
+    commonLibString += ' -lluaa '
+    cflags += ' -I./deps/common/lua '
     return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -F./deps/osx/sfml-1.6/lib64 -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
   else:
+    cflags += ' -I./deps/common/luajit/src '
+    commonLibString += ' -lluajit '
     return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin "+commonLibString+" -lGL -lGLU -l:libsfml-graphics.so.1.6 -l:libsfml-window.so.1.6 -l:libsfml-system.so.1.6 -l:libsfml-audio.so.1.6")
 
 
@@ -180,8 +183,8 @@ if __name__ == '__main__':
   ret = 0
   if compileLibs:
     ret = buildMinizip()
-    #if ret == 0:
-      #ret = buildLua()
+    if ret == 0:
+      ret = buildLua()
     if ret == 0:
       ret = buildPng()
     if ret == 0:

@@ -6,7 +6,7 @@ new: maker (texSheets) =>
   @getTexture = (path, errorOnInvalid) ->
     t = framework.AssetLoader.tryGetTexFromSheets(path, texSheets)
     if not t
-      print path
+      --print path
       t = framework.Texture.fromFile(path, errorOnInvalid)
     return t
 

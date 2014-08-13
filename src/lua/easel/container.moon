@@ -7,24 +7,6 @@ new: ->
   self.mouseChildren = true
   self.tickChildren = true
 
-  self.event = {handlers:{}}
-  eventMT = {
-    handlers:{}
-    __index: (obj, k) ->
-      return (...) ->
-        if obj.handlers[k]
-          for f in *obj.handlers[k]
-            f(...)
-        if self.parent
-          self.parent.event[k](...)
-    __newindex: (obj, eventName, func) ->
-      if not obj.handlers[eventName]
-        obj.handlers[eventName] = {}
-      table.insert obj.handlers[eventName], func
-  }
-
-  
-  setmetatable self.event, eventMT
 
   displayObj = framework.DisplayObject.new!
   
