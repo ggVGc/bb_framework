@@ -12,9 +12,10 @@ struct StreamingAudio_T
   int dummy;
 };
 
-StreamingAudio* streamingAudioLoad(const char* path)
-{
-  int sz;
+StreamingAudio* streamingAudioLoad(const char* path){
+	const int bufSize = 1000*1000*50;
+  int sz, success;
+  int* tmpBuf;
   StreamingAudio* ret = (StreamingAudio*)malloc(sizeof(StreamingAudio));
   unsigned char *data = loadBytes(path, &sz);
   xmp_context c;
@@ -24,15 +25,14 @@ StreamingAudio* streamingAudioLoad(const char* path)
     return 0;
   }
   c = xmp_create_context();
-  int success = xmp_load_module_from_memory(c, data, sz);
+  success = xmp_load_module_from_memory(c, data, sz);
   if(success != 0){
     trace("XM load fail");
     return ret;
   }
 
   xmp_start_player(c, 44100, 0);
-  const int bufSize = 1000*1000*50;
-  int* tmpBuf = (int*)malloc(sizeof(int)*bufSize);
+  tmpBuf = (int*)malloc(sizeof(int)*bufSize);
   success = xmp_play_buffer(c, tmpBuf, bufSize, 0);
 
   if(success!=0){

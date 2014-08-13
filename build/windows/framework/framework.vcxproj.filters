@@ -98,12 +98,6 @@
     <ClCompile Include="..\..\..\src\common\program.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\sfml\framework\StreamingAudio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\sfml\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\gles_imp.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -111,6 +105,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\src\common\framework\display_object.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\glfw\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\common\framework\streaming_audio.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

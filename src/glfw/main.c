@@ -15,9 +15,7 @@
   #include <GL/glu.h>
 #endif
 
-#ifndef WIN32
-  #include <time.h>
-#endif
+#include <time.h>
 
 #ifdef __MACH__
   #include <mach/clock.h>
@@ -94,6 +92,7 @@ static void cursor_pos_callback(GLFWwindow* window, double x, double y) {
 
 int main(void) {
   GLFWwindow* window;
+  long curTime, delta, lastTime;
 
   glfwSetErrorCallback(error_callback);
 
@@ -116,15 +115,15 @@ int main(void) {
 
   appInit("assets.zip", 1);
 
-  long lastTime = 0;
+  lastTime = 0;
   while (!glfwWindowShouldClose(window)) {
     float ratio;
     int width, height;
 
     glfwGetFramebufferSize(window, &width, &height);
 
-    long curTime = _getTime();
-    long delta =(curTime-lastTime);
+    curTime = _getTime();
+    delta =(curTime-lastTime);
     lastTime = curTime;
 
     if(appRender(delta, SCREEN_WIDTH, SCREEN_HEIGHT)){

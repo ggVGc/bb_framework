@@ -38,13 +38,13 @@
     <ClCompile Include="..\..\..\src\common\framework\rawbitmapdata.c" />
     <ClCompile Include="..\..\..\src\common\framework\rect.c" />
     <ClCompile Include="..\..\..\src\common\framework\resource_loading.c" />
+    <ClCompile Include="..\..\..\src\common\framework\streaming_audio.c" />
     <ClCompile Include="..\..\..\src\common\framework\texture.c" />
     <ClCompile Include="..\..\..\src\common\framework\util.c" />
     <ClCompile Include="..\..\..\src\common\framework_wrap.c" />
     <ClCompile Include="..\..\..\src\common\program.c" />
     <ClCompile Include="..\..\..\src\gles_imp.c" />
-    <ClCompile Include="..\..\..\src\sfml\framework\StreamingAudio.cpp" />
-    <ClCompile Include="..\..\..\src\sfml\main.cpp" />
+    <ClCompile Include="..\..\..\src\glfw\main.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4331482C-45C7-4D04-8552-BDAF004293B7}</ProjectGuid>
@@ -87,14 +87,17 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;LIBXMP_CORE_PLAYER;DEBUG;BUILDING_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\src\gen;$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\win\SFML-1.6\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.5;$(SolutionDir)\..\..\deps\win\libpng\include;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\luajit\src;$(SolutionDir)\..\..\deps\common\gles_headers;$(SolutionDir)\..\..\deps\common\coremod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\src\gen;$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\common\glfw\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.5;$(SolutionDir)\..\..\deps\win\libpng\include;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\luajit\src;$(SolutionDir)\..\..\deps\common\gles_headers;$(SolutionDir)\..\..\deps\common\coremod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\deps\win\zlib-1.2.5\BUILD_debug;$(SolutionDir)\depsbin;$(SolutionDir)\..\..\deps\win\libpng\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;libcoremod.lib;lua51.lib;minizip.lib;libpng.lib;zlibd.lib;sfml-main-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;sfml-graphics-s-d.lib;sfml-audio-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;libcoremod.lib;minizip.lib;libpng.lib;zlibd.lib;glfw3.lib;lua51.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
