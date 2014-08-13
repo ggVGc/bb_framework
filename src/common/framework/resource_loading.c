@@ -171,11 +171,12 @@ int loadBytesIntoBuffer(const char *inPath, unsigned char *data, int bufferSize)
 
 
 unsigned char* loadBytesFromZip(const char* inPath, int* outSize){
+  unsigned char* data;
   int size = getFileSizeFromZip(inPath);
   if(!size){
     return NULL;
   }
-  unsigned char* data = (unsigned char*)malloc(size);
+  data = (unsigned char*)malloc(size);
   if(loadBytesIntoBuffer(inPath, data, size) !=0){
     return NULL;
   }
