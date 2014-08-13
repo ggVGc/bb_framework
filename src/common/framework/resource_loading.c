@@ -12,8 +12,6 @@
 #include "assets.c"
 
 
-//static struct zip* APKArchive;
-static struct zip_file* file = 0;
 static char apkPath[2048];
 static int usingZip = 0;
 
@@ -119,7 +117,7 @@ int getFileSizeFromZip(const char* inPath){
   // TODO: Should check for overflow.
   char path[2048];
   char msg[2048];
-  sprintf(path, "assets/%s\0", inPath);
+  sprintf(path, "assets/%s", inPath);
 
   uf = unzOpen(apkPath);
 
@@ -153,11 +151,9 @@ int loadBytesIntoBuffer(const char *inPath, unsigned char *data, int bufferSize)
   // TODO: Should check for overflow.
   char path[2048];
 
-  int size = getFileSizeFromZip(inPath);
-
   unzFile uf = unzOpen(apkPath);
 
-  sprintf(path, "assets/%s\0", inPath);
+  sprintf(path, "assets/%s", inPath);
 
   if(unzLocateFile(uf, path, 0)){
     // Invalid file path
@@ -194,12 +190,12 @@ unsigned char* loadBytesFromZip(const char* inPath, int* outSize){
 unsigned char* loadBytesFromDisk(const char* inPath) {
   // TODO: Should check for overflow.
   char path[2048];
-  sprintf(path, "assets/%s\0", inPath);
+  sprintf(path, "assets/%s", inPath);
 
   /*TODO: Implement!*/
   /*FILE* f = fopen(path);*/
   /*fclose(path);*/
-  return "NOT IMPLEMENTED";
+  return (unsigned char*)"NOT IMPLEMENTED";
 }
 
 
@@ -228,7 +224,7 @@ unsigned char* loadBytes(const char* path, int* sz){
 }
 
 
-int multiplyPixelAt(int x,int y, int height,unsigned char *data){
+void multiplyPixelAt(int x,int y, int height,unsigned char *data){
   int off = (x*height+y)*4;
   float r = data[off];
   float g = data[off+1];

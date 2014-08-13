@@ -15,11 +15,10 @@
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 
-@interface frameworkViewController : UIViewController
-{
+@interface frameworkViewController : UIViewController {
     EAGLContext *context;
-    GLuint program;
     
+    BOOL didInit;
     BOOL animating;
     NSInteger animationFrameInterval;
     CADisplayLink *displayLink;

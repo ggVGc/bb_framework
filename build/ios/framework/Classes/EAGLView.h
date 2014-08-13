@@ -18,12 +18,13 @@
 // Note that setting the view non-opaque will only work if the EAGL surface has an alpha channel.
 @interface EAGLView : UIView
 {
-@private
-    EAGLContext *context;
-    
+@public
     // The pixel dimensions of the CAEAGLLayer.
     GLint framebufferWidth;
     GLint framebufferHeight;
+@private
+    EAGLContext *context;
+    
     
     // The OpenGL ES names for the framebuffer and renderbuffer used to render to this view.
     GLuint defaultFramebuffer, colorRenderbuffer;

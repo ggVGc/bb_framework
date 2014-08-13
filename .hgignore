@@ -54,3 +54,6 @@ glob:build/android/assets
 glob:*DS_Store*
 glob:bin/framework.dSYM
 glob:bin/*.a
+glob:xcuserdata
+glob:xcuserdatad
+glob:._*

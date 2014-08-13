@@ -19,10 +19,12 @@
 		28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* EAGLView.m */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		7AE05155198D2323003126A1 /* display_object.c in Sources */ = {isa = PBXBuildFile; fileRef = 7AE05151198D2323003126A1 /* display_object.c */; };
+		7AE05156198D2323003126A1 /* matrix2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7AE05153198D2323003126A1 /* matrix2.c */; };
+		7AE0519D198D2E5D003126A1 /* assets.zip in Resources */ = {isa = PBXBuildFile; fileRef = 7AE0519C198D2E5D003126A1 /* assets.zip */; };
 		B392096A1443BFAF0006E503 /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39209691443BFAF0006E503 /* libminizip.a */; };
 		B392096C1443BFBB0006E503 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B392096B1443BFBB0006E503 /* liblua.a */; };
 		B392096E1443BFCA0006E503 /* liblibpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B392096D1443BFCA0006E503 /* liblibpng.a */; };
-		B3920A341443C4A30006E503 /* bitmap.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A151443C4A30006E503 /* bitmap.c */; };
 		B3920A351443C4A30006E503 /* bitmapdata.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A171443C4A30006E503 /* bitmapdata.c */; };
 		B3920A361443C4A30006E503 /* camera.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A191443C4A30006E503 /* camera.c */; };
 		B3920A371443C4A30006E503 /* graphics.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A1B1443C4A30006E503 /* graphics.c */; };
@@ -34,7 +36,6 @@
 		B3920A3D1443C4A30006E503 /* resource_loading.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A271443C4A30006E503 /* resource_loading.c */; };
 		B3920A3E1443C4A30006E503 /* texture.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A2B1443C4A30006E503 /* texture.c */; };
 		B3920A3F1443C4A30006E503 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A2D1443C4A30006E503 /* util.c */; };
-		B3920A411443C4A30006E503 /* framework_lua_wrappers.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A301443C4A30006E503 /* framework_lua_wrappers.c */; };
 		B3920A421443C4A30006E503 /* framework_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A321443C4A30006E503 /* framework_wrap.c */; };
 		B3920A431443C4A30006E503 /* program.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A331443C4A30006E503 /* program.c */; };
 		B3920A471443C4BC0006E503 /* streaming_audio.c in Sources */ = {isa = PBXBuildFile; fileRef = B3920A461443C4BC0006E503 /* streaming_audio.c */; };
@@ -104,6 +105,11 @@
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* framework_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework_Prefix.pch; sourceTree = "<group>"; };
+		7AE05151198D2323003126A1 /* display_object.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = display_object.c; sourceTree = "<group>"; };
+		7AE05152198D2323003126A1 /* display_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = display_object.h; sourceTree = "<group>"; };
+		7AE05153198D2323003126A1 /* matrix2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix2.c; sourceTree = "<group>"; };
+		7AE05154198D2323003126A1 /* matrix2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix2.h; sourceTree = "<group>"; };
+		7AE0519C198D2E5D003126A1 /* assets.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = assets.zip; path = ../../../bin/assets.zip; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* framework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "framework-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		B39208D61443BE8F0006E503 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B39208DF1443BE9B0006E503 /* lua.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = lua.xcodeproj; path = ../lua/lua.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -112,8 +118,6 @@
 		B392096B1443BFBB0006E503 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = "../lua/build/Debug-iphonesimulator/liblua.a"; sourceTree = SOURCE_ROOT; };
 		B392096D1443BFCA0006E503 /* liblibpng.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblibpng.a; path = "../libpng/build/Debug-iphonesimulator/liblibpng.a"; sourceTree = SOURCE_ROOT; };
 		B3920A131443C4A30006E503 /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = app.h; path = ../../../src/common/app.h; sourceTree = SOURCE_ROOT; };
-		B3920A151443C4A30006E503 /* bitmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitmap.c; path = ../../../src/common/framework/bitmap.c; sourceTree = SOURCE_ROOT; };
-		B3920A161443C4A30006E503 /* bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitmap.h; path = ../../../src/common/framework/bitmap.h; sourceTree = SOURCE_ROOT; };
 		B3920A171443C4A30006E503 /* bitmapdata.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitmapdata.c; path = ../../../src/common/framework/bitmapdata.c; sourceTree = SOURCE_ROOT; };
 		B3920A181443C4A30006E503 /* bitmapdata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bitmapdata.h; path = ../../../src/common/framework/bitmapdata.h; sourceTree = SOURCE_ROOT; };
 		B3920A191443C4A30006E503 /* camera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = camera.c; path = ../../../src/common/framework/camera.c; sourceTree = SOURCE_ROOT; };
@@ -138,8 +142,6 @@
 		B3920A2C1443C4A30006E503 /* texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = texture.h; path = ../../../src/common/framework/texture.h; sourceTree = SOURCE_ROOT; };
 		B3920A2D1443C4A30006E503 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = util.c; path = ../../../src/common/framework/util.c; sourceTree = SOURCE_ROOT; };
 		B3920A2E1443C4A30006E503 /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = ../../../src/common/framework/util.h; sourceTree = SOURCE_ROOT; };
-		B3920A301443C4A30006E503 /* framework_lua_wrappers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = framework_lua_wrappers.c; path = ../../../src/common/framework_lua_wrappers.c; sourceTree = SOURCE_ROOT; };
-		B3920A311443C4A30006E503 /* framework_lua_wrappers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = framework_lua_wrappers.h; path = ../../../src/common/framework_lua_wrappers.h; sourceTree = SOURCE_ROOT; };
 		B3920A321443C4A30006E503 /* framework_wrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = framework_wrap.c; path = ../../../src/common/framework_wrap.c; sourceTree = SOURCE_ROOT; };
 		B3920A331443C4A30006E503 /* program.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = program.c; path = ../../../src/common/program.c; sourceTree = SOURCE_ROOT; };
 		B3920A461443C4BC0006E503 /* streaming_audio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = streaming_audio.c; path = ../../../src/ios/framework/streaming_audio.c; sourceTree = SOURCE_ROOT; };
@@ -225,6 +227,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7AE0519C198D2E5D003126A1 /* assets.zip */,
 				28EC4C5811D54ECE0027AA9F /* frameworkViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* framework-Info.plist */,
@@ -276,8 +279,6 @@
 			children = (
 				B3920A131443C4A30006E503 /* app.h */,
 				B3920A141443C4A30006E503 /* framework */,
-				B3920A301443C4A30006E503 /* framework_lua_wrappers.c */,
-				B3920A311443C4A30006E503 /* framework_lua_wrappers.h */,
 				B3920A321443C4A30006E503 /* framework_wrap.c */,
 				B3920A331443C4A30006E503 /* program.c */,
 			);
@@ -288,8 +289,10 @@
 		B3920A141443C4A30006E503 /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				B3920A151443C4A30006E503 /* bitmap.c */,
-				B3920A161443C4A30006E503 /* bitmap.h */,
+				7AE05151198D2323003126A1 /* display_object.c */,
+				7AE05152198D2323003126A1 /* display_object.h */,
+				7AE05153198D2323003126A1 /* matrix2.c */,
+				7AE05154198D2323003126A1 /* matrix2.h */,
 				B3920A171443C4A30006E503 /* bitmapdata.c */,
 				B3920A181443C4A30006E503 /* bitmapdata.h */,
 				B3920A191443C4A30006E503 /* camera.c */,
@@ -365,6 +368,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "framework" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -431,6 +437,7 @@
 				2514C27C10084DCA00A42282 /* Shader.vsh in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				28EC4C5A11D54ECE0027AA9F /* frameworkViewController.xib in Resources */,
+				7AE0519D198D2E5D003126A1 /* assets.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,8 +452,9 @@
 				1D3623260D0F684500981E51 /* frameworkAppDelegate.m in Sources */,
 				28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */,
 				28EC4C5911D54ECE0027AA9F /* frameworkViewController.m in Sources */,
-				B3920A341443C4A30006E503 /* bitmap.c in Sources */,
 				B3920A351443C4A30006E503 /* bitmapdata.c in Sources */,
+				7AE05155198D2323003126A1 /* display_object.c in Sources */,
+				7AE05156198D2323003126A1 /* matrix2.c in Sources */,
 				B3920A361443C4A30006E503 /* camera.c in Sources */,
 				B3920A371443C4A30006E503 /* graphics.c in Sources */,
 				B3920A381443C4A30006E503 /* input.c in Sources */,
@@ -457,7 +465,6 @@
 				B3920A3D1443C4A30006E503 /* resource_loading.c in Sources */,
 				B3920A3E1443C4A30006E503 /* texture.c in Sources */,
 				B3920A3F1443C4A30006E503 /* util.c in Sources */,
-				B3920A411443C4A30006E503 /* framework_lua_wrappers.c in Sources */,
 				B3920A421443C4A30006E503 /* framework_wrap.c in Sources */,
 				B3920A431443C4A30006E503 /* program.c in Sources */,
 				B3920A471443C4BC0006E503 /* streaming_audio.c in Sources */,
@@ -501,6 +508,7 @@
 					"$(SRCROOT)/../../../src/common",
 					"$(SRCROOT)/../../../deps/common/lua",
 					"$(SRCROOT)/../../../deps/common/minizip",
+					"$(SRCROOT)/../../../src/gen",
 				);
 				INFOPLIST_FILE = "framework-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -536,7 +544,6 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -550,7 +557,6 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

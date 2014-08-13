@@ -12,7 +12,6 @@
 #include "framework/util.h"
 #include "framework/input.h"
 #include "app.h"
-#include "framework_lua_wrappers.h"
 #include "framework/graphics.h"
 #include "framework/quad.h"
 
@@ -43,7 +42,6 @@ int loadstringWithName(lua_State *L, const char *s, const char* name) {
 
 
 void print_lua(lua_State* s){
-  const char* msg;
   if(lua_isboolean(s, -1)){
     trace(lua_toboolean(s,-1)?"true":"false");
   }else{
