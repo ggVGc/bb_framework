@@ -5,6 +5,7 @@
 #include "framework/input.h"
 
 #ifdef __APPLE__
+  #include <mach-o/dyld.h>
   #include <OpenGl/GL.h>
   #include <OpenGl/glu.h>
 #else
@@ -62,13 +63,12 @@ static void error_callback(int error, const char* description) {
 
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
   if(key>=GLFW_KEY_A && key<=GLFW_KEY_Z){
-    if (key == GLFW_KEY_Q && action == GLFW_PRESS)
-      if(action==GLFW_KEY_DOWN){
-          setKeyPressed(key);
-      }else if(action==GLFW_KEY_UP){
-          setKeyPressed(key);
-      }
-      glfwSetWindowShouldClose(window, GL_TRUE);
+    if(action==GLFW_KEY_DOWN){
+        setKeyPressed(key);
+    }else if(action==GLFW_KEY_UP){
+        setKeyPressed(key);
+    }
+    glfwSetWindowShouldClose(window, GL_TRUE);
   }
 }
 
@@ -90,7 +90,7 @@ static void cursor_pos_callback(GLFWwindow* window, double x, double y) {
   setCursorPos(x, y);
 }
 
-int main(void) {
+int main(int argc, char **argv) {
   GLFWwindow* window;
   long curTime, delta, lastTime;
 
@@ -113,7 +113,19 @@ int main(void) {
 
   glfwSwapInterval(1);
 
-  appInit("assets.zip", 1);
+#ifdef __APPLE__
+{
+  char assetPath[2048];
+  uint32_t pathSize;
+  _NSGetExecutablePath(assetPath, &pathSize);
+  char* lastSlash = strrchr(assetPath, '/');
+  strcpy(assetPath+(lastSlash-assetPath), "/assets.zip\0");
+  printf("%s", assetPath);
+#else
+  const char *assetPath = "assets.zip";
+#endif
+  appInit(assetPath, 1);
+}
 
   lastTime = 0;
   while (!glfwWindowShouldClose(window)) {

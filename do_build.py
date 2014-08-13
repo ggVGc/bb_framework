@@ -76,7 +76,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
   files = cppfiles+" "+ofiles
 
-  cmd = "g++ "+cflags+" "+files+" -o "+outfile+" "+linkFlags
+  cmd = "gcc "+cflags+" "+files+" -o "+outfile+" "+linkFlags
   print cmd
   return os.system(cmd)
 
@@ -164,11 +164,11 @@ def buildFramework():
   if sys.platform == "darwin":
     commonLibString += ' -lluaa '
     cflags += ' -I./deps/common/lua '
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -F./deps/osx/sfml-1.6/lib64 -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework sfml-graphics -framework sfml-window -framework sfml-system -framework sfml-audio")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/osx -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo")
   else:
     cflags += ' -I./deps/common/luajit/src '
     commonLibString += ' -lluajit '
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU ")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/deps/common/luajit/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU ")
 
 
 
