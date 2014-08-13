@@ -87,17 +87,19 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;LIBXMP_CORE_PLAYER;DEBUG;BUILDING_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\src\gen;$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\common\glfw\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.5;$(SolutionDir)\..\..\deps\win\libpng\include;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\luajit\src;$(SolutionDir)\..\..\deps\common\gles_headers;$(SolutionDir)\..\..\deps\common\coremod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\src\gen;$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\common\glfw\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.8;$(SolutionDir)\..\..\deps\common\libpng;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\luajit\src;$(SolutionDir)\..\..\deps\common\gles_headers;$(SolutionDir)\..\..\deps\common\coremod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\deps\win\zlib-1.2.5\BUILD_debug;$(SolutionDir)\depsbin;$(SolutionDir)\..\..\deps\win\libpng\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;libcoremod.lib;minizip.lib;libpng.lib;zlibd.lib;glfw3.lib;lua51.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\depsbin;$(SolutionDir)\..\..\deps\common\luajit\bin\win_vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;libcoremod.lib;minizip.lib;zlib.lib;libpng.lib;glfw.lib;lua51.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

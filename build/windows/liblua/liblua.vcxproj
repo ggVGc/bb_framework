@@ -11,86 +11,43 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\deps\common\lua\lapi.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lauxlib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lbaselib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lbitlib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lcode.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lcorolib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lctype.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ldblib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ldebug.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ldo.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ldump.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lfunc.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lgc.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\linit.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\liolib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\llex.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lmathlib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lmem.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\loadlib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lobject.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lopcodes.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\loslib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lparser.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lpcap.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lpcode.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lpprint.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lptree.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lpvm.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lstate.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lstring.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lstrlib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ltable.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ltablib.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\ltm.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lundump.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lvm.c" />
-    <ClCompile Include="..\..\..\deps\common\lua\lzio.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\png.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngerror.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngget.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngmem.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngpread.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngread.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngrio.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngrtran.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngrutil.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngset.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngtest.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngtrans.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngwio.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngwrite.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngwtran.c" />
+    <ClCompile Include="..\..\..\deps\common\libpng\pngwutil.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\deps\common\lua\lapi.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lauxlib.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lcode.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lctype.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\ldebug.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\ldo.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lfunc.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lgc.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\llex.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\llimits.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lmem.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lobject.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lopcodes.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lparser.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lpcap.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lpcode.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lpprint.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lptree.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lptypes.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lpvm.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lstate.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lstring.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\ltable.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\ltm.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lua.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\luaconf.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lualib.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lundump.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lvm.h" />
-    <ClInclude Include="..\..\..\deps\common\lua\lzio.h" />
+    <ClInclude Include="..\..\..\deps\common\libpng\png.h" />
+    <ClInclude Include="..\..\..\deps\common\libpng\pngconf.h" />
+    <ClInclude Include="..\..\..\deps\common\libpng\pngdebug.h" />
+    <ClInclude Include="..\..\..\deps\common\libpng\pnginfo.h" />
+    <ClInclude Include="..\..\..\deps\common\libpng\pnglibconf.h" />
+    <ClInclude Include="..\..\..\deps\common\libpng\pngpriv.h" />
+    <ClInclude Include="..\..\..\deps\common\libpng\pngstruct.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{90D4DA33-4126-416E-8AD8-721B3E9302C5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>liblua</RootNamespace>
+    <ProjectName>libpng</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -121,12 +78,16 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\deps\win\zlib-1.2.8;$(SolutionDir)\..\..\deps\common\libpng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
