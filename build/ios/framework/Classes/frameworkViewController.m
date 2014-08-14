@@ -51,8 +51,9 @@ NSDate *lastTick = 0;
 - (void)dealloc {
     
     // Tear down context.
-    if ([EAGLContext currentContext] == context)
-        [EAGLContext setCurrentContext:nil];
+    if ([EAGLContext currentContext] == context){
+      [EAGLContext setCurrentContext:nil];
+    }
     
     [context release];
     
@@ -71,12 +72,13 @@ NSDate *lastTick = 0;
 }
 
 - (void)viewDidUnload {
-	[super viewDidUnload];
-	
-    // Tear down context.
-    if ([EAGLContext currentContext] == context)
-        [EAGLContext setCurrentContext:nil];
-	self.context = nil;	
+  [super viewDidUnload];
+  
+  // Tear down context.
+  if ([EAGLContext currentContext] == context){
+    [EAGLContext setCurrentContext:nil];
+  }
+  self.context = nil;	
 }
 
 - (NSInteger)animationFrameInterval {
@@ -88,12 +90,10 @@ NSDate *lastTick = 0;
 	 Frame interval defines how many display frames must pass between each time the display link fires.
 	 The display link will only fire 30 times a second when the frame internal is two on a display that refreshes 60 times a second. The default frame interval setting of one will fire 60 times a second when the display refreshes at 60 times a second. A frame interval setting of less than one results in undefined behavior.
 	 */
-    if (frameInterval >= 1)
-    {
+    if (frameInterval >= 1) {
         animationFrameInterval = frameInterval;
         
-        if (animating)
-        {
+        if (animating) {
             [self stopAnimation];
             [self startAnimation];
         }
@@ -102,8 +102,7 @@ NSDate *lastTick = 0;
 
 - (void)startAnimation
 {
-    if (!animating)
-    {
+    if (!animating) {
         CADisplayLink *aDisplayLink = [[UIScreen mainScreen] displayLinkWithTarget:self selector:@selector(drawFrame)];
         [aDisplayLink setFrameInterval:animationFrameInterval];
         [aDisplayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
