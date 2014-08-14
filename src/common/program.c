@@ -198,7 +198,7 @@ void appInit(const char* resourcePath, int useAssetZip) {
 	if(msg){
 	  trace(msg);
 	}
-    appBroken = 1;
+    setAppBroken(1);
   }
   else {
     initRender();
@@ -221,9 +221,13 @@ void appDeinit(void) {
 
 
 int appRender(long tick, int width, int height) {
-	int ret;
+  int ret;
+
+  if(appBroken!=0){
+    return 0;
+  }
 	
-	if(!vm){
+  if(!vm){
     return 0;
   }
 

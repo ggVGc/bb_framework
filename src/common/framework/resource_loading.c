@@ -173,7 +173,7 @@ int loadBytesIntoBuffer(const char *inPath, unsigned char *data, int bufferSize)
 unsigned char* loadBytesFromZip(const char* inPath, int* outSize){
   unsigned char* data;
   int size = getFileSizeFromZip(inPath);
-  if(!size){
+  if(size<=0){
     return NULL;
   }
   data = (unsigned char*)malloc(size);
@@ -407,9 +407,9 @@ RawBitmapData* loadImage(const char* inFilename){
 
 char* loadText(const char* path){
   int i;
-  unsigned char* data;
+  unsigned char* data = 0;
   int size = getFileSizeFromZip(path);
-  if(size){
+  if(size>0){
     data = (unsigned char*)malloc(size+1);
     if(loadBytesIntoBuffer(path, data, size) !=0){
       free(data);
@@ -425,7 +425,9 @@ char* loadText(const char* path){
       }
     }
   }
-  data[size] = '\0';
+  if(data){
+    data[size] = '\0';
+  }
 
   return (char*)data;
 }

@@ -1,5 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <limits.h>
+#include <libgen.h>
 #include "GLFW/glfw3.h"
 #include "app.h"
 #include "framework/input.h"
@@ -115,25 +118,29 @@ int main(int argc, char **argv) {
 
 {
 #ifdef __APPLE__
-
-  char assetPath[2048];
+  char execPath[PATH_MAX+1];
+  char assetPath[PATH_MAX+1];
+  char fullPath[PATH_MAX+1];
+  const char *assets = "assets.zip";
   uint32_t pathSize;
-  _NSGetExecutablePath(assetPath, &pathSize);
-  char* lastSlash = strrchr(assetPath, '/');
-  strcpy(assetPath+(lastSlash-assetPath), "/assets.zip\0");
-  printf("%s", assetPath);
+  _NSGetExecutablePath(execPath, &pathSize);
+  printf("Exec path: %s\n", execPath);
+  realpath(execPath, fullPath);
+  printf("Real path: %s\n", fullPath);
+  sprintf(assetPath, "%s/%s", dirname(fullPath), assets);
 #else
   const char *assetPath = "assets.zip";
 #endif
+
   appInit(assetPath, 1);
 }
 
   lastTime = 0;
   while (!glfwWindowShouldClose(window)) {
     float ratio;
-    int width, height;
+    /*int width, height;*/
 
-    glfwGetFramebufferSize(window, &width, &height);
+    /*glfwGetFramebufferSize(window, &width, &height);*/
 
     curTime = _getTime();
     delta =(curTime-lastTime);
