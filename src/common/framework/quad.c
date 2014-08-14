@@ -38,8 +38,7 @@ void quadGlobalInit(){
   noLastHandle = 1;
   texHandle = (GLuint)-1;
   for(i=0;i<BUF_SIZE;++i){
-    vertexBuf[i] = '\0';
-    texCoordBuf[i] = '\0';
+    vertexBuf[i] = texCoordBuf[i] = 0;
   }
 }
 
