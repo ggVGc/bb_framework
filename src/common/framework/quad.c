@@ -2,6 +2,9 @@
 #include <GLES/gl.h>
 #include "quad.h"
 
+#define MAX_QUADS 250
+#define BUF_SIZE MAX_QUADS*12
+
 static int drawCallCount;
 static GLuint texHandle;
 static int noLastHandle;
@@ -18,8 +21,8 @@ static GLfloat vertices[12] = {
 
 static GLfloat tmpVerts[12];
 
-static GLfloat vertexBuf[4096];
-static GLfloat texCoordBuf[4096];
+static GLfloat vertexBuf[BUF_SIZE];
+static GLfloat texCoordBuf[BUF_SIZE];
 
 /*static GLfloat transformMatrix[16] = {*/
   /*1,0,0,0,*/
@@ -34,7 +37,7 @@ void quadGlobalInit(){
   int i;
   noLastHandle = 1;
   texHandle = (GLuint)-1;
-  for(i=0;i<4096;++i){
+  for(i=0;i<BUF_SIZE;++i){
     vertexBuf[i] = '\0';
     texCoordBuf[i] = '\0';
   }
@@ -77,7 +80,7 @@ void transformVertices(Matrix2 *m, GLfloat *inPoints, GLfloat *outPoints){
 void quadDrawTex(Texture* tex, Matrix2 *m){
   glColor4f(1,1,1,1);
 
-  if(noLastHandle || tex->data->glTexHandle != texHandle){
+  if(noLastHandle || tex->data->glTexHandle != texHandle || quadCount>=MAX_QUADS){
     glLoadIdentity();
     quadFlush();
     texHandle = tex->data->glTexHandle;

@@ -18,5 +18,4 @@ void DisplayObject_setTransform(DisplayObject *d, double x, double y, double sca
 void DisplayObject_draw(DisplayObject *d, Texture *t);
 
 void DisplayObject_getConcatenatedMatrix(DisplayObject *d, Matrix2 *outMat);
-void DisplayObject_getConcatenatedMatrix(DisplayObject *d, Matrix2 *outMat);
 

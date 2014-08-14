@@ -26,22 +26,16 @@ import com.chartboost.sdk.Model.CBError.CBImpressionError;
 import com.chartboost.sdk.CBPreferences;
 
 
-public class FrameworkTest extends Activity
-{
-
+public class FrameworkTest extends Activity {
   private static final String CHARTBOOST_TAG = "Chartboost";
 
-  static
-  {
+  static {
     System.loadLibrary("jumpz_framework");
   }
-
-
   private Chartboost cb;
 
   @Override
-  public void onCreate(Bundle savedInstanceState)
-  {
+  public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     System.out.println("ACTIVITY: Create");
     requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -58,8 +52,7 @@ public class FrameworkTest extends Activity
   }
 
   @Override
-  public void onStart()
-  {
+  public void onStart() {
     super.onStart();
     System.out.println("ACTIVITY: Start");
     view.start();
@@ -70,8 +63,7 @@ public class FrameworkTest extends Activity
   }
 
   @Override
-  public void onRestart()
-  {
+  public void onRestart() {
     super.onRestart();
     System.out.println("ACTIVITY: Restart");
   }
@@ -511,30 +503,25 @@ class GLView extends GLSurfaceView
   private static native void nativeOnCursorMove(int x, int y);
 }
 
-class GLRenderer implements GLSurfaceView.Renderer 
-{
+class GLRenderer implements GLSurfaceView.Renderer {
   private Context context;
-
 
   public GLRenderer (Context context) {
     System.out.println("GLRenderer created");
     this.context = context;
   }
 
-  public void start()
-  {
+  public void start() {
   }
 
-  public void stop()
-  {
+  public void stop() {
     die = true;
   }
 
 
   boolean die = false;
 
-  public void pause()
-  {
+  public void pause() {
     die = true;
   }
 

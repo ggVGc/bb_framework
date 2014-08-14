@@ -56,8 +56,8 @@ function Vector.new(x,y)
   return o
 end
 
-function Vector.len(v)
-  return math.sqrt((v.x * v.x) + (v.y * v.y))
+function Vector.len2(vx, vy)
+  return (vx * vx) + (vy * vy)
 end
 
 function Vector.normalise(v)

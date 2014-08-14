@@ -32,6 +32,23 @@ void Matrix2_identity(Matrix2 *m){
   m->ty = 0;
 }
 
+
+void Matrix2_invert(Matrix2 *m){
+  float a1 = m->a;
+  float b1 = m->b;
+  float c1 = m->c;
+  float d1 = m->d;
+  float tx1 = m->tx;
+  float n = a1*d1-b1*c1;
+
+  m->a = d1/n;
+  m->b = -b1/n;
+  m->c = -c1/n;
+  m->d = a1/n;
+  m->tx = (c1*m->ty-d1*tx1)/n;
+  m->ty = -(a1*m->ty-b1*tx1)/n;
+}
+
 void Matrix2_prepend(Matrix2 *m, double a, double b, double c, double d, double tx, double ty){
   double tx1 = m->tx;
   if (a != 1 || b != 0 || c != 0 || d != 1){

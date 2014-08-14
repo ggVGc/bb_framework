@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
 #include <limits.h>
-#include <libgen.h>
 #include "GLFW/glfw3.h"
 #include "app.h"
 #include "framework/input.h"
@@ -11,6 +9,8 @@
   #include <mach-o/dyld.h>
   #include <OpenGl/GL.h>
   #include <OpenGl/glu.h>
+  #include <unistd.h>
+  #include <libgen.h>
 #else
   #ifdef WIN32
     #include <Windows.h>

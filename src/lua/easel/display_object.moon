@@ -1,11 +1,12 @@
-NEXT_ID = 0
 local DisplayObject
 
-DisplayObject ={
+
+DisplayObject = {
+NEXT_ID: 0
 new: ->
   self = {}
-  self.id = NEXT_ID
-  NEXT_ID += 1
+  self.id = DisplayObject.NEXT_ID
+  DisplayObject.NEXT_ID += 1
   self.visible = true
   self.alpha = 1
   self.tickEnabled = true
@@ -42,6 +43,29 @@ new: ->
 
   self.setTransform = (x=0,y=0,scaleX=1, scaleY=1, rot=0, skewX=0, skewY=0, regX=0, regY=0) ->
     _c_framework.DisplayObject_setTransform(dispObj, x, y, scaleX, scaleY, rot, skewX, skewY, regX, regY)
+
+
+  cMat = _c_framework.Matrix2!
+  self.localToGlobal = (x, y)->
+    _c_framework.Matrix2_identity(cMat)
+    _c_framework.DisplayObject_getConcatenatedMatrix(dispObj, cMat)
+    _c_framework.Matrix2_append(cMat, 1, 0, 0, 1, x, y)
+    return {x:cMat.tx, y:cMat.ty}
+  
+
+  self.globalToLocal = (x, y)->
+    _c_framework.Matrix2_identity(cMat)
+    _c_framework.DisplayObject_getConcatenatedMatrix(dispObj, cMat)
+    _c_framework.Matrix2_invert(cMat)
+    _c_framework.Matrix2_append(cMat, 1, 0, 0, 1, x, y)
+    return {x:cMat.tx, y:cMat.ty}
+
+  self.localToLocal = (x, y, target)->
+    pt = self.localToGlobal(x, y)
+    return target.globalToLocal(pt.x, pt.y)
+
+
+
 
   mt = {
   __index: (obj, key) ->

@@ -22,6 +22,7 @@ void Matrix2_copy(Matrix2 *target, Matrix2 *source);
 
 void Matrix2_prepend(Matrix2 *m, double a, double b, double c, double d, double tx, double ty);
 void Matrix2_append(Matrix2 *m, double a, double b, double c, double d, double tx, double ty);
+void Matrix2_invert(Matrix2 *m);
 
 void Matrix2_prependTransform(Matrix2 *m, double x, double y, double scaleX, double scaleY, double rotation, double skewX, double skewY, double regX, double regY);
 
