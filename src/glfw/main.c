@@ -117,18 +117,44 @@ int main(int argc, char **argv) {
   glfwSwapInterval(1);
 
 {
-#ifdef __APPLE__
-  char execPath[PATH_MAX+1];
-  char assetPath[PATH_MAX+1];
-  char fullPath[PATH_MAX+1];
+#if defined(__APPLE__) || defined(WIN32)
+  #ifndef PATH_MAX
+    #define PATH_MAX MAX_PATH
+  #endif
+
   const char *assets = "assets.zip";
-  uint32_t pathSize;
-  _NSGetExecutablePath(execPath, &pathSize);
-  printf("Exec path: %s\n", execPath);
+  char execPath[512+1];
+  char fullPath[512+1];
+  char assetPath[512+1];
+#ifdef __APPLE__
+    uint32_t pathSize;
+    int ret;
+    pid_t pid; 
+
+  if(_NSGetExecutablePath(execPath, &pathSize) == 0){
+    printf("Exec path: %s\n", execPath);
+  }else{
+    printf("Exec path size needs to be: %i\n", pathSize);
+    pid = getpid();
+    ret = proc_pidpath (pid, execPath, sizeof(execPath));
+    if ( ret <= 0 ) {
+        fprintf(stderr, "PID %d: proc_pidpath ();\n", pid);
+    } else {
+        printf("proc %d: %s\n", pid, execPath);
+    }
+  }
   realpath(execPath, fullPath);
   printf("Real path: %s\n", fullPath);
   sprintf(assetPath, "%s/%s", dirname(fullPath), assets);
-#else
+  #else
+    char *filePartPtr;
+    GetModuleFileName(0, execPath, 512);
+	GetFullPathName(execPath, 512, fullPath, &filePartPtr);
+	*filePartPtr = '\0';
+	sprintf(assetPath, "%s%s", fullPath, assets);
+	/*printf("%s", assetPath);*/
+  #endif
+#elif
   const char *assetPath = "assets.zip";
 #endif
 

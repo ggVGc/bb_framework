@@ -271,6 +271,7 @@ dofile "framework/vector.lua";
 dofile "framework/level.moon";
 dofile 'framework/draw_states.moon'
 dofile 'framework/asset_loader.moon'
+dofile 'framework/font.moon'
 dofile 'framework/tween/tween.moon'
 dofile 'framework/tween/timeline.moon'
 dofile 'framework/easel/ticker.moon'

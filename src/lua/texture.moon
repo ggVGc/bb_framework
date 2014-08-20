@@ -21,8 +21,8 @@ new: (bmData, x, y, w, h)->
     tmpMat = _c_framework.Matrix2!
     .draw=(m)->
       _c_framework.Matrix2_copy(tmpMat, m)
-      _c_framework.Matrix2_append(tmpMat, .tex.width, 0, 0, tex.height, 0, 0)
-      _c_framework.quadDrawTex tex, tmpMat
+      _c_framework.Matrix2_append(tmpMat, .tex.width, 0, 0, .tex.height, 0, 0)
+      _c_framework.quadDrawTex .tex, tmpMat
 
 fromFile: (path, errorOnInvalid=true)->
   path = framework.Texture.fixPath path
