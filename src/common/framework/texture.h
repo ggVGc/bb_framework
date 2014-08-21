@@ -5,12 +5,14 @@
 #include "rect.h"
 #include "bitmapdata.h"
 
-typedef struct{
+struct Texture{
   int width;
   int height;
   GLfloat uvCoords[12];
   BitmapData* data;
-} Texture;
+};
+
+typedef struct Texture Texture;
 
 
 void textureGlobalInit();

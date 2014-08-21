@@ -1,6 +1,7 @@
 
 local MovieClip
 MovieClip = {
+tickCount: 0
 INDEPENDENT: "independent"
 SINGLE_FRAME: "single"
 SYNCHED: "synched"
@@ -27,6 +28,7 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   self._managed = {}
 
   self.isMovieClip = true
+
 
   container = framework.Container.new!
 
@@ -116,6 +118,7 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
 
   contTick = container._tick
   self._tick = (props)->
+    MovieClip.tickCount+=1
     self.advance(props and props.delta)
     contTick(props)
   

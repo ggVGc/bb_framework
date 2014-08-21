@@ -16,6 +16,7 @@
 
 
 #include "framework/display_object.h"
+#include "framework/texture.h"
 #include "framework/camera.h"
 #include "framework/quad.h"
 #include "framework/texture.h"

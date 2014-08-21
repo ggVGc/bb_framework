@@ -154,7 +154,7 @@ int main(int argc, char **argv) {
 	sprintf(assetPath, "%s%s", fullPath, assets);
 	/*printf("%s", assetPath);*/
   #endif
-#elif
+#else
   const char *assetPath = "assets.zip";
 #endif
 

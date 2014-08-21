@@ -8,10 +8,11 @@ new: (texLoader, path) ->
   self.tex = texLoader path
   self.draw = () ->
     Bitmap.drawCounter+=1
-    _c_framework.DisplayObject_draw self.dispObj, self.tex.tex
+    _c_framework.DisplayObject_draw self.dispObj
 
 
   setmetatable(self, {__newindex:displayObj, __index:displayObj})
+  self.dispObj.tex = self.tex.tex
   return self
 }
 Bitmap.drawCounter = 0

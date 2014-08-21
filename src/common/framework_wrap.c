@@ -4076,11 +4076,11 @@ fail:
 
 static int _wrap_Texture_width_set(lua_State* L) {
   int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
+  struct Texture *arg1 = (struct Texture *) 0 ;
   int arg2 ;
   
   SWIG_check_num_args("Texture::width",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::width",1,"Texture *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::width",1,"struct Texture *");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("Texture::width",2,"int");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
@@ -4102,11 +4102,11 @@ fail:
 
 static int _wrap_Texture_width_get(lua_State* L) {
   int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
+  struct Texture *arg1 = (struct Texture *) 0 ;
   int result;
   
   SWIG_check_num_args("Texture::width",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::width",1,"Texture *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::width",1,"struct Texture *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
     SWIG_fail_ptr("Texture_width_get",1,SWIGTYPE_p_Texture);
@@ -4126,11 +4126,11 @@ fail:
 
 static int _wrap_Texture_height_set(lua_State* L) {
   int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
+  struct Texture *arg1 = (struct Texture *) 0 ;
   int arg2 ;
   
   SWIG_check_num_args("Texture::height",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::height",1,"Texture *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::height",1,"struct Texture *");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("Texture::height",2,"int");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
@@ -4152,11 +4152,11 @@ fail:
 
 static int _wrap_Texture_height_get(lua_State* L) {
   int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
+  struct Texture *arg1 = (struct Texture *) 0 ;
   int result;
   
   SWIG_check_num_args("Texture::height",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::height",1,"Texture *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::height",1,"struct Texture *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
     SWIG_fail_ptr("Texture_height_get",1,SWIGTYPE_p_Texture);
@@ -4176,11 +4176,11 @@ fail:
 
 static int _wrap_Texture_uvCoords_set(lua_State* L) {
   int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
+  struct Texture *arg1 = (struct Texture *) 0 ;
   GLfloat *arg2 ;
   
   SWIG_check_num_args("Texture::uvCoords",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::uvCoords",1,"Texture *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::uvCoords",1,"struct Texture *");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Texture::uvCoords",2,"GLfloat [12]");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
@@ -4210,11 +4210,11 @@ fail:
 
 static int _wrap_Texture_uvCoords_get(lua_State* L) {
   int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
+  struct Texture *arg1 = (struct Texture *) 0 ;
   GLfloat *result = 0 ;
   
   SWIG_check_num_args("Texture::uvCoords",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::uvCoords",1,"Texture *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::uvCoords",1,"struct Texture *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
     SWIG_fail_ptr("Texture_uvCoords_get",1,SWIGTYPE_p_Texture);
@@ -4234,11 +4234,11 @@ fail:
 
 static int _wrap_Texture_data_set(lua_State* L) {
   int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
+  struct Texture *arg1 = (struct Texture *) 0 ;
   BitmapData *arg2 = (BitmapData *) 0 ;
   
   SWIG_check_num_args("Texture::data",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::data",1,"Texture *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::data",1,"struct Texture *");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Texture::data",2,"BitmapData *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
@@ -4264,11 +4264,11 @@ fail:
 
 static int _wrap_Texture_data_get(lua_State* L) {
   int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
+  struct Texture *arg1 = (struct Texture *) 0 ;
   BitmapData *result = 0 ;
   
   SWIG_check_num_args("Texture::data",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::data",1,"Texture *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::data",1,"struct Texture *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
     SWIG_fail_ptr("Texture_data_get",1,SWIGTYPE_p_Texture);
@@ -4288,10 +4288,10 @@ fail:
 
 static int _wrap_new_Texture(lua_State* L) {
   int SWIG_arg = 0;
-  Texture *result = 0 ;
+  struct Texture *result = 0 ;
   
   SWIG_check_num_args("Texture::Texture",0,0)
-  result = (Texture *)calloc(1, sizeof(Texture));
+  result = (struct Texture *)calloc(1, sizeof(struct Texture));
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Texture,1); SWIG_arg++; 
   return SWIG_arg;
   
@@ -4304,7 +4304,7 @@ fail:
 
 
 static void swig_delete_Texture(void *obj) {
-Texture *arg1 = (Texture *) obj;
+struct Texture *arg1 = (struct Texture *) obj;
 free((char *) arg1);
 }
 static int _proxy__wrap_new_Texture(lua_State *L) {
@@ -4952,6 +4952,60 @@ fail:
 }
 
 
+static int _wrap_DisplayObject_tex_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  Texture *arg2 = (Texture *) 0 ;
+  
+  SWIG_check_num_args("DisplayObject::tex",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::tex",1,"struct DisplayObject *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("DisplayObject::tex",2,"Texture *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_tex_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Texture,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("DisplayObject_tex_set",2,SWIGTYPE_p_Texture);
+  }
+  
+  if (arg1) (arg1)->tex = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_tex_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  Texture *result = 0 ;
+  
+  SWIG_check_num_args("DisplayObject::tex",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::tex",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_tex_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (Texture *) ((arg1)->tex);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Texture,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_new_DisplayObject(lua_State* L) {
   int SWIG_arg = 0;
   struct DisplayObject *result = 0 ;
@@ -4992,6 +5046,7 @@ static swig_lua_attribute swig_DisplayObject_attributes[] = {
     { "scaleX", _wrap_DisplayObject_scaleX_get, _wrap_DisplayObject_scaleX_set },
     { "scaleY", _wrap_DisplayObject_scaleY_get, _wrap_DisplayObject_scaleY_set },
     { "parent", _wrap_DisplayObject_parent_get, _wrap_DisplayObject_parent_set },
+    { "tex", _wrap_DisplayObject_tex_get, _wrap_DisplayObject_tex_set },
     {0,0,0}
 };
 static swig_lua_method swig_DisplayObject_methods[]= {
@@ -5102,22 +5157,15 @@ fail:
 static int _wrap_DisplayObject_draw(lua_State* L) {
   int SWIG_arg = 0;
   DisplayObject *arg1 = (DisplayObject *) 0 ;
-  Texture *arg2 = (Texture *) 0 ;
   
-  SWIG_check_num_args("DisplayObject_draw",2,2)
+  SWIG_check_num_args("DisplayObject_draw",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_draw",1,"DisplayObject *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("DisplayObject_draw",2,"Texture *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
     SWIG_fail_ptr("DisplayObject_draw",1,SWIGTYPE_p_DisplayObject);
   }
   
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Texture,0))){
-    SWIG_fail_ptr("DisplayObject_draw",2,SWIGTYPE_p_Texture);
-  }
-  
-  DisplayObject_draw(arg1,arg2);
+  DisplayObject_draw(arg1);
   
   return SWIG_arg;
   
@@ -6176,7 +6224,7 @@ static swig_type_info _swigt__p_Matrix2 = {"_p_Matrix2", "struct Matrix2 *|Matri
 static swig_type_info _swigt__p_RawBitmapData = {"_p_RawBitmapData", "struct RawBitmapData *|RawBitmapData *", 0, 0, (void*)&_wrap_class_RawBitmapData, 0};
 static swig_type_info _swigt__p_Rect = {"_p_Rect", "Rect *", 0, 0, (void*)&_wrap_class_Rect, 0};
 static swig_type_info _swigt__p_StreamingAudio_T = {"_p_StreamingAudio_T", "struct StreamingAudio_T *|StreamingAudio *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Texture = {"_p_Texture", "Texture *", 0, 0, (void*)&_wrap_class_Texture, 0};
+static swig_type_info _swigt__p_Texture = {"_p_Texture", "struct Texture *|Texture *", 0, 0, (void*)&_wrap_class_Texture, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void*)0, 0};
 

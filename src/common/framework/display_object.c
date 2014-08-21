@@ -20,11 +20,11 @@ void DisplayObject_setTransform(DisplayObject *d, double x, double y, double sca
 }
 
 
-void DisplayObject_draw(DisplayObject *d, Texture *t){
+void DisplayObject_draw(DisplayObject *d){
   Matrix2 m;
   DisplayObject_getConcatenatedMatrix(d, &m);
-  Matrix2_append(&m, t->width, 0, 0, t->height, 0, 0);
-  quadDrawTex(t, &m);
+  Matrix2_append(&m, d->tex->width, 0, 0, d->tex->height, 0, 0);
+  quadDrawTex(d->tex, &m);
 }
 
 

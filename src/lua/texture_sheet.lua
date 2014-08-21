@@ -54,7 +54,7 @@ end
 
 
 function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPath)
-  local layoutData = _c_framework.loadText(layoutInfoPath)
+  local layoutData = _c_framework.loadText(layoutInfoPath or imagePath:gsub('.png', '.txt'))
   local imageData = _c_framework.loadImage(imagePath)
   local bmData = _c_framework.BitmapData()
 
