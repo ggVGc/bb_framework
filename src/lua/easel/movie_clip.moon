@@ -153,7 +153,7 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
 
       self._prevPosition = tl._prevPosition
 
--- Non-CJS addition
+-- Non-CJS addition(Removed event trigger)
       --if isEnd
         --self.event.timelineEnd!
 

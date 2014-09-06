@@ -38,7 +38,7 @@ objectProcessor = (name, content, type) ->
   content = content\gsub '= function%(mode,startPosition,loop%) {', ''
   content = content\gsub '= function%(%) {\n', ''
   content = content\gsub 'this%.initialize%('..initContentPattern..'%);', ''
-  content = content\gsub 'new lib%.([%u%w%d_]*)%(([,%d%w"]*)%);', 'lib.%1.new(%2)'
+  content = content\gsub 'this.([%u%w%d_]*) = new lib%.([%u%w%d_]*)%(([,%d%w"]*)%);', 'rawset(this, "%1", lib.%2.new(%3))'
   content = content\gsub 'cjs.Tween', 'framework.Tween'
   content = content\gsub ';\n', '\n'
   content = content\gsub ':', '='
