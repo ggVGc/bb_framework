@@ -8,6 +8,7 @@ void quadGlobalInit();
 void quadBeginFrame();
 
 void quadDrawTex(Texture* tex, Matrix2 *m);
+void quadDrawTexAlpha(Texture* tex, Matrix2 *m, double alpha);
 void quadDrawCol(float x, float y, float width, float height, float red, float green, float blue, float alpha, float rot, float pivX, float pivY);
 void quadFlush();
 void quadEndFrame();

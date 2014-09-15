@@ -4,6 +4,7 @@
 
 void DisplayObject_init(DisplayObject *d){
   d->parent = 0;
+  d->alpha = 1;
   DisplayObject_setTransform(d, 0, 0, 1, 1, 0, 0, 0, 0, 0);
 }
 
@@ -24,7 +25,7 @@ void DisplayObject_draw(DisplayObject *d){
   Matrix2 m;
   DisplayObject_getConcatenatedMatrix(d, &m);
   Matrix2_append(&m, d->tex->width, 0, 0, d->tex->height, 0, 0);
-  quadDrawTex(d->tex, &m);
+  quadDrawTexAlpha(d->tex, &m, DisplayObject_getConcatAlpha(d));
 }
 
 
@@ -36,3 +37,14 @@ void DisplayObject_getConcatenatedMatrix(DisplayObject *d, Matrix2 *outMat){
     o = o->parent;
   }
 }
+
+double DisplayObject_getConcatAlpha(DisplayObject *d){
+  DisplayObject *o = d;
+  double a = 1;
+  while (o){
+    a *= o->alpha;
+    o = o->parent;
+  }
+  return a;
+}
+

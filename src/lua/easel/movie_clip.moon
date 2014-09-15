@@ -37,8 +37,7 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   
   
   self.isVisible = ->
-    --not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0)
-    not not (self.visible and self.alpha > 0 )
+    not not self.visible
   
 
   contDraw = container.draw

@@ -4898,6 +4898,56 @@ fail:
 }
 
 
+static int _wrap_DisplayObject_alpha_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double arg2 ;
+  
+  SWIG_check_num_args("DisplayObject::alpha",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::alpha",1,"struct DisplayObject *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DisplayObject::alpha",2,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_alpha_set",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  arg2 = (double)lua_tonumber(L, 2);
+  if (arg1) (arg1)->alpha = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_alpha_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject::alpha",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject::alpha",1,"struct DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_alpha_get",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double) ((arg1)->alpha);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_DisplayObject_parent_set(lua_State* L) {
   int SWIG_arg = 0;
   struct DisplayObject *arg1 = (struct DisplayObject *) 0 ;
@@ -5045,6 +5095,7 @@ static swig_lua_attribute swig_DisplayObject_attributes[] = {
     { "rotation", _wrap_DisplayObject_rotation_get, _wrap_DisplayObject_rotation_set },
     { "scaleX", _wrap_DisplayObject_scaleX_get, _wrap_DisplayObject_scaleX_set },
     { "scaleY", _wrap_DisplayObject_scaleY_get, _wrap_DisplayObject_scaleY_set },
+    { "alpha", _wrap_DisplayObject_alpha_get, _wrap_DisplayObject_alpha_set },
     { "parent", _wrap_DisplayObject_parent_get, _wrap_DisplayObject_parent_set },
     { "tex", _wrap_DisplayObject_tex_get, _wrap_DisplayObject_tex_set },
     {0,0,0}
@@ -5612,6 +5663,39 @@ fail:
 }
 
 
+static int _wrap_quadDrawTexAlpha(lua_State* L) {
+  int SWIG_arg = 0;
+  Texture *arg1 = (Texture *) 0 ;
+  Matrix2 *arg2 = (Matrix2 *) 0 ;
+  double arg3 ;
+  
+  SWIG_check_num_args("quadDrawTexAlpha",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("quadDrawTexAlpha",1,"Texture *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("quadDrawTexAlpha",2,"Matrix2 *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("quadDrawTexAlpha",3,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
+    SWIG_fail_ptr("quadDrawTexAlpha",1,SWIGTYPE_p_Texture);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Matrix2,0))){
+    SWIG_fail_ptr("quadDrawTexAlpha",2,SWIGTYPE_p_Matrix2);
+  }
+  
+  arg3 = (double)lua_tonumber(L, 3);
+  quadDrawTexAlpha(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_quadDrawCol(lua_State* L) {
   int SWIG_arg = 0;
   float arg1 ;
@@ -6160,6 +6244,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "quadGlobalInit", _wrap_quadGlobalInit},
     { "quadBeginFrame", _wrap_quadBeginFrame},
     { "quadDrawTex", _wrap_quadDrawTex},
+    { "quadDrawTexAlpha", _wrap_quadDrawTexAlpha},
     { "quadDrawCol", _wrap_quadDrawCol},
     { "quadFlush", _wrap_quadFlush},
     { "quadEndFrame", _wrap_quadEndFrame},

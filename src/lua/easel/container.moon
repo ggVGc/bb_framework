@@ -13,7 +13,7 @@ new: ->
   self.isVisible = ->
     hasContent = self.cacheCanvas or #self.children>0
     --return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0 and hasContent)
-    return not not (self.visible and self.alpha > 0 and hasContent)
+    return not not (self.visible and hasContent)
 
   self.draw = ->
     --if displayObj.draw(ctx, ignoreCache)

@@ -8,10 +8,8 @@ new: ->
   self.id = DisplayObject.NEXT_ID
   DisplayObject.NEXT_ID += 1
   self.visible = true
-  self.alpha = 1
   self.tickEnabled = true
   self.isDisplayObj = true
-  self.alpha = 1
   self.parent = nil
 
 
@@ -39,7 +37,7 @@ new: ->
   self.dispObj = dispObj
 
   self.isVisible = ->
-    return not not (self.visible and self.alpha > 0)
+    not not self.visible
 
   self.setTransform = (x=0,y=0,scaleX=1, scaleY=1, rot=0, skewX=0, skewY=0, regX=0, regY=0) ->
     _c_framework.DisplayObject_setTransform(dispObj, x, y, scaleX, scaleY, rot, skewX, skewY, regX, regY)
@@ -91,6 +89,8 @@ new: ->
         dispObj.scaleY= val
       when 'rotation'
         dispObj.rotation = val
+      when 'alpha'
+        dispObj.alpha= val
       else
         rawset(obj, key, val)
   }

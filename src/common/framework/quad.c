@@ -8,6 +8,7 @@
 static int drawCallCount;
 static GLuint texHandle;
 static int noLastHandle;
+static int quadCount;
 
 
 static GLfloat vertices[12] = {
@@ -24,18 +25,13 @@ static GLfloat tmpVerts[12];
 static GLfloat vertexBuf[BUF_SIZE];
 static GLfloat texCoordBuf[BUF_SIZE];
 
-/*static GLfloat transformMatrix[16] = {*/
-  /*1,0,0,0,*/
-  /*0,1,0,0,*/
-  /*0,0,1,0,*/
-  /*0,0,0,1*/
-/*};*/
-
-static int quadCount;
 
 void quadGlobalInit(){
   int i;
+  glEnableClientState(GL_VERTEX_ARRAY);
   noLastHandle = 1;
+  quadCount = 0;
+  drawCallCount = 0;
   texHandle = (GLuint)-1;
   for(i=0;i<BUF_SIZE;++i){
     vertexBuf[i] = texCoordBuf[i] = 0;
@@ -44,6 +40,7 @@ void quadGlobalInit(){
 
 void quadBeginFrame(){
   drawCallCount = 0;
+  quadCount = 0;
 }
 
 void quadEndFrame(){
@@ -55,14 +52,15 @@ int getDrawCallCount(){
 }
 
 void quadFlush(){
-  glEnableClientState(GL_VERTEX_ARRAY);
-  glBindTexture(GL_TEXTURE_2D, texHandle);
-  glTexCoordPointer(2, GL_FLOAT, 0, texCoordBuf);
-  glVertexPointer(2, GL_FLOAT, 0, vertexBuf);
-  glDrawArrays(GL_TRIANGLES, 0, quadCount*6);
-  ++drawCallCount;
-  quadCount = 0;
-  glDisableClientState(GL_VERTEX_ARRAY);
+  if(quadCount>0){
+    glBindTexture(GL_TEXTURE_2D, texHandle);
+    glTexCoordPointer(2, GL_FLOAT, 0, texCoordBuf);
+    glVertexPointer(2, GL_FLOAT, 0, vertexBuf);
+    glLoadIdentity();
+    glDrawArrays(GL_TRIANGLES, 0, quadCount*6);
+    ++drawCallCount;
+    quadCount = 0;
+  }
 }
 
 
@@ -76,12 +74,10 @@ void transformVertices(Matrix2 *m, GLfloat *inPoints, GLfloat *outPoints){
   }
 }
 
-void quadDrawTex(Texture* tex, Matrix2 *m){
-  glColor4f(1,1,1,1);
-
-  if(noLastHandle || tex->data->glTexHandle != texHandle || quadCount>=MAX_QUADS){
-    glLoadIdentity();
+void quadDrawTexAlpha(Texture* tex, Matrix2 *m, double alpha){
+  if(alpha != 1 || noLastHandle || tex->data->glTexHandle != texHandle || quadCount>=MAX_QUADS){
     quadFlush();
+    glColor4f(alpha, alpha, alpha, alpha);
     texHandle = tex->data->glTexHandle;
   }
 
@@ -90,7 +86,11 @@ void quadDrawTex(Texture* tex, Matrix2 *m){
   memcpy(&texCoordBuf[12*quadCount], tex->uvCoords, sizeof(GLfloat)*12);
   ++quadCount;
 
-  noLastHandle = 0;
+  noLastHandle = alpha != -1;
+}
+
+void quadDrawTex(Texture* tex, Matrix2 *m){
+  quadDrawTexAlpha(tex, m, 1);
 }
 
 void quadDrawCol(float x, float y, float width, float height, float red, float green, float blue, float alpha, float rot, float pivX, float pivY){

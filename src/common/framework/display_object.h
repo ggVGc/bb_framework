@@ -5,7 +5,7 @@
 struct DisplayObject;
 
 struct DisplayObject{
-  double x, y, skewX, skewY, regX, regY, rotation, scaleX, scaleY;
+  double x, y, skewX, skewY, regX, regY, rotation, scaleX, scaleY, alpha;
   struct DisplayObject *parent;
   Texture *tex;
 };
@@ -19,4 +19,4 @@ void DisplayObject_setTransform(DisplayObject *d, double x, double y, double sca
 void DisplayObject_draw(DisplayObject *d);
 
 void DisplayObject_getConcatenatedMatrix(DisplayObject *d, Matrix2 *outMat);
-
+double DisplayObject_getConcatAlpha(DisplayObject *d);
