@@ -1,10 +1,11 @@
 framework = framework or {}
 
 framework.AssetLoader = {
-new: maker (texSheets) =>
+new: maker (initialTexSheets) =>
+  @texSheets = initialTexSheets
 
   @getTexture = (path, errorOnInvalid) ->
-    t = framework.AssetLoader.tryGetTexFromSheets(path, texSheets)
+    t = framework.AssetLoader.tryGetTexFromSheets(path, @texSheets)
     if not t
       --print path
       t = framework.Texture.fromFile(path, errorOnInvalid)

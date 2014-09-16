@@ -8,9 +8,9 @@
 #include "framework/input.h"
 
 
-static int  sWindowWidth = -1;
-static int  sWindowHeight = -1;
 static int lastTime = 0;
+static int didInit = 0;
+static jstring apkPath;
 
   static long
 _getTime(void) {
@@ -35,21 +35,22 @@ Java_com_jumpz_frameworktest_GLView_nativeOnCursorDown( JNIEnv*  env, jobject th
 }
 
   void
-Java_com_jumpz_frameworktest_GLRenderer_nativeInit( JNIEnv*  env, jobject thiz, jstring apkPath ) {
-  const char* path;
-
+Java_com_jumpz_frameworktest_GLRenderer_nativeInit( JNIEnv*  env, jobject thiz, jstring apkPath_ ) {
+  apkPath = apkPath_;
   lastTime = _getTime();
-
-  path = (*env)->GetStringUTFChars(env, apkPath, NULL);
-  /*loadAPK(path);*/
-  appInit(path, 1);
-  (*env)->ReleaseStringUTFChars(env, apkPath, path);
+  didInit = 0;
 }
 
   void
 Java_com_jumpz_frameworktest_GLRenderer_nativeResize( JNIEnv*  env, jobject  thiz, jint w, jint h ) {
-  sWindowWidth  = w;
-  sWindowHeight = h;
+  if(didInit != 1){
+    setScreenWidth(w);
+    setScreenHeight(h);
+    const char* path = (*env)->GetStringUTFChars(env, apkPath, NULL);
+    appInit(w, h, path, 1);
+    (*env)->ReleaseStringUTFChars(env, apkPath, path);
+    didInit = 1;
+  }
   __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "resize w=%d h=%d", w, h);
 }
 
@@ -63,6 +64,6 @@ Java_com_jumpz_frameworktest_GLRenderer_nativeOnStop( JNIEnv*  env ) {
   void
 Java_com_jumpz_frameworktest_GLRenderer_nativeRender( JNIEnv*  env ) {
   long curTime = _getTime();
-  appRender(curTime - lastTime, sWindowWidth, sWindowHeight);
+  appRender(curTime - lastTime);
   lastTime = curTime;
 }

@@ -75,7 +75,7 @@ def zipDir(zipOut, r, stripCode=False, prefix=""):
 
   for root, dirs, files in os.walk(r):
     for f in files:
-      if stripCode and ('flash' in root or 'font' in root):
+      if stripCode and ('flash' in root or 'font' in root) and not 'loading' in root:
         continue
       p = os.path.join(root, f)
       rp = os.path.relpath(p, r)
