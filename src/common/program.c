@@ -172,7 +172,7 @@ int callFunc(int nParams, int nRet) {
 
 
 
-void appInit(const char* resourcePath, int useAssetZip) {
+void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePath, int useAssetZip) {
   trace("---- APP INIT ----");
 
   inputInit();
@@ -201,7 +201,7 @@ void appInit(const char* resourcePath, int useAssetZip) {
     setAppBroken(1);
   }
   else {
-    initRender();
+    initRender(framebufferWidth, framebufferHeight);
   }
 }
 
@@ -220,7 +220,7 @@ void appDeinit(void) {
 }
 
 
-int appRender(long tick, int width, int height) {
+int appRender(long tick) {
   int ret;
 
   if(appBroken!=0){
@@ -234,10 +234,8 @@ int appRender(long tick, int width, int height) {
   // suppress warning
   tick = tick;
 
-  setScreenWidth(width);
-  setScreenHeight(height);
 
-  beginRenderFrame(width, height);
+  beginRenderFrame();
   lua_getglobal(vm, "framework");
 
 

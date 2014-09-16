@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
 
   glfwSwapInterval(1);
 
-{
+  {
 #if defined(__APPLE__) || defined(WIN32)
   #ifndef PATH_MAX
     #define PATH_MAX MAX_PATH
@@ -158,20 +158,21 @@ int main(int argc, char **argv) {
   const char *assetPath = "assets.zip";
 #endif
 
-  appInit(assetPath, 1);
-}
+  setScreenWidth(SCREEN_WIDTH);
+  setScreenHeight(SCREEN_HEIGHT);
+  int width, height;
+  glfwGetFramebufferSize(window, &width, &height);
+  appInit(width, height, assetPath, 1);
+  }
+
 
   lastTime = 0;
   while (!glfwWindowShouldClose(window)) {
-    int width, height;
-
-    glfwGetFramebufferSize(window, &width, &height);
-
     curTime = _getTime();
     delta =(curTime-lastTime);
     lastTime = curTime;
 
-    if(appRender(delta, width, height)){
+    if(appRender(delta)){
       glfwSetWindowShouldClose(window, GL_TRUE);
       break;
     }else{

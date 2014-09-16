@@ -2,8 +2,8 @@
 #define _H_GRAPHICS_
 
 
-void initRender(void);
-void beginRenderFrame(unsigned int width, unsigned int height);
+void initRender(int framebufferWidth, int framebufferHeight);
+void beginRenderFrame();
 
 
 

@@ -7,7 +7,7 @@
 #endif
 
 
-void initRender(void) {
+void initRender(int framebufferWidth, int framebufferHeight){
   glEnable(GL_TEXTURE_2D);
 
   glEnable(GL_BLEND);
@@ -21,13 +21,12 @@ void initRender(void) {
   glEnableClientState(GL_VERTEX_ARRAY);
   quadGlobalInit();
   textureGlobalInit();
+  glEnableClientState(GL_VERTEX_ARRAY);
+  glViewport(0, 0, framebufferWidth, framebufferHeight);
 }
 
 
-void beginRenderFrame(unsigned int width, unsigned int height) {
-  glEnableClientState(GL_VERTEX_ARRAY);
-  glViewport(0, 0, width, height);
-
+void beginRenderFrame() {
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
 
