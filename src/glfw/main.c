@@ -163,16 +163,15 @@ int main(int argc, char **argv) {
 
   lastTime = 0;
   while (!glfwWindowShouldClose(window)) {
-    float ratio;
-    /*int width, height;*/
+    int width, height;
 
-    /*glfwGetFramebufferSize(window, &width, &height);*/
+    glfwGetFramebufferSize(window, &width, &height);
 
     curTime = _getTime();
     delta =(curTime-lastTime);
     lastTime = curTime;
 
-    if(appRender(delta, SCREEN_WIDTH, SCREEN_HEIGHT)){
+    if(appRender(delta, width, height)){
       glfwSetWindowShouldClose(window, GL_TRUE);
       break;
     }else{

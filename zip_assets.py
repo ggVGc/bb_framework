@@ -75,6 +75,8 @@ def zipDir(zipOut, r, stripCode=False, prefix=""):
 
   for root, dirs, files in os.walk(r):
     for f in files:
+      if stripCode and ('flash' in root or 'font' in root):
+        continue
       p = os.path.join(root, f)
       rp = os.path.relpath(p, r)
       if not rp.startswith(".") and not 'moonscript' in p and ((not stripCode and p.endswith('.lua')) or p.endswith(('.moon', '.png', '.xml','.txt', '.wav', '.xm'))):
@@ -95,6 +97,7 @@ if __name__ == '__main__':
   opts, args = getopt.getopt(sys.argv[1:],"ts")
 
   stripCode = ('-s','') in opts
+  skipFlash = stripCode
 
   if stripCode:
     print 'Stripping code'

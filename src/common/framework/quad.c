@@ -86,7 +86,7 @@ void quadDrawTexAlpha(Texture* tex, Matrix2 *m, double alpha){
   memcpy(&texCoordBuf[12*quadCount], tex->uvCoords, sizeof(GLfloat)*12);
   ++quadCount;
 
-  noLastHandle = alpha != -1;
+  noLastHandle = alpha != 1;
 }
 
 void quadDrawTex(Texture* tex, Matrix2 *m){
