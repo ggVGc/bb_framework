@@ -22,8 +22,7 @@ identifier = R'az'+R'AZ'+R'09'+P'_'
 anything = P(1)
 
 
-objectProcessor = (name, content, type) ->
-
+objectProcessor = (name, content, type, bounds) ->
   initContentPattern = '[%w%u%d_%-,%{%}%.=:"]*'
   initContent = ''
   if type == 'Bitmap'
@@ -51,6 +50,8 @@ objectProcessor = (name, content, type) ->
   ret=ret..'lib.'..name..'.new = function(mode, startPosition, loop)\n'
   ret=ret..'    local this = framework.'..type..'.new('..initContent..')\n'
   ret=ret..content
+  if bounds
+    ret=ret..'this.nominalBounds = {'..bounds..'}\n'
   ret=ret..'    return this\nend'
   --ret = name..' = framework.'..type..'.new!'
   ret
@@ -58,8 +59,10 @@ objectProcessor = (name, content, type) ->
 
 
 initInner = (identifier+S',{}.=')^1
-libObjPatt = P'(lib.' * C(identifier^1)*C((anything-P'}).prototype')^1)*P'}).prototype = p = new cjs.'*C(identifier^1)*P'();'
-middle = P'\np.nominalBounds = '*(P'null'+P'new cjs.Rectangle('*(S('-0123456789.,')^1)*P')')*P';\n\n'*P'\n'^-1
+libObjPatt1 = P'(lib.' * C(identifier^1)*C((anything-P'}).prototype')^1)*P'}).prototype = p = new cjs.'*C(identifier^1)*P'();'
+libObjPatt2 = P'\np.nominalBounds = '*(P'null'+P'new cjs.Rectangle('*C(   (S'-0123456789.,')^1      )*P')')
+libObjPatt = libObjPatt1*libObjPatt2
+middle = P';\n\n'*P'\n'^-1
 
 
 inFilePath = inFilePath\gsub '\\', '/'

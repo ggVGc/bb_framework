@@ -278,6 +278,7 @@ dofile 'framework/easel/ticker.moon'
 dofile 'framework/easel/matrix2d.moon'
 dofile 'framework/easel/display_object.moon'
 dofile 'framework/easel/cjs_bitmap.moon'
+dofile 'framework/easel/cjs_button.moon'
 dofile 'framework/easel/container.moon'
 dofile 'framework/easel/movie_clip.moon'
 dofile 'framework/streaming_audio.lua'
@@ -310,8 +311,10 @@ end
 
 
 
+local freezeFrameCount = 0
 function framework.init()
   main = doCall(Main.new)
+  freezeFrameCount = 2
 end
 
 
@@ -323,6 +326,10 @@ function framework.doFrame(deltaMs)
   local d
   if deltaMs>0 then d = deltaMs else d = 0 end
   if running and _c_framework.isAppBroken() == 0 then
+    if freezeFrameCount>0 then
+      freezeFrameCount = freezeFrameCount-1
+      d = 0
+    end
     doCall(function()
       main.doFrame(d)
     end)

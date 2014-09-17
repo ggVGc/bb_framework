@@ -66,13 +66,16 @@ static void error_callback(int error, const char* description) {
 
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
   if(key>=GLFW_KEY_A && key<=GLFW_KEY_Z){
-    if(action==GLFW_KEY_DOWN){
-        setKeyPressed(key);
-    }else if(action==GLFW_KEY_UP){
-        setKeyPressed(key);
+    if(action==GLFW_PRESS){
+      setKeyPressed(key);
+    }else if(action==GLFW_RELEASE){
+      setKeyReleased(key);
     }
-    glfwSetWindowShouldClose(window, GL_TRUE);
   }
+}
+
+static void char_callback(GLFWwindow* window, unsigned int ch) {
+  setKeyPressed(ch);
 }
 
 static void mouse_callback(GLFWwindow* window, int button, int action, int mods) {
@@ -110,7 +113,8 @@ int main(int argc, char **argv) {
   }
 
   glfwMakeContextCurrent(window);
-  glfwSetKeyCallback(window, key_callback);
+  /*glfwSetKeyCallback(window, key_callback);*/
+  glfwSetCharCallback(window, char_callback);
   glfwSetMouseButtonCallback(window, mouse_callback);
   glfwSetCursorPosCallback(window, cursor_pos_callback);
 
@@ -166,7 +170,7 @@ int main(int argc, char **argv) {
   }
 
 
-  lastTime = 0;
+  lastTime = _getTime();
   while (!glfwWindowShouldClose(window)) {
     curTime = _getTime();
     delta =(curTime-lastTime);

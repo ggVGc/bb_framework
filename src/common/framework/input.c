@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include "framework/input.h"
 #include "util.h"
 
@@ -52,11 +54,13 @@ void setCursorDownState(int isDown)
 
 void setKeyPressed(int keyCode){
   if(keyCode<MAX_KEYS && keyCode>=0){
+    /*printf("Key down: %i\n", keyCode);*/
     keyStates[keyCode] = 1;
   }
 }
 void setKeyReleased(int keyCode){
   if(keyCode<MAX_KEYS && keyCode>=0){
+    /*printf("Key release: %i\n", keyCode);*/
     keyStates[keyCode] = 0;
   }
 }

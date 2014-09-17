@@ -105,10 +105,11 @@ new: ->
     return true
 
   
-  --p.removeAllChildren = function() {
-      --var kids = self.children;
-      --while (kids.length) { kids.pop().parent = nil; }
-  --};
+  self.removeAllChildren = ->
+    iterArrsRev self.children, (c, i)->
+      c.parent = nil
+      table.remove self.children, i
+
 
   
   --p.getChildAt = function(index) {
@@ -241,7 +242,7 @@ new: ->
 
   
   self._tick = (props) ->
-    if self.tickChildren
+    if self.tickEnabled and self.tickChildren
       for i=#self.children, 1, -1
         child = self.children[i]
         if child.tickEnabled and child._tick
