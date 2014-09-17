@@ -56,7 +56,7 @@ static long _getTime(void) {
 }
 
 
-const int SCREEN_WIDTH = 960; //screen dimesions
+const int SCREEN_WIDTH = 960;
 const int SCREEN_HEIGHT = 640;
 
 
@@ -65,11 +65,12 @@ static void error_callback(int error, const char* description) {
 }
 
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+  int k = key-GLFW_KEY_A+'a';
   if(key>=GLFW_KEY_A && key<=GLFW_KEY_Z){
     if(action==GLFW_PRESS){
-      setKeyPressed(key);
+      setKeyPressed(k);
     }else if(action==GLFW_RELEASE){
-      setKeyReleased(key);
+      setKeyReleased(k);
     }
   }
 }
@@ -103,8 +104,12 @@ int main(int argc, char **argv) {
   glfwSetErrorCallback(error_callback);
 
 
-  if (!glfwInit())
+  if (!glfwInit()){
     exit(EXIT_FAILURE);
+  }
+
+  glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+  /*glfwWindowHint(GLFW_SAMPLES, 8);*/
 
   window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Framework", NULL, NULL);
   if (!window) {
@@ -113,32 +118,35 @@ int main(int argc, char **argv) {
   }
 
   glfwMakeContextCurrent(window);
-  /*glfwSetKeyCallback(window, key_callback);*/
-  glfwSetCharCallback(window, char_callback);
+  glfwSetKeyCallback(window, key_callback);
+  /*glfwSetCharCallback(window, char_callback);*/
   glfwSetMouseButtonCallback(window, mouse_callback);
   glfwSetCursorPosCallback(window, cursor_pos_callback);
 
   glfwSwapInterval(1);
 
   {
+	  int width, height;
 #if defined(__APPLE__) || defined(WIN32)
   #ifndef PATH_MAX
     #define PATH_MAX MAX_PATH
   #endif
 
+  #define PATH_SIZE 2048
+
   const char *assets = "assets.zip";
-  char execPath[512+1];
-  char fullPath[512+1];
-  char assetPath[512+1];
+  char execPath[PATH_SIZE+1];
+  char fullPath[PATH_SIZE+1];
+  char assetPath[PATH_SIZE+1];
 #ifdef __APPLE__
-    uint32_t pathSize;
+    uint32_t pathSize = PATH_SIZE;
     int ret;
     pid_t pid; 
 
   if(_NSGetExecutablePath(execPath, &pathSize) == 0){
     printf("Exec path: %s\n", execPath);
   }else{
-    printf("Exec path size needs to be: %i\n", pathSize);
+    printf("Exec path size needs to be: %u\n", pathSize);
     pid = getpid();
     ret = proc_pidpath (pid, execPath, sizeof(execPath));
     if ( ret <= 0 ) {
@@ -162,9 +170,12 @@ int main(int argc, char **argv) {
   const char *assetPath = "assets.zip";
 #endif
 
-  setScreenWidth(SCREEN_WIDTH);
-  setScreenHeight(SCREEN_HEIGHT);
-  int width, height;
+
+  int screenW, screenH;
+  glfwGetWindowSize(window, &screenW, &screenH);
+  setScreenWidth(screenW);
+  setScreenHeight(screenH);
+  
   glfwGetFramebufferSize(window, &width, &height);
   appInit(width, height, assetPath, 1);
   }
