@@ -1,10 +1,10 @@
-package com.jumpz.frameworktest;
+package com.spacekomodo.berrybounce;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -24,15 +24,18 @@ import com.chartboost.sdk.ChartboostDelegate;
 import com.chartboost.sdk.Model.CBError.CBClickError;
 import com.chartboost.sdk.Model.CBError.CBImpressionError;
 import com.chartboost.sdk.CBPreferences;
+import com.facebook.UiLifecycleHelper;
+import com.facebook.widget.FacebookDialog;
 
 
-public class FrameworkTest extends Activity {
+public class MainActivity extends Activity {
   private static final String CHARTBOOST_TAG = "Chartboost";
 
   static {
     System.loadLibrary("jumpz_framework");
   }
   private Chartboost cb;
+  private UiLifecycleHelper uiHelper;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -43,12 +46,31 @@ public class FrameworkTest extends Activity {
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     view = new GLView(this);
     setContentView(view);
-	//setContentView(R.layout.main);
 
     this.cb = Chartboost.sharedChartboost();
     String appId = "53e2817b89b0bb7a9909427d";
     String appSignature = "57f6d5ff55b433c3eb75b0fd9261ef781c5e4f26";
     this.cb.onCreate(this, appId, appSignature, this.chartBoostDelegate);
+
+    uiHelper = new UiLifecycleHelper(this, null);
+    uiHelper.onCreate(savedInstanceState);
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
+      @Override
+      public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
+          Log.e("Activity", String.format("Error: %s", error.toString()));
+      }
+
+      @Override
+      public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
+          Log.i("Activity", "Success!");
+      }
+    });
   }
 
   @Override
@@ -62,6 +84,17 @@ public class FrameworkTest extends Activity {
     //this.cb.showInterstitial();
   }
 
+  public void facebookPost(){
+    FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(this)
+            .setName("BerryBounceTest")
+            .setCaption("BBCaption")
+            .setDescription("Playing Berry Bounce like a pro")
+            .setPicture("http://www.berrybounce.com/share_image.png")
+            .setLink("http://www.berrybounce.com")
+            .build();
+    uiHelper.trackPendingDialogCall(shareDialog.present());
+  }
+
   @Override
   public void onRestart() {
     super.onRestart();
@@ -73,6 +106,7 @@ public class FrameworkTest extends Activity {
   protected void onPause() {
     super.onPause();
     System.out.println("ACTIVITY: PAUSE");
+    uiHelper.onPause();
     //view.onPause();
   }
 
@@ -81,10 +115,16 @@ public class FrameworkTest extends Activity {
     super.onResume();
     System.out.println("ACTIVITY: RESUME");
     view.onResume();
+    uiHelper.onResume();
   }
 
   @Override
-  //protected void onDestroy() {
+  protected void onSaveInstanceState(Bundle outState) {
+      super.onSaveInstanceState(outState);
+      uiHelper.onSaveInstanceState(outState);
+  }
+
+  @Override
   protected void onStop() {
     super.onStop();
     System.out.println("ACTIVITY: STOP");
@@ -98,6 +138,7 @@ public class FrameworkTest extends Activity {
     super.onDestroy();
     System.out.println("ACTIVITY: DESTROY");
     this.cb.onDestroy(this);
+    uiHelper.onDestroy();
   }
 
   @Override
@@ -196,7 +237,7 @@ public class FrameworkTest extends Activity {
       // Show a house ad or do something else when a chartboost interstitial fails to load
 
       Log.i(CHARTBOOST_TAG, "INTERSTITIAL '"+location+"' REQUEST FAILED - " + error.name());
-      Toast.makeText(FrameworkTest.this, "Interstitial '"+location+"' Load Failed",
+      Toast.makeText(MainActivity.this, "Interstitial '"+location+"' Load Failed",
           Toast.LENGTH_SHORT).show();
     }
 
@@ -218,7 +259,7 @@ public class FrameworkTest extends Activity {
       cb.cacheInterstitial(location);
 
       Log.i(CHARTBOOST_TAG, "INTERSTITIAL '"+location+"' DISMISSED");
-      Toast.makeText(FrameworkTest.this, "Dismissed Interstitial '"+location+"'",
+      Toast.makeText(MainActivity.this, "Dismissed Interstitial '"+location+"'",
           Toast.LENGTH_SHORT).show();
     }
 
@@ -233,7 +274,7 @@ public class FrameworkTest extends Activity {
     @Override
     public void didCloseInterstitial(String location) {
       Log.i(CHARTBOOST_TAG, "INSTERSTITIAL '"+location+"' CLOSED");
-      Toast.makeText(FrameworkTest.this, "Closed Interstitial '"+location+"'",
+      Toast.makeText(MainActivity.this, "Closed Interstitial '"+location+"'",
           Toast.LENGTH_SHORT).show();
     }
 
@@ -248,7 +289,7 @@ public class FrameworkTest extends Activity {
     @Override
     public void didClickInterstitial(String location) {
       Log.i(CHARTBOOST_TAG, "DID CLICK INTERSTITIAL '"+location+"'");
-      Toast.makeText(FrameworkTest.this, "Clicked Interstitial '"+location+"'",
+      Toast.makeText(MainActivity.this, "Clicked Interstitial '"+location+"'",
           Toast.LENGTH_SHORT).show();
     }
 
@@ -281,7 +322,7 @@ public class FrameworkTest extends Activity {
     public void didFailToRecordClick(String uri, CBClickError error) {
 
       Log.i(CHARTBOOST_TAG, "FAILED TO RECORD CLICK " + (uri != null ? uri : "null") + ", error: " + error.name());
-      Toast.makeText(FrameworkTest.this, "URL '"+uri+"' Click Failed",
+      Toast.makeText(MainActivity.this, "URL '"+uri+"' Click Failed",
           Toast.LENGTH_SHORT).show();
     }
 
@@ -347,7 +388,7 @@ public class FrameworkTest extends Activity {
     @Override
     public void didFailToLoadMoreApps(CBImpressionError error) {
       Log.i(CHARTBOOST_TAG, "MORE APPS REQUEST FAILED - " + error.name());
-      Toast.makeText(FrameworkTest.this, "More Apps Load Failed",
+      Toast.makeText(MainActivity.this, "More Apps Load Failed",
           Toast.LENGTH_SHORT).show();
 
     }
@@ -376,7 +417,7 @@ public class FrameworkTest extends Activity {
     @Override
     public void didDismissMoreApps() {
       Log.i(CHARTBOOST_TAG, "MORE APPS DISMISSED");
-      Toast.makeText(FrameworkTest.this, "Dismissed More Apps",
+      Toast.makeText(MainActivity.this, "Dismissed More Apps",
           Toast.LENGTH_SHORT).show();
     }
 
@@ -391,7 +432,7 @@ public class FrameworkTest extends Activity {
     @Override
     public void didCloseMoreApps() {
       Log.i(CHARTBOOST_TAG, "MORE APPS CLOSED");
-      Toast.makeText(FrameworkTest.this, "Closed More Apps",
+      Toast.makeText(MainActivity.this, "Closed More Apps",
           Toast.LENGTH_SHORT).show();
     }
 
@@ -406,7 +447,7 @@ public class FrameworkTest extends Activity {
     @Override
     public void didClickMoreApps() {
       Log.i(CHARTBOOST_TAG, "MORE APPS CLICKED");
-      Toast.makeText(FrameworkTest.this, "Clicked More Apps",
+      Toast.makeText(MainActivity.this, "Clicked More Apps",
           Toast.LENGTH_SHORT).show();
     }
 
@@ -446,19 +487,13 @@ public class FrameworkTest extends Activity {
   private GLView view;
 }
 
-
-
-
-class GLView extends GLSurfaceView 
-{
-
-
-  public GLView(Context context) 
+class GLView extends GLSurfaceView {
+  public GLView(MainActivity activity) 
   {
-    super(context);
+    super(activity);
     System.out.println("GLView created");
     super.setEGLConfigChooser(8 , 8, 8, 8, 16, 0);
-    renderer = new GLRenderer(context);
+    renderer = new GLRenderer(activity);
     setRenderer(renderer);
   }
 
@@ -489,8 +524,7 @@ class GLView extends GLSurfaceView
   }
 
 
-  public void onPause()
-  {
+  public void onPause() {
     System.out.println("GLView: PAUSE");
     renderer.pause();
   }
@@ -504,11 +538,11 @@ class GLView extends GLSurfaceView
 }
 
 class GLRenderer implements GLSurfaceView.Renderer {
-  private Context context;
+  private MainActivity activity;
 
-  public GLRenderer (Context context) {
+  public GLRenderer (MainActivity activity) {
     System.out.println("GLRenderer created");
-    this.context = context;
+    this.activity = activity;
   }
 
   public void start() {
@@ -525,22 +559,8 @@ class GLRenderer implements GLSurfaceView.Renderer {
     die = true;
   }
 
-  public void onSurfaceCreated(GL10 gl, EGLConfig config) 
-  {
+  public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     System.out.println("GLRenderer: SURFACE CREATED");
-    // return apk file path (or null on error)
-    //String apkFilePath = null;
-    //ApplicationInfo appInfo = null;
-    //PackageManager packMgmr = context.getPackageManager();
-    //try {
-    //appInfo = packMgmr.getApplicationInfo("com.jumpz.frameworktest", 0);
-    //} catch (NameNotFoundException e) {
-    //e.printStackTrace();
-    //throw new RuntimeException("Unable to locate assets, aborting...");
-    //}
-    //apkFilePath = appInfo.sourceDir;
-
-    //nativeInit(apkFilePath);
   }
 
   public void onSurfaceChanged(GL10 gl, int w, int h) 
@@ -549,42 +569,41 @@ class GLRenderer implements GLSurfaceView.Renderer {
 
     String apkFilePath = null;
     ApplicationInfo appInfo = null;
-    PackageManager packMgmr = context.getPackageManager();
+    PackageManager packMgmr = activity.getPackageManager();
     try {
-      appInfo = packMgmr.getApplicationInfo("com.jumpz.frameworktest", 0);
+      appInfo = packMgmr.getApplicationInfo("com.spacekomodo.berrybounce", 0);
     } catch (NameNotFoundException e) {
       e.printStackTrace();
       throw new RuntimeException("Unable to locate assets, aborting...");
     }
     apkFilePath = appInfo.sourceDir;
-
     nativeInit(apkFilePath);
-
-
     nativeResize(w, h);
+
   }
 
   boolean dead = false;
 
-  public void onDrawFrame(GL10 gl) 
-  {
+  public void onDrawFrame(GL10 gl) {
     if(dead){
       return;
     }
-    if(die)
-    {
+    if(die) {
       nativeOnStop();
       dead = true;
     }
-    else
-    {
+    else {
       nativeRender();
     }
   }
 
+  public void facebookPost(){
+    System.out.println("ACTIVITY: FACBOOK POST");
+    this.activity.facebookPost();
+  }
 
   private static native void nativeOnStop();
   private static native void nativeInit(String apkPath);
   private static native void nativeResize(int w, int h);
-  private static native void nativeRender();
+  private native void nativeRender();
 }

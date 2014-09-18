@@ -23,6 +23,7 @@
 #include "framework/rawbitmapdata.h"
 #include "framework/input.h"
 #include "framework/streaming_audio.h"
+#include "framework/facebook.h"
 
 
 %extend Camera{

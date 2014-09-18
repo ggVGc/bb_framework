@@ -5258,6 +5258,30 @@ fail:
 }
 
 
+static int _wrap_DisplayObject_getConcatAlpha(lua_State* L) {
+  int SWIG_arg = 0;
+  DisplayObject *arg1 = (DisplayObject *) 0 ;
+  double result;
+  
+  SWIG_check_num_args("DisplayObject_getConcatAlpha",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_getConcatAlpha",1,"DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_getConcatAlpha",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  result = (double)DisplayObject_getConcatAlpha(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_Camera_posX_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Camera *arg1 = (struct Camera *) 0 ;
@@ -6075,6 +6099,22 @@ fail:
 }
 
 
+static int _wrap_facebookPost(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("facebookPost",0,0)
+  facebookPost();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_screenWidth(lua_State* L) {
   int SWIG_arg = 0;
   int result;
@@ -6238,6 +6278,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "DisplayObject_setTransform", _wrap_DisplayObject_setTransform},
     { "DisplayObject_draw", _wrap_DisplayObject_draw},
     { "DisplayObject_getConcatenatedMatrix", _wrap_DisplayObject_getConcatenatedMatrix},
+    { "DisplayObject_getConcatAlpha", _wrap_DisplayObject_getConcatAlpha},
     { "Camera_Foo", _wrap_Camera_Foo},
     { "cameraSetActive", _wrap_cameraSetActive},
     { "cameraInit", _wrap_cameraInit},
@@ -6263,6 +6304,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "streamingAudioSetLooping", _wrap_streamingAudioSetLooping},
     { "streamingAudioStop", _wrap_streamingAudioStop},
     { "streamingAudioFree", _wrap_streamingAudioFree},
+    { "facebookPost", _wrap_facebookPost},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},

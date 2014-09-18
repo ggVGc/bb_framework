@@ -6,11 +6,12 @@
 #include "framework/resource_loading.h"
 #include "app.h"
 #include "framework/input.h"
+#include "framework/facebook.h"
 
 
 static int lastTime = 0;
 static int didInit = 0;
-static jstring apkPath;
+static const char *apkPath;
 
   static long
 _getTime(void) {
@@ -20,50 +21,66 @@ _getTime(void) {
 }
 
   void
-Java_com_jumpz_frameworktest_GLView_nativeOnCursorMove( JNIEnv*  env, jobject thiz, jint x, jint y) {
+Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorMove( JNIEnv*  env, jobject thiz, jint x, jint y) {
   setCursorPos(x, y);
 }
 
   void
-Java_com_jumpz_frameworktest_GLView_nativeOnCursorUp( JNIEnv*  env, jobject thiz) {
+Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorUp( JNIEnv*  env, jobject thiz) {
   setCursorDownState(0);
 }
 
     void
-Java_com_jumpz_frameworktest_GLView_nativeOnCursorDown( JNIEnv*  env, jobject thiz) {
+Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorDown( JNIEnv*  env, jobject thiz) {
   setCursorDownState(1);
 }
 
   void
-Java_com_jumpz_frameworktest_GLRenderer_nativeInit( JNIEnv*  env, jobject thiz, jstring apkPath_ ) {
-  apkPath = apkPath_;
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject thiz, jstring apkPath_ ) {
+  apkPath = (*env)->GetStringUTFChars(env, apkPath_, NULL); // Let's leak some memory..
   lastTime = _getTime();
   didInit = 0;
 }
 
   void
-Java_com_jumpz_frameworktest_GLRenderer_nativeResize( JNIEnv*  env, jobject  thiz, jint w, jint h ) {
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject  thiz, jint w, jint h ) {
   if(didInit != 1){
     setScreenWidth(w);
     setScreenHeight(h);
-    const char* path = (*env)->GetStringUTFChars(env, apkPath, NULL);
-    appInit(w, h, path, 1);
-    (*env)->ReleaseStringUTFChars(env, apkPath, path);
+    appInit(w, h, apkPath, 1);
     didInit = 1;
   }
   __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "resize w=%d h=%d", w, h);
 }
 
   void
-Java_com_jumpz_frameworktest_GLRenderer_nativeOnStop( JNIEnv*  env ) {
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeOnStop( JNIEnv*  env ) {
   resourcesCleanUp();
   appDeinit();
 }
 
+static jobject curThiz;
+static JNIEnv* curEnv;
 
   void
-Java_com_jumpz_frameworktest_GLRenderer_nativeRender( JNIEnv*  env ) {
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeRender( JNIEnv*  env, jobject thiz) {
+  curThiz = thiz;
+  curEnv = env;
   long curTime = _getTime();
   appRender(curTime - lastTime);
   lastTime = curTime;
+}
+
+void facebookPost(){
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThiz);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "facebookPost", "()V");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  (*curEnv)->CallVoidMethod(curEnv, curThiz, mid);
 }
