@@ -6115,6 +6115,73 @@ fail:
 }
 
 
+static int _wrap_adPrepareInterstitial(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("adPrepareInterstitial",0,0)
+  adPrepareInterstitial();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_adShowInterstitial(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("adShowInterstitial",0,0)
+  adShowInterstitial();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_adInterstitialDisplayed(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  
+  SWIG_check_num_args("adInterstitialDisplayed",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("adInterstitialDisplayed",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  adInterstitialDisplayed(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_adInterstitialClosed(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("adInterstitialClosed",0,0)
+  adInterstitialClosed();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_screenWidth(lua_State* L) {
   int SWIG_arg = 0;
   int result;
@@ -6305,6 +6372,10 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "streamingAudioStop", _wrap_streamingAudioStop},
     { "streamingAudioFree", _wrap_streamingAudioFree},
     { "facebookPost", _wrap_facebookPost},
+    { "adPrepareInterstitial", _wrap_adPrepareInterstitial},
+    { "adShowInterstitial", _wrap_adShowInterstitial},
+    { "adInterstitialDisplayed", _wrap_adInterstitialDisplayed},
+    { "adInterstitialClosed", _wrap_adInterstitialClosed},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},

@@ -24,6 +24,7 @@
 #include "framework/input.h"
 #include "framework/streaming_audio.h"
 #include "framework/facebook.h"
+#include "framework/ads.h"
 
 
 %extend Camera{

@@ -282,6 +282,7 @@ dofile 'framework/easel/cjs_button.moon'
 dofile 'framework/easel/container.moon'
 dofile 'framework/easel/movie_clip.moon'
 dofile 'framework/streaming_audio.lua'
+dofile 'framework/ads.moon'
 
 dofile "main.moon"
 --dofile("framework/test/display_objects_test.moon")

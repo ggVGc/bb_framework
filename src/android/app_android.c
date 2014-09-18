@@ -21,29 +21,29 @@ _getTime(void) {
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorMove( JNIEnv*  env, jobject thiz, jint x, jint y) {
+Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorMove( JNIEnv*  env, jobject this, jint x, jint y) {
   setCursorPos(x, y);
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorUp( JNIEnv*  env, jobject thiz) {
+Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorUp( JNIEnv*  env) {
   setCursorDownState(0);
 }
 
     void
-Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorDown( JNIEnv*  env, jobject thiz) {
+Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorDown( JNIEnv*  env) {
   setCursorDownState(1);
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject thiz, jstring apkPath_ ) {
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject this, jstring apkPath_ ) {
   apkPath = (*env)->GetStringUTFChars(env, apkPath_, NULL); // Let's leak some memory..
   lastTime = _getTime();
   didInit = 0;
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject  thiz, jint w, jint h ) {
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject  this, jint w, jint h ) {
   if(didInit != 1){
     setScreenWidth(w);
     setScreenHeight(h);
@@ -59,20 +59,68 @@ Java_com_spacekomodo_berrybounce_GLRenderer_nativeOnStop( JNIEnv*  env ) {
   appDeinit();
 }
 
-static jobject curThiz;
+
+static jobject curThis;
 static JNIEnv* curEnv;
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeRender( JNIEnv*  env, jobject thiz) {
-  curThiz = thiz;
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeRender( JNIEnv*  env, jobject this) {
   curEnv = env;
+  curThis = this;
   long curTime = _getTime();
   appRender(curTime - lastTime);
   lastTime = curTime;
 }
 
+
+  void
+Java_com_spacekomodo_berrybounce_MainActivity_interstitialClosed( JNIEnv*  env, jobject this) {
+  adInterstitialClosed();
+}
+
+  void
+Java_com_spacekomodo_berrybounce_MainActivity_interstitialDisplayed( JNIEnv*  env, jobject this) {
+  adInterstitialDisplayed(1);
+}
+
+  void
+Java_com_spacekomodo_berrybounce_MainActivity_interstitialFailedDisplay( JNIEnv*  env, jobject this) {
+  adInterstitialDisplayed(0);
+}
+
+
+void adPrepareInterstitial(){
+  /*
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "prepareInterstitial", "()V");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  (*curEnv)->CallVoidMethod(curEnv, curThis, mid);
+  */
+}
+
+void adShowInterstitial(){
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "showInterstitial", "()V");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  (*curEnv)->CallVoidMethod(curEnv, curThis, mid);
+}
+
 void facebookPost(){
-  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThiz);
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
     return;
@@ -82,5 +130,5 @@ void facebookPost(){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
     return;
   }
-  (*curEnv)->CallVoidMethod(curEnv, curThiz, mid);
+  (*curEnv)->CallVoidMethod(curEnv, curThis, mid);
 }

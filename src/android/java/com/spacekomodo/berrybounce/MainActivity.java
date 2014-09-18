@@ -81,10 +81,24 @@ public class MainActivity extends Activity {
 
     CBPreferences.getInstance().setImpressionsUseActivities(true);
     this.cb.onStart(this);
-    //this.cb.showInterstitial();
   }
 
+  public void prepareInterstitial(){
+    this.cb.cacheInterstitial();
+  }
+
+  public void showInterstitial(){
+    this.cb.showInterstitial();
+  }
+
+  public boolean shouldNotifyInterstitialClosed = false;
+
+  public native void interstitialClosed();
+  public native void interstitialDisplayed();
+  public native void interstitialFailedDisplay();
+
   public void facebookPost(){
+    System.out.println("ACTIVITY: FACBOOK POST");
     FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(this)
             .setName("BerryBounceTest")
             .setCaption("BBCaption")
@@ -237,8 +251,14 @@ public class MainActivity extends Activity {
       // Show a house ad or do something else when a chartboost interstitial fails to load
 
       Log.i(CHARTBOOST_TAG, "INTERSTITIAL '"+location+"' REQUEST FAILED - " + error.name());
-      Toast.makeText(MainActivity.this, "Interstitial '"+location+"' Load Failed",
-          Toast.LENGTH_SHORT).show();
+      //Toast.makeText(MainActivity.this, "Interstitial '"+location+"' Load Failed",Toast.LENGTH_SHORT).show();
+
+      runOnUiThread(new Runnable() {
+         @Override
+         public void run() {
+          interstitialFailedDisplay();
+        }
+      });
     }
 
     /*
@@ -254,13 +274,11 @@ public class MainActivity extends Activity {
      */
     @Override
     public void didDismissInterstitial(String location) {
-
       // Immediately re-caches an interstitial
       cb.cacheInterstitial(location);
 
       Log.i(CHARTBOOST_TAG, "INTERSTITIAL '"+location+"' DISMISSED");
-      Toast.makeText(MainActivity.this, "Dismissed Interstitial '"+location+"'",
-          Toast.LENGTH_SHORT).show();
+      //Toast.makeText(MainActivity.this, "Dismissed Interstitial '"+location+"'",Toast.LENGTH_SHORT).show();
     }
 
     /*
@@ -274,8 +292,8 @@ public class MainActivity extends Activity {
     @Override
     public void didCloseInterstitial(String location) {
       Log.i(CHARTBOOST_TAG, "INSTERSTITIAL '"+location+"' CLOSED");
-      Toast.makeText(MainActivity.this, "Closed Interstitial '"+location+"'",
-          Toast.LENGTH_SHORT).show();
+      //Toast.makeText(MainActivity.this, "Closed Interstitial '"+location+"'",Toast.LENGTH_SHORT).show();
+      shouldNotifyInterstitialClosed = true;
     }
 
     /*
@@ -289,8 +307,7 @@ public class MainActivity extends Activity {
     @Override
     public void didClickInterstitial(String location) {
       Log.i(CHARTBOOST_TAG, "DID CLICK INTERSTITIAL '"+location+"'");
-      Toast.makeText(MainActivity.this, "Clicked Interstitial '"+location+"'",
-          Toast.LENGTH_SHORT).show();
+      //Toast.makeText(MainActivity.this, "Clicked Interstitial '"+location+"'",Toast.LENGTH_SHORT).show();
     }
 
     /*
@@ -304,6 +321,12 @@ public class MainActivity extends Activity {
     @Override
     public void didShowInterstitial(String location) {
       Log.i(CHARTBOOST_TAG, "INTERSTITIAL '" + location + "' SHOWN");
+      runOnUiThread(new Runnable() {
+         @Override
+         public void run() {
+            interstitialDisplayed();
+          }
+      });
     }
 
     /*
@@ -322,8 +345,7 @@ public class MainActivity extends Activity {
     public void didFailToRecordClick(String uri, CBClickError error) {
 
       Log.i(CHARTBOOST_TAG, "FAILED TO RECORD CLICK " + (uri != null ? uri : "null") + ", error: " + error.name());
-      Toast.makeText(MainActivity.this, "URL '"+uri+"' Click Failed",
-          Toast.LENGTH_SHORT).show();
+      //Toast.makeText(MainActivity.this, "URL '"+uri+"' Click Failed",Toast.LENGTH_SHORT).show();
     }
 
     /*
@@ -388,8 +410,7 @@ public class MainActivity extends Activity {
     @Override
     public void didFailToLoadMoreApps(CBImpressionError error) {
       Log.i(CHARTBOOST_TAG, "MORE APPS REQUEST FAILED - " + error.name());
-      Toast.makeText(MainActivity.this, "More Apps Load Failed",
-          Toast.LENGTH_SHORT).show();
+      //Toast.makeText(MainActivity.this, "More Apps Load Failed",Toast.LENGTH_SHORT).show();
 
     }
 
@@ -417,8 +438,7 @@ public class MainActivity extends Activity {
     @Override
     public void didDismissMoreApps() {
       Log.i(CHARTBOOST_TAG, "MORE APPS DISMISSED");
-      Toast.makeText(MainActivity.this, "Dismissed More Apps",
-          Toast.LENGTH_SHORT).show();
+      //Toast.makeText(MainActivity.this, "Dismissed More Apps",Toast.LENGTH_SHORT).show();
     }
 
     /*
@@ -432,8 +452,7 @@ public class MainActivity extends Activity {
     @Override
     public void didCloseMoreApps() {
       Log.i(CHARTBOOST_TAG, "MORE APPS CLOSED");
-      Toast.makeText(MainActivity.this, "Closed More Apps",
-          Toast.LENGTH_SHORT).show();
+      //Toast.makeText(MainActivity.this, "Closed More Apps", Toast.LENGTH_SHORT).show();
     }
 
     /*
@@ -447,8 +466,7 @@ public class MainActivity extends Activity {
     @Override
     public void didClickMoreApps() {
       Log.i(CHARTBOOST_TAG, "MORE APPS CLICKED");
-      Toast.makeText(MainActivity.this, "Clicked More Apps",
-          Toast.LENGTH_SHORT).show();
+      //Toast.makeText(MainActivity.this, "Clicked More Apps",Toast.LENGTH_SHORT).show();
     }
 
     /*
@@ -531,7 +549,6 @@ class GLView extends GLSurfaceView {
 
   GLRenderer renderer;
 
-
   private static native void nativeOnCursorDown();
   private static native void nativeOnCursorUp();
   private static native void nativeOnCursorMove(int x, int y);
@@ -593,14 +610,35 @@ class GLRenderer implements GLSurfaceView.Renderer {
       dead = true;
     }
     else {
+      if(activity.shouldNotifyInterstitialClosed){
+        activity.shouldNotifyInterstitialClosed = false;
+        activity.interstitialClosed();
+      }
       nativeRender();
     }
   }
 
-  public void facebookPost(){
-    System.out.println("ACTIVITY: FACBOOK POST");
+  private void facebookPost(){
     this.activity.facebookPost();
   }
+  private void showInterstitial(){
+    this.activity.runOnUiThread(new Runnable() {
+       @Override
+       public void run() {
+          activity.showInterstitial();
+        }
+    });
+  }
+  private void prepareInterstitial(){
+    this.activity.runOnUiThread(new Runnable() {
+       @Override
+       public void run() {
+          activity.prepareInterstitial();
+        }
+    });
+  }
+
+    
 
   private static native void nativeOnStop();
   private static native void nativeInit(String apkPath);

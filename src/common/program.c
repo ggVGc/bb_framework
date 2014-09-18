@@ -41,12 +41,13 @@ int loadstringWithName(lua_State *L, const char *s, const char* name) {
 	(loadstringWithName(L, s, name) || lua_pcall(L, 0, LUA_MULTRET, 0))
 
 
-void print_lua(lua_State* s){
+int print_lua(lua_State* s){
   if(lua_isboolean(s, -1)){
     trace(lua_toboolean(s,-1)?"true":"false");
   }else{
     trace(lua_tostring(s, -1));
   }
+  return 0;
 }
 
 int dofile(const char* filePath){
@@ -190,7 +191,10 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   /*
   RegLuaFuncGlobal(require);
   */
-  /*RegLuaFuncGlobal(print);*/
+
+#ifdef __ANDROID_API__
+  RegLuaFuncGlobal(print);
+#endif
 
   if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);
@@ -237,7 +241,6 @@ int appRender(long tick) {
 
   beginRenderFrame();
   lua_getglobal(vm, "framework");
-
 
   if (didInit == 0 && appBroken==0){
     didInit = 1;
@@ -311,6 +314,28 @@ int isAppBroken(void){
 void setAppBroken(int isBroken){
   trace("SETTING APP BROKEN");
   appBroken = 1;
+}
+
+void adInterstitialClosed(){
+  int ret;
+  lua_getglobal(vm, "framework");
+  lua_getfield(vm, -1, "ads");
+  lua_getfield(vm, -1, "interstitialCloseCallback");
+  if(callFunc(0,0) != 0) {
+    appBroken = 1;
+    return;
+  }
+}
+void adInterstitialDisplayed(int success){
+  int ret;
+  lua_getglobal(vm, "framework");
+  lua_getfield(vm, -1, "ads");
+  lua_getfield(vm, -1, "interstitialDisplayCallback");
+  lua_pushboolean(vm, success);
+  if(callFunc(1,0) != 0) {
+    appBroken = 1;
+    return;
+  }
 }
 
 

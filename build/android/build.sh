@@ -1,6 +1,5 @@
-
-txt="$HOME/stuff/work/android/android-ndk-r10/ndk-build"
-$txt 2> buildoutput.txt
+export NDK_DEBUG=1
+ndk-build 2> buildoutput.txt
 python build.py
 
 
