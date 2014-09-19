@@ -121,7 +121,7 @@ public class MainActivity extends Activity {
     super.onPause();
     System.out.println("ACTIVITY: PAUSE");
     uiHelper.onPause();
-    //view.onPause();
+    view.pause();
   }
 
   @Override
@@ -142,7 +142,6 @@ public class MainActivity extends Activity {
   protected void onStop() {
     super.onStop();
     System.out.println("ACTIVITY: STOP");
-    view.stop();
     this.cb.onStop(this);
   }
 
@@ -151,6 +150,7 @@ public class MainActivity extends Activity {
   protected void onDestroy() {
     super.onDestroy();
     System.out.println("ACTIVITY: DESTROY");
+    view.stop();
     this.cb.onDestroy(this);
     uiHelper.onDestroy();
   }
@@ -308,6 +308,7 @@ public class MainActivity extends Activity {
     public void didClickInterstitial(String location) {
       Log.i(CHARTBOOST_TAG, "DID CLICK INTERSTITIAL '"+location+"'");
       //Toast.makeText(MainActivity.this, "Clicked Interstitial '"+location+"'",Toast.LENGTH_SHORT).show();
+      shouldNotifyInterstitialClosed = true;
     }
 
     /*
@@ -531,18 +532,23 @@ class GLView extends GLSurfaceView {
     return true;
   }
 
-  public void start()
-  {
+
+  @Override
+  public void onResume() {
+    super.onResume();
     renderer.start();
   }
 
-  public void stop()
-  {
+  public void start() {
+    renderer.start();
+  }
+
+  public void stop() {
     renderer.stop();
   }
 
 
-  public void onPause() {
+  public void pause() {
     System.out.println("GLView: PAUSE");
     renderer.pause();
   }
@@ -563,6 +569,7 @@ class GLRenderer implements GLSurfaceView.Renderer {
   }
 
   public void start() {
+    paused = false;
   }
 
   public void stop() {
@@ -571,17 +578,18 @@ class GLRenderer implements GLSurfaceView.Renderer {
 
 
   boolean die = false;
+  boolean paused = false;
 
   public void pause() {
-    die = true;
+    paused = true;
   }
 
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     System.out.println("GLRenderer: SURFACE CREATED");
   }
 
-  public void onSurfaceChanged(GL10 gl, int w, int h) 
-  {
+  boolean inited = false;
+  public void onSurfaceChanged(GL10 gl, int w, int h) {
     System.out.println("GLRenderer: SURFACE CHANGED");
 
     String apkFilePath = null;
@@ -594,15 +602,17 @@ class GLRenderer implements GLSurfaceView.Renderer {
       throw new RuntimeException("Unable to locate assets, aborting...");
     }
     apkFilePath = appInfo.sourceDir;
-    nativeInit(apkFilePath);
-    nativeResize(w, h);
-
+    if(!inited){
+      nativeInit(apkFilePath);
+      nativeResize(w, h);
+      inited = true;
+    }
   }
 
   boolean dead = false;
 
   public void onDrawFrame(GL10 gl) {
-    if(dead){
+    if(dead || paused){
       return;
     }
     if(die) {

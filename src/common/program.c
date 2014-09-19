@@ -192,9 +192,11 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   RegLuaFuncGlobal(require);
   */
 
-#ifdef __ANDROID_API__
+/*
+#ifdef ANDROID_NDK
   RegLuaFuncGlobal(print);
 #endif
+*/
 
   if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);
