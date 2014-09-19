@@ -39,6 +39,8 @@
     <ClCompile Include="..\..\..\src\common\framework\rect.c" />
     <ClCompile Include="..\..\..\src\common\framework\resource_loading.c" />
     <ClCompile Include="..\..\..\src\common\framework\streaming_audio.c" />
+    <ClCompile Include="..\..\..\src\common\framework\facebook.c" />
+    <ClCompile Include="..\..\..\src\common\framework\ads.c" />
     <ClCompile Include="..\..\..\src\common\framework\texture.c" />
     <ClCompile Include="..\..\..\src\common\framework\util.c" />
     <ClCompile Include="..\..\..\src\common\framework_wrap.c" />

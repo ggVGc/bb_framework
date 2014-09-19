@@ -127,6 +127,7 @@ int main(int argc, char **argv) {
 
   {
 	  int width, height;
+	  int screenW, screenH;
 #if defined(__APPLE__) || defined(WIN32)
   #ifndef PATH_MAX
     #define PATH_MAX MAX_PATH
@@ -171,7 +172,7 @@ int main(int argc, char **argv) {
 #endif
 
 
-  int screenW, screenH;
+  
   glfwGetWindowSize(window, &screenW, &screenH);
   setScreenWidth(screenW);
   setScreenHeight(screenH);
