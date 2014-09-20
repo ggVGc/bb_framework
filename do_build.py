@@ -47,7 +47,6 @@ def buildLib(outfile, srcDirs, srcFiles, cflags):
 
 
 def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
-
   cfiles = srcFiles
   cppfiles = ""
   for d in srcDirs:
@@ -62,7 +61,10 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
   for f in cfiles:
     if not os.path.exists("obj/framework"):
       os.mkdir("obj/framework")
-    out = os.path.join("obj","framework", os.path.split(f)[1]+".o")
+    n = f.replace('.', '_').replace('/', '_').replace(" ", '')
+    print n
+    #n = os.path.split(f)[1] 
+    out = os.path.join("obj","framework", n+".o")
     ofiles += " "+out
     ofiles
     cmd = "gcc -g "+cflags+" -c "+f+" -o "+out
@@ -139,7 +141,8 @@ def buildFramework():
       "./src/common",
       "./src/common/framework",
       "./src/glfw",
-      "./src/glfw/framework"
+      "./src/glfw/framework",
+      "./src/openal"
       ]
  
   srcFiles = [
@@ -166,7 +169,7 @@ def buildFramework():
   else:
     cflags += ' -I./deps/common/luajit/src '
     commonLibString += ' -lluajit '
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/deps/common/luajit/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU ")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/deps/common/luajit/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU -lopenal")
 
 
 

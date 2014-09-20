@@ -2600,15 +2600,15 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_BitmapData swig_types[0]
-#define SWIGTYPE_p_Camera swig_types[1]
-#define SWIGTYPE_p_DisplayObject swig_types[2]
-#define SWIGTYPE_p_GLfloat swig_types[3]
-#define SWIGTYPE_p_GLuint swig_types[4]
-#define SWIGTYPE_p_Matrix2 swig_types[5]
-#define SWIGTYPE_p_RawBitmapData swig_types[6]
-#define SWIGTYPE_p_Rect swig_types[7]
-#define SWIGTYPE_p_StreamingAudio_T swig_types[8]
+#define SWIGTYPE_p_Audio_T swig_types[0]
+#define SWIGTYPE_p_BitmapData swig_types[1]
+#define SWIGTYPE_p_Camera swig_types[2]
+#define SWIGTYPE_p_DisplayObject swig_types[3]
+#define SWIGTYPE_p_GLfloat swig_types[4]
+#define SWIGTYPE_p_GLuint swig_types[5]
+#define SWIGTYPE_p_Matrix2 swig_types[6]
+#define SWIGTYPE_p_RawBitmapData swig_types[7]
+#define SWIGTYPE_p_Rect swig_types[8]
 #define SWIGTYPE_p_Texture swig_types[9]
 #define SWIGTYPE_p_int swig_types[10]
 #define SWIGTYPE_p_unsigned_char swig_types[11]
@@ -2633,7 +2633,7 @@ static swig_module_info swig_module = {swig_types, 12, 0, 0, 0, 0};
 #include "framework/display_object.h"
 #include "framework/rawbitmapdata.h"
 #include "framework/input.h"
-#include "framework/streaming_audio.h"
+#include "framework/audio.h"
 #include "app.h"
 
 SWIGINTERN void Camera_Foo(void){}
@@ -5984,16 +5984,33 @@ fail:
 }
 
 
-static int _wrap_streamingAudioLoad(lua_State* L) {
+static int _wrap_audioGlobalInit(lua_State* L) {
+  int SWIG_arg = 0;
+  int result;
+  
+  SWIG_check_num_args("audioGlobalInit",0,0)
+  result = (int)audioGlobalInit();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_audioLoad(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
-  StreamingAudio *result = 0 ;
+  Audio *result = 0 ;
   
-  SWIG_check_num_args("streamingAudioLoad",1,1)
-  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("streamingAudioLoad",1,"char const *");
+  SWIG_check_num_args("audioLoad",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("audioLoad",1,"char const *");
   arg1 = (char *)lua_tostring(L, 1);
-  result = (StreamingAudio *)streamingAudioLoad((char const *)arg1);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_StreamingAudio_T,0); SWIG_arg++; 
+  result = (Audio *)audioLoad((char const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio_T,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6004,18 +6021,18 @@ fail:
 }
 
 
-static int _wrap_streamingAudioPlay(lua_State* L) {
+static int _wrap_audioPlay(lua_State* L) {
   int SWIG_arg = 0;
-  StreamingAudio *arg1 = (StreamingAudio *) 0 ;
+  Audio *arg1 = (Audio *) 0 ;
   
-  SWIG_check_num_args("streamingAudioPlay",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("streamingAudioPlay",1,"StreamingAudio *");
+  SWIG_check_num_args("audioPlay",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioPlay",1,"Audio *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_StreamingAudio_T,0))){
-    SWIG_fail_ptr("streamingAudioPlay",1,SWIGTYPE_p_StreamingAudio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
+    SWIG_fail_ptr("audioPlay",1,SWIGTYPE_p_Audio_T);
   }
   
-  streamingAudioPlay(arg1);
+  audioPlay(arg1);
   
   return SWIG_arg;
   
@@ -6027,21 +6044,21 @@ fail:
 }
 
 
-static int _wrap_streamingAudioSetLooping(lua_State* L) {
+static int _wrap_audioSetLooping(lua_State* L) {
   int SWIG_arg = 0;
-  StreamingAudio *arg1 = (StreamingAudio *) 0 ;
+  Audio *arg1 = (Audio *) 0 ;
   int arg2 ;
   
-  SWIG_check_num_args("streamingAudioSetLooping",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("streamingAudioSetLooping",1,"StreamingAudio *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("streamingAudioSetLooping",2,"int");
+  SWIG_check_num_args("audioSetLooping",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioSetLooping",1,"Audio *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("audioSetLooping",2,"int");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_StreamingAudio_T,0))){
-    SWIG_fail_ptr("streamingAudioSetLooping",1,SWIGTYPE_p_StreamingAudio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
+    SWIG_fail_ptr("audioSetLooping",1,SWIGTYPE_p_Audio_T);
   }
   
   arg2 = (int)lua_tonumber(L, 2);
-  streamingAudioSetLooping(arg1,arg2);
+  audioSetLooping(arg1,arg2);
   
   return SWIG_arg;
   
@@ -6053,18 +6070,18 @@ fail:
 }
 
 
-static int _wrap_streamingAudioStop(lua_State* L) {
+static int _wrap_audioStop(lua_State* L) {
   int SWIG_arg = 0;
-  StreamingAudio *arg1 = (StreamingAudio *) 0 ;
+  Audio *arg1 = (Audio *) 0 ;
   
-  SWIG_check_num_args("streamingAudioStop",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("streamingAudioStop",1,"StreamingAudio *");
+  SWIG_check_num_args("audioStop",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioStop",1,"Audio *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_StreamingAudio_T,0))){
-    SWIG_fail_ptr("streamingAudioStop",1,SWIGTYPE_p_StreamingAudio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
+    SWIG_fail_ptr("audioStop",1,SWIGTYPE_p_Audio_T);
   }
   
-  streamingAudioStop(arg1);
+  audioStop(arg1);
   
   return SWIG_arg;
   
@@ -6076,19 +6093,49 @@ fail:
 }
 
 
-static int _wrap_streamingAudioFree(lua_State* L) {
+static int _wrap_audioFree(lua_State* L) {
   int SWIG_arg = 0;
-  StreamingAudio *arg1 = (StreamingAudio *) 0 ;
+  Audio *arg1 = (Audio *) 0 ;
   
-  SWIG_check_num_args("streamingAudioFree",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("streamingAudioFree",1,"StreamingAudio *");
+  SWIG_check_num_args("audioFree",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioFree",1,"Audio *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_StreamingAudio_T,0))){
-    SWIG_fail_ptr("streamingAudioFree",1,SWIGTYPE_p_StreamingAudio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
+    SWIG_fail_ptr("audioFree",1,SWIGTYPE_p_Audio_T);
   }
   
-  streamingAudioFree(arg1);
+  audioFree(arg1);
   
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_audioMake(lua_State* L) {
+  int SWIG_arg = 0;
+  int *arg1 = (int *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  Audio *result = 0 ;
+  
+  SWIG_check_num_args("audioMake",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioMake",1,"int *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("audioMake",2,"int");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("audioMake",3,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_int,0))){
+    SWIG_fail_ptr("audioMake",1,SWIGTYPE_p_int);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  arg3 = (int)lua_tonumber(L, 3);
+  result = (Audio *)audioMake(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio_T,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6418,11 +6465,13 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "setCursorDownState", _wrap_setCursorDownState},
     { "setKeyPressed", _wrap_setKeyPressed},
     { "setKeyReleased", _wrap_setKeyReleased},
-    { "streamingAudioLoad", _wrap_streamingAudioLoad},
-    { "streamingAudioPlay", _wrap_streamingAudioPlay},
-    { "streamingAudioSetLooping", _wrap_streamingAudioSetLooping},
-    { "streamingAudioStop", _wrap_streamingAudioStop},
-    { "streamingAudioFree", _wrap_streamingAudioFree},
+    { "audioGlobalInit", _wrap_audioGlobalInit},
+    { "audioLoad", _wrap_audioLoad},
+    { "audioPlay", _wrap_audioPlay},
+    { "audioSetLooping", _wrap_audioSetLooping},
+    { "audioStop", _wrap_audioStop},
+    { "audioFree", _wrap_audioFree},
+    { "audioMake", _wrap_audioMake},
     { "facebookPost", _wrap_facebookPost},
     { "adPrepareInterstitial", _wrap_adPrepareInterstitial},
     { "adShowInterstitial", _wrap_adShowInterstitial},
@@ -6468,6 +6517,7 @@ static swig_lua_namespace swig_SwigModule = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static swig_type_info _swigt__p_Audio_T = {"_p_Audio_T", "struct Audio_T *|Audio *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_BitmapData = {"_p_BitmapData", "struct BitmapData *|BitmapData *", 0, 0, (void*)&_wrap_class_BitmapData, 0};
 static swig_type_info _swigt__p_Camera = {"_p_Camera", "struct Camera *|Camera *", 0, 0, (void*)&_wrap_class_Camera, 0};
 static swig_type_info _swigt__p_DisplayObject = {"_p_DisplayObject", "struct DisplayObject *|DisplayObject *", 0, 0, (void*)&_wrap_class_DisplayObject, 0};
@@ -6476,12 +6526,12 @@ static swig_type_info _swigt__p_GLuint = {"_p_GLuint", "GLuint *", 0, 0, (void*)
 static swig_type_info _swigt__p_Matrix2 = {"_p_Matrix2", "struct Matrix2 *|Matrix2 *", 0, 0, (void*)&_wrap_class_Matrix2, 0};
 static swig_type_info _swigt__p_RawBitmapData = {"_p_RawBitmapData", "struct RawBitmapData *|RawBitmapData *", 0, 0, (void*)&_wrap_class_RawBitmapData, 0};
 static swig_type_info _swigt__p_Rect = {"_p_Rect", "Rect *", 0, 0, (void*)&_wrap_class_Rect, 0};
-static swig_type_info _swigt__p_StreamingAudio_T = {"_p_StreamingAudio_T", "struct StreamingAudio_T *|StreamingAudio *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Texture = {"_p_Texture", "struct Texture *|Texture *", 0, 0, (void*)&_wrap_class_Texture, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_Audio_T,
   &_swigt__p_BitmapData,
   &_swigt__p_Camera,
   &_swigt__p_DisplayObject,
@@ -6490,12 +6540,12 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Matrix2,
   &_swigt__p_RawBitmapData,
   &_swigt__p_Rect,
-  &_swigt__p_StreamingAudio_T,
   &_swigt__p_Texture,
   &_swigt__p_int,
   &_swigt__p_unsigned_char,
 };
 
+static swig_cast_info _swigc__p_Audio_T[] = {  {&_swigt__p_Audio_T, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_BitmapData[] = {  {&_swigt__p_BitmapData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Camera[] = {  {&_swigt__p_Camera, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_DisplayObject[] = {  {&_swigt__p_DisplayObject, 0, 0, 0},{0, 0, 0, 0}};
@@ -6504,12 +6554,12 @@ static swig_cast_info _swigc__p_GLuint[] = {  {&_swigt__p_GLuint, 0, 0, 0},{0, 0
 static swig_cast_info _swigc__p_Matrix2[] = {  {&_swigt__p_Matrix2, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_RawBitmapData[] = {  {&_swigt__p_RawBitmapData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Rect[] = {  {&_swigt__p_Rect, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_StreamingAudio_T[] = {  {&_swigt__p_StreamingAudio_T, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Texture[] = {  {&_swigt__p_Texture, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_Audio_T,
   _swigc__p_BitmapData,
   _swigc__p_Camera,
   _swigc__p_DisplayObject,
@@ -6518,7 +6568,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Matrix2,
   _swigc__p_RawBitmapData,
   _swigc__p_Rect,
-  _swigc__p_StreamingAudio_T,
   _swigc__p_Texture,
   _swigc__p_int,
   _swigc__p_unsigned_char,

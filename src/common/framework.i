@@ -10,7 +10,7 @@
 #include "framework/display_object.h"
 #include "framework/rawbitmapdata.h"
 #include "framework/input.h"
-#include "framework/streaming_audio.h"
+#include "framework/audio.h"
 #include "app.h"
 %}
 
@@ -22,7 +22,7 @@
 #include "framework/texture.h"
 #include "framework/rawbitmapdata.h"
 #include "framework/input.h"
-#include "framework/streaming_audio.h"
+#include "framework/audio.h"
 #include "framework/facebook.h"
 #include "framework/ads.h"
 #include "framework/data_store.h"

@@ -166,6 +166,7 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   trace("---- APP INIT ----");
 
   inputInit();
+  audioGlobalInit();
   dataStoreGlobalInit();
   setResourcePath(resourcePath, useAssetZip);
 

@@ -5,20 +5,15 @@ framework.DataStore = {
   autoCommit: true
   data: {}
   reload: ->
-    print 'reloading'
     s = _c_framework.dataStoreReload!
     if s
-      print s
       d = loadstring(s)()
       framework.DataStore.data = d or {}
 
   commit: ->
-    print 'commiting'
     d = framework.tserialize(framework.DataStore.data)
-    print d
     _c_framework.dataStoreCommit d
 }
-
 
 mt = {
   __index: (obj, key)->
