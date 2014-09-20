@@ -26,7 +26,7 @@ include $(CLEAR_VARS)
 
 LOCAL_ARM_MODE  := arm
 
-LOCAL_STATIC_LIBRARIES := minizip libluajit libpng bstring
+LOCAL_STATIC_LIBRARIES := minizip libluajit libpng bstring coremod
 
 LOCAL_CFLAGS := -DANDROID_NDK \
                 -DDISABLE_IMPORTGL
@@ -39,6 +39,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/deps/common/luajit/src/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/minizip/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libpng/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/bstring/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/coremod/include/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/common/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/android/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/gen/
@@ -57,9 +58,10 @@ MY_SOURCES := src/common/program.c \
   src/common/framework/texture.c \
   src/common/framework/matrix2.c \
   src/common/framework/display_object.c \
+  src/common/framework/audio.c \
   src/android/app_android.c \
   src/android/framework/util.c \
-  src/android/framework/streaming_audio.c
+  src/android/framework/audio.c
 
 
 #MY_SOURCES += $(wildcard src/android/framework/*.c)
@@ -68,7 +70,7 @@ MY_SOURCES := src/common/program.c \
 LOCAL_SRC_FILES := $(MY_SOURCES)
 
 
-LOCAL_LDLIBS := -lGLESv1_CM -ldl -llog -lz
+LOCAL_LDLIBS := -lGLESv1_CM -lOpenSLES -ldl -llog -lz
 
 include $(BUILD_SHARED_LIBRARY)
 

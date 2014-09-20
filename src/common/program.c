@@ -11,6 +11,7 @@
 
 #include "framework/util.h"
 #include "framework/input.h"
+#include "framework/audio.h"
 #include "app.h"
 #include "framework/graphics.h"
 #include "framework/quad.h"
@@ -201,6 +202,7 @@ void appDeinit(void) {
   if(vm) {
     lua_close(vm);
     resourcesCleanUp();
+    audioCleanup();
     vm = 0;
   }
   else{

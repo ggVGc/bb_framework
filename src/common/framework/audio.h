@@ -11,8 +11,11 @@ void audioSetLooping(Audio*, int);
 void audioStop(Audio*);
 void audioFree(Audio*);
 
-Audio* audioMake(int *buf, int bufSize, int sampleRate);
+void audioCleanup();
 
+int audioIsFinished(Audio *a);
+
+Audio* audioMake(int *buf, int bufSize, int sampleRate);
 
 #endif
 

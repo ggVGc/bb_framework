@@ -47,8 +47,6 @@ int audioGlobalInit(){
   alListenerfv(AL_POSITION,    ListenerPos);
   alListenerfv(AL_VELOCITY,    ListenerVel);
   alListenerfv(AL_ORIENTATION, ListenerOri);
-  
-
 
   initialised = 1;
   trace("loaded OpenAL");
@@ -56,6 +54,9 @@ int audioGlobalInit(){
 }
 
 Audio* audioMake(int *buf, int bufSize, int sampleRate){
+  if(!initialised){
+    return 0;
+  }
   Audio* a = (Audio*)malloc(sizeof(Audio));
   alGenBuffers(1, &a->buffer);
   if(alCheckError("Failed OpenAL buffer creation")){return 0;}
