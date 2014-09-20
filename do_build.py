@@ -138,7 +138,8 @@ def buildFramework():
   srcDirs = [
       "./src/common",
       "./src/common/framework",
-      "./src/glfw"
+      "./src/glfw",
+      "./src/glfw/framework"
       ]
  
   srcFiles = [

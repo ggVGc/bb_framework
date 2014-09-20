@@ -6182,6 +6182,58 @@ fail:
 }
 
 
+static int _wrap_dataStoreGlobalInit(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("dataStoreGlobalInit",0,0)
+  dataStoreGlobalInit();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_dataStoreCommit(lua_State* L) {
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  
+  SWIG_check_num_args("dataStoreCommit",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("dataStoreCommit",1,"char const *");
+  arg1 = (char *)lua_tostring(L, 1);
+  dataStoreCommit((char const *)arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_dataStoreReload(lua_State* L) {
+  int SWIG_arg = 0;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("dataStoreReload",0,0)
+  result = (char *)dataStoreReload();
+  lua_pushstring(L,(const char *)result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_screenWidth(lua_State* L) {
   int SWIG_arg = 0;
   int result;
@@ -6376,6 +6428,9 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "adShowInterstitial", _wrap_adShowInterstitial},
     { "adInterstitialDisplayed", _wrap_adInterstitialDisplayed},
     { "adInterstitialClosed", _wrap_adInterstitialClosed},
+    { "dataStoreGlobalInit", _wrap_dataStoreGlobalInit},
+    { "dataStoreCommit", _wrap_dataStoreCommit},
+    { "dataStoreReload", _wrap_dataStoreReload},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},

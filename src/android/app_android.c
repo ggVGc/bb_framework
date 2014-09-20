@@ -7,6 +7,7 @@
 #include "app.h"
 #include "framework/input.h"
 #include "framework/facebook.h"
+#include "framework/data_store.h"
 
 
 static int lastTime = 0;
@@ -131,4 +132,41 @@ void facebookPost(){
     return;
   }
   (*curEnv)->CallVoidMethod(curEnv, curThis, mid);
+}
+
+void dataStoreGlobalInit(){
+}
+
+void dataStoreCommit(const char* dataString){
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "dataStoreCommit", "(Ljava/lang/String;)V");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  jstring s = (*curEnv)->NewStringUTF(curEnv, dataString);
+  (*curEnv)->CallVoidMethod(curEnv, curThis, mid, s);
+  /*(*curEnv)->DeleteLocalRef(curEnv, s);*/
+
+}
+
+const char* dataStoreReload(){
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "dataStoreReload", "()Ljava/lang/String;");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  jstring s = (*curEnv)->CallObjectMethod(curEnv, curThis, mid);
+  const char *ret = (*curEnv)->GetStringUTFChars(curEnv, s, NULL);
+  /*(*curEnv)->DeleteLocalRef(curEnv, s);*/
+  return ret;
 }

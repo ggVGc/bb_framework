@@ -14,6 +14,10 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ApplicationInfo;
+import android.content.Context;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.util.Scanner;
 
 import android.util.Log;
 import android.widget.Toast;
@@ -27,9 +31,18 @@ import com.chartboost.sdk.CBPreferences;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.widget.FacebookDialog;
 
+final class ChartboostEvent{
+  public static final int none = 0;
+  public static final int closed = 1;
+  public static final int displayed = 2;
+  public static final int failedDisplay = 3;
+}
 
 public class MainActivity extends Activity {
   private static final String CHARTBOOST_TAG = "Chartboost";
+
+
+  public int cbEvent = ChartboostEvent.none;
 
   static {
     System.loadLibrary("jumpz_framework");
@@ -91,7 +104,6 @@ public class MainActivity extends Activity {
     this.cb.showInterstitial();
   }
 
-  public boolean shouldNotifyInterstitialClosed = false;
 
   public native void interstitialClosed();
   public native void interstitialDisplayed();
@@ -252,13 +264,7 @@ public class MainActivity extends Activity {
 
       Log.i(CHARTBOOST_TAG, "INTERSTITIAL '"+location+"' REQUEST FAILED - " + error.name());
       //Toast.makeText(MainActivity.this, "Interstitial '"+location+"' Load Failed",Toast.LENGTH_SHORT).show();
-
-      runOnUiThread(new Runnable() {
-         @Override
-         public void run() {
-          interstitialFailedDisplay();
-        }
-      });
+      cbEvent = ChartboostEvent.failedDisplay;
     }
 
     /*
@@ -293,7 +299,7 @@ public class MainActivity extends Activity {
     public void didCloseInterstitial(String location) {
       Log.i(CHARTBOOST_TAG, "INSTERSTITIAL '"+location+"' CLOSED");
       //Toast.makeText(MainActivity.this, "Closed Interstitial '"+location+"'",Toast.LENGTH_SHORT).show();
-      shouldNotifyInterstitialClosed = true;
+      cbEvent = ChartboostEvent.closed;
     }
 
     /*
@@ -308,7 +314,7 @@ public class MainActivity extends Activity {
     public void didClickInterstitial(String location) {
       Log.i(CHARTBOOST_TAG, "DID CLICK INTERSTITIAL '"+location+"'");
       //Toast.makeText(MainActivity.this, "Clicked Interstitial '"+location+"'",Toast.LENGTH_SHORT).show();
-      shouldNotifyInterstitialClosed = true;
+      cbEvent = ChartboostEvent.closed;
     }
 
     /*
@@ -322,12 +328,7 @@ public class MainActivity extends Activity {
     @Override
     public void didShowInterstitial(String location) {
       Log.i(CHARTBOOST_TAG, "INTERSTITIAL '" + location + "' SHOWN");
-      runOnUiThread(new Runnable() {
-         @Override
-         public void run() {
-            interstitialDisplayed();
-          }
-      });
+      cbEvent = ChartboostEvent.displayed;
     }
 
     /*
@@ -620,10 +621,18 @@ class GLRenderer implements GLSurfaceView.Renderer {
       dead = true;
     }
     else {
-      if(activity.shouldNotifyInterstitialClosed){
-        activity.shouldNotifyInterstitialClosed = false;
-        activity.interstitialClosed();
+      switch (activity.cbEvent){
+        case ChartboostEvent.closed:
+          activity.interstitialClosed();
+        break;
+        case ChartboostEvent.failedDisplay:
+          activity.interstitialFailedDisplay();
+        break;
+        case ChartboostEvent.displayed:
+          activity.interstitialDisplayed();
+        break;
       }
+      activity.cbEvent = ChartboostEvent.none;
       nativeRender();
     }
   }
@@ -646,6 +655,25 @@ class GLRenderer implements GLSurfaceView.Renderer {
           activity.prepareInterstitial();
         }
     });
+  }
+
+  private void dataStoreCommit(String dataString){
+    try{
+      FileOutputStream f = this.activity.openFileOutput("datastore", Context.MODE_PRIVATE);
+      f.write(dataString.getBytes());
+      f.close();
+    } catch (Exception e) {
+    }
+  }
+  private String dataStoreReload(){
+    try{
+      FileInputStream f = this.activity.openFileInput("datastore");
+      Scanner scan = new Scanner(f);  
+      scan.useDelimiter("\\Z");  
+      return scan.next();  
+    } catch (Exception e) {
+      return "";
+    }
   }
 
     

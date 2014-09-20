@@ -25,6 +25,7 @@
 #include "framework/streaming_audio.h"
 #include "framework/facebook.h"
 #include "framework/ads.h"
+#include "framework/data_store.h"
 
 
 %extend Camera{

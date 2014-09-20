@@ -1,16 +1,16 @@
 framework = framework or {}
 
-framework.ads = {
+framework.Ads = {
   interstitialDisplayCallback: ->
   interstitialCloseCallback: ->
   --prepareInterstitial:->
     --_c_framework.adPrepareInterstitial!
   showInterstitial: (onClose)->
     print 'FRAMEWORK: SHOWING INTERSTITIAL'
-    framework.ads.interstitialDisplayCallback = (success) ->
+    framework.Ads.interstitialDisplayCallback = (success) ->
       print 'FRAMEWORK: INTERSTITIAL DISPLAY CALLBACK, success:'..tostring(success)
       if success
-        framework.ads.interstitialCloseCallback = ->
+        framework.Ads.interstitialCloseCallback = ->
           print 'FRAMEWORK: INTERSTITIAL CLOSE CALLBACK'
           onClose success
       else
@@ -18,4 +18,4 @@ framework.ads = {
     _c_framework.adShowInterstitial!
 }
 
-framework.AssetLoader
+framework.Ads

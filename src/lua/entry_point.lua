@@ -254,6 +254,7 @@ local strict = dofile("framework/strict.lua")
 fun = dofile "framework/libs/fun.lua";
 
 framework = {}
+framework.tserialize = dofile('framework/tserialize.lua').tserialize
 dofile "framework/globals.moon";
 dofile "framework/instanceof.lua";
 dofile "framework/string_additions.moon";
@@ -283,6 +284,7 @@ dofile 'framework/easel/container.moon'
 dofile 'framework/easel/movie_clip.moon'
 dofile 'framework/streaming_audio.lua'
 dofile 'framework/ads.moon'
+dofile 'framework/data_store.moon'
 
 dofile "main.moon"
 --dofile("framework/test/display_objects_test.moon")
@@ -314,6 +316,7 @@ end
 
 local freezeFrameCount = 0
 function framework.init()
+  framework.DataStore.reload()
   main = doCall(Main.new)
   freezeFrameCount = 2
 end

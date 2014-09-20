@@ -14,12 +14,12 @@
 #include "app.h"
 #include "framework/graphics.h"
 #include "framework/quad.h"
+#include "framework/data_store.h"
 
 
 #ifdef ANDROID_NDK
 #include <android/log.h>
 #endif
-
 
 
 #define BREAK_ON_FIRST_ERROR 1
@@ -107,17 +107,6 @@ int loadfile_lua(lua_State* s) {
 
 */
 
-/*
-int require_lua(lua_State* s)
-{
-    s = s; // eliminate warning
-    trace("ERROR: REQUIRE IS NOT IMPLEMENTED. Use dofile instead.");
-    appBroken = 1;
-    return 0;
-}
-
-*/
-
   int luaErrorHandler(lua_State *L) {
   trace("\n------- STACK TRACE ----------");
   /*
@@ -177,6 +166,7 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   trace("---- APP INIT ----");
 
   inputInit();
+  dataStoreGlobalInit();
   setResourcePath(resourcePath, useAssetZip);
 
   appBroken = 0;
@@ -188,15 +178,7 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   luaL_openlibs(vm);
   luaopen__c_framework(vm);
 
-  /*
-  RegLuaFuncGlobal(require);
-  */
-
-/*
-#ifdef ANDROID_NDK
   RegLuaFuncGlobal(print);
-#endif
-*/
 
   if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);
@@ -321,7 +303,7 @@ void setAppBroken(int isBroken){
 void adInterstitialClosed(){
   int ret;
   lua_getglobal(vm, "framework");
-  lua_getfield(vm, -1, "ads");
+  lua_getfield(vm, -1, "Ads");
   lua_getfield(vm, -1, "interstitialCloseCallback");
   if(callFunc(0,0) != 0) {
     appBroken = 1;
@@ -331,7 +313,7 @@ void adInterstitialClosed(){
 void adInterstitialDisplayed(int success){
   int ret;
   lua_getglobal(vm, "framework");
-  lua_getfield(vm, -1, "ads");
+  lua_getfield(vm, -1, "Ads");
   lua_getfield(vm, -1, "interstitialDisplayCallback");
   lua_pushboolean(vm, success);
   if(callFunc(1,0) != 0) {
