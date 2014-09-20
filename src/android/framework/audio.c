@@ -9,7 +9,6 @@
 
 static SLObjectItf engine_obj;
 static SLEngineItf engine;
-static SLDataSink dst;
 SLObjectItf output_mix_obj;
 SLVolumeItf output_mix_vol;
 
@@ -20,6 +19,7 @@ struct Audio_T {
   unsigned int clip_num_samples;        //how many samples there are
   unsigned int clip_samples_per_sec;    //the sample rate in Hz
   SLPlayItf player;
+  SLObjectItf player_obj;
   SLVolumeItf player_vol;
   SLAndroidSimpleBufferQueueItf player_buf_q;
   int is_playing;
@@ -98,13 +98,12 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
   const SLInterfaceID ids[1] = {SL_IID_ANDROIDSIMPLEBUFFERQUEUE};
   const SLboolean req[1] = {SL_BOOLEAN_TRUE};
 
-  SLObjectItf player_obj;
-  result = (*engine)->CreateAudioPlayer(engine, &player_obj, &source, &sink, 1, ids, req);
+  result = (*engine)->CreateAudioPlayer(engine, &a->player_obj, &source, &sink, 1, ids, req);
 
-  (*player_obj)->Realize( player_obj, SL_BOOLEAN_FALSE );
-  (*player_obj)->GetInterface( player_obj,SL_IID_PLAY, &a->player );
-  (*player_obj)->GetInterface( player_obj, SL_IID_VOLUME, &a->player_vol );
-  (*player_obj)->GetInterface( player_obj,SL_IID_ANDROIDSIMPLEBUFFERQUEUE, &a->player_buf_q );
+  (*a->player_obj)->Realize( a->player_obj, SL_BOOLEAN_FALSE );
+  (*a->player_obj)->GetInterface( a->player_obj,SL_IID_PLAY, &a->player );
+  (*a->player_obj)->GetInterface( a->player_obj, SL_IID_VOLUME, &a->player_vol );
+  (*a->player_obj)->GetInterface( a->player_obj,SL_IID_ANDROIDSIMPLEBUFFERQUEUE, &a->player_buf_q );
 
   (*a->player)->RegisterCallback( a->player, play_callback, a );
   (*a->player)->SetCallbackEventsMask( a->player, SL_PLAYEVENT_HEADATEND );
@@ -138,8 +137,8 @@ void audioStop(Audio* a) {
 
 void audioFree(Audio* a) {
   audioStop(a);
-  //delete m->data;
-  //delete m;
+  (*a->player_obj)->Destroy(a->player_obj);
+  free(a->clip_samples);
 }
 
 int audioIsFinished(Audio *a){
@@ -147,5 +146,12 @@ int audioIsFinished(Audio *a){
     audioStop(a);
   }
   return a->is_playing;
+}
+
+void audioCleanup(){
+  if(initialised){
+    (*output_mix_obj)->Destroy(output_mix_obj);
+    (*engine_obj)->Destroy(engine_obj);
+  }
 }
 

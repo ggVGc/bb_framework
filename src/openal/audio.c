@@ -6,7 +6,6 @@
 #include "framework/util.h"
 
 
-
 int alCheckError(const char* msg){
   if(alGetError()!=AL_NO_ERROR){
     trace(msg);
@@ -16,6 +15,8 @@ int alCheckError(const char* msg){
 }
 
 static int initialised = 0;
+static ALCcontext *context;                                                      
+static ALCdevice *device;                                                       
 
 struct Audio_T {
   ALuint source;
@@ -24,8 +25,6 @@ struct Audio_T {
 
 int audioGlobalInit(){
   initialised = 0;
-  ALCdevice *device;                                                       
-  ALCcontext *context;                                                      
   device = alcOpenDevice(NULL);                                              
   if(!device){
     trace("Failed creating OpenAL device");
@@ -64,7 +63,6 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
   if(alCheckError("Failed OpenAL source creation")){return 0;}
 
   alBufferData(a->buffer, AL_FORMAT_MONO16, buf, bufSize, sampleRate);
-  if(alCheckError("Failed OpenAL buffer load")){return 0;}
 
   ALfloat SourcePos[] = { 0.0, 0.0, 0.0 };
   ALfloat SourceVel[] = { 0.0, 0.0, 0.0 };
@@ -90,8 +88,12 @@ void audioStop(Audio* a) {
 }
 
 void audioFree(Audio* a) {
-  //delete m->data;
-  //delete m;
+  alDeleteSources(1, a->source);
+  alDeleteBuffers(1, a->buffer);
 }
 
+void audioCleanup(){
+  alcDestroyContext(context);
+  alcCloseDevice(device);
+}
 
