@@ -135,6 +135,18 @@ def buildMinizip():
 def buildPng():
   return buildLib("bin/libpnga.a", ["./deps/common/libpng"], [], "")
 
+def buildVorbis():
+  return buildLib("bin/libvorbisa.a", [
+    "./deps/common/libvorbis/lib",
+    "./deps/common/libvorbis/lib/books",
+    "./deps/common/libvorbis/lib/modes"
+    ], [], "-I./deps/common/libvorbis/lib")
+
+def buildOgg():
+  return buildLib("bin/libogga.a", [
+    "./deps/common/libogg/src"
+    ], [], "")
+
 
 def buildFramework():
   srcDirs = [
@@ -157,11 +169,13 @@ def buildFramework():
       "-I./src/common",
       "-I./src/common/framework",
       "-I./src/gen",
-      "-I ./deps/common/glfw/include",
+      "-I./deps/common/glfw/include",
+      "-I./deps/common/libogg/include",
+      "-I./deps/common/libvorbis/include",
       "-I./deps/common/coremod/include"
       ])
 
-  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3'
+  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3 -lvorbisa -logga'
   if sys.platform == "darwin":
     commonLibString += ' -lluaa '
     cflags += ' -I./deps/common/lua '
@@ -184,7 +198,11 @@ if __name__ == '__main__':
     compileLibs = False
   ret = 0
   if compileLibs:
-    ret = buildMinizip()
+    ret = buildOgg()
+    if ret == 0:
+      ret = buildVorbis()
+    if ret == 0:
+      ret = buildMinizip()
     if ret == 0:
       ret = buildLua()
     if ret == 0:
