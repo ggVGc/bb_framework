@@ -6116,6 +6116,46 @@ fail:
 }
 
 
+static int _wrap_audioCleanup(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("audioCleanup",0,0)
+  audioCleanup();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_audioIsFinished(lua_State* L) {
+  int SWIG_arg = 0;
+  Audio *arg1 = (Audio *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("audioIsFinished",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioIsFinished",1,"Audio *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
+    SWIG_fail_ptr("audioIsFinished",1,SWIGTYPE_p_Audio_T);
+  }
+  
+  result = (int)audioIsFinished(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_audioMake(lua_State* L) {
   int SWIG_arg = 0;
   int *arg1 = (int *) 0 ;
@@ -6471,6 +6511,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "audioSetLooping", _wrap_audioSetLooping},
     { "audioStop", _wrap_audioStop},
     { "audioFree", _wrap_audioFree},
+    { "audioCleanup", _wrap_audioCleanup},
+    { "audioIsFinished", _wrap_audioIsFinished},
     { "audioMake", _wrap_audioMake},
     { "facebookPost", _wrap_facebookPost},
     { "adPrepareInterstitial", _wrap_adPrepareInterstitial},

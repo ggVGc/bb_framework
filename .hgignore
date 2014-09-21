@@ -57,3 +57,4 @@ glob:bin/*.a
 glob:xcuserdata
 glob:xcuserdatad
 glob:._*
+glob:*:Zone.Identifier

@@ -22,6 +22,7 @@
     <ClInclude Include="..\..\..\src\common\framework\rect.h" />
     <ClInclude Include="..\..\..\src\common\framework\resource_loading.h" />
     <ClInclude Include="..\..\..\src\common\framework\streaming_audio.h" />
+    <ClInclude Include="..\..\..\src\common\framework\data_store.h" />
     <ClInclude Include="..\..\..\src\common\framework\test.h" />
     <ClInclude Include="..\..\..\src\common\framework\texture.h" />
     <ClInclude Include="..\..\..\src\common\framework\util.h" />
@@ -43,6 +44,9 @@
     <ClCompile Include="..\..\..\src\common\framework\ads.c" />
     <ClCompile Include="..\..\..\src\common\framework\texture.c" />
     <ClCompile Include="..\..\..\src\common\framework\util.c" />
+    <ClCompile Include="..\..\..\src\common\framework\audio.c" />
+    <ClCompile Include="..\..\..\src\openal\audio_oal.c" />
+    <ClCompile Include="..\..\..\src\glfw\framework\data_store.c" />
     <ClCompile Include="..\..\..\src\common\framework_wrap.c" />
     <ClCompile Include="..\..\..\src\common\program.c" />
     <ClCompile Include="..\..\..\src\gles_imp.c" />
@@ -89,15 +93,15 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;LIBXMP_CORE_PLAYER;DEBUG;BUILDING_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\src\gen;$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\common\glfw\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.8;$(SolutionDir)\..\..\deps\common\libpng;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\luajit\src;$(SolutionDir)\..\..\deps\common\gles_headers;$(SolutionDir)\..\..\deps\common\coremod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\deps\win\openalsoft\include;$(SolutionDir)\..\..\src\gen;$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\common\libvorbis\include;$(SolutionDir)\..\..\deps\common\libogg\include;$(SolutionDir)\..\..\deps\common\glfw\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.8;$(SolutionDir)\..\..\deps\common\libpng;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\luajit\src;$(SolutionDir)\..\..\deps\common\gles_headers;$(SolutionDir)\..\..\deps\common\coremod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\depsbin;$(SolutionDir)\..\..\deps\common\luajit\bin\win_vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glu32.lib;libcoremod.lib;minizip.lib;zlib.lib;libpng.lib;glfw.lib;lua51.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\depsbin;$(SolutionDir)\..\..\deps\win\openalsoft\libs\Win32;$(SolutionDir)\..\..\deps\common\luajit\bin\win_vs2010;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;libcoremod.lib;minizip.lib;zlib.lib;libpng.lib;glfw.lib;lua51.lib;OpenAL32.lib;winmm.lib;liboggvorbis.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>

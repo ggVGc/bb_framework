@@ -2,6 +2,7 @@
 #include <math.h>
 #include <vorbis/vorbisfile.h>
 #include <assert.h>
+#include <string.h>
 #include "framework/audio.h"
 #include "framework/resource_loading.h"
 #include "framework/util.h"
@@ -69,11 +70,16 @@ Audio* audioLoad(const char* path){
   OggVorbis_File vf;
   int eof=0;
   int current_section;
-
+  int c = 0;
+  int totalSamples;
+  char *tmpBuf;
+  int bufSize;
   ov_callbacks callbacks;
+  vorbis_info *vi;
   ogg_file t;
+  Audio *a;
   int sz;
-  const char* buf = loadBytes(path, &sz);
+  char* buf = (char*)loadBytes(path, &sz);
   t.curPtr = t.filePtr = buf;
   if(!buf){
     trace("Failed audio file load");
@@ -91,17 +97,17 @@ Audio* audioLoad(const char* path){
     return 0;
   }
 
-  vorbis_info *vi=ov_info(&vf,-1);
-  int totalSamples = (long)ov_pcm_total(&vf,-1);
+  vi=ov_info(&vf,-1);
+  totalSamples = (long)ov_pcm_total(&vf,-1);
   printf("\nBitstream is %d channel, %ldHz\n",vi->channels,vi->rate);
   printf("\nDecoded length: %ld samples\n", totalSamples);
   printf("Encoded by: %s\n\n",ov_comment(&vf,-1)->vendor);
 
 
-  int bufSize = totalSamples*vi->channels;
-  char* tmpBuf = (int*)malloc(sizeof(char)*bufSize);
+  bufSize = totalSamples*vi->channels;
+  tmpBuf = (char*)malloc(sizeof(char)*bufSize);
 
-  int c = 0;
+ 
   while(!eof){
     long ret=ov_read(&vf,pcmout,sizeof(pcmout),0,1,1,&current_section);
     if (ret == 0) {
@@ -121,7 +127,7 @@ Audio* audioLoad(const char* path){
     }
   }
 
- Audio *a = audioMake((int*)tmpBuf, bufSize, vi->rate);
+ a = audioMake((int*)tmpBuf, bufSize, vi->rate);
  ov_clear(&vf);
  free(tmpBuf);
  return a;

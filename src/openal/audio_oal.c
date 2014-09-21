@@ -24,6 +24,9 @@ struct Audio_T {
 };
 
 int audioGlobalInit(){
+  ALfloat ListenerPos[] = { 0.0, 0.0, 0.0 };
+  ALfloat ListenerVel[] = { 0.0, 0.0, 0.0 };
+  ALfloat ListenerOri[] = { 0.0, 0.0, -1.0,  0.0, 1.0, 0.0 };
   initialised = 0;
   device = alcOpenDevice(NULL);                                              
   if(!device){
@@ -39,9 +42,7 @@ int audioGlobalInit(){
   if(alCheckError("Could not make OpenAL context current")){return 1;}
 
 
-  ALfloat ListenerPos[] = { 0.0, 0.0, 0.0 };
-  ALfloat ListenerVel[] = { 0.0, 0.0, 0.0 };
-  ALfloat ListenerOri[] = { 0.0, 0.0, -1.0,  0.0, 1.0, 0.0 };
+  
 
   alListenerfv(AL_POSITION,    ListenerPos);
   alListenerfv(AL_VELOCITY,    ListenerVel);
@@ -53,10 +54,13 @@ int audioGlobalInit(){
 }
 
 Audio* audioMake(int *buf, int bufSize, int sampleRate){
+  Audio* a;
+  ALfloat SourcePos[] = { 0.0, 0.0, 0.0 };
+  ALfloat SourceVel[] = { 0.0, 0.0, 0.0 };
   if(!initialised){
     return 0;
   }
-  Audio* a = (Audio*)malloc(sizeof(Audio));
+  a = (Audio*)malloc(sizeof(Audio));
   alGenBuffers(1, &a->buffer);
   if(alCheckError("Failed OpenAL buffer creation")){return 0;}
   alGenSources(1, &a->source);
@@ -64,8 +68,7 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
 
   alBufferData(a->buffer, AL_FORMAT_MONO16, buf, bufSize, sampleRate);
 
-  ALfloat SourcePos[] = { 0.0, 0.0, 0.0 };
-  ALfloat SourceVel[] = { 0.0, 0.0, 0.0 };
+  
   alSourcei (a->source, AL_BUFFER,   a->buffer);
   alSourcef (a->source, AL_PITCH,    1.0f     );
   alSourcef (a->source, AL_GAIN,     1.0f     );
@@ -97,3 +100,6 @@ void audioCleanup(){
   alcCloseDevice(device);
 }
 
+int audioIsFinished(Audio *a){
+  return 0;
+}
