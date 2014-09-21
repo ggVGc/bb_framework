@@ -180,7 +180,9 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   luaL_openlibs(vm);
   luaopen__c_framework(vm);
 
+  /*
   RegLuaFuncGlobal(print);
+  */
 
   if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);

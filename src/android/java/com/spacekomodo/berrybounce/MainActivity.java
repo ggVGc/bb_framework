@@ -19,9 +19,16 @@ import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.util.Scanner;
 
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.widget.AbsoluteLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.adflake.AdFlakeLayout;
+import com.adflake.AdFlakeLayout.AdFlakeInterface;
+import com.adflake.AdFlakeTargeting;
+import com.adflake.util.AdFlakeUtil;
 import com.chartboost.sdk.Chartboost;
 import com.chartboost.sdk.Chartboost.CBAgeGateConfirmation;
 import com.chartboost.sdk.ChartboostDelegate;
@@ -38,7 +45,7 @@ final class ChartboostEvent{
   public static final int failedDisplay = 3;
 }
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AdFlakeInterface {
   private static final String CHARTBOOST_TAG = "Chartboost";
 
 
@@ -57,8 +64,10 @@ public class MainActivity extends Activity {
     requestWindowFeature(Window.FEATURE_NO_TITLE);
     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    RelativeLayout layout = new RelativeLayout(this);
     view = new GLView(this);
-    setContentView(view);
+    setContentView(layout);
+    
 
     this.cb = Chartboost.sharedChartboost();
     String appId = "53e2817b89b0bb7a9909427d";
@@ -67,6 +76,25 @@ public class MainActivity extends Activity {
 
     uiHelper = new UiLifecycleHelper(this, null);
     uiHelper.onCreate(savedInstanceState);
+
+
+	AdFlakeTargeting.setTestMode(true);
+    
+    DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+    final float density = displayMetrics.density;
+    final int width = (int) (AdFlakeUtil.BANNER_DEFAULT_WIDTH * density);
+    final int height = (int) (AdFlakeUtil.BANNER_DEFAULT_HEIGHT * density);
+    final String myAdFlakeSdkKey = "541ee0b3a391bc8b063e453a";
+    AdFlakeLayout adFlakeLayout2 = new AdFlakeLayout(this, myAdFlakeSdkKey);
+    adFlakeLayout2.setAdFlakeInterface(this);
+    adFlakeLayout2.setMaxWidth(width);
+    adFlakeLayout2.setMaxHeight(height);
+    layout.addView(view);
+    RelativeLayout.LayoutParams lp = adFlakeLayout2.getOptimalRelativeLayoutParams();
+	lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
+	lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 1);
+    layout.addView(adFlakeLayout2, lp);
+   
   }
 
   @Override
@@ -505,6 +533,18 @@ public class MainActivity extends Activity {
 
 
   private GLView view;
+
+@Override
+public void adFlakeDidPushAdSubView(AdFlakeLayout arg0) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void adFlakeGeneric() {
+	// TODO Auto-generated method stub
+	
+}
 }
 
 class GLView extends GLSurfaceView {
