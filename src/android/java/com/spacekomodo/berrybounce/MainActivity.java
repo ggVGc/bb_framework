@@ -137,16 +137,26 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   public native void interstitialDisplayed();
   public native void interstitialFailedDisplay();
 
+  public int facebookIsShareAvailable(){
+    if(FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)){
+      return 1;
+    }else{
+      return 0;
+    }
+  }
+
   public void facebookPost(){
     System.out.println("ACTIVITY: FACBOOK POST");
-    FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(this)
+    if (FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) {
+      FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(this)
             .setName("BerryBounceTest")
             .setCaption("BBCaption")
             .setDescription("Playing Berry Bounce like a pro")
             .setPicture("http://www.berrybounce.com/share_image.png")
             .setLink("http://www.berrybounce.com")
             .build();
-    uiHelper.trackPendingDialogCall(shareDialog.present());
+      uiHelper.trackPendingDialogCall(shareDialog.present());
+    }
   }
 
   @Override
@@ -714,6 +724,10 @@ class GLRenderer implements GLSurfaceView.Renderer {
     } catch (Exception e) {
       return "";
     }
+  }
+
+  public int facebookIsShareAvailable(){
+    return activity.facebookIsShareAvailable();
   }
 
     

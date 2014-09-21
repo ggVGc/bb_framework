@@ -6202,6 +6202,23 @@ fail:
 }
 
 
+static int _wrap_facebookIsShareAvailable(lua_State* L) {
+  int SWIG_arg = 0;
+  int result;
+  
+  SWIG_check_num_args("facebookIsShareAvailable",0,0)
+  result = (int)facebookIsShareAvailable();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_adPrepareInterstitial(lua_State* L) {
   int SWIG_arg = 0;
   
@@ -6515,6 +6532,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "audioIsFinished", _wrap_audioIsFinished},
     { "audioMake", _wrap_audioMake},
     { "facebookPost", _wrap_facebookPost},
+    { "facebookIsShareAvailable", _wrap_facebookIsShareAvailable},
     { "adPrepareInterstitial", _wrap_adPrepareInterstitial},
     { "adShowInterstitial", _wrap_adShowInterstitial},
     { "adInterstitialDisplayed", _wrap_adInterstitialDisplayed},

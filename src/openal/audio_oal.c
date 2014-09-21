@@ -66,7 +66,7 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
   alGenSources(1, &a->source);
   if(alCheckError("Failed OpenAL source creation")){return 0;}
 
-  alBufferData(a->buffer, AL_FORMAT_MONO16, buf, bufSize, sampleRate);
+  alBufferData(a->buffer, AL_FORMAT_STEREO16, buf, bufSize, sampleRate);
 
   
   alSourcei (a->source, AL_BUFFER,   a->buffer);

@@ -104,12 +104,12 @@ Audio* audioLoad(const char* path){
   printf("Encoded by: %s\n\n",ov_comment(&vf,-1)->vendor);
 
 
-  bufSize = totalSamples*vi->channels;
+  bufSize = totalSamples*vi->channels*2;
   tmpBuf = (char*)malloc(sizeof(char)*bufSize);
 
  
   while(!eof){
-    long ret=ov_read(&vf,pcmout,sizeof(pcmout),0,1,1,&current_section);
+    long ret=ov_read(&vf,pcmout,sizeof(pcmout),0,2,1,&current_section);
     if (ret == 0) {
       eof=1;
     } else if (ret < 0) {
@@ -120,7 +120,7 @@ Audio* audioLoad(const char* path){
       c+=ret;
       if(c>bufSize){
         trace("Encoded stream larger than buffer. Something is wrong");
-        break;
+        return 0;
       }
       // we don't bother dealing with sample rate changes, etc, but you'll have to 
       // TODO: Yeah, I should.. But I probably won't.

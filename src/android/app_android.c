@@ -134,6 +134,21 @@ void facebookPost(){
   (*curEnv)->CallVoidMethod(curEnv, curThis, mid);
 }
 
+int facebookIsShareAvailable(){
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "facebookIsShareAvailable", "()I");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  return (*curEnv)->CallIntMethod(curEnv, curThis, mid);
+}
+
+
 void dataStoreGlobalInit(){
 }
 
