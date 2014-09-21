@@ -26,7 +26,7 @@ include $(CLEAR_VARS)
 
 LOCAL_ARM_MODE  := arm
 
-LOCAL_STATIC_LIBRARIES := minizip libluajit libpng bstring coremod
+LOCAL_STATIC_LIBRARIES := minizip libluajit libpng bstring coremod libvorbis libogg
 
 LOCAL_CFLAGS := -DANDROID_NDK \
                 -DDISABLE_IMPORTGL
@@ -40,6 +40,8 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/minizip/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libpng/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/bstring/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/coremod/include/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libogg/include/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libvorbis/include/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/common/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/android/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/gen/

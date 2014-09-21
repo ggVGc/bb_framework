@@ -80,9 +80,6 @@ Audio* audioLoad(const char* path){
     return 0;
   }
   t.fileSize = sz;
-  trace("filesize");
-  traceInt(sz);
-
 
   callbacks.read_func = AR_readOgg;
   callbacks.seek_func = AR_seekOgg;
