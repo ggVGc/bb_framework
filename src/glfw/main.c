@@ -56,7 +56,7 @@ static long _getTime(void) {
 }
 
 
-const int SCREEN_WIDTH = 960;
+const int SCREEN_WIDTH = 760;
 const int SCREEN_HEIGHT = 640;
 
 
