@@ -4,6 +4,7 @@
 export block = (fn)->fn!
 
 export let = (obj, fn)-> fn(obj)
+export let = (obj, fn)-> fn(obj)
 
 export make = (fn)->
   o = {}
