@@ -47,9 +47,11 @@ final class ChartboostEvent{
 
 public class MainActivity extends Activity implements AdFlakeInterface {
   private static final String CHARTBOOST_TAG = "Chartboost";
+  public static final String TAG = "MainActivity";
 
 
   public int cbEvent = ChartboostEvent.none;
+  IAP iap;
 
   static {
     System.loadLibrary("jumpz_framework");
@@ -60,9 +62,9 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    System.out.println("ACTIVITY: Create");
+
+    Log.i(TAG,"Activity: Create");
     requestWindowFeature(Window.FEATURE_NO_TITLE);
-    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     RelativeLayout layout = new RelativeLayout(this);
     view = new GLView(this);
@@ -76,6 +78,8 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 
     uiHelper = new UiLifecycleHelper(this, null);
     uiHelper.onCreate(savedInstanceState);
+
+    iap = new IAP(this);
 
 
 	AdFlakeTargeting.setTestMode(true);
@@ -94,7 +98,6 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 	lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
 	lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 1);
     layout.addView(adFlakeLayout2, lp);
-   
   }
 
   @Override
@@ -117,7 +120,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   @Override
   public void onStart() {
     super.onStart();
-    System.out.println("ACTIVITY: Start");
+    Log.i(TAG,"Activity: Start");
     view.start();
 
     CBPreferences.getInstance().setImpressionsUseActivities(true);
@@ -146,7 +149,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   }
 
   public void facebookPost(){
-    System.out.println("ACTIVITY: FACBOOK POST");
+    Log.i(TAG,"Activity: FACBOOK POST");
     if (FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) {
       FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(this)
             .setName("BerryBounceTest")
@@ -162,14 +165,14 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   @Override
   public void onRestart() {
     super.onRestart();
-    System.out.println("ACTIVITY: Restart");
+    Log.i(TAG,"Activity: Restart");
   }
 
 
   @Override
   protected void onPause() {
     super.onPause();
-    System.out.println("ACTIVITY: PAUSE");
+    Log.i(TAG,"Activity: Pause");
     uiHelper.onPause();
     view.pause();
   }
@@ -177,7 +180,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   @Override
   protected void onResume() {
     super.onResume();
-    System.out.println("ACTIVITY: RESUME");
+    Log.i(TAG,"Activity: Resume");
     view.onResume();
     uiHelper.onResume();
   }
@@ -191,7 +194,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   @Override
   protected void onStop() {
     super.onStop();
-    System.out.println("ACTIVITY: STOP");
+    Log.i(TAG,"Activity: Stop");
     this.cb.onStop(this);
   }
 
@@ -199,7 +202,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   @Override
   protected void onDestroy() {
     super.onDestroy();
-    System.out.println("ACTIVITY: DESTROY");
+    Log.i(TAG,"Activity: Destroy");
     view.stop();
     this.cb.onDestroy(this);
     uiHelper.onDestroy();
@@ -544,196 +547,17 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 
   private GLView view;
 
-@Override
-public void adFlakeDidPushAdSubView(AdFlakeLayout arg0) {
-	// TODO Auto-generated method stub
-	
-}
-
-@Override
-public void adFlakeGeneric() {
-	// TODO Auto-generated method stub
-	
-}
-}
-
-class GLView extends GLSurfaceView {
-  public GLView(MainActivity activity) 
-  {
-    super(activity);
-    System.out.println("GLView created");
-    super.setEGLConfigChooser(8 , 8, 8, 8, 16, 0);
-    renderer = new GLRenderer(activity);
-    setRenderer(renderer);
+  @Override
+  public void adFlakeDidPushAdSubView(AdFlakeLayout arg0) {
+      // TODO Auto-generated method stub
+      
   }
-
-  public boolean onTouchEvent(final MotionEvent event) 
-  {
-    int a = event.getAction();
-    if (a == MotionEvent.ACTION_DOWN) 
-    {
-      nativeOnCursorMove((int)event.getX(), (int)event.getY());
-      nativeOnCursorDown();
-    }
-    else if (a == MotionEvent.ACTION_UP)
-      nativeOnCursorUp();
-    else if(a == MotionEvent.ACTION_MOVE)
-      nativeOnCursorMove((int)event.getX(), (int)event.getY());
-
-    return true;
-  }
-
 
   @Override
-  public void onResume() {
-    super.onResume();
-    renderer.start();
+  public void adFlakeGeneric() {
+      // TODO Auto-generated method stub
+      
   }
-
-  public void start() {
-    renderer.start();
-  }
-
-  public void stop() {
-    renderer.stop();
-  }
-
-
-  public void pause() {
-    System.out.println("GLView: PAUSE");
-    renderer.pause();
-  }
-
-  GLRenderer renderer;
-
-  private static native void nativeOnCursorDown();
-  private static native void nativeOnCursorUp();
-  private static native void nativeOnCursorMove(int x, int y);
 }
 
-class GLRenderer implements GLSurfaceView.Renderer {
-  private MainActivity activity;
 
-  public GLRenderer (MainActivity activity) {
-    System.out.println("GLRenderer created");
-    this.activity = activity;
-  }
-
-  public void start() {
-    paused = false;
-  }
-
-  public void stop() {
-    die = true;
-  }
-
-
-  boolean die = false;
-  boolean paused = false;
-
-  public void pause() {
-    paused = true;
-  }
-
-  public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-    System.out.println("GLRenderer: SURFACE CREATED");
-  }
-
-  boolean inited = false;
-  public void onSurfaceChanged(GL10 gl, int w, int h) {
-    System.out.println("GLRenderer: SURFACE CHANGED");
-
-    String apkFilePath = null;
-    ApplicationInfo appInfo = null;
-    PackageManager packMgmr = activity.getPackageManager();
-    try {
-      appInfo = packMgmr.getApplicationInfo("com.spacekomodo.berrybounce", 0);
-    } catch (NameNotFoundException e) {
-      e.printStackTrace();
-      throw new RuntimeException("Unable to locate assets, aborting...");
-    }
-    apkFilePath = appInfo.sourceDir;
-    if(!inited){
-      nativeInit(apkFilePath);
-      nativeResize(w, h);
-      inited = true;
-    }
-  }
-
-  boolean dead = false;
-
-  public void onDrawFrame(GL10 gl) {
-    if(dead || paused){
-      return;
-    }
-    if(die) {
-      nativeOnStop();
-      dead = true;
-    }
-    else {
-      switch (activity.cbEvent){
-        case ChartboostEvent.closed:
-          activity.interstitialClosed();
-        break;
-        case ChartboostEvent.failedDisplay:
-          activity.interstitialFailedDisplay();
-        break;
-        case ChartboostEvent.displayed:
-          activity.interstitialDisplayed();
-        break;
-      }
-      activity.cbEvent = ChartboostEvent.none;
-      nativeRender();
-    }
-  }
-
-  private void facebookPost(){
-    this.activity.facebookPost();
-  }
-  private void showInterstitial(){
-    this.activity.runOnUiThread(new Runnable() {
-       @Override
-       public void run() {
-          activity.showInterstitial();
-        }
-    });
-  }
-  private void prepareInterstitial(){
-    this.activity.runOnUiThread(new Runnable() {
-       @Override
-       public void run() {
-          activity.prepareInterstitial();
-        }
-    });
-  }
-
-  private void dataStoreCommit(String dataString){
-    try{
-      FileOutputStream f = this.activity.openFileOutput("datastore", Context.MODE_PRIVATE);
-      f.write(dataString.getBytes());
-      f.close();
-    } catch (Exception e) {
-    }
-  }
-  private String dataStoreReload(){
-    try{
-      FileInputStream f = this.activity.openFileInput("datastore");
-      Scanner scan = new Scanner(f);  
-      scan.useDelimiter("\\Z");  
-      return scan.next();  
-    } catch (Exception e) {
-      return "";
-    }
-  }
-
-  public int facebookIsShareAvailable(){
-    return activity.facebookIsShareAvailable();
-  }
-
-    
-
-  private static native void nativeOnStop();
-  private static native void nativeInit(String apkPath);
-  private static native void nativeResize(int w, int h);
-  private native void nativeRender();
-}

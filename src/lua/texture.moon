@@ -24,6 +24,11 @@ new: (bmData, x, y, w, h)->
       _c_framework.Matrix2_append(tmpMat, .tex.width, 0, 0, .tex.height, 0, 0)
       _c_framework.quadDrawTex .tex, tmpMat
 
+    .drawAt = (x,y)->
+      _c_framework.Matrix2_init(tmpMat, 1, 0, 0, 1, x, y)
+      _c_framework.Matrix2_append(tmpMat, .tex.width, 0, 0, .tex.height, 0, 0)
+      _c_framework.quadDrawTex .tex, tmpMat
+
 fromFile: (path, errorOnInvalid=true)->
   path = framework.Texture.fixPath path
   imageData = _c_framework.loadImage(path)
