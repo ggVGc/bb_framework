@@ -103,18 +103,18 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       dead = true;
     }
     else {
-      switch (activity.cbEvent){
-        case ChartboostEvent.closed:
+      switch (activity.chartboostDelegate.event){
+        case ChartboostDelegateImp.Event.closed:
           activity.interstitialClosed();
         break;
-        case ChartboostEvent.failedDisplay:
+        case ChartboostDelegateImp.Event.failedDisplay:
           activity.interstitialFailedDisplay();
         break;
-        case ChartboostEvent.displayed:
+        case ChartboostDelegateImp.Event.displayed:
           activity.interstitialDisplayed();
         break;
       }
-      activity.cbEvent = ChartboostEvent.none;
+      activity.chartboostDelegate.event = ChartboostDelegateImp.Event.none;
       nativeRender();
     }
   }

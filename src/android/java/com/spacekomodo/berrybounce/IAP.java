@@ -11,7 +11,6 @@ import com.example.android.trivialdrivesample.util.Purchase;
 
 public class IAP{
     static final String TAG = "IAP";
-    static final String base64EncodedPublicKey = "CONSTRUCT_YOUR_KEY_AND_PLACE_IT_HERE";
     static final String SKU_TEST = "android.test.purchased";
     // (arbitrary) request code for the purchase flow
     static final int RC_REQUEST = 10001;
@@ -19,10 +18,9 @@ public class IAP{
     IabHelper mHelper;
     Activity activity;
 
-
     public IAP(Activity activity){
       this.activity = activity;
-      mHelper = new IabHelper(activity, base64EncodedPublicKey);
+      mHelper = new IabHelper(activity, AppConfig.iap.publicKey);
       mHelper.enableDebugLogging(true);
       Log.i(TAG, "Starting setup.");
       mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
