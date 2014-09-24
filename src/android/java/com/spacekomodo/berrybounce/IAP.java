@@ -21,7 +21,7 @@ public class IAP{
     public IAP(Activity activity){
       this.activity = activity;
       mHelper = new IabHelper(activity, AppConfig.iap.publicKey);
-      mHelper.enableDebugLogging(true);
+      mHelper.enableDebugLogging(AppConfig.iap.debugLogging);
       Log.i(TAG, "Starting setup.");
       mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
         public void onIabSetupFinished(IabResult result) {
