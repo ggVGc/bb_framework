@@ -285,6 +285,7 @@ dofile 'framework/easel/movie_clip.moon'
 dofile 'framework/streaming_audio.lua'
 dofile 'framework/ads.moon'
 dofile 'framework/data_store.moon'
+dofile 'framework/iap.moon'
 
 dofile "main.moon"
 --dofile("framework/test/display_objects_test.moon")

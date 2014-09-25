@@ -16,6 +16,9 @@ framework.Ads = {
       else
         onClose success
     _c_framework.adShowInterstitial!
+
+  setBannersEnabled: (v)->
+    _c_framework.setBannersEnabled(v and 1 or 0)
 }
 
 framework.Ads

@@ -1,12 +1,12 @@
 package com.spacekomodo.berrybounce;
 
 import android.util.Log;
+
 import com.chartboost.sdk.Chartboost;
-import com.chartboost.sdk.ChartboostDelegate;
 import com.chartboost.sdk.Chartboost.CBAgeGateConfirmation;
+import com.chartboost.sdk.ChartboostDelegate;
 import com.chartboost.sdk.Model.CBError.CBClickError;
 import com.chartboost.sdk.Model.CBError.CBImpressionError;
-import com.chartboost.sdk.CBPreferences;
 
 public  class ChartboostDelegateImp implements ChartboostDelegate{
 

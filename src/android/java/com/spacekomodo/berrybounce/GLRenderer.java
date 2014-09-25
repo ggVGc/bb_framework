@@ -1,42 +1,18 @@
 package com.spacekomodo.berrybounce;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.Scanner;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.opengl.GLSurfaceView;
-import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.WindowManager;
-import android.view.Window;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ApplicationInfo;
 import android.content.Context;
-import java.io.FileOutputStream;
-import java.io.FileInputStream;
-import java.util.Scanner;
-
-import android.util.DisplayMetrics;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.opengl.GLSurfaceView;
 import android.util.Log;
-import android.widget.AbsoluteLayout;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
-
-import com.adflake.AdFlakeLayout;
-import com.adflake.AdFlakeLayout.AdFlakeInterface;
-import com.adflake.AdFlakeTargeting;
-import com.adflake.util.AdFlakeUtil;
-import com.chartboost.sdk.Chartboost;
-import com.chartboost.sdk.Chartboost.CBAgeGateConfirmation;
-import com.chartboost.sdk.ChartboostDelegate;
-import com.chartboost.sdk.Model.CBError.CBClickError;
-import com.chartboost.sdk.Model.CBError.CBImpressionError;
-import com.chartboost.sdk.CBPreferences;
-import com.facebook.UiLifecycleHelper;
-import com.facebook.widget.FacebookDialog;
 
 
 
@@ -67,12 +43,14 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     paused = true;
   }
 
-  public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+  @Override
+public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     Log.i(TAG,"GLRenderer: SURFACE CREATED");
   }
 
   boolean inited = false;
-  public void onSurfaceChanged(GL10 gl, int w, int h) {
+  @Override
+public void onSurfaceChanged(GL10 gl, int w, int h) {
     Log.i(TAG,"GLRenderer: SURFACE CHANGED");
 
     String apkFilePath = null;
@@ -94,7 +72,8 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 
   boolean dead = false;
 
-  public void onDrawFrame(GL10 gl) {
+  @Override
+public void onDrawFrame(GL10 gl) {
     if(dead || paused){
       return;
     }
@@ -160,6 +139,17 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 
   public int facebookIsShareAvailable(){
     return activity.facebookIsShareAvailable();
+  }
+
+  public int userOwnsProduct(String id){
+    if(activity.iap.userOwnsProduct(id)){
+    	return 1;
+    }else{
+    	return 0;
+    }
+  }
+  public void purchaseProduct(String id){
+    activity.iap.purchaseProduct(id);
   }
 
     

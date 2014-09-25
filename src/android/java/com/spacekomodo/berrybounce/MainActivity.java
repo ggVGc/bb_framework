@@ -1,46 +1,27 @@
 package com.spacekomodo.berrybounce;
 
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.WindowManager;
-import android.view.Window;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ApplicationInfo;
-import android.content.Context;
-import java.io.FileOutputStream;
-import java.io.FileInputStream;
-import java.util.Scanner;
-
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.widget.AbsoluteLayout;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.adflake.AdFlakeLayout;
 import com.adflake.AdFlakeLayout.AdFlakeInterface;
 import com.adflake.AdFlakeTargeting;
 import com.adflake.util.AdFlakeUtil;
-import com.chartboost.sdk.Chartboost;
-import com.chartboost.sdk.Chartboost.CBAgeGateConfirmation;
-import com.chartboost.sdk.Model.CBError.CBClickError;
-import com.chartboost.sdk.Model.CBError.CBImpressionError;
 import com.chartboost.sdk.CBPreferences;
+import com.chartboost.sdk.Chartboost;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.widget.FacebookDialog;
 
 public class MainActivity extends Activity implements AdFlakeInterface {
   public static final String TAG = "MainActivity";
 
-  IAP iap;
+  public IAP iap;
   public ChartboostDelegateImp chartboostDelegate;
 
   static {

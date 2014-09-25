@@ -6338,6 +6338,67 @@ fail:
 }
 
 
+static int _wrap_userOwnsProduct(lua_State* L) {
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("userOwnsProduct",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("userOwnsProduct",1,"char const *");
+  arg1 = (char *)lua_tostring(L, 1);
+  result = (int)userOwnsProduct((char const *)arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_purchaseProduct(lua_State* L) {
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  
+  SWIG_check_num_args("purchaseProduct",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("purchaseProduct",1,"char const *");
+  arg1 = (char *)lua_tostring(L, 1);
+  purchaseProduct((char const *)arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_onPurchaseComplete(lua_State* L) {
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("onPurchaseComplete",2,2)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("onPurchaseComplete",1,"char const *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("onPurchaseComplete",2,"int");
+  arg1 = (char *)lua_tostring(L, 1);
+  arg2 = (int)lua_tonumber(L, 2);
+  onPurchaseComplete((char const *)arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_screenWidth(lua_State* L) {
   int SWIG_arg = 0;
   int result;
@@ -6540,6 +6601,9 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "dataStoreGlobalInit", _wrap_dataStoreGlobalInit},
     { "dataStoreCommit", _wrap_dataStoreCommit},
     { "dataStoreReload", _wrap_dataStoreReload},
+    { "userOwnsProduct", _wrap_userOwnsProduct},
+    { "purchaseProduct", _wrap_purchaseProduct},
+    { "onPurchaseComplete", _wrap_onPurchaseComplete},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},

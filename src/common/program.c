@@ -180,9 +180,7 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   luaL_openlibs(vm);
   luaopen__c_framework(vm);
 
-  /*
   RegLuaFuncGlobal(print);
-  */
 
   if(dofile("framework/entry_point.lua")!=0) {
     const char* msg = lua_tostring(vm, -1);
@@ -322,6 +320,19 @@ void adInterstitialDisplayed(int success){
   lua_getfield(vm, -1, "interstitialDisplayCallback");
   lua_pushboolean(vm, success);
   if(callFunc(1,0) != 0) {
+    appBroken = 1;
+    return;
+  }
+}
+
+void onPurchaseComplete(const char *id, int success){
+  int ret;
+  lua_getglobal(vm, "framework");
+  lua_getfield(vm, -1, "IAP");
+  lua_getfield(vm, -1, "onPurchaseComplete");
+  lua_pushstring(vm, id);
+  lua_pushinteger(vm, success);
+  if(callFunc(2,0) != 0) {
     appBroken = 1;
     return;
   }

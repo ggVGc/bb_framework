@@ -8,6 +8,7 @@
 #include "framework/input.h"
 #include "framework/facebook.h"
 #include "framework/data_store.h"
+#include "framework/iap.h"
 
 
 static int lastTime = 0;
@@ -90,6 +91,11 @@ Java_com_spacekomodo_berrybounce_MainActivity_interstitialFailedDisplay( JNIEnv*
 }
 
 
+void
+Java_com_spacekomodo_berrybounce_IAP_onPurchaseComplete( JNIEnv*  env, jobject this, jstring id, jint success) {
+}
+
+
 void adPrepareInterstitial(){
   /*
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
@@ -165,8 +171,7 @@ void dataStoreCommit(const char* dataString){
   }
   jstring s = (*curEnv)->NewStringUTF(curEnv, dataString);
   (*curEnv)->CallVoidMethod(curEnv, curThis, mid, s);
-  /*(*curEnv)->DeleteLocalRef(curEnv, s);*/
-
+  (*curEnv)->DeleteLocalRef(curEnv, s);
 }
 
 const char* dataStoreReload(){
@@ -182,6 +187,44 @@ const char* dataStoreReload(){
   }
   jstring s = (*curEnv)->CallObjectMethod(curEnv, curThis, mid);
   const char *ret = (*curEnv)->GetStringUTFChars(curEnv, s, NULL);
-  /*(*curEnv)->DeleteLocalRef(curEnv, s);*/
+  (*curEnv)->DeleteLocalRef(curEnv, s);
   return ret;
 }
+
+
+int userOwnsProduct(const char *id){
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return 0;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "userOwnsProduct", "(Ljava/lang/String;)I");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return 0;
+  }
+  
+  jstring s = (*curEnv)->NewStringUTF(curEnv, id);
+  int ret = (int)(*curEnv)->CallObjectMethod(curEnv, curThis, mid, s);
+  (*curEnv)->DeleteLocalRef(curEnv, s);
+
+  return ret;
+}
+
+void purchaseProduct(const char *id){
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "purchaseProduct", "(Ljava/lang/String;)V");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  
+  jstring s = (*curEnv)->NewStringUTF(curEnv, id);
+  (*curEnv)->CallObjectMethod(curEnv, curThis, mid, s);
+  (*curEnv)->DeleteLocalRef(curEnv, s);
+}
+
