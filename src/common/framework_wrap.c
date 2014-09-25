@@ -6286,6 +6286,25 @@ fail:
 }
 
 
+static int _wrap_adSetBannersEnabled(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  
+  SWIG_check_num_args("adSetBannersEnabled",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("adSetBannersEnabled",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  adSetBannersEnabled(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_dataStoreGlobalInit(lua_State* L) {
   int SWIG_arg = 0;
   
@@ -6598,6 +6617,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "adShowInterstitial", _wrap_adShowInterstitial},
     { "adInterstitialDisplayed", _wrap_adInterstitialDisplayed},
     { "adInterstitialClosed", _wrap_adInterstitialClosed},
+    { "adSetBannersEnabled", _wrap_adSetBannersEnabled},
     { "dataStoreGlobalInit", _wrap_dataStoreGlobalInit},
     { "dataStoreCommit", _wrap_dataStoreCommit},
     { "dataStoreReload", _wrap_dataStoreReload},

@@ -228,3 +228,17 @@ void purchaseProduct(const char *id){
   (*curEnv)->DeleteLocalRef(curEnv, s);
 }
 
+void adSetBannersEnabled(int enable){
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "setBannersEnabled", "(I)V");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  
+  (*curEnv)->CallObjectMethod(curEnv, curThis, mid, enable);
+}

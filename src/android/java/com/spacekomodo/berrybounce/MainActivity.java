@@ -23,6 +23,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 
   public IAP iap;
   public ChartboostDelegateImp chartboostDelegate;
+  public AdFlakeLayout adFlakeLayout;
 
   static {
     System.loadLibrary("jumpz_framework");
@@ -30,17 +31,25 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   private Chartboost cb;
   private UiLifecycleHelper uiHelper;
 
+  public MainActivity(){
+  }
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
     Log.i(TAG,"Activity: Create");
+
+    if(iap==null){
+      iap = new IAP(this);
+    }
+
     requestWindowFeature(Window.FEATURE_NO_TITLE);
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     RelativeLayout layout = new RelativeLayout(this);
     view = new GLView(this);
     setContentView(layout);
-    
+
     cb = Chartboost.sharedChartboost();
     chartboostDelegate = new ChartboostDelegateImp(cb);
     cb.onCreate(this, AppConfig.chartboost.appId, AppConfig.chartboost.appSignature, chartboostDelegate);
@@ -48,23 +57,23 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     uiHelper = new UiLifecycleHelper(this, null);
     uiHelper.onCreate(savedInstanceState);
 
-    iap = new IAP(this);
 
     AdFlakeTargeting.setTestMode(AppConfig.adFlake.testMode);
-    
+
     DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
     final float density = displayMetrics.density;
     final int width = (int) (AdFlakeUtil.BANNER_DEFAULT_WIDTH * density);
     final int height = (int) (AdFlakeUtil.BANNER_DEFAULT_HEIGHT * density);
-    AdFlakeLayout adFlakeLayout2 = new AdFlakeLayout(this, AppConfig.adFlake.sdkKey);
-    adFlakeLayout2.setAdFlakeInterface(this);
-    adFlakeLayout2.setMaxWidth(width);
-    adFlakeLayout2.setMaxHeight(height);
+    adFlakeLayout = new AdFlakeLayout(this, AppConfig.adFlake.sdkKey);
+    adFlakeLayout.setAdFlakeInterface(this);
+    adFlakeLayout.setMaxWidth(width);
+    adFlakeLayout.setMaxHeight(height);
     layout.addView(view);
-    RelativeLayout.LayoutParams lp = adFlakeLayout2.getOptimalRelativeLayoutParams();
-	lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
-	lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 1);
-    layout.addView(adFlakeLayout2, lp);
+    RelativeLayout.LayoutParams lp = adFlakeLayout.getOptimalRelativeLayoutParams();
+    lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
+    lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 1);
+    layout.addView(adFlakeLayout, lp);
+    adFlakeLayout.setVisibility(RelativeLayout.GONE);
   }
 
   @Override
@@ -74,12 +83,12 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
       @Override
       public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
-          Log.e("Activity", String.format("Error: %s", error.toString()));
+        Log.e("Activity", String.format("Error: %s", error.toString()));
       }
 
       @Override
       public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
-          Log.i("Activity", "Success!");
+        Log.i("Activity", "Success!");
       }
     });
   }
@@ -119,12 +128,12 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     Log.i(TAG,"Activity: Facebook post");
     if (FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) {
       FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(this)
-            .setName(AppConfig.facebook.name)
-            .setCaption(AppConfig.facebook.caption)
-            .setDescription(AppConfig.facebook.description)
-            .setPicture(AppConfig.facebook.pictureUrl)
-            .setLink(AppConfig.facebook.link)
-            .build();
+        .setName(AppConfig.facebook.name)
+        .setCaption(AppConfig.facebook.caption)
+        .setDescription(AppConfig.facebook.description)
+        .setPicture(AppConfig.facebook.pictureUrl)
+        .setLink(AppConfig.facebook.link)
+        .build();
       uiHelper.trackPendingDialogCall(shareDialog.present());
     }
   }
@@ -154,8 +163,8 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 
   @Override
   protected void onSaveInstanceState(Bundle outState) {
-      super.onSaveInstanceState(outState);
-      uiHelper.onSaveInstanceState(outState);
+    super.onSaveInstanceState(outState);
+    uiHelper.onSaveInstanceState(outState);
   }
 
   @Override
@@ -195,7 +204,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 
   @Override
   public void adFlakeGeneric() {
-      // TODO Auto-generated method stub
+    // TODO Auto-generated method stub
   }
 }
 

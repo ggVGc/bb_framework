@@ -47,10 +47,9 @@ if len(errlines) == 0:
       if f.endswith('.moon'):
         handleMoonFile(os.path.join(root, f))
 
-  os.system("ant release")
+  os.system("ant debug")
   adb = "~/stuff/work/android/adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb "
-  os.system("sh sign_debug.sh")
-  os.system(adb+" -d install -r bin/FrameworkTest-release-unsigned.apk")
+  os.system(adb+" -d install -r bin/FrameworkTest-debug.apk")
   os.system(adb+" -d shell am kill com.spacekomodo.berrybounce/.MainActivity")
   os.system(adb+" -d shell am start -n com.spacekomodo.berrybounce/.MainActivity")
 else:

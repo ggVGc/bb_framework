@@ -1,1 +1,1 @@
-zipalign -v 4 bin/FrameworkTest-release-unsigned.apk release.apk
+zipalign -v 4 bin/FrameworkTest-release-unsigned.apk berrybounce_release.apk

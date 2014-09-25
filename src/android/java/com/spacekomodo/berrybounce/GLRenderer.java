@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Scanner;
 
+import android.widget.RelativeLayout;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -143,16 +145,29 @@ public void onDrawFrame(GL10 gl) {
 
   public int userOwnsProduct(String id){
     if(activity.iap.userOwnsProduct(id)){
-    	return 1;
+      return 1;
     }else{
-    	return 0;
+      return 0;
     }
   }
-  public void purchaseProduct(String id){
-    activity.iap.purchaseProduct(id);
+  public void purchaseProduct(final String id){
+    activity.runOnUiThread(new Runnable() {
+      public void run() {
+        activity.iap.purchaseProduct(id);
+      }
+    });
   }
 
-    
+  void setBannersEnabled(final int enable){
+    Log.i(TAG, "Setting banner visibility: "+enable);
+    activity.runOnUiThread(new Runnable() {
+      public void run() {
+        activity.adFlakeLayout.setVisibility(enable==1?RelativeLayout.VISIBLE:RelativeLayout.GONE);
+      }
+    });
+  }
+
+
 
   private static native void nativeOnStop();
   private static native void nativeInit(String apkPath);

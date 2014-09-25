@@ -75,11 +75,12 @@ public class IAP{
 
       // Is it a failure?
       if (result.isFailure()) {
-        complain("Failed to query inventory: " + result);
+        Log.e(TAG, "Failed to query inventory: " + result);
         available = false;
 
         return;
       }
+
 
       Log.i(TAG, "Query inventory was successful.");
       curInventory = inventory;
@@ -131,7 +132,7 @@ public class IAP{
       if (mHelper == null){
         success = 0;
       }else if (result.isFailure()) {
-        complain("Error purchasing: " + result);
+        Log.e(TAG, "Error purchasing: " + result);
         success = 0;
       }
 
@@ -171,12 +172,9 @@ public class IAP{
   }
 
 
-  void complain(String message) {
-    Log.e(TAG, "**** TrivialDrive Error: " + message);
-  }
-
   public boolean userOwnsProduct(String id){
-    return curInventory!=null && curInventory.hasPurchase(id);
+    boolean ret =  curInventory!=null && curInventory.hasPurchase(id);
+    return ret;
   }
 
 

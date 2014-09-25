@@ -18,7 +18,7 @@ framework.Ads = {
     _c_framework.adShowInterstitial!
 
   setBannersEnabled: (v)->
-    _c_framework.setBannersEnabled(v and 1 or 0)
+    _c_framework.adSetBannersEnabled(v and 1 or 0)
 }
 
 framework.Ads
