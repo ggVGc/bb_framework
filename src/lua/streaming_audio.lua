@@ -25,6 +25,9 @@ function framework.StreamingAudio.new(path)
   function M.free()
     _c_framework.audioFree(audio)
   end
+  function M.isFinished()
+    return  _c_framework.audioIsFinished(audio)==1
+  end
 
   if audio then
     return M

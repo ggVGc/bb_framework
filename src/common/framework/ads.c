@@ -10,3 +10,6 @@ void adShowInterstitial(){
 void adPrepareInterstitial(){
   trace("prepareInterstitial");
 }
+
+void adSetBannersEnabled(int e){
+}

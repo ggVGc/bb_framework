@@ -336,7 +336,7 @@ function framework.doFrame(deltaMs)
       d = 0
     end
     doCall(function()
-      main.doFrame(d)
+      main.doFrame(16)
     end)
   else
     return 1

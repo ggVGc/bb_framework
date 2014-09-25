@@ -50,7 +50,13 @@ int audioGlobalInit(){
 void SLAPIENTRY play_callback( SLPlayItf player, void *context, SLuint32 event ){
   Audio *a = (Audio*)context;
   if( event & SL_PLAYEVENT_HEADATEND ){
+    trace("Audio: Buffer finished");
     a->is_done_buffer = 1;
+    /*
+    if(a->loop){
+      trace("Audio: Looping");
+    }
+    */
   }
 }
  
@@ -60,6 +66,9 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
     return 0;
   }
   Audio* a = (Audio*)malloc(sizeof(Audio));
+  /*
+  a->loop = 0;
+  */
   a->is_playing = 0;
   a->is_done_buffer = 0;
   a->clip_samples = malloc(sizeof(int)*bufSize);
@@ -75,11 +84,11 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
   // Configure data format.
   SLDataFormat_PCM pcm;
   pcm.formatType = SL_DATAFORMAT_PCM;
-  pcm.numChannels = 1;
+  pcm.numChannels = 2;
   pcm.samplesPerSec = SL_SAMPLINGRATE_44_1;
   pcm.bitsPerSample = SL_PCMSAMPLEFORMAT_FIXED_16;
   pcm.containerSize = SL_PCMSAMPLEFORMAT_FIXED_16;
-  pcm.channelMask = SL_SPEAKER_FRONT_CENTER;
+  pcm.channelMask = SL_SPEAKER_FRONT_LEFT | SL_SPEAKER_FRONT_RIGHT;
   pcm.endianness = SL_BYTEORDER_LITTLEENDIAN;
 
   // Configure Audio Source.
@@ -112,6 +121,7 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
 }
 
 void audioPlay(Audio* a) {
+  trace("Audio: Playing");
   audioStop(a);
   (*a->player_buf_q)->Enqueue(a->player_buf_q, a->clip_samples, a->clip_num_samples );
   (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
@@ -120,13 +130,7 @@ void audioPlay(Audio* a) {
 }
 
 void audioSetLooping(Audio* a, int loop) {
-/*
-  (*a->player)->SetPlayState(a->player, SL_PLAYSTATE_STOPPED );
-   
-#ifdef ANDROID_NDK
-  (*a->player_buf_q)->Clear(a->player_buf_q );
-#endif
-*/
+  /*a->loop = loop;*/
 }
 
 void audioStop(Audio* a) {
@@ -145,7 +149,7 @@ int audioIsFinished(Audio *a){
   if(a->is_playing && a->is_done_buffer ){
     audioStop(a);
   }
-  return a->is_playing;
+  return !a->is_playing;
 }
 
 void audioCleanup(){
