@@ -61,9 +61,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
   for f in cfiles:
     if not os.path.exists("obj/framework"):
       os.mkdir("obj/framework")
-    n = f.replace('.', '_').replace('/', '_').replace(" ", '')
-    print n
-    #n = os.path.split(f)[1] 
+    n = os.path.split(f)[1] 
     out = os.path.join("obj","framework", n+".o")
     ofiles += " "+out
     ofiles

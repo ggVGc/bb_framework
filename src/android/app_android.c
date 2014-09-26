@@ -228,6 +228,26 @@ void purchaseProduct(const char *id){
   (*curEnv)->DeleteLocalRef(curEnv, s);
 }
 
+const char* getProductPrice(const char *id){
+  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "getProductPrice", "(Ljava/lang/String;)Ljava/lang/String;");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  
+  jstring s = (*curEnv)->NewStringUTF(curEnv, id);
+  jstring fRet = (*curEnv)->CallObjectMethod(curEnv, curThis, mid, s);
+  const char *ret = (*curEnv)->GetStringUTFChars(curEnv, fRet, NULL);
+  (*curEnv)->DeleteLocalRef(curEnv, s);
+  (*curEnv)->DeleteLocalRef(curEnv, fRet);
+  return ret;
+}
+
 void adSetBannersEnabled(int enable){
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){

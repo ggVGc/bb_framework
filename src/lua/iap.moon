@@ -2,6 +2,8 @@
 
 framework.IAP = {
   callbacks: {}
+  getProductPrice: (id)->
+    _c_framework.getProductPrice id
   userOwnsProduct: (id) ->
     _c_framework.userOwnsProduct(id)==1
 

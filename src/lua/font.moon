@@ -9,16 +9,16 @@ new: maker (imagePath, texLoadFunc) =>
     textures[c] = texLoadFunc(imagePath..'/'..c)
 
   tmpMat = _c_framework.Matrix2!
-  @drawString = (str, x=0, y=0, scale=1, reverse=false) ->
+  @drawString = (str, x=0, y=0, scale=1, reverse=false, tint) ->
     _c_framework.Matrix2_identity tmpMat
     w = 0
     if reverse
       str = str\reverse!
     string.gsub str, '.', (c) ->
-      if c==' '
+      tex = textures[c]
+      if c==' ' or not tex
         w += 20*(reverse and -1 or 1)
       else
-        tex = textures[c]
         if reverse
           w-=tex.width*scale
         tmpMat.tx = x+w
@@ -27,7 +27,7 @@ new: maker (imagePath, texLoadFunc) =>
         tmpMat.d = scale
         if not reverse
           w+=tex.width*scale
-        tex.draw tmpMat
+        tex.draw tmpMat, tint
           
 
 }

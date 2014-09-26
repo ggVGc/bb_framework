@@ -5,6 +5,7 @@ public class AppConfig{
   public static final boolean development = false;
 
   public static class iap{
+    public static final String[] skuList = new String[]{"berry_bounce_no_ads"};
     public static final String publicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu8zjSsJyqGzpBVzDCdmd0aPoaNq/VMmo/jpoDm4GPskuVa1X47FoVJELfohb431Iy9uZHOvrM8mbXtonB0LJyDo/LGPgLgWRw8Jmhf+uMsD8ZUIs1MKC2QZg9q7B4wsZOIsZeEUEizDxAKb2lXETjBll+jGJYlS7g0Jw1sDI4utCwUNgsNoIuO7syWJAhZpD6vnqPMmfSD+wY86qsrQvK4/cbhj5CuQPQBe4N1iJPtDlegmQPI0S/DVyIk7tbogp9EaQUJIqkqBgii+Jlx8HlKbzMJ45ZvZShz8nCI9k3LuVQk/Gp7SKZe/rk2qFfpQgKRm1IkGUZaHhk5elwAMqAwIDAQAB";
     public static final boolean debugLogging = development;
   }

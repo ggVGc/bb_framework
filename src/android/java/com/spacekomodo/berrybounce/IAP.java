@@ -1,5 +1,7 @@
 package com.spacekomodo.berrybounce;
 
+import java.util.Arrays;
+
 import android.app.Activity;
 import android.util.Log;
 
@@ -53,7 +55,7 @@ public class IAP{
 
           // IAB is fully set up. Now, let's get an inventory of stuff we own.
           Log.i(TAG, "Setup successful. Querying inventory.");
-          mHelper.queryInventoryAsync(mGotInventoryListener);
+          mHelper.queryInventoryAsync(true, Arrays.asList(AppConfig.iap.skuList), mGotInventoryListener);
         }
       });
     }
@@ -186,6 +188,14 @@ public class IAP{
     }else{
       String payload = "";
       mHelper.launchPurchaseFlow(activity, id, RC_REQUEST, mPurchaseFinishedListener, payload);
+    }
+  }
+
+  public String getProductPrice(String id){
+    if(!available){
+      return null;
+    }else{
+      return curInventory.hasDetails(id)?curInventory.getSkuDetails(id).getPrice():null;
     }
   }
 

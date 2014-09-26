@@ -19,10 +19,13 @@ new: (bmData, x, y, w, h)->
 
 
     tmpMat = _c_framework.Matrix2!
-    .draw=(m)->
+    .draw=(m, tint, alpha)->
       _c_framework.Matrix2_copy(tmpMat, m)
       _c_framework.Matrix2_append(tmpMat, .tex.width, 0, 0, .tex.height, 0, 0)
-      _c_framework.quadDrawTex .tex, tmpMat
+      if tint
+        _c_framework.quadDrawTexCol(.tex, tmpMat, tint[1]/255, tint[2]/255, tint[3]/255, alpha and alpha/255 or 1)
+      else
+        _c_framework.quadDrawTexAlpha(.tex, tmpMat, alpha and alpha/255 or 1)
 
     .drawAt = (x,y)->
       _c_framework.Matrix2_init(tmpMat, 1, 0, 0, 1, x, y)

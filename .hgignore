@@ -58,3 +58,4 @@ glob:xcuserdata
 glob:xcuserdatad
 glob:._*
 glob:*:Zone.Identifier
+glob:bin/*.txt

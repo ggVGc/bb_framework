@@ -13,6 +13,13 @@ new: maker (mc)=>
     globPos = mc.localToGlobal(0,0)
     return x > globPos.x and x<globPos.x+w and y>globPos.y and y<globPos.y+h
 
+  @isPressOver = (screenWidth, screenHeight) ->
+    cx = framework.Input.cursorX()*screenWidth
+    cy = (1-framework.Input.cursorY())*screenHeight
+    over = @.isOver cx, cy
+    return over and framework.Input.cursorDown!
+
+
   @update = (screenWidth, screenHeight)->
     cx = framework.Input.cursorX()*screenWidth
     cy = (1-framework.Input.cursorY())*screenHeight

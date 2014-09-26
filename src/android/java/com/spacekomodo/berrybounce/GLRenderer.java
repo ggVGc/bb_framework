@@ -158,6 +158,11 @@ public void onDrawFrame(GL10 gl) {
     });
   }
 
+  public String getProductPrice(String id){
+    return activity.iap.getProductPrice(id);
+  }
+
+
   void setBannersEnabled(final int enable){
     Log.i(TAG, "Setting banner visibility: "+enable);
     activity.runOnUiThread(new Runnable() {

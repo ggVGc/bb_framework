@@ -5720,6 +5720,48 @@ fail:
 }
 
 
+static int _wrap_quadDrawTexCol(lua_State* L) {
+  int SWIG_arg = 0;
+  Texture *arg1 = (Texture *) 0 ;
+  Matrix2 *arg2 = (Matrix2 *) 0 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  
+  SWIG_check_num_args("quadDrawTexCol",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("quadDrawTexCol",1,"Texture *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("quadDrawTexCol",2,"Matrix2 *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("quadDrawTexCol",3,"double");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("quadDrawTexCol",4,"double");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("quadDrawTexCol",5,"double");
+  if(!lua_isnumber(L,6)) SWIG_fail_arg("quadDrawTexCol",6,"double");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
+    SWIG_fail_ptr("quadDrawTexCol",1,SWIGTYPE_p_Texture);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Matrix2,0))){
+    SWIG_fail_ptr("quadDrawTexCol",2,SWIGTYPE_p_Matrix2);
+  }
+  
+  arg3 = (double)lua_tonumber(L, 3);
+  arg4 = (double)lua_tonumber(L, 4);
+  arg5 = (double)lua_tonumber(L, 5);
+  arg6 = (double)lua_tonumber(L, 6);
+  quadDrawTexCol(arg1,arg2,arg3,arg4,arg5,arg6);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_quadDrawCol(lua_State* L) {
   int SWIG_arg = 0;
   float arg1 ;
@@ -6396,6 +6438,26 @@ fail:
 }
 
 
+static int _wrap_getProductPrice(lua_State* L) {
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("getProductPrice",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("getProductPrice",1,"char const *");
+  arg1 = (char *)lua_tostring(L, 1);
+  result = (char *)getProductPrice((char const *)arg1);
+  lua_pushstring(L,(const char *)result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_onPurchaseComplete(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
@@ -6589,6 +6651,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "quadBeginFrame", _wrap_quadBeginFrame},
     { "quadDrawTex", _wrap_quadDrawTex},
     { "quadDrawTexAlpha", _wrap_quadDrawTexAlpha},
+    { "quadDrawTexCol", _wrap_quadDrawTexCol},
     { "quadDrawCol", _wrap_quadDrawCol},
     { "quadFlush", _wrap_quadFlush},
     { "quadEndFrame", _wrap_quadEndFrame},
@@ -6623,6 +6686,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "dataStoreReload", _wrap_dataStoreReload},
     { "userOwnsProduct", _wrap_userOwnsProduct},
     { "purchaseProduct", _wrap_purchaseProduct},
+    { "getProductPrice", _wrap_getProductPrice},
     { "onPurchaseComplete", _wrap_onPurchaseComplete},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
