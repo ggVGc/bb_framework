@@ -1,3 +1,12 @@
+local oldPrint = print
+function print(...)
+  local arg = {...}
+  local s = ''
+  for i,v in ipairs(arg) do
+    s = s..v..'\t'
+  end
+  oldPrint(s)
+end
 
 
 function loadfile(path, ignoreInvalid, errorReportOffset)
@@ -336,7 +345,10 @@ function framework.doFrame(deltaMs)
       d = 0
     end
     doCall(function()
-      main.doFrame(16)
+      if(d>100) then
+        d = 16
+      end
+      main.doFrame(d)
     end)
   else
     return 1

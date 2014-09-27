@@ -1,7 +1,7 @@
 
 
 framework.IAP = {
-  callbacks: {}
+  callback: nil
   getProductPrice: (id)->
     _c_framework.getProductPrice id
   userOwnsProduct: (id) ->
@@ -9,14 +9,14 @@ framework.IAP = {
 
   purchaseProduct: (id, callback) ->
     print 'purchasing product: '..tostring(id)
-    framework.IAP.callbacks[id] = callback
+    framework.IAP.callback = callback
     _c_framework.purchaseProduct id
 
-  onPurchaseComplete: (id, success)->
+  onPurchaseComplete: (success)->
     print 'purchase complete: '..tostring(success)
-    c = framework.IAP.callbacks[id]
-    c and c(success==1, id)
-    framework.IAP.callbacks[id] = nil
+    c = framework.IAP.callback
+    c and c(success==1)
+    framework.IAP.callback = nil
 }
 
 framework.IAP

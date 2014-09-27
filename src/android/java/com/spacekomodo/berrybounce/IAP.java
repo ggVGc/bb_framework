@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import android.app.Activity;
 import android.util.Log;
-
+import android.content.Intent;
 import com.example.android.trivialdrivesample.util.IabHelper;
 import com.example.android.trivialdrivesample.util.IabResult;
 import com.example.android.trivialdrivesample.util.Inventory;
@@ -52,6 +52,8 @@ public class IAP{
             available = false;
             return;
           }
+
+
 
           // IAB is fully set up. Now, let's get an inventory of stuff we own.
           Log.i(TAG, "Setup successful. Querying inventory.");
@@ -133,12 +135,12 @@ public class IAP{
       // if we were disposed of in the meantime, quit.
       if (mHelper == null){
         success = 0;
-      }else if (result.isFailure()) {
+      }else if (result==null || result.isFailure()) {
         Log.e(TAG, "Error purchasing: " + result);
         success = 0;
       }
 
-      onPurchaseComplete(purchase.getSku(), success);
+      onPurchaseComplete(success);
     }
   };
 
@@ -180,14 +182,30 @@ public class IAP{
   }
 
 
+
+  public boolean onActivityResult(int requestCode, int resultCode, Intent data){
+    try{
+      return mHelper.handleActivityResult(requestCode, resultCode, data);
+    }catch(Exception e){
+      Log.i(TAG, e.toString());
+      return false;
+    }
+  }
+
   static final int RC_REQUEST = 10001;
   public void purchaseProduct(String id){
     if(!available){
-      onPurchaseComplete(id, 0);
+      onPurchaseComplete(0);
       return;
     }else{
+      Log.i(TAG, "Launching purchase flow: "+id);
       String payload = "";
-      mHelper.launchPurchaseFlow(activity, id, RC_REQUEST, mPurchaseFinishedListener, payload);
+      try{
+        mHelper.launchPurchaseFlow(activity, id, RC_REQUEST, mPurchaseFinishedListener, payload);
+      }catch(Exception e){
+        Log.i(TAG, "Something went wrong while launching purchase flow");
+        Log.i(TAG, e.toString());
+      }
     }
   }
 
@@ -200,5 +218,5 @@ public class IAP{
   }
 
 
-  native void onPurchaseComplete(String id, int success);
+  native void onPurchaseComplete(int success);
 }

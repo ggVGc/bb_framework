@@ -5,7 +5,7 @@ int userOwnsProduct(const char *id){
 }
 
 void purchaseProduct(const char *id){
-  onPurchaseComplete(id, 0);
+  onPurchaseComplete(0);
 }
 
 const char* getProductPrice(const char *id){

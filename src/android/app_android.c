@@ -92,7 +92,8 @@ Java_com_spacekomodo_berrybounce_MainActivity_interstitialFailedDisplay( JNIEnv*
 
 
 void
-Java_com_spacekomodo_berrybounce_IAP_onPurchaseComplete( JNIEnv*  env, jobject this, jstring id, jint success) {
+Java_com_spacekomodo_berrybounce_IAP_onPurchaseComplete( JNIEnv*  env, jobject this, jint success) {
+  onPurchaseComplete(success);
 }
 
 

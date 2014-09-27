@@ -6460,15 +6460,12 @@ fail:
 
 static int _wrap_onPurchaseComplete(lua_State* L) {
   int SWIG_arg = 0;
-  char *arg1 = (char *) 0 ;
-  int arg2 ;
+  int arg1 ;
   
-  SWIG_check_num_args("onPurchaseComplete",2,2)
-  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("onPurchaseComplete",1,"char const *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("onPurchaseComplete",2,"int");
-  arg1 = (char *)lua_tostring(L, 1);
-  arg2 = (int)lua_tonumber(L, 2);
-  onPurchaseComplete((char const *)arg1,arg2);
+  SWIG_check_num_args("onPurchaseComplete",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("onPurchaseComplete",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  onPurchaseComplete(arg1);
   
   return SWIG_arg;
   

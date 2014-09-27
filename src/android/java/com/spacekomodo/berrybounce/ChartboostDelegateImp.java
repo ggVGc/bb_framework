@@ -1,6 +1,7 @@
 package com.spacekomodo.berrybounce;
 
 import android.util.Log;
+import java.util.LinkedList;
 
 import com.chartboost.sdk.Chartboost;
 import com.chartboost.sdk.Chartboost.CBAgeGateConfirmation;
@@ -18,8 +19,15 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
   }
 
   private static final String TAG = "Chartboost";
-  public int event = Event.none;
+  public LinkedList<Integer> events = new LinkedList<Integer>();
   private Chartboost cb;
+
+  boolean displaying = false;
+
+  void setEvent(int e){
+    Log.i(TAG, "Setting event: "+e);
+    events.add(new Integer(e));
+  }
 
   public ChartboostDelegateImp(Chartboost cb){
     this.cb = cb;
@@ -71,6 +79,7 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
     @Override
     public boolean shouldRequestInterstitial(String location) {
       Log.i(TAG, "SHOULD REQUEST INSTERSTITIAL '"+location+ "'?");
+      displaying = true;
       return true;
     }
 
@@ -110,7 +119,10 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
 
       Log.i(TAG, "INTERSTITIAL '"+location+"' REQUEST FAILED - " + error.name());
       //Toast.makeText(MainActivity.this, "Interstitial '"+location+"' Load Failed",Toast.LENGTH_SHORT).show();
-      event = Event.failedDisplay;
+
+      if(displaying){
+        setEvent(Event.failedDisplay);
+      }
     }
 
     /*
@@ -127,6 +139,7 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
     @Override
     public void didDismissInterstitial(String location) {
       // Immediately re-caches an interstitial
+      displaying = false;
       cb.cacheInterstitial(location);
 
       Log.i(TAG, "INTERSTITIAL '"+location+"' DISMISSED");
@@ -144,8 +157,9 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
     @Override
     public void didCloseInterstitial(String location) {
       Log.i(TAG, "INSTERSTITIAL '"+location+"' CLOSED");
+      displaying = false;
       //Toast.makeText(MainActivity.this, "Closed Interstitial '"+location+"'",Toast.LENGTH_SHORT).show();
-      event = Event.closed;
+      setEvent(Event.closed);
     }
 
     /*
@@ -159,8 +173,9 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
     @Override
     public void didClickInterstitial(String location) {
       Log.i(TAG, "DID CLICK INTERSTITIAL '"+location+"'");
+      displaying = false;
       //Toast.makeText(MainActivity.this, "Clicked Interstitial '"+location+"'",Toast.LENGTH_SHORT).show();
-      event = Event.closed;
+      setEvent(Event.closed);
     }
 
     /*
@@ -174,7 +189,8 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
     @Override
     public void didShowInterstitial(String location) {
       Log.i(TAG, "INTERSTITIAL '" + location + "' SHOWN");
-      event = Event.displayed;
+      displaying = true;
+      setEvent(Event.displayed);
     }
 
     /*
@@ -210,7 +226,7 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
      */
     @Override
     public boolean shouldDisplayLoadingViewForMoreApps() {
-      return true;
+      return false;
     }
 
     /*
@@ -225,7 +241,7 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
     @Override
     public boolean shouldRequestMoreApps() {
 
-      return true;
+      return false;
     }
 
     /*
@@ -240,7 +256,7 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
     @Override
     public boolean shouldDisplayMoreApps() {
       Log.i(TAG, "SHOULD DISPLAY MORE APPS?");
-      return true;
+      return false;
     }
 
     /*

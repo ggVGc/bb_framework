@@ -299,7 +299,11 @@ public class IabHelper {
     }
 
     private void checkNotDisposed() {
-        if (mDisposed) throw new IllegalStateException("IabHelper was disposed of, so it cannot be used.");
+        logDebug("Checking not disposed");
+        if (mDisposed){
+          logDebug("IabHelper was disposed of, so it cannot be used.");
+          throw new IllegalStateException("IabHelper was disposed of, so it cannot be used.");
+        }
     }
 
     /** Returns whether subscriptions are supported. */
@@ -368,6 +372,7 @@ public class IabHelper {
      */
     public void launchPurchaseFlow(Activity act, String sku, String itemType, int requestCode,
                         OnIabPurchaseFinishedListener listener, String extraData) {
+        logDebug("Launching purchase flow");
         checkNotDisposed();
         checkSetupDone("launchPurchaseFlow");
         flagStartAsync("launchPurchaseFlow");
@@ -983,7 +988,7 @@ public class IabHelper {
     }
 
     void logDebug(String msg) {
-        if (mDebugLog) Log.d(mDebugTag, msg);
+        if (mDebugLog) Log.i(mDebugTag, msg);
     }
 
     void logError(String msg) {

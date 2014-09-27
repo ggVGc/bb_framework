@@ -45,16 +45,16 @@ int loadstringWithName(lua_State *L, const char *s, const char* name) {
 int print_lua(lua_State* s){
   int i;
   int t = lua_gettop(s);
-  while(lua_gettop(s)){
+  /*while(lua_gettop(s)){*/
     if(lua_isboolean(s, -1)){
-      traceNoNL(lua_toboolean(s,i)?"true\t":"false\t");
+      trace(lua_toboolean(s,i)?"true\t":"false\t");
     }else{
-      traceNoNL(lua_tostring(s, -1));
-      traceNoNL("\t");
+      trace(lua_tostring(s, -1));
+      /*traceNoNL("\t");*/
     }
     lua_pop(s, 1);
-  }
-  trace("");
+  /*}*/
+  /*trace("");*/
   return 0;
 }
 
@@ -332,14 +332,13 @@ void adInterstitialDisplayed(int success){
   }
 }
 
-void onPurchaseComplete(const char *id, int success){
+void onPurchaseComplete(int success){
   int ret;
   lua_getglobal(vm, "framework");
   lua_getfield(vm, -1, "IAP");
   lua_getfield(vm, -1, "onPurchaseComplete");
-  lua_pushstring(vm, id);
   lua_pushinteger(vm, success);
-  if(callFunc(2,0) != 0) {
+  if(callFunc(1,0) != 0) {
     appBroken = 1;
     return;
   }

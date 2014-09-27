@@ -40,9 +40,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 
     Log.i(TAG,"Activity: Create");
 
-    if(iap==null){
-      iap = new IAP(this);
-    }
+    iap = new IAP(this);
 
     requestWindowFeature(Window.FEATURE_NO_TITLE);
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -78,19 +76,21 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
+    if (!iap.onActivityResult(requestCode, resultCode, data)) {
+      super.onActivityResult(requestCode, resultCode, data);
+      uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
+        @Override
+        public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
+          Log.e("Activity", String.format("Error: %s", error.toString()));
+        }
 
-    uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
-      @Override
-      public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
-        Log.e("Activity", String.format("Error: %s", error.toString()));
-      }
+        @Override
+        public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
+          Log.i("Activity", "Success!");
+        }
+      });
+    }
 
-      @Override
-      public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
-        Log.i("Activity", "Success!");
-      }
-    });
   }
 
   @Override

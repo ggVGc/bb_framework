@@ -4,7 +4,7 @@
 int userOwnsProduct(const char *id);
 void purchaseProduct(const char *id);
 const char* getProductPrice(const char *id);
-void onPurchaseComplete(const char *id, int success);
+void onPurchaseComplete(int success);
 
 
 

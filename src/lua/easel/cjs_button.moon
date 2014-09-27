@@ -21,6 +21,7 @@ new: maker (mc)=>
 
 
   @update = (screenWidth, screenHeight)->
+    return false if not mc.visible
     cx = framework.Input.cursorX()*screenWidth
     cy = (1-framework.Input.cursorY())*screenHeight
     over = @.isOver cx, cy

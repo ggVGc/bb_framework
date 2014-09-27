@@ -2,7 +2,7 @@ framework = framework or {}
 
 framework.Font = {
 new: maker (imagePath, texLoadFunc) =>
-  chars = 'abcdefghijklmnopqrstuvxyz1234567890'
+  chars = 'abcdefghijklmnopqrstuvxyz1234567890,.'
   textures = {}
 
   string.gsub chars, '.', (c) ->

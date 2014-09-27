@@ -84,18 +84,21 @@ public void onDrawFrame(GL10 gl) {
       dead = true;
     }
     else {
-      switch (activity.chartboostDelegate.event){
-        case ChartboostDelegateImp.Event.closed:
-          activity.interstitialClosed();
-        break;
-        case ChartboostDelegateImp.Event.failedDisplay:
-          activity.interstitialFailedDisplay();
-        break;
-        case ChartboostDelegateImp.Event.displayed:
-          activity.interstitialDisplayed();
-        break;
+      if(activity.chartboostDelegate.events.size()!=0){
+        int e = activity.chartboostDelegate.events.remove().intValue();
+        Log.i(TAG, "Handling chartboost event: "+e);
+        switch (e){
+          case ChartboostDelegateImp.Event.closed:
+            activity.interstitialClosed();
+          break;
+          case ChartboostDelegateImp.Event.failedDisplay:
+            activity.interstitialFailedDisplay();
+          break;
+          case ChartboostDelegateImp.Event.displayed:
+            activity.interstitialDisplayed();
+          break;
+        }
       }
-      activity.chartboostDelegate.event = ChartboostDelegateImp.Event.none;
       nativeRender();
     }
   }

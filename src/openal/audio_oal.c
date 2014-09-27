@@ -95,8 +95,10 @@ void audioFree(Audio* a) {
 }
 
 void audioCleanup(){
+  /*
   alcDestroyContext(context);
   alcCloseDevice(device);
+  */
 }
 
 int audioIsFinished(Audio *a){
