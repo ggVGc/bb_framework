@@ -1,6 +1,11 @@
 #include <stdlib.h>
+#ifdef __APPLE__
+#include <OpenAL/al.h>
+#include <OpenAL/alc.h>
+#else
 #include <AL/al.h>
 #include <AL/alc.h>
+#endif
 #include "framework/audio.h"
 #include "framework/resource_loading.h"
 #include "framework/util.h"
@@ -77,7 +82,6 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
 }
 
 void audioPlay(Audio* a) {
-  trace("PLAY");
   alSourcePlay(a->source);
   alCheckError("Failed playing source");
 }

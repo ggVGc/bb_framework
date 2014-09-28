@@ -138,12 +138,12 @@ def buildVorbis():
     "./deps/common/libvorbis/lib",
     "./deps/common/libvorbis/lib/books",
     "./deps/common/libvorbis/lib/modes"
-    ], [], "-I./deps/common/libvorbis/lib")
+    ], [], "-I./deps/common/libvorbis/lib -I./deps/common/libogg/include -I./deps/common/libvorbis/include")
 
 def buildOgg():
   return buildLib("bin/libogga.a", [
     "./deps/common/libogg/src"
-    ], [], "")
+    ], [], "-I./deps/common/libogg/include")
 
 
 def buildFramework():
@@ -177,7 +177,7 @@ def buildFramework():
   if sys.platform == "darwin":
     commonLibString += ' -lluaa '
     cflags += ' -I./deps/common/lua '
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/osx -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/osx -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -framework OpenAL")
   else:
     cflags += ' -I./deps/common/luajit/src '
     commonLibString += ' -lluajit '

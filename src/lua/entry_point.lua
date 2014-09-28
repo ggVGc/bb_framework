@@ -3,7 +3,7 @@ function print(...)
   local arg = {...}
   local s = ''
   for i,v in ipairs(arg) do
-    s = s..v..'\t'
+    s = s..tostring(v)..'\t'
   end
   oldPrint(s)
 end
@@ -295,6 +295,7 @@ dofile 'framework/streaming_audio.lua'
 dofile 'framework/ads.moon'
 dofile 'framework/data_store.moon'
 dofile 'framework/iap.moon'
+dofile 'framework/fps_counter.lua'
 
 dofile "main.moon"
 --dofile("framework/test/display_objects_test.moon")
@@ -315,6 +316,7 @@ framework = framework or {}
 framework.cjs = framework.cjs or {}
 
 local main
+local fps = FpsCounter.new()
 
 function fromhex(str)
   return (str:gsub('..', function (cc)
@@ -345,10 +347,15 @@ function framework.doFrame(deltaMs)
       d = 0
     end
     doCall(function()
+      framework.cjs.Bitmap.drawCounter = 0
+      fps.update(d)
       if(d>100) then
-        d = 16
+        d = 1
       end
       main.doFrame(d)
+      if fps.hasNew() then
+        print ('fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
+      end
     end)
   else
     return 1

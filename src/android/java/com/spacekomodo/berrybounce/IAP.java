@@ -18,9 +18,9 @@ public class IAP{
 
   IabHelper mHelper;
   Activity activity;
-  Inventory curInventory;
+  Inventory curInventory = null;
 
-  boolean available;
+  boolean available = false;
 
   public IAP(Activity activity){
     this.activity = activity;
@@ -41,23 +41,25 @@ public class IAP{
 		public void onIabSetupFinished(IabResult result) {
           Log.i(TAG, "Setup finished.");
 
+          // Have we been disposed of in the meantime? If so, quit.
+          if (mHelper == null){
+            available = false;
+            return;
+          }
           if (!result.isSuccess()) {
             // Oh noes, there was a problem.
             available = false;
             return;
           }
 
-          // Have we been disposed of in the meantime? If so, quit.
-          if (mHelper == null){
-            available = false;
-            return;
-          }
-
-
-
           // IAB is fully set up. Now, let's get an inventory of stuff we own.
           Log.i(TAG, "Setup successful. Querying inventory.");
-          mHelper.queryInventoryAsync(true, Arrays.asList(AppConfig.iap.skuList), mGotInventoryListener);
+          try{
+            mHelper.queryInventoryAsync(true, Arrays.asList(AppConfig.iap.skuList), mGotInventoryListener);
+          }catch(Exception e){
+            available = false;
+            Log.i(TAG, "Error while querying inventory: "+e.toString());
+          }
         }
       });
     }
@@ -88,39 +90,6 @@ public class IAP{
 
       Log.i(TAG, "Query inventory was successful.");
       curInventory = inventory;
-      /*
-       * Check for items we own. Notice that for each purchase, we check
-       * the developer payload to see if it's correct! See
-       * verifyDeveloperPayload().
-       */
-
-      /*
-
-      // Do we have the premium upgrade?
-      Purchase premiumPurchase = inventory.getPurchase(SKU_PREMIUM);
-      mIsPremium = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase));
-      Log.i(TAG, "User is " + (mIsPremium ? "PREMIUM" : "NOT PREMIUM"));
-
-      // Do we have the infinite gas plan?
-      Purchase infiniteGasPurchase = inventory.getPurchase(SKU_INFINITE_GAS);
-      mSubscribedToInfiniteGas = (infiniteGasPurchase != null &&
-      verifyDeveloperPayload(infiniteGasPurchase));
-      Log.i(TAG, "User " + (mSubscribedToInfiniteGas ? "HAS" : "DOES NOT HAVE")
-      + " infinite gas subscription.");
-      if (mSubscribedToInfiniteGas) mTank = TANK_MAX;
-
-      // Check for gas delivery -- if we own gas, we should fill up the tank immediately
-      Purchase gasPurchase = inventory.getPurchase(SKU_GAS);
-      if (gasPurchase != null && verifyDeveloperPayload(gasPurchase)) {
-      Log.i(TAG, "We have gas. Consuming it.");
-      mHelper.consumeAsync(inventory.getPurchase(SKU_GAS), mConsumeFinishedListener);
-      return;
-      }
-
-      updateUi();
-      setWaitScreen(false);
-      */
-      Log.i(TAG, "Initial inventory query finished; enabling main UI.");
     }
   };
 
@@ -177,8 +146,24 @@ public class IAP{
 
 
   public boolean userOwnsProduct(String id){
-    boolean ret =  curInventory!=null && curInventory.hasPurchase(id);
-    return ret;
+    if(!available){
+      return false;
+    }
+    int time = 0;
+    while(curInventory==null){
+      try{
+        Log.i(TAG, "Waiting for inventory");
+        Thread.sleep(10);
+      }catch(Exception e){
+        return false;
+      }
+      time += 10;
+      if(time>5000){
+        Log.i(TAG, "Inventory wait timed out");
+        return false;
+      }
+    }
+    return curInventory.hasPurchase(id);
   }
 
 
@@ -213,6 +198,20 @@ public class IAP{
     if(!available){
       return null;
     }else{
+      int time = 0;
+      while(curInventory==null){
+        try{
+          Log.i(TAG, "Waiting for inventory");
+          Thread.sleep(10);
+        }catch(Exception e){
+          return null;
+        }
+        time += 10;
+        if(time>5000){
+          Log.i(TAG, "Inventory wait timed out");
+          return null;
+        }
+      }
       return curInventory.hasDetails(id)?curInventory.getSkuDetails(id).getPrice():null;
     }
   }

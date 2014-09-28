@@ -10,10 +10,12 @@ new: maker (mc)=>
   state = 0
 
   @isOver = (x,y) ->
+    return false if not mc.visible
     globPos = mc.localToGlobal(0,0)
     return x > globPos.x and x<globPos.x+w and y>globPos.y and y<globPos.y+h
 
   @isPressOver = (screenWidth, screenHeight) ->
+    return false if not mc.visible
     cx = framework.Input.cursorX()*screenWidth
     cy = (1-framework.Input.cursorY())*screenHeight
     over = @.isOver cx, cy

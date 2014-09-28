@@ -43,16 +43,16 @@ int loadstringWithName(lua_State *L, const char *s, const char* name) {
 
 
 int print_lua(lua_State* s){
-  int i;
-  int t = lua_gettop(s);
+  /*int i;*/
+  /*int t = lua_gettop(s);*/
   /*while(lua_gettop(s)){*/
     if(lua_isboolean(s, -1)){
-      trace(lua_toboolean(s,i)?"true\t":"false\t");
+      trace(lua_toboolean(s,-1)?"true\t":"false\t");
     }else{
       trace(lua_tostring(s, -1));
       /*traceNoNL("\t");*/
     }
-    lua_pop(s, 1);
+    /*lua_pop(s, 1);*/
   /*}*/
   /*trace("");*/
   return 0;

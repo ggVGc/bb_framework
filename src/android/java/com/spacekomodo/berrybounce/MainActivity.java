@@ -39,6 +39,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     super.onCreate(savedInstanceState);
 
     Log.i(TAG,"Activity: Create");
+    getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
     iap = new IAP(this);
 

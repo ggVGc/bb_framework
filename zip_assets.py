@@ -75,6 +75,8 @@ def zipDir(zipOut, r, stripCode=False, prefix=""):
 
   for root, dirs, files in os.walk(r):
     for f in files:
+      if 'external_gfx' in root:
+        continue
       if stripCode and ('flash' in root or 'font' in root) and not 'loading' in root and not 'start' in root and not 'smoke' in root and not 'pause' in root and not 'game_over' in root:
         continue
       p = os.path.join(root, f)

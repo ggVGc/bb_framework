@@ -45,6 +45,7 @@
     <ClCompile Include="..\..\..\src\common\framework\texture.c" />
     <ClCompile Include="..\..\..\src\common\framework\util.c" />
     <ClCompile Include="..\..\..\src\common\framework\audio.c" />
+    <ClCompile Include="..\..\..\src\glfw\framework\iap.c" />
     <ClCompile Include="..\..\..\src\openal\audio_oal.c" />
     <ClCompile Include="..\..\..\src\glfw\framework\data_store.c" />
     <ClCompile Include="..\..\..\src\common\framework_wrap.c" />
