@@ -14,7 +14,6 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 
 public class IAP{
   static final String TAG = "IAP";
-  // (arbitrary) request code for the purchase flow
 
   IabHelper mHelper;
   Activity activity;
@@ -38,7 +37,7 @@ public class IAP{
       Log.i(TAG, "Starting setup.");
       mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
         @Override
-		public void onIabSetupFinished(IabResult result) {
+        public void onIabSetupFinished(IabResult result) {
           Log.i(TAG, "Setup finished.");
 
           // Have we been disposed of in the meantime? If so, quit.
@@ -68,7 +67,7 @@ public class IAP{
   // Listener that's called when we finish querying the items and subscriptions we own
   IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
     @Override
-	public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+    public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
       Log.i(TAG, "Query inventory finished.");
 
       curInventory = null;
@@ -96,7 +95,7 @@ public class IAP{
 
   IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
     @Override
-	public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
+    public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
       Log.i(TAG, "Purchase finished: " + result + ", purchase: " + purchase);
 
       int success = 1;
@@ -117,30 +116,6 @@ public class IAP{
   /** Verifies the developer payload of a purchase. */
   boolean verifyDeveloperPayload(Purchase p) {
     String payload = p.getDeveloperPayload();
-
-    /*
-     * TODO: verify that the developer payload of the purchase is correct. It will be
-     * the same one that you sent when initiating the purchase.
-     *
-     * WARNING: Locally generating a random string when starting a purchase and
-     * verifying it here might seem like a good approach, but this will fail in the
-     * case where the user purchases an item on one device and then uses your app on
-     * a different device, because on the other device you will not have access to the
-     * random string you originally generated.
-     *
-     * So a good developer payload has these characteristics:
-     *
-     * 1. If two different users purchase an item, the payload is different between them,
-     *    so that one user's purchase can't be replayed to another user.
-     *
-     * 2. The payload must be such that you can verify it even when the app wasn't the
-     *    one who initiated the purchase flow (so that items purchased by the user on
-     *    one device work on other devices owned by the user).
-     *
-     * Using your own server to store and verify developer payloads across app
-     * installations is recommended.
-     */
-
     return true;
   }
 

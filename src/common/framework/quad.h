@@ -9,9 +9,9 @@
 void quadGlobalInit();
 void quadBeginFrame();
 
+void setTint(float r, float g, float b);
 void quadDrawTex(Texture* tex, Matrix2 *m);
-void quadDrawTexAlpha(Texture* tex, Matrix2 *m, double alpha);
-void quadDrawTexCol(Texture* tex, Matrix2 *m, double r, double g, double b, double alpha);
+void quadDrawTexAlpha(Texture* tex, Matrix2 *m, float alpha);
 void quadDrawCol(float x, float y, float width, float height, float red, float green, float blue, float alpha, float rot, float pivX, float pivY);
 void quadFlush();
 void quadEndFrame();

@@ -42,19 +42,19 @@ Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorDown( JNIEnv*  env) {
 
 
 void startProfiler(){
-  trace("starting profiler");
   /*
+  trace("starting profiler");
   monstartup("jumpz_framework.so");
   */
 }
 
 void stopProfiler(){
-  trace("stopping profiler");
   /*
+  trace("stopping profiler");
   setenv("CPUPROFILE", "/data/data/com.spacekomodo.berrybounce/files/gmon.out", 1);
   moncleanup();
-  */
   trace("Cleaned up profiler");
+  */
 }
 
   void

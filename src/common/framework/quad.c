@@ -11,6 +11,9 @@ static int noLastHandle;
 static int quadCount;
 
 
+typedef struct Color{
+} Color;
+
 
 static GLfloat vertices[12] = {
   0, 0,
@@ -27,8 +30,11 @@ static GLfloat vertexBuf[BUF_SIZE];
 static GLfloat texCoordBuf[BUF_SIZE];
 
 
+static float curR, curG, curB;
+
 void quadGlobalInit(){
   int i;
+  curR = curG = curB = 1;
   glEnableClientState(GL_VERTEX_ARRAY);
   noLastHandle = 1;
   quadCount = 0;
@@ -76,11 +82,11 @@ void transformVertices(Matrix2 *m, GLfloat *inPoints, GLfloat *outPoints){
 }
 
 
-void quadDrawTexCol(Texture* tex, Matrix2 *m, double r, double g, double b, double alpha){
-  int notFullCol = (r!=1||g!=1||b!=1||alpha != 1);
+void quadDrawTexAlpha(Texture* tex, Matrix2 *m, float alpha){
+  int notFullCol = alpha!=1;
   if(notFullCol||noLastHandle || tex->data->glTexHandle != texHandle || quadCount>=MAX_QUADS){
     quadFlush();
-    glColor4f(r*alpha, g*alpha, b*alpha, alpha);
+    glColor4f(curR*alpha, curG*alpha, curB*alpha, alpha);
     texHandle = tex->data->glTexHandle;
   }
 
@@ -92,8 +98,12 @@ void quadDrawTexCol(Texture* tex, Matrix2 *m, double r, double g, double b, doub
   noLastHandle = notFullCol;
 }
 
-void quadDrawTexAlpha(Texture* tex, Matrix2 *m, double alpha){
-  quadDrawTexCol(tex, m, 1, 1, 1, alpha);
+void setTint(float r, float g, float b){
+  quadFlush();
+  curR = r;
+  curG = g;
+  curB = b;
+  noLastHandle = 1;
 }
 
 void quadDrawTex(Texture* tex, Matrix2 *m){

@@ -10,6 +10,7 @@ new: maker (imagePath, texLoadFunc) =>
 
   tmpMat = _c_framework.Matrix2!
   @drawString = (str, x=0, y=0, scale=1, reverse=false, tint) ->
+    _c_framework.setTint tint[1]/255, tint[2]/255, tint[3]/255
     _c_framework.Matrix2_identity tmpMat
     w = 0
     if reverse
@@ -27,7 +28,8 @@ new: maker (imagePath, texLoadFunc) =>
         tmpMat.d = scale
         if not reverse
           w+=tex.width*scale
-        tex.draw tmpMat, tint
+        tex.draw tmpMat
+    _c_framework.setTint 1,1,1
           
 
 }

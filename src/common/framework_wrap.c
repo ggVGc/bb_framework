@@ -5657,6 +5657,31 @@ fail:
 }
 
 
+static int _wrap_setTint(lua_State* L) {
+  int SWIG_arg = 0;
+  float arg1 ;
+  float arg2 ;
+  float arg3 ;
+  
+  SWIG_check_num_args("setTint",3,3)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("setTint",1,"float");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("setTint",2,"float");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("setTint",3,"float");
+  arg1 = (float)lua_tonumber(L, 1);
+  arg2 = (float)lua_tonumber(L, 2);
+  arg3 = (float)lua_tonumber(L, 3);
+  setTint(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_quadDrawTex(lua_State* L) {
   int SWIG_arg = 0;
   Texture *arg1 = (Texture *) 0 ;
@@ -5691,12 +5716,12 @@ static int _wrap_quadDrawTexAlpha(lua_State* L) {
   int SWIG_arg = 0;
   Texture *arg1 = (Texture *) 0 ;
   Matrix2 *arg2 = (Matrix2 *) 0 ;
-  double arg3 ;
+  float arg3 ;
   
   SWIG_check_num_args("quadDrawTexAlpha",3,3)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("quadDrawTexAlpha",1,"Texture *");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("quadDrawTexAlpha",2,"Matrix2 *");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("quadDrawTexAlpha",3,"double");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("quadDrawTexAlpha",3,"float");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
     SWIG_fail_ptr("quadDrawTexAlpha",1,SWIGTYPE_p_Texture);
@@ -5707,50 +5732,8 @@ static int _wrap_quadDrawTexAlpha(lua_State* L) {
     SWIG_fail_ptr("quadDrawTexAlpha",2,SWIGTYPE_p_Matrix2);
   }
   
-  arg3 = (double)lua_tonumber(L, 3);
+  arg3 = (float)lua_tonumber(L, 3);
   quadDrawTexAlpha(arg1,arg2,arg3);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_quadDrawTexCol(lua_State* L) {
-  int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
-  Matrix2 *arg2 = (Matrix2 *) 0 ;
-  double arg3 ;
-  double arg4 ;
-  double arg5 ;
-  double arg6 ;
-  
-  SWIG_check_num_args("quadDrawTexCol",6,6)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("quadDrawTexCol",1,"Texture *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("quadDrawTexCol",2,"Matrix2 *");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("quadDrawTexCol",3,"double");
-  if(!lua_isnumber(L,4)) SWIG_fail_arg("quadDrawTexCol",4,"double");
-  if(!lua_isnumber(L,5)) SWIG_fail_arg("quadDrawTexCol",5,"double");
-  if(!lua_isnumber(L,6)) SWIG_fail_arg("quadDrawTexCol",6,"double");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
-    SWIG_fail_ptr("quadDrawTexCol",1,SWIGTYPE_p_Texture);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Matrix2,0))){
-    SWIG_fail_ptr("quadDrawTexCol",2,SWIGTYPE_p_Matrix2);
-  }
-  
-  arg3 = (double)lua_tonumber(L, 3);
-  arg4 = (double)lua_tonumber(L, 4);
-  arg5 = (double)lua_tonumber(L, 5);
-  arg6 = (double)lua_tonumber(L, 6);
-  quadDrawTexCol(arg1,arg2,arg3,arg4,arg5,arg6);
   
   return SWIG_arg;
   
@@ -6678,9 +6661,9 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "cameraInit", _wrap_cameraInit},
     { "quadGlobalInit", _wrap_quadGlobalInit},
     { "quadBeginFrame", _wrap_quadBeginFrame},
+    { "setTint", _wrap_setTint},
     { "quadDrawTex", _wrap_quadDrawTex},
     { "quadDrawTexAlpha", _wrap_quadDrawTexAlpha},
-    { "quadDrawTexCol", _wrap_quadDrawTexCol},
     { "quadDrawCol", _wrap_quadDrawCol},
     { "quadFlush", _wrap_quadFlush},
     { "quadEndFrame", _wrap_quadEndFrame},

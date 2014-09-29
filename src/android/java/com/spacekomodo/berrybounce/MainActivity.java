@@ -18,10 +18,11 @@ import com.chartboost.sdk.Chartboost;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.widget.FacebookDialog;
 
+
 public class MainActivity extends Activity implements AdFlakeInterface {
   public static final String TAG = "MainActivity";
 
-  IAP iap;
+  public IAP iap;
   public ChartboostDelegateImp chartboostDelegate;
   public AdFlakeLayout adFlakeLayout;
 
@@ -29,7 +30,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     System.loadLibrary("jumpz_framework");
   }
   private Chartboost cb;
-  //private UiLifecycleHelper uiHelper;
+  private UiLifecycleHelper uiHelper;
 
   public MainActivity(){
   }
@@ -41,28 +42,24 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     Log.i(TAG,"Activity: Create");
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-    //iap = new IAP(this);
+    iap = new IAP(this);
 
     requestWindowFeature(Window.FEATURE_NO_TITLE);
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-    //RelativeLayout layout = new RelativeLayout(this);
+    RelativeLayout layout = new RelativeLayout(this);
     view = new GLView(this);
-    setContentView(view);
-    //setContentView(layout);
+    setContentView(layout);
 
     cb = Chartboost.sharedChartboost();
     chartboostDelegate = new ChartboostDelegateImp(cb);
     cb.onCreate(this, AppConfig.chartboost.appId, AppConfig.chartboost.appSignature, chartboostDelegate);
 
-    /*
     uiHelper = new UiLifecycleHelper(this, null);
     uiHelper.onCreate(savedInstanceState);
-    */
 
 
-    //AdFlakeTargeting.setTestMode(AppConfig.adFlake.testMode);
+    AdFlakeTargeting.setTestMode(AppConfig.adFlake.testMode);
 
-    /*
     DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
     final float density = displayMetrics.density;
     final int width = (int) (AdFlakeUtil.BANNER_DEFAULT_WIDTH * density);
@@ -77,14 +74,12 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 1);
     layout.addView(adFlakeLayout, lp);
     adFlakeLayout.setVisibility(RelativeLayout.GONE);
-    */
   }
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    //if (!iap.onActivityResult(requestCode, resultCode, data)) {
+    if (!iap.onActivityResult(requestCode, resultCode, data)) {
       super.onActivityResult(requestCode, resultCode, data);
-/*
       uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
         @Override
         public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
@@ -96,8 +91,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
           Log.i("Activity", "Success!");
         }
       });
-*/
-    //}
+    }
 
   }
 
@@ -125,25 +119,13 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   public native void interstitialFailedDisplay();
 
   public int facebookIsShareAvailable(){
-    if(FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)){
-      return 1;
-    }else{
+   
       return 0;
-    }
-  }
+     }
 
   public void facebookPost(){
     Log.i(TAG,"Activity: Facebook post");
-    if (FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)) {
-      FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(this)
-        .setName(AppConfig.facebook.name)
-        .setCaption(AppConfig.facebook.caption)
-        .setDescription(AppConfig.facebook.description)
-        .setPicture(AppConfig.facebook.pictureUrl)
-        .setLink(AppConfig.facebook.link)
-        .build();
-      //uiHelper.trackPendingDialogCall(shareDialog.present());
-    }
+   
   }
 
   @Override
@@ -157,7 +139,7 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   protected void onPause() {
     super.onPause();
     Log.i(TAG,"Activity: Pause");
-    //uiHelper.onPause();
+    uiHelper.onPause();
     view.pause();
   }
 
@@ -166,13 +148,13 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     super.onResume();
     Log.i(TAG,"Activity: Resume");
     view.onResume();
-    //uiHelper.onResume();
+    uiHelper.onResume();
   }
 
   @Override
   protected void onSaveInstanceState(Bundle outState) {
     super.onSaveInstanceState(outState);
-    //uiHelper.onSaveInstanceState(outState);
+    uiHelper.onSaveInstanceState(outState);
   }
 
   @Override
@@ -189,17 +171,18 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     Log.i(TAG,"Activity: Destroy");
     view.stop();
     this.cb.onDestroy(this);
-    //uiHelper.onDestroy();
+    uiHelper.onDestroy();
   }
 
   @Override
   public void onBackPressed() {
-    if (this.cb.onBackPressed())
+    if (this.cb.onBackPressed()){
       // If a Chartboost view exists, close it and return
       return;
-    else
+    }else{
       // If no Chartboost view exists, continue on as normal
       super.onBackPressed();
+    }
   }
 
 

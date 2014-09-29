@@ -68,7 +68,6 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
     return 0;
   }
   Audio* a = (Audio*)malloc(sizeof(Audio));
-  return a;
   /*
   a->loop = 0;
   */
@@ -124,7 +123,6 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
 }
 
 void audioPlay(Audio* a) {
-  return;
   /*
   trace("Audio: Playing");
   */
@@ -140,7 +138,6 @@ void audioSetLooping(Audio* a, int loop) {
 }
 
 void audioStop(Audio* a) {
-  return;
   (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_STOPPED );
   (*a->player_buf_q)->Clear(a->player_buf_q );
   a->is_playing = 0;
@@ -153,7 +150,6 @@ void audioFree(Audio* a) {
 }
 
 int audioIsFinished(Audio *a){
-  return 0;
   if(a->is_playing && a->is_done_buffer ){
     audioStop(a);
   }
