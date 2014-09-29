@@ -15,11 +15,14 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 public class IAP{
   static final String TAG = "IAP";
 
-  IabHelper mHelper;
+  IabHelper mHelper = null;
   Activity activity;
   Inventory curInventory = null;
 
-  boolean available = false;
+  IabHelper.OnIabSetupFinishedListener listener;
+
+  boolean available;
+  String productToPurchaseAfterCreate = null;
 
   public IAP(Activity activity){
     this.activity = activity;
@@ -32,36 +35,51 @@ public class IAP{
       GooglePlayServicesUtil.getErrorDialog(ret, activity, 1).show();
     }
     if(available){
-      mHelper = new IabHelper(activity, AppConfig.iap.publicKey);
-      mHelper.enableDebugLogging(AppConfig.iap.debugLogging);
-      Log.i(TAG, "Starting setup.");
-      mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+      listener = new IabHelper.OnIabSetupFinishedListener() {
+        @Override
+        public void onServiceDisconnected(){
+          Log.i(TAG, "Service disconnected, recreating helper");
+          mHelper = null;
+        }
         @Override
         public void onIabSetupFinished(IabResult result) {
           Log.i(TAG, "Setup finished.");
 
           // Have we been disposed of in the meantime? If so, quit.
           if (mHelper == null){
-            available = false;
             return;
           }
           if (!result.isSuccess()) {
             // Oh noes, there was a problem.
-            available = false;
+            mHelper = null;
             return;
           }
 
-          // IAB is fully set up. Now, let's get an inventory of stuff we own.
-          Log.i(TAG, "Setup successful. Querying inventory.");
-          try{
-            mHelper.queryInventoryAsync(true, Arrays.asList(AppConfig.iap.skuList), mGotInventoryListener);
-          }catch(Exception e){
-            available = false;
-            Log.i(TAG, "Error while querying inventory: "+e.toString());
+          if(productToPurchaseAfterCreate==null){
+            // IAB is fully set up. Now, let's get an inventory of stuff we own.
+            Log.i(TAG, "Setup successful. Querying inventory.");
+            try{
+              mHelper.queryInventoryAsync(true, Arrays.asList(AppConfig.iap.skuList), mGotInventoryListener);
+            }catch(Exception e){
+              Log.i(TAG, "Error while querying inventory: "+e.toString());
+              e.printStackTrace(System.out);
+            }
+          }else{
+            purchaseProduct(productToPurchaseAfterCreate);
+            productToPurchaseAfterCreate = null;
           }
         }
-      });
+      };
+
+      recreateHelper();
     }
+  }
+
+  void recreateHelper(){
+    mHelper = new IabHelper(activity, AppConfig.iap.publicKey);
+    mHelper.enableDebugLogging(AppConfig.iap.debugLogging);
+    Log.i(TAG, "Starting setup.");
+    mHelper.startSetup(listener);
   }
 
   // Listener that's called when we finish querying the items and subscriptions we own
@@ -74,14 +92,12 @@ public class IAP{
 
       // Have we been disposed of in the meantime? If so, quit.
       if (mHelper == null){
-        available = false;
         return;
       }
 
       // Is it a failure?
       if (result.isFailure()) {
         Log.e(TAG, "Failed to query inventory: " + result);
-        available = false;
 
         return;
       }
@@ -121,7 +137,7 @@ public class IAP{
 
 
   public boolean userOwnsProduct(String id){
-    if(!available){
+    if(mHelper==null){
       return false;
     }
     int time = 0;
@@ -144,17 +160,26 @@ public class IAP{
 
 
   public boolean onActivityResult(int requestCode, int resultCode, Intent data){
-    try{
-      return mHelper.handleActivityResult(requestCode, resultCode, data);
-    }catch(Exception e){
-      Log.i(TAG, e.toString());
+    if(mHelper!=null){
+      try{
+        return mHelper.handleActivityResult(requestCode, resultCode, data);
+      }catch(Exception e){
+        Log.i(TAG, e.toString());
+        e.printStackTrace(System.out);
+        return false;
+      }
+    }else{
       return false;
     }
   }
 
   static final int RC_REQUEST = 10001;
   public void purchaseProduct(String id){
-    if(!available){
+    if(mHelper==null){
+      if(available){
+        productToPurchaseAfterCreate = id;
+        recreateHelper();
+      }
       onPurchaseComplete(0);
       return;
     }else{
@@ -165,12 +190,14 @@ public class IAP{
       }catch(Exception e){
         Log.i(TAG, "Something went wrong while launching purchase flow");
         Log.i(TAG, e.toString());
+        e.printStackTrace(System.out);
+        onPurchaseComplete(0);
       }
     }
   }
 
   public String getProductPrice(String id){
-    if(!available){
+    if(mHelper==null){
       return "";
     }else{
       int time = 0;
@@ -179,6 +206,7 @@ public class IAP{
           Log.i(TAG, "Waiting for inventory");
           Thread.sleep(10);
         }catch(Exception e){
+          e.printStackTrace(System.out);
           return "";
         }
         time += 10;
