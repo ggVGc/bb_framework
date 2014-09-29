@@ -1,3 +1,7 @@
+
+jit.off()
+
+
 local oldPrint = print
 function print(...)
   local arg = {...}

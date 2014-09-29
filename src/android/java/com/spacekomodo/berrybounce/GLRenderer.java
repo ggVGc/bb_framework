@@ -136,7 +136,12 @@ public void onDrawFrame(GL10 gl) {
       FileInputStream f = this.activity.openFileInput("datastore");
       Scanner scan = new Scanner(f);  
       scan.useDelimiter("\\Z");  
-      return scan.next();  
+      String ret =  scan.next();  
+      if(ret!=null){
+        return ret;
+      }else{
+        return "";
+      }
     } catch (Exception e) {
       return "";
     }
@@ -147,35 +152,38 @@ public void onDrawFrame(GL10 gl) {
   }
 
   public int userOwnsProduct(String id){
-    if(activity.iap.userOwnsProduct(id)){
-      return 1;
-    }else{
+    //if(activity.iap.userOwnsProduct(id)){
+      //return 1;
+    //}else{
       return 0;
-    }
+    //}
   }
   public void purchaseProduct(final String id){
+    /*
     activity.runOnUiThread(new Runnable() {
       public void run() {
         activity.iap.purchaseProduct(id);
       }
     });
+    */
   }
 
   public String getProductPrice(String id){
-    return activity.iap.getProductPrice(id);
+    return "";
+    //return activity.iap.getProductPrice(id);
   }
 
 
   void setBannersEnabled(final int enable){
     Log.i(TAG, "Setting banner visibility: "+enable);
+    /*
     activity.runOnUiThread(new Runnable() {
       public void run() {
         activity.adFlakeLayout.setVisibility(enable==1?RelativeLayout.VISIBLE:RelativeLayout.GONE);
       }
     });
+    */
   }
-
-
 
   private static native void nativeOnStop();
   private static native void nativeInit(String apkPath);

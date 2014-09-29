@@ -6477,6 +6477,38 @@ fail:
 }
 
 
+static int _wrap_startProfiler(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("startProfiler",0,0)
+  startProfiler();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_stopProfiler(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("stopProfiler",0,0)
+  stopProfiler();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_screenWidth(lua_State* L) {
   int SWIG_arg = 0;
   int result;
@@ -6685,6 +6717,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "purchaseProduct", _wrap_purchaseProduct},
     { "getProductPrice", _wrap_getProductPrice},
     { "onPurchaseComplete", _wrap_onPurchaseComplete},
+    { "startProfiler", _wrap_startProfiler},
+    { "stopProfiler", _wrap_stopProfiler},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},

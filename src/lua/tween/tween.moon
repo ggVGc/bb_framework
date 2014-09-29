@@ -21,32 +21,35 @@ _tweens: {}
 _plugins: {}
 _inited: false
 
-new: (target, props, pluginData) ->
+new: (initialTarget, props, pluginData) ->
   self = {}
-  self.ignoreGlobalPause = props and not not props.ignoreGlobalPause
-  self.loop = props and not not props.loop
-  self.duration = 0
-  self.pluginData = pluginData or {}
-  self.target = self._target
-  self.position = nil
-  self.passive = false
-
-  self._paused = props and not not props.paused
-  self._curQueueProps = {}
-  self._initQueueProps = {}
-  self._steps = {}
-  self._actions = {}
-  self._prevPosition = 0
-  self._stepPosition = 0 -- this is needed by MovieClip.
-  self._prevPos = -1
-  self._target = target
-  self._useTicks = props and not not props.useTicks
-
-
   props = _.extend {}, Tween.defaultProps, props
-
   if props.onChange then self.addEventListener "change", props.onChange
-  if props.override then Tween.removeTweens target
+
+  self.reset = (newTarget) ->
+    self.ignoreGlobalPause = props and not not props.ignoreGlobalPause
+    self.loop = props and not not props.loop
+    self.duration = 0
+    self.pluginData = pluginData or {}
+    self.position = nil
+    self.passive = false
+
+    self._paused = props and not not props.paused
+    self._curQueueProps = {}
+    self._initQueueProps = {}
+    self._steps = {}
+    self._actions = {}
+    self._prevPosition = 0
+    self._stepPosition = 0 -- this is needed by MovieClip.
+    self._prevPos = -1
+    self._target = newTarget
+    self._useTicks = props and not not props.useTicks
+    if props.override
+      Tween.removeTweens newTarget
+    --unless self._paused
+      --Tween._register self, true
+
+  self.reset(initialTarget or {})
 
   unless self._paused
     Tween._register self, true
@@ -338,7 +341,7 @@ _register: (tween, value) ->
   target = tween._target
   tweens = Tween._tweens
   if value
-	if target
+    if target
       if target.tweenjs_count
         target.tweenjs_count = target.tweenjs_count+1
       else
@@ -348,7 +351,7 @@ _register: (tween, value) ->
       Ticker.addEventListener "tick", Tween
       Tween._inited = true
   else
-    if target
+    if target and target.tweenjs_count
       target.tweenjs_count-=1
     for i=#tweens,1,-1
       if tweens[i] == tween

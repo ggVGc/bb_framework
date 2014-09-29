@@ -50,7 +50,9 @@ int audioGlobalInit(){
 void SLAPIENTRY play_callback( SLPlayItf player, void *context, SLuint32 event ){
   Audio *a = (Audio*)context;
   if( event & SL_PLAYEVENT_HEADATEND ){
+    /*
     trace("Audio: Buffer finished");
+    */
     a->is_done_buffer = 1;
     /*
     if(a->loop){
@@ -66,6 +68,7 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
     return 0;
   }
   Audio* a = (Audio*)malloc(sizeof(Audio));
+  return a;
   /*
   a->loop = 0;
   */
@@ -121,7 +124,10 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
 }
 
 void audioPlay(Audio* a) {
+  return;
+  /*
   trace("Audio: Playing");
+  */
   audioStop(a);
   (*a->player_buf_q)->Enqueue(a->player_buf_q, a->clip_samples, a->clip_num_samples );
   (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
@@ -134,6 +140,7 @@ void audioSetLooping(Audio* a, int loop) {
 }
 
 void audioStop(Audio* a) {
+  return;
   (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_STOPPED );
   (*a->player_buf_q)->Clear(a->player_buf_q );
   a->is_playing = 0;
@@ -146,6 +153,7 @@ void audioFree(Audio* a) {
 }
 
 int audioIsFinished(Audio *a){
+  return 0;
   if(a->is_playing && a->is_done_buffer ){
     audioStop(a);
   }

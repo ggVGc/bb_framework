@@ -196,7 +196,7 @@ public class IAP{
 
   public String getProductPrice(String id){
     if(!available){
-      return null;
+      return "";
     }else{
       int time = 0;
       while(curInventory==null){
@@ -204,12 +204,12 @@ public class IAP{
           Log.i(TAG, "Waiting for inventory");
           Thread.sleep(10);
         }catch(Exception e){
-          return null;
+          return "";
         }
         time += 10;
         if(time>5000){
           Log.i(TAG, "Inventory wait timed out");
-          return null;
+          return "";
         }
       }
       return curInventory.hasDetails(id)?curInventory.getSkuDetails(id).getPrice():null;

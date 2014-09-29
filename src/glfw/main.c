@@ -5,6 +5,7 @@
 #include "timing.h"
 #include "app.h"
 #include "framework/input.h"
+#include "framework/profiler.h"
 
 #ifdef __APPLE__
   #include <mach-o/dyld.h>
@@ -186,5 +187,12 @@ int main(int argc, char **argv) {
   glfwDestroyWindow(window);
   glfwTerminate();
   exit(EXIT_SUCCESS);
+}
+
+
+void startProfiler(){
+}
+
+void stopProfiler(){
 }
 

@@ -57,7 +57,7 @@ public boolean onTouchEvent(final MotionEvent event)
     renderer.pause();
   }
 
-  GLRenderer renderer;
+  public GLRenderer renderer;
 
   private static native void nativeOnCursorDown();
   private static native void nativeOnCursorUp();

@@ -65,7 +65,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
     out = os.path.join("obj","framework", n+".o")
     ofiles += " "+out
     ofiles
-    cmd = "gcc -g "+cflags+" -c "+f+" -o "+out
+    cmd = "gcc -g -fsanitize=address -fno-omit-frame-pointer "+cflags+" -c "+f+" -o "+out
     print cmd
     ret = os.system(cmd)
     if ret != 0:
@@ -76,7 +76,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
   files = cppfiles+" "+ofiles
 
-  cmd = "g++ -g "+cflags+" "+files+" -o "+outfile+" "+linkFlags
+  cmd = "g++ -g -fsanitize=address -fno-omit-frame-pointer "+cflags+" "+files+" -o "+outfile+" "+linkFlags
   print cmd
   return os.system(cmd)
 
@@ -181,7 +181,7 @@ def buildFramework():
   else:
     cflags += ' -I./deps/common/luajit/src '
     commonLibString += ' -lluajit '
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/deps/common/luajit/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU -lopenal")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/deps/common/luajit/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU -lopenal -fsanitize=address -fno-omit-frame-pointer")
 
 
 

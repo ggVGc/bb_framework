@@ -2,24 +2,37 @@ local Ticker
 Ticker = {
 new: (fps, initialListeners) ->
   self = {}
-  self.listeners = initialListeners or {}
-  self.timePerTick = 1000/(fps or 24)
+  listeners = initialListeners or {}
+  timePerTick = 1000/(fps or 24)
+
+  listenerCount = #initialListeners
+  d = timePerTick/listenerCount
+  --print 'time', timePerTick, d
+  times = {}
+  for i=1,#initialListeners
+    times[i] = i*math.floor(d)
+
 
   self.addListener = (listener) ->
-    table.insert self.listeners, listener
+    table.insert listeners, listener
+    listenerCount+=1
+    times[listenerCount] = listenerCount*4
 
   self._tick = (deltaMs) ->
-    for l in *self.listeners
+    for l in *listeners
       l._tick {}
 
+  props = {}
   curTime = 0
   self.update = (deltaMs) ->
-    curTime += deltaMs
-    ret = false
-    while curTime>=self.timePerTick
-      curTime -= self.timePerTick
-      self._tick!
-      ret = true
+    --print 'update'
+    ret = times[1]+deltaMs>=timePerTick
+    for i=1, listenerCount
+      times[i]+=deltaMs
+      if times[i]>=timePerTick
+        times[i] -= timePerTick
+        listeners[i]._tick props
+        --print 'tick', i
     return ret
 
   return self

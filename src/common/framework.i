@@ -27,6 +27,7 @@
 #include "framework/ads.h"
 #include "framework/data_store.h"
 #include "framework/iap.h"
+#include "framework/profiler.h"
 
 
 %extend Camera{
