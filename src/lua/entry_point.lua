@@ -177,19 +177,23 @@ truncate_traceback = function(traceback, chunk_func)
   return table.concat(traceback, "\n")
 end
 
-local function doCall(func)
-  local err = nil
-  local trace
-  local function handler(e)
-    err = e
-    trace = debug.traceback('', 2)
-    _c_framework.setAppBroken(1);
-  end
+local callFunc
+local err = nil
+local trace
+local ret
+local function xpCallBody()
+  ret = callFunc()
+end
 
-  local ret;
-  xpcall(function()
-    ret = func()
-  end, handler)
+local function handler(e)
+  err = e
+  trace = debug.traceback('', 2)
+  _c_framework.setAppBroken(1);
+end
+
+local function doCall(func)
+  callFunc = func
+  xpcall(xpCallBody, handler)
 
   if err then
       --local truncated = truncate_traceback(trim(trace))
@@ -345,34 +349,30 @@ end
 
 
 local lastMem=0
+local frameDelta
+
+local frameFunc = function()
+      --framework.cjs.Bitmap.drawCounter = 0
+      fps.update(frameDelta)
+      if(frameDelta>100) then
+        frameDelta = 1
+      end
+      main.doFrame(frameDelta)
+      if fps.hasNew() then
+        local thisMem = collectgarbage 'count'
+        print ('M: '..math.floor(thisMem).." ("..math.floor(thisMem-lastMem)..")", 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
+        lastMem = thisMem
+      end
+    end
 
 function framework.doFrame(deltaMs)
-  local d
-  if deltaMs>0 then d = deltaMs else d = 0 end
+  if deltaMs>0 then frameDelta = deltaMs else frameDelta = 0 end
   if running and _c_framework.isAppBroken() == 0 then
     if freezeFrameCount>0 then
       freezeFrameCount = freezeFrameCount-1
-      d = 0
+      frameDelta = 0
     end
-    doCall(function()
-      framework.cjs.Bitmap.drawCounter = 0
-      fps.update(d)
-      if(d>100) then
-        d = 1
-      end
-      main.doFrame(d)
-      if fps.hasNew() then
-        --collectCounter = collectCounter+1
-        --if collectCounter>5 then
-          --collectCounter = 0
-          --collectgarbage()
-        --end
-        local thisMem = gcinfo()
-        
-        print ('M: '..tostring(gcinfo()).." ("..(thisMem-lastMem)..")", 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
-        lastMem = thisMem
-      end
-    end)
+    doCall(frameFunc)
   else
     return 1
   end

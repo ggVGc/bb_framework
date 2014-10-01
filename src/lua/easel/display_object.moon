@@ -48,7 +48,7 @@ new: ->
     _c_framework.Matrix2_identity(cMat)
     _c_framework.DisplayObject_getConcatenatedMatrix(dispObj, cMat)
     _c_framework.Matrix2_append(cMat, 1, 0, 0, 1, x, y)
-    return {x:cMat.tx, y:cMat.ty}
+    return cMat.tx, cMat.ty
   
 
   self.globalToLocal = (x, y)->
@@ -56,7 +56,7 @@ new: ->
     _c_framework.DisplayObject_getConcatenatedMatrix(dispObj, cMat)
     _c_framework.Matrix2_invert(cMat)
     _c_framework.Matrix2_append(cMat, 1, 0, 0, 1, x, y)
-    return {x:cMat.tx, y:cMat.ty}
+    return cMat.tx, cMat.ty
 
   self.localToLocal = (x, y, target)->
     pt = self.localToGlobal(x, y)

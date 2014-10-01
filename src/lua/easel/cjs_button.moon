@@ -11,8 +11,8 @@ new: maker (mc)=>
 
   @isOver = (x,y) ->
     return false if not mc.visible
-    globPos = mc.localToGlobal(0,0)
-    return x > globPos.x and x<globPos.x+w and y>globPos.y and y<globPos.y+h
+    globX, globY = mc.localToGlobal(0,0)
+    return x > globX and x<globX+w and y>globY and y<globY+h
 
   @isPressOver = (screenWidth, screenHeight) ->
     return false if not mc.visible

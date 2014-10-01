@@ -9,28 +9,39 @@ new: maker (imagePath, texLoadFunc) =>
     textures[c] = texLoadFunc(imagePath..'/'..c)
 
   tmpMat = _c_framework.Matrix2!
+
+  reversing = false
+
+  curWidth = 0
+  curScale = 1
+  pos = {}
+  drawChar = (c) ->
+    tex = textures[c]
+    if c==' ' or not tex
+      curWidth += 20*(reversing and -1 or 1)
+    else
+      if reversing
+        curWidth-=tex.width*curScale
+      tmpMat.tx = pos.x+curWidth
+      tmpMat.ty = pos.y-tex.height*curScale
+      tmpMat.a = curScale
+      tmpMat.d = curScale
+      if not reversing
+        curWidth+=tex.width*curScale
+      tex.draw tmpMat
+
+
   @drawString = (str, x=0, y=0, scale=1, reverse=false, tint) ->
     _c_framework.setTint tint[1]/255, tint[2]/255, tint[3]/255
     _c_framework.Matrix2_identity tmpMat
-    w = 0
-    if reverse
+    reversing = reverse
+    curScale = scale
+    pos.x, pos.y = x, y
+    if reversing
       str = str\reverse!
-    string.gsub str, '.', (c) ->
-      tex = textures[c]
-      if c==' ' or not tex
-        w += 20*(reverse and -1 or 1)
-      else
-        if reverse
-          w-=tex.width*scale
-        tmpMat.tx = x+w
-        tmpMat.ty = y-tex.height*scale
-        tmpMat.a = scale
-        tmpMat.d = scale
-        if not reverse
-          w+=tex.width*scale
-        tex.draw tmpMat
+    curWidth = 0
+    string.gsub str, '.', drawChar
     _c_framework.setTint 1,1,1
-          
 
 }
 
