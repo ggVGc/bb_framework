@@ -10,8 +10,20 @@ framework.Input = {
   charDown= function(char) return framework.Input.keyDown(string.byte(char))end,
 
   State = {
-    new=function(x, y, cursorDown)
-      return {x=x, y=y, cursorDown=cursorDown, keysDown={}}
+    new=function()
+      return {x=0, y=0, cursorDown=false, keysDown={}}
+    end,
+    copy = function(dst, src)
+      dst.x, dst.y, dst.cursorDown = src.x, src.y, src.cursorDown
+      for k in pairs (src.keysDown) do
+        dst.keysDown[k] = src.keysDown[k]
+      end
+    end,
+    reset = function(s, x, y, cursorDown)
+      s.x, s.y, s.cursorDown = x,y,cursorDown
+      for k in pairs (s.keysDown) do
+        s.keysDown [k] = nil
+      end
     end
   },
 
@@ -25,8 +37,9 @@ framework.Input = {
     local curState = framework.Input.State.new()
 
     function M.update()
-      lastState = curState
-      curState = framework.Input.State.new(framework.Input.cursorX(), framework.Input.cursorY(), framework.Input.cursorDown())
+      framework.Input.State.copy(lastState, curState)
+      framework.Input.State.reset(curState, framework.Input.cursorX(), framework.Input.cursorY(), framework.Input.cursorDown())
+
       if M.cursorPressed() then
         M.downPos = {x=curState.x, y=curState.y}
       end

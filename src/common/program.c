@@ -33,6 +33,7 @@ extern int luaopen__c_framework(lua_State*);
 static lua_State* vm = 0;
 static int appBroken = 0;
 static int didInit = 0;
+/*static int gcCounter = 0;*/
 
 int loadstringWithName(lua_State *L, const char *s, const char* name) {
   return luaL_loadbuffer(L, s, strlen(s), name);
@@ -181,6 +182,7 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   appBroken = 0;
   vm = 0;
   didInit = 0;
+  /*gcCounter = 0;*/
 
 
   vm = luaL_newstate();
@@ -278,7 +280,12 @@ int appRender(long tick) {
   quadEndFrame();
 
   lua_pop(vm, 1);
-  /*lua_gc(vm, LUA_GCSTEP, 1);*/
+  /*
+  if(gcCounter++ > 15){
+    gcCounter = 0;
+    lua_gc(vm, LUA_GCSTEP, 1);
+  }
+  */
   return 0;
 }
 

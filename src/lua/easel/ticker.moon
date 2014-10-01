@@ -18,10 +18,6 @@ new: (fps, initialListeners) ->
     listenerCount+=1
     times[listenerCount] = listenerCount*4
 
-  self._tick = (deltaMs) ->
-    for l in *listeners
-      l._tick {}
-
   props = {}
   curTime = 0
   self.update = (deltaMs) ->

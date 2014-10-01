@@ -30,79 +30,54 @@ new: ->
       child.draw!
     return true
   
-  self.addChild = (...)->
-    arguments = {...}
-    child = arguments[1]
+  self.addChild = (child, ...)->
     if child == nil
       return child
-    l = #arguments
-    if l > 1
-      for i=1,l
-        self.addChild arguments[i]
-      return arguments[l-1]
     
     if child.parent
       child.parent.removeChild child
     child.parent = self
     child.dispObj.parent = self.dispObj
     _.push self.children, child
-    return child
+    if select('#', ...) > 0
+      return self.addChild(...)
+    else
+      return child
 
   
-  self.addChildAt = (...)->
-    arguments = {...}
-    child = arguments[1]
-    index = arguments[2]
-    l = #arguments
-    indx = arguments[l]
-    if indx < 1 or indx > #self.children+1
-      return arguments[l-1]
-    if l > 2
-      for i=1,l-1
-        self.addChildAt(arguments[i], indx+i)
-      return arguments[l-1]
+  self.addChildAt = (child, index, ...)->
+    --if index < 1 or index > #self.children
+      --return arguments[l-1]
     if child.parent
       child.parent.removeChild(child)
     child.parent = self
     child.dispObj.parent = self.dispObj
     table.insert self.children, index, child
-    return child
+    if select('#', ...) > 0
+      return self.addChildAt(...)
+    else
+      return child
 
   
-  self.removeChild = (...)->
-    arguments = {...}
-    child = arguments[1]
-    l = #arguments
-    if l > 1
-      good = true
-      for i=1,l
-        good = good and self.removeChild(arguments[i])
-      return good
-    return self.removeChildAt(_.indexOf(self.children, child))
-
-  
-  self.removeChildAt = (...)->
-    arguments = {...}
-    index = arguments[1]
-    l = #arguments
-    if l > 1
-      a = {}
-      for i=1,l
-        a[i] = arguments[i]
-      table.sort(a, (a, b)->b-a>0)
-      good = true
-      for i=1,l
-        good = good and self.removeChildAt(a[i])
-      return good
+  self.removeChild = (child, ...)->
+    if select('#', ...) > 0
+      return self.removeChild(...)
+    else
+      return self.removeChildAt(_.indexOf(self.children, child))
     
-    if index < 1 or index > #self.children
-      return false
+
+  
+  self.removeChildAt = (index, ...)->
     child = self.children[index]
     if child
       child.parent = nil
       child.dispObj.parent = nil
     table.remove(self.children, index)
-    return true
+
+    if select('#', ...) > 0
+      return self.removeChildAt(...)
+    else
+      return true
 
   
   self.removeAllChildren = ->

@@ -342,6 +342,10 @@ local running = true
 framework.exit = function()
   running = false
 end
+
+
+local lastMem=0
+
 function framework.doFrame(deltaMs)
   local d
   if deltaMs>0 then d = deltaMs else d = 0 end
@@ -358,7 +362,15 @@ function framework.doFrame(deltaMs)
       end
       main.doFrame(d)
       if fps.hasNew() then
-        print ('fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
+        --collectCounter = collectCounter+1
+        --if collectCounter>5 then
+          --collectCounter = 0
+          --collectgarbage()
+        --end
+        local thisMem = gcinfo()
+        
+        print ('M: '..tostring(gcinfo()).." ("..(thisMem-lastMem)..")", 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
+        lastMem = thisMem
       end
     end)
   else
