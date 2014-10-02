@@ -57,7 +57,6 @@ public class MainActivity extends Activity implements AdFlakeInterface {
     uiHelper = new UiLifecycleHelper(this, null);
     uiHelper.onCreate(savedInstanceState);
 
-
     AdFlakeTargeting.setTestMode(AppConfig.adFlake.testMode);
 
     DisplayMetrics displayMetrics = getResources().getDisplayMetrics();

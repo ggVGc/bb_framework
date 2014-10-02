@@ -141,6 +141,7 @@ public class IAP{
       return false;
     }
     int time = 0;
+    /*
     while(curInventory==null){
       try{
         Log.i(TAG, "Waiting for inventory");
@@ -149,10 +150,15 @@ public class IAP{
         return false;
       }
       time += 10;
-      if(time>5000){
+      if(time>3000){
         Log.i(TAG, "Inventory wait timed out");
         return false;
       }
+    }
+    */
+
+    if(curInventory==null){
+      return false;
     }
     return curInventory.hasPurchase(id);
   }
@@ -201,6 +207,7 @@ public class IAP{
       return "";
     }else{
       int time = 0;
+      /*
       while(curInventory==null){
         try{
           Log.i(TAG, "Waiting for inventory");
@@ -210,10 +217,14 @@ public class IAP{
           return "";
         }
         time += 10;
-        if(time>5000){
+        if(time>3000){
           Log.i(TAG, "Inventory wait timed out");
           return "";
         }
+      }
+      */
+      if(curInventory==null){
+        return "";
       }
       return curInventory.hasDetails(id)?curInventory.getSkuDetails(id).getPrice():null;
     }

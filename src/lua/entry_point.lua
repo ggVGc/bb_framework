@@ -1,4 +1,3 @@
-collectgarbage 'stop'
 
 jit.off()
 
@@ -341,6 +340,7 @@ function framework.init()
   framework.DataStore.reload()
   main = doCall(Main.new)
   freezeFrameCount = 2
+  collectgarbage 'stop'
 end
 
 
@@ -352,20 +352,28 @@ end
 
 local lastMem=0
 local frameDelta
+local memCheckCounter = 0
 
-local frameFunc = function()
-      framework.cjs.Bitmap.drawCounter = 0
-      fps.update(frameDelta)
-      if(frameDelta>100) then
-        frameDelta = 1
+local function frameFunc()
+  framework.cjs.Bitmap.drawCounter = 0
+  fps.update(frameDelta)
+  if(frameDelta>100) then
+    frameDelta = 1
+  end
+  main.doFrame(frameDelta)
+  if fps.hasNew() then
+    local thisMem = collectgarbage 'count'
+    print ('M: '..math.floor(thisMem).." ("..math.floor(thisMem-lastMem)..")", 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
+    lastMem = thisMem
+    --memCheckCounter=memCheckCounter+frameDelta
+    --if memCheckCounter>10000 then
+      if thisMem > 50000 then
+        collectgarbage()
+        collectgarbage 'stop'
       end
-      main.doFrame(frameDelta)
-      if fps.hasNew() then
-        local thisMem = collectgarbage 'count'
-        print ('M: '..math.floor(thisMem).." ("..math.floor(thisMem-lastMem)..")", 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
-        lastMem = thisMem
-      end
-    end
+    --end
+  end
+end
 
 function framework.doFrame(deltaMs)
   if deltaMs>0 then frameDelta = deltaMs else frameDelta = 0 end
