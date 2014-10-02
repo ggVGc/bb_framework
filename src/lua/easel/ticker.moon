@@ -18,17 +18,14 @@ new: (fps, initialListeners) ->
     listenerCount+=1
     times[listenerCount] = listenerCount*4
 
-  props = {}
   curTime = 0
   self.update = (deltaMs) ->
-    --print 'update'
     ret = times[1]+deltaMs>=timePerTick
     for i=1, listenerCount
       times[i]+=deltaMs
       if times[i]>=timePerTick
         times[i] -= timePerTick
-        listeners[i]._tick props
-        --print 'tick', i
+        listeners[i]._tick!
     return ret
 
   return self

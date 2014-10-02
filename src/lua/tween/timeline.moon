@@ -63,18 +63,9 @@ new: (tweens, labels, props) ->
   if props and props.position~=nil
     self.setPosition props.position, framework.Tween.NONE
   
-  self.addTween = (...)->
-    arguments = {...}
-    l = #arguments
-    if (l > 1)
-      for i=1,l
-        self.addTween(arguments[i])
-      return arguments[1]
-    elseif l == 0
-      return nil
-    tween = arguments[1]
+  self.addTween = (tween, ...)->
     self.removeTween(tween)
-    _.push self._tweens, tween
+    table.insert self._tweens, tween
     tween.setPaused(true)
     tween._paused = false
     tween._useTicks = self._useTicks
@@ -82,31 +73,29 @@ new: (tweens, labels, props) ->
       self.duration = tween.duration
     if self._prevPos >= 0
       tween.setPosition(self._prevPos, framework.Tween.NONE)
-    return tween
+    if select('#', ...)>0
+      return self.addTween ...
+    else
+      return tween
 
   
-  self.removeTween = (...) ->
-    arguments = {...}
-    l = #arguments
-    if l > 1
-      good = true
-      for i=1,l
-        good = good and self.removeTween(arguments[i])
-      return good
-    elseif l == 0
-      return false
-
-    tween = arguments[1]
+  self.removeTween = (tween, ...) ->
     tweens = self._tweens
     i = #tweens+1
+    ret = false
     while i>1
       i-=1
       if tweens[i] == tween
         table.remove tweens, i
         if tween.duration >= self.duration
           self.updateDuration!
-        return true
-    return false
+        ret = true
+        break
+
+    if select('#', ...)>0
+      return self.removeTween ...
+    else
+      return ret
 
   
   self.addLabel = (label, position)->

@@ -75,7 +75,7 @@ new: (initialTarget, props, pluginData) ->
 
   self.to = (props, duration, ease) ->
     duration = duration or 0
-    if (_.isNaN duration or duration < 0)
+    if (duration==0/0 or duration < 0)
       duration = 0
     self._addStep {
       d:duration or 0
@@ -217,7 +217,7 @@ new: (initialTarget, props, pluginData) ->
   self._addStep = (o) ->
     if o.d > 0
       o.t = self.duration
-      _.push self._steps, o
+      table.insert self._steps, o
       self.duration += o.d
     return self
 
@@ -235,7 +235,7 @@ new: (initialTarget, props, pluginData) ->
   
   self._addAction = (o)->
     o.t = self.duration
-    _.push self._actions, o
+    table.insert self._actions, o
     return self
 
   self._updateTargetProps = (step, ratio) ->
@@ -264,7 +264,7 @@ new: (initialTarget, props, pluginData) ->
       if v1 == nil
         v1 = v0
         p1[n] = v1
-      if v0 == v1 or ratio == 0 or ratio == 1 or not _.isNumber(v0)
+      if v0 == v1 or ratio == 0 or ratio == 1 or not(type(v0)=='number')
         -- no interpolation - either at start, end, values don't change, or the value is non-numeric.
         v = if ratio == 1 then v1 else v0
       else
@@ -346,7 +346,7 @@ _register: (tween, value) ->
         target.tweenjs_count = target.tweenjs_count+1
       else
         target.tweenjs_count = 1
-    _.push tweens, tween
+    table.insert tweens, tween
     if not Tween._inited and Ticker
       Ticker.addEventListener "tick", Tween
       Tween._inited = true

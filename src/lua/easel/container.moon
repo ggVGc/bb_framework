@@ -38,7 +38,7 @@ new: ->
       child.parent.removeChild child
     child.parent = self
     child.dispObj.parent = self.dispObj
-    _.push self.children, child
+    table.insert self.children, child
     if select('#', ...) > 0
       return self.addChild(...)
     else

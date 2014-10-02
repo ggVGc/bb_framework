@@ -1,3 +1,4 @@
+collectgarbage 'stop'
 
 jit.off()
 
@@ -306,6 +307,7 @@ dofile 'framework/iap.moon'
 dofile 'framework/fps_counter.lua'
 
 dofile "main.moon"
+--dofile("framework/test/movie_clip_mem_test.moon")
 --dofile("framework/test/display_objects_test.moon")
 --dofile("framework/test/export_mc_anim_test.moon")
 --dofile("framework/test/movie_clip_test.moon")
@@ -352,7 +354,7 @@ local lastMem=0
 local frameDelta
 
 local frameFunc = function()
-      --framework.cjs.Bitmap.drawCounter = 0
+      framework.cjs.Bitmap.drawCounter = 0
       fps.update(frameDelta)
       if(frameDelta>100) then
         frameDelta = 1

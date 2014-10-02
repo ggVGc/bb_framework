@@ -67,7 +67,6 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   self.advance = (time)->
     return unless self.mode == MovieClip.INDEPENDENT
     
-
     -- Keep the commented code!
     -- Disabled time param for now, and always step one
     -- Also don't traverse parent hierarchy and set fps
@@ -151,13 +150,6 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
         isEnd = tl.setPosition(self._prevPos < 0 and 0 or self._prevPosition, not self.actionsEnabled and framework.Tween.NONE or nil)
 
       self._prevPosition = tl._prevPosition
-
--- Non-CJS addition(Removed event trigger)
-      --if isEnd
-        --self.event.timelineEnd!
-
--- End non-CJS addition
-
 
       return if self._prevPos == tl._prevPos
 
