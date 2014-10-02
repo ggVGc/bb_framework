@@ -22,7 +22,7 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
   public LinkedList<Integer> events = new LinkedList<Integer>();
   private Chartboost cb;
 
-  //boolean cacheing = false;
+  boolean cacheing = false;
 
   void setEvent(int e){
     Log.i(TAG, "Setting event: "+e);
@@ -31,6 +31,11 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
 
   public ChartboostDelegateImp(Chartboost cb){
     this.cb = cb;
+  }
+
+  public void onStart(){
+    cacheing = true;
+    this.cb.cacheInterstitial();
   }
 
     /*
@@ -98,7 +103,7 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
     @Override
     public void didCacheInterstitial(String location) {
       Log.i(TAG, "INTERSTITIAL '"+location+"' CACHED");
-      //cacheing = false;
+      cacheing = false;
     }
 
     /*
@@ -120,10 +125,10 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
       Log.i(TAG, "INTERSTITIAL '"+location+"' REQUEST FAILED - " + error.name());
       //Toast.makeText(MainActivity.this, "Interstitial '"+location+"' Load Failed",Toast.LENGTH_SHORT).show();
 
-      //if(!cacheing){
+      if(!cacheing){
         setEvent(Event.failedDisplay);
-      //}
-      //cacheing = false;
+      }
+      cacheing = false;
     }
 
     /*
@@ -141,9 +146,8 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
     public void didDismissInterstitial(String location) {
       // Immediately re-caches an interstitial
       Log.i(TAG, "INTERSTITIAL '"+location+"' DISMISSED");
-      //cacheing = true;
-      //cb.cacheInterstitial(location);
-      
+      cacheing = true;
+      cb.cacheInterstitial(location);
       //Toast.makeText(MainActivity.this, "Dismissed Interstitial '"+location+"'",Toast.LENGTH_SHORT).show();
     }
 

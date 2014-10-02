@@ -350,6 +350,7 @@ framework.exit = function()
 end
 
 
+local MEM_CHECK_INTERVAL = 20
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
@@ -362,16 +363,18 @@ local function frameFunc()
   end
   main.doFrame(frameDelta)
   if fps.hasNew() then
+    print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
+  end
+  memCheckCounter=memCheckCounter+frameDelta
+  if memCheckCounter>MEM_CHECK_INTERVAL*1000 then
+    memCheckCounter = 0
     local thisMem = collectgarbage 'count'
-    print ('M: '..math.floor(thisMem).." ("..math.floor(thisMem-lastMem)..")", 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
+    print ('M: '..math.floor(thisMem).." ("..math.floor((thisMem-lastMem)/MEM_CHECK_INTERVAL)..")")
     lastMem = thisMem
-    --memCheckCounter=memCheckCounter+frameDelta
-    --if memCheckCounter>10000 then
-      if thisMem > 50000 then
-        collectgarbage()
-        collectgarbage 'stop'
-      end
-    --end
+    if thisMem > 50000 then
+      collectgarbage()
+      collectgarbage 'stop'
+    end
   end
 end
 

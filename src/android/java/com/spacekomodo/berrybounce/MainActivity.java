@@ -98,10 +98,10 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   public void onStart() {
     super.onStart();
     Log.i(TAG,"Activity: Start");
-    view.start();
-
     CBPreferences.getInstance().setImpressionsUseActivities(true);
     this.cb.onStart(this);
+    chartboostDelegate.onStart();
+    view.start();
   }
 
   public void prepareInterstitial(){
