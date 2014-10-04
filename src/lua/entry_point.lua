@@ -340,6 +340,7 @@ function framework.init()
   framework.DataStore.reload()
   main = doCall(Main.new)
   freezeFrameCount = 2
+  collectgarbage()
   collectgarbage 'stop'
 end
 

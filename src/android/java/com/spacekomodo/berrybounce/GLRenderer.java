@@ -16,11 +16,27 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
 
+import java.util.LinkedList;
 
 
 public class GLRenderer implements GLSurfaceView.Renderer {
+
+  public static class TouchEvent{
+    public boolean down = false;
+    public int x;
+    public int y;
+    public int index;
+    public boolean onlyMove = false;
+  }
   private static final String TAG = MainActivity.TAG;
   MainActivity activity;
+
+  public LinkedList<TouchEvent> events= new LinkedList<TouchEvent>();
+
+
+  private static native void nativeOnCursorDown(int ind);
+  private static native void nativeOnCursorUp(int ind);
+  private static native void nativeOnCursorMove(int ind, int x, int y);
 
   public GLRenderer (MainActivity activity) {
     Log.i(TAG,"GLRenderer created");
@@ -74,6 +90,19 @@ public void onSurfaceChanged(GL10 gl, int w, int h) {
 
   boolean dead = false;
 
+
+  void processTouchEvent(TouchEvent e){
+    nativeOnCursorMove(e.index, e.x, e.y);
+    if(!e.onlyMove){
+      if(e.down){
+        nativeOnCursorDown(e.index);
+      }else{
+        nativeOnCursorUp(e.index);
+      }
+    }
+  }
+
+
   @Override
 public void onDrawFrame(GL10 gl) {
     if(dead || paused){
@@ -98,6 +127,9 @@ public void onDrawFrame(GL10 gl) {
             activity.interstitialDisplayed();
           break;
         }
+      }
+      while(events.size()>0){
+        processTouchEvent(events.remove());
       }
       nativeRender();
     }
@@ -173,11 +205,13 @@ public void onDrawFrame(GL10 gl) {
 
   void setBannersEnabled(final int enable){
     Log.i(TAG, "Setting banner visibility: "+enable);
+    /*
     activity.runOnUiThread(new Runnable() {
       public void run() {
         activity.adFlakeLayout.setVisibility(enable==1?RelativeLayout.VISIBLE:RelativeLayout.GONE);
       }
     });
+    */
   }
 
   private static native void nativeOnStop();

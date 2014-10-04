@@ -5843,104 +5843,20 @@ fail:
 }
 
 
-static int _wrap_cursorX(lua_State* L) {
-  int SWIG_arg = 0;
-  int result;
-  
-  SWIG_check_num_args("cursorX",0,0)
-  result = (int)cursorX();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_cursorY(lua_State* L) {
-  int SWIG_arg = 0;
-  int result;
-  
-  SWIG_check_num_args("cursorY",0,0)
-  result = (int)cursorY();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_cursorDown(lua_State* L) {
-  int SWIG_arg = 0;
-  int result;
-  
-  SWIG_check_num_args("cursorDown",0,0)
-  result = (int)cursorDown();
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_keyDown(lua_State* L) {
-  int SWIG_arg = 0;
-  int arg1 ;
-  int result;
-  
-  SWIG_check_num_args("keyDown",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("keyDown",1,"int");
-  arg1 = (int)lua_tonumber(L, 1);
-  result = (int)keyDown(arg1);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_inputInit(lua_State* L) {
-  int SWIG_arg = 0;
-  
-  SWIG_check_num_args("inputInit",0,0)
-  inputInit();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_setCursorPos(lua_State* L) {
   int SWIG_arg = 0;
   int arg1 ;
   int arg2 ;
+  int arg3 ;
   
-  SWIG_check_num_args("setCursorPos",2,2)
+  SWIG_check_num_args("setCursorPos",3,3)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("setCursorPos",1,"int");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("setCursorPos",2,"int");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("setCursorPos",3,"int");
   arg1 = (int)lua_tonumber(L, 1);
   arg2 = (int)lua_tonumber(L, 2);
-  setCursorPos(arg1,arg2);
+  arg3 = (int)lua_tonumber(L, 3);
+  setCursorPos(arg1,arg2,arg3);
   
   return SWIG_arg;
   
@@ -5955,11 +5871,14 @@ fail:
 static int _wrap_setCursorDownState(lua_State* L) {
   int SWIG_arg = 0;
   int arg1 ;
+  int arg2 ;
   
-  SWIG_check_num_args("setCursorDownState",1,1)
+  SWIG_check_num_args("setCursorDownState",2,2)
   if(!lua_isnumber(L,1)) SWIG_fail_arg("setCursorDownState",1,"int");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("setCursorDownState",2,"int");
   arg1 = (int)lua_tonumber(L, 1);
-  setCursorDownState(arg1);
+  arg2 = (int)lua_tonumber(L, 2);
+  setCursorDownState(arg1,arg2);
   
   return SWIG_arg;
   
@@ -6668,11 +6587,6 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "quadFlush", _wrap_quadFlush},
     { "quadEndFrame", _wrap_quadEndFrame},
     { "getDrawCallCount", _wrap_getDrawCallCount},
-    { "cursorX", _wrap_cursorX},
-    { "cursorY", _wrap_cursorY},
-    { "cursorDown", _wrap_cursorDown},
-    { "keyDown", _wrap_keyDown},
-    { "inputInit", _wrap_inputInit},
     { "setCursorPos", _wrap_setCursorPos},
     { "setCursorDownState", _wrap_setCursorDownState},
     { "setKeyPressed", _wrap_setKeyPressed},

@@ -30,7 +30,7 @@
 extern "C" {
 #endif
 
-
+#include <lua.h>
 
 #define WINDOW_BPP              16
 
@@ -48,6 +48,8 @@ extern void setScreenHeight(int);
 extern int isAppBroken(void);
 extern void setAppBroken(int isBroken);
 
+lua_State* luaVM;
+int callLuaFunc(int nParams, int nRet);
 
 #ifdef __cplusplus
 }

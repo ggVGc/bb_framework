@@ -26,14 +26,12 @@
 #define BREAK_ON_FIRST_ERROR 1
 
 
-#define RegLuaFuncGlobal(fname) lua_pushcfunction(vm, fname##_lua); lua_setglobal(vm, #fname);
+#define RegLuaFuncGlobal(fname) lua_pushcfunction(luaVM, fname##_lua); lua_setglobal(luaVM, #fname);
 
 extern int luaopen__c_framework(lua_State*);
 
-static lua_State* vm = 0;
 static int appBroken = 0;
 static int didInit = 0;
-/*static int gcCounter = 0;*/
 
 int loadstringWithName(lua_State *L, const char *s, const char* name) {
   return luaL_loadbuffer(L, s, strlen(s), name);
@@ -69,7 +67,7 @@ int dofile(const char* filePath){
     trace(msg);
 	return -1;
   }
-  ret = doStringWithName(vm, file, filePath);
+  ret = doStringWithName(luaVM, file, filePath);
   free(file);
   return ret;
 }
@@ -137,27 +135,32 @@ int loadfile_lua(lua_State* s) {
   return 1;
 }
 
-int callFunc(int nParams, int nRet) {
+int callLuaFunc(int nParams, int nRet) {
   int result = 0;
-  int size0 = lua_gettop(vm);
-  int error_index = lua_gettop(vm) - nParams;
+  int size0 = lua_gettop(luaVM);
+  int error_index = lua_gettop(luaVM) - nParams;
 
-  lua_pushcfunction(vm, luaErrorHandler);
-  lua_insert(vm, error_index);
+  lua_pushcfunction(luaVM, luaErrorHandler);
+  lua_insert(luaVM, error_index);
 
-  result = lua_pcall(vm, nParams, nRet, error_index);
+  result = lua_pcall(luaVM, nParams, nRet, error_index);
   if( result != 0) {
-    const char* msg = lua_tostring(vm, -1);
+    const char* msg = lua_tostring(luaVM, -1);
     trace("\n");
     trace(msg);
     trace("\n------- END STACK TRACE ----------");
   } 
 
-  lua_remove(vm, error_index);
+  lua_remove(luaVM, error_index);
 
-  if((lua_gettop(vm) + (int)nParams -(int)nRet + 1) != size0) {
+  if((lua_gettop(luaVM) + (int)nParams -(int)nRet + 1) != size0) {
     result = -1;
     trace("Stack size changed!");
+  }
+
+
+  if(result != 0){
+    appBroken = 1;
   }
 
   return result;
@@ -165,34 +168,32 @@ int callFunc(int nParams, int nRet) {
 
 
 #define RegLuaFunc(fname) \
-  lua_pushstring(vm, #fname); \
-  lua_pushcfunction(vm, fname##_lua); \
-  lua_settable(vm, -3);
+  lua_pushstring(luaVM, #fname); \
+  lua_pushcfunction(luaVM, fname##_lua); \
+  lua_settable(luaVM, -3);
 
 
 
 void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePath, int useAssetZip) {
   trace("---- APP INIT ----");
 
-  inputInit();
   audioGlobalInit();
   dataStoreGlobalInit();
   setResourcePath(resourcePath, useAssetZip);
 
   appBroken = 0;
-  vm = 0;
+  luaVM = 0;
   didInit = 0;
-  /*gcCounter = 0;*/
 
 
-  vm = luaL_newstate();
-  luaL_openlibs(vm);
-  luaopen__c_framework(vm);
+  luaVM = luaL_newstate();
+  luaL_openlibs(luaVM);
+  luaopen__c_framework(luaVM);
 
   RegLuaFuncGlobal(print);
 
   if(dofile("framework/entry_point.lua")!=0) {
-    const char* msg = lua_tostring(vm, -1);
+    const char* msg = lua_tostring(luaVM, -1);
 	trace("Failed running entry point");
 	if(msg){
 	  trace(msg);
@@ -208,11 +209,11 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
 void appDeinit(void) {
   trace("---- APP CLEANUP ---");
 
-  if(vm) {
-    lua_close(vm);
+  if(luaVM) {
+    lua_close(luaVM);
     resourcesCleanUp();
     audioCleanup();
-    vm = 0;
+    luaVM = 0;
   }
   else{
     trace("Called deinit while not initialised");
@@ -227,7 +228,7 @@ int appRender(long tick) {
     return 0;
   }
 	
-  if(!vm){
+  if(!luaVM){
     return 0;
   }
 
@@ -236,56 +237,48 @@ int appRender(long tick) {
 
 
   beginRenderFrame();
-  lua_getglobal(vm, "framework");
+  lua_getglobal(luaVM, "framework");
 
   if (didInit == 0 && appBroken==0){
     didInit = 1;
-    if(lua_isnil(vm, -1)){
+    if(lua_isnil(luaVM, -1)){
       trace("ERROR: Could not find global framework object");
       appBroken = 1;
       return 0;
     }
-    lua_getfield(vm, -1, "init");
-    if(lua_isnil(vm, -1)){
+    lua_getfield(luaVM, -1, "init");
+    if(lua_isnil(luaVM, -1)){
       trace("ERROR: framework.init does not exist");
       appBroken = 1;
       return 0;
     }
-    if(callFunc(0,0) != 0){
-      appBroken = 1;
+    if(callLuaFunc(0,0) != 0){
       return 0;
     }
     trace("Init finished");
   }
 
   if(appBroken != 0){
-    lua_settop(vm, 0);
+    lua_settop(luaVM, 0);
     return 0;
   }else{
-    lua_pushstring(vm, "doFrame");
-    lua_gettable(vm, -2);
-    lua_pushnumber(vm, tick);
-    if(callFunc(1,1) != 0) {
-      appBroken = 1;
+    lua_pushstring(luaVM, "doFrame");
+    lua_gettable(luaVM, -2);
+    lua_pushnumber(luaVM, tick);
+    if(callLuaFunc(1,1) != 0) {
       return 0;
     }
-    ret = lua_tonumber(vm, -1);
-    lua_pop(vm, 1);
+    ret = lua_tonumber(luaVM, -1);
+    lua_pop(luaVM, 1);
     if(ret != 0){
-      lua_settop(vm, 0);
+      lua_settop(luaVM, 0);
       return ret;
     }
   }
 
   quadEndFrame();
 
-  lua_pop(vm, 1);
-  /*
-  if(gcCounter++ > 15){
-    gcCounter = 0;
-    lua_gc(vm, LUA_GCSTEP, 1);
-  }
-  */
+  lua_pop(luaVM, 1);
   return 0;
 }
 
@@ -319,36 +312,27 @@ void setAppBroken(int isBroken){
 
 void adInterstitialClosed(){
   int ret;
-  lua_getglobal(vm, "framework");
-  lua_getfield(vm, -1, "Ads");
-  lua_getfield(vm, -1, "interstitialCloseCallback");
-  if(callFunc(0,0) != 0) {
-    appBroken = 1;
-    return;
-  }
+  lua_getglobal(luaVM, "framework");
+  lua_getfield(luaVM, -1, "Ads");
+  lua_getfield(luaVM, -1, "interstitialCloseCallback");
+  callLuaFunc(0,0);
 }
 void adInterstitialDisplayed(int success){
   int ret;
-  lua_getglobal(vm, "framework");
-  lua_getfield(vm, -1, "Ads");
-  lua_getfield(vm, -1, "interstitialDisplayCallback");
-  lua_pushboolean(vm, success);
-  if(callFunc(1,0) != 0) {
-    appBroken = 1;
-    return;
-  }
+  lua_getglobal(luaVM, "framework");
+  lua_getfield(luaVM, -1, "Ads");
+  lua_getfield(luaVM, -1, "interstitialDisplayCallback");
+  lua_pushboolean(luaVM, success);
+  callLuaFunc(1,0);
 }
 
 void onPurchaseComplete(int success){
   int ret;
-  lua_getglobal(vm, "framework");
-  lua_getfield(vm, -1, "IAP");
-  lua_getfield(vm, -1, "onPurchaseComplete");
-  lua_pushinteger(vm, success);
-  if(callFunc(1,0) != 0) {
-    appBroken = 1;
-    return;
-  }
+  lua_getglobal(luaVM, "framework");
+  lua_getfield(luaVM, -1, "IAP");
+  lua_getfield(luaVM, -1, "onPurchaseComplete");
+  lua_pushinteger(luaVM, success);
+  callLuaFunc(1,0);
 }
 
 

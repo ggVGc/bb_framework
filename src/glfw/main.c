@@ -65,19 +65,19 @@ static void char_callback(GLFWwindow* window, unsigned int ch) {
 static void mouse_callback(GLFWwindow* window, int button, int action, int mods) {
   double x, y;
   glfwGetCursorPos(window, &x, &y);
-  setCursorPos(x, y);
+  setCursorPos(0, x, y);
   switch(action){
     case GLFW_PRESS:
-      setCursorDownState(1);
+      setCursorDownState(0, 1);
     break;
     case GLFW_RELEASE:
-      setCursorDownState(0);
+      setCursorDownState(0, 0);
     break;
   }
 }
 
 static void cursor_pos_callback(GLFWwindow* window, double x, double y) {
-  setCursorPos(x, y);
+  setCursorPos(0, x, y);
 }
 
 int main(int argc, char **argv) {

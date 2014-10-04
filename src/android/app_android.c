@@ -24,18 +24,18 @@ _getTime(void) {
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorMove( JNIEnv*  env, jobject this, jint x, jint y) {
-  setCursorPos(x, y);
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeOnCursorMove( JNIEnv*  env, jobject this, jint index, jint x, jint y) {
+  setCursorPos(index, x, y);
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorUp( JNIEnv*  env) {
-  setCursorDownState(0);
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeOnCursorUp( JNIEnv*  env, jobject this, jint index) {
+  setCursorDownState(index, 0);
 }
 
     void
-Java_com_spacekomodo_berrybounce_GLView_nativeOnCursorDown( JNIEnv*  env) {
-  setCursorDownState(1);
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeOnCursorDown( JNIEnv*  env, jobject this, jint index) {
+  setCursorDownState(index, 1);
 }
 
 

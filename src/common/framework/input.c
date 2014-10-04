@@ -1,66 +1,48 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <lua.h>
+#include <lauxlib.h>
+#include <lualib.h>
+#include "app.h"
 #include "framework/input.h"
 #include "util.h"
 
-static int x=0;
-static int y=0;
-static int down=0;
-static int keyStates[MAX_KEYS];
-
-
-void inputInit(){
-  int i;
-  for(i=0; i<MAX_KEYS; i++){
-    keyStates[i] = 0;
-  }
-}
-
-
-
-int cursorX(void)
-{
-  return x;
-}
-int cursorY(void)
-{
-  return y;
-}
-int cursorDown(void)
-{
-  return down;
-}
-
-int keyDown(int keyCode){
-  if(keyCode<MAX_KEYS && keyCode>=0){
-    return keyStates[keyCode];
-  }
-  else{ return 0; }
-}
-
-
-void setCursorPos(int newX, int newY)
-{
-  x = newX;
-  y = newY;
+void setCursorPos(int index, int newX, int newY) {
+  int t = lua_gettop(luaVM);
+  lua_getglobal(luaVM, "framework");
+  lua_getfield(luaVM, -1, "Input");
+  lua_getfield(luaVM, -1, "setCursorPos");
+  lua_pushinteger(luaVM, index);
+  lua_pushinteger(luaVM, newX);
+  lua_pushinteger(luaVM, newY);
+  callLuaFunc(3,0);
+  lua_pop(luaVM, lua_gettop(luaVM)-t);
 
 }
-void setCursorDownState(int isDown)
-{
-  down = isDown;
+void setCursorDownState(int index, int isDown) {
+  int t = lua_gettop(luaVM);
+  lua_getglobal(luaVM, "framework");
+  lua_getfield(luaVM, -1, "Input");
+  lua_getfield(luaVM, -1, "setCursorDownState");
+  lua_pushinteger(luaVM, index);
+  lua_pushboolean(luaVM, isDown);
+  callLuaFunc(2,0);
+  lua_pop(luaVM, lua_gettop(luaVM)-t);
 }
 
 
 
 void setKeyPressed(int keyCode){
-  if(keyCode<MAX_KEYS && keyCode>=0){
-    /*printf("Key down: %i\n", keyCode);*/
-    keyStates[keyCode] = 1;
-  }
+  lua_getglobal(luaVM, "framework");
+  lua_getfield(luaVM, -1, "Input");
+  lua_getfield(luaVM, -1, "setKeyPressed");
+  lua_pushinteger(luaVM, keyCode);
+  callLuaFunc(1,0);
 }
 void setKeyReleased(int keyCode){
-  if(keyCode<MAX_KEYS && keyCode>=0){
-    /*printf("Key release: %i\n", keyCode);*/
-    keyStates[keyCode] = 0;
-  }
+  lua_getglobal(luaVM, "framework");
+  lua_getfield(luaVM, -1, "Input");
+  lua_getfield(luaVM, -1, "setKeyReleased");
+  lua_pushinteger(luaVM, keyCode);
+  callLuaFunc(1,0);
 }

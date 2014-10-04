@@ -22,7 +22,7 @@ public  class ChartboostDelegateImp implements ChartboostDelegate{
   public LinkedList<Integer> events = new LinkedList<Integer>();
   private Chartboost cb;
 
-  boolean cacheing = false;
+  public boolean cacheing = false;
 
   void setEvent(int e){
     Log.i(TAG, "Setting event: "+e);

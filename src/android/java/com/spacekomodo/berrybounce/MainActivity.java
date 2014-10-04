@@ -9,22 +9,19 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
-import com.adflake.AdFlakeLayout;
-import com.adflake.AdFlakeLayout.AdFlakeInterface;
-import com.adflake.AdFlakeTargeting;
-import com.adflake.util.AdFlakeUtil;
 import com.chartboost.sdk.CBPreferences;
 import com.chartboost.sdk.Chartboost;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.widget.FacebookDialog;
 
 
-public class MainActivity extends Activity implements AdFlakeInterface {
+public class MainActivity extends Activity{
   public static final String TAG = "MainActivity";
+
+  private GLView view;
 
   public IAP iap;
   public ChartboostDelegateImp chartboostDelegate;
-  public AdFlakeLayout adFlakeLayout;
 
   static {
     System.loadLibrary("jumpz_framework");
@@ -46,9 +43,8 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 
     requestWindowFeature(Window.FEATURE_NO_TITLE);
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-    RelativeLayout layout = new RelativeLayout(this);
     view = new GLView(this);
-    setContentView(layout);
+    setContentView(view);
 
     cb = Chartboost.sharedChartboost();
     chartboostDelegate = new ChartboostDelegateImp(cb);
@@ -56,23 +52,6 @@ public class MainActivity extends Activity implements AdFlakeInterface {
 
     uiHelper = new UiLifecycleHelper(this, null);
     uiHelper.onCreate(savedInstanceState);
-
-    AdFlakeTargeting.setTestMode(AppConfig.adFlake.testMode);
-
-    DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-    final float density = displayMetrics.density;
-    final int width = (int) (AdFlakeUtil.BANNER_DEFAULT_WIDTH * density);
-    final int height = (int) (AdFlakeUtil.BANNER_DEFAULT_HEIGHT * density);
-    adFlakeLayout = new AdFlakeLayout(this, AppConfig.adFlake.sdkKey);
-    adFlakeLayout.setAdFlakeInterface(this);
-    adFlakeLayout.setMaxWidth(width);
-    adFlakeLayout.setMaxHeight(height);
-    layout.addView(view);
-    RelativeLayout.LayoutParams lp = adFlakeLayout.getOptimalRelativeLayoutParams();
-    lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
-    lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, 1);
-    layout.addView(adFlakeLayout, lp);
-    adFlakeLayout.setVisibility(RelativeLayout.GONE);
   }
 
   @Override
@@ -109,7 +88,13 @@ public class MainActivity extends Activity implements AdFlakeInterface {
   }
 
   public void showInterstitial(){
-    this.cb.showInterstitial();
+	  if(this.cb.hasCachedInterstitial()){
+		  this.cb.showInterstitial();
+	  }else{
+		  chartboostDelegate.cacheing = true;
+		  this.cb.cacheInterstitial();
+		  chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.closed));
+	  }
   }
 
 
@@ -182,19 +167,6 @@ public class MainActivity extends Activity implements AdFlakeInterface {
       // If no Chartboost view exists, continue on as normal
       super.onBackPressed();
     }
-  }
-
-
-  private GLView view;
-
-  @Override
-  public void adFlakeDidPushAdSubView(AdFlakeLayout arg0) {
-    // TODO Auto-generated method stub
-  }
-
-  @Override
-  public void adFlakeGeneric() {
-    // TODO Auto-generated method stub
   }
 }
 
