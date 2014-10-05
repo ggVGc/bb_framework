@@ -71,7 +71,7 @@ Audio* audioLoad(const char* path){
   int eof=0;
   int current_section;
   int c = 0;
-  int totalSamples;
+  long totalSamples;
   char *tmpBuf;
   int bufSize;
   ov_callbacks callbacks;

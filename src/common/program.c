@@ -236,6 +236,7 @@ int appRender(long tick) {
   tick = tick;
 
 
+  audioOnFrame();
   beginRenderFrame();
   lua_getglobal(luaVM, "framework");
 

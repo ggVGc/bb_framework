@@ -343,6 +343,17 @@ RawBitmapData* loadImage(const char* inFilename){
   png_get_IHDR(png_ptr, info_ptr, &twidth, &theight, &bit_depth, &color_type,
       NULL, NULL, NULL);
 
+  if(color_type != 6){
+    char msg[4096];
+    sprintf(msg, "ERROR: Invalid PNG color type: %d (we only support type 6) - %s", color_type, inFilename);
+    png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
+    trace(msg);
+    unzCloseCurrentFile(uf);
+    unzClose(uf);
+    return NULL;
+  }
+
+
   //update width and height based on png info
   width = twidth;
   height = theight;

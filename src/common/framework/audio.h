@@ -11,6 +11,8 @@ void audioSetLooping(Audio*, int);
 void audioStop(Audio*);
 void audioFree(Audio*);
 
+void audioOnFrame();
+
 void audioCleanup();
 
 int audioIsFinished(Audio *a);

@@ -5,6 +5,7 @@
 #include "framework/resource_loading.h"
 #include "framework/util.h"
 
+#define MAX_SOUNDS 512
 #define MAX_BUFFERS 1
 
 static SLObjectItf engine_obj;
@@ -14,10 +15,11 @@ SLVolumeItf output_mix_vol;
 
 static int initialised = 0;
 
+
 struct Audio_T {
-  void *clip_samples;             //the raw samples
-  unsigned int clip_num_samples;        //how many samples there are
-  unsigned int clip_samples_per_sec;    //the sample rate in Hz
+  void *sampleData;
+  unsigned int sampleCount;
+  int loop;
   SLPlayItf player;
   SLObjectItf player_obj;
   SLVolumeItf player_vol;
@@ -25,6 +27,8 @@ struct Audio_T {
   int is_playing;
   int is_done_buffer;
 };
+
+static Audio* soundInstances[MAX_SOUNDS];
 
 int audioGlobalInit(){
   initialised = 0;
@@ -34,6 +38,7 @@ int audioGlobalInit(){
 
   const SLInterfaceID ids[] = { SL_IID_VOLUME };
   const SLboolean req[] = { SL_BOOLEAN_FALSE };
+
    
   (*engine)->CreateOutputMix( engine, &output_mix_obj, 1, ids, req );
    
@@ -41,6 +46,12 @@ int audioGlobalInit(){
    
   if((*output_mix_obj)->GetInterface( output_mix_obj, SL_IID_VOLUME, &output_mix_vol ) != SL_RESULT_SUCCESS ){
     output_mix_vol = 0;
+  }
+
+  
+  int i;
+  for(i=0;i<MAX_SOUNDS;++i){
+    soundInstances[i] = NULL;
   }
 
   initialised = 1;
@@ -68,15 +79,12 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
     return 0;
   }
   Audio* a = (Audio*)malloc(sizeof(Audio));
-  /*
   a->loop = 0;
-  */
   a->is_playing = 0;
   a->is_done_buffer = 0;
-  a->clip_samples = malloc(sizeof(int)*bufSize);
-  memcpy(a->clip_samples, buf, bufSize);
-  a->clip_samples_per_sec = sampleRate;
-  a->clip_num_samples = bufSize;
+  a->sampleData = malloc(sizeof(int)*bufSize);
+  memcpy(a->sampleData, buf, bufSize);
+  a->sampleCount = bufSize;
 
   SLresult result;
   // Configure Buffer Queue.
@@ -87,7 +95,15 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
   SLDataFormat_PCM pcm;
   pcm.formatType = SL_DATAFORMAT_PCM;
   pcm.numChannels = 2;
-  pcm.samplesPerSec = SL_SAMPLINGRATE_44_1;
+  if(sampleRate==48000){
+    pcm.samplesPerSec = SL_SAMPLINGRATE_48;
+  }else if(sampleRate == 44100){
+    pcm.samplesPerSec = SL_SAMPLINGRATE_44_1;
+  }else{
+    traceNoNL("Warning! Unhandled sample rate: ");
+    traceInt(sampleRate);
+    pcm.samplesPerSec = SL_SAMPLINGRATE_44_1;
+  }
   pcm.bitsPerSample = SL_PCMSAMPLEFORMAT_FIXED_16;
   pcm.containerSize = SL_PCMSAMPLEFORMAT_FIXED_16;
   pcm.channelMask = SL_SPEAKER_FRONT_LEFT | SL_SPEAKER_FRONT_RIGHT;
@@ -118,8 +134,17 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
 
   (*a->player)->RegisterCallback( a->player, play_callback, a );
   (*a->player)->SetCallbackEventsMask( a->player, SL_PLAYEVENT_HEADATEND );
-
-  return a;
+  int i;
+  for(i=0;i<MAX_SOUNDS;++i){
+    if(soundInstances[i] == NULL){
+      soundInstances[i] = a;
+      return a;
+    }
+  }
+  trace("WARNING: Max sound instances reached");
+  audioFree(a);
+  free(a);
+  return NULL;
 }
 
 void audioPlay(Audio* a) {
@@ -127,14 +152,14 @@ void audioPlay(Audio* a) {
   trace("Audio: Playing");
   */
   audioStop(a);
-  (*a->player_buf_q)->Enqueue(a->player_buf_q, a->clip_samples, a->clip_num_samples );
+  (*a->player_buf_q)->Enqueue(a->player_buf_q, a->sampleData, a->sampleCount );
   (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
   a->is_playing = 1;
   a->is_done_buffer = 0;
 }
 
 void audioSetLooping(Audio* a, int loop) {
-  /*a->loop = loop;*/
+  a->loop = loop;
 }
 
 void audioStop(Audio* a) {
@@ -144,9 +169,16 @@ void audioStop(Audio* a) {
 }
 
 void audioFree(Audio* a) {
+  int i;
+  for(i=0;i<MAX_SOUNDS;++i){
+    if(soundInstances[i] == a){
+      soundInstances[i] = NULL;
+      break;
+    }
+  }
   audioStop(a);
   (*a->player_obj)->Destroy(a->player_obj);
-  free(a->clip_samples);
+  free(a->sampleData);
 }
 
 int audioIsFinished(Audio *a){
@@ -160,6 +192,25 @@ void audioCleanup(){
   if(initialised){
     (*output_mix_obj)->Destroy(output_mix_obj);
     (*engine_obj)->Destroy(engine_obj);
+  }
+}
+
+void audioOnFrame(){
+  Audio *a;
+  int i;
+  for(i=0;i<MAX_SOUNDS;++i){
+    a = soundInstances[i];
+    if(a){
+      if(a->is_playing){
+        if(a->is_done_buffer){
+          if(a->loop){
+            audioPlay(a);
+          }else{
+            a->is_playing = 0;
+          }
+        }
+      }
+    }
   }
 }
 

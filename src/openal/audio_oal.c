@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#ifdef __APPLE__
+#if defined(__APPLE__)||defined(ANDROID_NDK)
 #include <OpenAL/al.h>
 #include <OpenAL/alc.h>
 #else
@@ -107,4 +107,7 @@ void audioCleanup(){
 
 int audioIsFinished(Audio *a){
   return 0;
+}
+
+void audioOnFrame(){
 }
