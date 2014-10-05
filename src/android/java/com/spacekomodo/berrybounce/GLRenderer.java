@@ -22,6 +22,7 @@ import java.util.LinkedList;
 public class GLRenderer implements GLSurfaceView.Renderer {
 
   public static class TouchEvent{
+    public boolean alive = false;
     public boolean down = false;
     public int x;
     public int y;
@@ -92,6 +93,7 @@ public void onSurfaceChanged(GL10 gl, int w, int h) {
 
 
   void processTouchEvent(TouchEvent e){
+    //Log.i(TAG, +e.index+" isDown:"+e.down+" x:"+e.x+" y:"+e.y);
     nativeOnCursorMove(e.index, e.x, e.y);
     if(!e.onlyMove){
       if(e.down){
@@ -100,6 +102,7 @@ public void onSurfaceChanged(GL10 gl, int w, int h) {
         nativeOnCursorUp(e.index);
       }
     }
+    e.alive = false;
   }
 
 

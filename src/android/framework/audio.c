@@ -95,15 +95,13 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
   SLDataFormat_PCM pcm;
   pcm.formatType = SL_DATAFORMAT_PCM;
   pcm.numChannels = 2;
-  if(sampleRate==48000){
-    pcm.samplesPerSec = SL_SAMPLINGRATE_48;
-  }else if(sampleRate == 44100){
-    pcm.samplesPerSec = SL_SAMPLINGRATE_44_1;
-  }else{
+  if(!(sampleRate==48000 || sampleRate==44100)){
     traceNoNL("Warning! Unhandled sample rate: ");
     traceInt(sampleRate);
-    pcm.samplesPerSec = SL_SAMPLINGRATE_44_1;
+    traceNoNL("Setting to 44.1kHz");
+    sampleRate = 44100;
   }
+  pcm.samplesPerSec = sampleRate*1000;
   pcm.bitsPerSample = SL_PCMSAMPLEFORMAT_FIXED_16;
   pcm.containerSize = SL_PCMSAMPLEFORMAT_FIXED_16;
   pcm.channelMask = SL_SPEAKER_FRONT_LEFT | SL_SPEAKER_FRONT_RIGHT;
