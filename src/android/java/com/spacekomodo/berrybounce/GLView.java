@@ -7,15 +7,11 @@ import android.view.MotionEvent;
 
 public class GLView extends GLSurfaceView 
 {
-  static final  int MAX_EVENTS = 100;
-  GLRenderer.TouchEvent[] eventPool = new GLRenderer.TouchEvent[100];
+  int nextEventIndex = 0;
 
   private static final String TAG = MainActivity.TAG;
   public GLView(MainActivity activity) {
     super(activity);
-    for(int i=0;i<MAX_EVENTS;++i){
-      eventPool[i] = new GLRenderer.TouchEvent();
-    }
     Log.i(TAG,"GLView created");
     super.setEGLConfigChooser(8 , 8, 8, 8, 16, 0);
     renderer = new GLRenderer(activity);
@@ -25,33 +21,28 @@ public class GLView extends GLSurfaceView
 
   @Override
   public boolean onTouchEvent(final MotionEvent event) {
-    //Log.i(TAG, "touch event");
     int a = event.getActionMasked();
-    GLRenderer.TouchEvent e = null;
-    for(int i=0;i<MAX_EVENTS;++i){
-      if(!eventPool[i].alive){
-        e = eventPool[i];
-        e.alive = true;
-        break;
-      }
+    if(renderer.eventPool[nextEventIndex].alive){
+      return true;
     }
-    if(e!=null){
-      e.onlyMove = false;
-      //Log.i(TAG, +e.index+" a:"+a+" UP x:"+e.x+" y:"+e.y);
-      int ai = event.getActionIndex();
-      e.x = (int)event.getX(ai);
-      e.y = (int)event.getY(ai);
-      e.index = event.getPointerId(ai);
-      if (a == MotionEvent.ACTION_DOWN || a==MotionEvent.ACTION_POINTER_DOWN) {
-        e.down = true;
-      }else if (a == MotionEvent.ACTION_UP || a==MotionEvent.ACTION_POINTER_UP){
-        e.down = false;
-      }else if(a == MotionEvent.ACTION_MOVE){
-        e.onlyMove = true;
-      }
-      renderer.events.add(e);
-    }else{
-      Log.i(TAG, "No free touch event");
+    GLRenderer.TouchEvent e = renderer.eventPool[nextEventIndex];
+    e.alive = true;
+
+    int ai = event.getActionIndex();
+    e.x = (int)event.getX(ai);
+    e.y = (int)event.getY(ai);
+    e.onlyMove = false;
+    e.index = event.getPointerId(ai);
+    if (a == MotionEvent.ACTION_DOWN || a==MotionEvent.ACTION_POINTER_DOWN) {
+      e.down = true;
+    }else if (a == MotionEvent.ACTION_UP || a==MotionEvent.ACTION_POINTER_UP){
+      e.down = false;
+    }else if(a == MotionEvent.ACTION_MOVE){
+      e.onlyMove = true;
+    }
+    nextEventIndex++;
+    if(nextEventIndex>=GLRenderer.MAX_EVENTS){
+      nextEventIndex = 0;
     }
     return true;
   }

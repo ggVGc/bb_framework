@@ -12,8 +12,11 @@
 
 
 int alCheckError(const char* msg){
-  if(alGetError()!=AL_NO_ERROR){
+  int err = alGetError();
+  if(err !=AL_NO_ERROR){
     trace(msg);
+    traceNoNL("Error code: ");
+    traceInt(err);
     return 1;
   }
   return 0;
@@ -58,7 +61,7 @@ int audioGlobalInit(){
   return 0;
 }
 
-Audio* audioMake(int *buf, int bufSize, int sampleRate){
+Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
   Audio* a;
   ALfloat SourcePos[] = { 0.0, 0.0, 0.0 };
   ALfloat SourceVel[] = { 0.0, 0.0, 0.0 };
@@ -71,7 +74,8 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
   alGenSources(1, &a->source);
   if(alCheckError("Failed OpenAL source creation")){return 0;}
 
-  alBufferData(a->buffer, AL_FORMAT_STEREO16, buf, bufSize, sampleRate); 
+  alBufferData(a->buffer, channels==2?AL_FORMAT_STEREO16:AL_FORMAT_MONO16, buf, bufSize, sampleRate); 
+  if(alCheckError("Failed OpenAL setting buffer data")){return 0;}
   
   alSourcei (a->source, AL_BUFFER,   a->buffer);
   alSourcef (a->source, AL_PITCH,    1.0f     );

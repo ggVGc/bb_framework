@@ -6060,6 +6060,22 @@ fail:
 }
 
 
+static int _wrap_audioOnFrame(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("audioOnFrame",0,0)
+  audioOnFrame();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_audioCleanup(lua_State* L) {
   int SWIG_arg = 0;
   
@@ -6105,12 +6121,14 @@ static int _wrap_audioMake(lua_State* L) {
   int *arg1 = (int *) 0 ;
   int arg2 ;
   int arg3 ;
+  int arg4 ;
   Audio *result = 0 ;
   
-  SWIG_check_num_args("audioMake",3,3)
+  SWIG_check_num_args("audioMake",4,4)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioMake",1,"int *");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("audioMake",2,"int");
   if(!lua_isnumber(L,3)) SWIG_fail_arg("audioMake",3,"int");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("audioMake",4,"int");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_int,0))){
     SWIG_fail_ptr("audioMake",1,SWIGTYPE_p_int);
@@ -6118,7 +6136,8 @@ static int _wrap_audioMake(lua_State* L) {
   
   arg2 = (int)lua_tonumber(L, 2);
   arg3 = (int)lua_tonumber(L, 3);
-  result = (Audio *)audioMake(arg1,arg2,arg3);
+  arg4 = (int)lua_tonumber(L, 4);
+  result = (Audio *)audioMake(arg1,arg2,arg3,arg4);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio_T,0); SWIG_arg++; 
   return SWIG_arg;
   
@@ -6597,6 +6616,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "audioSetLooping", _wrap_audioSetLooping},
     { "audioStop", _wrap_audioStop},
     { "audioFree", _wrap_audioFree},
+    { "audioOnFrame", _wrap_audioOnFrame},
     { "audioCleanup", _wrap_audioCleanup},
     { "audioIsFinished", _wrap_audioIsFinished},
     { "audioMake", _wrap_audioMake},

@@ -17,7 +17,7 @@ void audioCleanup();
 
 int audioIsFinished(Audio *a);
 
-Audio* audioMake(int *buf, int bufSize, int sampleRate);
+Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels);
 
 #endif
 

@@ -74,7 +74,7 @@ void SLAPIENTRY play_callback( SLPlayItf player, void *context, SLuint32 event )
 }
  
 
-Audio* audioMake(int *buf, int bufSize, int sampleRate){
+Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
   if(!initialised){
     return 0;
   }
@@ -94,7 +94,7 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
   // Configure data format.
   SLDataFormat_PCM pcm;
   pcm.formatType = SL_DATAFORMAT_PCM;
-  pcm.numChannels = 2;
+  pcm.numChannels = channels==1?1:2;
   if(!(sampleRate==48000 || sampleRate==44100)){
     traceNoNL("Warning! Unhandled sample rate: ");
     traceInt(sampleRate);
@@ -104,7 +104,11 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate){
   pcm.samplesPerSec = sampleRate*1000;
   pcm.bitsPerSample = SL_PCMSAMPLEFORMAT_FIXED_16;
   pcm.containerSize = SL_PCMSAMPLEFORMAT_FIXED_16;
-  pcm.channelMask = SL_SPEAKER_FRONT_LEFT | SL_SPEAKER_FRONT_RIGHT;
+  if(channels ==1){
+    pcm.channelMask = SL_SPEAKER_FRONT_CENTER;
+  }else{
+    pcm.channelMask = SL_SPEAKER_FRONT_LEFT | SL_SPEAKER_FRONT_RIGHT;
+  }
   pcm.endianness = SL_BYTEORDER_LITTLEENDIAN;
 
   // Configure Audio Source.

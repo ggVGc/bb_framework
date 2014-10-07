@@ -127,7 +127,7 @@ Audio* audioLoad(const char* path){
     }
   }
 
- a = audioMake((int*)tmpBuf, bufSize, vi->rate);
+ a = audioMake((int*)tmpBuf, bufSize, vi->rate, vi->channels);
  ov_clear(&vf);
  free(tmpBuf);
  return a;

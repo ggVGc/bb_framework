@@ -1,5 +1,7 @@
 
-jit.off()
+if jit then 
+  jit.off()
+end
 
 
 local oldPrint = print
