@@ -47,13 +47,33 @@ static void error_callback(int error, const char* description) {
     fputs(description, stderr);
 }
 
+static int paused = 0;
+static int shouldReload = 0;
+static int shouldSuspend = 0;
+
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
   int k = key-GLFW_KEY_A+'a';
   if(key>=GLFW_KEY_A && key<=GLFW_KEY_Z){
     if(action==GLFW_PRESS){
-      setKeyPressed(k);
+      if(key==GLFW_KEY_P){
+        paused =1;
+        appSetPaused(1);
+      }else if(key==GLFW_KEY_U){
+        paused = 0;
+        appSetPaused(0);
+      }else if(key==GLFW_KEY_R){
+        shouldReload = 1;
+      }else if(key==GLFW_KEY_M){
+        shouldSuspend = 1;
+      }else{
+        if(!paused){
+          setKeyPressed(k);
+        }
+      }
     }else if(action==GLFW_RELEASE){
-      setKeyReleased(k);
+      if(!paused){
+        setKeyReleased(k);
+      }
     }
   }
 }
@@ -108,15 +128,14 @@ int main(int argc, char **argv) {
 
   glfwSwapInterval(1);
 
-  {
-	  int width, height;
+  #define PATH_SIZE 2048
+  int width, height;
 	  int screenW, screenH;
 #if defined(__APPLE__) || defined(WIN32)
   #ifndef PATH_MAX
     #define PATH_MAX MAX_PATH
   #endif
 
-  #define PATH_SIZE 2048
 
   const char *assets = "assets.zip";
   char execPath[PATH_SIZE+1];
@@ -162,7 +181,6 @@ int main(int argc, char **argv) {
   
   glfwGetFramebufferSize(window, &width, &height);
   appInit(width, height, assetPath, 1);
-  }
 
 
   lastTime = _getTime();
@@ -171,14 +189,29 @@ int main(int argc, char **argv) {
     delta =(curTime-lastTime);
     lastTime = curTime;
 
-    if(appRender(delta)){
-      glfwSetWindowShouldClose(window, GL_TRUE);
-      break;
-    }else{
-      fflush(stdout);
-      glError();
-      glfwSwapBuffers(window);
-      glfwPollEvents();
+    if(shouldReload){
+      shouldReload = 0;
+      printf(assetPath);
+      appInit(width, height, assetPath, 1);
+      paused = 0;
+    }
+
+    if(!paused){
+      if(appRender(delta)){
+        glfwSetWindowShouldClose(window, GL_TRUE);
+        break;
+      }else{
+        fflush(stdout);
+        glError();
+        glfwSwapBuffers(window);
+      }
+    }
+    glfwPollEvents();
+    if(shouldSuspend){
+      appSuspend();
+      shouldSuspend = 0;
+      appDeinit();
+      paused = 1;
     }
   }
   appDeinit();

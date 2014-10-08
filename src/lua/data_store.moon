@@ -15,6 +15,17 @@ framework.DataStore = {
     _c_framework.dataStoreCommit d
 }
 
+local autoCommitMt
+autoCommitMt = {
+  __newindex: (obj, key, val)->
+    rawset(obj, key, val)
+    if type(val) == 'table'
+      setmetatable val, autoCommitMt
+    if framework.DataStore.autoCommit
+      print "Commiting data store"
+      framework.DataStore.commit!
+}
+
 mt = {
   __index: (obj, key)->
     v = framework.DataStore.data[key]
@@ -23,7 +34,10 @@ mt = {
 
   __newindex: (obj, key, val)->
     framework.DataStore.data[key] = val
+    if type(val) == 'table'
+      setmetatable val, autoCommitMt
     if framework.DataStore.autoCommit
+      print "Commiting data store"
       framework.DataStore.commit!
 }
 

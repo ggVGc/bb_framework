@@ -3,8 +3,7 @@
 
 
 
-void bitmapDataInit(BitmapData* data, RawBitmapData* rawData)
-{
+void bitmapDataInit(BitmapData* data, RawBitmapData* rawData) {
   data->width = rawData->width;
   data->height = rawData->height;
 

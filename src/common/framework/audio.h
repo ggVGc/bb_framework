@@ -4,20 +4,29 @@
 typedef struct Audio_T Audio;
 
 int audioGlobalInit();
+int audioGlobalPlatformInit();
 
 Audio* audioLoad(const char* path);
 void audioPlay(Audio*);
 void audioSetLooping(Audio*, int);
 void audioStop(Audio*);
+void audioSetPaused(Audio *a, int paused);
 void audioFree(Audio*);
+void audioPlatformFree(Audio*);
 
 void audioOnFrame();
 
 void audioCleanup();
+void audioPlatformCleanup();
 
-int audioIsFinished(Audio *a);
+void audioSetAllPaused(int paused);
 
 Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels);
+
+#define MAX_SOUNDS 512
+
+Audio* soundInstances[MAX_SOUNDS];
+
 
 #endif
 

@@ -6,13 +6,6 @@
 
 
 
-void textureGlobalInit(){
-}
-
-void textureBeginFrame(){
-}
-
-
 void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
   float x = sourceRect.x;
   float y = sourceRect.y;
@@ -38,6 +31,7 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
 }
 
 
-void textureApply(Texture *tex){
+BitmapData *textureGetBmData(Texture *t){
+  return t->data;
 }
 

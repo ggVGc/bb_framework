@@ -5,9 +5,10 @@ import android.util.Log;
 import android.view.MotionEvent;
 
 
-public class GLView extends GLSurfaceView 
-{
-  int nextEventIndex = 0;
+public class GLView extends GLSurfaceView {
+  public GLRenderer renderer;
+
+  private int nextEventIndex = 0;
 
   private static final String TAG = MainActivity.TAG;
   public GLView(MainActivity activity) {
@@ -52,25 +53,13 @@ public class GLView extends GLSurfaceView
   public void onResume() {
     super.onResume();
     Log.i(TAG,"GLView: Resume");
-    renderer.start();
   }
 
-  public void start() {
-    Log.i(TAG,"GLView: Start");
-    renderer.start();
-  }
-
-  public void stop() {
-    renderer.stop();
-  }
-
-
-  public void pause() {
+  @Override
+  public void onPause() {
+    super.onPause();
     Log.i(TAG,"GLView: Pause");
-    renderer.pause();
   }
-
-  public GLRenderer renderer;
 
   private static native void nativeOnCursorDown(int ind);
   private static native void nativeOnCursorUp(int ind);

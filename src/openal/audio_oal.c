@@ -31,7 +31,7 @@ struct Audio_T {
   ALuint buffer;
 };
 
-int audioGlobalInit(){
+int audioGlobalPlatformInit(){
   ALfloat ListenerPos[] = { 0.0, 0.0, 0.0 };
   ALfloat ListenerVel[] = { 0.0, 0.0, 0.0 };
   ALfloat ListenerOri[] = { 0.0, 0.0, -1.0,  0.0, 1.0, 0.0 };
@@ -69,10 +69,12 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
     return 0;
   }
   a = (Audio*)malloc(sizeof(Audio));
+
   alGenBuffers(1, &a->buffer);
   if(alCheckError("Failed OpenAL buffer creation")){return 0;}
   alGenSources(1, &a->source);
   if(alCheckError("Failed OpenAL source creation")){return 0;}
+
 
   alBufferData(a->buffer, channels==2?AL_FORMAT_STEREO16:AL_FORMAT_MONO16, buf, bufSize, sampleRate); 
   if(alCheckError("Failed OpenAL setting buffer data")){return 0;}
@@ -97,21 +99,26 @@ void audioStop(Audio* a) {
   alSourceStop(a->source);
 }
 
-void audioFree(Audio* a) {
-  alDeleteSources(1, a->source);
-  alDeleteBuffers(1, a->buffer);
+void audioPlatformFree(Audio* a) {
+  alDeleteSources(1, &a->source);
+  alDeleteBuffers(1, &a->buffer);
 }
 
-void audioCleanup(){
-  /*
+void audioPlatformCleanup(){
   alcDestroyContext(context);
   alcCloseDevice(device);
-  */
 }
 
-int audioIsFinished(Audio *a){
-  return 0;
-}
 
 void audioOnFrame(){
+}
+
+void audioSetPaused(Audio *a, int paused){
+  int state;
+  alGetSourcei(a->source, AL_SOURCE_STATE, &state);
+  if(paused && state == AL_PLAYING){
+    alSourcePause(a->source);
+  }else if(!paused && state == AL_PAUSED){
+    alSourcePlay(a->source);
+  }
 }

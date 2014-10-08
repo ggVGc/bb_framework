@@ -6,7 +6,7 @@
 static char *data = 0;
 
 void dataStoreGlobalInit(){
-  data = 0;
+  /*data = 0;*/
 }
 
 void dataStoreCommit(const char* dataString){

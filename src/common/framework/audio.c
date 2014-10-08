@@ -17,6 +17,14 @@ struct ogg_file {
 
 typedef struct ogg_file ogg_file;
 
+int audioGlobalInit(){
+  int i;
+  for(i=0;i<MAX_SOUNDS;++i){
+    soundInstances[i] = NULL;
+  }
+  return audioGlobalPlatformInit();
+}
+
 size_t AR_readOgg(void* dst, size_t size1, size_t size2, void* fh) {
   ogg_file* of = (ogg_file*)(fh);
   size_t len = size1 * size2;
@@ -79,7 +87,22 @@ Audio* audioLoad(const char* path){
   ogg_file t;
   Audio *a;
   int sz;
-  char* buf = (char*)loadBytes(path, &sz);
+  char* buf;
+  int i;
+  int soundIndex = -1;
+  for(i=0;i<MAX_SOUNDS;++i){
+    if(soundInstances[i] == NULL){
+      soundIndex = i;
+      break;
+    }
+  }
+
+  if(soundIndex < 0){
+    trace("WARNING: Max sound instances reached");
+    return NULL;
+  }
+  
+  buf = (char*)loadBytes(path, &sz);
   t.curPtr = t.filePtr = buf;
   if(!buf){
     trace("Failed audio file load");
@@ -128,9 +151,44 @@ Audio* audioLoad(const char* path){
   }
 
  a = audioMake((int*)tmpBuf, bufSize, vi->rate, vi->channels);
+
  ov_clear(&vf);
  free(tmpBuf);
+ soundInstances[soundIndex] = a;
  return a;
+}
+
+void audioFree(Audio *a){
+  int i;
+  audioStop(a);
+  audioPlatformFree(a);
+  for(i=0;i<MAX_SOUNDS;++i){
+    if(soundInstances[i] == a){
+      soundInstances[i] = NULL;
+      break;
+    }
+  }
+}
+
+void audioCleanup(){
+  int i;
+  for(i=0;i<MAX_SOUNDS;++i){
+    if(soundInstances[i] != NULL){
+      traceNoNL("Killing audio instance: ");
+      traceInt(i);
+      audioFree(soundInstances[i]);
+    }
+  }
+  audioPlatformCleanup();
+}
+
+void audioSetAllPaused(int paused){
+  int i;
+  for(i=0;i<MAX_SOUNDS;++i){
+    if(soundInstances[i] != NULL){
+      audioSetPaused(soundInstances[i], paused);
+    }
+  }
 }
 
 

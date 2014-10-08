@@ -1,28 +1,28 @@
 framework = framework or {}
-framework.Texture = {
+local Tex
+Tex = {
+  bmDataCache:{}
 new: (bmData, x, y, w, h)->
   M = {}
   with M
-    ._bmDataRef = bmData --  keep ref to prevent GC
-
     .tex = _c_framework.Texture()
+
     tmpRect = _c_framework.Rect()
     _c_framework.rectInit(tmpRect, x/bmData.width,y/bmData.height,w/bmData.width, h/bmData.height)
     _c_framework.textureInit(.tex, bmData, tmpRect)
 
-    setmetatable(M, with {}
+    setmetatable M, with {}
       .__index=(t,k)-> switch k
         when "width"
           M.tex.width
         when "height"
-          M.tex.height)
+          M.tex.height
 
 
     tmpMat = _c_framework.Matrix2!
     .draw=(m, alpha)->
       _c_framework.Matrix2_copy(tmpMat, m)
       _c_framework.Matrix2_append(tmpMat, .tex.width, 0, 0, .tex.height, 0, 0)
-        --_c_framework.quadDrawTexCol(.tex, tmpMat, tint[1]/255, tint[2]/255, tint[3]/255, alpha and alpha/255 or 1)
       _c_framework.quadDrawTexAlpha(.tex, tmpMat, alpha and (alpha/255) or 1)
 
     .drawAt = (x,y)->
@@ -31,19 +31,26 @@ new: (bmData, x, y, w, h)->
       _c_framework.quadDrawTex .tex, tmpMat
 
 fromFile: (path, errorOnInvalid=true)->
-  path = framework.Texture.fixPath path
-  imageData = _c_framework.loadImage(path)
-  if not imageData
-    if errorOnInvalid
-      error("Invalid image file: "..path)
-    return nil
-  bmData = _c_framework.BitmapData()
-  _c_framework.bitmapDataInit(bmData, imageData)
-  _c_framework.rawBitmapDataCleanup(imageData)
-  framework.Texture.new(bmData, 0, 0, bmData.width, bmData.height)
+  path = Tex.fixPath path
+  local bmData
+  if not Tex.bmDataCache[path]
+    imageData = _c_framework.loadImage(path)
+    if not imageData
+      if errorOnInvalid
+        error("Invalid image file: "..path)
+      return nil
+    bmData = _c_framework.BitmapData()
+    _c_framework.bitmapDataInit(bmData, imageData)
+    _c_framework.rawBitmapDataCleanup(imageData)
+    Tex.bmDataCache[path] = bmData
+  else
+    bmData = Tex.bmDataCache[path]
+  Tex.new(bmData, 0, 0, bmData.width, bmData.height)
 
 fixPath: (path) ->
   if not string.endsWith path, '.png'
     path = path..'.png'
   path
 }
+
+framework.Texture = Tex

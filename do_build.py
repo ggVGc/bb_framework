@@ -182,7 +182,7 @@ def buildFramework():
   else:
     cflags += ' -I./deps/common/luajit/src '
     commonLibString += ' -lluajit '
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/deps/common/luajit/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU -lopenal -fsanitize=address -fno-omit-frame-pointer")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/deps/common/luajit/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU -lopenal ")
 
 
 

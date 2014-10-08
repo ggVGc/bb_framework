@@ -2,7 +2,6 @@
 #include "rawbitmapdata.h"
 
 
-void rawBitmapDataCleanup(RawBitmapData* rawData)
-{
+void rawBitmapDataCleanup(RawBitmapData* rawData) {
   free(rawData->data);
 }

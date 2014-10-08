@@ -15,11 +15,10 @@ struct Texture{
 typedef struct Texture Texture;
 
 
-void textureGlobalInit();
-void textureBeginFrame();
 
 void textureInit(Texture *tex, BitmapData *data, Rect sourceRect);
-void textureApply(Texture *tex);
+
+BitmapData *textureGetBmData(Texture *t);
 
 
 #endif

@@ -7,11 +7,13 @@ end
 local oldPrint = print
 function print(...)
   local arg = {...}
-  local s = ''
-  for i,v in ipairs(arg) do
-    s = s..tostring(v)..'\t'
+  local s
+  for i=1,#arg do
+    s = s and s or ''
+    local v = arg[i]
+    s = s..(v and tostring(v) or 'nil')..'\t'
   end
-  oldPrint(s)
+  oldPrint(s and s or 'nil')
 end
 
 
@@ -337,23 +339,25 @@ end
 
 
 
+local DS = framework.DataStore
+
 local freezeFrameCount = 0
 function framework.init()
-  framework.DataStore.reload()
-  main = doCall(Main.new)
+  DS.reload()
+  DS.framework = DS.framework or {}
+  main = doCall(function()
+    return Main.new(DS.framework.suspended)
+  end)
+  DS.framework.suspended = false
   freezeFrameCount = 2
   collectgarbage()
   collectgarbage 'stop'
 end
 
 
-local running = true
-framework.exit = function()
-  running = false
-end
 
 
-local MEM_CHECK_INTERVAL = 20
+local MEM_CHECK_INTERVAL = 1
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
@@ -381,6 +385,11 @@ local function frameFunc()
   end
 end
 
+local running = true
+framework.exit = function()
+  running = false
+end
+
 function framework.doFrame(deltaMs)
   if deltaMs>0 then frameDelta = deltaMs else frameDelta = 0 end
   if running and _c_framework.isAppBroken() == 0 then
@@ -393,5 +402,13 @@ function framework.doFrame(deltaMs)
     return 1
   end
 end
+
+function framework.suspend()
+  if main.suspend then
+    main.suspend()
+    DS.framework.suspended = true
+  end
+end
+
 
 strict.make_all_strict(_G)

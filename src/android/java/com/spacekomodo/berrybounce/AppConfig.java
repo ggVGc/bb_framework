@@ -3,6 +3,7 @@ package com.spacekomodo.berrybounce;
 
 public class AppConfig{
   public static final boolean development = true;
+  public static final String packageName = "com.spacekomodo.berrybounce";
 
   public static class iap{
     public static final String[] skuList = new String[]{"berry_bounce_no_ads"};

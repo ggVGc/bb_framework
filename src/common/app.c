@@ -23,8 +23,6 @@
 #endif
 
 
-#define BREAK_ON_FIRST_ERROR 1
-
 
 #define RegLuaFuncGlobal(fname) lua_pushcfunction(luaVM, fname##_lua); lua_setglobal(luaVM, #fname);
 
@@ -47,6 +45,8 @@ int print_lua(lua_State* s){
   /*while(lua_gettop(s)){*/
     if(lua_isboolean(s, -1)){
       trace(lua_toboolean(s,-1)?"true\t":"false\t");
+    }else if(lua_isnil(s, -1)){
+      trace("nil");
     }else{
       trace(lua_tostring(s, -1));
       /*traceNoNL("\t");*/
@@ -71,48 +71,6 @@ int dofile(const char* filePath){
   free(file);
   return ret;
 }
-
-/*
-int dofile_lua(lua_State* s) {
-  const char* filePath;
-  if( BREAK_ON_FIRST_ERROR && appBroken)
-    return 0;
-  filePath = lua_tostring(s, -1);
-  if(strncmp("framework", filePath, 9)){
-    traceNoNL("DoFile: ");
-    trace(filePath);
-  }
-  if(dofile(filePath)!=0) {
-    const char* msg = lua_tostring(vm, -1);
-    trace(msg);
-    appBroken = 1;
-  }
-  return 0;
-}
-
-*/
-
-/*
-int loadfile_lua(lua_State* s) {
-  char* str;
-  const char* filePath;
-
-  if( BREAK_ON_FIRST_ERROR && appBroken)
-    return 0;
-
-  filePath = lua_tostring(s, -1);
-  traceNoNL("LoadFile: ");
-  trace(filePath);
-
-  str = loadBytes(filePath, 0);
-
-  lua_pushstring(s, str);
-  free(str);
-
-  return 1;
-}
-
-*/
 
   int luaErrorHandler(lua_State *L) {
   trace("\n------- STACK TRACE ----------");
@@ -185,7 +143,6 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   luaVM = 0;
   didInit = 0;
 
-
   luaVM = luaL_newstate();
   luaL_openlibs(luaVM);
   luaopen__c_framework(luaVM);
@@ -201,7 +158,7 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
     setAppBroken(1);
   }
   else {
-    initRender(framebufferWidth, framebufferHeight);
+    graphicsInit(framebufferWidth, framebufferHeight);
   }
 }
 
@@ -211,11 +168,9 @@ void appDeinit(void) {
 
   if(luaVM) {
     lua_close(luaVM);
-    resourcesCleanUp();
-    audioCleanup();
     luaVM = 0;
-  }
-  else{
+    audioCleanup();
+  }else{
     trace("Called deinit while not initialised");
   }
 }
@@ -234,7 +189,6 @@ int appRender(long tick) {
 
   // suppress warning
   tick = tick;
-
 
   audioOnFrame();
   beginRenderFrame();
@@ -312,14 +266,12 @@ void setAppBroken(int isBroken){
 }
 
 void adInterstitialClosed(){
-  int ret;
   lua_getglobal(luaVM, "framework");
   lua_getfield(luaVM, -1, "Ads");
   lua_getfield(luaVM, -1, "interstitialCloseCallback");
   callLuaFunc(0,0);
 }
 void adInterstitialDisplayed(int success){
-  int ret;
   lua_getglobal(luaVM, "framework");
   lua_getfield(luaVM, -1, "Ads");
   lua_getfield(luaVM, -1, "interstitialDisplayCallback");
@@ -328,7 +280,6 @@ void adInterstitialDisplayed(int success){
 }
 
 void onPurchaseComplete(int success){
-  int ret;
   lua_getglobal(luaVM, "framework");
   lua_getfield(luaVM, -1, "IAP");
   lua_getfield(luaVM, -1, "onPurchaseComplete");
@@ -336,4 +287,13 @@ void onPurchaseComplete(int success){
   callLuaFunc(1,0);
 }
 
+void appSetPaused(int paused){
+  audioSetAllPaused(paused);
+}
+
+void appSuspend(){
+  lua_getglobal(luaVM, "framework");
+  lua_getfield(luaVM, -1, "suspend");
+  callLuaFunc(0,0);
+}
 

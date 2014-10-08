@@ -5,7 +5,6 @@
 #include "framework/resource_loading.h"
 #include "framework/util.h"
 
-#define MAX_SOUNDS 512
 #define MAX_BUFFERS 1
 
 static SLObjectItf engine_obj;
@@ -28,9 +27,8 @@ struct Audio_T {
   int is_done_buffer;
 };
 
-static Audio* soundInstances[MAX_SOUNDS];
 
-int audioGlobalInit(){
+int audioGlobalPlatformInit(){
   initialised = 0;
   slCreateEngine( &engine_obj, 0, 0, 0, 0, 0);
   (*engine_obj)->Realize( engine_obj, SL_BOOLEAN_FALSE );
@@ -49,10 +47,6 @@ int audioGlobalInit(){
   }
 
   
-  int i;
-  for(i=0;i<MAX_SOUNDS;++i){
-    soundInstances[i] = NULL;
-  }
 
   initialised = 1;
   return 0;
@@ -136,17 +130,7 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
 
   (*a->player)->RegisterCallback( a->player, play_callback, a );
   (*a->player)->SetCallbackEventsMask( a->player, SL_PLAYEVENT_HEADATEND );
-  int i;
-  for(i=0;i<MAX_SOUNDS;++i){
-    if(soundInstances[i] == NULL){
-      soundInstances[i] = a;
-      return a;
-    }
-  }
-  trace("WARNING: Max sound instances reached");
-  audioFree(a);
-  free(a);
-  return NULL;
+  return a;
 }
 
 void audioPlay(Audio* a) {
@@ -170,27 +154,21 @@ void audioStop(Audio* a) {
   a->is_playing = 0;
 }
 
-void audioFree(Audio* a) {
-  int i;
-  for(i=0;i<MAX_SOUNDS;++i){
-    if(soundInstances[i] == a){
-      soundInstances[i] = NULL;
-      break;
-    }
-  }
-  audioStop(a);
+void audioPlatformFree(Audio* a) {
   (*a->player_obj)->Destroy(a->player_obj);
   free(a->sampleData);
 }
 
+/*
 int audioIsFinished(Audio *a){
   if(a->is_playing && a->is_done_buffer ){
     audioStop(a);
   }
   return !a->is_playing;
 }
+*/
 
-void audioCleanup(){
+void audioPlatformCleanup(){
   if(initialised){
     (*output_mix_obj)->Destroy(output_mix_obj);
     (*engine_obj)->Destroy(engine_obj);

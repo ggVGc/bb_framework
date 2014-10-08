@@ -80,7 +80,6 @@ public class MainActivity extends Activity{
     CBPreferences.getInstance().setImpressionsUseActivities(true);
     this.cb.onStart(this);
     chartboostDelegate.onStart();
-    view.start();
   }
 
   public void prepareInterstitial(){
@@ -124,7 +123,7 @@ public class MainActivity extends Activity{
     super.onPause();
     Log.i(TAG,"Activity: Pause");
     uiHelper.onPause();
-    view.pause();
+    view.onPause();
   }
 
   @Override
@@ -153,7 +152,6 @@ public class MainActivity extends Activity{
   protected void onDestroy() {
     super.onDestroy();
     Log.i(TAG,"Activity: Destroy");
-    view.stop();
     this.cb.onDestroy(this);
     uiHelper.onDestroy();
   }

@@ -30,10 +30,6 @@
 #include "framework/profiler.h"
 
 
-%extend Camera{
-  static void Foo(){}
-}
-
 int screenWidth(void);
 int screenHeight(void);
 int isAppBroken(void);

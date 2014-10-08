@@ -46,15 +46,6 @@ static int usingZip = 0;
 */
 
 
-void resourcesCleanUp(void)
-{
-  //if(APKArchive)
-  //{
-  //  zip_close(APKArchive);
-  //  APKArchive = 0;
-  //}
-}
-
 
 unzFile guf;
 
@@ -71,44 +62,6 @@ void setResourcePath(const char* p, int useZip)
   sprintf(apkPath, "%s", p);
   usingZip = useZip;
 }
-
-
-/*void loadAPK (const char* apk) */
-/*{*/
-/*//int i;*/
-/*//int numFiles;*/
-/*//unzFile uf;*/
-/*//struct zip* APKArchive;*/
-
-/*apkPath = (char*)malloc(2048);*/
-/*strcpy(apkPath,apk);*/
-
-/*//uf = unzOpen(apkPath);*/
-/*//unzClose(uf);*/
-/*//resourcesCleanUp();*/
-
-/*//LOGI("Loading APK %s", apkPath);*/
-/*//APKArchive = zip_open(apkPath, 0, NULL);*/
-/*//if (APKArchive == NULL) {*/
-/*//  //LOGE("Error loading APK");*/
-/*//    printf("ERROR LOADING APK");*/
-/*//  return;*/
-/*//}*/
-
-/*////Just for debug, print APK contents*/
-/*//numFiles = zip_get_num_files(APKArchive);*/
-/*//for (i=0; i<numFiles; i++) {*/
-/*//  const char* name = zip_get_name(APKArchive, i, 0);*/
-/*//  if (name == NULL) {*/
-/*//    //LOGE("Error reading zip file name at index %i : %s", zip_strerror(APKArchive));*/
-/*//    return;*/
-/*//  }*/
-/*[>LOGI("File %i : %s\n", i, name);<]*/
-/*//}*/
-
-/*//zip_close(APKArchive);*/
-/*}*/
-
 
 int getFileSizeFromZip(const char* inPath){
   unzFile uf;
