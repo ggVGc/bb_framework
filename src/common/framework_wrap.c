@@ -2637,12 +2637,61 @@ static swig_module_info swig_module = {swig_types, 13, 0, 0, 0, 0};
 #include "framework/audio.h"
 #include "app.h"
 
+void DisplayObject_setTex(DisplayObject *d, Texture *t){
+  d->tex = t;
+}
+void DisplayObject_setParent(DisplayObject *d, DisplayObject *p){
+  d->parent = p;
+}
+
 
 SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
   int ret = lua_isstring(L, idx);
   if (!ret)
    ret = lua_isnil(L, idx);
   return ret;
+}
+
+
+int _wrap_loadImage(lua_State* L) {
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  RawBitmapData *result = 0 ;
+  
+  SWIG_check_num_args("loadImage",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("loadImage",1,"char const *");
+  arg1 = (char *)lua_tostring(L, 1);
+  result = (RawBitmapData *)loadImage((char const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_RawBitmapData,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+int _wrap_loadText(lua_State*L) 
+{
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("loadText",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("loadText",1,"char const *");
+  arg1 = (char *)lua_tostring(L, 1);
+  result = (char *)loadText((char const *)arg1);
+  lua_pushstring(L,(const char *)result); SWIG_arg++;
+  free(result);
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
 }
 
 #ifdef __cplusplus
@@ -4383,30 +4432,6 @@ static int _wrap_textureInit(lua_State* L) {
   
   textureInit(arg1,arg2,arg3);
   
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_textureGetBmData(lua_State* L) {
-  int SWIG_arg = 0;
-  Texture *arg1 = (Texture *) 0 ;
-  BitmapData *result = 0 ;
-  
-  SWIG_check_num_args("textureGetBmData",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("textureGetBmData",1,"Texture *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
-    SWIG_fail_ptr("textureGetBmData",1,SWIGTYPE_p_Texture);
-  }
-  
-  result = (BitmapData *)textureGetBmData(arg1);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_BitmapData,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6573,6 +6598,66 @@ fail:
 }
 
 
+static int _wrap_DisplayObject_setTex(lua_State* L) {
+  int SWIG_arg = 0;
+  DisplayObject *arg1 = (DisplayObject *) 0 ;
+  Texture *arg2 = (Texture *) 0 ;
+  
+  SWIG_check_num_args("DisplayObject_setTex",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_setTex",1,"DisplayObject *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("DisplayObject_setTex",2,"Texture *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_setTex",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_Texture,0))){
+    SWIG_fail_ptr("DisplayObject_setTex",2,SWIGTYPE_p_Texture);
+  }
+  
+  DisplayObject_setTex(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DisplayObject_setParent(lua_State* L) {
+  int SWIG_arg = 0;
+  DisplayObject *arg1 = (DisplayObject *) 0 ;
+  DisplayObject *arg2 = (DisplayObject *) 0 ;
+  
+  SWIG_check_num_args("DisplayObject_setParent",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DisplayObject_setParent",1,"DisplayObject *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("DisplayObject_setParent",2,"DisplayObject *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_setParent",1,SWIGTYPE_p_DisplayObject);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_DisplayObject,0))){
+    SWIG_fail_ptr("DisplayObject_setParent",2,SWIGTYPE_p_DisplayObject);
+  }
+  
+  DisplayObject_setParent(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_loadBytes(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
@@ -6590,46 +6675,6 @@ static int _wrap_loadBytes(lua_State* L) {
   
   result = (unsigned char *)loadBytes((char const *)arg1,arg2);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_loadText(lua_State* L) {
-  int SWIG_arg = 0;
-  char *arg1 = (char *) 0 ;
-  char *result = 0 ;
-  
-  SWIG_check_num_args("loadText",1,1)
-  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("loadText",1,"char const *");
-  arg1 = (char *)lua_tostring(L, 1);
-  result = (char *)loadText((char const *)arg1);
-  lua_pushstring(L,(const char *)result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_loadImage(lua_State* L) {
-  int SWIG_arg = 0;
-  char *arg1 = (char *) 0 ;
-  RawBitmapData *result = 0 ;
-  
-  SWIG_check_num_args("loadImage",1,1)
-  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("loadImage",1,"char const *");
-  arg1 = (char *)lua_tostring(L, 1);
-  result = (RawBitmapData *)loadImage((char const *)arg1);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_RawBitmapData,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6661,7 +6706,6 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "rawBitmapDataCleanup", _wrap_rawBitmapDataCleanup},
     { "bitmapDataInit", _wrap_bitmapDataInit},
     { "textureInit", _wrap_textureInit},
-    { "textureGetBmData", _wrap_textureGetBmData},
     { "DisplayObject_init", _wrap_DisplayObject_init},
     { "DisplayObject_setTransform", _wrap_DisplayObject_setTransform},
     { "DisplayObject_draw", _wrap_DisplayObject_draw},
@@ -6716,9 +6760,11 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},
     { "setAppBroken", _wrap_setAppBroken},
+    { "DisplayObject_setTex", _wrap_DisplayObject_setTex},
+    { "DisplayObject_setParent", _wrap_DisplayObject_setParent},
     { "loadBytes", _wrap_loadBytes},
-    { "loadText", _wrap_loadText},
-    { "loadImage", _wrap_loadImage},
+    { "loadImage",_wrap_loadImage},
+    { "loadText",_wrap_loadText},
     {0,0}
 };
 static swig_lua_class* swig_SwigModule_classes[]= {

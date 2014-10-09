@@ -30,6 +30,7 @@ extern int luaopen__c_framework(lua_State*);
 
 static int appBroken = 0;
 static int didInit = 0;
+static int wasSuspended = 0;
 
 int loadstringWithName(lua_State *L, const char *s, const char* name) {
   return luaL_loadbuffer(L, s, strlen(s), name);
@@ -132,7 +133,7 @@ int callLuaFunc(int nParams, int nRet) {
 
 
 
-void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePath, int useAssetZip) {
+void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, const char* resourcePath, int useAssetZip) {
   trace("---- APP INIT ----");
 
   audioGlobalInit();
@@ -142,6 +143,7 @@ void appInit(int framebufferWidth, int framebufferHeight, const char* resourcePa
   appBroken = 0;
   luaVM = 0;
   didInit = 0;
+  wasSuspended = appWasSuspended;
 
   luaVM = luaL_newstate();
   luaL_openlibs(luaVM);
@@ -207,7 +209,8 @@ int appRender(long tick) {
       appBroken = 1;
       return 0;
     }
-    if(callLuaFunc(0,0) != 0){
+    lua_pushboolean(luaVM, wasSuspended);
+    if(callLuaFunc(1,0) != 0){
       return 0;
     }
     trace("Init finished");

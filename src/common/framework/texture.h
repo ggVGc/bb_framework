@@ -18,7 +18,5 @@ typedef struct Texture Texture;
 
 void textureInit(Texture *tex, BitmapData *data, Rect sourceRect);
 
-BitmapData *textureGetBmData(Texture *t);
-
 
 #endif

@@ -20,3 +20,4 @@ void DisplayObject_draw(DisplayObject *d);
 
 void DisplayObject_getConcatenatedMatrix(DisplayObject *d, Matrix2 *outMat);
 double DisplayObject_getConcatAlpha(DisplayObject *d);
+

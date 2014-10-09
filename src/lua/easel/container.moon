@@ -37,7 +37,7 @@ new: ->
     if child.parent
       child.parent.removeChild child
     child.parent = self
-    child.dispObj.parent = self.dispObj
+    _c_framework.DisplayObject_setParent child.dispObj, self.dispObj
     table.insert self.children, child
     if select('#', ...) > 0
       return self.addChild(...)
@@ -51,7 +51,7 @@ new: ->
     if child.parent
       child.parent.removeChild(child)
     child.parent = self
-    child.dispObj.parent = self.dispObj
+    _c_framework.DisplayObject_setParent child.dispObj, self.dispObj
     table.insert self.children, index, child
     if select('#', ...) > 0
       return self.addChildAt(...)

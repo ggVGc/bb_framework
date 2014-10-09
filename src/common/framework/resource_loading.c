@@ -54,8 +54,7 @@ void png_zip_read(png_structp png_ptr, png_bytep data, png_size_t length) {
   unzReadCurrentFile(guf, data, length);
 }
 
-void setResourcePath(const char* p, int useZip)
-{
+void setResourcePath(const char* p, int useZip) {
   char msg[2048];
   sprintf(msg, "Setting resource path: %s", p);
   trace(msg);
@@ -82,13 +81,16 @@ int getFileSizeFromZip(const char* inPath){
 
   if(unzLocateFile(uf, path, 0)){
     // Invalid file path
+    unzClose(uf);
     return 0;
   }
 
   
   info.uncompressed_size = -1;
   unzGetCurrentFileInfo(uf, &info, NULL, 0, NULL, 0, NULL, 0);
-  return info.uncompressed_size;
+  int ret =  info.uncompressed_size;
+  unzClose(uf);
+  return ret;
 }
 
 

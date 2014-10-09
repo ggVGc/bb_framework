@@ -12,7 +12,7 @@ new: (texLoader, path) ->
 
 
   setmetatable(self, {__newindex:displayObj, __index:displayObj})
-  self.dispObj.tex = self.tex.tex
+  _c_framework.DisplayObject_setTex(self.dispObj, self.tex.tex)
   return self
 }
 Bitmap.drawCounter = 0

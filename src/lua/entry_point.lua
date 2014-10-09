@@ -339,16 +339,13 @@ end
 
 
 
-local DS = framework.DataStore
 
 local freezeFrameCount = 0
-function framework.init()
-  DS.reload()
-  DS.framework = DS.framework or {}
+function framework.init(wasSuspended)
+  framework.DataStore.reload()
   main = doCall(function()
-    return Main.new(DS.framework.suspended)
+    return Main.new(wasSuspended and true or false)
   end)
-  DS.framework.suspended = false
   freezeFrameCount = 2
   collectgarbage()
   collectgarbage 'stop'
@@ -406,7 +403,6 @@ end
 function framework.suspend()
   if main.suspend then
     main.suspend()
-    DS.framework.suspended = true
   end
 end
 

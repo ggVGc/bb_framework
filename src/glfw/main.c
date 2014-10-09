@@ -84,6 +84,9 @@ static void char_callback(GLFWwindow* window, unsigned int ch) {
 
 static void mouse_callback(GLFWwindow* window, int button, int action, int mods) {
   double x, y;
+  if(paused){
+    return;
+  }
   glfwGetCursorPos(window, &x, &y);
   setCursorPos(0, x, y);
   switch(action){
@@ -97,7 +100,9 @@ static void mouse_callback(GLFWwindow* window, int button, int action, int mods)
 }
 
 static void cursor_pos_callback(GLFWwindow* window, double x, double y) {
-  setCursorPos(0, x, y);
+  if(!paused){
+    setCursorPos(0, x, y);
+  }
 }
 
 int main(int argc, char **argv) {
@@ -180,7 +185,7 @@ int main(int argc, char **argv) {
   setScreenHeight(screenH);
   
   glfwGetFramebufferSize(window, &width, &height);
-  appInit(width, height, assetPath, 1);
+  appInit(0, width, height, assetPath, 1);
 
 
   lastTime = _getTime();
@@ -192,7 +197,7 @@ int main(int argc, char **argv) {
     if(shouldReload){
       shouldReload = 0;
       printf(assetPath);
-      appInit(width, height, assetPath, 1);
+      appInit(1, width, height, assetPath, 1);
       paused = 0;
     }
 

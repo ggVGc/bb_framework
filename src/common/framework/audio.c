@@ -116,7 +116,8 @@ Audio* audioLoad(const char* path){
   callbacks.tell_func = AR_tellOgg;
 
   if(ov_open_callbacks((void *)&t, &vf, NULL, -1, callbacks) < 0){
-    /*fprintf(stderr,"Input does not appear to be an Ogg bitstream.\n");*/
+    trace("Input does not appear to be an Ogg bitstream.\n");
+    free(buf);
     return 0;
   }
 
@@ -137,12 +138,16 @@ Audio* audioLoad(const char* path){
       eof=1;
     } else if (ret < 0) {
       trace("Vorbis load failed");
+      free(buf);
+      free(tmpBuf);
       return 0;
     } else {
       memcpy(tmpBuf+c, pcmout, ret);
       c+=ret;
       if(c>bufSize){
         trace("Encoded stream larger than buffer. Something is wrong");
+        free(buf);
+        free(tmpBuf);
         return 0;
       }
       // we don't bother dealing with sample rate changes, etc, but you'll have to 
@@ -153,6 +158,7 @@ Audio* audioLoad(const char* path){
  a = audioMake((int*)tmpBuf, bufSize, vi->rate, vi->channels);
 
  ov_clear(&vf);
+ free(buf);
  free(tmpBuf);
  soundInstances[soundIndex] = a;
  return a;
@@ -164,6 +170,7 @@ void audioFree(Audio *a){
   audioPlatformFree(a);
   for(i=0;i<MAX_SOUNDS;++i){
     if(soundInstances[i] == a){
+      free(soundInstances[i]);
       soundInstances[i] = NULL;
       break;
     }

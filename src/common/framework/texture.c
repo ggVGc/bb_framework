@@ -31,7 +31,3 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
 }
 
 
-BitmapData *textureGetBmData(Texture *t){
-  return t->data;
-}
-

@@ -6,7 +6,10 @@
 static char *data = 0;
 
 void dataStoreGlobalInit(){
-  /*data = 0;*/
+  if(data){
+    free(data);
+  }
+  data = 0;
 }
 
 void dataStoreCommit(const char* dataString){
