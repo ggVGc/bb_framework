@@ -11,20 +11,23 @@ framework.DataStore = {
       framework.DataStore.data = d or {}
 
   commit: ->
-    d = framework.tserialize(framework.DataStore.data)
-    _c_framework.dataStoreCommit d
+    d, msg= framework.tserialize(framework.DataStore.data)
+    if d
+      _c_framework.dataStoreCommit d
+    else
+      print msg
 }
 
-local autoCommitMt
-autoCommitMt = {
-  __newindex: (obj, key, val)->
-    rawset(obj, key, val)
-    if type(val) == 'table'
-      setmetatable val, autoCommitMt
-    if framework.DataStore.autoCommit
-      print "Commiting data store"
-      framework.DataStore.commit!
-}
+--local autoCommitMt
+--autoCommitMt = {
+  --__newindex: (obj, key, val)->
+    --rawset(obj, key, val)
+    --if type(val) == 'table'
+      --setmetatable val, autoCommitMt
+    --if framework.DataStore.autoCommit
+      --print "Commiting data store"
+      --framework.DataStore.commit!
+--}
 
 mt = {
   __index: (obj, key)->
@@ -34,8 +37,8 @@ mt = {
 
   __newindex: (obj, key, val)->
     framework.DataStore.data[key] = val
-    if type(val) == 'table'
-      setmetatable val, autoCommitMt
+    --if type(val) == 'table'
+      --setmetatable val, autoCommitMt
     if framework.DataStore.autoCommit
       print "Commiting data store"
       framework.DataStore.commit!

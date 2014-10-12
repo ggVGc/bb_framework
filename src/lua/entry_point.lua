@@ -3,6 +3,9 @@ if jit then
   jit.off()
 end
 
+-- Be compatible with lua 5.2
+loadstring = load
+
 
 local oldPrint = print
 function print(...)
@@ -11,7 +14,13 @@ function print(...)
   for i=1,#arg do
     s = s and s or ''
     local v = arg[i]
+    if v == false then
+      v = 'false'
+    end
     s = s..(v and tostring(v) or 'nil')..'\t'
+  end
+  if s == false then
+    s = 'false'
   end
   oldPrint(s and s or 'nil')
 end
@@ -354,7 +363,7 @@ end
 
 
 
-local MEM_CHECK_INTERVAL = 1
+local MEM_CHECK_INTERVAL = 10
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
