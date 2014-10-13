@@ -32,7 +32,6 @@ void DisplayObject_setParent(DisplayObject *d, DisplayObject *p){
 #include "framework/audio.h"
 #include "framework/facebook.h"
 #include "framework/ads.h"
-#include "framework/data_store.h"
 #include "framework/iap.h"
 #include "framework/profiler.h"
 
@@ -48,6 +47,28 @@ void DisplayObject_setParent(DisplayObject *d, DisplayObject *p);
 //////
 
 unsigned char* loadBytes(const char* path, int* sz);
+void dataStoreCommit(const char* dataString);
+
+
+%native(dataStoreReload) int _wrap_dataStoreReload(lua_State*L);
+%{
+static int _wrap_dataStoreReload(lua_State* L) {
+  int SWIG_arg = 0;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("dataStoreReload",0,0)
+  result = (char *)dataStoreReload();
+  lua_pushstring(L,(const char *)result); SWIG_arg++;
+  free(result);
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+%}
 
 
 %native(loadImage) int _wrap_loadImage(lua_State*L);

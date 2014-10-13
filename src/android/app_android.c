@@ -61,26 +61,38 @@ void stopProfiler(){
 Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject this, jstring apkPath_ ) {
   trace("nativeInit");
   apkPath = (*env)->GetStringUTFChars(env, apkPath_, NULL); // Let's leak some memory..
-  lastTime = _getTime();
   didInit = 0;
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject  this, jint w, jint h ) {
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject  this, jint w, jint h, jint wasSuspended) {
   if(didInit != 1){
     setScreenWidth(w);
     setScreenHeight(h);
-    appInit(w, h, apkPath, 1);
+    appInit(wasSuspended, w, h, apkPath, 1);
+    lastTime = _getTime();
     didInit = 1;
   }
   __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "resize w=%d h=%d", w, h);
 }
 
+
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeOnStop( JNIEnv*  env ) {
-  resourcesCleanUp();
+Java_com_spacekomodo_berrybounce_GLView_appSuspend( JNIEnv*  env ) {
+  trace("Suspending app");
+  appSuspend();
+}
+
+  void
+Java_com_spacekomodo_berrybounce_GLView_appDeinit( JNIEnv*  env ) {
   appDeinit();
+  didInit = 0;
   trace("Cleaned up app");
+}
+
+  void
+Java_com_spacekomodo_berrybounce_GLView_appSetPaused( JNIEnv*  env, jobject this, jint paused) {
+  appSetPaused(paused);
 }
 
 

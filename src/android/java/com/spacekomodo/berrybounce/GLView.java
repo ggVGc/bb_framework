@@ -3,6 +3,7 @@ package com.spacekomodo.berrybounce;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.SurfaceHolder;
 
 
 public class GLView extends GLSurfaceView {
@@ -17,6 +18,7 @@ public class GLView extends GLSurfaceView {
     super.setEGLConfigChooser(8 , 8, 8, 8, 16, 0);
     renderer = new GLRenderer(activity);
     setRenderer(renderer);
+    this.setPreserveEGLContextOnPause(true);
   }
 
 
@@ -48,20 +50,44 @@ public class GLView extends GLSurfaceView {
     return true;
   }
 
+  @Override
+  public void surfaceDestroyed(SurfaceHolder holder){
+    super.surfaceDestroyed(holder);
+    Log.i(TAG,"GLView: Surface destroyed");
+  }
+
 
   @Override
   public void onResume() {
     super.onResume();
+    /*
+    if(renderer.inited){
+      appSetPaused(0);
+    }
+    */
     Log.i(TAG,"GLView: Resume");
   }
 
+  private static native void appSetPaused(int paused);
+  private static native void appSuspend();
+  private static native void appDeinit();
+
   @Override
   public void onPause() {
-    super.onPause();
     Log.i(TAG,"GLView: Pause");
+    super.onPause();
+    /*
+    if(renderer.inited){
+      appSetPaused(1);
+    }
+    */
   }
 
-  private static native void nativeOnCursorDown(int ind);
-  private static native void nativeOnCursorUp(int ind);
-  private static native void nativeOnCursorMove(int ind, int x, int y);
+  public void onStop(){
+    Log.i(TAG,"GLView: Stop");
+    renderer.inited = false;
+    appSuspend();
+    appDeinit();
+  }
+
 }

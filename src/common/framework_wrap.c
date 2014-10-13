@@ -2653,6 +2653,24 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
 }
 
 
+static int _wrap_dataStoreReload(lua_State* L) {
+  int SWIG_arg = 0;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("dataStoreReload",0,0)
+  result = (char *)dataStoreReload();
+  lua_pushstring(L,(const char *)result); SWIG_arg++;
+  free(result);
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 int _wrap_loadImage(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
@@ -6366,58 +6384,6 @@ fail:
 }
 
 
-static int _wrap_dataStoreGlobalInit(lua_State* L) {
-  int SWIG_arg = 0;
-  
-  SWIG_check_num_args("dataStoreGlobalInit",0,0)
-  dataStoreGlobalInit();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_dataStoreCommit(lua_State* L) {
-  int SWIG_arg = 0;
-  char *arg1 = (char *) 0 ;
-  
-  SWIG_check_num_args("dataStoreCommit",1,1)
-  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("dataStoreCommit",1,"char const *");
-  arg1 = (char *)lua_tostring(L, 1);
-  dataStoreCommit((char const *)arg1);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_dataStoreReload(lua_State* L) {
-  int SWIG_arg = 0;
-  char *result = 0 ;
-  
-  SWIG_check_num_args("dataStoreReload",0,0)
-  result = (char *)dataStoreReload();
-  lua_pushstring(L,(const char *)result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_userOwnsProduct(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
@@ -6685,6 +6651,25 @@ fail:
 }
 
 
+static int _wrap_dataStoreCommit(lua_State* L) {
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  
+  SWIG_check_num_args("dataStoreCommit",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("dataStoreCommit",1,"char const *");
+  arg1 = (char *)lua_tostring(L, 1);
+  dataStoreCommit((char const *)arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static swig_lua_attribute swig_SwigModule_attributes[] = {
     { "soundInstances", _wrap_soundInstances_get, _wrap_soundInstances_set },
     {0,0,0}
@@ -6747,9 +6732,6 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "adInterstitialDisplayed", _wrap_adInterstitialDisplayed},
     { "adInterstitialClosed", _wrap_adInterstitialClosed},
     { "adSetBannersEnabled", _wrap_adSetBannersEnabled},
-    { "dataStoreGlobalInit", _wrap_dataStoreGlobalInit},
-    { "dataStoreCommit", _wrap_dataStoreCommit},
-    { "dataStoreReload", _wrap_dataStoreReload},
     { "userOwnsProduct", _wrap_userOwnsProduct},
     { "purchaseProduct", _wrap_purchaseProduct},
     { "getProductPrice", _wrap_getProductPrice},
@@ -6763,6 +6745,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "DisplayObject_setTex", _wrap_DisplayObject_setTex},
     { "DisplayObject_setParent", _wrap_DisplayObject_setParent},
     { "loadBytes", _wrap_loadBytes},
+    { "dataStoreCommit", _wrap_dataStoreCommit},
+    { "dataStoreReload",_wrap_dataStoreReload},
     { "loadImage",_wrap_loadImage},
     { "loadText",_wrap_loadText},
     {0,0}

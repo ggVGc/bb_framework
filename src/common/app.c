@@ -173,7 +173,7 @@ void appDeinit(void) {
     luaVM = 0;
     audioCleanup();
   }else{
-    trace("Called deinit while not initialised");
+    trace("WARNING: Called deinit while not initialised");
   }
 }
 
@@ -269,34 +269,60 @@ void setAppBroken(int isBroken){
 }
 
 void adInterstitialClosed(){
-  lua_getglobal(luaVM, "framework");
-  lua_getfield(luaVM, -1, "Ads");
-  lua_getfield(luaVM, -1, "interstitialCloseCallback");
-  callLuaFunc(0,0);
+  if(didInit){
+    lua_getglobal(luaVM, "framework");
+    lua_getfield(luaVM, -1, "Ads");
+    lua_getfield(luaVM, -1, "interstitialCloseCallback");
+    callLuaFunc(0,0);
+  }else{
+    trace("Warning: Called adInterstitialClosed when not initialized");
+  }
 }
 void adInterstitialDisplayed(int success){
-  lua_getglobal(luaVM, "framework");
-  lua_getfield(luaVM, -1, "Ads");
-  lua_getfield(luaVM, -1, "interstitialDisplayCallback");
-  lua_pushboolean(luaVM, success);
-  callLuaFunc(1,0);
+  if(didInit){
+    lua_getglobal(luaVM, "framework");
+    lua_getfield(luaVM, -1, "Ads");
+    lua_getfield(luaVM, -1, "interstitialDisplayCallback");
+    lua_pushboolean(luaVM, success);
+    callLuaFunc(1,0);
+  }else{
+    trace("Warning: Called adInterstitialDisplayed when not initialized");
+  }
 }
 
 void onPurchaseComplete(int success){
-  lua_getglobal(luaVM, "framework");
-  lua_getfield(luaVM, -1, "IAP");
-  lua_getfield(luaVM, -1, "onPurchaseComplete");
-  lua_pushinteger(luaVM, success);
-  callLuaFunc(1,0);
+  if(didInit){
+    lua_getglobal(luaVM, "framework");
+    lua_getfield(luaVM, -1, "IAP");
+    lua_getfield(luaVM, -1, "onPurchaseComplete");
+    lua_pushinteger(luaVM, success);
+    callLuaFunc(1,0);
+  }else{
+    trace("Warning: Called onPurchaseComplete when not initialized");
+  }
 }
 
 void appSetPaused(int paused){
-  audioSetAllPaused(paused);
+  if(didInit){
+    audioSetAllPaused(paused);
+    /*
+    lua_getglobal(luaVM, "framework");
+    lua_getfield(luaVM, -1, "setPaused");
+    lua_pushboolean(luaVM, paused);
+    callLuaFunc(1,0);
+    */
+  }else{
+    trace("Warning: Called appSetPaused when not initialized");
+  }
 }
 
 void appSuspend(){
-  lua_getglobal(luaVM, "framework");
-  lua_getfield(luaVM, -1, "suspend");
-  callLuaFunc(0,0);
+  if(didInit){
+    lua_getglobal(luaVM, "framework");
+    lua_getfield(luaVM, -1, "suspend");
+    callLuaFunc(0,0);
+  }else{
+    trace("Warning: Called appSuspend when not initialized");
+  }
 }
 

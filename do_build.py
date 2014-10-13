@@ -180,12 +180,12 @@ def buildFramework():
     cflags += ' -I./deps/common/lua '
     return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/osx -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -framework OpenAL")
   else:
-    cflags += ' -I./deps/common/luajit/src '
-    commonLibString += ' -lluajit '
-    extraLibFolderString = ' -L'+os.getcwd()+'/deps/common/luajit/bin/linux '
-    #cflags += ' -I./deps/common/lua '
-    #commonLibString += ' -lluaa '
-    #extraLibFolderString = ''
+    #cflags += ' -I./deps/common/luajit/src '
+    #commonLibString += ' -lluajit '
+    #extraLibFolderString = ' -L'+os.getcwd()+'/deps/common/luajit/bin/linux '
+    cflags += ' -I./deps/common/lua '
+    commonLibString += ' -lluaa '
+    extraLibFolderString = ''
     return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g "+extraLibFolderString+" -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU -lopenal ")
 
 

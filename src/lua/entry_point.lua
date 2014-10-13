@@ -410,7 +410,7 @@ function framework.doFrame(deltaMs)
 end
 
 function framework.suspend()
-  if main.suspend then
+  if main and main.suspend then
     main.suspend()
   end
 end

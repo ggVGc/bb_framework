@@ -168,6 +168,15 @@ int audioIsFinished(Audio *a){
 }
 */
 
+void audioSetPaused(Audio *a, int paused){
+  if(paused){
+    (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PAUSED );
+  }else{
+    (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
+  }
+}
+
+
 void audioPlatformCleanup(){
   if(initialised){
     (*output_mix_obj)->Destroy(output_mix_obj);

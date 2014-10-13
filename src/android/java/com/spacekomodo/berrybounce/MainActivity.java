@@ -102,7 +102,6 @@ public class MainActivity extends Activity{
   public native void interstitialFailedDisplay();
 
   public int facebookIsShareAvailable(){
-   
       return 0;
      }
 
@@ -145,6 +144,7 @@ public class MainActivity extends Activity{
     super.onStop();
     Log.i(TAG,"Activity: Stop");
     this.cb.onStop(this);
+    view.onStop();
   }
 
 
