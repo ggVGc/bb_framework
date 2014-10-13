@@ -18,6 +18,7 @@ import com.facebook.widget.FacebookDialog;
 public class MainActivity extends Activity{
   public static final String TAG = "MainActivity";
 
+
   private GLView view;
 
   public IAP iap;
@@ -102,6 +103,7 @@ public class MainActivity extends Activity{
   public native void interstitialFailedDisplay();
 
   public int facebookIsShareAvailable(){
+   
       return 0;
      }
 
@@ -129,9 +131,10 @@ public class MainActivity extends Activity{
   protected void onResume() {
     super.onResume();
     Log.i(TAG,"Activity: Resume");
-    view.onResume();
     uiHelper.onResume();
+    view.onResume();
   }
+
 
   @Override
   protected void onSaveInstanceState(Bundle outState) {
@@ -144,7 +147,7 @@ public class MainActivity extends Activity{
     super.onStop();
     Log.i(TAG,"Activity: Stop");
     this.cb.onStop(this);
-    view.onStop();
+    view.stop();
   }
 
 

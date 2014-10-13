@@ -50,6 +50,7 @@ static void error_callback(int error, const char* description) {
 static int paused = 0;
 static int shouldReload = 0;
 static int shouldSuspend = 0;
+static int reloadTextures = 1;
 
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
   int k = key-GLFW_KEY_A+'a';
@@ -58,6 +59,8 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
       if(key==GLFW_KEY_P){
         paused =1;
         appSetPaused(1);
+      }else if(key==GLFW_KEY_T){
+        reloadTextures = 1;
       }else if(key==GLFW_KEY_U){
         paused = 0;
         appSetPaused(0);
@@ -194,6 +197,10 @@ int main(int argc, char **argv) {
     delta =(curTime-lastTime);
     lastTime = curTime;
 
+    if(reloadTextures){
+        appGraphicsReload(width, height);
+        reloadTextures = 0;
+    }
     if(shouldReload){
       shouldReload = 0;
       printf(assetPath);

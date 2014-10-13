@@ -326,3 +326,14 @@ void appSuspend(){
   }
 }
 
+void appGraphicsReload(int framebufferWidth, int framebufferHeight){
+  if(didInit){
+    graphicsInit(framebufferWidth, framebufferHeight);
+    lua_getglobal(luaVM, "framework");
+    lua_getfield(luaVM, -1, "reloadTextures");
+    callLuaFunc(0,0);
+  }else{
+    trace("Warning: Called appGraphicsReload when not initialized");
+  }
+}
+

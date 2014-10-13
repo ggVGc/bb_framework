@@ -13,6 +13,7 @@ extern void appInit(int wasSuspended, int framebufferWidth, int framebufferHeigh
 extern void appDeinit(void);
 extern void appSetPaused(int);
 extern void appSuspend(void);
+void appGraphicsReload(int framebufferWidth, int framebufferHeight);
 
 extern int appRender(long tick);
 

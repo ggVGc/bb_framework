@@ -1,7 +1,7 @@
 framework = framework or {}
 local Tex
 Tex = {
-  bmDataCache:{}
+bmDataCache:{}
 new: (bmData, x, y, w, h)->
   M = {}
   with M
@@ -30,7 +30,8 @@ new: (bmData, x, y, w, h)->
       _c_framework.Matrix2_append(tmpMat, .tex.width, 0, 0, .tex.height, 0, 0)
       _c_framework.quadDrawTex .tex, tmpMat
 
-fromFile: (path, errorOnInvalid=true)->
+
+bmDataFromFile: (path, errorOnInvalid=true)->
   path = Tex.fixPath path
   local bmData
   if not Tex.bmDataCache[path]
@@ -45,12 +46,25 @@ fromFile: (path, errorOnInvalid=true)->
     Tex.bmDataCache[path] = bmData
   else
     bmData = Tex.bmDataCache[path]
+  return bmData
+
+fromFile: (path, errorOnInvalid=true)->
+  bmData = Tex.bmDataFromFile path, errorOnInvalid
   Tex.new(bmData, 0, 0, bmData.width, bmData.height)
 
 fixPath: (path) ->
   if not string.endsWith path, '.png'
     path = path..'.png'
   path
+
+rebuildCachedTextures: ->
+  for k,v in pairs Tex.bmDataCache
+    print "Reloading", k
+    imageData = _c_framework.loadImage(k)
+    _c_framework.bitmapDataInit(v, imageData)
+    _c_framework.rawBitmapDataCleanup(imageData)
+
+
 }
 
 framework.Texture = Tex

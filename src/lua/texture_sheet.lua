@@ -55,20 +55,11 @@ end
 
 function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPath)
   local layoutData = _c_framework.loadText(layoutInfoPath or imagePath:gsub('.png', '.txt'))
-  local imageData = _c_framework.loadImage(imagePath)
-  local bmData = _c_framework.BitmapData()
-
-  if imageData == nil then
-    error("Invalid image file: "..imagePath)
-  end
-
   if layoutData == "" or layoutData == nil then
     error("invalid layout file: "..layoutInfoPath)
   end
 
-  _c_framework.bitmapDataInit(bmData, imageData)
-  _c_framework.rawBitmapDataCleanup(imageData)
-    
+  local bmData = framework.Texture.bmDataFromFile(imagePath, true)
 
   local rectMap = {}
   local spl = layoutData:split(" ")

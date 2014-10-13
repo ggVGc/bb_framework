@@ -355,7 +355,7 @@ function framework.init(wasSuspended)
   main = doCall(function()
     return Main.new(wasSuspended and true or false)
   end)
-  freezeFrameCount = 2
+  freezeFrameCount = 1
   collectgarbage()
   collectgarbage 'stop'
 end
@@ -413,6 +413,11 @@ function framework.suspend()
   if main and main.suspend then
     main.suspend()
   end
+end
+
+function framework.reloadTextures()
+  print 'Reloading textures'
+  framework.Texture.rebuildCachedTextures()
 end
 
 

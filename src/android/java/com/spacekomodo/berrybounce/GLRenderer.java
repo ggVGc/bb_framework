@@ -35,21 +35,18 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   public GLRenderer.TouchEvent[] eventPool = new GLRenderer.TouchEvent[100];
 
   int lastEventIndex = 0;
-  boolean startedOnce = false;
 
-  /*
-  public boolean shouldPause = false;
-  public boolean shouldResume = false;
-  */
+
+  boolean needsReload = false;
 
 
 
-  private static native void appSetPaused(int paused);
   private static native void nativeOnCursorDown(int ind);
   private static native void nativeOnCursorUp(int ind);
   private static native void nativeOnCursorMove(int ind, int x, int y);
   private static native void nativeInit(String apkPath);
   private static native void nativeResize(int w, int h, int wasSuspended);
+  private static native void appGraphicsReload(int w, int h);
   private native void nativeRender();
 
   public GLRenderer (MainActivity activity) {
@@ -63,6 +60,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   @Override
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     Log.i(TAG,"GLRenderer: Surface created");
+    needsReload = true;
   }
 
   public boolean inited = false;
@@ -82,9 +80,12 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     apkFilePath = appInfo.sourceDir;
     if(!inited){
       nativeInit(apkFilePath);
-      nativeResize(w, h, startedOnce?1:0);
-      startedOnce = true;
+      nativeResize(w, h, 1);
       inited = true;
+      needsReload = false;
+    }else if(needsReload){
+      needsReload = false;
+      appGraphicsReload(w, h);
     }
   }
 
@@ -128,15 +129,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       e.alive = false;
       e = eventPool[lastEventIndex];
     }
-    /*
-    if(shouldPause){
-      shouldPause = false;
-      appSetPaused(1);
-    }else if(shouldResume){
-      shouldResume = false;
-      appSetPaused(0);
-    }
-    */
     nativeRender();
   }
 
@@ -163,11 +155,9 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   private void dataStoreCommit(String dataString){
     try{
       FileOutputStream f = this.activity.openFileOutput("datastore", Context.MODE_PRIVATE);
-      Log.i(TAG, "Commiting: "+dataString);
       f.write(dataString.getBytes());
       f.close();
     } catch (Exception e) {
-      Log.e(TAG, "Failed writing to data store");
     }
   }
   private String dataStoreReload(){
@@ -177,14 +167,11 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       scan.useDelimiter("\\Z");  
       String ret =  scan.next();  
       if(ret!=null){
-        Log.i(TAG, "Loaded: "+ret);
         return ret;
       }else{
-        Log.e(TAG, "Failed reading data store");
         return "";
       }
     } catch (Exception e) {
-      Log.e(TAG, "Failed reading data store");
       return "";
     }
   }
