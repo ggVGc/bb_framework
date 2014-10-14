@@ -8,8 +8,12 @@ framework.DataStore = {
     s = _c_framework.dataStoreReload!
     if s
       print "Loaded:", s
-      d = loadstring(s)()
-      framework.DataStore.data = d or {}
+      f = loadstring(s)
+      if f
+        d = f!
+        framework.DataStore.data = d or {}
+      else
+        print "WARNING: Failed loading data store!"
 
   commit: ->
     d, msg= framework.tserialize(framework.DataStore.data)

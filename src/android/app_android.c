@@ -92,8 +92,13 @@ Java_com_spacekomodo_berrybounce_GLView_appSetPaused( JNIEnv*  env, jobject this
 
 
   void
-Java_com_spacekomodo_berrybounce_GLView_nativeOnStop( JNIEnv*  env ) {
+Java_com_spacekomodo_berrybounce_GLView_appSuspend( JNIEnv*  env ) {
+  trace("Suspending app");
   appSuspend();
+}
+
+  void
+Java_com_spacekomodo_berrybounce_GLView_nativeOnStop( JNIEnv*  env ) {
   appDeinit();
   trace("Cleaned up app");
 }

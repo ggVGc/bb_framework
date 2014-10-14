@@ -13,6 +13,7 @@ public class GLView extends GLSurfaceView {
 
   private static native void nativeOnStop();
   private static native void appSetPaused(int paused);
+  private static native void appSuspend();
 
   private static final String TAG = MainActivity.TAG;
   public GLView(MainActivity activity) {
@@ -53,12 +54,6 @@ public class GLView extends GLSurfaceView {
   }
 
   public void stop(){
-  }
-
-  @Override
-  public void surfaceDestroyed(SurfaceHolder h){
-    Log.i(TAG,"GLView: onSurfaceDestroyed");
-    super.surfaceDestroyed(h);
     nativeOnStop();
     renderer.inited = false;
   }
@@ -75,5 +70,6 @@ public class GLView extends GLSurfaceView {
     Log.i(TAG,"GLView: Pause");
     super.onPause();
     appSetPaused(1);
+    appSuspend();
   }
 }
