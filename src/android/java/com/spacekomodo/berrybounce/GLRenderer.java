@@ -152,12 +152,13 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     });
   }
 
-  private void dataStoreCommit(String dataString){
+  private void dataStoreCommit(final String dataString){
     try{
       FileOutputStream f = this.activity.openFileOutput("datastore", Context.MODE_PRIVATE);
       f.write(dataString.getBytes());
       f.close();
     } catch (Exception e) {
+      Log.e(TAG, "Failed writing to data store");
     }
   }
   private String dataStoreReload(){
@@ -165,12 +166,14 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       FileInputStream f = this.activity.openFileInput("datastore");
       Scanner scan = new Scanner(f);  
       scan.useDelimiter("\\Z");  
-      String ret =  scan.next();  
-      if(ret!=null){
-        return ret;
-      }else{
-        return "";
+      StringBuilder sb = new StringBuilder();
+      while(scan.hasNext()){
+        String ret = scan.next();
+        if(ret != null){
+          sb.append(ret);
+        }
       }
+      return sb.toString();
     } catch (Exception e) {
       return "";
     }

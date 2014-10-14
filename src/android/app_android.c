@@ -3,6 +3,7 @@
 #include <time.h>
 #include <android/log.h>
 #include <stdint.h>
+#include <string.h>
 #include "framework/resource_loading.h"
 #include "app.h"
 #include "framework/input.h"
@@ -221,6 +222,8 @@ void dataStoreCommit(const char* dataString){
     return;
   }
   jstring s = (*curEnv)->NewStringUTF(curEnv, dataString);
+  __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "DATA_LEN: %d", strlen(dataString));
+  /*__android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "DATA: %s", dataString);*/
   (*curEnv)->CallVoidMethod(curEnv, curThis, mid, s);
   (*curEnv)->DeleteLocalRef(curEnv, s);
 }

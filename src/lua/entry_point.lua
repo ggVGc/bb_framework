@@ -362,6 +362,7 @@ end
 
 
 local MEM_CHECK_INTERVAL = 10
+local MAX_MEM_TRIGGER_GC = 29000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
@@ -382,7 +383,7 @@ local function frameFunc()
     local thisMem = collectgarbage 'count'
     print ('M: '..math.floor(thisMem).." ("..math.floor((thisMem-lastMem)/MEM_CHECK_INTERVAL)..")")
     lastMem = thisMem
-    if thisMem > 50000 then
+    if thisMem > MAX_MEM_TRIGGER_GC then
       collectgarbage()
       collectgarbage 'stop'
     end

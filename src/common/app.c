@@ -4,6 +4,9 @@
 #include <math.h>
 #include <float.h>
 #include <assert.h>
+/*#include <pthread.h>*/
+
+
 
 #include <lua.h>
 #include <lauxlib.h>
@@ -31,6 +34,7 @@ extern int luaopen__c_framework(lua_State*);
 static int appBroken = 0;
 static int didInit = 0;
 static int wasSuspended = 0;
+/*pthread_mutex_t vmMutex;*/
 
 int loadstringWithName(lua_State *L, const char *s, const char* name) {
   return luaL_loadbuffer(L, s, strlen(s), name);
@@ -136,6 +140,11 @@ int callLuaFunc(int nParams, int nRet) {
 void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, const char* resourcePath, int useAssetZip) {
   trace("---- APP INIT ----");
 
+  /*
+  pthread_mutex_init(&vmMutex, 0);
+  pthread_mutex_lock(&vmMutex);
+  */
+
   audioGlobalInit();
   dataStoreGlobalInit();
   setResourcePath(resourcePath, useAssetZip);
@@ -162,12 +171,14 @@ void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, c
   else {
     graphicsInit(framebufferWidth, framebufferHeight);
   }
+  /*pthread_mutex_unlock(&vmMutex);*/
 }
 
 
 void appDeinit(void) {
   trace("---- APP CLEANUP ---");
 
+  /*pthread_mutex_lock(&vmMutex);*/
   if(luaVM) {
     lua_close(luaVM);
     luaVM = 0;
@@ -175,27 +186,11 @@ void appDeinit(void) {
   }else{
     trace("WARNING: Called deinit while not initialised");
   }
+  /*pthread_mutex_unlock(&vmMutex);*/
 }
 
 
-int appRender(long tick) {
-  int ret;
-
-  if(appBroken!=0){
-    return 0;
-  }
-	
-  if(!luaVM){
-    return 0;
-  }
-
-  // suppress warning
-  tick = tick;
-
-  audioOnFrame();
-  beginRenderFrame();
-  lua_getglobal(luaVM, "framework");
-
+int doFrameBody(long tick){
   if (didInit == 0 && appBroken==0){
     didInit = 1;
     if(lua_isnil(luaVM, -1)){
@@ -217,9 +212,9 @@ int appRender(long tick) {
   }
 
   if(appBroken != 0){
-    lua_settop(luaVM, 0);
     return 0;
   }else{
+    int ret;
     lua_pushstring(luaVM, "doFrame");
     lua_gettable(luaVM, -2);
     lua_pushnumber(luaVM, tick);
@@ -229,15 +224,30 @@ int appRender(long tick) {
     ret = lua_tonumber(luaVM, -1);
     lua_pop(luaVM, 1);
     if(ret != 0){
-      lua_settop(luaVM, 0);
       return ret;
     }
   }
-
-  quadEndFrame();
-
-  lua_pop(luaVM, 1);
   return 0;
+}
+
+
+int appRender(long tick) {
+  int ret;
+  if(appBroken!=0 || !luaVM){
+    return 0;
+  }
+
+  /*pthread_mutex_lock(&vmMutex);*/
+
+  audioOnFrame();
+  beginRenderFrame();
+  lua_getglobal(luaVM, "framework");
+
+  ret = doFrameBody(tick);
+  /*pthread_mutex_unlock(&vmMutex);*/
+  quadEndFrame();
+  lua_settop(luaVM, 0);
+  return ret;
 }
 
 static int screenW = 0;
@@ -270,21 +280,25 @@ void setAppBroken(int isBroken){
 
 void adInterstitialClosed(){
   if(didInit){
+    /*pthread_mutex_lock(&vmMutex);*/
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "Ads");
     lua_getfield(luaVM, -1, "interstitialCloseCallback");
     callLuaFunc(0,0);
+    /*pthread_mutex_unlock(&vmMutex);*/
   }else{
     trace("Warning: Called adInterstitialClosed when not initialized");
   }
 }
 void adInterstitialDisplayed(int success){
   if(didInit){
+    /*pthread_mutex_lock(&vmMutex);*/
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "Ads");
     lua_getfield(luaVM, -1, "interstitialDisplayCallback");
     lua_pushboolean(luaVM, success);
     callLuaFunc(1,0);
+    /*pthread_mutex_unlock(&vmMutex);*/
   }else{
     trace("Warning: Called adInterstitialDisplayed when not initialized");
   }
@@ -292,11 +306,13 @@ void adInterstitialDisplayed(int success){
 
 void onPurchaseComplete(int success){
   if(didInit){
+    /*pthread_mutex_lock(&vmMutex);*/
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "IAP");
     lua_getfield(luaVM, -1, "onPurchaseComplete");
     lua_pushinteger(luaVM, success);
     callLuaFunc(1,0);
+    /*pthread_mutex_unlock(&vmMutex);*/
   }else{
     trace("Warning: Called onPurchaseComplete when not initialized");
   }
@@ -318,9 +334,11 @@ void appSetPaused(int paused){
 
 void appSuspend(){
   if(didInit){
+    /*pthread_mutex_lock(&vmMutex);*/
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "suspend");
     callLuaFunc(0,0);
+    /*pthread_mutex_unlock(&vmMutex);*/
   }else{
     trace("Warning: Called appSuspend when not initialized");
   }
@@ -328,10 +346,12 @@ void appSuspend(){
 
 void appGraphicsReload(int framebufferWidth, int framebufferHeight){
   if(didInit){
+    /*pthread_mutex_lock(&vmMutex);*/
     graphicsInit(framebufferWidth, framebufferHeight);
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "reloadTextures");
     callLuaFunc(0,0);
+    /*pthread_mutex_unlock(&vmMutex);*/
   }else{
     trace("Warning: Called appGraphicsReload when not initialized");
   }
