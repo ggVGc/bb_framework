@@ -6,8 +6,11 @@ new: maker (mc)=>
   if mc.stop
     mc.stop!
 
-
   state = 0
+  stateOffset = 0
+  @setStateOffset = (offset)->
+    stateOffset = offset
+    mc.gotoAndStop(stateOffset+state)
 
   @isOver = (x,y) ->
     return false if not mc.visible
@@ -29,18 +32,18 @@ new: maker (mc)=>
     over = @.isOver cx, cy
     if state == 0 and over and framework.Input.cursorDown!
       if mc.gotoAndStop
-        mc.gotoAndStop 1
+        mc.gotoAndStop stateOffset+1
       state = 1
       return false
     else if state == 1 and not framework.Input.cursorDown!
       state = 0
       if mc.gotoAndStop
-        mc.gotoAndStop 0
+        mc.gotoAndStop stateOffset
       return true
     else if state ~= 0 and not over
       state = 0
       if mc.gotoAndStop
-        mc.gotoAndStop 0
+        mc.gotoAndStop stateOffset
       return false
 }
 

@@ -7,12 +7,14 @@ framework.DataStore = {
   reload: ->
     s = _c_framework.dataStoreReload!
     if s
+      print "Loaded:", s
       d = loadstring(s)()
       framework.DataStore.data = d or {}
 
   commit: ->
     d, msg= framework.tserialize(framework.DataStore.data)
     if d
+      print "Committing:", d
       _c_framework.dataStoreCommit d
     else
       print msg
@@ -31,9 +33,7 @@ framework.DataStore = {
 
 mt = {
   __index: (obj, key)->
-    v = framework.DataStore.data[key]
-    if v
-      return v
+    framework.DataStore.data[key]
 
   __newindex: (obj, key, val)->
     framework.DataStore.data[key] = val

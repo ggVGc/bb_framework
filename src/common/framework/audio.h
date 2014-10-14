@@ -21,6 +21,10 @@ void audioPlatformCleanup();
 
 void audioSetAllPaused(int paused);
 
+void audioSetMuted(int muted);
+
+int audioIsPlaying(Audio *a);
+
 Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels);
 
 #define MAX_SOUNDS 512

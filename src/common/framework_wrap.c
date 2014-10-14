@@ -6188,6 +6188,49 @@ fail:
 }
 
 
+static int _wrap_audioSetMuted(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  
+  SWIG_check_num_args("audioSetMuted",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("audioSetMuted",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  audioSetMuted(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_audioIsPlaying(lua_State* L) {
+  int SWIG_arg = 0;
+  Audio *arg1 = (Audio *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("audioIsPlaying",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioIsPlaying",1,"Audio *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
+    SWIG_fail_ptr("audioIsPlaying",1,SWIGTYPE_p_Audio_T);
+  }
+  
+  result = (int)audioIsPlaying(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_audioMake(lua_State* L) {
   int SWIG_arg = 0;
   int *arg1 = (int *) 0 ;
@@ -6724,6 +6767,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "audioCleanup", _wrap_audioCleanup},
     { "audioPlatformCleanup", _wrap_audioPlatformCleanup},
     { "audioSetAllPaused", _wrap_audioSetAllPaused},
+    { "audioSetMuted", _wrap_audioSetMuted},
+    { "audioIsPlaying", _wrap_audioIsPlaying},
     { "audioMake", _wrap_audioMake},
     { "facebookPost", _wrap_facebookPost},
     { "facebookIsShareAvailable", _wrap_facebookIsShareAvailable},

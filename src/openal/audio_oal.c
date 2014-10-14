@@ -122,3 +122,14 @@ void audioSetPaused(Audio *a, int paused){
     alSourcePlay(a->source);
   }
 }
+
+void audioSetMuted(int mute){
+  printf("Setting mute: %i\n", mute);
+}
+
+int audioIsPlaying(Audio *a){
+  int state;
+  alGetSourcei(a->source, AL_SOURCE_STATE, &state);
+  return state==AL_PLAYING?1:0;
+}
+

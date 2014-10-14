@@ -3,17 +3,22 @@ framework = framework or {}
 noop = ->
 
 
+interstitialCounter = 0
+
 framework.Ads = {
+  interstitialInterval: 3
   enabled: true
   interstitialDisplayCallback: noop
   interstitialCloseCallback: noop
   --prepareInterstitial:->
     --_c_framework.adPrepareInterstitial!
   showInterstitial: (onClose)->
-    if not framework.Ads.enabled
+    interstitialCounter+=1
+    if not framework.Ads.enabled or interstitialCounter < framework.Ads.interstitialInterval
       onClose false if onClose
     else
       print 'FRAMEWORK: SHOWING INTERSTITIAL'
+      interstitialCounter = 0
       framework.Ads.interstitialDisplayCallback = (success) ->
         print 'FRAMEWORK: INTERSTITIAL DISPLAY CALLBACK, success:'..tostring(success)
         if success

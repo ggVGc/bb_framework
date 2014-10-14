@@ -8,6 +8,7 @@ import android.content.Intent;
 import com.example.android.trivialdrivesample.util.IabHelper;
 import com.example.android.trivialdrivesample.util.IabResult;
 import com.example.android.trivialdrivesample.util.Inventory;
+import com.example.android.trivialdrivesample.util.SkuDetails;
 import com.example.android.trivialdrivesample.util.Purchase;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -206,27 +207,19 @@ public class IAP{
     if(mHelper==null){
       return "";
     }else{
-      int time = 0;
-      /*
-      while(curInventory==null){
-        try{
-          Log.i(TAG, "Waiting for inventory");
-          Thread.sleep(10);
-        }catch(Exception e){
-          e.printStackTrace(System.out);
-          return "";
-        }
-        time += 10;
-        if(time>3000){
-          Log.i(TAG, "Inventory wait timed out");
-          return "";
-        }
-      }
-      */
       if(curInventory==null){
         return "";
       }
-      return curInventory.hasDetails(id)?curInventory.getSkuDetails(id).getPrice():null;
+      if(!curInventory.hasDetails(id)){
+        return "";
+      }else{
+        SkuDetails d = curInventory.getSkuDetails(id);
+        if(d !=null){
+          return d.getPrice();
+        }else{
+          return "";
+        }
+      }
     }
   }
 

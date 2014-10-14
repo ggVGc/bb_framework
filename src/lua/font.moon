@@ -15,6 +15,7 @@ new: maker (imagePath, texLoadFunc) =>
   curWidth = 0
   curScale = 1
   pos = {}
+  curAlpha = 1
   drawChar = (c) ->
     tex = textures[c]
     if c==' ' or not tex
@@ -28,11 +29,12 @@ new: maker (imagePath, texLoadFunc) =>
       tmpMat.d = curScale
       if not reversing
         curWidth+=tex.width*curScale
-      tex.draw tmpMat
+      tex.draw tmpMat, curAlpha
 
 
-  @drawString = (str, x=0, y=0, scale=1, reverse=false, tint) ->
-    _c_framework.setTint tint[1]/255, tint[2]/255, tint[3]/255
+  @drawString = (str, x=0, y=0, scale=1, reverse=false, tint, alpha) ->
+    if tint
+      _c_framework.setTint tint[1]/255, tint[2]/255, tint[3]/255
     _c_framework.Matrix2_identity tmpMat
     reversing = reverse
     curScale = scale
@@ -40,8 +42,10 @@ new: maker (imagePath, texLoadFunc) =>
     if reversing
       str = str\reverse!
     curWidth = 0
+    curAlpha = alpha or 1
     string.gsub str, '.', drawChar
-    _c_framework.setTint 1,1,1
+    if tint
+      _c_framework.setTint 1,1,1
 
 }
 

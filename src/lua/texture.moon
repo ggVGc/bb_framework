@@ -20,10 +20,10 @@ new: (bmData, x, y, w, h)->
 
 
     tmpMat = _c_framework.Matrix2!
-    .draw=(m, alpha)->
+    .draw=(m, opacity)->
       _c_framework.Matrix2_copy(tmpMat, m)
       _c_framework.Matrix2_append(tmpMat, .tex.width, 0, 0, .tex.height, 0, 0)
-      _c_framework.quadDrawTexAlpha(.tex, tmpMat, alpha and (alpha/255) or 1)
+      _c_framework.quadDrawTexAlpha(.tex, tmpMat, opacity and opacity or 1)
 
     .drawAt = (x,y)->
       _c_framework.Matrix2_init(tmpMat, 1, 0, 0, 1, x, y)

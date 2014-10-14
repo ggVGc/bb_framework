@@ -2,6 +2,9 @@
 framework = framework or {}
 
 framework.StreamingAudio = {}
+framework.StreamingAudio.setMute = function(mute)
+  _c_framework.audioSetMuted(mute and 1 or 0);
+end
 
 function framework.StreamingAudio.new(path)
   local M = {}
@@ -25,8 +28,8 @@ function framework.StreamingAudio.new(path)
   function M.free()
     _c_framework.audioFree(audio)
   end
-  function M.isFinished()
-    return  _c_framework.audioIsFinished(audio)==1
+  function M.isPlaying()
+    return  _c_framework.audioIsPlaying(audio)==1
   end
 
   if audio then

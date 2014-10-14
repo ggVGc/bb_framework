@@ -352,10 +352,8 @@ end
 local freezeFrameCount = 0
 function framework.init(wasSuspended)
   framework.DataStore.reload()
-  main = doCall(function()
-    return Main.new(wasSuspended and true or false)
-  end)
-  freezeFrameCount = 1
+  main = doCall(Main.new)
+  freezeFrameCount = 2
   collectgarbage()
   collectgarbage 'stop'
 end

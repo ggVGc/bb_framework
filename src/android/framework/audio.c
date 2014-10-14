@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <SLES/OpenSLES.h>
 #include <SLES/OpenSLES_Android.h>
+#include <math.h>
 #include "framework/audio.h"
 #include "framework/resource_loading.h"
 #include "framework/util.h"
@@ -13,6 +14,7 @@ SLObjectItf output_mix_obj;
 SLVolumeItf output_mix_vol;
 
 static int initialised = 0;
+static int globalMute = 0;
 
 
 struct Audio_T {
@@ -21,15 +23,19 @@ struct Audio_T {
   int loop;
   SLPlayItf player;
   SLObjectItf player_obj;
-  SLVolumeItf player_vol;
+  /*SLVolumeItf player_vol;*/
   SLAndroidSimpleBufferQueueItf player_buf_q;
   int is_playing;
   int is_done_buffer;
 };
 
+float gain_to_attenuation( float gain ) {
+    return gain < 0.01F ? -96.0F : 20 * log10( gain );
+}
 
 int audioGlobalPlatformInit(){
   initialised = 0;
+  globalMute = 1;
   slCreateEngine( &engine_obj, 0, 0, 0, 0, 0);
   (*engine_obj)->Realize( engine_obj, SL_BOOLEAN_FALSE );
   (*engine_obj)->GetInterface( engine_obj, SL_IID_ENGINE, &engine );
@@ -43,10 +49,9 @@ int audioGlobalPlatformInit(){
   (*output_mix_obj)->Realize( output_mix_obj, SL_BOOLEAN_FALSE );
    
   if((*output_mix_obj)->GetInterface( output_mix_obj, SL_IID_VOLUME, &output_mix_vol ) != SL_RESULT_SUCCESS ){
+    trace("Warning: Global audio volume interface not available");
     output_mix_vol = 0;
   }
-
-  
 
   initialised = 1;
   return 0;
@@ -118,15 +123,20 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
   sink.pFormat = NULL;
   sink.pLocator = &outputMix;
   // Create Audio player.
-  const SLInterfaceID ids[1] = {SL_IID_ANDROIDSIMPLEBUFFERQUEUE};
-  const SLboolean req[1] = {SL_BOOLEAN_TRUE};
+  const SLInterfaceID ids[2] = {SL_IID_ANDROIDSIMPLEBUFFERQUEUE, SL_IID_VOLUME};
+  const SLboolean req[2] = {SL_BOOLEAN_TRUE, SL_BOOLEAN_FALSE};
 
   result = (*engine)->CreateAudioPlayer(engine, &a->player_obj, &source, &sink, 1, ids, req);
 
   (*a->player_obj)->Realize( a->player_obj, SL_BOOLEAN_FALSE );
   (*a->player_obj)->GetInterface( a->player_obj,SL_IID_PLAY, &a->player );
-  (*a->player_obj)->GetInterface( a->player_obj, SL_IID_VOLUME, &a->player_vol );
   (*a->player_obj)->GetInterface( a->player_obj,SL_IID_ANDROIDSIMPLEBUFFERQUEUE, &a->player_buf_q );
+  /*
+  if((*a->player_obj)->GetInterface( a->player_obj, SL_IID_VOLUME, &a->player_vol ) != SL_RESULT_SUCCESS){
+    trace("Warning: Audio instance volume interface not available");
+    a->player_vol = 0;
+  }
+  */
 
   (*a->player)->RegisterCallback( a->player, play_callback, a );
   (*a->player)->SetCallbackEventsMask( a->player, SL_PLAYEVENT_HEADATEND );
@@ -138,7 +148,15 @@ void audioPlay(Audio* a) {
   trace("Audio: Playing");
   */
   audioStop(a);
+  if(globalMute){
+    return;
+  }
   (*a->player_buf_q)->Enqueue(a->player_buf_q, a->sampleData, a->sampleCount );
+  /*
+  if(a->player_vol){
+    (*a->player_vol)->SetVolumeLevel( a->player_vol, (SLmillibel)(gain_to_attenuation( globalVol ) * 100) );
+  }
+  */
   (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
   a->is_playing = 1;
   a->is_done_buffer = 0;
@@ -159,14 +177,12 @@ void audioPlatformFree(Audio* a) {
   free(a->sampleData);
 }
 
-/*
-int audioIsFinished(Audio *a){
+int audioIsPlaying(Audio *a){
   if(a->is_playing && a->is_done_buffer ){
     audioStop(a);
   }
-  return !a->is_playing;
+  return a->is_playing;
 }
-*/
 
 void audioSetPaused(Audio *a, int paused){
   if(paused){
@@ -189,16 +205,33 @@ void audioOnFrame(){
   int i;
   for(i=0;i<MAX_SOUNDS;++i){
     a = soundInstances[i];
-    if(a){
-      if(a->is_playing){
-        if(a->is_done_buffer){
-          if(a->loop){
-            audioPlay(a);
-          }else{
-            a->is_playing = 0;
-          }
-        }
+    if(a && a->is_playing && a->is_done_buffer){
+      if(a->loop){
+        audioPlay(a);
+      }else{
+        a->is_playing = 0;
       }
+    }
+  }
+}
+
+
+void audioSetMuted(int muted){
+  Audio *a;
+  int i;
+  /*globalVol = vol;*/
+  globalMute = muted;
+  if(initialised){
+    for(i=0;i<MAX_SOUNDS;++i){
+      a = soundInstances[i];
+      if(a){
+        audioSetPaused(a, globalMute);
+      }
+      /*
+      if(a && a->player_vol){
+        (*a->player_vol)->SetVolumeLevel( a->player_vol, (SLmillibel)(gain_to_attenuation( vol ) * 100) );
+      }
+      */
     }
   }
 }

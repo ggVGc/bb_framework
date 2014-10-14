@@ -196,6 +196,9 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   }
 
   public String getProductPrice(String id){
+    if(activity == null || activity.iap == null){
+      return "";
+    }
     return activity.iap.getProductPrice(id);
   }
 
