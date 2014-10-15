@@ -362,10 +362,18 @@ end
 
 
 local MEM_CHECK_INTERVAL = 10
-local MAX_MEM_TRIGGER_GC = 29000
+local MAX_MEM_TRIGGER_GC = 30000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
+
+--[[
+local targetDt = 24
+local accumTime = 0
+]]
+--[[
+local upd = 0
+]]
 
 local function frameFunc()
   framework.cjs.Bitmap.drawCounter = 0
@@ -373,7 +381,33 @@ local function frameFunc()
   if(frameDelta>100) then
     frameDelta = 1
   end
-  main.doFrame(frameDelta)
+  --[[
+  accumTime = accumTime+frameDelta
+  local steps = 0
+  while accumTime>=targetDt do
+    accumTime=accumTime-targetDt
+    main.update(targetDt)
+    steps = steps+1
+    if steps>2 then
+      print 'DROPPED FRAME!'
+      accumTime = 0
+      break
+    end
+  end
+  ]]
+
+  --[[
+  accumTime = accumTime+frameDelta
+  if upd>1 then
+    main.update(accumTime)
+    accumTime = 0
+    upd = 0
+  else
+    upd = upd+1
+  end
+  ]]
+  main.update(frameDelta)
+  main.draw()
   if fps.hasNew() then
     print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
   end

@@ -34,7 +34,6 @@ const char* dataStoreReload(){
   }
 
   if (buffer) {
-    printf("Stored state: %s\n", buffer);
     return buffer;
   }
 

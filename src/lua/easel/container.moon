@@ -81,8 +81,8 @@ new: ->
 
   
   self.removeAllChildren = ->
-    iterArrsRev self.children, (c, i)->
-      c.parent = nil
+    for i=#self.children,1,-1
+      self.children[i].parent = nil
       table.remove self.children, i
 
 

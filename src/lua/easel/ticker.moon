@@ -23,7 +23,7 @@ new: (fps, initialListeners) ->
     ret = times[1]+deltaMs>=timePerTick
     for i=1, listenerCount
       times[i]+=deltaMs
-      if times[i]>=timePerTick
+      while times[i]>=timePerTick
         times[i] -= timePerTick
         listeners[i]._tick!
     return ret

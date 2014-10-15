@@ -14,9 +14,8 @@ export make = (fn)->
 
 export maker = (fn) ->
   (...) ->
-    args = {...}
     o = {}
-    fn(o, unpack(args))
+    fn(o, ...)
     o
 
 export wrap=(v)->
@@ -42,22 +41,20 @@ export compose = (...) ->
 
 export pipe=(...) -> compose(...)!
 
-export iterArrs = (...) ->
-  p = {...}
-  paramCount = #p
-  f = p[paramCount]
-  for arrInd=1,paramCount-1
-    a = p[arrInd]
-    for i=1, #a
-      f(a[i], i, a)
+--export iterArrs = (...) ->
+  --p = {...}
+  --paramCount = #p
+  --f = p[paramCount]
+  --for arrInd=1,paramCount-1
+    --a = p[arrInd]
+    --for i=1, #a
+      --f(a[i], i, a)
 
-export iterArrsRev = (...) ->
-  p = {...}
-  paramCount = #p
-  f = p[paramCount]
-  for arrInd=paramCount-1,1,-1
-    a = p[arrInd]
-    for i=#a,1,-1
-      f(a[i], i, a)
+--export iterArrsRev = (a, ...) ->
+  --argLen = select('#', ...)
+  --f = select(argLen, ...)
+  --f(a)
+  --if argLen > 1
+    --iterArrsRev select(2, ...)
 
 export rejectNil = _.bind(fun.filter, fun.op.truth)

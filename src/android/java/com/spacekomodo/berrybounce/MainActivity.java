@@ -21,14 +21,16 @@ public class MainActivity extends Activity{
 
   private GLView view;
 
+  /*
   public IAP iap;
+  */
+  private Chartboost cb;
+  private UiLifecycleHelper uiHelper;
   public ChartboostDelegateImp chartboostDelegate;
 
   static {
     System.loadLibrary("jumpz_framework");
   }
-  private Chartboost cb;
-  private UiLifecycleHelper uiHelper;
 
   public MainActivity(){
   }
@@ -40,7 +42,9 @@ public class MainActivity extends Activity{
     Log.i(TAG,"Activity: Create");
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+    /*
     iap = new IAP(this);
+    */
 
     requestWindowFeature(Window.FEATURE_NO_TITLE);
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -57,7 +61,9 @@ public class MainActivity extends Activity{
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    /*
     if (!iap.onActivityResult(requestCode, resultCode, data)) {
+    */
       super.onActivityResult(requestCode, resultCode, data);
       uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
         @Override
@@ -70,7 +76,9 @@ public class MainActivity extends Activity{
           Log.i("Activity", "Success!");
         }
       });
+    /*
     }
+    */
 
   }
 
