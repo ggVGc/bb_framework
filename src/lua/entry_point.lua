@@ -367,46 +367,46 @@ local lastMem=0
 local frameDelta
 local memCheckCounter = 0
 
---[[
-local targetDt = 24
-local accumTime = 0
-]]
---[[
-local upd = 0
-]]
+
+
+local dDeltaBuffer = 0
+local dFrameDeltaRemainingsAccumulated = 0
+local dVsyncRefreshRate_p = _c_framework.getScreenRefreshRate()
+--local dVsyncRefreshRate_p = 60
+print("Refresh rate: ", dVsyncRefreshRate_p)
+
+local function smoothDelta(inDelta)
+  local dDelta_p = inDelta+dDeltaBuffer
+  local frameCount = (dDelta_p * dVsyncRefreshRate_p + 1)
+  if( frameCount <= 0 )then
+    frameCount = 1
+  end
+  local dOldDelta = dDelta_p
+  dDelta_p = frameCount / dVsyncRefreshRate_p
+  dDeltaBuffer = dOldDelta - dDelta_p;
+  return dDelta_p
+end
+
+local m_dFixedTimeStep = 1/30
+
 
 local function frameFunc()
-  framework.cjs.Bitmap.drawCounter = 0
   fps.update(frameDelta)
-  if(frameDelta>100) then
-    frameDelta = 1
+  local dDeltaSeconds = smoothDelta(frameDelta)
+  if dDeltaSeconds>100 then
+    dDeltaSeconds = 1
   end
-  --[[
-  accumTime = accumTime+frameDelta
-  local steps = 0
-  while accumTime>=targetDt do
-    accumTime=accumTime-targetDt
-    main.update(targetDt)
-    steps = steps+1
-    if steps>2 then
-      print 'DROPPED FRAME!'
-      accumTime = 0
-      break
-    end
-  end
-  ]]
 
-  --[[
-  accumTime = accumTime+frameDelta
-  if upd>1 then
-    main.update(accumTime)
-    accumTime = 0
-    upd = 0
-  else
-    upd = upd+1
+  dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated+dDeltaSeconds
+  local dd = 0
+  while dFrameDeltaRemainingsAccumulated>=m_dFixedTimeStep do
+    dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated-m_dFixedTimeStep
+    dd = dd+m_dFixedTimeStep
   end
-  ]]
-  main.update(frameDelta)
+  if dd>0 then
+    main.update(dd)
+  end
+  framework.cjs.Bitmap.drawCounter = 0
   main.draw()
   if fps.hasNew() then
     print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())

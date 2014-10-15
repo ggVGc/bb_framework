@@ -118,6 +118,19 @@ Java_com_spacekomodo_berrybounce_GLRenderer_nativeRender( JNIEnv*  env, jobject 
 }
 
 
+static int screenRefreshRate = 60;
+
+int getScreenRefreshRate(){
+  return screenRefreshRate;
+}
+
+void
+Java_com_spacekomodo_berrybounce_MainActivity_setScreenRefreshRate( JNIEnv*  env, jobject this, jint rate) {
+  if(rate >= 30&&rate<=120){
+    screenRefreshRate = rate;
+  }
+}
+
   void
 Java_com_spacekomodo_berrybounce_MainActivity_interstitialClosed( JNIEnv*  env, jobject this) {
   trace("interstitialClosed");

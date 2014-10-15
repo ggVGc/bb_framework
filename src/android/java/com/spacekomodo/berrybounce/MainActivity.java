@@ -21,10 +21,16 @@ public class MainActivity extends Activity{
 
   private GLView view;
 
+  /*
   public IAP iap;
+  */
+  /*
   private Chartboost cb;
-  private UiLifecycleHelper uiHelper;
   public ChartboostDelegateImp chartboostDelegate;
+  */
+  /*
+  private UiLifecycleHelper uiHelper;
+  */
 
   static {
     System.loadLibrary("jumpz_framework");
@@ -38,27 +44,37 @@ public class MainActivity extends Activity{
     super.onCreate(savedInstanceState);
 
     Log.i(TAG,"Activity: Create");
+    setScreenRefreshRate((int)((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay().getRefreshRate());
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+    /*
     iap = new IAP(this);
+    */
 
     requestWindowFeature(Window.FEATURE_NO_TITLE);
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     view = new GLView(this);
     setContentView(view);
 
+    /*
     cb = Chartboost.sharedChartboost();
     chartboostDelegate = new ChartboostDelegateImp(cb);
     cb.onCreate(this, AppConfig.chartboost.appId, AppConfig.chartboost.appSignature, chartboostDelegate);
+    */
 
+    /*
     uiHelper = new UiLifecycleHelper(this, null);
     uiHelper.onCreate(savedInstanceState);
+    */
   }
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    /*
     if (!iap.onActivityResult(requestCode, resultCode, data)) {
+    */
       super.onActivityResult(requestCode, resultCode, data);
+/*
       uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
         @Override
         public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
@@ -70,7 +86,8 @@ public class MainActivity extends Activity{
           Log.i("Activity", "Success!");
         }
       });
-    }
+*/
+    //}
 
   }
 
@@ -78,16 +95,21 @@ public class MainActivity extends Activity{
   public void onStart() {
     super.onStart();
     Log.i(TAG,"Activity: Start");
+    /*
     CBPreferences.getInstance().setImpressionsUseActivities(true);
     this.cb.onStart(this);
     chartboostDelegate.onStart();
+    */
   }
 
   public void prepareInterstitial(){
+    /*
     this.cb.cacheInterstitial();
+    */
   }
 
   public void showInterstitial(){
+      /*
 	  if(this.cb.hasCachedInterstitial()){
 		  this.cb.showInterstitial();
 	  }else{
@@ -95,9 +117,11 @@ public class MainActivity extends Activity{
 		  this.cb.cacheInterstitial();
 		  chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.closed));
 	  }
+      */
   }
 
 
+  public native void setScreenRefreshRate(int rate);
   public native void interstitialClosed();
   public native void interstitialDisplayed();
   public native void interstitialFailedDisplay();
@@ -123,7 +147,7 @@ public class MainActivity extends Activity{
   protected void onPause() {
     super.onPause();
     Log.i(TAG,"Activity: Pause");
-    uiHelper.onPause();
+    //uiHelper.onPause();
     view.onPause();
   }
 
@@ -131,7 +155,7 @@ public class MainActivity extends Activity{
   protected void onResume() {
     super.onResume();
     Log.i(TAG,"Activity: Resume");
-    uiHelper.onResume();
+    //uiHelper.onResume();
     view.onResume();
   }
 
@@ -139,14 +163,14 @@ public class MainActivity extends Activity{
   @Override
   protected void onSaveInstanceState(Bundle outState) {
     super.onSaveInstanceState(outState);
-    uiHelper.onSaveInstanceState(outState);
+    //uiHelper.onSaveInstanceState(outState);
   }
 
   @Override
   protected void onStop() {
     super.onStop();
     Log.i(TAG,"Activity: Stop");
-    this.cb.onStop(this);
+    //this.cb.onStop(this);
     view.stop();
   }
 
@@ -155,10 +179,11 @@ public class MainActivity extends Activity{
   protected void onDestroy() {
     super.onDestroy();
     Log.i(TAG,"Activity: Destroy");
-    this.cb.onDestroy(this);
-    uiHelper.onDestroy();
+    //this.cb.onDestroy(this);
+    //uiHelper.onDestroy();
   }
 
+  /*
   @Override
   public void onBackPressed() {
     if (this.cb.onBackPressed()){
@@ -169,6 +194,7 @@ public class MainActivity extends Activity{
       super.onBackPressed();
     }
   }
+  */
 }
 
 

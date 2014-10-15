@@ -241,3 +241,7 @@ void startProfiler(){
 void stopProfiler(){
 }
 
+int getScreenRefreshRate(){
+  return 60;
+}
+

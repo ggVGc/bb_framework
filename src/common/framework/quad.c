@@ -2,7 +2,7 @@
 #include <GLES/gl.h>
 #include "quad.h"
 
-#define MAX_QUADS 200
+#define MAX_QUADS 250
 #define BUF_SIZE MAX_QUADS*12
 
 static int drawCallCount;

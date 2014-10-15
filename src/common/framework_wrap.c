@@ -6607,6 +6607,23 @@ fail:
 }
 
 
+static int _wrap_getScreenRefreshRate(lua_State* L) {
+  int SWIG_arg = 0;
+  int result;
+  
+  SWIG_check_num_args("getScreenRefreshRate",0,0)
+  result = (int)getScreenRefreshRate();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_DisplayObject_setTex(lua_State* L) {
   int SWIG_arg = 0;
   DisplayObject *arg1 = (DisplayObject *) 0 ;
@@ -6787,6 +6804,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},
     { "setAppBroken", _wrap_setAppBroken},
+    { "getScreenRefreshRate", _wrap_getScreenRefreshRate},
     { "DisplayObject_setTex", _wrap_DisplayObject_setTex},
     { "DisplayObject_setParent", _wrap_DisplayObject_setParent},
     { "loadBytes", _wrap_loadBytes},

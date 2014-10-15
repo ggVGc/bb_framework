@@ -40,6 +40,7 @@ int screenWidth(void);
 int screenHeight(void);
 int isAppBroken(void);
 void setAppBroken(int);
+int getScreenRefreshRate();
 
 // Use these to avoid memory leaks
 void DisplayObject_setTex(DisplayObject *d, Texture *t);

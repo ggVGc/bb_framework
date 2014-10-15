@@ -103,6 +103,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 
   @Override
   public void onDrawFrame(GL10 gl) {
+    /*
     if(activity.chartboostDelegate.events.size()!=0){
       int e = activity.chartboostDelegate.events.remove().intValue();
       Log.i(TAG, "Handling chartboost event: "+e);
@@ -118,6 +119,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
           break;
       }
     }
+    */
 
     GLRenderer.TouchEvent e = eventPool[lastEventIndex];
     while(e.alive){
@@ -184,25 +186,33 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   }
 
   public int userOwnsProduct(String id){
+    /*
     if(activity.iap.userOwnsProduct(id)){
       return 1;
     }else{
       return 0;
     }
+    */
+    return 0;
   }
   public void purchaseProduct(final String id){
+    /*
     activity.runOnUiThread(new Runnable() {
       public void run() {
         activity.iap.purchaseProduct(id);
       }
     });
+    */
   }
 
   public String getProductPrice(String id){
+    /*
     if(activity == null || activity.iap == null){
       return "";
     }
     return activity.iap.getProductPrice(id);
+    */
+    return "";
   }
 
 

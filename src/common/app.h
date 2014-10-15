@@ -25,6 +25,8 @@ extern void setScreenHeight(int);
 extern int isAppBroken(void);
 extern void setAppBroken(int isBroken);
 
+extern int getScreenRefreshRate();
+
 lua_State* luaVM;
 int callLuaFunc(int nParams, int nRet);
 
