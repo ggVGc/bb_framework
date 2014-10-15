@@ -221,7 +221,10 @@ void audioOnFrame(){
   }
   for(i=0;i<MAX_SOUNDS;++i){
     a = soundInstances[i];
-    if(a && a->is_playing && a->is_done_buffer){
+    if(!a){
+      break;
+    }
+    if(a->is_playing && a->is_done_buffer){
       if(a->loop){
         audioPlay(a);
       }else{

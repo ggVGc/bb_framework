@@ -3,20 +3,20 @@
 
 #include <GLES/gl.h>
 #include "rect.h"
-#include "bitmapdata.h"
+
+struct BitmapData;
 
 struct Texture{
   int width;
   int height;
   GLfloat uvCoords[12];
-  BitmapData* data;
+  struct BitmapData* data;
 };
 
 typedef struct Texture Texture;
 
 
-
-void textureInit(Texture *tex, BitmapData *data, Rect sourceRect);
+void textureInit(Texture *tex, struct BitmapData *data, Rect sourceRect);
 
 
 #endif

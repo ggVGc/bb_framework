@@ -19,7 +19,6 @@ import com.facebook.widget.FacebookDialog;
 public class MainActivity extends Activity{
   public static final String TAG = "MainActivity";
 
-
   private GLView view;
 
   public IAP iap;
@@ -150,10 +149,10 @@ public class MainActivity extends Activity{
 
   @Override
   protected void onStop() {
+    view.stop();
     super.onStop();
     Log.i(TAG,"Activity: Stop");
     Chartboost.onStop(this);
-    view.stop();
   }
 
 

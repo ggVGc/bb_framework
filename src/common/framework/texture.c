@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <GLES/gl.h>
+#include "bitmapdata.h"
 #include "texture.h"
 
 
@@ -29,5 +30,4 @@ void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
 
   memcpy(tex->uvCoords, texCoords, sizeof(GLfloat)*12);
 }
-
 

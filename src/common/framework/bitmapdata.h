@@ -11,6 +11,7 @@ typedef struct BitmapData {
 } BitmapData;
  
 void bitmapDataInit(BitmapData* data, RawBitmapData* rawData);
+void bitmapDataCleanup(BitmapData *data);
 
 #endif
 

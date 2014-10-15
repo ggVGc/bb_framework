@@ -8,6 +8,7 @@
 #include "framework/texture.h"
 #include "framework/resource_loading.h"
 #include "framework/display_object.h"
+#include "framework/bitmapdata.h"
 #include "framework/rawbitmapdata.h"
 #include "framework/input.h"
 #include "framework/audio.h"
@@ -23,10 +24,10 @@ void DisplayObject_setParent(DisplayObject *d, DisplayObject *p){
 
 
 #include "framework/display_object.h"
+#include "framework/bitmapdata.h"
 #include "framework/texture.h"
 #include "framework/camera.h"
 #include "framework/quad.h"
-#include "framework/texture.h"
 #include "framework/rawbitmapdata.h"
 #include "framework/input.h"
 #include "framework/audio.h"
@@ -34,6 +35,14 @@ void DisplayObject_setParent(DisplayObject *d, DisplayObject *p){
 #include "framework/ads.h"
 #include "framework/iap.h"
 #include "framework/profiler.h"
+
+
+%extend BitmapData{
+  ~BitmapData(){
+    bitmapDataCleanup(self);
+    free(self);
+  }
+}
 
 
 int screenWidth(void);

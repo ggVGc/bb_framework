@@ -1,9 +1,9 @@
 package com.spacekomodo.berrybounce;
 
-import android.opengl.GLSurfaceView;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
+import android.opengl.GLSurfaceView;
 
 
 public class GLView extends GLSurfaceView {
@@ -20,7 +20,7 @@ public class GLView extends GLSurfaceView {
     super(activity);
     Log.i(TAG,"GLView created");
     super.setEGLConfigChooser(8 , 8, 8, 8, 16, 0);
-    renderer = new GLRenderer(activity);
+    renderer = new GLRenderer(activity, this);
     setRenderer(renderer);
   }
 
@@ -54,14 +54,15 @@ public class GLView extends GLSurfaceView {
   }
 
   public void stop(){
-    nativeOnStop();
     renderer.inited = false;
+    nativeOnStop();
   }
 
   @Override
   public void onResume() {
     Log.i(TAG,"GLView: Resume");
     super.onResume();
+    setPreserveEGLContextOnPause(false);
     appSetPaused(0);
   }
 

@@ -2632,6 +2632,7 @@ static swig_module_info swig_module = {swig_types, 13, 0, 0, 0, 0};
 #include "framework/texture.h"
 #include "framework/resource_loading.h"
 #include "framework/display_object.h"
+#include "framework/bitmapdata.h"
 #include "framework/rawbitmapdata.h"
 #include "framework/input.h"
 #include "framework/audio.h"
@@ -2644,6 +2645,10 @@ void DisplayObject_setParent(DisplayObject *d, DisplayObject *p){
   d->parent = p;
 }
 
+SWIGINTERN void delete_BitmapData(struct BitmapData *self){
+    bitmapDataCleanup(self);
+    free(self);
+  }
 
 SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
   int ret = lua_isstring(L, idx);
@@ -3637,510 +3642,6 @@ fail:
 }
 
 
-static int _wrap_RawBitmapData_data_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
-  unsigned char *arg2 = (unsigned char *) 0 ;
-  
-  SWIG_check_num_args("RawBitmapData::data",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::data",1,"struct RawBitmapData *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("RawBitmapData::data",2,"unsigned char *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
-    SWIG_fail_ptr("RawBitmapData_data_set",1,SWIGTYPE_p_RawBitmapData);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_unsigned_char,SWIG_POINTER_DISOWN))){
-    SWIG_fail_ptr("RawBitmapData_data_set",2,SWIGTYPE_p_unsigned_char);
-  }
-  
-  if (arg1) (arg1)->data = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_RawBitmapData_data_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
-  unsigned char *result = 0 ;
-  
-  SWIG_check_num_args("RawBitmapData::data",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::data",1,"struct RawBitmapData *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
-    SWIG_fail_ptr("RawBitmapData_data_get",1,SWIGTYPE_p_RawBitmapData);
-  }
-  
-  result = (unsigned char *) ((arg1)->data);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_RawBitmapData_width_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
-  unsigned int arg2 ;
-  
-  SWIG_check_num_args("RawBitmapData::width",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::width",1,"struct RawBitmapData *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("RawBitmapData::width",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
-    SWIG_fail_ptr("RawBitmapData_width_set",1,SWIGTYPE_p_RawBitmapData);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  if (arg1) (arg1)->width = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_RawBitmapData_width_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
-  unsigned int result;
-  
-  SWIG_check_num_args("RawBitmapData::width",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::width",1,"struct RawBitmapData *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
-    SWIG_fail_ptr("RawBitmapData_width_get",1,SWIGTYPE_p_RawBitmapData);
-  }
-  
-  result = (unsigned int) ((arg1)->width);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_RawBitmapData_height_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
-  unsigned int arg2 ;
-  
-  SWIG_check_num_args("RawBitmapData::height",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::height",1,"struct RawBitmapData *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("RawBitmapData::height",2,"unsigned int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
-    SWIG_fail_ptr("RawBitmapData_height_set",1,SWIGTYPE_p_RawBitmapData);
-  }
-  
-  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
-  arg2 = (unsigned int)lua_tonumber(L, 2);
-  if (arg1) (arg1)->height = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_RawBitmapData_height_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
-  unsigned int result;
-  
-  SWIG_check_num_args("RawBitmapData::height",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::height",1,"struct RawBitmapData *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
-    SWIG_fail_ptr("RawBitmapData_height_get",1,SWIGTYPE_p_RawBitmapData);
-  }
-  
-  result = (unsigned int) ((arg1)->height);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_new_RawBitmapData(lua_State* L) {
-  int SWIG_arg = 0;
-  struct RawBitmapData *result = 0 ;
-  
-  SWIG_check_num_args("RawBitmapData::RawBitmapData",0,0)
-  result = (struct RawBitmapData *)calloc(1, sizeof(struct RawBitmapData));
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_RawBitmapData,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static void swig_delete_RawBitmapData(void *obj) {
-struct RawBitmapData *arg1 = (struct RawBitmapData *) obj;
-free((char *) arg1);
-}
-static int _proxy__wrap_new_RawBitmapData(lua_State *L) {
-    assert(lua_istable(L,1));
-    lua_pushcfunction(L,_wrap_new_RawBitmapData);
-    assert(!lua_isnil(L,-1));
-    lua_replace(L,1); /* replace our table with real constructor */
-    lua_call(L,lua_gettop(L)-1,1);
-    return 1;
-}
-static swig_lua_attribute swig_RawBitmapData_attributes[] = {
-    { "data", _wrap_RawBitmapData_data_get, _wrap_RawBitmapData_data_set },
-    { "width", _wrap_RawBitmapData_width_get, _wrap_RawBitmapData_width_set },
-    { "height", _wrap_RawBitmapData_height_get, _wrap_RawBitmapData_height_set },
-    {0,0,0}
-};
-static swig_lua_method swig_RawBitmapData_methods[]= {
-    {0,0}
-};
-static swig_lua_method swig_RawBitmapData_meta[] = {
-    {0,0}
-};
-
-static swig_lua_attribute swig_RawBitmapData_Sf_SwigStatic_attributes[] = {
-    {0,0,0}
-};
-static swig_lua_const_info swig_RawBitmapData_Sf_SwigStatic_constants[]= {
-    {0,0,0,0,0,0}
-};
-static swig_lua_method swig_RawBitmapData_Sf_SwigStatic_methods[]= {
-    {0,0}
-};
-static swig_lua_class* swig_RawBitmapData_Sf_SwigStatic_classes[]= {
-    0
-};
-
-static swig_lua_namespace swig_RawBitmapData_Sf_SwigStatic = {
-    "RawBitmapData",
-    swig_RawBitmapData_Sf_SwigStatic_methods,
-    swig_RawBitmapData_Sf_SwigStatic_attributes,
-    swig_RawBitmapData_Sf_SwigStatic_constants,
-    swig_RawBitmapData_Sf_SwigStatic_classes,
-    0
-};
-static swig_lua_class *swig_RawBitmapData_bases[] = {0};
-static const char *swig_RawBitmapData_base_names[] = {0};
-static swig_lua_class _wrap_class_RawBitmapData = { "RawBitmapData", "RawBitmapData", &SWIGTYPE_p_RawBitmapData,_proxy__wrap_new_RawBitmapData, swig_delete_RawBitmapData, swig_RawBitmapData_methods, swig_RawBitmapData_attributes, &swig_RawBitmapData_Sf_SwigStatic, swig_RawBitmapData_meta, swig_RawBitmapData_bases, swig_RawBitmapData_base_names };
-
-static int _wrap_rawBitmapDataCleanup(lua_State* L) {
-  int SWIG_arg = 0;
-  RawBitmapData *arg1 = (RawBitmapData *) 0 ;
-  
-  SWIG_check_num_args("rawBitmapDataCleanup",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("rawBitmapDataCleanup",1,"RawBitmapData *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
-    SWIG_fail_ptr("rawBitmapDataCleanup",1,SWIGTYPE_p_RawBitmapData);
-  }
-  
-  rawBitmapDataCleanup(arg1);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_BitmapData_width_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
-  int arg2 ;
-  
-  SWIG_check_num_args("BitmapData::width",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::width",1,"struct BitmapData *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("BitmapData::width",2,"int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
-    SWIG_fail_ptr("BitmapData_width_set",1,SWIGTYPE_p_BitmapData);
-  }
-  
-  arg2 = (int)lua_tonumber(L, 2);
-  if (arg1) (arg1)->width = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_BitmapData_width_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
-  int result;
-  
-  SWIG_check_num_args("BitmapData::width",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::width",1,"struct BitmapData *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
-    SWIG_fail_ptr("BitmapData_width_get",1,SWIGTYPE_p_BitmapData);
-  }
-  
-  result = (int) ((arg1)->width);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_BitmapData_height_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
-  int arg2 ;
-  
-  SWIG_check_num_args("BitmapData::height",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::height",1,"struct BitmapData *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("BitmapData::height",2,"int");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
-    SWIG_fail_ptr("BitmapData_height_set",1,SWIGTYPE_p_BitmapData);
-  }
-  
-  arg2 = (int)lua_tonumber(L, 2);
-  if (arg1) (arg1)->height = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_BitmapData_height_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
-  int result;
-  
-  SWIG_check_num_args("BitmapData::height",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::height",1,"struct BitmapData *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
-    SWIG_fail_ptr("BitmapData_height_get",1,SWIGTYPE_p_BitmapData);
-  }
-  
-  result = (int) ((arg1)->height);
-  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_BitmapData_glTexHandle_set(lua_State* L) {
-  int SWIG_arg = 0;
-  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
-  GLuint arg2 ;
-  GLuint *argp2 ;
-  
-  SWIG_check_num_args("BitmapData::glTexHandle",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::glTexHandle",1,"struct BitmapData *");
-  if(!lua_isuserdata(L,2)) SWIG_fail_arg("BitmapData::glTexHandle",2,"GLuint");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
-    SWIG_fail_ptr("BitmapData_glTexHandle_set",1,SWIGTYPE_p_BitmapData);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_GLuint,0))){
-    SWIG_fail_ptr("BitmapData_glTexHandle_set",2,SWIGTYPE_p_GLuint);
-  }
-  arg2 = *argp2;
-  
-  if (arg1) (arg1)->glTexHandle = arg2;
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_BitmapData_glTexHandle_get(lua_State* L) {
-  int SWIG_arg = 0;
-  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
-  GLuint result;
-  
-  SWIG_check_num_args("BitmapData::glTexHandle",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::glTexHandle",1,"struct BitmapData *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
-    SWIG_fail_ptr("BitmapData_glTexHandle_get",1,SWIGTYPE_p_BitmapData);
-  }
-  
-  result =  ((arg1)->glTexHandle);
-  {
-    GLuint * resultptr;
-    resultptr = (GLuint *) malloc(sizeof(GLuint));
-    memmove(resultptr, &result, sizeof(GLuint));
-    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_GLuint,1); SWIG_arg++;
-  }
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_new_BitmapData(lua_State* L) {
-  int SWIG_arg = 0;
-  struct BitmapData *result = 0 ;
-  
-  SWIG_check_num_args("BitmapData::BitmapData",0,0)
-  result = (struct BitmapData *)calloc(1, sizeof(struct BitmapData));
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_BitmapData,1); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static void swig_delete_BitmapData(void *obj) {
-struct BitmapData *arg1 = (struct BitmapData *) obj;
-free((char *) arg1);
-}
-static int _proxy__wrap_new_BitmapData(lua_State *L) {
-    assert(lua_istable(L,1));
-    lua_pushcfunction(L,_wrap_new_BitmapData);
-    assert(!lua_isnil(L,-1));
-    lua_replace(L,1); /* replace our table with real constructor */
-    lua_call(L,lua_gettop(L)-1,1);
-    return 1;
-}
-static swig_lua_attribute swig_BitmapData_attributes[] = {
-    { "width", _wrap_BitmapData_width_get, _wrap_BitmapData_width_set },
-    { "height", _wrap_BitmapData_height_get, _wrap_BitmapData_height_set },
-    { "glTexHandle", _wrap_BitmapData_glTexHandle_get, _wrap_BitmapData_glTexHandle_set },
-    {0,0,0}
-};
-static swig_lua_method swig_BitmapData_methods[]= {
-    {0,0}
-};
-static swig_lua_method swig_BitmapData_meta[] = {
-    {0,0}
-};
-
-static swig_lua_attribute swig_BitmapData_Sf_SwigStatic_attributes[] = {
-    {0,0,0}
-};
-static swig_lua_const_info swig_BitmapData_Sf_SwigStatic_constants[]= {
-    {0,0,0,0,0,0}
-};
-static swig_lua_method swig_BitmapData_Sf_SwigStatic_methods[]= {
-    {0,0}
-};
-static swig_lua_class* swig_BitmapData_Sf_SwigStatic_classes[]= {
-    0
-};
-
-static swig_lua_namespace swig_BitmapData_Sf_SwigStatic = {
-    "BitmapData",
-    swig_BitmapData_Sf_SwigStatic_methods,
-    swig_BitmapData_Sf_SwigStatic_attributes,
-    swig_BitmapData_Sf_SwigStatic_constants,
-    swig_BitmapData_Sf_SwigStatic_classes,
-    0
-};
-static swig_lua_class *swig_BitmapData_bases[] = {0};
-static const char *swig_BitmapData_base_names[] = {0};
-static swig_lua_class _wrap_class_BitmapData = { "BitmapData", "BitmapData", &SWIGTYPE_p_BitmapData,_proxy__wrap_new_BitmapData, swig_delete_BitmapData, swig_BitmapData_methods, swig_BitmapData_attributes, &swig_BitmapData_Sf_SwigStatic, swig_BitmapData_meta, swig_BitmapData_bases, swig_BitmapData_base_names };
-
-static int _wrap_bitmapDataInit(lua_State* L) {
-  int SWIG_arg = 0;
-  BitmapData *arg1 = (BitmapData *) 0 ;
-  RawBitmapData *arg2 = (RawBitmapData *) 0 ;
-  
-  SWIG_check_num_args("bitmapDataInit",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("bitmapDataInit",1,"BitmapData *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("bitmapDataInit",2,"RawBitmapData *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
-    SWIG_fail_ptr("bitmapDataInit",1,SWIGTYPE_p_BitmapData);
-  }
-  
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_RawBitmapData,0))){
-    SWIG_fail_ptr("bitmapDataInit",2,SWIGTYPE_p_RawBitmapData);
-  }
-  
-  bitmapDataInit(arg1,arg2);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_Texture_width_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Texture *arg1 = (struct Texture *) 0 ;
@@ -4302,11 +3803,11 @@ fail:
 static int _wrap_Texture_data_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Texture *arg1 = (struct Texture *) 0 ;
-  BitmapData *arg2 = (BitmapData *) 0 ;
+  struct BitmapData *arg2 = (struct BitmapData *) 0 ;
   
   SWIG_check_num_args("Texture::data",2,2)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::data",1,"struct Texture *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Texture::data",2,"BitmapData *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Texture::data",2,"struct BitmapData *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
     SWIG_fail_ptr("Texture_data_set",1,SWIGTYPE_p_Texture);
@@ -4332,7 +3833,7 @@ fail:
 static int _wrap_Texture_data_get(lua_State* L) {
   int SWIG_arg = 0;
   struct Texture *arg1 = (struct Texture *) 0 ;
-  BitmapData *result = 0 ;
+  struct BitmapData *result = 0 ;
   
   SWIG_check_num_args("Texture::data",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Texture::data",1,"struct Texture *");
@@ -4341,7 +3842,7 @@ static int _wrap_Texture_data_get(lua_State* L) {
     SWIG_fail_ptr("Texture_data_get",1,SWIGTYPE_p_Texture);
   }
   
-  result = (BitmapData *) ((arg1)->data);
+  result = (struct BitmapData *) ((arg1)->data);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_BitmapData,0); SWIG_arg++; 
   return SWIG_arg;
   
@@ -4424,13 +3925,13 @@ static swig_lua_class _wrap_class_Texture = { "Texture", "Texture", &SWIGTYPE_p_
 static int _wrap_textureInit(lua_State* L) {
   int SWIG_arg = 0;
   Texture *arg1 = (Texture *) 0 ;
-  BitmapData *arg2 = (BitmapData *) 0 ;
+  struct BitmapData *arg2 = (struct BitmapData *) 0 ;
   Rect arg3 ;
   Rect *argp3 ;
   
   SWIG_check_num_args("textureInit",3,3)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("textureInit",1,"Texture *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("textureInit",2,"BitmapData *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("textureInit",2,"struct BitmapData *");
   if(!lua_isuserdata(L,3)) SWIG_fail_arg("textureInit",3,"Rect");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
@@ -5284,6 +4785,533 @@ static int _wrap_DisplayObject_getConcatAlpha(lua_State* L) {
   
   result = (double)DisplayObject_getConcatAlpha(arg1);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_RawBitmapData_data_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
+  unsigned char *arg2 = (unsigned char *) 0 ;
+  
+  SWIG_check_num_args("RawBitmapData::data",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::data",1,"struct RawBitmapData *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("RawBitmapData::data",2,"unsigned char *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
+    SWIG_fail_ptr("RawBitmapData_data_set",1,SWIGTYPE_p_RawBitmapData);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_unsigned_char,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("RawBitmapData_data_set",2,SWIGTYPE_p_unsigned_char);
+  }
+  
+  if (arg1) (arg1)->data = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_RawBitmapData_data_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
+  unsigned char *result = 0 ;
+  
+  SWIG_check_num_args("RawBitmapData::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::data",1,"struct RawBitmapData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
+    SWIG_fail_ptr("RawBitmapData_data_get",1,SWIGTYPE_p_RawBitmapData);
+  }
+  
+  result = (unsigned char *) ((arg1)->data);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_RawBitmapData_width_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
+  unsigned int arg2 ;
+  
+  SWIG_check_num_args("RawBitmapData::width",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::width",1,"struct RawBitmapData *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("RawBitmapData::width",2,"unsigned int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
+    SWIG_fail_ptr("RawBitmapData_width_set",1,SWIGTYPE_p_RawBitmapData);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (unsigned int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->width = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_RawBitmapData_width_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("RawBitmapData::width",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::width",1,"struct RawBitmapData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
+    SWIG_fail_ptr("RawBitmapData_width_get",1,SWIGTYPE_p_RawBitmapData);
+  }
+  
+  result = (unsigned int) ((arg1)->width);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_RawBitmapData_height_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
+  unsigned int arg2 ;
+  
+  SWIG_check_num_args("RawBitmapData::height",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::height",1,"struct RawBitmapData *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("RawBitmapData::height",2,"unsigned int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
+    SWIG_fail_ptr("RawBitmapData_height_set",1,SWIGTYPE_p_RawBitmapData);
+  }
+  
+  SWIG_contract_assert((lua_tonumber(L,2)>=0),"number must not be negative")
+  arg2 = (unsigned int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->height = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_RawBitmapData_height_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct RawBitmapData *arg1 = (struct RawBitmapData *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("RawBitmapData::height",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RawBitmapData::height",1,"struct RawBitmapData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
+    SWIG_fail_ptr("RawBitmapData_height_get",1,SWIGTYPE_p_RawBitmapData);
+  }
+  
+  result = (unsigned int) ((arg1)->height);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_RawBitmapData(lua_State* L) {
+  int SWIG_arg = 0;
+  struct RawBitmapData *result = 0 ;
+  
+  SWIG_check_num_args("RawBitmapData::RawBitmapData",0,0)
+  result = (struct RawBitmapData *)calloc(1, sizeof(struct RawBitmapData));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_RawBitmapData,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_RawBitmapData(void *obj) {
+struct RawBitmapData *arg1 = (struct RawBitmapData *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_RawBitmapData(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_RawBitmapData);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_RawBitmapData_attributes[] = {
+    { "data", _wrap_RawBitmapData_data_get, _wrap_RawBitmapData_data_set },
+    { "width", _wrap_RawBitmapData_width_get, _wrap_RawBitmapData_width_set },
+    { "height", _wrap_RawBitmapData_height_get, _wrap_RawBitmapData_height_set },
+    {0,0,0}
+};
+static swig_lua_method swig_RawBitmapData_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_RawBitmapData_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_RawBitmapData_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_RawBitmapData_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_RawBitmapData_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_RawBitmapData_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_RawBitmapData_Sf_SwigStatic = {
+    "RawBitmapData",
+    swig_RawBitmapData_Sf_SwigStatic_methods,
+    swig_RawBitmapData_Sf_SwigStatic_attributes,
+    swig_RawBitmapData_Sf_SwigStatic_constants,
+    swig_RawBitmapData_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_RawBitmapData_bases[] = {0};
+static const char *swig_RawBitmapData_base_names[] = {0};
+static swig_lua_class _wrap_class_RawBitmapData = { "RawBitmapData", "RawBitmapData", &SWIGTYPE_p_RawBitmapData,_proxy__wrap_new_RawBitmapData, swig_delete_RawBitmapData, swig_RawBitmapData_methods, swig_RawBitmapData_attributes, &swig_RawBitmapData_Sf_SwigStatic, swig_RawBitmapData_meta, swig_RawBitmapData_bases, swig_RawBitmapData_base_names };
+
+static int _wrap_rawBitmapDataCleanup(lua_State* L) {
+  int SWIG_arg = 0;
+  RawBitmapData *arg1 = (RawBitmapData *) 0 ;
+  
+  SWIG_check_num_args("rawBitmapDataCleanup",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("rawBitmapDataCleanup",1,"RawBitmapData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_RawBitmapData,0))){
+    SWIG_fail_ptr("rawBitmapDataCleanup",1,SWIGTYPE_p_RawBitmapData);
+  }
+  
+  rawBitmapDataCleanup(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_BitmapData_width_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("BitmapData::width",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::width",1,"struct BitmapData *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("BitmapData::width",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
+    SWIG_fail_ptr("BitmapData_width_set",1,SWIGTYPE_p_BitmapData);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->width = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_BitmapData_width_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("BitmapData::width",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::width",1,"struct BitmapData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
+    SWIG_fail_ptr("BitmapData_width_get",1,SWIGTYPE_p_BitmapData);
+  }
+  
+  result = (int) ((arg1)->width);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_BitmapData_height_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("BitmapData::height",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::height",1,"struct BitmapData *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("BitmapData::height",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
+    SWIG_fail_ptr("BitmapData_height_set",1,SWIGTYPE_p_BitmapData);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->height = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_BitmapData_height_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("BitmapData::height",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::height",1,"struct BitmapData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
+    SWIG_fail_ptr("BitmapData_height_get",1,SWIGTYPE_p_BitmapData);
+  }
+  
+  result = (int) ((arg1)->height);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_BitmapData_glTexHandle_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
+  GLuint arg2 ;
+  GLuint *argp2 ;
+  
+  SWIG_check_num_args("BitmapData::glTexHandle",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::glTexHandle",1,"struct BitmapData *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("BitmapData::glTexHandle",2,"GLuint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
+    SWIG_fail_ptr("BitmapData_glTexHandle_set",1,SWIGTYPE_p_BitmapData);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_GLuint,0))){
+    SWIG_fail_ptr("BitmapData_glTexHandle_set",2,SWIGTYPE_p_GLuint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->glTexHandle = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_BitmapData_glTexHandle_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct BitmapData *arg1 = (struct BitmapData *) 0 ;
+  GLuint result;
+  
+  SWIG_check_num_args("BitmapData::glTexHandle",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("BitmapData::glTexHandle",1,"struct BitmapData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
+    SWIG_fail_ptr("BitmapData_glTexHandle_get",1,SWIGTYPE_p_BitmapData);
+  }
+  
+  result =  ((arg1)->glTexHandle);
+  {
+    GLuint * resultptr;
+    resultptr = (GLuint *) malloc(sizeof(GLuint));
+    memmove(resultptr, &result, sizeof(GLuint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_GLuint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_BitmapData(lua_State* L) {
+  int SWIG_arg = 0;
+  struct BitmapData *result = 0 ;
+  
+  SWIG_check_num_args("BitmapData::BitmapData",0,0)
+  result = (struct BitmapData *)calloc(1, sizeof(struct BitmapData));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_BitmapData,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_BitmapData(void *obj) {
+struct BitmapData *arg1 = (struct BitmapData *) obj;
+delete_BitmapData(arg1);
+}
+static int _proxy__wrap_new_BitmapData(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_BitmapData);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_BitmapData_attributes[] = {
+    { "width", _wrap_BitmapData_width_get, _wrap_BitmapData_width_set },
+    { "height", _wrap_BitmapData_height_get, _wrap_BitmapData_height_set },
+    { "glTexHandle", _wrap_BitmapData_glTexHandle_get, _wrap_BitmapData_glTexHandle_set },
+    {0,0,0}
+};
+static swig_lua_method swig_BitmapData_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_BitmapData_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_BitmapData_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_BitmapData_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_BitmapData_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_BitmapData_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_BitmapData_Sf_SwigStatic = {
+    "BitmapData",
+    swig_BitmapData_Sf_SwigStatic_methods,
+    swig_BitmapData_Sf_SwigStatic_attributes,
+    swig_BitmapData_Sf_SwigStatic_constants,
+    swig_BitmapData_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_BitmapData_bases[] = {0};
+static const char *swig_BitmapData_base_names[] = {0};
+static swig_lua_class _wrap_class_BitmapData = { "BitmapData", "BitmapData", &SWIGTYPE_p_BitmapData,_proxy__wrap_new_BitmapData, swig_delete_BitmapData, swig_BitmapData_methods, swig_BitmapData_attributes, &swig_BitmapData_Sf_SwigStatic, swig_BitmapData_meta, swig_BitmapData_bases, swig_BitmapData_base_names };
+
+static int _wrap_bitmapDataInit(lua_State* L) {
+  int SWIG_arg = 0;
+  BitmapData *arg1 = (BitmapData *) 0 ;
+  RawBitmapData *arg2 = (RawBitmapData *) 0 ;
+  
+  SWIG_check_num_args("bitmapDataInit",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("bitmapDataInit",1,"BitmapData *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("bitmapDataInit",2,"RawBitmapData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
+    SWIG_fail_ptr("bitmapDataInit",1,SWIGTYPE_p_BitmapData);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_RawBitmapData,0))){
+    SWIG_fail_ptr("bitmapDataInit",2,SWIGTYPE_p_RawBitmapData);
+  }
+  
+  bitmapDataInit(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_bitmapDataCleanup(lua_State* L) {
+  int SWIG_arg = 0;
+  BitmapData *arg1 = (BitmapData *) 0 ;
+  
+  SWIG_check_num_args("bitmapDataCleanup",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("bitmapDataCleanup",1,"BitmapData *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_BitmapData,0))){
+    SWIG_fail_ptr("bitmapDataCleanup",1,SWIGTYPE_p_BitmapData);
+  }
+  
+  bitmapDataCleanup(arg1);
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6748,14 +6776,15 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "Matrix2_prependTransform", _wrap_Matrix2_prependTransform},
     { "Matrix2_identity", _wrap_Matrix2_identity},
     { "rectInit", _wrap_rectInit},
-    { "rawBitmapDataCleanup", _wrap_rawBitmapDataCleanup},
-    { "bitmapDataInit", _wrap_bitmapDataInit},
     { "textureInit", _wrap_textureInit},
     { "DisplayObject_init", _wrap_DisplayObject_init},
     { "DisplayObject_setTransform", _wrap_DisplayObject_setTransform},
     { "DisplayObject_draw", _wrap_DisplayObject_draw},
     { "DisplayObject_getConcatenatedMatrix", _wrap_DisplayObject_getConcatenatedMatrix},
     { "DisplayObject_getConcatAlpha", _wrap_DisplayObject_getConcatAlpha},
+    { "rawBitmapDataCleanup", _wrap_rawBitmapDataCleanup},
+    { "bitmapDataInit", _wrap_bitmapDataInit},
+    { "bitmapDataCleanup", _wrap_bitmapDataCleanup},
     { "cameraSetActive", _wrap_cameraSetActive},
     { "cameraInit", _wrap_cameraInit},
     { "quadGlobalInit", _wrap_quadGlobalInit},
@@ -6817,10 +6846,10 @@ static swig_lua_method swig_SwigModule_methods[]= {
 static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_Matrix2,
 &_wrap_class_Rect,
-&_wrap_class_RawBitmapData,
-&_wrap_class_BitmapData,
 &_wrap_class_Texture,
 &_wrap_class_DisplayObject,
+&_wrap_class_RawBitmapData,
+&_wrap_class_BitmapData,
 &_wrap_class_Camera,
     0
 };

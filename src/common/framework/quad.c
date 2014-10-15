@@ -1,5 +1,6 @@
 #include <string.h>
 #include <GLES/gl.h>
+#include "bitmapdata.h"
 #include "quad.h"
 
 #define MAX_QUADS 250

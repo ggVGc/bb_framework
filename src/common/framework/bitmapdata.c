@@ -27,5 +27,8 @@ void bitmapDataInit(BitmapData* data, RawBitmapData* rawData) {
 }
 
 
-
-
+void bitmapDataCleanup(BitmapData *data){
+  traceNoNL("Deleting tex: ");
+  traceInt(data->glTexHandle);
+  glDeleteTextures(1, &data->glTexHandle);
+}

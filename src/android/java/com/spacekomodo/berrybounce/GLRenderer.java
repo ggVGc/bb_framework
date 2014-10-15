@@ -37,9 +37,8 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   int lastEventIndex = 0;
 
 
+  public boolean inited = false;
   boolean needsReload = false;
-
-
 
   private static native void nativeOnCursorDown(int ind);
   private static native void nativeOnCursorUp(int ind);
@@ -49,8 +48,12 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   private static native void appGraphicsReload(int w, int h);
   private native void nativeRender();
 
-  public GLRenderer (MainActivity activity) {
+
+  GLSurfaceView parentView;
+
+  public GLRenderer (MainActivity activity, GLSurfaceView parent) {
     Log.i(TAG,"GLRenderer created");
+    parentView = parent;
     this.activity = activity;
     for(int i=0;i<MAX_EVENTS;++i){
       eventPool[i] = new GLRenderer.TouchEvent();
@@ -60,10 +63,9 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   @Override
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     Log.i(TAG,"GLRenderer: Surface created");
-    needsReload = true;
+    //needsReload = true;
   }
 
-  public boolean inited = false;
   @Override
   public void onSurfaceChanged(GL10 gl, int w, int h) {
     Log.i(TAG,"GLRenderer: Surface changed");
@@ -139,6 +141,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     this.activity.runOnUiThread(new Runnable() {
       @Override
       public void run() {
+        parentView.setPreserveEGLContextOnPause(true);
         activity.showInterstitial();
       }
     });
@@ -193,6 +196,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   public void purchaseProduct(final String id){
     activity.runOnUiThread(new Runnable() {
       public void run() {
+        parentView.setPreserveEGLContextOnPause(true);
         activity.iap.purchaseProduct(id);
       }
     });

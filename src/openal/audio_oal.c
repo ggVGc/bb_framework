@@ -124,7 +124,8 @@ void audioSetPaused(Audio *a, int paused){
 }
 
 void audioSetMuted(int mute){
-  printf("Setting mute: %i\n", mute);
+  traceNoNL("Setting mute:");
+  traceInt(mute);
 }
 
 int audioIsPlaying(Audio *a){
