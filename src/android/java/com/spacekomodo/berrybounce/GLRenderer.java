@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Scanner;
 
+import java.lang.Thread;
+
 import android.widget.RelativeLayout;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -66,6 +68,11 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     needsReload = true;
   }
 
+
+  /*
+  long startTime;
+  */
+
   @Override
   public void onSurfaceChanged(GL10 gl, int w, int h) {
     Log.i(TAG,"GLRenderer: Surface changed");
@@ -89,6 +96,10 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       needsReload = false;
       appGraphicsReload(w, h);
     }
+
+    /*
+    startTime = System.currentTimeMillis();
+    */
   }
 
   void processTouchEvent(TouchEvent e){
@@ -102,6 +113,8 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     }
   }
 
+
+  final long frameTime = 33;
 
   @Override
   public void onDrawFrame(GL10 gl) {
@@ -122,7 +135,8 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     }
 
     GLRenderer.TouchEvent e = eventPool[lastEventIndex];
-    while(e.alive){
+    //while(e.alive){
+    if(e.alive){
       processTouchEvent(e);
       lastEventIndex++;
       if(lastEventIndex>=MAX_EVENTS){
@@ -131,6 +145,24 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       e.alive = false;
       e = eventPool[lastEventIndex];
     }
+  
+      /*
+      long endTime = System.currentTimeMillis();
+      long dt = endTime - startTime;
+      //Log.i(TAG, "DT: "+dt);
+      if (dt < frameTime){
+        try{
+          long s = frameTime- dt;
+          dt=frameTime;
+          //Log.i(TAG, "Sleeping: "+(s));
+          Thread.sleep(s);
+        }catch(Exception exc){
+          Log.i(TAG, "Thread sleep interrupted");
+        }
+      }
+    startTime = System.currentTimeMillis();
+      */
+
     nativeRender();
   }
 

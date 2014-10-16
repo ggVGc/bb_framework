@@ -392,7 +392,7 @@ local function smoothDelta(inDelta)
   return dDelta_p
 end
 
-local m_dFixedTimeStep = 1/30
+local m_dFixedTimeStep = 100/30
 
 
 local function frameFunc()
@@ -404,6 +404,7 @@ local function frameFunc()
 
   dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated+dDeltaSeconds
   local dd = 0
+
   while dFrameDeltaRemainingsAccumulated>=m_dFixedTimeStep do
     dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated-m_dFixedTimeStep
     dd = dd+m_dFixedTimeStep
@@ -414,7 +415,8 @@ local function frameFunc()
   framework.cjs.Bitmap.drawCounter = 0
   main.draw()
   if fps.hasNew() then
-    print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount())
+    print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount(), 'T: '..framework.MovieClip.tickCount)
+    framework.MovieClip.tickCount = 0
   end
   memCheckCounter=memCheckCounter+frameDelta
   if memCheckCounter>MEM_CHECK_INTERVAL*1000 then

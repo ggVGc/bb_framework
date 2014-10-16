@@ -11,6 +11,8 @@
 #include "framework/util.h"
 
 
+static int globalMute = 0;
+
 int alCheckError(const char* msg){
   int err = alGetError();
   if(err !=AL_NO_ERROR){
@@ -88,6 +90,9 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
 }
 
 void audioPlay(Audio* a) {
+  if(globalMute){
+    return;
+  }
   alSourcePlay(a->source);
   alCheckError("Failed playing source");
 }
@@ -123,9 +128,23 @@ void audioSetPaused(Audio *a, int paused){
   }
 }
 
-void audioSetMuted(int mute){
-  traceNoNL("Setting mute:");
-  traceInt(mute);
+void audioSetMuted(int muted){
+  Audio *a;
+  int i;
+  globalMute = muted;
+  if(initialised){
+    for(i=0;i<MAX_SOUNDS;++i){
+      a = soundInstances[i];
+      if(a){
+        audioSetPaused(a, globalMute);
+      }
+      /*
+      if(a && a->player_vol){
+        (*a->player_vol)->SetVolumeLevel( a->player_vol, (SLmillibel)(gain_to_attenuation( vol ) * 100) );
+      }
+      */
+    }
+  }
 }
 
 int audioIsPlaying(Audio *a){

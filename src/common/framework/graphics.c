@@ -32,6 +32,8 @@ void graphicsInit(int framebufferWidth, int framebufferHeight){
   quadGlobalInit();
   glEnableClientState(GL_VERTEX_ARRAY);
   glViewport(0, 0, framebufferWidth, framebufferHeight);
+  glDepthMask(GL_FALSE);
+  glDisable(GL_DEPTH_TEST);
 }
 
 
@@ -42,7 +44,8 @@ void beginRenderFrame() {
   if(scissorSet){
     glScissor(0,0, screenWidth(), screenHeight());
   }
-  glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+  /*glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);*/
+  glClear(GL_COLOR_BUFFER_BIT);
   if(scissorSet){
     glScissor(curScissorX, curScissorY, curScissorW, curScissorH);
   }
