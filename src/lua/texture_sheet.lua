@@ -54,7 +54,8 @@ end
 
 
 function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPath)
-  local layoutData = _c_framework.loadText(layoutInfoPath or imagePath:gsub('.png', '.txt'))
+  layoutInfoPath = layoutInfoPath or imagePath:gsub('.png', '.txt')
+  local layoutData = _c_framework.loadText(layoutInfoPath)
   if layoutData == "" or layoutData == nil then
     error("invalid layout file: "..layoutInfoPath)
   end

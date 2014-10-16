@@ -77,7 +77,7 @@ def zipDir(zipOut, r, stripCode=False, prefix=""):
     for f in files:
       if 'external_gfx' in root or 'sheet_lists' in root:
         continue
-      if stripCode and ('flash' in root):
+      if stripCode and ('flash' in root or 'font' in root):
         continue
       p = os.path.join(root, f)
       rp = os.path.relpath(p, r)

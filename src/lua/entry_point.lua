@@ -362,18 +362,23 @@ end
 
 
 local MEM_CHECK_INTERVAL = 10
-local MAX_MEM_TRIGGER_GC = 30000
+local MAX_MEM_TRIGGER_GC = 35000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
 
 
-
 local dDeltaBuffer = 0
 local dFrameDeltaRemainingsAccumulated = 0
-local dVsyncRefreshRate_p = _c_framework.getScreenRefreshRate()
---local dVsyncRefreshRate_p = 60
+local dVsyncRefreshRate_p = _c_framework.getScreenRefreshRate() or 60
+if dVsyncRefreshRate_p <=0 or dVsyncRefreshRate_p >120 then
+  dVsyncRefreshRate_p = 60
+end
 print("Refresh rate: ", dVsyncRefreshRate_p)
+if dVsyncRefreshRate_p > 80 then
+  dVsyncRefreshRate_p = dVsyncRefreshRate_p/2
+end
+print("Frame render rate", dVsyncRefreshRate_p)
 
 local function smoothDelta(inDelta)
   local dDelta_p = inDelta+dDeltaBuffer
@@ -451,6 +456,16 @@ end
 function framework.reloadTextures()
   print 'Reloading textures'
   framework.Texture.rebuildCachedTextures()
+end
+
+
+-- TODO: This is a total hack...
+-- At some point the user should be able to set max dimensions for 
+-- the scene, and anchor to top/bottom/left/right, and this should be done
+-- automatically
+function framework.setTopCutoffHeight(h)
+  print("Setting top cutoff", h)
+  _c_framework.setScissor(0, 0, framework.Window.getWidth(), framework.Window.getHeight()-h)
 end
 
 

@@ -100,6 +100,9 @@ void quadDrawTexAlpha(Texture* tex, Matrix2 *m, float alpha){
 }
 
 void setTint(float r, float g, float b){
+  if(r==curR && g==curG && b==curB){
+    return;
+  }
   quadFlush();
   curR = r;
   curG = g;

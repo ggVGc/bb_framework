@@ -6652,6 +6652,34 @@ fail:
 }
 
 
+static int _wrap_setScissor(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  int arg2 ;
+  int arg3 ;
+  int arg4 ;
+  
+  SWIG_check_num_args("setScissor",4,4)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("setScissor",1,"int");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("setScissor",2,"int");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("setScissor",3,"int");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("setScissor",4,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  arg2 = (int)lua_tonumber(L, 2);
+  arg3 = (int)lua_tonumber(L, 3);
+  arg4 = (int)lua_tonumber(L, 4);
+  setScissor(arg1,arg2,arg3,arg4);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_DisplayObject_setTex(lua_State* L) {
   int SWIG_arg = 0;
   DisplayObject *arg1 = (DisplayObject *) 0 ;
@@ -6834,6 +6862,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "isAppBroken", _wrap_isAppBroken},
     { "setAppBroken", _wrap_setAppBroken},
     { "getScreenRefreshRate", _wrap_getScreenRefreshRate},
+    { "setScissor", _wrap_setScissor},
     { "DisplayObject_setTex", _wrap_DisplayObject_setTex},
     { "DisplayObject_setParent", _wrap_DisplayObject_setParent},
     { "loadBytes", _wrap_loadBytes},

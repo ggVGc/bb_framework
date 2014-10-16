@@ -4,6 +4,7 @@
 
 void graphicsInit(int framebufferWidth, int framebufferHeight);
 void beginRenderFrame();
+void setScissor(int x, int y, int w, int h);
 
 
 #endif

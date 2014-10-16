@@ -51,6 +51,8 @@ int isAppBroken(void);
 void setAppBroken(int);
 int getScreenRefreshRate();
 
+void setScissor(int x, int y, int w, int h);
+
 // Use these to avoid memory leaks
 void DisplayObject_setTex(DisplayObject *d, Texture *t);
 void DisplayObject_setParent(DisplayObject *d, DisplayObject *p);

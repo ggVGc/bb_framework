@@ -45,9 +45,6 @@ Inp = {
 
 
 
-  cursorX= function(index) return _c_framework.cursorX((index or 1)-1)/framework.Window.getWidth() end,
-  cursorY= function(index) return 1-(_c_framework.cursorY((index or 1)-1)/framework.Window.getHeight()) end,
-
   cursorDown = function(index) return Inp.curState.cursorStates[index or 1].down end,
   cursorX= function(index) return Inp.curState.cursorStates[index or 1].x/framework.Window.getWidth() end,
   cursorY= function(index) return 1-(Inp.curState.cursorStates[index or 1].y/framework.Window.getHeight()) end,

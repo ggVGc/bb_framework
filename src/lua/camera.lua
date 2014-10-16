@@ -6,41 +6,24 @@ framework.Camera = {}
 framework.Camera.curAppliedHeight = nil
 
 
+framework.Camera.MAX_HEIGHT = 640
+
 function framework.Camera.new(width, height)
-  local M = {}
+  local M = {x=0,y=0,width=width, height=height}
   local cam = _c_framework.Camera()
 
-  _c_framework.cameraInit(cam, 0, 0, width, height)
+  _c_framework.cameraInit(cam, M.x, M.y, M.width, M.height)
 
   local mt = {}
-
-  mt.__index = function(table, key)
-    if key == "x" then
-      return cam.posX
-    elseif key == "y" then
-      return cam.posY
-    elseif key == "width" then
-      return cam.width 
-    elseif key == "height" then
-      return cam.height 
-    end
-  end
-
-  mt.__newindex = function(table, key, value)
-    if key == "x" then
-      cam.posX = value
-    elseif key == "y" then
-      cam.posY = value
-    elseif key == "width" then
-      cam.width = value
-    elseif key == "height" then
-      cam.height = value
-    end
-  end
 
   function M.apply()
     framework.Camera.curAppliedHeight = cam.height
     _c_framework.cameraSetActive(cam)
+  end
+
+  mt.__newindex = function(table, key, value)
+    rawset(table, key, value)
+    cam[key] = value
   end
 
   setmetatable(M, mt)

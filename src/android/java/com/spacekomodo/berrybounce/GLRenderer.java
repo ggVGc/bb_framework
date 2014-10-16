@@ -63,7 +63,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   @Override
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     Log.i(TAG,"GLRenderer: Surface created");
-    //needsReload = true;
+    needsReload = true;
   }
 
   @Override

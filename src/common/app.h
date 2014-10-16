@@ -30,6 +30,7 @@ extern int getScreenRefreshRate();
 lua_State* luaVM;
 int callLuaFunc(int nParams, int nRet);
 
+
 #ifdef __cplusplus
 }
 #endif
