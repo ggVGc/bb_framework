@@ -145,6 +145,11 @@ void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, c
   pthread_mutex_lock(&vmMutex);
   */
 
+  traceNoNL("W:");
+  traceInt(framebufferWidth);
+  traceNoNL("H:");
+  traceInt(framebufferHeight);
+
   audioGlobalInit();
   dataStoreGlobalInit();
   setResourcePath(resourcePath, useAssetZip);

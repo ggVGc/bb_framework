@@ -465,9 +465,9 @@ end
 -- At some point the user should be able to set max dimensions for 
 -- the scene, and anchor to top/bottom/left/right, and this should be done
 -- automatically
-function framework.setTopCutoffHeight(h)
+function framework.setVisibleWindowHeight(h)
   print("Setting top cutoff", h)
-  _c_framework.setScissor(0, 0, framework.Window.getWidth(), framework.Window.getHeight()-h)
+  _c_framework.setScissor(0, 0, framework.Window.getWidth(), h)
 end
 
 

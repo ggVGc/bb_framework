@@ -2627,6 +2627,7 @@ static swig_module_info swig_module = {swig_types, 13, 0, 0, 0, 0};
 #define SWIG_LUACODE   luaopen__c_framework_luacode
 
 #include "framework/matrix2.h"
+#include "framework/graphics.h"
 #include "framework/camera.h"
 #include "framework/quad.h"
 #include "framework/texture.h"
@@ -2634,6 +2635,11 @@ static swig_module_info swig_module = {swig_types, 13, 0, 0, 0, 0};
 #include "framework/display_object.h"
 #include "framework/bitmapdata.h"
 #include "framework/rawbitmapdata.h"
+#include "framework/data_store.h"
+#include "framework/profiler.h"
+#include "framework/facebook.h"
+#include "framework/ads.h"
+#include "framework/iap.h"
 #include "framework/input.h"
 #include "framework/audio.h"
 #include "app.h"
@@ -6259,29 +6265,53 @@ fail:
 }
 
 
-static int _wrap_audioMake(lua_State* L) {
+static int _wrap_audioAlloc(lua_State* L) {
   int SWIG_arg = 0;
-  int *arg1 = (int *) 0 ;
-  int arg2 ;
-  int arg3 ;
-  int arg4 ;
   Audio *result = 0 ;
   
-  SWIG_check_num_args("audioMake",4,4)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioMake",1,"int *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("audioMake",2,"int");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("audioMake",3,"int");
-  if(!lua_isnumber(L,4)) SWIG_fail_arg("audioMake",4,"int");
+  SWIG_check_num_args("audioAlloc",0,0)
+  result = (Audio *)audioAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio_T,0); SWIG_arg++; 
+  return SWIG_arg;
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_int,0))){
-    SWIG_fail_ptr("audioMake",1,SWIGTYPE_p_int);
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_audioInit(lua_State* L) {
+  int SWIG_arg = 0;
+  Audio *arg1 = (Audio *) 0 ;
+  int *arg2 = (int *) 0 ;
+  int arg3 ;
+  int arg4 ;
+  int arg5 ;
+  int result;
+  
+  SWIG_check_num_args("audioInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioInit",1,"Audio *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("audioInit",2,"int *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("audioInit",3,"int");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("audioInit",4,"int");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("audioInit",5,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
+    SWIG_fail_ptr("audioInit",1,SWIGTYPE_p_Audio_T);
   }
   
-  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_int,0))){
+    SWIG_fail_ptr("audioInit",2,SWIGTYPE_p_int);
+  }
+  
   arg3 = (int)lua_tonumber(L, 3);
   arg4 = (int)lua_tonumber(L, 4);
-  result = (Audio *)audioMake(arg1,arg2,arg3,arg4);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio_T,0); SWIG_arg++; 
+  arg5 = (int)lua_tonumber(L, 5);
+  result = (int)audioInit(arg1,arg2,arg3,arg4,arg5);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6522,38 +6552,6 @@ static int _wrap_onPurchaseComplete(lua_State* L) {
   if(!lua_isnumber(L,1)) SWIG_fail_arg("onPurchaseComplete",1,"int");
   arg1 = (int)lua_tonumber(L, 1);
   onPurchaseComplete(arg1);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_startProfiler(lua_State* L) {
-  int SWIG_arg = 0;
-  
-  SWIG_check_num_args("startProfiler",0,0)
-  startProfiler();
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_stopProfiler(lua_State* L) {
-  int SWIG_arg = 0;
-  
-  SWIG_check_num_args("stopProfiler",0,0)
-  stopProfiler();
   
   return SWIG_arg;
   
@@ -6843,7 +6841,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "audioSetAllPaused", _wrap_audioSetAllPaused},
     { "audioSetMuted", _wrap_audioSetMuted},
     { "audioIsPlaying", _wrap_audioIsPlaying},
-    { "audioMake", _wrap_audioMake},
+    { "audioAlloc", _wrap_audioAlloc},
+    { "audioInit", _wrap_audioInit},
     { "facebookPost", _wrap_facebookPost},
     { "facebookIsShareAvailable", _wrap_facebookIsShareAvailable},
     { "adPrepareInterstitial", _wrap_adPrepareInterstitial},
@@ -6855,8 +6854,6 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "purchaseProduct", _wrap_purchaseProduct},
     { "getProductPrice", _wrap_getProductPrice},
     { "onPurchaseComplete", _wrap_onPurchaseComplete},
-    { "startProfiler", _wrap_startProfiler},
-    { "stopProfiler", _wrap_stopProfiler},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},

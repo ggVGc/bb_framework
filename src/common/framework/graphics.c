@@ -8,11 +8,22 @@
 #endif
 
 
+#define glError() { \
+    GLenum err = glGetError(); \
+    while (err != GL_NO_ERROR) { \
+        printf("glError: %i caught at %s:%u\n", err, __FILE__, __LINE__); \
+        err = glGetError(); \
+    } \
+}
+
 int curScissorX;
 int curScissorY;
 int curScissorW;
 int curScissorH;
 int scissorSet;
+
+int fbWidth;
+int fbheight;
 
 void graphicsInit(int framebufferWidth, int framebufferHeight){
   curScissorX = -1;
@@ -30,14 +41,17 @@ void graphicsInit(int framebufferWidth, int framebufferHeight){
   glEnableClientState(GL_TEXTURE_COORD_ARRAY);
   glEnableClientState(GL_VERTEX_ARRAY);
   quadGlobalInit();
-  glEnableClientState(GL_VERTEX_ARRAY);
   glViewport(0, 0, framebufferWidth, framebufferHeight);
   glDepthMask(GL_FALSE);
   glDisable(GL_DEPTH_TEST);
+  glError();
+  fbWidth = framebufferWidth;
+  fbheight = framebufferHeight;
 }
 
 
 void beginRenderFrame() {
+  glViewport(0, 0, fbWidth, fbheight);
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
 
@@ -50,6 +64,7 @@ void beginRenderFrame() {
     glScissor(curScissorX, curScissorY, curScissorW, curScissorH);
   }
   quadBeginFrame();
+  glError();
 }
 
 
@@ -59,5 +74,7 @@ void setScissor(int x, int y, int w, int h){
   curScissorY = y;
   curScissorW = w;
   curScissorH = h;
+  glScissor(curScissorX,curScissorY, curScissorW, curScissorH);
+  printf("SCISSOR: %i, %i, %i, %i", x, y, w, h);
   glEnable(GL_SCISSOR_TEST);
 }

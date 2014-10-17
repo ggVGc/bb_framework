@@ -6,7 +6,7 @@
 #include "framework/audio.h"
 #include "framework/resource_loading.h"
 #include "framework/util.h"
-#include "xmp.h"
+//#include "xmp.h"
 
 
 struct ogg_file {
@@ -85,11 +85,15 @@ Audio* audioLoad(const char* path){
   ov_callbacks callbacks;
   vorbis_info *vi;
   ogg_file t;
-  Audio *a;
   int sz;
   char* buf;
   int i;
   int soundIndex = -1;
+
+  Audio *a = audioAlloc();
+  // Always return this, because we don't want application go crash just because audio failed loading
+  // Need to add other way to let user know audio load failed
+
   for(i=0;i<MAX_SOUNDS;++i){
     if(soundInstances[i] == NULL){
       soundIndex = i;
@@ -99,14 +103,14 @@ Audio* audioLoad(const char* path){
 
   if(soundIndex < 0){
     trace("WARNING: Max sound instances reached");
-    return NULL;
+    return a;
   }
   
   buf = (char*)loadBytes(path, &sz);
   t.curPtr = t.filePtr = buf;
   if(!buf){
     trace("Failed audio file load");
-    return 0;
+    return a;
   }
   t.fileSize = sz;
 
@@ -118,7 +122,7 @@ Audio* audioLoad(const char* path){
   if(ov_open_callbacks((void *)&t, &vf, NULL, -1, callbacks) < 0){
     trace("Input does not appear to be an Ogg bitstream.\n");
     free(buf);
-    return 0;
+    return a;
   }
 
   vi=ov_info(&vf,-1);
@@ -140,7 +144,7 @@ Audio* audioLoad(const char* path){
       trace("Vorbis load failed");
       free(buf);
       free(tmpBuf);
-      return 0;
+      return a;
     } else {
       memcpy(tmpBuf+c, pcmout, ret);
       c+=ret;
@@ -148,19 +152,21 @@ Audio* audioLoad(const char* path){
         trace("Encoded stream larger than buffer. Something is wrong");
         free(buf);
         free(tmpBuf);
-        return 0;
+        return a;
       }
       // we don't bother dealing with sample rate changes, etc, but you'll have to 
       // TODO: Yeah, I should.. But I probably won't.
     }
   }
 
- a = audioMake((int*)tmpBuf, bufSize, vi->rate, vi->channels);
-
  ov_clear(&vf);
  free(buf);
+
+ if(audioInit(a, (int*)tmpBuf, bufSize, vi->rate, vi->channels)){
+   soundInstances[soundIndex] = a;
+ }
+
  free(tmpBuf);
- soundInstances[soundIndex] = a;
  return a;
 }
 

@@ -68,11 +68,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     needsReload = true;
   }
 
-
-  /*
-  long startTime;
-  */
-
   @Override
   public void onSurfaceChanged(GL10 gl, int w, int h) {
     Log.i(TAG,"GLRenderer: Surface changed");
@@ -96,10 +91,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       needsReload = false;
       appGraphicsReload(w, h);
     }
-
-    /*
-    startTime = System.currentTimeMillis();
-    */
   }
 
   void processTouchEvent(TouchEvent e){
@@ -135,7 +126,16 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     }
 
     GLRenderer.TouchEvent e = eventPool[lastEventIndex];
-    //while(e.alive){
+
+
+    
+    // TODO: If we handle all events here, we need to make sure the framework input
+    // handles it, and detects a 'click', even if a down and up happens during
+    // the same rendered frame. This is not currently the case, hence use an if
+    // and handle only one event per frame
+    /*
+    while(e.alive){
+    */
     if(e.alive){
       processTouchEvent(e);
       lastEventIndex++;
@@ -145,24 +145,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       e.alive = false;
       e = eventPool[lastEventIndex];
     }
-  
-      /*
-      long endTime = System.currentTimeMillis();
-      long dt = endTime - startTime;
-      //Log.i(TAG, "DT: "+dt);
-      if (dt < frameTime){
-        try{
-          long s = frameTime- dt;
-          dt=frameTime;
-          //Log.i(TAG, "Sleeping: "+(s));
-          Thread.sleep(s);
-        }catch(Exception exc){
-          Log.i(TAG, "Thread sleep interrupted");
-        }
-      }
-    startTime = System.currentTimeMillis();
-      */
-
     nativeRender();
   }
 

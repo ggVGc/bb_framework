@@ -28,6 +28,7 @@ NSDate *lastTick = 0;
 @synthesize animating, context, displayLink;
 
 - (void)awakeFromNib {
+    /*
     EAGLContext *aContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
     
     if (!aContext)
@@ -46,39 +47,45 @@ NSDate *lastTick = 0;
     animationFrameInterval = 1;
     self.displayLink = nil;
     self->didInit = false;
+    */
 }
 
 - (void)dealloc {
     
+    /*
     // Tear down context.
     if ([EAGLContext currentContext] == context){
       [EAGLContext setCurrentContext:nil];
     }
     
     [context release];
+    */
     
     [super dealloc];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
     [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    /*
     [self stopAnimation];
+    */
     
     [super viewWillDisappear:animated];
 }
 
 - (void)viewDidUnload {
   [super viewDidUnload];
+  /*
   
   // Tear down context.
   if ([EAGLContext currentContext] == context){
     [EAGLContext setCurrentContext:nil];
   }
   self.context = nil;	
+  */
 }
 
 - (NSInteger)animationFrameInterval {
@@ -102,6 +109,7 @@ NSDate *lastTick = 0;
 
 - (void)startAnimation
 {
+    /*
     if (!animating) {
         CADisplayLink *aDisplayLink = [[UIScreen mainScreen] displayLinkWithTarget:self selector:@selector(drawFrame)];
         [aDisplayLink setFrameInterval:animationFrameInterval];
@@ -110,18 +118,22 @@ NSDate *lastTick = 0;
         
         animating = TRUE;
     }
+    */
 }
 
 - (void)stopAnimation
 {
+    /*
     if (animating) {
         [self.displayLink invalidate];
         self.displayLink = nil;
         animating = FALSE;
     }
+    */
 }
 
 - (void)drawFrame {
+/*
     [(EAGLView *)self.view setFramebuffer];
 
     if(!self->didInit){
@@ -145,6 +157,7 @@ NSDate *lastTick = 0;
     lastTick = now;
     
     [(EAGLView *)self.view presentFramebuffer];
+*/
 }
 
 - (void)didReceiveMemoryWarning {

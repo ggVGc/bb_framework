@@ -1,11 +1,47 @@
-//
-//  EAGLView.h
-//  framework
-//
-//  Created by Walt on 10/11/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#include <OpenGLES/ES1/gl.h>
+#include <OpenGLES/ES1/glext.h>
 
+@interface EAGLView : UIView {
+    CAEAGLLayer* _eaglLayer;
+    EAGLContext* _context;
+    GLuint _colorRenderBuffer;
+    GLuint _positionSlot;
+    GLuint _colorSlot;
+    GLuint _projectionUniform;
+    GLuint _modelViewUniform;
+    float _currentRotation;
+    GLuint _depthRenderBuffer;
+    
+    GLuint _texCoordSlot;
+    GLuint _textureUniform;
+    GLuint _vertexBuffer;
+    GLuint _indexBuffer;
+    GLuint _vertexBuffer2;
+    GLuint _indexBuffer2;
+
+    BOOL didInit;
+
+    NSDate *lastTick;
+
+    GLint framebufferWidth;
+    GLint framebufferHeight;
+}
+
+@end
+
+
+
+
+
+
+
+
+
+
+
+/*
 #import <UIKit/UIKit.h>
 
 #import <OpenGLES/ES1/gl.h>
@@ -36,3 +72,5 @@
 - (BOOL)presentFramebuffer;
 
 @end
+
+*/

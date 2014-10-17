@@ -1,2 +1,2 @@
 # !sh
-swig -lua  -includeall  -ignoremissing ./src/common/framework.i 
+swig -lua  -includeall  -ignoremissing -o src/common/framework_wrap.c ./src/framework.i 

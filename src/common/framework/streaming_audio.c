@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "framework/streaming_audio.h"
 #include "framework/resource_loading.h"
-#include "xmp.h"
+//#include "xmp.h"
 #include "framework/util.h"
 
 struct StreamingAudio_T
@@ -17,6 +17,7 @@ StreamingAudio* streamingAudioLoad(const char* path){
   int sz, success;
   int* tmpBuf;
   StreamingAudio* ret = (StreamingAudio*)malloc(sizeof(StreamingAudio));
+/*
   unsigned char *data = loadBytes(path, &sz);
   xmp_context c;
   struct xmp_frame_info mi;
@@ -41,8 +42,9 @@ StreamingAudio* streamingAudioLoad(const char* path){
   }
 
   xmp_end_player(c);
-  xmp_release_module(c);        /* unload module */
-  xmp_free_context(c);          /* destroy the player context */
+  xmp_release_module(c);        [> unload module <]
+  xmp_free_context(c);          [> destroy the player context <]
+*/
 
   /*const int sampleCount = bufSize;*/
   /*sf::Int16* samples = (sf::Int16*)malloc(sizeof(sf::Int16)*bufSize);*/

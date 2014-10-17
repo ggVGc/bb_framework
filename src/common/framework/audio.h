@@ -25,7 +25,8 @@ void audioSetMuted(int muted);
 
 int audioIsPlaying(Audio *a);
 
-Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels);
+Audio* audioAlloc();
+int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels);
 
 #define MAX_SOUNDS 512
 

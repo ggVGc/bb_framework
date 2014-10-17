@@ -12,13 +12,17 @@
 
 
 static int globalMute = 0;
-
+int hasError = 0;
 int alCheckError(const char* msg){
+  if(hasError){
+    return 1;
+  }
   int err = alGetError();
   if(err !=AL_NO_ERROR){
     trace(msg);
     traceNoNL("Error code: ");
     traceInt(err);
+    hasError = 1;
     return 1;
   }
   return 0;
@@ -33,7 +37,14 @@ struct Audio_T {
   ALuint buffer;
 };
 
+
+Audio* audioAlloc(){
+  return (Audio*)malloc(sizeof(Audio));
+}
+
+
 int audioGlobalPlatformInit(){
+  hasError = 0;
   ALfloat ListenerPos[] = { 0.0, 0.0, 0.0 };
   ALfloat ListenerVel[] = { 0.0, 0.0, 0.0 };
   ALfloat ListenerOri[] = { 0.0, 0.0, -1.0,  0.0, 1.0, 0.0 };
@@ -51,9 +62,6 @@ int audioGlobalPlatformInit(){
   alcMakeContextCurrent(context);
   if(alCheckError("Could not make OpenAL context current")){return 1;}
 
-
-  
-
   alListenerfv(AL_POSITION,    ListenerPos);
   alListenerfv(AL_VELOCITY,    ListenerVel);
   alListenerfv(AL_ORIENTATION, ListenerOri);
@@ -63,14 +71,12 @@ int audioGlobalPlatformInit(){
   return 0;
 }
 
-Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
-  Audio* a;
+int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
   ALfloat SourcePos[] = { 0.0, 0.0, 0.0 };
   ALfloat SourceVel[] = { 0.0, 0.0, 0.0 };
   if(!initialised){
     return 0;
   }
-  a = (Audio*)malloc(sizeof(Audio));
 
   alGenBuffers(1, &a->buffer);
   if(alCheckError("Failed OpenAL buffer creation")){return 0;}
@@ -86,7 +92,7 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
   alSourcef (a->source, AL_GAIN,     1.0f     );
   alSourcefv(a->source, AL_POSITION, SourcePos);
   alSourcefv(a->source, AL_VELOCITY, SourceVel);
-  return a;
+  return 1;
 }
 
 void audioPlay(Audio* a) {

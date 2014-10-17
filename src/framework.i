@@ -3,6 +3,7 @@
 
 %{
 #include "framework/matrix2.h"
+#include "framework/graphics.h"
 #include "framework/camera.h"
 #include "framework/quad.h"
 #include "framework/texture.h"
@@ -10,6 +11,11 @@
 #include "framework/display_object.h"
 #include "framework/bitmapdata.h"
 #include "framework/rawbitmapdata.h"
+#include "framework/data_store.h"
+#include "framework/profiler.h"
+#include "framework/facebook.h"
+#include "framework/ads.h"
+#include "framework/iap.h"
 #include "framework/input.h"
 #include "framework/audio.h"
 #include "app.h"
@@ -23,18 +29,18 @@ void DisplayObject_setParent(DisplayObject *d, DisplayObject *p){
 %}
 
 
-#include "framework/display_object.h"
-#include "framework/bitmapdata.h"
-#include "framework/texture.h"
-#include "framework/camera.h"
-#include "framework/quad.h"
-#include "framework/rawbitmapdata.h"
-#include "framework/input.h"
-#include "framework/audio.h"
-#include "framework/facebook.h"
-#include "framework/ads.h"
-#include "framework/iap.h"
-#include "framework/profiler.h"
+#include "common/framework/display_object.h"
+#include "common/framework/bitmapdata.h"
+#include "common/framework/texture.h"
+#include "common/framework/camera.h"
+#include "common/framework/quad.h"
+#include "common/framework/rawbitmapdata.h"
+#include "common/framework/input.h"
+#include "common/framework/audio.h"
+#include "common/framework/facebook.h"
+#include "common/framework/ads.h"
+#include "common/framework/iap.h"
+/*#include "common/framework/profiler.h"*/
 
 
 %extend BitmapData{

@@ -17,6 +17,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window.rootViewController = self.viewController;
+
+    /*
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];    
+    self.glView = [[[EAGLView alloc] initWithFrame:screenBounds] autorelease];
+    [self.window addSubview:_glView];
+    [self.window makeKeyAndVisible];
+    */
     return YES;
 }
 
