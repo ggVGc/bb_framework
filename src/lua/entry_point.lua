@@ -362,7 +362,7 @@ end
 
 
 local MEM_CHECK_INTERVAL = 10
-local MAX_MEM_TRIGGER_GC = 32000
+local MAX_MEM_TRIGGER_GC = 38000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
@@ -426,6 +426,7 @@ local function frameFunc()
     lastMem = thisMem
     if thisMem > MAX_MEM_TRIGGER_GC then
       collectgarbage()
+      collectgarbage('stop')
     end
   end
 end
