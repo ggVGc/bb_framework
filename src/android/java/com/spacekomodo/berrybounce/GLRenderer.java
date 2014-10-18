@@ -17,6 +17,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import java.util.LinkedList;
 
@@ -35,6 +36,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 
   public static final  int MAX_EVENTS = 100;
   public GLRenderer.TouchEvent[] eventPool = new GLRenderer.TouchEvent[100];
+  public ConcurrentLinkedQueue<GLRenderer.TouchEvent> eventQueue;
 
   int lastEventIndex = 0;
 
@@ -60,6 +62,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     for(int i=0;i<MAX_EVENTS;++i){
       eventPool[i] = new GLRenderer.TouchEvent();
     }
+    eventQueue = new ConcurrentLinkedQueue<GLRenderer.TouchEvent>();
   }
 
   @Override
@@ -125,18 +128,12 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       }
     }
 
-    GLRenderer.TouchEvent e = eventPool[lastEventIndex];
-
-
-    
     // TODO: If we handle all events here, we need to make sure the framework input
     // handles it, and detects a 'click', even if a down and up happens during
     // the same rendered frame. This is not currently the case, hence use an if
     // and handle only one event per frame
-    /*
-    while(e.alive){
-    */
-    if(e.alive){
+    GLRenderer.TouchEvent e = eventQueue.poll();
+    if(e != null){
       processTouchEvent(e);
       lastEventIndex++;
       if(lastEventIndex>=MAX_EVENTS){

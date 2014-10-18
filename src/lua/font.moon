@@ -2,11 +2,13 @@ framework = framework or {}
 
 framework.Font = {
 new: maker (imagePath, texLoadFunc) =>
-  chars = '$abcdefghijklmnopqrstuvxyz1234567890,.'
+  chars = '!+-$abcdefghijklmnopqrstuvxyz1234567890,.'
   textures = {}
 
   string.gsub chars, '.', (c) ->
     textures[c] = texLoadFunc(imagePath..'/'..c)
+  textures['sym_q'] = texLoadFunc(imagePath..'/sym_q')
+
 
   tmpMat = _c_framework.Matrix2!
 
@@ -17,6 +19,9 @@ new: maker (imagePath, texLoadFunc) =>
   pos = {}
   curAlpha = 1
   drawChar = (c) ->
+    c = c\lower!
+    if c == '?'
+      c = 'sym_q'
     tex = textures[c]
     if c==' ' or not tex
       curWidth += 20*(reversing and -1 or 1)

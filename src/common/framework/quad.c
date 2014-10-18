@@ -12,9 +12,6 @@ static int noLastHandle;
 static int quadCount;
 
 
-typedef struct Color{
-} Color;
-
 
 static GLfloat vertices[12] = {
   0, 0,

@@ -6,6 +6,7 @@ new: ->
   self.children = {}
   self.mouseChildren = true
   self.tickChildren = true
+  self.tickOnlyWhenVisible = true
 
 
   displayObj = framework.DisplayObject.new!
@@ -217,11 +218,15 @@ new: ->
 
   
   self._tick = (props) ->
+    if self.tickOnlyWhenVisible and not self.visible
+      return false
     if self.tickEnabled and self.tickChildren
       for i=#self.children, 1, -1
         child = self.children[i]
         if child.tickEnabled and child._tick
           child._tick props
+      return true
+    return false
     --displayObj._tick(props)
 
   

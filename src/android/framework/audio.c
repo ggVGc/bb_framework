@@ -73,10 +73,13 @@ void SLAPIENTRY play_callback( SLPlayItf player, void *context, SLuint32 event )
 }
  
 
-Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
-  Audio* a = (Audio*)malloc(sizeof(Audio));
+Audio* audioAlloc(){
+  return (Audio*)malloc(sizeof(Audio));
+}
+
+int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
   if(!initialised){
-    return a;
+    return 0;
   }
   a->loop = 0;
   a->is_playing = 0;
@@ -140,7 +143,7 @@ Audio* audioMake(int *buf, int bufSize, int sampleRate, int channels){
 
   (*a->player)->RegisterCallback( a->player, play_callback, a );
   (*a->player)->SetCallbackEventsMask( a->player, SL_PLAYEVENT_HEADATEND );
-  return a;
+  return 1;
 }
 
 void audioPlay(Audio* a) {

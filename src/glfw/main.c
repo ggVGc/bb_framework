@@ -1,11 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <limits.h>
+
 #include "GLFW/glfw3.h"
-#include "timing.h"
 #include "app.h"
 #include "framework/input.h"
 #include "framework/profiler.h"
+#include "framework/timing.h"
 
 #ifdef __APPLE__
   #include <mach-o/dyld.h>
@@ -109,8 +110,16 @@ static void cursor_pos_callback(GLFWwindow* window, double x, double y) {
 }
 
 int main(int argc, char **argv) {
+	#define PATH_SIZE 2048
   GLFWwindow* window;
   long curTime, delta, lastTime;
+    const char *assets = "assets.zip";
+  char execPath[PATH_SIZE+1];
+  char fullPath[PATH_SIZE+1];
+  char assetPath[PATH_SIZE+1];
+  char *filePartPtr;
+  int width, height;
+	  int screenW, screenH;
 
   glfwSetErrorCallback(error_callback);
 
@@ -136,19 +145,14 @@ int main(int argc, char **argv) {
 
   glfwSwapInterval(1);
 
-  #define PATH_SIZE 2048
-  int width, height;
-	  int screenW, screenH;
+
 #if defined(__APPLE__) || defined(WIN32)
   #ifndef PATH_MAX
     #define PATH_MAX MAX_PATH
   #endif
 
 
-  const char *assets = "assets.zip";
-  char execPath[PATH_SIZE+1];
-  char fullPath[PATH_SIZE+1];
-  char assetPath[PATH_SIZE+1];
+
 #ifdef __APPLE__
     uint32_t pathSize = PATH_SIZE;
     int ret;
@@ -170,7 +174,7 @@ int main(int argc, char **argv) {
   printf("Real path: %s\n", fullPath);
   sprintf(assetPath, "%s/%s", dirname(fullPath), assets);
   #else
-    char *filePartPtr;
+    
     GetModuleFileName(0, execPath, 512);
 	GetFullPathName(execPath, 512, fullPath, &filePartPtr);
 	*filePartPtr = '\0';
@@ -178,7 +182,7 @@ int main(int argc, char **argv) {
 	/*printf("%s", assetPath);*/
   #endif
 #else
-  const char *assetPath = "assets.zip";
+  strcpy(assetPath, "assets.zip");
 #endif
 
 

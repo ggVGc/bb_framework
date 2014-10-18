@@ -89,8 +89,7 @@ Audio* audioLoad(const char* path){
   char* buf;
   int i;
   int soundIndex = -1;
-
-  Audio *a = audioAlloc();
+  Audio *a = audioAlloc(); 
   // Always return this, because we don't want application go crash just because audio failed loading
   // Need to add other way to let user know audio load failed
 
@@ -159,13 +158,13 @@ Audio* audioLoad(const char* path){
     }
   }
 
- ov_clear(&vf);
- free(buf);
 
  if(audioInit(a, (int*)tmpBuf, bufSize, vi->rate, vi->channels)){
    soundInstances[soundIndex] = a;
  }
 
+ ov_clear(&vf);
+ free(buf);
  free(tmpBuf);
  return a;
 }

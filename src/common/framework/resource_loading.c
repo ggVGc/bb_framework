@@ -63,6 +63,7 @@ void setResourcePath(const char* p, int useZip) {
 }
 
 int getFileSizeFromZip(const char* inPath){
+  int ret;
   unzFile uf;
   unz_file_info info;
 
@@ -88,7 +89,7 @@ int getFileSizeFromZip(const char* inPath){
   
   info.uncompressed_size = -1;
   unzGetCurrentFileInfo(uf, &info, NULL, 0, NULL, 0, NULL, 0);
-  int ret =  info.uncompressed_size;
+  ret =  info.uncompressed_size;
   unzClose(uf);
   return ret;
 }

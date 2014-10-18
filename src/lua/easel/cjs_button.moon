@@ -1,6 +1,7 @@
 local Button
 Button = {
 new: maker (mc)=>
+  @getMc = -> mc
   w = mc.nominalBounds[3]
   h = mc.nominalBounds[4]
   if mc.stop

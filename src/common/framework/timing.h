@@ -1,6 +1,10 @@
 #ifndef TIME_H_AHU9LJXW
 #define TIME_H_AHU9LJXW
 
+  #ifdef WIN32
+    #include <Windows.h>
+  #endif
+
 #include <time.h>
 
 #ifdef __MACH__

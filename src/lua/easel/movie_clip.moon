@@ -28,7 +28,8 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   self._managed = {}
 
   self.isMovieClip = true
-
+  
+  self.lastFrameCallback = nil
 
   container = framework.Container.new!
 
@@ -38,6 +39,9 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   
   self.isVisible = ->
     not not self.visible
+
+  self.isOnLastFrame = ->
+    self.currentFrame == self.timeline.duration-1
   
 
   contDraw = container.draw
@@ -116,9 +120,12 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
 
   contTick = container._tick
   self._tick = (props)->
-    MovieClip.tickCount+=1
-    self.advance(props and props.delta)
-    contTick(props)
+    if contTick(props)
+      MovieClip.tickCount+=1
+      curFrame = self.currentFrame
+      self.advance(props and props.delta)
+      if self.lastFrameCallback and self.currentFrame == self.timeline.duration-1 and self.currentFrame ~= curFrame
+        self.lastFrameCallback self
   
   self._goto = (positionOrLabel)->
     pos = self.timeline.resolve positionOrLabel

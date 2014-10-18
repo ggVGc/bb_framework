@@ -9,7 +9,6 @@ import android.opengl.GLSurfaceView;
 public class GLView extends GLSurfaceView {
   public GLRenderer renderer;
 
-  private int nextEventIndex = 0;
 
   private static native void nativeOnStop();
   private static native void appSetPaused(int paused);
@@ -28,10 +27,15 @@ public class GLView extends GLSurfaceView {
   @Override
   public boolean onTouchEvent(final MotionEvent event) {
     int a = event.getActionMasked();
-    if(renderer.eventPool[nextEventIndex].alive){
+    GLRenderer.TouchEvent e = null;
+    for(int i=0;i<renderer.eventPool.length;++i){
+      if(!renderer.eventPool[i].alive){
+        e = renderer.eventPool[i];
+      }
+    }
+    if(e == null){
       return true;
     }
-    GLRenderer.TouchEvent e = renderer.eventPool[nextEventIndex];
     e.alive = true;
 
     int ai = event.getActionIndex();
@@ -46,10 +50,7 @@ public class GLView extends GLSurfaceView {
     }else if(a == MotionEvent.ACTION_MOVE){
       e.onlyMove = true;
     }
-    nextEventIndex++;
-    if(nextEventIndex>=GLRenderer.MAX_EVENTS){
-      nextEventIndex = 0;
-    }
+    renderer.eventQueue.add(e);
     return true;
   }
 
@@ -64,6 +65,8 @@ public class GLView extends GLSurfaceView {
     super.onResume();
     setPreserveEGLContextOnPause(false);
     appSetPaused(0);
+    // Clear events
+    while(renderer.eventQueue.poll()!=null){}
   }
 
   @Override

@@ -14,10 +14,11 @@
 static int globalMute = 0;
 int hasError = 0;
 int alCheckError(const char* msg){
+  int err;
   if(hasError){
     return 1;
   }
-  int err = alGetError();
+  err = alGetError();
   if(err !=AL_NO_ERROR){
     trace(msg);
     traceNoNL("Error code: ");
@@ -44,10 +45,10 @@ Audio* audioAlloc(){
 
 
 int audioGlobalPlatformInit(){
-  hasError = 0;
   ALfloat ListenerPos[] = { 0.0, 0.0, 0.0 };
   ALfloat ListenerVel[] = { 0.0, 0.0, 0.0 };
   ALfloat ListenerOri[] = { 0.0, 0.0, -1.0,  0.0, 1.0, 0.0 };
+  hasError = 0;
   initialised = 0;
   device = alcOpenDevice(NULL);                                              
   if(!device){

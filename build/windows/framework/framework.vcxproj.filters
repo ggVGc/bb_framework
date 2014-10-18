@@ -98,9 +98,6 @@
     <ClCompile Include="..\..\..\src\common\framework_wrap.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\common\program.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\gles_imp.c">
       <Filter>Source Files</Filter>
     </ClCompile>

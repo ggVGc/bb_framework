@@ -29,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\common\framework\matrix2.c" />
+    <ClCompile Include="..\..\..\src\common\app.c" />
     <ClCompile Include="..\..\..\src\common\framework\display_object.c" />
     <ClCompile Include="..\..\..\src\common\framework\bitmapdata.c" />
     <ClCompile Include="..\..\..\src\common\framework\camera.c" />
@@ -49,7 +50,6 @@
     <ClCompile Include="..\..\..\src\openal\audio_oal.c" />
     <ClCompile Include="..\..\..\src\glfw\framework\data_store.c" />
     <ClCompile Include="..\..\..\src\common\framework_wrap.c" />
-    <ClCompile Include="..\..\..\src\common\program.c" />
     <ClCompile Include="..\..\..\src\gles_imp.c" />
     <ClCompile Include="..\..\..\src\glfw\main.c" />
   </ItemGroup>
