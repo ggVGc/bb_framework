@@ -34,6 +34,7 @@ public class GLView extends GLSurfaceView {
       }
     }
     if(e == null){
+      Log.i(TAG, "WARNING: Skipped input event, no free events");
       return true;
     }
     e.alive = true;
@@ -61,12 +62,15 @@ public class GLView extends GLSurfaceView {
 
   @Override
   public void onResume() {
-    Log.i(TAG,"GLView: Resume");
+    //Log.i(TAG,"GLView: Resume");
     super.onResume();
     setPreserveEGLContextOnPause(false);
     appSetPaused(0);
     // Clear events
-    while(renderer.eventQueue.poll()!=null){}
+    GLRenderer.TouchEvent e;
+    while((e = renderer.eventQueue.poll())!=null){
+      e.alive = false;
+    }
   }
 
   @Override

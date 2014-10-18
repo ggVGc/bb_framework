@@ -95,7 +95,7 @@ public class MainActivity extends Activity{
 	  }else{
 		  chartboostDelegate.cacheing = true;
 		  Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
-		  chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.closed));
+		  chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.failedDisplay));
 	  }
   }
 

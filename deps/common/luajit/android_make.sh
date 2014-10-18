@@ -1,5 +1,5 @@
 NDK=$HOME/stuff/work/android/android-ndk-r10
-NDKABI=14
+NDKABI=9
 
 
 #NDKVER=$NDK/toolchains/x86-4.6

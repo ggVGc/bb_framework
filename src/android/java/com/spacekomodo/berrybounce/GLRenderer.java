@@ -38,7 +38,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   public GLRenderer.TouchEvent[] eventPool = new GLRenderer.TouchEvent[100];
   public ConcurrentLinkedQueue<GLRenderer.TouchEvent> eventQueue;
 
-  int lastEventIndex = 0;
 
 
   public boolean inited = false;
@@ -134,13 +133,9 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     // and handle only one event per frame
     GLRenderer.TouchEvent e = eventQueue.poll();
     if(e != null){
+      //Log.i(TAG, "Processing input event");
       processTouchEvent(e);
-      lastEventIndex++;
-      if(lastEventIndex>=MAX_EVENTS){
-        lastEventIndex = 0;
-      }
       e.alive = false;
-      e = eventPool[lastEventIndex];
     }
     nativeRender();
   }

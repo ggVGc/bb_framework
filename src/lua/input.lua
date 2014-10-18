@@ -26,12 +26,14 @@ Inp = {
   },
   
   setCursorPos = function(index, x, y)
+    --print ('Cursor pos, index:', index, 'x:',x,'y:',y)
     if index <= Inp.MAX_CURSORS then 
       local s = Inp.curState.cursorStates[index+1]
       s.x, s.y = x, y
     end
   end,
   setCursorDownState = function(index, down)
+    --print ('Cursor down, index:', index, 'down:', down)
     if index <= Inp.MAX_CURSORS then 
       Inp.curState.cursorStates[index+1].down = down
     end
@@ -51,6 +53,14 @@ Inp = {
   keyDown= function(code) return Inp.curState.keysDown[index or 1] end,
   charDown= function(char) return Inp.keyDown(string.byte(char))end,
 
+  anyCursorDown = function(index)
+    for i=1,Inp.MAX_CURSORS do
+      if Inp.curState.cursorStates[i].down then
+        return i
+      end
+    end
+    return nil
+  end,
 
   new=function()
     local M = {}

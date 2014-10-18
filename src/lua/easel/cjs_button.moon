@@ -28,15 +28,18 @@ new: maker (mc)=>
 
   @update = (screenWidth, screenHeight)->
     return false if not mc.visible
-    cx = framework.Input.cursorX()*screenWidth
-    cy = (1-framework.Input.cursorY())*screenHeight
-    over = @.isOver cx, cy
-    if state == 0 and over and framework.Input.cursorDown!
+    downCursorIndex = framework.Input.anyCursorDown!
+    local cx, cy
+    if downCursorIndex
+      cx = framework.Input.cursorX(downCursorIndex)*screenWidth
+      cy = (1-framework.Input.cursorY(downCursorIndex))*screenHeight
+    over = downCursorIndex and @.isOver cx, cy
+    if state == 0 and over and downCursorIndex
       if mc.gotoAndStop
         mc.gotoAndStop stateOffset+1
       state = 1
       return false
-    else if state == 1 and not framework.Input.cursorDown!
+    else if state == 1 and not downCursorIndex
       state = 0
       if mc.gotoAndStop
         mc.gotoAndStop stateOffset
