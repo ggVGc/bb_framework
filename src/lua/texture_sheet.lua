@@ -53,6 +53,33 @@ function framework.TextureSheet.new(rectMap, bmData, errorTexPath)
 end
 
 
+function framework.TextureSheet.parseRectMap(layoutData, texHeight)
+  local rectMap = {}
+  local spl = layoutData:split(" ")
+  for i, line in ipairs(layoutData:split("\n")) do 
+    local spl = line:split(" ")
+    if #spl == 6 then
+      local name = spl[1]
+      -- spl[2] is the equals sign, so ignore it
+      local x = tonumber(spl[3])
+      local y = tonumber(spl[4])
+      local w = tonumber(spl[5])
+      local h = tonumber(spl[6])
+
+      local rect = {}
+      rect = {
+        x = x,
+        w = w,
+        h = h
+      }
+      rect.y = texHeight - y- rect.h 
+      rectMap[name] = rect
+    end
+  end
+  return rectMap
+end
+
+
 function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPath)
   layoutInfoPath = layoutInfoPath or imagePath:gsub('.png', '.txt')
   local layoutData = _c_framework.loadText(layoutInfoPath)
@@ -61,32 +88,7 @@ function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPat
   end
 
   local bmData = framework.Texture.bmDataFromFile(imagePath, true)
-
-  local rectMap = {}
-  local spl = layoutData:split(" ")
-  for i, line in ipairs(layoutData:split("\n")) do 
-    local spl = line:split(" ")
-    if #spl == 6 then
-      local name = spl[1]
-      -- split 2 is the equals sign
-      local x = tonumber(spl[3])
-      local y = tonumber(spl[4])
-      local w = tonumber(spl[5])
-      local h = tonumber(spl[6])
-
-
-      local rect = {}
-      rect = {
-        x = x,
-        w = w,
-        h = h
-      }
-      rect.y = bmData.height - y- rect.h 
-      rectMap[name] = rect
-    end
-  end
-
-
+  local rectMap = framework.TextureSheet.parseRectMap(layoutData, bmData.height)
 
   return framework.TextureSheet.new(rectMap, bmData, errorTexPath)
 end

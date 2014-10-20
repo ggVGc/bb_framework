@@ -1,14 +1,23 @@
 framework = framework or {}
 
-framework.AssetLoader = {
+
+local AL
+AL = {
+AssetType:{
+  Audio: 'audio'
+  TexSheet: 'texture_sheet'
+},
 new: maker (initialTexSheets) =>
-  print 'Async asset loader:', _c_framework.AsyncAssetLoader
   @texSheets = initialTexSheets
 
   queueIn=helper.newqueue()
   queueOut=helper.newqueue()
   @_thread = helper.newthread queueIn, queueOut
+  taskCount = 0
   tasks = {}
+
+  @allLoaded = ->
+    return taskCount == 0
 
   @getTexture = (path, errorOnInvalid) ->
     t = framework.AssetLoader.tryGetTexFromSheets(path, @texSheets)
@@ -17,38 +26,65 @@ new: maker (initialTexSheets) =>
       t = framework.Texture.fromFile(path, errorOnInvalid)
     return t
 
-  @getAnimationFrames = (path) ->
-    frame1 = framework.Texture.fromFile path..'/1', false
-    if frame1
-      return for index in fun.duplicate!
-        tex = framework.Texture.fromFile path..'/'..tostring(index), false
-        if not tex
-          break
-        tex
-    nil
+  --@getAnimationFrames = (path) ->
+    --frame1 = framework.Texture.fromFile path..'/1', false
+    --if frame1
+      --return for index in fun.duplicate!
+        --tex = framework.Texture.fromFile path..'/'..tostring(index), false
+        --if not tex
+          --break
+        --tex
+    --nil
 
-  @getAnimation = (path, ...)->
-    frames = @.getAnimationFrames path
-    if frames
-      return framework.BitmapAnimation.new frames, ...
+  --@getAnimation = (path, ...)->
+    --frames = @.getAnimationFrames path
+    --if frames
+      --return framework.BitmapAnimation.new frames, ...
 
   @update = ->
     t = queueOut\peek!
     if t
-      a = helper.update t
+      loadedData = helper.update t
       o = tasks[t]
-      o.asset = framework.StreamingAudio.new a
       tasks[t] = nil
+      switch o.a.type
+        when AL.AssetType.Audio
+          o.a.asset = framework.StreamingAudio.new loadedData
+        when AL.AssetType.TexSheet
+          rectMap = framework.TextureSheet.parseRectMap o.rectMapText, loadedData.height
+          bmData = _c_framework.BitmapData()
+          _c_framework.bitmapDataInit(bmData, loadedData)
+          _c_framework.rawBitmapDataCleanup(loadedData)
+          o.a.asset = framework.TextureSheet.new rectMap, bmData
+          table.insert @texSheets, o.a.asset
+
       queueOut\remove t
+      taskCount-=1
+
+  @loadTexSheet = (baseName)->
+    a = {
+      asset: nil
+      type: AL.AssetType.TexSheet
+    }
+    data = {
+      a:a
+      rectMapText: _c_framework.loadText(baseName..'.txt')
+    }
+    t = _c_framework.AsyncAssetLoader.loadImage(baseName..'.png')
+    tasks[t] = data
+    queueIn\addtask t
+    taskCount+=1
+    return a
 
   @loadAudio = (path)->
     a = {
       asset: nil
-      type: 'audio'
+      type: AL.AssetType.Audio
     }
     t = _c_framework.AsyncAssetLoader.loadAudio path
-    tasks[t] = a
+    tasks[t] = {a:a}
     queueIn\addtask t
+    taskCount+=1
     return a
 
 
@@ -60,4 +96,5 @@ tryGetTexFromSheets: (path, sheets)->
       return s.createTexture path
 }
 
-framework.AssetLoader
+framework.AssetLoader = AL
+return AL

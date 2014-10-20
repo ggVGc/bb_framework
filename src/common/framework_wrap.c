@@ -2669,6 +2669,11 @@ void audioPushSWIGPtr(lua_State *L, Audio *a){
 }
 
 
+void rawBitmapDataPushSWIGPtr(lua_State *L, RawBitmapData *bmData){
+  SWIG_NewPointerObj(L,bmData,SWIGTYPE_p_RawBitmapData,1);
+}
+
+
 static int _wrap_dataStoreReload(lua_State* L) {
   int SWIG_arg = 0;
   char *result = 0 ;

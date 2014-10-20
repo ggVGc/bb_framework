@@ -49,6 +49,12 @@ void audioPushSWIGPtr(lua_State *L, Audio *a){
 }
 %}
 
+%{
+void rawBitmapDataPushSWIGPtr(lua_State *L, RawBitmapData *bmData){
+  SWIG_NewPointerObj(L,bmData,SWIGTYPE_p_RawBitmapData,1);
+}
+%}
+
 %extend BitmapData{
   ~BitmapData(){
     bitmapDataCleanup(self);
