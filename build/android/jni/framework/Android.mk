@@ -42,6 +42,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/bstring/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/coremod/include/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libogg/include/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libvorbis/include/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/common/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/android/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/gen/
@@ -61,8 +62,10 @@ MY_SOURCES := src/common/app.c \
   src/common/framework/matrix2.c \
   src/common/framework/display_object.c \
   src/common/framework/audio.c \
+  src/common/lua_modules/lua_asyncassetloader.c \
   src/android/app_android.c \
   src/android/framework/util.c \
+  deps/common/helper_threads_lua/helper.c \
   src/android/framework/audio.c
 
 

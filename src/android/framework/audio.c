@@ -203,7 +203,7 @@ void audioSetPaused(Audio *a, int paused){
   }
   if(paused){
     (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PAUSED );
-  }else{
+  }else if (!globalMute){
     (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
   }
 }

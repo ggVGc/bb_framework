@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "GLES/gl.h"
 #include "app.h"
 #include "graphics.h"

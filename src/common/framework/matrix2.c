@@ -3,6 +3,10 @@
 #include <math.h>
 #include "matrix2.h"
 
+#ifndef M_PI
+#define M_PI 3.14159265358979323846264338327
+#endif
+
 static const double DEG_TO_RAD = M_PI/180.0f;
 
 void Matrix2_init(Matrix2 *m, double a, double b, double c, double d, double tx, double ty){

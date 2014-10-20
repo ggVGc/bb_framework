@@ -12,6 +12,7 @@
 #include <lauxlib.h>
 #include <lualib.h>
 
+#include "helper_threads_lua/helper.h"
 #include "framework/util.h"
 #include "framework/input.h"
 #include "framework/audio.h"
@@ -162,6 +163,8 @@ void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, c
   luaVM = luaL_newstate();
   luaL_openlibs(luaVM);
   luaopen__c_framework(luaVM);
+  luaopen_helper(luaVM);
+  luaopen_AsyncAssetLoader(luaVM);
 
   RegLuaFuncGlobal(print);
 

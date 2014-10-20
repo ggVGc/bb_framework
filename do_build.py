@@ -77,7 +77,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 
   files = cppfiles+" "+ofiles
 
-  cmd = "g++ -g "+cflags+" "+files+" -o "+outfile+" "+linkFlags
+  cmd = "gcc -g "+cflags+" "+files+" -o "+outfile+" "+linkFlags
   print cmd
   return os.system(cmd)
 
@@ -151,6 +151,7 @@ def buildFramework():
   srcDirs = [
       "./src/common",
       "./src/common/framework",
+      "./src/common/lua_modules/",
       "./src/glfw",
       "./src/glfw/framework",
       "./src/openal"
@@ -158,10 +159,12 @@ def buildFramework():
  
   srcFiles = [
       " ./src/gles_imp.c",
+      " ./deps/common/helper_threads_lua/helper.c",
       ]
 
 
   cflags =" ".join([
+      "-I./deps/common",
       "-I./deps/common/gles_headers",
       "-I./deps/common/libpng",
       "-I./deps/common/minizip",

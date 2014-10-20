@@ -319,6 +319,7 @@ dofile 'framework/iap.moon'
 dofile 'framework/fps_counter.lua'
 
 dofile "main.moon"
+--dofile("framework/test/async_audioload_test.moon")
 --dofile("framework/test/movie_clip_mem_test.moon")
 --dofile("framework/test/display_objects_test.moon")
 --dofile("framework/test/export_mc_anim_test.moon")

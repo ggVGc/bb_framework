@@ -7,6 +7,7 @@ int audioGlobalInit();
 int audioGlobalPlatformInit();
 
 Audio* audioLoad(const char* path);
+int audioLoadInto(Audio *a, const char* path);
 void audioPlay(Audio*);
 void audioSetLooping(Audio*, int);
 void audioStop(Audio*);

@@ -43,6 +43,12 @@ void DisplayObject_setParent(DisplayObject *d, DisplayObject *p){
 /*#include "common/framework/profiler.h"*/
 
 
+%{
+void audioPushSWIGPtr(lua_State *L, Audio *a){
+  SWIG_NewPointerObj(L,a,SWIGTYPE_p_Audio_T,0);
+}
+%}
+
 %extend BitmapData{
   ~BitmapData(){
     bitmapDataCleanup(self);

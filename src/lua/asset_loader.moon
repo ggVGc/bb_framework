@@ -2,7 +2,13 @@ framework = framework or {}
 
 framework.AssetLoader = {
 new: maker (initialTexSheets) =>
+  print 'Async asset loader:', _c_framework.AsyncAssetLoader
   @texSheets = initialTexSheets
+
+  queueIn=helper.newqueue()
+  queueOut=helper.newqueue()
+  @_thread = helper.newthread queueIn, queueOut
+  tasks = {}
 
   @getTexture = (path, errorOnInvalid) ->
     t = framework.AssetLoader.tryGetTexFromSheets(path, @texSheets)
@@ -25,6 +31,27 @@ new: maker (initialTexSheets) =>
     frames = @.getAnimationFrames path
     if frames
       return framework.BitmapAnimation.new frames, ...
+
+  @update = ->
+    t = queueOut\peek!
+    if t
+      a = helper.update t
+      o = tasks[t]
+      o.asset = framework.StreamingAudio.new a
+      tasks[t] = nil
+      queueOut\remove t
+
+  @loadAudio = (path)->
+    a = {
+      asset: nil
+      type: 'audio'
+    }
+    t = _c_framework.AsyncAssetLoader.loadAudio path
+    tasks[t] = a
+    queueIn\addtask t
+    return a
+
+
 
 
 tryGetTexFromSheets: (path, sheets)->

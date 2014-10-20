@@ -74,7 +74,7 @@ long AR_tellOgg( void *fh ) {
 
 char pcmout[4096];
 
-Audio* audioLoad(const char* path){
+int audioLoadInto(Audio *a, const char* path){
   OggVorbis_File vf;
   int eof=0;
   int current_section;
@@ -89,9 +89,6 @@ Audio* audioLoad(const char* path){
   char* buf;
   int i;
   int soundIndex = -1;
-  Audio *a = audioAlloc(); 
-  // Always return this, because we don't want application go crash just because audio failed loading
-  // Need to add other way to let user know audio load failed
 
   for(i=0;i<MAX_SOUNDS;++i){
     if(soundInstances[i] == NULL){
@@ -102,14 +99,14 @@ Audio* audioLoad(const char* path){
 
   if(soundIndex < 0){
     trace("WARNING: Max sound instances reached");
-    return a;
+    return 0;
   }
   
   buf = (char*)loadBytes(path, &sz);
   t.curPtr = t.filePtr = buf;
   if(!buf){
     trace("Failed audio file load");
-    return a;
+    return 0;
   }
   t.fileSize = sz;
 
@@ -121,7 +118,7 @@ Audio* audioLoad(const char* path){
   if(ov_open_callbacks((void *)&t, &vf, NULL, -1, callbacks) < 0){
     trace("Input does not appear to be an Ogg bitstream.\n");
     free(buf);
-    return a;
+    return 0;
   }
 
   vi=ov_info(&vf,-1);
@@ -143,7 +140,7 @@ Audio* audioLoad(const char* path){
       trace("Vorbis load failed");
       free(buf);
       free(tmpBuf);
-      return a;
+      return 0;
     } else {
       memcpy(tmpBuf+c, pcmout, ret);
       c+=ret;
@@ -151,7 +148,7 @@ Audio* audioLoad(const char* path){
         trace("Encoded stream larger than buffer. Something is wrong");
         free(buf);
         free(tmpBuf);
-        return a;
+        return 0;
       }
       // we don't bother dealing with sample rate changes, etc, but you'll have to 
       // TODO: Yeah, I should.. But I probably won't.
@@ -166,7 +163,15 @@ Audio* audioLoad(const char* path){
  ov_clear(&vf);
  free(buf);
  free(tmpBuf);
- return a;
+ return 1;
+}
+
+Audio* audioLoad(const char *path){
+  Audio *a = audioAlloc();
+  // Always return this, because we don't want application go crash just because audio failed loading
+  // Need to add other way to let user know audio load failed
+  audioLoadInto(a, path);
+  return a;
 }
 
 void audioFree(Audio *a){

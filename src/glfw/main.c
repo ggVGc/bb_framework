@@ -41,7 +41,7 @@
 
 
 const int SCREEN_WIDTH = 960;
-const int SCREEN_HEIGHT = 740;
+const int SCREEN_HEIGHT = 640;
 
 
 static void error_callback(int error, const char* description) {
@@ -69,6 +69,8 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
         shouldReload = 1;
       }else if(key==GLFW_KEY_M){
         shouldSuspend = 1;
+      }else if(key==GLFW_KEY_Q){
+        glfwSetWindowShouldClose(window, GL_TRUE);
       }else{
         if(!paused){
           setKeyPressed(k);
@@ -213,6 +215,7 @@ int main(int argc, char **argv) {
     }
 
     if(!paused){
+      /*printf("appRender\n");*/
       if(appRender(delta)){
         glfwSetWindowShouldClose(window, GL_TRUE);
         break;
