@@ -50,6 +50,7 @@ new: maker (initialTexSheets) =>
       switch o.a.type
         when AL.AssetType.Audio
           o.a.asset = framework.StreamingAudio.new loadedData
+          setmetatable o.a, {__index:o.a.asset, __newindex:o.a.asset}
         when AL.AssetType.TexSheet
           rectMap = framework.TextureSheet.parseRectMap o.rectMapText, loadedData.height
           bmData = _c_framework.BitmapData()
@@ -60,6 +61,7 @@ new: maker (initialTexSheets) =>
 
       queueOut\remove t
       taskCount-=1
+
 
   @loadTexSheet = (baseName)->
     a = {

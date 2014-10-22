@@ -97,7 +97,7 @@ static void q_init (queue_t *q) {
 }
 
 static void q_push (queue_t *q, task_t *t) {
-  printf("q_push\n");
+  /*printf("q_push\n");*/
 	if (!q || !t)
 		return;
 	
@@ -117,7 +117,7 @@ static void q_push (queue_t *q, task_t *t) {
 }
 
 static task_t *q_remove (queue_t *q, task_t *t) {
-  printf("q_remove\n");
+  /*printf("q_remove\n");*/
 	task_t *p;
 	if (!q || !t)
 		return NULL;
@@ -172,7 +172,7 @@ static task_t *q_pop (queue_t *q) {
 }
 
 static task_t *q_wait (queue_t *q, const struct timespec *timeout) {
-  printf("q_wait\n");
+  /*printf("q_wait\n");*/
 	int ret = 0;
 	task_t *t = NULL;
 	
@@ -181,16 +181,16 @@ static task_t *q_wait (queue_t *q, const struct timespec *timeout) {
 	
 	pthread_mutex_lock (&q->lock);
 	while (q->head == NULL && !q->shouldQuit) {
-      printf("Looping in q_wait\n");
+      /*printf("Looping in q_wait\n");*/
 		if (timeout){
-            printf("Waiting for timeout:%d, %d\n", timeout->tv_sec, timeout->tv_nsec);
+            /*printf("Waiting for timeout:%d, %d\n", timeout->tv_sec, timeout->tv_nsec);*/
 			ret = pthread_cond_timedwait (&q->notempty, &q->lock, timeout);
-            printf("After timeout");
+            /*printf("After timeout");*/
         }
 		else{
-          printf("Waiting indefinitely\n");
+          /*printf("Waiting indefinitely\n");*/
 			ret = pthread_cond_wait (&q->notempty, &q->lock);
-            printf("After wait\n");
+            /*printf("After wait\n");*/
         }
 	}
 	
@@ -210,14 +210,14 @@ static task_t *q_wait (queue_t *q, const struct timespec *timeout) {
 }
 
 static void q_free (queue_t *q) {
-  printf("q_free\n");
+  /*printf("q_free\n");*/
 	task_t *t = NULL;
 	if (!q)
 		return;
 	
-    printf("q_free: Waiting for lock\n");
+    /*printf("q_free: Waiting for lock\n");*/
 	pthread_mutex_lock (&q->lock);
-    printf("q_free: Aquired lock\n");
+    /*printf("q_free: Aquired lock\n");*/
 	t = q->head;
 	while (t) {
 		task_t *nxt = t->next;
@@ -427,7 +427,7 @@ static int queue_removetask (lua_State *L) {
         }
         */
       free(t);
-        printf("Removed task\n");
+        /*printf("Removed task\n");*/
 		return 1;
 	} else
 		return 0;
@@ -482,13 +482,13 @@ static int queue_wait (lua_State *L) {
  * queue:__gc()
  */
 static int queue_gc (lua_State *L) {
-    printf("Task GC\n");
+    /*printf("Task GC\n");*/
     queue_t *q = check_queue (L, 1);
     if(q){
-      printf("Freeing queue\n");
+      /*printf("Freeing queue\n");*/
       q_free (q);
     }else{
-      printf("Queue already freed\n");
+      /*printf("Queue already freed\n");*/
     }
 	return 0;
 }
@@ -505,22 +505,22 @@ static void *thread_work (void *arg) {
     struct timespec waitTs;
     waitTs.tv_nsec = 100;
 	while (!thrd->signal) {
-      printf("calling q_wait\n");
+      /*printf("calling q_wait\n");*/
 		task_t *t = q_wait (thrd->in, NULL);
-        printf("After calling q_wait\n");
+        /*printf("After calling q_wait\n");*/
 		if (t && !thrd->signal) {
 			thrd->task = t;
 			t->state = TSK_BUSY;
 			if (t->ops && t->ops->work)
 				t->ops->work (t->udata);
 			tsk_setstate (t, TSK_DONE);
-            printf("Pushing\n");
+            /*printf("Pushing\n");*/
             q_push (thrd->out, t);
-            printf("After push\n");
+            /*printf("After push\n");*/
 		}
 		thrd->task = NULL;
 	}
-    printf("Exiting thread work\n");
+    /*printf("Exiting thread work\n");*/
 	return NULL;
 }
 
@@ -547,11 +547,11 @@ static int new_thread (lua_State *L) {
 
 	ret = pthread_create (&thrd->pth, NULL, thread_work, thrd);
 	if (ret){
-		printf("error %d (\"%s\") creating helper thread\n", ret, strerror (ret));
+		/*printf("error %d (\"%s\") creating helper thread\n", ret, strerror (ret));*/
 		/*luaL_error (L, "error %d (\"%s\") creating helper thread", ret, strerror (ret));*/
     }
 	
-	printf("created thread\n");
+	/*printf("created thread\n");*/
 	luaL_getmetatable (L, ThreadType);
 	lua_setmetatable (L, -2);
 	
@@ -594,19 +594,19 @@ static int currenttask (lua_State *L) {
  */
 static int thread_gc (lua_State *L) {
 	int ret = 0;
-    printf("Thread GC\n");
+    /*printf("Thread GC\n");*/
 	thread_t *thrd = check_thread (L, 1);
 	thrd->signal = 1;
     thrd->in->shouldQuit = 1;
     thrd->out->shouldQuit = 1;
-    printf("Broadcasting notempty on in queue\n");
+    /*printf("Broadcasting notempty on in queue\n");*/
     pthread_cond_broadcast(&thrd->in->notempty);
-    printf("Broadcasting notempty on out queue\n");
+    /*printf("Broadcasting notempty on out queue\n");*/
     pthread_cond_broadcast(&thrd->out->notempty);
 	
 	ret = pthread_join (thrd->pth, NULL);
 	if (ret){
-	  printf("error %d (\"%s\") joining helper thread", ret, strerror (ret));
+	  /*printf("error %d (\"%s\") joining helper thread", ret, strerror (ret));*/
     }
 	
 	luaL_unref (L, LUA_REGISTRYINDEX, thrd->ref_in);

@@ -14,6 +14,9 @@ Inp = {
     end,
     copy = function(dst, src)
       dst.x, dst.y = src.x, src.y
+      for k in pairs(dst.keysDown) do
+        dst.keysDown[k] = nil
+      end
       for k in pairs (src.keysDown) do
         dst.keysDown[k] = src.keysDown[k]
       end

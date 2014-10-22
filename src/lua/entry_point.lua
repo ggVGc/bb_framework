@@ -229,23 +229,17 @@ local function doCall(func)
 end
 
 
-function dofile(path) 
+function dofile(path, ...) 
   if path == 'debug' then
     require 'debug'
     return
   end
-  if type(path) == 'table' then
-    local ret = {}
-    for i,p in ipairs(path) do
-      ret[i] = doCall(function()
-        return dofile_raw(p)
-      end)
-    end
-    return ret
-  end
-  return doCall(function()
+  if select('#', ...) > 0 then
+    dofile_raw(path)
+    return dofile(...)
+  else
     return dofile_raw(path)
-  end)
+  end
 end
 
 --[[
@@ -360,14 +354,11 @@ function framework.init(wasSuspended)
 end
 
 
-
-
 local MEM_CHECK_INTERVAL = 10
-local MAX_MEM_TRIGGER_GC = 38000
+local MAX_MEM_TRIGGER_GC = 36000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
-
 
 local dDeltaBuffer = 0
 local dFrameDeltaRemainingsAccumulated = 0

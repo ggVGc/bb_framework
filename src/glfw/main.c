@@ -84,9 +84,11 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
   }
 }
 
+/*
 static void char_callback(GLFWwindow* window, unsigned int ch) {
   setKeyPressed(ch);
 }
+*/
 
 static void mouse_callback(GLFWwindow* window, int button, int action, int mods) {
   double x, y;
