@@ -62,7 +62,8 @@ new: ->
     pt = self.localToGlobal(x, y)
     return target.globalToLocal(pt.x, pt.y)
 
-
+  self.regToGlobal = ->
+    self.localToGlobal @regX, @regY
 
 
   mt = {

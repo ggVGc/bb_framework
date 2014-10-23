@@ -30,8 +30,8 @@ new: maker (imagePath, texLoadFunc) =>
         curWidth-=tex.width*curScale
       tmpMat.tx = pos.x+curWidth
       tmpMat.ty = pos.y-tex.height*curScale
-      tmpMat.a = curScale
-      tmpMat.d = curScale
+      tmpMat.a = 1
+      tmpMat.d = 1
       if not reversing
         curWidth+=tex.width*curScale
       tex.draw tmpMat, curAlpha

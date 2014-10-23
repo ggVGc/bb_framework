@@ -46,6 +46,13 @@ table.clear = (t, ...)->
     t[k] = nil
     if (select '#', ...)> 0
       table.clear ...
+
+table.insertRet = (table, posOrValue, value) ->
+  if value
+    oldTableInsert table, posOrValue, value
+  else
+    oldTableInsert table, posOrValue
+  return value and value or posOrValue
   
 
 --export iterArrs = (...) ->
