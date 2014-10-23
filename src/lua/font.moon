@@ -39,7 +39,10 @@ new: maker (imagePath, texLoadFunc) =>
 
   @drawString = (str, x=0, y=0, scale=1, reverse=false, tint, alpha) ->
     if tint
-      _c_framework.setTint tint[1]/255, tint[2]/255, tint[3]/255
+      if tint.r
+        _c_framework.setTint tint.r/255, tint.g/255, tint.b/255
+      else
+        _c_framework.setTint tint[1]/255, tint[2]/255, tint[3]/255
     _c_framework.Matrix2_identity tmpMat
     reversing = reverse
     curScale = scale

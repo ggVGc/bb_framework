@@ -23,10 +23,9 @@ int curScissorW;
 int curScissorH;
 int scissorSet;
 
-int fbWidth;
-int fbheight;
 
 void graphicsInit(int framebufferWidth, int framebufferHeight){
+  printf("Graphics init, w:%d, h:%d\n", framebufferWidth, framebufferHeight);
   curScissorX = -1;
   curScissorY = -1;
   curScissorW = -1;
@@ -46,13 +45,10 @@ void graphicsInit(int framebufferWidth, int framebufferHeight){
   glDepthMask(GL_FALSE);
   glDisable(GL_DEPTH_TEST);
   glError();
-  fbWidth = framebufferWidth;
-  fbheight = framebufferHeight;
 }
 
 
 void beginRenderFrame() {
-  glViewport(0, 0, fbWidth, fbheight);
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
 

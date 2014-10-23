@@ -178,13 +178,13 @@ def buildFramework():
       ])
 
   commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3 -lvorbisa -logga'
+  commonLibString += ' -lluajit '
+  cflags += ' -I./deps/common/luajit/src '
   if sys.platform == "darwin":
-    commonLibString += ' -lluaa '
-    cflags += ' -I./deps/common/lua '
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g -L"+os.getcwd()+"/deps/common/glfw/bin/osx -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -framework OpenAL")
+    cflags += ' -pagezero_size 10000 -image_base 100000000 '
+    extraLibFolderString = ' -L'+os.getcwd()+'/deps/common/luajit/bin/osx '
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g "+extraLibFolderString+" -L"+os.getcwd()+"/deps/common/glfw/bin/osx -L"+os.getcwd()+"/bin "+commonLibString+" -framework OpenGL -framework Cocoa -framework IOKit -framework CoreVideo -framework OpenAL")
   else:
-    cflags += ' -I./deps/common/luajit/src '
-    commonLibString += ' -lluajit '
     extraLibFolderString = ' -L'+os.getcwd()+'/deps/common/luajit/bin/linux '
     #cflags += ' -I./deps/common/lua '
     #commonLibString += ' -lluaa '

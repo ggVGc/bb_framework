@@ -67,10 +67,12 @@ public class GLView extends GLSurfaceView {
     setPreserveEGLContextOnPause(false);
     appSetPaused(0);
     // Clear events
+    /*
     GLRenderer.TouchEvent e;
     while((e = renderer.eventQueue.poll())!=null){
       e.alive = false;
     }
+    */
   }
 
   @Override

@@ -46,6 +46,8 @@
     <ClCompile Include="..\..\..\src\common\framework\texture.c" />
     <ClCompile Include="..\..\..\src\common\framework\util.c" />
     <ClCompile Include="..\..\..\src\common\framework\audio.c" />
+    <ClCompile Include="..\..\..\src\common\lua_modules\lua_asyncassetloader.c" />
+    <ClCompile Include="..\..\..\deps\common\helper_threads_lua/helper.c" />
     <ClCompile Include="..\..\..\src\glfw\framework\iap.c" />
     <ClCompile Include="..\..\..\src\openal\audio_oal.c" />
     <ClCompile Include="..\..\..\src\glfw\framework\data_store.c" />
@@ -94,7 +96,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;LIBXMP_CORE_PLAYER;DEBUG;BUILDING_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\deps\win\openalsoft\include;$(SolutionDir)\..\..\src\gen;$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\common\libvorbis\include;$(SolutionDir)\..\..\deps\common\libogg\include;$(SolutionDir)\..\..\deps\common\glfw\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.8;$(SolutionDir)\..\..\deps\common\libpng;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\luajit\src;$(SolutionDir)\..\..\deps\common\gles_headers;$(SolutionDir)\..\..\deps\common\coremod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\deps\win\openalsoft\include;$(SolutionDir)\..\..\src\gen;$(SolutionDir)\..\..\src\common;$(SolutionDir)\..\..\deps\common\libvorbis\include;$(SolutionDir)\..\..\deps\common;$(SolutionDir)\..\..\deps\common\libogg\include;$(SolutionDir)\..\..\deps\common\glfw\include;$(SolutionDir)\..\..\deps\win\zlib-1.2.8;$(SolutionDir)\..\..\deps\common\libpng;$(SolutionDir)\..\..\deps\common\minizip;$(SolutionDir)\..\..\deps\common\luajit\src;$(SolutionDir)\..\..\deps\common\gles_headers;$(SolutionDir)\..\..\deps\common\coremod\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>false</ExceptionHandling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>

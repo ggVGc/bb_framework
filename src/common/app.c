@@ -270,10 +270,12 @@ int screenHeight(void){
 }
 
 void setScreenWidth(int w){
+  printf("Setting screenW: %d\n", w);
   screenW = w;
 }
 
 void setScreenHeight(int h){
+  printf("Setting screenH: %d\n", h);
   screenH = h;
 }
 
