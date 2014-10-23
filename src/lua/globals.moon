@@ -41,6 +41,13 @@ export compose = (...) ->
 
 export pipe=(...) -> compose(...)!
 
+table.clear = (t, ...)->
+  for k,_ in pairs t
+    t[k] = nil
+    if (select '#', ...)> 0
+      table.clear ...
+  
+
 --export iterArrs = (...) ->
   --p = {...}
   --paramCount = #p

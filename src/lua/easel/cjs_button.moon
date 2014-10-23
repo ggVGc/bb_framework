@@ -1,11 +1,13 @@
 local Button
 Button = {
-new: maker (mc)=>
+new: maker (mc, initialDoStateSwitch)=>
   @getMc = -> mc
   w = mc.nominalBounds[3]
   h = mc.nominalBounds[4]
   if mc.stop
     mc.stop!
+  
+  @doStateSwitch = initialDoStateSwitch==nil and true or initialDoStateSwitch
 
   state = 0
   stateOffset = 0
@@ -35,18 +37,18 @@ new: maker (mc)=>
       cy = (1-framework.Input.cursorY(downCursorIndex))*screenHeight
     over = downCursorIndex and @.isOver cx, cy
     if state == 0 and over and downCursorIndex
-      if mc.gotoAndStop
+      if @doStateSwitch and mc.gotoAndStop
         mc.gotoAndStop stateOffset+1
       state = 1
       return false
     else if state == 1 and not downCursorIndex
       state = 0
-      if mc.gotoAndStop
+      if @doStateSwitch and mc.gotoAndStop
         mc.gotoAndStop stateOffset
       return true
     else if state ~= 0 and not over
       state = 0
-      if mc.gotoAndStop
+      if @doStateSwitch and mc.gotoAndStop
         mc.gotoAndStop stateOffset
       return false
 }

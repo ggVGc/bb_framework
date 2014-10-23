@@ -110,20 +110,21 @@ new: (tweens, labels, props) ->
   
   
   
-  --p.getLabels = function() {
-      --var list = self._labelList;
-      --if (!list) {
-          --list = self._labelList = [];
-          --var labels = self._labels;
-          --for (var n in labels) {
-              --list.push({label:n, position:labels[n]});
-          --}
-          --list.sort(function (a,b) { return a.position- b.position; });
-      --}
-      --return list;
-  --};
+  self.getLabels = ->
+      if not self._labelList
+        self._labelList = {}
+        labels = self._labels
+        for k,v in pairs labels
+          table.insert self._labelList, {label:k, position:v}
+        table.sort self._labelList, (a,b) -> a.position>b.position
+      return self._labelList
   
   
+  self.getCurrentLabel = ->
+      for l in *self.getLabels!
+        if self.position >= l.position
+          return l.label
+
   --p.getCurrentLabel = function() {
       --var labels = self.getLabels();
       --var pos = self.position;
@@ -135,7 +136,6 @@ new: (tweens, labels, props) ->
       --return null;
   --};
   
-  
   self.gotoAndPlay = (positionOrLabel)->
     self.setPaused false
     self._goto positionOrLabel
@@ -144,11 +144,6 @@ new: (tweens, labels, props) ->
   self.gotoAndStop = (positionOrLabel)->
     self.setPaused true
     self._goto positionOrLabel
-
-  
-
-  
-
   
   self.updateDuration = ->
     self.duration = 0

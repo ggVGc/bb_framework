@@ -11,8 +11,6 @@ static GLuint texHandle;
 static int noLastHandle;
 static int quadCount;
 
-
-
 static GLfloat vertices[12] = {
   0, 0,
   1, 0,

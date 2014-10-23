@@ -59,6 +59,10 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   self.stop = ->
     self.paused = true
   
+  self.getCurrentLabel = ->
+    self._updateTimeline!
+    self.timeline.getCurrentLabel!
+
   self.gotoAndPlay = (positionOrLabel)->
     self.paused = false
     self._goto positionOrLabel
@@ -108,9 +112,6 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
     self.timeline.getLabels!
   
   
-  self.getCurrentLabel = ->
-    self._updateTimeline!
-    self.timeline.getCurrentLabel!
   
   self.clone = ->
     error "MovieClip cannot be cloned."
