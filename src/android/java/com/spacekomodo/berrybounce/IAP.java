@@ -33,6 +33,7 @@ public class IAP{
           ret == ConnectionResult.SERVICE_VERSION_UPDATE_REQUIRED ||
           ret == ConnectionResult.SERVICE_DISABLED))
     {
+      Log.i(TAG, "Services not available");
       GooglePlayServicesUtil.getErrorDialog(ret, activity, 1).show();
     }
     if(available){
@@ -48,9 +49,11 @@ public class IAP{
 
           // Have we been disposed of in the meantime? If so, quit.
           if (mHelper == null){
+            Log.i(TAG, "Disconnected while setting up");
             return;
           }
           if (!result.isSuccess()) {
+            Log.i(TAG, "Not successful: "+result);
             // Oh noes, there was a problem.
             mHelper = null;
             return;
@@ -205,18 +208,24 @@ public class IAP{
 
   public String getProductPrice(String id){
     if(mHelper==null){
+      Log.i(TAG, "Helper is null");
       return "";
     }else{
       if(curInventory==null){
+        Log.i(TAG, "Inventory is null");
         return "";
       }
       if(!curInventory.hasDetails(id)){
+        Log.i(TAG, "id not in inventory");
         return "";
       }else{
         SkuDetails d = curInventory.getSkuDetails(id);
         if(d !=null){
-          return d.getPrice();
+          String price = d.getPrice();
+          Log.i(TAG, "returning price: "+price);
+          return price;
         }else{
+          Log.i(TAG, "details was null");
           return "";
         }
       }
@@ -224,5 +233,5 @@ public class IAP{
   }
 
 
-  native void onPurchaseComplete(int success);
+  public static native void onPurchaseComplete(int success);
 }

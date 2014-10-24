@@ -191,6 +191,7 @@ void appDeinit(void) {
     lua_close(luaVM);
     luaVM = 0;
     audioCleanup();
+    didInit = 0;
   }else{
     trace("WARNING: Called deinit while not initialised");
   }

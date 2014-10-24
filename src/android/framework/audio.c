@@ -150,17 +150,15 @@ void audioPlay(Audio* a) {
   if(!initialised){
     return;
   }
-  /*
-  trace("Audio: Playing");
-  */
   audioStop(a);
-  if(globalMute){
-    return;
-  }
   (*a->player_buf_q)->Enqueue(a->player_buf_q, a->sampleData, a->sampleCount );
-  (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
   a->is_playing = 1;
   a->is_done_buffer = 0;
+  if(globalMute){
+    (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PAUSED );
+  }else{
+    (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
+  }
 }
 
 void audioSetLooping(Audio* a, int loop) {

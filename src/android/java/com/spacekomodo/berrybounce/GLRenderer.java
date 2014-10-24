@@ -111,6 +111,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 
   @Override
   public void onDrawFrame(GL10 gl) {
+
     if(activity.chartboostDelegate.events.size()!=0){
       int e = activity.chartboostDelegate.events.remove().intValue();
       Log.i(TAG, "Handling chartboost event: "+e);
@@ -127,6 +128,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       }
     }
 
+
     // TODO: If we handle all events here, we need to make sure the framework input
     // handles it, and detects a 'click', even if a down and up happens during
     // the same rendered frame. This is not currently the case, hence use an if
@@ -138,10 +140,19 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       e.alive = false;
     }
     nativeRender();
+    if(doFacebookPost){
+      activity.runOnUiThread(new Runnable() {
+        public void run() {
+          activity.facebookPost();
+        }
+      });
+      doFacebookPost = false;
+    }
   }
 
+  boolean doFacebookPost = false;
   private void facebookPost(){
-    this.activity.facebookPost();
+    doFacebookPost = true;
   }
   private void showInterstitial(){
     this.activity.runOnUiThread(new Runnable() {
@@ -193,19 +204,25 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   }
 
   public int userOwnsProduct(String id){
+
     if(activity.iap.userOwnsProduct(id)){
       return 1;
     }else{
       return 0;
     }
+
   }
   public void purchaseProduct(final String id){
-    activity.runOnUiThread(new Runnable() {
-      public void run() {
-        parentView.setPreserveEGLContextOnPause(true);
-        activity.iap.purchaseProduct(id);
-      }
-    });
+    if(activity==null || activity.iap==null){
+      IAP.onPurchaseComplete(0);
+    }else{
+      activity.runOnUiThread(new Runnable() {
+        public void run() {
+          parentView.setPreserveEGLContextOnPause(true);
+          activity.iap.purchaseProduct(id);
+        }
+      });
+    }
   }
 
   public String getProductPrice(String id){

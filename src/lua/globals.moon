@@ -72,3 +72,6 @@ table.insertRet = (table, posOrValue, value) ->
     --iterArrsRev select(2, ...)
 
 export rejectNil = _.bind(fun.filter, fun.op.truth)
+
+export stringValidAndNotEmpty = (str)->
+  str and str~='' and str~=' '

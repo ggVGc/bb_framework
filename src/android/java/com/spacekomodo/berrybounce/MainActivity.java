@@ -35,18 +35,17 @@ public class MainActivity extends Activity{
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
     Log.i(TAG,"Activity: Create");
-    setScreenRefreshRate((int)((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay().getRefreshRate());
+    requestWindowFeature(Window.FEATURE_NO_TITLE);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    setScreenRefreshRate((int)((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay().getRefreshRate());
 
     iap = new IAP(this);
 
-    requestWindowFeature(Window.FEATURE_NO_TITLE);
-    getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     view = new GLView(this);
     setContentView(view);
-
+    
     chartboostDelegate = new ChartboostDelegateImp();
     Chartboost.startWithAppId(this, AppConfig.chartboost.appId, AppConfig.chartboost.appSignature);
     Chartboost.setLoggingLevel(Level.ALL);
@@ -59,6 +58,7 @@ public class MainActivity extends Activity{
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    Log.i(TAG, "onActivityResult");
     if (!iap.onActivityResult(requestCode, resultCode, data)) {
       super.onActivityResult(requestCode, resultCode, data);
       uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
@@ -73,7 +73,6 @@ public class MainActivity extends Activity{
         }
       });
     }
-
   }
 
   @Override
@@ -86,17 +85,17 @@ public class MainActivity extends Activity{
   }
 
   public void prepareInterstitial(){
-    Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
+    //Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
   }
 
   public void showInterstitial(){
-	  if(Chartboost.hasInterstitial(CBLocation.LOCATION_DEFAULT)){
-		  Chartboost.showInterstitial(CBLocation.LOCATION_DEFAULT);
-	  }else{
-		  chartboostDelegate.cacheing = true;
-		  Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
-		  chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.failedDisplay));
-	  }
+      if(Chartboost.hasInterstitial(CBLocation.LOCATION_DEFAULT)){
+          Chartboost.showInterstitial(CBLocation.LOCATION_DEFAULT);
+      }else{
+          chartboostDelegate.cacheing = true;
+          Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
+          chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.failedDisplay));
+      }
   }
 
 
@@ -105,16 +104,30 @@ public class MainActivity extends Activity{
   public native void interstitialDisplayed();
   public native void interstitialFailedDisplay();
 
-  public int facebookIsShareAvailable(){
-   
+ public int facebookIsShareAvailable(){
+    if(FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)){
+      return 1;
+    }else{
       return 0;
-     }
-
-  public void facebookPost(){
-    Log.i(TAG,"Activity: Facebook post");
-   
+    }
   }
 
+  public void facebookPost(){
+    final MainActivity self = this;
+    Log.i(TAG,"Activity: Facebook post");
+    Log.i(TAG,"Activity: RUNNING Facebook post");
+    //if (facebookIsShareAvailable()!=0){
+      FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(self)
+            .setName(AppConfig.facebook.name)
+            .setCaption(AppConfig.facebook.caption)
+            .setDescription(AppConfig.facebook.description)
+            .setPicture(AppConfig.facebook.pictureUrl)
+            .setApplicationName("Berry Bounce")
+            .setLink(AppConfig.facebook.link)
+            .build();
+        uiHelper.trackPendingDialogCall(shareDialog.present());
+    //}
+  }
   @Override
   public void onRestart() {
     super.onRestart();
@@ -125,9 +138,9 @@ public class MainActivity extends Activity{
   @Override
   protected void onPause() {
     super.onPause();
+    uiHelper.onPause();
     Log.i(TAG,"Activity: Pause");
     Chartboost.onPause(this);
-    uiHelper.onPause();
     view.onPause();
   }
 
@@ -135,8 +148,8 @@ public class MainActivity extends Activity{
   protected void onResume() {
     super.onResume();
     Log.i(TAG,"Activity: Resume");
-    Chartboost.onResume(this);
     uiHelper.onResume();
+    Chartboost.onResume(this);
     view.onResume();
   }
 
@@ -160,17 +173,18 @@ public class MainActivity extends Activity{
   protected void onDestroy() {
     super.onDestroy();
     Log.i(TAG,"Activity: Destroy");
-    Chartboost.onDestroy(this);
     uiHelper.onDestroy();
+    Chartboost.onDestroy(this);
   }
 
   @Override
   public void onBackPressed() {
-    // If an interstitial is on screen, close it. Otherwise continue as normal.
-    if (Chartboost.onBackPressed())
+    facebookPost();
+    if (Chartboost.onBackPressed()){
       return;
-    else
+    }else{
       super.onBackPressed();
+    }
   }
 }
 

@@ -7,6 +7,8 @@ new: (texLoader, path) ->
   displayObj = framework.DisplayObject.new()
   self.tex = texLoader path
   self.draw = () ->
+    if not self.visible
+      return
     Bitmap.drawCounter+=1
     _c_framework.DisplayObject_draw self.dispObj
 

@@ -107,11 +107,13 @@ Java_com_spacekomodo_berrybounce_GLView_nativeOnStop( JNIEnv*  env ) {
 
 static jobject curThis;
 static JNIEnv* curEnv;
+/*static JavaVM *jvm;*/
 
   void
 Java_com_spacekomodo_berrybounce_GLRenderer_nativeRender( JNIEnv*  env, jobject this) {
   curEnv = env;
   curThis = this;
+  /*(*curEnv)->GetJavaVM(curEnv, &jvm);*/
   long curTime = _getTime();
   appRender(curTime - lastTime);
   lastTime = curTime;

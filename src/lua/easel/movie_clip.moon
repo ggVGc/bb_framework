@@ -46,6 +46,8 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
 
   contDraw = container.draw
   self.draw = ->
+    if not self.visible
+      return
     --if self.DisplayObject_draw ctx, ignoreCache
       --return true
     self._updateTimeline!

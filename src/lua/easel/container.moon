@@ -12,11 +12,14 @@ new: ->
   displayObj = framework.DisplayObject.new!
   
   self.isVisible = ->
-    hasContent = self.cacheCanvas or #self.children>0
+    --hasContent = self.cacheCanvas or #self.children>0
+    hasContent = #self.children>0
     --return not not (self.visible and self.alpha > 0 and self.scaleX ~= 0 and self.scaleY ~= 0 and hasContent)
     return not not (self.visible and hasContent)
 
   self.draw = ->
+    if not self.visible
+      return
     --if displayObj.draw(ctx, ignoreCache)
       --return true
   

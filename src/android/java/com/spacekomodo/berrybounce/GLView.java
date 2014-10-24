@@ -62,7 +62,7 @@ public class GLView extends GLSurfaceView {
 
   @Override
   public void onResume() {
-    //Log.i(TAG,"GLView: Resume");
+    Log.i(TAG,"GLView: Resume");
     super.onResume();
     setPreserveEGLContextOnPause(false);
     appSetPaused(0);

@@ -56,6 +56,7 @@ new: maker (initialTexSheets) =>
           bmData = _c_framework.BitmapData()
           _c_framework.bitmapDataInit(bmData, loadedData)
           _c_framework.rawBitmapDataCleanup(loadedData)
+          framework.Texture.bmDataCache[o.path] = bmData
           o.a.asset = framework.TextureSheet.new rectMap, bmData
           table.insert @texSheets, o.a.asset
 
@@ -71,8 +72,9 @@ new: maker (initialTexSheets) =>
     data = {
       a:a
       rectMapText: _c_framework.loadText(baseName..'.txt')
+      path: baseName..'.png'
     }
-    t = _c_framework.AsyncAssetLoader.loadImage(baseName..'.png')
+    t = _c_framework.AsyncAssetLoader.loadImage(data.path)
     tasks[t] = data
     queueIn\addtask t
     taskCount+=1
