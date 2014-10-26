@@ -23,6 +23,9 @@ public class IAP{
   IabHelper.OnIabSetupFinishedListener listener;
 
   boolean available;
+  public boolean isAvailable(){
+    return available;
+  }
   String productToPurchaseAfterCreate = null;
 
   public IAP(Activity activity){
@@ -50,12 +53,14 @@ public class IAP{
           // Have we been disposed of in the meantime? If so, quit.
           if (mHelper == null){
             Log.i(TAG, "Disconnected while setting up");
+            available = false;
             return;
           }
           if (!result.isSuccess()) {
             Log.i(TAG, "Not successful: "+result);
             // Oh noes, there was a problem.
             mHelper = null;
+            available = false;
             return;
           }
 

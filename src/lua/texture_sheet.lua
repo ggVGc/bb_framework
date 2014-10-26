@@ -2,7 +2,6 @@ dofile("framework/xml.lua")
 dofile("framework/xml_handler.lua")
 dofile("framework/xml_pretty.lua")
 dofile("framework/texture.lua")
-dofile("framework/string_extensions.lua")
 
 framework = framework or {}
 framework.TextureSheet = {}

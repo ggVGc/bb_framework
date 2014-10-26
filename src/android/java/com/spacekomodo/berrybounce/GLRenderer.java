@@ -213,7 +213,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 
   }
   public void purchaseProduct(final String id){
-    if(activity==null || activity.iap==null){
+    if(activity==null || activity.iap==null || !activity.iap.isAvailable()){
       IAP.onPurchaseComplete(0);
     }else{
       activity.runOnUiThread(new Runnable() {

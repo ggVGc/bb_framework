@@ -6021,6 +6021,26 @@ fail:
 }
 
 
+static int _wrap_audioModLoad(lua_State* L) {
+  int SWIG_arg = 0;
+  char *arg1 = (char *) 0 ;
+  Audio *result = 0 ;
+  
+  SWIG_check_num_args("audioModLoad",1,1)
+  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("audioModLoad",1,"char const *");
+  arg1 = (char *)lua_tostring(L, 1);
+  result = (Audio *)audioModLoad((char const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio_T,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_audioLoadInto(lua_State* L) {
   int SWIG_arg = 0;
   Audio *arg1 = (Audio *) 0 ;
@@ -6866,6 +6886,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "audioGlobalInit", _wrap_audioGlobalInit},
     { "audioGlobalPlatformInit", _wrap_audioGlobalPlatformInit},
     { "audioLoad", _wrap_audioLoad},
+    { "audioModLoad", _wrap_audioModLoad},
     { "audioLoadInto", _wrap_audioLoadInto},
     { "audioPlay", _wrap_audioPlay},
     { "audioSetLooping", _wrap_audioSetLooping},

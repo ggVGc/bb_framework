@@ -8,13 +8,14 @@ SYNCHED: "synched"
 	
 new: (initialMode, initialStartPosition, initialLoop, labels) ->
   self = {}
+  container = framework.Container.new!
+  setmetatable(self, {__newindex:container, __index:container})
   self.mode = initialMode or MovieClip.INDEPENDENT
   self.startPosition = initialStartPosition or 0
   self.loop = true
   if initialLoop == false
     self.loop = false
   self.currentFrame = 0
-  self.timeline = nil
   self.paused = false
   self.actionsEnabled = true
   self.autoReset = true
@@ -31,7 +32,6 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
   
   self.lastFrameCallback = nil
 
-  container = framework.Container.new!
 
   props = {paused:true, position:self.startPosition, useTicks:true}
   self.timeline = framework.Timeline.new(nil, labels, props)
@@ -211,7 +211,6 @@ new: (initialMode, initialStartPosition, initialLoop, labels) ->
         child._reset!
     self._managed[child.id] = 2
 
-  setmetatable(self, {__newindex:container, __index:container})
   return self
   
   

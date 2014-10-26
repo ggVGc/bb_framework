@@ -4,7 +4,6 @@ import os
 import sys
 
 def buildLib(outfile, srcDirs, srcFiles, cflags):
-
   if os.path.exists(outfile):
     print 'removing ', outfile
     os.remove(outfile)
@@ -44,8 +43,6 @@ def buildLib(outfile, srcDirs, srcFiles, cflags):
   return os.system(cmd)
 
 
-
-
 def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
   cfiles = srcFiles
   cppfiles = ""
@@ -71,12 +68,9 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
     ret = os.system(cmd)
     if ret != 0:
       break
-
   if ret != 0:
     return ret 
-
   files = cppfiles+" "+ofiles
-
   cmd = "gcc -g "+cflags+" "+files+" -o "+outfile+" "+linkFlags
   print cmd
   return os.system(cmd)

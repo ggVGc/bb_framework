@@ -29,7 +29,14 @@ static int AsyncAssetLoader_loadAudio_prepare (lua_State *L, void **udata) {
 
 static int AsyncAssetLoader_loadAudio_work (void *udata) {
   AsyncAssetLoader_loadAudio_udata *td = (AsyncAssetLoader_loadAudio_udata *)udata;
-  td->audio = audioLoad(td->path);
+  const char *ext = strchr(td->path, '.');
+  if(ext && strcmp(ext, ".ogg")==0){
+    // load ogg
+    td->audio = audioLoad(td->path);
+  }else{
+    // load mod format
+    td->audio = audioModLoad(td->path);
+  }
   free(td->path);
   return 0;
 }

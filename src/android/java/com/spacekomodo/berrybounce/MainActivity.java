@@ -20,6 +20,7 @@ public class MainActivity extends Activity{
   public static final String TAG = "MainActivity";
 
   private GLView view;
+  private boolean facebookAvailable = false;
 
   public IAP iap;
   public ChartboostDelegateImp chartboostDelegate;
@@ -82,6 +83,7 @@ public class MainActivity extends Activity{
     Chartboost.setImpressionsUseActivities(true);
     Chartboost.onStart(this);
     chartboostDelegate.onStart();
+    facebookAvailable = FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG);
   }
 
   public void prepareInterstitial(){
@@ -105,18 +107,14 @@ public class MainActivity extends Activity{
   public native void interstitialFailedDisplay();
 
  public int facebookIsShareAvailable(){
-    if(FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)){
-      return 1;
-    }else{
-      return 0;
-    }
+    return facebookAvailable?1:0;
   }
 
   public void facebookPost(){
     final MainActivity self = this;
     Log.i(TAG,"Activity: Facebook post");
     Log.i(TAG,"Activity: RUNNING Facebook post");
-    //if (facebookIsShareAvailable()!=0){
+    if (facebookAvailable){
       FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(self)
             .setName(AppConfig.facebook.name)
             .setCaption(AppConfig.facebook.caption)
@@ -126,7 +124,7 @@ public class MainActivity extends Activity{
             .setLink(AppConfig.facebook.link)
             .build();
         uiHelper.trackPendingDialogCall(shareDialog.present());
-    //}
+    }
   }
   @Override
   public void onRestart() {

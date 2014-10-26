@@ -6,7 +6,7 @@
 #include "framework/audio.h"
 #include "framework/resource_loading.h"
 #include "framework/util.h"
-//#include "xmp.h"
+#include "xmp.h"
 
 
 struct ogg_file {
@@ -28,8 +28,7 @@ int audioGlobalInit(){
 size_t AR_readOgg(void* dst, size_t size1, size_t size2, void* fh) {
   ogg_file* of = (ogg_file*)(fh);
   size_t len = size1 * size2;
-  if ( of->curPtr + len > of->filePtr + of->fileSize )
-  {
+  if ( of->curPtr + len > of->filePtr + of->fileSize ) {
       len = of->filePtr + of->fileSize - of->curPtr;
   }
   memcpy( dst, of->curPtr, len );
@@ -208,43 +207,42 @@ void audioSetAllPaused(int paused){
   }
 }
 
+Audio* audioModLoad(const char *path){
+  const int bugSizeInc = 1024*500;
+  const int bufSize = 50*1024*1024;
+  const int sampleRate = 44100;
+  int sz, success;
+  int* tmpBuf;
+  unsigned char *data = loadBytes(path, &sz);
+  xmp_context c;
+  struct xmp_frame_info mi;
+  if(!data){
+    trace("Invalid music file path");
+    return 0;
+  }
+  c = xmp_create_context();
+  success = xmp_load_module_from_memory(c, data, sz);
+  if(success != 0){
+    trace("XM load fail");
+    return 0;
+  }
 
-/*
-   Audio* audioLoad(const char* path){
-   const int bufSize = 1000*1000*50;
-   const int sampleRate = 44100;
-   int sz, success;
-   int* tmpBuf;
-   unsigned char *data = loadBytes(path, &sz);
-   xmp_context c;
-   struct xmp_frame_info mi;
-   if(!data){
-   trace("Invalid music file path");
-   return 0;
-   }
-   c = xmp_create_context();
-   success = xmp_load_module_from_memory(c, data, sz);
-   if(success != 0){
-   trace("XM load fail");
-   return 0;
-   }
+  xmp_start_player(c, sampleRate, 0);
+  tmpBuf = (int*)malloc(sizeof(int)*bufSize);
+  success = xmp_play_buffer(c, tmpBuf, bufSize, 0);
 
-   xmp_start_player(c, sampleRate, XMP_FORMAT_MONO);
-   tmpBuf = (int*)malloc(sizeof(int)*bufSize);
-   success = xmp_play_buffer(c, tmpBuf, bufSize, 0);
+  if(success!=0){
+    trace("Failed mod playback");
+    return 0;
+  }
 
-   if(success!=0){
-   trace("Failed XM playback");
-   return 0;
-   }
+  xmp_end_player(c);
+  xmp_release_module(c);
+  xmp_free_context(c);
 
-   xmp_end_player(c);
-   xmp_release_module(c);        [> unload module <]
-   xmp_free_context(c);          [> destroy the player context <]
-
-   Audio *a = audioMake(tmpBuf, bufSize, sampleRate);
-   free(tmpBuf);
-   audioSetLooping(a, 0);
-   return a;
-   }
-   */
+  Audio *a = audioAlloc();
+  audioInit(a, tmpBuf, bufSize, sampleRate, 2);
+  free(tmpBuf);
+  audioSetLooping(a, 0);
+  return a;
+}
