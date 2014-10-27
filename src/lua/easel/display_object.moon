@@ -1,6 +1,56 @@
 local DisplayObject
 
 
+
+mt = {
+__index: (obj, key) ->
+  obj.dispObj[key] or rawget(obj, key)
+
+__newindex: (obj, key, val) ->
+  switch key
+    when 'x'
+      obj.dispObj.x = val
+    when 'y'
+      obj.dispObj.y = val
+    when 'regX'
+      obj.dispObj.regX = val
+    when 'regY'
+      obj.dispObj.regY = val
+    when 'skewX'
+      obj.dispObj.skewX = val
+    when 'skewY'
+      obj.dispObj.skewY= val
+    when 'scaleX'
+      obj.dispObj.scaleX = val
+    when 'scaleY'
+      obj.dispObj.scaleY= val
+    when 'rotation'
+      obj.dispObj.rotation = val
+    when 'alpha'
+      obj.dispObj.alpha= val
+    else
+      rawset(obj, key, val)
+}
+
+
+
+
+eventMT = {
+  handlers:{}
+  __index: (obj, k) ->
+    return (...) ->
+      if obj.handlers[k]
+        for f in *obj.handlers[k]
+          f(obj.self, ...)
+      if obj.self.parent
+        obj.self.parent.event[k](...)
+  __newindex: (obj, eventName, func) ->
+    if not obj.handlers[eventName]
+      obj.handlers[eventName] = {}
+    table.insert obj.handlers[eventName], func
+}
+
+
 DisplayObject = {
 NEXT_ID: 0
 new: ->
@@ -12,24 +62,7 @@ new: ->
   self.isDisplayObj = true
   self.parent = nil
 
-
-  self.event = {handlers:{}}
-  eventMT = {
-    handlers:{}
-    __index: (obj, k) ->
-      return (...) ->
-        if obj.handlers[k]
-          for f in *obj.handlers[k]
-            f(self, ...)
-        if self.parent
-          self.parent.event[k](...)
-    __newindex: (obj, eventName, func) ->
-      if not obj.handlers[eventName]
-        obj.handlers[eventName] = {}
-      table.insert obj.handlers[eventName], func
-  }
-
-  
+  self.event = {self:self, handlers:{}}
   setmetatable self.event, eventMT
 
   dispObj = _c_framework.DisplayObject()
@@ -64,37 +97,6 @@ new: ->
 
   self.regToGlobal = ->
     self.localToGlobal @regX, @regY
-
-
-  mt = {
-  __index: (obj, key) ->
-    dispObj[key] or rawget(obj, key)
-
-  __newindex: (obj, key, val) ->
-    switch key
-      when 'x'
-        dispObj.x = val
-      when 'y'
-        dispObj.y = val
-      when 'regX'
-        dispObj.regX = val
-      when 'regY'
-        dispObj.regY = val
-      when 'skewX'
-        dispObj.skewX = val
-      when 'skewY'
-        dispObj.skewY= val
-      when 'scaleX'
-        dispObj.scaleX = val
-      when 'scaleY'
-        dispObj.scaleY= val
-      when 'rotation'
-        dispObj.rotation = val
-      when 'alpha'
-        dispObj.alpha= val
-      else
-        rawset(obj, key, val)
-  }
 
   setmetatable(self, mt)
   return self

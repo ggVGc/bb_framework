@@ -134,30 +134,27 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     // the same rendered frame. This is not currently the case, hence use an if
     // and handle only one event per frame
     GLRenderer.TouchEvent e = eventQueue.poll();
-    if(e != null){
+    while(e != null){
       //Log.i(TAG, "Processing input event");
       processTouchEvent(e);
       e.alive = false;
+      e = eventQueue.poll();
     }
     nativeRender();
-    if(doFacebookPost){
-      activity.runOnUiThread(new Runnable() {
-        public void run() {
-          activity.facebookPost();
-        }
-      });
-      doFacebookPost = false;
-    }
   }
 
-  boolean doFacebookPost = false;
-  private void facebookPost(){
-    doFacebookPost = true;
+  private void facebookPost(final int score){
+    activity.runOnUiThread(new Runnable() {
+      public void run() {
+        activity.facebookPost(score);
+      }
+    });
   }
   private void showInterstitial(){
     this.activity.runOnUiThread(new Runnable() {
       @Override
       public void run() {
+        Log.i(TAG, "Showing interstitial on main thread");
         parentView.setPreserveEGLContextOnPause(true);
         activity.showInterstitial();
       }

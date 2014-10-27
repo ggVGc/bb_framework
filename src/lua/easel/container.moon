@@ -2,14 +2,12 @@
 local Container
 Container = {
 new: ->
-  self = {}
+  displayObj = framework.DisplayObject.new!
+  self = displayObj
   self.children = {}
   self.mouseChildren = true
   self.tickChildren = true
   self.tickOnlyWhenVisible = true
-
-
-  displayObj = framework.DisplayObject.new!
   
   self.isVisible = ->
     --hasContent = self.cacheCanvas or #self.children>0
@@ -310,7 +308,6 @@ new: ->
       --return (maxX == nil) ? nil : self._rectangle.initialize(minX, minY, maxX-minX, maxY-minY);
   --};
 
-  setmetatable(self, {__newindex:displayObj, __index:displayObj})
   return self
 }
 

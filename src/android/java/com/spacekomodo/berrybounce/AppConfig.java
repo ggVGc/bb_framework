@@ -22,9 +22,9 @@ public class AppConfig{
   }
 
   public static class facebook{
-    public static final String name = "Berry Bounce";
-    public static final String caption = "BBCaption";
-    public static final String description = "Playing Berry Bounce like a pro";
+    public static final String description = "High Score - Berry Bounce";
+    public static final String caption = "Try to beat me: www.berrybounce.com";
+    //public static final String name = "726 Berries!";
     public static final String pictureUrl ="http://www.berrybounce.com/share_image.png"; 
     public static final String link = "http://www.berrybounce.com";
   }

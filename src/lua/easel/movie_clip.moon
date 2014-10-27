@@ -7,9 +7,8 @@ SINGLE_FRAME: "single"
 SYNCHED: "synched"
 	
 new: (initialMode, initialStartPosition, initialLoop, labels) ->
-  self = {}
   container = framework.Container.new!
-  setmetatable(self, {__newindex:container, __index:container})
+  self = container
   self.mode = initialMode or MovieClip.INDEPENDENT
   self.startPosition = initialStartPosition or 0
   self.loop = true

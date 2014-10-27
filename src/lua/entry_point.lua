@@ -355,8 +355,8 @@ function framework.init(wasSuspended)
 end
 
 
-local MEM_CHECK_INTERVAL = 10
-local MAX_MEM_TRIGGER_GC = 36000
+local MEM_CHECK_INTERVAL = 1
+local MAX_MEM_TRIGGER_GC = 31000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0

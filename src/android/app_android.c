@@ -190,19 +190,19 @@ void adShowInterstitial(){
   (*curEnv)->CallVoidMethod(curEnv, curThis, mid);
 }
 
-void facebookPost(){
+void facebookPost(int score){
   trace("facebookPost");
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
     return;
   }
-  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "facebookPost", "()V");
+  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "facebookPost", "(I)V");
   if (mid == 0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
     return;
   }
-  (*curEnv)->CallVoidMethod(curEnv, curThis, mid);
+  (*curEnv)->CallVoidMethod(curEnv, curThis, mid, score);
 }
 
 int facebookIsShareAvailable(){

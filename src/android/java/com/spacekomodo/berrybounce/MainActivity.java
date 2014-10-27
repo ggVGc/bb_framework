@@ -20,7 +20,7 @@ public class MainActivity extends Activity{
   public static final String TAG = "MainActivity";
 
   private GLView view;
-  private boolean facebookAvailable = false;
+  //private boolean facebookAvailable = false;
 
   public IAP iap;
   public ChartboostDelegateImp chartboostDelegate;
@@ -30,8 +30,7 @@ public class MainActivity extends Activity{
     System.loadLibrary("jumpz_framework");
   }
 
-  public MainActivity(){
-  }
+  public MainActivity(){}
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -83,7 +82,7 @@ public class MainActivity extends Activity{
     Chartboost.setImpressionsUseActivities(true);
     Chartboost.onStart(this);
     chartboostDelegate.onStart();
-    facebookAvailable = FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG);
+    //facebookAvailable = FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG);
   }
 
   public void prepareInterstitial(){
@@ -92,10 +91,13 @@ public class MainActivity extends Activity{
 
   public void showInterstitial(){
       if(Chartboost.hasInterstitial(CBLocation.LOCATION_DEFAULT)){
+        Log.i(TAG, "Showing caches interstitial");
           Chartboost.showInterstitial(CBLocation.LOCATION_DEFAULT);
       }else{
+          Log.i(TAG, "Cacheing interstitial");
           chartboostDelegate.cacheing = true;
           Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
+          Log.i(TAG, "Adding gailed display event");
           chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.failedDisplay));
       }
   }
@@ -107,16 +109,19 @@ public class MainActivity extends Activity{
   public native void interstitialFailedDisplay();
 
  public int facebookIsShareAvailable(){
-    return facebookAvailable?1:0;
+    //return facebookAvailable?1:0;
+    //return FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)?1:0;
+    return 0;
   }
 
-  public void facebookPost(){
+  public void facebookPost(int score){
     final MainActivity self = this;
     Log.i(TAG,"Activity: Facebook post");
     Log.i(TAG,"Activity: RUNNING Facebook post");
-    if (facebookAvailable){
+    if (facebookIsShareAvailable()!=0){
       FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(self)
-            .setName(AppConfig.facebook.name)
+            //.setName(AppConfig.facebook.name)
+            .setName(score+" Berries!")
             .setCaption(AppConfig.facebook.caption)
             .setDescription(AppConfig.facebook.description)
             .setPicture(AppConfig.facebook.pictureUrl)
@@ -177,7 +182,6 @@ public class MainActivity extends Activity{
 
   @Override
   public void onBackPressed() {
-    facebookPost();
     if (Chartboost.onBackPressed()){
       return;
     }else{

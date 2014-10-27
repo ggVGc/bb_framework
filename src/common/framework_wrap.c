@@ -6425,9 +6425,12 @@ fail:
 
 static int _wrap_facebookPost(lua_State* L) {
   int SWIG_arg = 0;
+  int arg1 ;
   
-  SWIG_check_num_args("facebookPost",0,0)
-  facebookPost();
+  SWIG_check_num_args("facebookPost",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("facebookPost",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  facebookPost(arg1);
   
   return SWIG_arg;
   
