@@ -238,7 +238,15 @@ function dofile(path, ...)
     dofile_raw(path)
     return dofile(...)
   else
-    return dofile_raw(path)
+    if type(path) == 'table' then
+      local ret
+      for _,p in pairs(path) do
+        ret = dofile_raw(p)
+      end
+      return ret
+    else
+      return dofile_raw(path)
+    end
   end
 end
 
@@ -256,9 +264,7 @@ dofile "framework/moon.lua"
 
 
 -- Stay compatible with 5.1 and 5.2
---
 unpack = unpack or table.unpack
-
 
 --Add Moses globally as underscore
 do 
@@ -279,40 +285,43 @@ fun = dofile "framework/libs/fun.lua";
 
 framework = {}
 framework.tserialize = dofile('framework/tserialize.lua').tserialize
-dofile "framework/globals.moon";
-dofile "framework/instanceof.lua";
-dofile "framework/string_additions.moon";
-dofile "framework/camera.lua";
-dofile "framework/bitmap.lua"
-dofile "framework/input.lua";
-dofile "framework/texture_sheet.lua";
-dofile "framework/input.lua";
-dofile "framework/window.lua";
-dofile "framework/rect.lua";
-dofile "framework/extensions.lua";
-dofile "framework/graphics.lua";
-dofile "framework/bitmap_animation.moon";
-dofile "framework/vector.lua";
-dofile "framework/level.moon";
-dofile 'framework/draw_states.moon'
-dofile 'framework/asset_loader.moon'
-dofile 'framework/font.moon'
-dofile 'framework/tween/tween.moon'
-dofile 'framework/tween/timeline.moon'
-dofile 'framework/easel/ticker.moon'
-dofile 'framework/easel/matrix2d.moon'
-dofile 'framework/easel/display_object.moon'
-dofile 'framework/easel/cjs_bitmap.moon'
-dofile 'framework/easel/cjs_button.moon'
-dofile 'framework/easel/container.moon'
-dofile 'framework/easel/movie_clip.moon'
-dofile 'framework/streaming_audio.lua'
-dofile 'framework/ads.moon'
-dofile 'framework/data_store.moon'
-dofile 'framework/iap.moon'
-dofile 'framework/fps_counter.lua'
+dofile({"framework/globals.moon",
+"framework/instanceof.lua",
+"framework/string_additions.moon",
+"framework/camera.lua",
+"framework/bitmap.lua",
+"framework/input.lua",
+"framework/texture_sheet.lua",
+"framework/input.lua",
+"framework/window.lua",
+"framework/rect.lua",
+"framework/extensions.lua",
+"framework/graphics.lua",
+"framework/bitmap_animation.moon",
+"framework/vector.lua",
+"framework/level.moon",
+'framework/draw_states.moon',
+'framework/asset_loader.moon',
+'framework/font.moon',
+'framework/tween/tween.moon',
+'framework/tween/timeline.moon',
+'framework/easel/ticker.moon',
+'framework/easel/matrix2d.moon',
+'framework/easel/display_object.moon',
+'framework/easel/cjs_bitmap.moon',
+'framework/easel/cjs_button.moon',
+'framework/easel/container.moon',
+'framework/easel/movie_clip.moon',
+'framework/streaming_audio.lua',
+'framework/ads.moon',
+'framework/data_store.moon',
+'framework/iap.moon',
+'framework/fps_counter.lua',
+})
 
-dofile "main.moon"
+--dofile "main.moon"
+dofile("framework/test/temp_test.moon")
+--dofile("framework/test/sheet_mem_test.moon")
 --dofile("framework/test/parent_test.moon")
 --dofile("framework/test/async_audioload_test.moon")
 --dofile("framework/test/movie_clip_mem_test.moon")
@@ -343,8 +352,6 @@ function fromhex(str)
 end
 
 
-
-
 local freezeFrameCount = 0
 function framework.init(wasSuspended)
   framework.DataStore.reload()
@@ -356,7 +363,7 @@ end
 
 
 local MEM_CHECK_INTERVAL = 1
-local MAX_MEM_TRIGGER_GC = 31000
+local MAX_MEM_TRIGGER_GC = 35000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0

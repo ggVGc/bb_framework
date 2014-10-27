@@ -39,7 +39,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   public ConcurrentLinkedQueue<GLRenderer.TouchEvent> eventQueue;
 
 
-
   public boolean inited = false;
   boolean needsReload = false;
 

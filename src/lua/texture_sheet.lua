@@ -89,7 +89,9 @@ function framework.TextureSheet.fromFiles(imagePath, layoutInfoPath, errorTexPat
   local bmData = framework.Texture.bmDataFromFile(imagePath, true)
   local rectMap = framework.TextureSheet.parseRectMap(layoutData, bmData.height)
 
-  return framework.TextureSheet.new(rectMap, bmData, errorTexPath)
+  local ret = framework.TextureSheet.new(rectMap, bmData, errorTexPath)
+  ret.path = imagePath
+  return ret
 end
 
 

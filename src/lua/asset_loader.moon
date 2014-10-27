@@ -58,10 +58,27 @@ new: maker (initialTexSheets) =>
           _c_framework.rawBitmapDataCleanup(loadedData)
           framework.Texture.bmDataCache[o.path] = bmData
           o.a.asset = framework.TextureSheet.new rectMap, bmData
+          o.a.asset.path = o.path
+          print o.a.asset.path
           table.insert @texSheets, o.a.asset
 
       queueOut\remove t
       taskCount-=1
+
+
+
+  @releaseSheet = (path)->
+    for i=1,#@texSheets
+      s = @texSheets[i]
+      print i, s.path, path
+      if s.path == path
+        table.remove @texSheets, i
+        framework.Texture.bmDataCache[path] = nil
+        print 'FREEING'
+        return
+    print 'WARNING!', 'Tried freeing invalid tex sheet: '..path
+
+
 
 
   @loadTexSheet = (baseName)->
