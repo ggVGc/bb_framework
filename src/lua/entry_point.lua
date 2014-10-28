@@ -319,8 +319,8 @@ dofile({"framework/globals.moon",
 'framework/fps_counter.lua',
 })
 
---dofile "main.moon"
-dofile("framework/test/temp_test.moon")
+dofile "main.moon"
+--dofile("framework/test/temp_test.moon")
 --dofile("framework/test/sheet_mem_test.moon")
 --dofile("framework/test/parent_test.moon")
 --dofile("framework/test/async_audioload_test.moon")
@@ -363,7 +363,7 @@ end
 
 
 local MEM_CHECK_INTERVAL = 1
-local MAX_MEM_TRIGGER_GC = 35000
+local MAX_MEM_TRIGGER_GC = 29000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0

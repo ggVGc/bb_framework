@@ -104,8 +104,10 @@ int callLuaFunc(int nParams, int nRet) {
   int size0 = lua_gettop(luaVM);
   int error_index = lua_gettop(luaVM) - nParams;
 
+  /*
   lua_pushcfunction(luaVM, luaErrorHandler);
   lua_insert(luaVM, error_index);
+  */
 
   result = lua_pcall(luaVM, nParams, nRet, error_index);
   if( result != 0) {
@@ -115,7 +117,9 @@ int callLuaFunc(int nParams, int nRet) {
     trace("\n------- END STACK TRACE ----------");
   } 
 
+  /*
   lua_remove(luaVM, error_index);
+  */
 
   if((lua_gettop(luaVM) + (int)nParams -(int)nRet + 1) != size0) {
     result = -1;
@@ -223,7 +227,7 @@ int doFrameBody(long tick){
   if(appBroken != 0){
     return 0;
   }else{
-    int ret;
+    int ret=0;
     lua_pushstring(luaVM, "doFrame");
     lua_gettable(luaVM, -2);
     lua_pushnumber(luaVM, tick);
@@ -235,10 +239,12 @@ int doFrameBody(long tick){
     if(ret != 0){
       return ret;
     }
+    return ret;
   }
   return 0;
 }
 
+static const char* testStr = "print(collectgarbage('count'))";
 
 int appRender(long tick) {
   int ret;
@@ -253,6 +259,8 @@ int appRender(long tick) {
   lua_getglobal(luaVM, "framework");
 
   ret = doFrameBody(tick);
+  /*printf("mem: %i\n", lua_gc(luaVM, LUA_GCCOUNT, 0));*/
+
   /*pthread_mutex_unlock(&vmMutex);*/
   quadEndFrame();
   lua_settop(luaVM, 0);

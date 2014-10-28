@@ -41,6 +41,10 @@ export compose = (...) ->
 
 export pipe=(...) -> compose(...)!
 
+table.numericClear = (t) ->
+  for i=#t,1,-1
+    t[i] = nil
+
 table.clear = (t, ...)->
   for k,_ in pairs t
     t[k] = nil

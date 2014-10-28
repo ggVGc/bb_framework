@@ -2,6 +2,85 @@ Ticker = {
   addEventListener: ->
 }
 
+
+INITIAL_OBJ_COUNT = 100
+
+cloneProps = (props, outObj) ->
+  for k,v in pairs props
+    outObj[k] = v
+
+makeStepObj = -> {
+  active:false
+  d: 0
+  p0:{}
+  e:nil
+  p1:{}
+  v:false
+}
+
+
+
+makeActionObj = -> {
+  active: false
+  f:nil
+  p:nil
+  o:nil
+}
+
+
+stepObjects = {}
+
+getStepObj = (d, e, v)->
+  local s
+  for x in *stepObjects
+    if not x.active
+      s = x
+  if not s
+    s = makeStepObj!
+    print 'making step obj'
+    table.insert stepObjects, s
+  s.d = d
+  s.e = e
+  s.v = v
+  table.clear s.p0, s.p1
+  s.active = true
+  return s
+actionObjects = {}
+
+getActionObj = (f, p, o)->
+  local a
+  for x in *actionObjects
+    if not x.active
+      a = x
+  if not a
+    a = makeActionObj!
+    print 'making action obj'
+    table.insert actionObjects, a
+  a.f = f
+  a.p = p
+  a.o = o
+  a.active = true
+  return a
+
+paramObjects = {}
+
+getParamObject = ->
+  for p in *paramObjects
+    if not p.active
+      table.clear p
+      p.active = true
+      return p
+  p = {active:true}
+  table.insert paramObjects, p
+  return p
+
+for i=1,INITIAL_OBJ_COUNT
+  table.insert stepObjects, makeStepObj!
+for i=1,INITIAL_OBJ_COUNT
+  table.insert actionObjects, makeActionObj!
+for i=1,INITIAL_OBJ_COUNT
+  table.insert paramObjects, {active:false}
+
 export Tween
 Tween = {
 NONE: 0
@@ -21,24 +100,41 @@ _tweens: {}
 _plugins: {}
 _inited: false
 
+
 new: (initialTarget, props, pluginData) ->
   self = {}
   props = _.extend {}, Tween.defaultProps, props
   if props.onChange then self.addEventListener "change", props.onChange
 
+  self._steps = {}
+  self._actions = {}
+  self._curQueueProps = {}
+  self._initQueueProps = {}
+  self.pluginData = pluginData or {}
+
+  self.reuseObjects = false
+
   self.reset = (newTarget) ->
     self.ignoreGlobalPause = props and not not props.ignoreGlobalPause
     self.loop = props and not not props.loop
     self.duration = 0
-    self.pluginData = pluginData or {}
     self.position = nil
     self.passive = false
 
     self._paused = props and not not props.paused
-    self._curQueueProps = {}
-    self._initQueueProps = {}
-    self._steps = {}
-    self._actions = {}
+    for s in *self._steps
+      s.active = false
+      s.d = 0
+      s.v = false
+      s.e = nil
+      table.clear s.p0, s.p1
+    for a in *self._actions
+      if a.p
+        table.clear a.p
+      a.f = nil
+      a.o = nil
+      a.active = false
+    table.clear self._curQueueProps, self._initQueueProps, self._steps, self._actions
     self._prevPosition = 0
     self._stepPosition = 0 -- this is needed by MovieClip.
     self._prevPos = -1
@@ -68,31 +164,81 @@ new: (initialTarget, props, pluginData) ->
     self.setPaused true
 
 
+  self._cloneProps = (props) ->
+    o = {}
+    for k,v in pairs props
+      o[k] = v
+    return o
+
   self.wait = (duration, passive) ->
     return self if (duration == nil or duration <= 0)
-    o = self._cloneProps self._curQueueProps
-    self._addStep {d:duration, p0:o, e:nil, p1:o, v:passive}
+    local s
+    if self.reuseObjects
+      s = getStepObj!
+      cloneProps self._curQueueProps, s.p0
+      cloneProps self._curQueueProps, s.p1
+    else
+      s = makeStepObj!
+      cloneProps self._curQueueProps, s.p0
+      s.p1 = s.p0
+    s.d = duration
+    s.e = nil
+    s.v = passive
+    self._addStep s
 
   self.to = (props, duration, ease) ->
     duration = duration or 0
     if (duration==0/0 or duration < 0)
       duration = 0
-    self._addStep {
-      d:duration or 0
-      p0:self._cloneProps self._curQueueProps
-      e:ease
-      p1:self._cloneProps self._appendQueueProps(props)
-    }
+    local s
+    if self.reuseObjects
+      s = getStepObj!
+    else
+      s = makeStepObj!
+    s.d = duration or 0
+    s.e = ease
+    s.v = false
+    cloneProps self._curQueueProps, s.p0
+    cloneProps self._appendQueueProps(props), s.p1
+    self._addStep s
 
-
-  self.call = (callback, params={self}, scope=self._target)->
-    self._addAction {f:callback, p:params, o:scope}
+  self.call = (callback, params=nil, scope=self._target)->
+    if not params
+      if self.reuseObjects
+        params = getParamObject!
+      else
+        params = {}
+      table.insert params, self
+    local a
+    if self.reuseObjects
+      a = getActionObj!
+    else
+      a = makeActionObj!
+    a.f = callback
+    a.p = params
+    a.o = scope
+    self._addAction a
 
 
   self.set = (props, target)->
     if not target
       target = self._target
-    self._addAction {f:self._set, o:self, p:{props, target}}
+    local p
+    if self.reuseObjects
+      p = getParamObject!
+    else
+      p = {}
+    table.insert p, props
+    table.insert p, target
+    local a
+    if self.reuseObjects
+      a = getActionObj!
+    else
+      a = makeActionObj!
+    a.f = self._set
+    a.p = p
+    a.o = self
+    self._addAction a
 
   self.setPaused = (value) ->
     if self._paused == not not value
@@ -183,6 +329,8 @@ new: (initialTarget, props, pluginData) ->
       pos = action.t
       if pos == ePos or (pos > sPos and pos < ePos) or (includeStart and pos == startPos)
         action.f action.o, action.p
+        table.clear action.p
+        action.p.active = false
 
   self._appendQueueProps = (o)->
     local arr,oldValue,i, l, injectProps
@@ -192,25 +340,25 @@ new: (initialTarget, props, pluginData) ->
       else
         oldValue = self._target[n]
         -- init plugins:
-        arr = Tween._plugins[n]
-        if arr
-          for i=1,#arr
-            oldValue = arr[i].init self, n, oldValue
+        --arr = Tween._plugins[n]
+        --if arr
+          --for i=1,#arr
+            --oldValue = arr[i].init self, n, oldValue
         self._initQueueProps[n] = if oldValue then oldValue else nil
 
     for n,_ in pairs o
       oldValue = self._curQueueProps[n]
-      arr = Tween._plugins[n]
-      if arr
-        injectProps = injectProps or {}
-        for i=1,#arr
-          -- TODO: remove the check for .step in the next version. It's here for backwards compatibility.
-          if arr[i].step
-            arr[i].step self, n, oldValue, o[n], injectProps
+      --arr = Tween._plugins[n]
+      --if arr
+        --injectProps = injectProps or {}
+        --for i=1,#arr
+          ---- TODO: remove the check for .step in the next version. It's here for backwards compatibility.
+          --if arr[i].step
+            --arr[i].step self, n, oldValue, o[n], injectProps
       self._curQueueProps[n] = o[n]
 
-    if injectProps
-      self._appendQueueProps injectProps
+    --if injectProps
+      --self._appendQueueProps injectProps
     return self._curQueueProps
 
 
@@ -226,11 +374,6 @@ new: (initialTarget, props, pluginData) ->
       o[n] = props[n]
 
 
-  self._cloneProps = (props) ->
-    o = {}
-    for k,v in pairs props
-      o[k] = v
-    return o
 
   
   self._addAction = (o)->
@@ -255,7 +398,7 @@ new: (initialTarget, props, pluginData) ->
       p0 = step.p0
       p1 = step.p1
 
-    for n,dum in pairs self._initQueueProps
+    for n,_ in pairs self._initQueueProps
       v0 = p0[n]
       if v0 == nil
         v0 = self._initQueueProps[n]
@@ -271,14 +414,14 @@ new: (initialTarget, props, pluginData) ->
         v = v0+(v1-v0)*ratio
 
       ignore = false
-      arr = Tween._plugins[n]
-      if arr
-        for i=1,#arr
-          v2 = arr[i].tween self, n, v, p0, p1, ratio, (not not step) and p0==p1, not step
-          if v2 == Tween.IGNORE
-            ignore = true
-          else
-            v = v2
+      --arr = Tween._plugins[n]
+      --if arr
+        --for i=1,#arr
+          --v2 = arr[i].tween self, n, v, p0, p1, ratio, (not not step) and p0==p1, not step
+          --if v2 == Tween.IGNORE
+            --ignore = true
+          --else
+            --v = v2
 
       if not ignore
         self._target[n] = v
