@@ -7,6 +7,7 @@ end
 loadstring = load
 
 
+--[[
 local oldPrint = print
 function print(...)
   local arg = {...}
@@ -25,6 +26,7 @@ function print(...)
   oldPrint(s and s or 'nil')
 end
 
+]]
 
 function loadfile(path, ignoreInvalid, errorReportOffset)
   path = path:gsub('%.moon', '.lua')
@@ -363,7 +365,7 @@ end
 
 
 local MEM_CHECK_INTERVAL = 1
-local MAX_MEM_TRIGGER_GC = 29000
+local MAX_MEM_TRIGGER_GC = 35000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
@@ -426,7 +428,7 @@ local function frameFunc()
     lastMem = thisMem
     if thisMem > MAX_MEM_TRIGGER_GC then
       collectgarbage()
-      collectgarbage('stop')
+      --collectgarbage('stop')
     end
   end
 end

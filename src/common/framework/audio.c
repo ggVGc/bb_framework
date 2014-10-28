@@ -6,7 +6,7 @@
 #include "framework/audio.h"
 #include "framework/resource_loading.h"
 #include "framework/util.h"
-#include "xmp.h"
+//#include "xmp.h"
 
 
 struct ogg_file {
@@ -208,7 +208,8 @@ void audioSetAllPaused(int paused){
 }
 
 Audio* audioModLoad(const char *path){
-  const int bugSizeInc = 1024*500;
+  /*
+   const int bugSizeInc = 1024*500;
   const int bufSize = 50*1024*1024;
   const int sampleRate = 44100;
   int sz, success;
@@ -244,5 +245,8 @@ Audio* audioModLoad(const char *path){
   audioInit(a, tmpBuf, bufSize, sampleRate, 2);
   free(tmpBuf);
   audioSetLooping(a, 0);
+   
   return a;
+   */
+    return 0;
 }

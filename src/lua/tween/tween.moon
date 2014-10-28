@@ -88,6 +88,8 @@ LOOP: 1
 REVERSE: 2
 IGNORE: {}
 
+reuseObjects: false
+
 defaultProps: {
   useTicks: false
   loop: false
@@ -112,7 +114,7 @@ new: (initialTarget, props, pluginData) ->
   self._initQueueProps = {}
   self.pluginData = pluginData or {}
 
-  self.reuseObjects = false
+  --self.reuseObjects = false
 
   self.reset = (newTarget) ->
     self.ignoreGlobalPause = props and not not props.ignoreGlobalPause
@@ -173,7 +175,7 @@ new: (initialTarget, props, pluginData) ->
   self.wait = (duration, passive) ->
     return self if (duration == nil or duration <= 0)
     local s
-    if self.reuseObjects
+    if Tween.reuseObjects
       s = getStepObj!
       cloneProps self._curQueueProps, s.p0
       cloneProps self._curQueueProps, s.p1
@@ -191,7 +193,7 @@ new: (initialTarget, props, pluginData) ->
     if (duration==0/0 or duration < 0)
       duration = 0
     local s
-    if self.reuseObjects
+    if Tween.reuseObjects
       s = getStepObj!
     else
       s = makeStepObj!
@@ -204,13 +206,13 @@ new: (initialTarget, props, pluginData) ->
 
   self.call = (callback, params=nil, scope=self._target)->
     if not params
-      if self.reuseObjects
+      if Tween.reuseObjects
         params = getParamObject!
       else
         params = {}
       table.insert params, self
     local a
-    if self.reuseObjects
+    if Tween.reuseObjects
       a = getActionObj!
     else
       a = makeActionObj!
@@ -224,14 +226,14 @@ new: (initialTarget, props, pluginData) ->
     if not target
       target = self._target
     local p
-    if self.reuseObjects
+    if Tween.reuseObjects
       p = getParamObject!
     else
       p = {}
     table.insert p, props
     table.insert p, target
     local a
-    if self.reuseObjects
+    if Tween.reuseObjects
       a = getActionObj!
     else
       a = makeActionObj!

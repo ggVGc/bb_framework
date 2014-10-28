@@ -66,6 +66,7 @@ void beginRenderFrame() {
 
 
 void setScissor(int x, int y, int w, int h){
+  /*
   scissorSet = 1;
   curScissorX = x;
   curScissorY = y;
@@ -74,4 +75,5 @@ void setScissor(int x, int y, int w, int h){
   glScissor(curScissorX,curScissorY, curScissorW, curScissorH);
   printf("SCISSOR: %i, %i, %i, %i", x, y, w, h);
   glEnable(GL_SCISSOR_TEST);
+  */
 }

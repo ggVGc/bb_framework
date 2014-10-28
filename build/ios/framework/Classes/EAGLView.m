@@ -176,7 +176,6 @@ const GLubyte Indices2[] = {
 }
 
 - (void)compileShaders {
-    
     // 1
     GLuint vertexShader = [self compileShader:@"SimpleVertex" withType:GL_VERTEX_SHADER];
     GLuint fragmentShader = [self compileShader:@"SimpleFragment" withType:GL_FRAGMENT_SHADER];
@@ -217,7 +216,6 @@ const GLubyte Indices2[] = {
 }
 
 - (void)setupVBOs {
-    
     glGenBuffers(1, &_vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
@@ -319,8 +317,7 @@ const GLubyte Indices2[] = {
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
   NSLog(@"EAGLView initWithFrame ");
     self = [super initWithFrame:frame];
     if (self) {        
@@ -336,8 +333,7 @@ const GLubyte Indices2[] = {
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [_context release];
     _context = nil;
     [super dealloc];

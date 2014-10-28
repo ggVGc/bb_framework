@@ -1,19 +1,21 @@
-//
-//  main.m
-//  framework
-//
-//  Created by Walt on 10/11/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
-
-
 
 int getScreenRefreshRate(){
   return 60;
 }
 
+void adShowInterstitial(){
+  trace("showInterstitial");
+  adInterstitialDisplayed(1);
+  adInterstitialClosed();
+}
+
+void adPrepareInterstitial(){
+  trace("prepareInterstitial");
+}
+
+void adSetBannersEnabled(int e){
+}
 
 void startProfiler(){
 }

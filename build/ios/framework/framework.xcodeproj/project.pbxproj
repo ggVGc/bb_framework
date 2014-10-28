@@ -26,7 +26,6 @@
 		7A4D88B319E1712B0059CEBF /* streaming_audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D889019E1712B0059CEBF /* streaming_audio.c */; };
 		7A4D88B419E1712B0059CEBF /* texture.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D889319E1712B0059CEBF /* texture.c */; };
 		7A4D88B519E1712B0059CEBF /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D889619E1712B0059CEBF /* util.c */; };
-		7A4D88B619E1712B0059CEBF /* ads.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D889819E1712B0059CEBF /* ads.c */; };
 		7A4D88B719E1712B0059CEBF /* audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D889A19E1712B0059CEBF /* audio.c */; };
 		7A4D88B819E1712B0059CEBF /* bitmapdata.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D889C19E1712B0059CEBF /* bitmapdata.c */; };
 		7A4D88B919E1712B0059CEBF /* camera.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D889E19E1712B0059CEBF /* camera.c */; };
@@ -154,7 +153,6 @@
 		7A4D889519E1712B0059CEBF /* timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timing.h; sourceTree = "<group>"; };
 		7A4D889619E1712B0059CEBF /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
 		7A4D889719E1712B0059CEBF /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
-		7A4D889819E1712B0059CEBF /* ads.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ads.c; sourceTree = "<group>"; };
 		7A4D889919E1712B0059CEBF /* ads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ads.h; sourceTree = "<group>"; };
 		7A4D889A19E1712B0059CEBF /* audio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio.c; sourceTree = "<group>"; };
 		7A4D889B19E1712B0059CEBF /* audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 				7A4D889519E1712B0059CEBF /* timing.h */,
 				7A4D889619E1712B0059CEBF /* util.c */,
 				7A4D889719E1712B0059CEBF /* util.h */,
-				7A4D889819E1712B0059CEBF /* ads.c */,
 				7A4D889919E1712B0059CEBF /* ads.h */,
 				7A4D889A19E1712B0059CEBF /* audio.c */,
 				7A4D889B19E1712B0059CEBF /* audio.h */,
@@ -589,7 +586,6 @@
 				7A4D88AD19E1712B0059CEBF /* quad.c in Sources */,
 				7A4D88B919E1712B0059CEBF /* camera.c in Sources */,
 				7A4D88C219E171420059CEBF /* audio_oal.c in Sources */,
-				7A4D88B619E1712B0059CEBF /* ads.c in Sources */,
 				7A4D88B719E1712B0059CEBF /* audio.c in Sources */,
 				7A4D88BC19E1712B0059CEBF /* graphics.c in Sources */,
 				7A4D88BB19E1712B0059CEBF /* facebook.c in Sources */,

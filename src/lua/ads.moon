@@ -6,7 +6,7 @@ noop = ->
 interstitialCounter = 0
 
 framework.Ads = {
-  interstitialInterval: 1
+  interstitialInterval: 3
   enabled: true
   interstitialDisplayCallback: noop
   interstitialCloseCallback: noop
