@@ -106,8 +106,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   }
 
 
-  final long frameTime = 33;
-
   @Override
   public void onDrawFrame(GL10 gl) {
 
@@ -149,6 +147,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       }
     });
   }
+
   private void showInterstitial(){
     this.activity.runOnUiThread(new Runnable() {
       @Override
@@ -159,6 +158,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       }
     });
   }
+
   private void prepareInterstitial(){
     this.activity.runOnUiThread(new Runnable() {
       @Override
@@ -177,6 +177,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       Log.e(TAG, "Failed writing to data store");
     }
   }
+
   private String dataStoreReload(){
     try{
       FileInputStream f = this.activity.openFileInput("datastore");
@@ -200,7 +201,6 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   }
 
   public int userOwnsProduct(String id){
-
     if(activity.iap.userOwnsProduct(id)){
       return 1;
     }else{
@@ -212,6 +212,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     if(activity==null || activity.iap==null || !activity.iap.isAvailable()){
       IAP.onPurchaseComplete(0);
     }else{
+      GLView.appSetPaused(1);
       activity.runOnUiThread(new Runnable() {
         public void run() {
           parentView.setPreserveEGLContextOnPause(true);

@@ -233,7 +233,7 @@ Audio* audioModLoad(const char *path){
   success = xmp_play_buffer(c, tmpBuf, bufSize, 0);
 
   if(success!=0){
-    trace("Failed mod playback");
+    trace("Failed mod pl/ayback");
     return 0;
   }
 

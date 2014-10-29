@@ -376,6 +376,21 @@ end
 local m_dFixedTimeStep = 100/30
 
 
+function framework.suspend()
+  if main and main.suspend then
+    main.suspend()
+  end
+end
+
+local appPaused = false
+function framework.setPaused(paused)
+  appPaused = paused
+  framework.Input.paused = paused
+  if main and main.setPaused then
+    main.setPaused(pause)
+  end
+end
+
 local function frameFunc()
   fps.update(frameDelta)
   local dDeltaSeconds = smoothDelta(frameDelta)
@@ -390,7 +405,7 @@ local function frameFunc()
     dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated-m_dFixedTimeStep
     dd = dd+m_dFixedTimeStep
   end
-  if dd>0 then
+  if dd>0 and not appPaused then
     main.update(dd)
   end
   framework.cjs.Bitmap.drawCounter = 0
@@ -430,11 +445,6 @@ function framework.doFrame(deltaMs)
   end
 end
 
-function framework.suspend()
-  if main and main.suspend then
-    main.suspend()
-  end
-end
 
 function framework.reloadTextures()
   print 'Reloading textures'

@@ -11,7 +11,7 @@ public class GLView extends GLSurfaceView {
 
 
   private static native void nativeOnStop();
-  private static native void appSetPaused(int paused);
+  public  static native void appSetPaused(int paused);
   private static native void appSuspend();
 
   private static final String TAG = MainActivity.TAG;

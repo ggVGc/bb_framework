@@ -1,6 +1,7 @@
 
 local Inp
 Inp = {
+  paused = false,
   MAX_KEYS = 512,
   MAX_CURSORS = 5,
 
@@ -29,6 +30,7 @@ Inp = {
   },
   
   setCursorPos = function(index, x, y)
+    if Inp.paused then return end
     --print ('Cursor pos, index:', index, 'x:',x,'y:',y)
     if index <= Inp.MAX_CURSORS then 
       local s = Inp.curState.cursorStates[index+1]
@@ -36,15 +38,18 @@ Inp = {
     end
   end,
   setCursorDownState = function(index, down)
+    if Inp.paused then return end
     --print ('Cursor down, index:', index, 'down:', down)
     if index <= Inp.MAX_CURSORS then 
       Inp.curState.cursorStates[index+1].down = down
     end
   end,
   setKeyPressed = function(code)
+    if Inp.paused then return end
     Inp.curState.keysDown[code] = true
   end,
   setKeyReleased = function(code)
+    if Inp.paused then return end
     Inp.curState.keysDown[code] = nil
   end,
 

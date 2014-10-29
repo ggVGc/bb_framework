@@ -33,6 +33,7 @@
 extern int luaopen__c_framework(lua_State*);
 
 static int appBroken = 0;
+/*static int appPaused = 0;*/
 static int didInit = 0;
 static int wasSuspended = 0;
 /*pthread_mutex_t vmMutex;*/
@@ -45,7 +46,7 @@ int loadstringWithName(lua_State *L, const char *s, const char* name) {
 	(loadstringWithName(L, s, name) || lua_pcall(L, 0, LUA_MULTRET, 0))
 
 
-#define PRINTBUF_SIZE 8192
+#define PRINTBUF_SIZE 4096
 static char printBuf[PRINTBUF_SIZE];
 int print_lua(lua_State* s){
   int i;
@@ -56,7 +57,7 @@ int print_lua(lua_State* s){
     if(accum+sz>=PRINTBUF_SIZE){
       break;
     }
-    strcpy(printBuf+accum*sizeof(char), str);
+    strcpy(printBuf+accum, str);
     accum += sz+1;
     printBuf[accum-1] = '\t';
     printBuf[accum] = '\0';
@@ -162,6 +163,7 @@ void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, c
   setResourcePath(resourcePath, useAssetZip);
 
   appBroken = 0;
+  /*appPaused = 0;*/
   luaVM = 0;
   didInit = 0;
   wasSuspended = appWasSuspended;
@@ -300,6 +302,7 @@ void setAppBroken(int isBroken){
 void adInterstitialClosed(){
   if(didInit){
     /*pthread_mutex_lock(&vmMutex);*/
+    appSetPaused(0);
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "Ads");
     lua_getfield(luaVM, -1, "interstitialCloseCallback");
@@ -317,6 +320,9 @@ void adInterstitialDisplayed(int success){
     lua_getfield(luaVM, -1, "interstitialDisplayCallback");
     lua_pushboolean(luaVM, success);
     callLuaFunc(1,0);
+    if(success){
+      appSetPaused(1);
+    }
     /*pthread_mutex_unlock(&vmMutex);*/
   }else{
     trace("Warning: Called adInterstitialDisplayed when not initialized");
@@ -339,13 +345,12 @@ void onPurchaseComplete(int success){
 
 void appSetPaused(int paused){
   if(didInit){
+    /*appPaused = paused;*/
     audioSetAllPaused(paused);
-    /*
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "setPaused");
     lua_pushboolean(luaVM, paused);
     callLuaFunc(1,0);
-    */
   }else{
     trace("Warning: Called appSetPaused when not initialized");
   }

@@ -16,6 +16,7 @@ public  class ChartboostDelegateImp extends ChartboostDelegate{
     public static final int closed = 1;
     public static final int displayed = 2;
     public static final int failedDisplay = 3;
+    public static final int clicked = 4;
   }
 
   private static final String TAG = "Chartboost";
@@ -40,7 +41,7 @@ public  class ChartboostDelegateImp extends ChartboostDelegate{
   @Override
   public void didClickInterstitial(String location) {
     Log.i(TAG, "DID CLICK INTERSTITIAL: "+ (location != null ? location : "null"));
-    setEvent(Event.closed);
+    setEvent(Event.clicked);
   }
 
 
