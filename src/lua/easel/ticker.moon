@@ -5,8 +5,8 @@ new: (fps, initialListeners) ->
   listeners = initialListeners or {}
   timePerTick = 1000/(fps or 24)
 
-  listenerCount = #initialListeners
-  d = timePerTick/listenerCount
+  --listenerCount = #initialListeners
+  d = timePerTick/#initialListeners
   --print 'time', timePerTick, d
   times = {}
   for i=1,#initialListeners
@@ -15,13 +15,23 @@ new: (fps, initialListeners) ->
 
   self.addListener = (listener) ->
     table.insert listeners, listener
-    listenerCount+=1
-    times[listenerCount] = listenerCount*4
+    --listenerCount+=1
+    cnt = #listeners
+    times[cnt] = cnt*4
+
+  self.removeListener = (listener)->
+    for i=1,#listeners
+      if listeners[i] == listener
+        table.remove listeners, i
+        --listenerCount-=1
+        return true
+    return false
+
 
   curTime = 0
   self.update = (deltaMs) ->
     ret = times[1]+deltaMs>=timePerTick
-    for i=1, listenerCount
+    for i=#listeners,1,-1 --iterate backwards in case a listeners removes itself during a tick
       times[i]+=deltaMs
       while times[i]>=timePerTick
         times[i] -= timePerTick
