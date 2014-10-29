@@ -7,27 +7,6 @@ end
 loadstring = load
 
 
---[[
-local oldPrint = print
-function print(...)
-  local arg = {...}
-  local s
-  for i=1,#arg do
-    s = s and s or ''
-    local v = arg[i]
-    if v == false then
-      v = 'false'
-    end
-    s = s..(v and tostring(v) or 'nil')..'\t'
-  end
-  if s == false then
-    s = 'false'
-  end
-  oldPrint(s and s or 'nil')
-end
-
-]]
-
 function loadfile(path, ignoreInvalid, errorReportOffset)
   path = path:gsub('%.moon', '.lua')
   errorReportOffset = errorReportOffset or 0

@@ -45,21 +45,23 @@ int loadstringWithName(lua_State *L, const char *s, const char* name) {
 	(loadstringWithName(L, s, name) || lua_pcall(L, 0, LUA_MULTRET, 0))
 
 
+#define PRINTBUF_SIZE 8192
+static char printBuf[PRINTBUF_SIZE];
 int print_lua(lua_State* s){
-  /*int i;*/
-  /*int t = lua_gettop(s);*/
-  /*while(lua_gettop(s)){*/
-    if(lua_isboolean(s, -1)){
-      trace(lua_toboolean(s,-1)?"true\t":"false\t");
-    }else if(lua_isnil(s, -1)){
-      trace("nil");
-    }else{
-      trace(lua_tostring(s, -1));
-      /*traceNoNL("\t");*/
+  int i;
+  int accum = 0;
+  for(i=1;i<=lua_gettop(s);++i){
+    const char *str = lua_tostring(s, i);
+    int sz = strlen(str);
+    if(accum+sz>=PRINTBUF_SIZE){
+      break;
     }
-    /*lua_pop(s, 1);*/
-  /*}*/
-  /*trace("");*/
+    strcpy(printBuf+accum*sizeof(char), str);
+    accum += sz+1;
+    printBuf[accum-1] = '\t';
+    printBuf[accum] = '\0';
+  }
+  trace(printBuf);
   return 0;
 }
 
@@ -243,8 +245,6 @@ int doFrameBody(long tick){
   }
   return 0;
 }
-
-static const char* testStr = "print(collectgarbage('count'))";
 
 int appRender(long tick) {
   int ret;

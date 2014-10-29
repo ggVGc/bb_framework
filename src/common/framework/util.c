@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdarg.h>
 
 void trace(const char* msg) {
   if(msg != 0)
@@ -16,5 +17,12 @@ void traceNoNL(const char* msg) {
 
 void traceInt(int v) {
   printf("%i\n", v);
+}
+
+void traceFmt(const char* fmt, ...) {
+  va_list argptr;
+  va_start(argptr,fmt);
+  printf(fmt, argptr);
+  va_end(argptr);
 }
 
