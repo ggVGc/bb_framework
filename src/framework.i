@@ -76,9 +76,19 @@ void DisplayObject_setTex(DisplayObject *d, Texture *t);
 void DisplayObject_setParent(DisplayObject *d, DisplayObject *p);
 //////
 
-unsigned char* loadBytes(const char* path, int* sz);
 void dataStoreCommit(const char* dataString);
 
+
+%native(loadBytes) int _wrap_loadBytes(lua_State* L);
+%{
+static int _wrap_loadBytes(lua_State* L) {
+  int sz;
+  const char *path = lua_tostring(L, -1);
+  const char* result = loadBytes(path, &sz);
+  lua_pushlstring(L, result, sz);
+  return 1;
+}
+%}
 
 %native(dataStoreReload) int _wrap_dataStoreReload(lua_State*L);
 %{

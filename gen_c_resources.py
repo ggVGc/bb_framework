@@ -1,8 +1,13 @@
 #!/bin/python2
 import os
+import sys
+import subprocess
+import binascii
 from clean_moon_outputs import cleanMoonOutputs
 
 PJ = os.path.join
+
+LUA_COMPILER = 'luajit'
 
 def toHex(s):
   return "".join("{:02x}".format(ord(c)) for c in s)
@@ -14,10 +19,16 @@ def processPath(path, prefix=''):
     for f in files:
       if f.endswith('.lua'):
         fullPath = PJ(root, f)
-        #os.system('luac -s -o '+fullPath.replace('.lua', '.luac')+' '+fullPath)
+        if '-c' in sys.argv:
+          compPath = fullPath.replace('.lua', '.luac')
+          if os.path.exists(compPath):
+            os.remove(compPath)
+          subprocess.check_call([LUA_COMPILER, '-b', fullPath, compPath])
+        else:
+          compPath = fullPath
         p = PJ(prefix, os.path.relpath(fullPath, path))
-        with open(fullPath) as rf:
-          hexDict[p] = toHex(rf.read())
+        with open(compPath) as rf:
+          hexDict[p] = binascii.hexlify(rf.read())
 
 appPath = PJ("..", "bounce")
 frameworkSrcPath = PJ('src', 'lua')

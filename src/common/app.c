@@ -38,12 +38,15 @@ static int didInit = 0;
 static int wasSuspended = 0;
 /*pthread_mutex_t vmMutex;*/
 
-int loadstringWithName(lua_State *L, const char *s, const char* name) {
-  return luaL_loadbuffer(L, s, strlen(s), name);
+int loadstringWithName(lua_State *L, const char *s, const char* name, int size) {
+  if(!size){
+    size = strlen(s);
+  }
+  return luaL_loadbuffer(L, s, size, name);
 }
 
-#define doStringWithName(L, s, name) \
-	(loadstringWithName(L, s, name) || lua_pcall(L, 0, LUA_MULTRET, 0))
+#define doStringWithName(L, s, name, size) \
+	(loadstringWithName(L, s, name, size) || lua_pcall(L, 0, LUA_MULTRET, 0))
 
 
 #define PRINTBUF_SIZE 4096
@@ -68,7 +71,8 @@ int print_lua(lua_State* s){
 
 int dofile(const char* filePath){
   int ret;
-  char* file = loadText(filePath);
+  int sz;
+  char* file = loadBytes(filePath, &sz);
   if(!file){
     // yeye, overflow, who cares
     char msg[2048];
@@ -76,7 +80,7 @@ int dofile(const char* filePath){
     trace(msg);
 	return -1;
   }
-  ret = doStringWithName(luaVM, file, filePath);
+  ret = doStringWithName(luaVM, file, filePath, sz);
   free(file);
   return ret;
 }

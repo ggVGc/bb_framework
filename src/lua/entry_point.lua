@@ -1,4 +1,3 @@
-
 if jit then 
   jit.off()
 end
@@ -10,7 +9,7 @@ loadstring = load
 function loadfile(path, ignoreInvalid, errorReportOffset)
   path = path:gsub('%.moon', '.lua')
   errorReportOffset = errorReportOffset or 0
-  local codeString = _c_framework.loadText(path)
+  local codeString = _c_framework.loadBytes(path)
   if not codeString then
     if not ignoreInvalid then
       error ("Invalid file: "..path, 2+errorReportOffset)

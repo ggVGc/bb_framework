@@ -2674,6 +2674,15 @@ void rawBitmapDataPushSWIGPtr(lua_State *L, RawBitmapData *bmData){
 }
 
 
+static int _wrap_loadBytes(lua_State* L) {
+  int sz;
+  const char *path = lua_tostring(L, -1);
+  const char* result = loadBytes(path, &sz);
+  lua_pushlstring(L, result, sz);
+  return 1;
+}
+
+
 static int _wrap_dataStoreReload(lua_State* L) {
   int SWIG_arg = 0;
   char *result = 0 ;
@@ -6798,33 +6807,6 @@ fail:
 }
 
 
-static int _wrap_loadBytes(lua_State* L) {
-  int SWIG_arg = 0;
-  char *arg1 = (char *) 0 ;
-  int *arg2 = (int *) 0 ;
-  unsigned char *result = 0 ;
-  
-  SWIG_check_num_args("loadBytes",2,2)
-  if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("loadBytes",1,"char const *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("loadBytes",2,"int *");
-  arg1 = (char *)lua_tostring(L, 1);
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_int,0))){
-    SWIG_fail_ptr("loadBytes",2,SWIGTYPE_p_int);
-  }
-  
-  result = (unsigned char *)loadBytes((char const *)arg1,arg2);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_unsigned_char,0); SWIG_arg++; 
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_dataStoreCommit(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
@@ -6924,8 +6906,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "setScissor", _wrap_setScissor},
     { "DisplayObject_setTex", _wrap_DisplayObject_setTex},
     { "DisplayObject_setParent", _wrap_DisplayObject_setParent},
-    { "loadBytes", _wrap_loadBytes},
     { "dataStoreCommit", _wrap_dataStoreCommit},
+    { "loadBytes",_wrap_loadBytes},
     { "dataStoreReload",_wrap_dataStoreReload},
     { "loadImage",_wrap_loadImage},
     { "loadText",_wrap_loadText},
