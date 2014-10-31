@@ -60,11 +60,17 @@ public class GLView extends GLSurfaceView {
     nativeOnStop();
   }
 
+  public void setPreserveContext(boolean preserve){
+    if (android.os.Build.VERSION.SDK_INT >= 11) {
+      setPreserveEGLContextOnPause(preserve);
+    }
+  }
+
   @Override
   public void onResume() {
     Log.i(TAG,"GLView: Resume");
     super.onResume();
-    setPreserveEGLContextOnPause(false);
+    setPreserveContext(false);
     appSetPaused(0);
     // Clear events
     /*

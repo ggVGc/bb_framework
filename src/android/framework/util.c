@@ -12,10 +12,12 @@ void trace(const char* msg) {
 }
 
 void traceFmt(const char* fmt, ...) {
+  char dest[1024 * 16];
   va_list argptr;
-  va_start(argptr,fmt);
-  __android_log_print(ANDROID_LOG_INFO, "trace", fmt, argptr);
+  va_start(argptr, fmt);
+  vsprintf(dest, fmt, argptr);
   va_end(argptr);
+  __android_log_print(ANDROID_LOG_INFO, "trace", "%s", dest);
 }
 
 void traceInt(int v) {

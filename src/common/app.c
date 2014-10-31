@@ -175,18 +175,8 @@ void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, c
   luaopen_AsyncAssetLoader(luaVM);
 
   RegLuaFuncGlobal(print);
+  graphicsInit(framebufferWidth, framebufferHeight);
 
-  if(dofile("framework/entry_point.lua")!=0) {
-    const char* msg = lua_tostring(luaVM, -1);
-	trace("Failed running entry point");
-	if(msg){
-	  trace(msg);
-	}
-    setAppBroken(1);
-  }
-  else {
-    graphicsInit(framebufferWidth, framebufferHeight);
-  }
   /*pthread_mutex_unlock(&vmMutex);*/
 }
 
@@ -255,11 +245,21 @@ int appRender(long tick) {
   }
 
   /*pthread_mutex_lock(&vmMutex);*/
+  if(!didInit){
+    if(dofile("framework/entry_point.lua")!=0) {
+      const char* msg = lua_tostring(luaVM, -1);
+      trace("Failed running entry point");
+      if(msg){
+        trace(msg);
+      }
+      appBroken = 1;
+      return 0;
+    }
+  }
 
   audioOnFrame();
   beginRenderFrame();
   lua_getglobal(luaVM, "framework");
-
   ret = doFrameBody(tick);
   /*printf("mem: %i\n", lua_gc(luaVM, LUA_GCCOUNT, 0));*/
 

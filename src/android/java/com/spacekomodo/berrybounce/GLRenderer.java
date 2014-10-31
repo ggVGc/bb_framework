@@ -51,9 +51,9 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   private native void nativeRender();
 
 
-  GLSurfaceView parentView;
+  GLView parentView;
 
-  public GLRenderer (MainActivity activity, GLSurfaceView parent) {
+  public GLRenderer (MainActivity activity, GLView  parent) {
     Log.i(TAG,"GLRenderer created");
     parentView = parent;
     this.activity = activity;
@@ -153,7 +153,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       @Override
       public void run() {
         Log.i(TAG, "Showing interstitial on main thread");
-        parentView.setPreserveEGLContextOnPause(true);
+        parentView.setPreserveContext(true);
         activity.showInterstitial();
       }
     });
@@ -169,13 +169,17 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   }
 
   private void dataStoreCommit(final String dataString){
-    try{
-      FileOutputStream f = this.activity.openFileOutput("datastore", Context.MODE_PRIVATE);
-      f.write(dataString.getBytes());
-      f.close();
-    } catch (Exception e) {
-      Log.e(TAG, "Failed writing to data store");
+    activity.runOnUiThread(new Runnable() {
+      public void run() {
+      try{
+        FileOutputStream f = activity.openFileOutput("datastore", Context.MODE_PRIVATE);
+        f.write(dataString.getBytes());
+        f.close();
+      } catch (Exception e) {
+        Log.e(TAG, "Failed writing to data store");
+      }
     }
+    });
   }
 
   private String dataStoreReload(){
@@ -215,7 +219,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       GLView.appSetPaused(1);
       activity.runOnUiThread(new Runnable() {
         public void run() {
-          parentView.setPreserveEGLContextOnPause(true);
+          parentView.setPreserveContext(true);
           activity.iap.purchaseProduct(id);
         }
       });

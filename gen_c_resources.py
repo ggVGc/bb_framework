@@ -1,4 +1,4 @@
-#!/bin/python
+#!/bin/python2
 import os
 from clean_moon_outputs import cleanMoonOutputs
 

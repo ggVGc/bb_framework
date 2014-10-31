@@ -20,9 +20,13 @@ void traceInt(int v) {
 }
 
 void traceFmt(const char* fmt, ...) {
-  va_list argptr;
-  va_start(argptr,fmt);
-  printf(fmt, argptr);
-  va_end(argptr);
+
+char dest[1024 * 16];
+    va_list argptr;
+    va_start(argptr, fmt);
+    vsprintf(dest, fmt, argptr);
+    va_end(argptr);
+    printf("%s", dest);
+
 }
 

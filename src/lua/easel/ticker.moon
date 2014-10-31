@@ -30,6 +30,8 @@ new: (fps, initialListeners) ->
 
   curTime = 0
   self.update = (deltaMs) ->
+    if #times <= 0
+      return
     ret = times[1]+deltaMs>=timePerTick
     for i=#listeners,1,-1 --iterate backwards in case a listeners removes itself during a tick
       times[i]+=deltaMs
