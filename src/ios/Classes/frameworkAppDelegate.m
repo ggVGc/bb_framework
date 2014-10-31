@@ -63,6 +63,7 @@ void adShowInterstitial(){
   trace("showInterstitial");
   if([Chartboost hasInterstitial:CBLocationDefault]){
     NSLog(@"Showing cached interstitial");
+    appSetPaused(1);
     [Chartboost showInterstitial:CBLocationDefault];
   }else{
     NSLog(@"Tried showing interstitial, but none cached. Cacheing new");

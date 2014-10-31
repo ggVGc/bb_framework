@@ -45,7 +45,7 @@ public class MainActivity extends Activity{
 
     view = new GLView(this);
     setContentView(view);
-    
+
     chartboostDelegate = new ChartboostDelegateImp();
     Chartboost.startWithAppId(this, AppConfig.chartboost.appId, AppConfig.chartboost.appSignature);
     Chartboost.setLoggingLevel(Level.ALL);
@@ -90,15 +90,16 @@ public class MainActivity extends Activity{
   }
 
   public void showInterstitial(){
-      if(Chartboost.hasInterstitial(CBLocation.LOCATION_DEFAULT)){
-        Log.i(TAG, "Showing cached interstitial");
-          Chartboost.showInterstitial(CBLocation.LOCATION_DEFAULT);
-      }else{
-          Log.i(TAG, "Tried showing interstitial, but none cached. Cacheing new");
-          chartboostDelegate.cacheing = true;
-          Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
-          chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.failedDisplay));
-      }
+    if(Chartboost.hasInterstitial(CBLocation.LOCATION_DEFAULT)){
+      Log.i(TAG, "Showing cached interstitial");
+      view.appSetPaused(1);
+      Chartboost.showInterstitial(CBLocation.LOCATION_DEFAULT);
+    }else{
+      Log.i(TAG, "Tried showing interstitial, but none cached. Cacheing new");
+      chartboostDelegate.cacheing = true;
+      Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
+      chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.failedDisplay));
+    }
   }
 
 
@@ -107,7 +108,7 @@ public class MainActivity extends Activity{
   public native void interstitialDisplayed();
   public native void interstitialFailedDisplay();
 
- public int facebookIsShareAvailable(){
+  public int facebookIsShareAvailable(){
     //return facebookAvailable?1:0;
     //return FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG)?1:0;
     return 0;
@@ -119,15 +120,15 @@ public class MainActivity extends Activity{
     Log.i(TAG,"Activity: RUNNING Facebook post");
     if (facebookIsShareAvailable()!=0){
       FacebookDialog shareDialog = new FacebookDialog.ShareDialogBuilder(self)
-            //.setName(AppConfig.facebook.name)
-            .setName(score+" Berries!")
-            .setCaption(AppConfig.facebook.caption)
-            .setDescription(AppConfig.facebook.description)
-            .setPicture(AppConfig.facebook.pictureUrl)
-            .setApplicationName("Berry Bounce")
-            .setLink(AppConfig.facebook.link)
-            .build();
-        uiHelper.trackPendingDialogCall(shareDialog.present());
+        //.setName(AppConfig.facebook.name)
+        .setName(score+" Berries!")
+        .setCaption(AppConfig.facebook.caption)
+        .setDescription(AppConfig.facebook.description)
+        .setPicture(AppConfig.facebook.pictureUrl)
+        .setApplicationName("Berry Bounce")
+        .setLink(AppConfig.facebook.link)
+        .build();
+      uiHelper.trackPendingDialogCall(shareDialog.present());
     }
   }
   @Override
