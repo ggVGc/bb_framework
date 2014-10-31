@@ -13,7 +13,6 @@ void cameraSetActive(Camera* cam) {
 }
 
 void cameraInit(Camera* cam, float x,float y, int width, int height) {
-  printf("Cam: %i, %i, %i, %i", x, y, width, height);
   cam->posX = x;
   cam->posY = y;
   cam->width = width;

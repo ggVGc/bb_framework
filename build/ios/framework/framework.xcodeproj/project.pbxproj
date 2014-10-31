@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* frameworkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* frameworkAppDelegate.m */; };
-		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28EC4C5A11D54ECE0027AA9F /* frameworkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EC4C5811D54ECE0027AA9F /* frameworkViewController.xib */; };
-		28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* EAGLView.m */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		7A4D88AC19E1712B0059CEBF /* app.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D888019E1712B0059CEBF /* app.c */; };
@@ -36,20 +33,23 @@
 		7A4D88BE19E1712B0059CEBF /* matrix2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88AA19E1712B0059CEBF /* matrix2.c */; };
 		7A4D88BF19E1712B0059CEBF /* framework_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88AB19E1712B0059CEBF /* framework_wrap.c */; };
 		7A4D88C219E171420059CEBF /* audio_oal.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88C119E171420059CEBF /* audio_oal.c */; };
+		7A65161A19F122E700D21968 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A65161919F122E700D21968 /* main.m */; };
+		7A65162719F1233800D21968 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A65161E19F1233800D21968 /* EAGLView.m */; };
+		7A65162819F1233800D21968 /* fileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A65162019F1233800D21968 /* fileUtil.m */; };
+		7A65162919F1233800D21968 /* frameworkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A65162219F1233800D21968 /* frameworkAppDelegate.m */; };
+		7A65162A19F1233800D21968 /* frameworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A65162419F1233800D21968 /* frameworkViewController.m */; };
+		7A65162B19F1233800D21968 /* shaderUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A65162519F1233800D21968 /* shaderUtil.c */; };
+		7A65162F19F1234900D21968 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7A65162D19F1234900D21968 /* SimpleFragment.glsl */; };
+		7A65163019F1234900D21968 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7A65162E19F1234900D21968 /* SimpleVertex.glsl */; };
+		7A65163219F125D700D21968 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A65163119F125D700D21968 /* Chartboost.framework */; };
+		7A6516361A0338E300D21968 /* chartboostDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */; };
 		7AB46E0219E1792400841DB3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB46E0119E1792400841DB3 /* OpenAL.framework */; };
 		7AB46E0419E17AEF00841DB3 /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39208ED1443BEA30006E503 /* libminizip.a */; };
 		7AB46E0619E17AFD00841DB3 /* liblibpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39208DE1443BE8F0006E503 /* liblibpng.a */; };
 		7AB46E4419E17BBB00841DB3 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB46E3F19E17B8D00841DB3 /* libvorbis.a */; };
 		7AB46E4B19E17C2000841DB3 /* data_store.c in Sources */ = {isa = PBXBuildFile; fileRef = 7AB46E4A19E17C2000841DB3 /* data_store.c */; };
-		7ADA9FFD19F095FB00DB8738 /* fileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADA9FFA19F095FB00DB8738 /* fileUtil.m */; };
-		7ADA9FFE19F095FB00DB8738 /* shaderUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = 7ADA9FFB19F095FB00DB8738 /* shaderUtil.c */; };
 		7ADAA00119F0966900DB8738 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADAA00019F0966900DB8738 /* GLKit.framework */; };
 		7ADAA00319F0968700DB8738 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADAA00219F0968700DB8738 /* CoreGraphics.framework */; };
-		7ADAA00719F0B4B700DB8738 /* SimpleFragment.glsl in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAA00519F0B4B700DB8738 /* SimpleFragment.glsl */; };
-		7ADAA00819F0B4B700DB8738 /* SimpleVertex.glsl in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAA00619F0B4B700DB8738 /* SimpleVertex.glsl */; };
-		7ADAA00919F0B66E00DB8738 /* SimpleFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7ADAA00519F0B4B700DB8738 /* SimpleFragment.glsl */; };
-		7ADAA00A19F0B66E00DB8738 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7ADAA00619F0B4B700DB8738 /* SimpleVertex.glsl */; };
-		7ADAA00D19F0B72200DB8738 /* frameworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAA00C19F0B72200DB8738 /* frameworkViewController.m */; };
 		7ADAA00F19F0F13900DB8738 /* helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAA00E19F0F13900DB8738 /* helper.c */; };
 		7ADAA01119F0F14F00DB8738 /* lua_asyncassetloader.c in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAA01019F0F14F00DB8738 /* lua_asyncassetloader.c */; };
 		7ADAA01519F1046000DB8738 /* lib_luajit_i386.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADAA01419F1046000DB8738 /* lib_luajit_i386.a */; };
@@ -118,17 +118,12 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* frameworkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frameworkAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* frameworkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = frameworkAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* framework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = framework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28EC4C5811D54ECE0027AA9F /* frameworkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = frameworkViewController.xib; sourceTree = "<group>"; };
-		28FD14FC0DC6FC130079059D /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
-		28FD14FD0DC6FC130079059D /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* framework_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework_Prefix.pch; sourceTree = "<group>"; };
 		7A4D888019E1712B0059CEBF /* app.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = app.c; sourceTree = "<group>"; };
 		7A4D888119E1712B0059CEBF /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = app.h; sourceTree = "<group>"; };
@@ -173,20 +168,29 @@
 		7A4D88AA19E1712B0059CEBF /* matrix2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix2.c; sourceTree = "<group>"; };
 		7A4D88AB19E1712B0059CEBF /* framework_wrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = framework_wrap.c; sourceTree = "<group>"; };
 		7A4D88C119E171420059CEBF /* audio_oal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio_oal.c; sourceTree = "<group>"; };
+		7A65161919F122E700D21968 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7A65161C19F1233800D21968 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+		7A65161D19F1233800D21968 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		7A65161E19F1233800D21968 /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
+		7A65161F19F1233800D21968 /* fileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileUtil.h; sourceTree = "<group>"; };
+		7A65162019F1233800D21968 /* fileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileUtil.m; sourceTree = "<group>"; };
+		7A65162119F1233800D21968 /* frameworkAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frameworkAppDelegate.h; sourceTree = "<group>"; };
+		7A65162219F1233800D21968 /* frameworkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = frameworkAppDelegate.m; sourceTree = "<group>"; };
+		7A65162319F1233800D21968 /* frameworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frameworkViewController.h; sourceTree = "<group>"; };
+		7A65162419F1233800D21968 /* frameworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = frameworkViewController.m; sourceTree = "<group>"; };
+		7A65162519F1233800D21968 /* shaderUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shaderUtil.c; sourceTree = "<group>"; };
+		7A65162619F1233800D21968 /* shaderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shaderUtil.h; sourceTree = "<group>"; };
+		7A65162D19F1234900D21968 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragment.glsl; sourceTree = "<group>"; };
+		7A65162E19F1234900D21968 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertex.glsl; sourceTree = "<group>"; };
+		7A65163119F125D700D21968 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = ../../../deps/ios/Chartboost.framework; sourceTree = "<group>"; };
+		7A6516331A0338E300D21968 /* appConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appConfig.h; sourceTree = "<group>"; };
+		7A6516341A0338E300D21968 /* chartboostDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chartboostDelegateImpl.h; sourceTree = "<group>"; };
+		7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chartboostDelegateImpl.m; sourceTree = "<group>"; };
 		7AB46E0119E1792400841DB3 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		7AB46E3919E17B8C00841DB3 /* vorbis.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vorbis.xcodeproj; path = ../vorbis/vorbis.xcodeproj; sourceTree = "<group>"; };
 		7AB46E4A19E17C2000841DB3 /* data_store.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = data_store.c; sourceTree = "<group>"; };
-		7ADA9FF819F095FB00DB8738 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
-		7ADA9FF919F095FB00DB8738 /* fileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileUtil.h; sourceTree = "<group>"; };
-		7ADA9FFA19F095FB00DB8738 /* fileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fileUtil.m; sourceTree = "<group>"; };
-		7ADA9FFB19F095FB00DB8738 /* shaderUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shaderUtil.c; sourceTree = "<group>"; };
-		7ADA9FFC19F095FB00DB8738 /* shaderUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shaderUtil.h; sourceTree = "<group>"; };
 		7ADAA00019F0966900DB8738 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7ADAA00219F0968700DB8738 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7ADAA00519F0B4B700DB8738 /* SimpleFragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleFragment.glsl; sourceTree = "<group>"; };
-		7ADAA00619F0B4B700DB8738 /* SimpleVertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SimpleVertex.glsl; sourceTree = "<group>"; };
-		7ADAA00B19F0B72200DB8738 /* frameworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frameworkViewController.h; sourceTree = "<group>"; };
-		7ADAA00C19F0B72200DB8738 /* frameworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = frameworkViewController.m; sourceTree = "<group>"; };
 		7ADAA00E19F0F13900DB8738 /* helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = helper.c; path = ../../../deps/common/helper_threads_lua/helper.c; sourceTree = "<group>"; };
 		7ADAA01019F0F14F00DB8738 /* lua_asyncassetloader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lua_asyncassetloader.c; path = ../../../src/common/lua_modules/lua_asyncassetloader.c; sourceTree = "<group>"; };
 		7ADAA01219F0FD9400DB8738 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libluajit.a; path = ../../../deps/common/luajit/bin/osx/libluajit.a; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A65163219F125D700D21968 /* Chartboost.framework in Frameworks */,
 				7ADAA01519F1046000DB8738 /* lib_luajit_i386.a in Frameworks */,
 				7ADAA00319F0968700DB8738 /* CoreGraphics.framework in Frameworks */,
 				7ADAA00119F0966900DB8738 /* GLKit.framework in Frameworks */,
@@ -225,24 +230,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				7ADAA00B19F0B72200DB8738 /* frameworkViewController.h */,
-				7ADAA00C19F0B72200DB8738 /* frameworkViewController.m */,
-				7ADA9FF819F095FB00DB8738 /* debug.h */,
-				7ADA9FF919F095FB00DB8738 /* fileUtil.h */,
-				7ADA9FFA19F095FB00DB8738 /* fileUtil.m */,
-				7ADA9FFB19F095FB00DB8738 /* shaderUtil.c */,
-				7ADA9FFC19F095FB00DB8738 /* shaderUtil.h */,
-				28FD14FC0DC6FC130079059D /* EAGLView.h */,
-				28FD14FD0DC6FC130079059D /* EAGLView.m */,
-				1D3623240D0F684500981E51 /* frameworkAppDelegate.h */,
-				1D3623250D0F684500981E51 /* frameworkAppDelegate.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,7 +245,6 @@
 				B39208E51443BEA30006E503 /* minizip.xcodeproj */,
 				B39208DF1443BE9B0006E503 /* lua.xcodeproj */,
 				B39208D61443BE8F0006E503 /* libpng.xcodeproj */,
-				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -272,12 +258,10 @@
 			children = (
 				7ADAA01019F0F14F00DB8738 /* lua_asyncassetloader.c */,
 				7ADAA00E19F0F13900DB8738 /* helper.c */,
-				7ADAA00419F0B4B700DB8738 /* Shaders */,
 				7A4D88C019E171420059CEBF /* openal */,
 				7A4D887F19E1712B0059CEBF /* common */,
 				B3920A441443C4BC0006E503 /* ios */,
 				32CA4F630368D1EE00C91783 /* framework_Prefix.pch */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -296,6 +280,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A65163119F125D700D21968 /* Chartboost.framework */,
 				7ADAA01419F1046000DB8738 /* lib_luajit_i386.a */,
 				7ADAA01219F0FD9400DB8738 /* libluajit.a */,
 				7ADAA00219F0968700DB8738 /* CoreGraphics.framework */,
@@ -380,6 +365,36 @@
 			path = ../../../src/openal;
 			sourceTree = "<group>";
 		};
+		7A65161B19F1233800D21968 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7A6516331A0338E300D21968 /* appConfig.h */,
+				7A6516341A0338E300D21968 /* chartboostDelegateImpl.h */,
+				7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */,
+				7A65161C19F1233800D21968 /* debug.h */,
+				7A65161D19F1233800D21968 /* EAGLView.h */,
+				7A65161E19F1233800D21968 /* EAGLView.m */,
+				7A65161F19F1233800D21968 /* fileUtil.h */,
+				7A65162019F1233800D21968 /* fileUtil.m */,
+				7A65162119F1233800D21968 /* frameworkAppDelegate.h */,
+				7A65162219F1233800D21968 /* frameworkAppDelegate.m */,
+				7A65162319F1233800D21968 /* frameworkViewController.h */,
+				7A65162419F1233800D21968 /* frameworkViewController.m */,
+				7A65162519F1233800D21968 /* shaderUtil.c */,
+				7A65162619F1233800D21968 /* shaderUtil.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7A65162C19F1234900D21968 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				7A65162D19F1234900D21968 /* SimpleFragment.glsl */,
+				7A65162E19F1234900D21968 /* SimpleVertex.glsl */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 		7AB46E3A19E17B8C00841DB3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,15 +402,6 @@
 				7AB46E4119E17B8D00841DB3 /* vorbisTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		7ADAA00419F0B4B700DB8738 /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				7ADAA00519F0B4B700DB8738 /* SimpleFragment.glsl */,
-				7ADAA00619F0B4B700DB8738 /* SimpleVertex.glsl */,
-			);
-			path = Shaders;
 			sourceTree = "<group>";
 		};
 		B39208D71443BE8F0006E503 /* Products */ = {
@@ -425,6 +431,9 @@
 		B3920A441443C4BC0006E503 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				7A65162C19F1234900D21968 /* Shaders */,
+				7A65161B19F1233800D21968 /* Classes */,
+				7A65161919F122E700D21968 /* main.m */,
 				B3920A451443C4BC0006E503 /* framework */,
 			);
 			name = ios;
@@ -551,12 +560,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ADAA00919F0B66E00DB8738 /* SimpleFragment.glsl in Resources */,
-				7ADAA00A19F0B66E00DB8738 /* SimpleVertex.glsl in Resources */,
 				7A4D88B219E1712B0059CEBF /* resource_loading.c.orig in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				28EC4C5A11D54ECE0027AA9F /* frameworkViewController.xib in Resources */,
 				7AE0519D198D2E5D003126A1 /* assets.zip in Resources */,
+				7A65162F19F1234900D21968 /* SimpleFragment.glsl in Resources */,
+				7A65163019F1234900D21968 /* SimpleVertex.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,19 +578,20 @@
 			files = (
 				7A4D88AF19E1712B0059CEBF /* rawbitmapdata.c in Sources */,
 				7A4D88B119E1712B0059CEBF /* resource_loading.c in Sources */,
-				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				7ADA9FFD19F095FB00DB8738 /* fileUtil.m in Sources */,
 				7A4D88B819E1712B0059CEBF /* bitmapdata.c in Sources */,
-				1D3623260D0F684500981E51 /* frameworkAppDelegate.m in Sources */,
 				7ADAA01119F0F14F00DB8738 /* lua_asyncassetloader.c in Sources */,
 				7A4D88AE19E1712B0059CEBF /* random.c in Sources */,
-				28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */,
+				7A65162919F1233800D21968 /* frameworkAppDelegate.m in Sources */,
 				7AB46E4B19E17C2000841DB3 /* data_store.c in Sources */,
+				7A65162A19F1233800D21968 /* frameworkViewController.m in Sources */,
 				7A4D88B019E1712B0059CEBF /* rect.c in Sources */,
 				7A4D88BF19E1712B0059CEBF /* framework_wrap.c in Sources */,
 				7A4D88BE19E1712B0059CEBF /* matrix2.c in Sources */,
-				7ADAA00819F0B4B700DB8738 /* SimpleVertex.glsl in Sources */,
+				7A65162719F1233800D21968 /* EAGLView.m in Sources */,
 				7ADAA00F19F0F13900DB8738 /* helper.c in Sources */,
+				7A65161A19F122E700D21968 /* main.m in Sources */,
+				7A65162819F1233800D21968 /* fileUtil.m in Sources */,
+				7A6516361A0338E300D21968 /* chartboostDelegateImpl.m in Sources */,
 				7A4D88AC19E1712B0059CEBF /* app.c in Sources */,
 				7A4D88AD19E1712B0059CEBF /* quad.c in Sources */,
 				7A4D88B919E1712B0059CEBF /* camera.c in Sources */,
@@ -591,11 +601,9 @@
 				7A4D88BB19E1712B0059CEBF /* facebook.c in Sources */,
 				7A4D88B519E1712B0059CEBF /* util.c in Sources */,
 				7A4D88BD19E1712B0059CEBF /* input.c in Sources */,
-				7ADAA00D19F0B72200DB8738 /* frameworkViewController.m in Sources */,
 				7A4D88B419E1712B0059CEBF /* texture.c in Sources */,
-				7ADAA00719F0B4B700DB8738 /* SimpleFragment.glsl in Sources */,
 				7A4D88B319E1712B0059CEBF /* streaming_audio.c in Sources */,
-				7ADA9FFE19F095FB00DB8738 /* shaderUtil.c in Sources */,
+				7A65162B19F1233800D21968 /* shaderUtil.c in Sources */,
 				7A4D88BA19E1712B0059CEBF /* display_object.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,6 +635,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/vmshare/bitbucket/framework/deps/ios,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -663,6 +675,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/vmshare/bitbucket/framework/deps/ios,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";

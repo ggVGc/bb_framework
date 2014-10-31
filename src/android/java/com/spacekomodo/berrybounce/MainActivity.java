@@ -91,13 +91,12 @@ public class MainActivity extends Activity{
 
   public void showInterstitial(){
       if(Chartboost.hasInterstitial(CBLocation.LOCATION_DEFAULT)){
-        Log.i(TAG, "Showing caches interstitial");
+        Log.i(TAG, "Showing cached interstitial");
           Chartboost.showInterstitial(CBLocation.LOCATION_DEFAULT);
       }else{
-          Log.i(TAG, "Cacheing interstitial");
+          Log.i(TAG, "Tried showing interstitial, but none cached. Cacheing new");
           chartboostDelegate.cacheing = true;
           Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
-          Log.i(TAG, "Adding gailed display event");
           chartboostDelegate.events.add(new Integer(ChartboostDelegateImp.Event.failedDisplay));
       }
   }

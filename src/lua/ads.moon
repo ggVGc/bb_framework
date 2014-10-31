@@ -5,7 +5,7 @@ noop = ->
 
 
 framework.Ads = {
-  interstitialInterval: 3
+  interstitialInterval: 1
   enabled: true
   interstitialDisplayCallback: noop
   interstitialCloseCallback: noop
@@ -13,7 +13,7 @@ framework.Ads = {
     --_c_framework.adPrepareInterstitial!
   showInterstitial: (onClose)->
     if not framework.DataStore.interstitialCounter
-      framework.DataStore.interstitialCounter = 0
+      framework.DataStore.interstitialCounter = 1
       framework.DataStore.commit!
     else
       framework.DataStore.interstitialCounter+=1

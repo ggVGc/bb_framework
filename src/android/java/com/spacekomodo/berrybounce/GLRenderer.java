@@ -116,6 +116,10 @@ public class GLRenderer implements GLSurfaceView.Renderer {
         case ChartboostDelegateImp.Event.closed:
           activity.interstitialClosed();
           break;
+        case ChartboostDelegateImp.Event.clicked:
+          activity.interstitialClosed();
+          GLView.appSetPaused(1);
+          break;
         case ChartboostDelegateImp.Event.failedDisplay:
           activity.interstitialFailedDisplay();
           break;
