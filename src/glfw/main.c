@@ -41,7 +41,7 @@
 
 
 const int SCREEN_WIDTH = 960;
-const int SCREEN_HEIGHT = 700;
+const int SCREEN_HEIGHT = 640;
 
 
 static void error_callback(int error, const char* description) {

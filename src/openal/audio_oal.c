@@ -97,11 +97,11 @@ int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
 }
 
 void audioPlay(Audio* a) {
+  if(globalMute){
+    return;
+  }
   alSourcePlay(a->source);
   alCheckError("Failed playing source");
-  if(globalMute){
-    audioSetPaused(a, 1);
-  }
 }
 void audioSetLooping(Audio* a, int loop) {
   alSourcei (a->source, AL_LOOPING,  loop==0?AL_FALSE:AL_TRUE);

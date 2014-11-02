@@ -43,11 +43,14 @@
 		7A65163019F1234900D21968 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7A65162E19F1234900D21968 /* SimpleVertex.glsl */; };
 		7A65163219F125D700D21968 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A65163119F125D700D21968 /* Chartboost.framework */; };
 		7A6516361A0338E300D21968 /* chartboostDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */; };
+		7A9C65681A05DFA10083B57A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65661A05DFA10083B57A /* Default-568h@2x.png */; };
+		7A9C65691A05DFA10083B57A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65671A05DFA10083B57A /* Default@2x.png */; };
+		7A9C656B1A05E79D0083B57A /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C656A1A05E79D0083B57A /* icon@2x.png */; };
 		7AB46E0219E1792400841DB3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB46E0119E1792400841DB3 /* OpenAL.framework */; };
 		7AB46E0419E17AEF00841DB3 /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39208ED1443BEA30006E503 /* libminizip.a */; };
 		7AB46E0619E17AFD00841DB3 /* liblibpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39208DE1443BE8F0006E503 /* liblibpng.a */; };
 		7AB46E4419E17BBB00841DB3 /* libvorbis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB46E3F19E17B8D00841DB3 /* libvorbis.a */; };
-		7AB46E4B19E17C2000841DB3 /* data_store.c in Sources */ = {isa = PBXBuildFile; fileRef = 7AB46E4A19E17C2000841DB3 /* data_store.c */; };
+		7AB46E4B19E17C2000841DB3 /* data_store.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB46E4A19E17C2000841DB3 /* data_store.m */; };
 		7ADAA00119F0966900DB8738 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADAA00019F0966900DB8738 /* GLKit.framework */; };
 		7ADAA00319F0968700DB8738 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADAA00219F0968700DB8738 /* CoreGraphics.framework */; };
 		7ADAA00F19F0F13900DB8738 /* helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAA00E19F0F13900DB8738 /* helper.c */; };
@@ -118,7 +121,7 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* framework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = framework.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Berry Bounce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Berry Bounce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28EC4C5811D54ECE0027AA9F /* frameworkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = frameworkViewController.xib; sourceTree = "<group>"; };
@@ -186,9 +189,12 @@
 		7A6516331A0338E300D21968 /* appConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appConfig.h; sourceTree = "<group>"; };
 		7A6516341A0338E300D21968 /* chartboostDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chartboostDelegateImpl.h; sourceTree = "<group>"; };
 		7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chartboostDelegateImpl.m; sourceTree = "<group>"; };
+		7A9C65661A05DFA10083B57A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7A9C65671A05DFA10083B57A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7A9C656A1A05E79D0083B57A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		7AB46E0119E1792400841DB3 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		7AB46E3919E17B8C00841DB3 /* vorbis.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vorbis.xcodeproj; path = ../vorbis/vorbis.xcodeproj; sourceTree = "<group>"; };
-		7AB46E4A19E17C2000841DB3 /* data_store.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = data_store.c; sourceTree = "<group>"; };
+		7AB46E4A19E17C2000841DB3 /* data_store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = data_store.m; sourceTree = "<group>"; };
 		7ADAA00019F0966900DB8738 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7ADAA00219F0968700DB8738 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7ADAA00E19F0F13900DB8738 /* helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = helper.c; path = ../../../deps/common/helper_threads_lua/helper.c; sourceTree = "<group>"; };
@@ -233,7 +239,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* framework.app */,
+				1D6058910D05DD3D006BFB54 /* Berry Bounce.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,6 +275,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7A9C656A1A05E79D0083B57A /* icon@2x.png */,
+				7A9C65661A05DFA10083B57A /* Default-568h@2x.png */,
+				7A9C65671A05DFA10083B57A /* Default@2x.png */,
 				7AE0519C198D2E5D003126A1 /* assets.zip */,
 				28EC4C5811D54ECE0027AA9F /* frameworkViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -443,7 +452,7 @@
 		B3920A451443C4BC0006E503 /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				7AB46E4A19E17C2000841DB3 /* data_store.c */,
+				7AB46E4A19E17C2000841DB3 /* data_store.m */,
 			);
 			name = framework;
 			path = ../../../src/ios/framework;
@@ -469,7 +478,7 @@
 			);
 			name = framework;
 			productName = framework;
-			productReference = 1D6058910D05DD3D006BFB54 /* framework.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Berry Bounce.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -562,9 +571,12 @@
 			files = (
 				7A4D88B219E1712B0059CEBF /* resource_loading.c.orig in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				7A9C656B1A05E79D0083B57A /* icon@2x.png in Resources */,
 				28EC4C5A11D54ECE0027AA9F /* frameworkViewController.xib in Resources */,
+				7A9C65691A05DFA10083B57A /* Default@2x.png in Resources */,
 				7AE0519D198D2E5D003126A1 /* assets.zip in Resources */,
 				7A65162F19F1234900D21968 /* SimpleFragment.glsl in Resources */,
+				7A9C65681A05DFA10083B57A /* Default-568h@2x.png in Resources */,
 				7A65163019F1234900D21968 /* SimpleVertex.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,7 +594,7 @@
 				7ADAA01119F0F14F00DB8738 /* lua_asyncassetloader.c in Sources */,
 				7A4D88AE19E1712B0059CEBF /* random.c in Sources */,
 				7A65162919F1233800D21968 /* frameworkAppDelegate.m in Sources */,
-				7AB46E4B19E17C2000841DB3 /* data_store.c in Sources */,
+				7AB46E4B19E17C2000841DB3 /* data_store.m in Sources */,
 				7A65162A19F1233800D21968 /* frameworkViewController.m in Sources */,
 				7A4D88B019E1712B0059CEBF /* rect.c in Sources */,
 				7A4D88BF19E1712B0059CEBF /* framework_wrap.c in Sources */,
@@ -634,6 +646,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -656,6 +669,7 @@
 					"$(SRCROOT)/../../../deps/common",
 				);
 				INFOPLIST_FILE = "framework-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../minizip/build/Debug-iphonesimulator\\\"",
@@ -665,7 +679,7 @@
 					/Volumes/vmshare/bitbucket/framework/deps/common/luajit/bin/osx,
 					/Volumes/vmshare/bitbucket/framework/deps/common/luajit/bin/ios,
 				);
-				PRODUCT_NAME = framework;
+				PRODUCT_NAME = "Berry Bounce";
 			};
 			name = Debug;
 		};
@@ -674,6 +688,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -683,6 +698,7 @@
 				GCC_PREFIX_HEADER = framework_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "framework-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/../minizip/build/Debug-iphonesimulator\\\"",
@@ -692,7 +708,7 @@
 					/Volumes/vmshare/bitbucket/framework/deps/common/luajit/bin/osx,
 					/Volumes/vmshare/bitbucket/framework/deps/common/luajit/bin/ios,
 				);
-				PRODUCT_NAME = framework;
+				PRODUCT_NAME = "Berry Bounce";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

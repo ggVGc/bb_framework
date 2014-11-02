@@ -75,6 +75,7 @@
   NSLog(@"EAGLView initWithCoder");
   self = [super initWithCoder:coder];
   if (self) {        
+    self.backgroundColor = [UIColor blackColor];
     didInit = false;
     setScreenWidth(self.frame.size.width);
     setScreenHeight(self.frame.size.height);

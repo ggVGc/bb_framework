@@ -37,6 +37,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   public static final  int MAX_EVENTS = 100;
   public GLRenderer.TouchEvent[] eventPool = new GLRenderer.TouchEvent[100];
   public ConcurrentLinkedQueue<GLRenderer.TouchEvent> eventQueue;
+  public boolean shouldPause = false;
 
 
   public boolean inited = false;
@@ -108,6 +109,10 @@ public class GLRenderer implements GLSurfaceView.Renderer {
 
   @Override
   public void onDrawFrame(GL10 gl) {
+    if(shouldPause){
+      shouldPause = false;
+      GLView.appSetPaused(1);
+    }
 
     if(activity.chartboostDelegate.events.size()!=0){
       int e = activity.chartboostDelegate.events.remove().intValue();
