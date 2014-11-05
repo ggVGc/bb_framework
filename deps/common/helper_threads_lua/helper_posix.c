@@ -6,12 +6,41 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include <sys/time.h>
 #include <signal.h>
+#ifdef _WIN32
+#include <Windows.h>
+#include <time.h>
+/* FILETIME of Jan 1 1970 00:00:00. */
+static const unsigned __int64 epoch = 116444736000000000;
+int
+gettimeofday(struct timeval * tp, struct timezone * tzp)
+{
+	FILETIME	file_time;
+	SYSTEMTIME	system_time;
+	ULARGE_INTEGER ularge;
+
+	GetSystemTime(&system_time);
+	SystemTimeToFileTime(&system_time, &file_time);
+	ularge.LowPart = file_time.dwLowDateTime;
+	ularge.HighPart = file_time.dwHighDateTime;
+
+	tp->tv_sec = (long) ((ularge.QuadPart - epoch) / 10000000L);
+	tp->tv_usec = (long) (system_time.wMilliseconds * 1000);
+
+	return 0;
+}
+#else
+  #include <sys/time.h>
+#endif
 
 #include "lua.h"
 #include "lauxlib.h"
-#include "pthread.h"
+
+#ifdef _WIN32
+  #include "winpthreads.h"
+#else
+  #include "pthread.h"
+#endif
 
 #include "helper.h"
 
@@ -464,7 +493,7 @@ static int queue_wait (lua_State *L) {
 		lua_Number timeout = lua_tonumber (L, 2);
 		NUMBER_TO_TIMESPEC (timeout, &ts);
 		
-		gettimeofday (&tv, NULL);
+		/*gettimeofday (&tv, NULL);*/
 		TIMEVAL_TO_TIMESPEC (&tv, &now);
 		timespecadd (&ts, &now, &ts);
 		
@@ -496,13 +525,13 @@ static int queue_gc (lua_State *L) {
 static pthread_key_t thread_key;
 
 static void *thread_work (void *arg) {
+    struct timespec waitTs;
 	thread_t *thrd = (thread_t *)arg;
 	if (!thrd || !thrd->in || !thrd->out)
 		return NULL;
 	
-	pthread_setspecific (thread_key, arg);
+	//pthread_setspecific (thread_key, arg);
 	
-    struct timespec waitTs;
     waitTs.tv_nsec = 100;
 	while (!thrd->signal) {
       /*printf("calling q_wait\n");*/
@@ -746,7 +775,7 @@ static int waiter_prepare (lua_State *L, void **udata) {
 		lua_Number timeout = lua_tonumber (L, 2);
 		NUMBER_TO_TIMESPEC (timeout, &ud->timeout);
 		
-		gettimeofday (&tv, NULL);
+		/*gettimeofday (&tv, NULL);*/
 		TIMEVAL_TO_TIMESPEC (&tv, &now);
 		timespecadd (&ud->timeout, &now, &ud->timeout);
 	}

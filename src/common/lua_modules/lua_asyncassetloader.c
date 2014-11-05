@@ -1,34 +1,28 @@
-
-#include <sys/time.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "lua.h"
 #include "lauxlib.h"
-
 #include "helper_threads_lua/helper.h"
 #include "framework/resource_loading.h"
 #include "framework/audio.h"
 
-
-typedef struct AsyncAssetLoader_loadAudio_udata {
+typedef struct loadAudioData {
   char *path;
   Audio *audio;
-} AsyncAssetLoader_loadAudio_udata;
+} loadAudioData;
 
-static int AsyncAssetLoader_loadAudio_prepare (lua_State *L, void **udata) {
-  AsyncAssetLoader_loadAudio_udata *td = (AsyncAssetLoader_loadAudio_udata *)malloc (sizeof (AsyncAssetLoader_loadAudio_udata));
+static int loadAudioPrepare (lua_State *L, void **udata) {
+  loadAudioData *td = (loadAudioData *)malloc (sizeof (loadAudioData));
   if (!td){
     luaL_error (L, "can't alloc udata");
   }
-
   td->path = strdup(luaL_checkstring(L, 1));
   *udata = td;
   return 0;
 }
 
-static int AsyncAssetLoader_loadAudio_work (void *udata) {
-  AsyncAssetLoader_loadAudio_udata *td = (AsyncAssetLoader_loadAudio_udata *)udata;
+static int loadAudioWork (void *udata) {
+  loadAudioData *td = (loadAudioData *)udata;
   const char *ext = strchr(td->path, '.');
   if(ext && strcmp(ext, ".ogg")==0){
     // load ogg
@@ -41,8 +35,8 @@ static int AsyncAssetLoader_loadAudio_work (void *udata) {
   return 0;
 }
 
-static int AsyncAssetLoader_loadAudio_update (lua_State *L, void *udata) {
-  AsyncAssetLoader_loadAudio_udata *td = (AsyncAssetLoader_loadAudio_udata *)udata;
+static int loadAudioUpdate (lua_State *L, void *udata) {
+  loadAudioData *td = (loadAudioData *)udata;
   if(td->audio){
     audioPushSWIGPtr(L, td->audio);
     return 1;
@@ -51,20 +45,18 @@ static int AsyncAssetLoader_loadAudio_update (lua_State *L, void *udata) {
 }
 
 static const task_ops AsyncAssetLoader_loadAudio_ops = {
-  AsyncAssetLoader_loadAudio_prepare,
-  AsyncAssetLoader_loadAudio_work,
-  AsyncAssetLoader_loadAudio_update
+  loadAudioPrepare,
+  loadAudioWork,
+  loadAudioUpdate
 };
 
-
-
-typedef struct AsyncAssetLoader_loadImage_udata {
-  const char *path;
+typedef struct loadImageData {
+  char *path;
   RawBitmapData *bmData;
-} AsyncAssetLoader_loadImage_udata;
+} loadImageData;
 
-static int AsyncAssetLoader_loadImage_prepare (lua_State *L, void **udata) {
-  AsyncAssetLoader_loadImage_udata *td = (AsyncAssetLoader_loadImage_udata *)malloc (sizeof (AsyncAssetLoader_loadImage_udata));
+static int loadImagePrepare (lua_State *L, void **udata) {
+  loadImageData *td = (loadImageData *)malloc (sizeof (loadImageData));
   if (!td){
     luaL_error (L, "can't alloc udata");
   }
@@ -74,15 +66,15 @@ static int AsyncAssetLoader_loadImage_prepare (lua_State *L, void **udata) {
   return 0;
 }
 
-static int AsyncAssetLoader_loadImage_work (void *udata) {
-  AsyncAssetLoader_loadImage_udata *td = (AsyncAssetLoader_loadImage_udata *)udata;
+static int loadImageWork (void *udata) {
+  loadImageData *td = (loadImageData *)udata;
   td->bmData = loadImage(td->path);
   free(td->path);
   return 0;
 }
 
-static int AsyncAssetLoader_loadImage_update (lua_State *L, void *udata) {
-  AsyncAssetLoader_loadImage_udata *td = (AsyncAssetLoader_loadImage_udata *)udata;
+static int loadImageUpdate (lua_State *L, void *udata) {
+  loadImageData *td = (loadImageData *)udata;
   if(td->bmData){
     rawBitmapDataPushSWIGPtr(L, td->bmData);
     return 1;
@@ -91,9 +83,9 @@ static int AsyncAssetLoader_loadImage_update (lua_State *L, void *udata) {
 }
 
 static const task_ops AsyncAssetLoader_loadImage_ops = {
-  AsyncAssetLoader_loadImage_prepare,
-  AsyncAssetLoader_loadImage_work,
-  AsyncAssetLoader_loadImage_update
+  loadImagePrepare,
+  loadImageWork,
+  loadImageUpdate
 };
 
 static const task_reg AsyncAssetLoader_reg[] = {
@@ -102,21 +94,16 @@ static const task_reg AsyncAssetLoader_reg[] = {
   {NULL}
 };
 
-
-
 int luaopen_AsyncAssetLoader(lua_State *L);
 int luaopen_AsyncAssetLoader(lua_State *L) {
-
   helper_init (L);
-
-    lua_getglobal(L, "_c_framework");
-	lua_pushliteral (L, "AsyncAssetLoader");
-    lua_newtable(L);
-	lua_settable (L, -3);
-    lua_pushliteral(L, "AsyncAssetLoader");
-    lua_gettable(L, -2);
-    tasklib (L, NULL, AsyncAssetLoader_reg);
-    lua_pop(L, 1);
-
+  lua_getglobal(L, "_c_framework");
+  lua_pushliteral (L, "AsyncAssetLoader");
+  lua_newtable(L);
+  lua_settable (L, -3);
+  lua_pushliteral(L, "AsyncAssetLoader");
+  lua_gettable(L, -2);
+  tasklib (L, NULL, AsyncAssetLoader_reg);
+  lua_pop(L, 1);
   return 1;
 }

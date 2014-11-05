@@ -1,12 +1,5 @@
-//
-//  frameworkViewController.m
-//  framework
-//
-//  Created by Walt on 10/11/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import <QuartzCore/QuartzCore.h>
+//#import "util_ios.h"
 
 #import "frameworkViewController.h"
 #import "EAGLView.h"
@@ -67,6 +60,14 @@ NSDate *lastTick = 0;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+}
+
+
+
 
 - (void)viewWillDisappear:(BOOL)animated {
     /*

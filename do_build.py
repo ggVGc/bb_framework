@@ -27,7 +27,7 @@ def buildLib(outfile, srcDirs, srcFiles, cflags):
   ret = 0
   for d in srcDirs:
     for x in os.listdir(d):
-      if x.endswith(".c"):
+      if x.endswith(".c") and not ('._' in x):
         ret = compile(os.path.join(d, x))
         if ret != 0:
           return ret
@@ -48,7 +48,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
   cppfiles = ""
   for d in srcDirs:
     for f in os.listdir(d):
-      if f.endswith(".c"):
+      if f.endswith(".c") and not ('._' in f):
         cfiles.append( os.path.join(d, f) )
       if f.endswith(".cpp"):
         cppfiles+=" "+os.path.join(d, f)
@@ -153,7 +153,7 @@ def buildFramework():
  
   srcFiles = [
       " ./src/gles_imp.c",
-      " ./deps/common/helper_threads_lua/helper.c",
+      " ./deps/common/helper_threads_lua/helper_posix.c",
       ]
 
 

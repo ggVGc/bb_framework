@@ -1,5 +1,5 @@
-#include "util.h"
-#include "ads.h"
+#include "framework/util.h"
+#include "framework/ads.h"
 
 void adShowInterstitial(){
   trace("showInterstitial");

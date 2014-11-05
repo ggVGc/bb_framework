@@ -60,6 +60,9 @@
     <ClInclude Include="..\..\..\src\common\framework\data_store.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\deps\win\winpthreads.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\common\framework\bitmapdata.c">
@@ -116,9 +119,6 @@
     <ClCompile Include="..\..\..\src\common\framework\facebook.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\src\common\framework\ads.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\src\common\framework\audio.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -137,7 +137,10 @@
     <ClCompile Include="..\..\..\src\common\lua_modules\lua_asyncassetloader.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\deps\common\helper_threads_lua/helper.c">
+    <ClCompile Include="..\..\..\src\glfw\framework\ads.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\helper_threads_lua\helper_posix.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

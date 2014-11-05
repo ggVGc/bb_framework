@@ -12,7 +12,7 @@
 - (void)didClickInterstitial:(CBLocation)location{
   NSLog(@"Clicked interstitial at location %@", location);
   adInterstitialClosed();
-  appSetPaused(1);
+  appSetPaused(1, 1);
 }
 
 - (void)didCloseInterstitial:(CBLocation)location{

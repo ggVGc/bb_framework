@@ -58,11 +58,11 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
   if(key>=GLFW_KEY_A && key<=GLFW_KEY_Z){
     if(action==GLFW_PRESS){
       if(key==GLFW_KEY_P){
-        appSetPaused(1);
+        appSetPaused(1, 1);
       }else if(key==GLFW_KEY_T){
         reloadTextures = 1;
       }else if(key==GLFW_KEY_U){
-        appSetPaused(0);
+        appSetPaused(0, 0);
       }else if(key==GLFW_KEY_R){
         shouldReload = 1;
       }else if(key==GLFW_KEY_M){

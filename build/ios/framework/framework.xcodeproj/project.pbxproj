@@ -33,6 +33,10 @@
 		7A4D88BE19E1712B0059CEBF /* matrix2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88AA19E1712B0059CEBF /* matrix2.c */; };
 		7A4D88BF19E1712B0059CEBF /* framework_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88AB19E1712B0059CEBF /* framework_wrap.c */; };
 		7A4D88C219E171420059CEBF /* audio_oal.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88C119E171420059CEBF /* audio_oal.c */; };
+		7A62A84A1A08D8CE00AF4E60 /* iap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A8491A08D8CE00AF4E60 /* iap.m */; };
+		7A62A84D1A08DA8200AF4E60 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A62A84C1A08DA8200AF4E60 /* StoreKit.framework */; };
+		7A634B781A0883FA001D6489 /* lib_luajit_armv7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A634B761A0883FA001D6489 /* lib_luajit_armv7.a */; };
+		7A634B791A0883FA001D6489 /* lib_luajit_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A634B771A0883FA001D6489 /* lib_luajit_armv7s.a */; };
 		7A65161A19F122E700D21968 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A65161919F122E700D21968 /* main.m */; };
 		7A65162719F1233800D21968 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A65161E19F1233800D21968 /* EAGLView.m */; };
 		7A65162819F1233800D21968 /* fileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A65162019F1233800D21968 /* fileUtil.m */; };
@@ -88,13 +92,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = libpng;
-		};
-		B39208E31443BE9B0006E503 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B39208DF1443BE9B0006E503 /* lua.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = lua;
 		};
 		B39208EC1443BEA30006E503 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -171,6 +168,10 @@
 		7A4D88AA19E1712B0059CEBF /* matrix2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix2.c; sourceTree = "<group>"; };
 		7A4D88AB19E1712B0059CEBF /* framework_wrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = framework_wrap.c; sourceTree = "<group>"; };
 		7A4D88C119E171420059CEBF /* audio_oal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio_oal.c; sourceTree = "<group>"; };
+		7A62A8491A08D8CE00AF4E60 /* iap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iap.m; sourceTree = "<group>"; };
+		7A62A84C1A08DA8200AF4E60 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7A634B761A0883FA001D6489 /* lib_luajit_armv7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_luajit_armv7.a; path = ../../../deps/common/luajit/bin/ios/lib_luajit_armv7.a; sourceTree = "<group>"; };
+		7A634B771A0883FA001D6489 /* lib_luajit_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_luajit_armv7s.a; path = ../../../deps/common/luajit/bin/ios/lib_luajit_armv7s.a; sourceTree = "<group>"; };
 		7A65161919F122E700D21968 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A65161C19F1233800D21968 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
 		7A65161D19F1233800D21968 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		7A9C65661A05DFA10083B57A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7A9C65671A05DFA10083B57A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7A9C656A1A05E79D0083B57A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		7AB3686D1A089802008E68B3 /* util_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util_ios.h; path = Classes/util_ios.h; sourceTree = "<group>"; };
 		7AB46E0119E1792400841DB3 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		7AB46E3919E17B8C00841DB3 /* vorbis.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vorbis.xcodeproj; path = ../vorbis/vorbis.xcodeproj; sourceTree = "<group>"; };
 		7AB46E4A19E17C2000841DB3 /* data_store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = data_store.m; sourceTree = "<group>"; };
@@ -204,7 +206,6 @@
 		7AE0519C198D2E5D003126A1 /* assets.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = assets.zip; path = ../../../bin/assets.zip; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* framework-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "framework-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		B39208D61443BE8F0006E503 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../libpng/libpng.xcodeproj; sourceTree = SOURCE_ROOT; };
-		B39208DF1443BE9B0006E503 /* lua.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = lua.xcodeproj; path = ../lua/lua.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B39208E51443BEA30006E503 /* minizip.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = minizip.xcodeproj; path = ../minizip/minizip.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B39209691443BFAF0006E503 /* libminizip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libminizip.a; path = "../minizip/build/Debug-iphonesimulator/libminizip.a"; sourceTree = SOURCE_ROOT; };
 		B392096B1443BFBB0006E503 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = "../lua/build/Debug-iphonesimulator/liblua.a"; sourceTree = SOURCE_ROOT; };
@@ -217,6 +218,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A62A84D1A08DA8200AF4E60 /* StoreKit.framework in Frameworks */,
+				7A634B781A0883FA001D6489 /* lib_luajit_armv7.a in Frameworks */,
+				7A634B791A0883FA001D6489 /* lib_luajit_armv7s.a in Frameworks */,
 				7A65163219F125D700D21968 /* Chartboost.framework in Frameworks */,
 				7ADAA01519F1046000DB8738 /* lib_luajit_i386.a in Frameworks */,
 				7ADAA00319F0968700DB8738 /* CoreGraphics.framework in Frameworks */,
@@ -249,7 +253,6 @@
 			children = (
 				7AB46E3919E17B8C00841DB3 /* vorbis.xcodeproj */,
 				B39208E51443BEA30006E503 /* minizip.xcodeproj */,
-				B39208DF1443BE9B0006E503 /* lua.xcodeproj */,
 				B39208D61443BE8F0006E503 /* libpng.xcodeproj */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -289,6 +292,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A62A84C1A08DA8200AF4E60 /* StoreKit.framework */,
+				7A634B761A0883FA001D6489 /* lib_luajit_armv7.a */,
+				7A634B771A0883FA001D6489 /* lib_luajit_armv7s.a */,
 				7A65163119F125D700D21968 /* Chartboost.framework */,
 				7ADAA01419F1046000DB8738 /* lib_luajit_i386.a */,
 				7ADAA01219F0FD9400DB8738 /* libluajit.a */,
@@ -421,14 +427,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B39208E01443BE9B0006E503 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B39208E41443BE9B0006E503 /* liblua.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B39208E61443BEA30006E503 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +438,7 @@
 		B3920A441443C4BC0006E503 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				7AB3686D1A089802008E68B3 /* util_ios.h */,
 				7A65162C19F1234900D21968 /* Shaders */,
 				7A65161B19F1233800D21968 /* Classes */,
 				7A65161919F122E700D21968 /* main.m */,
@@ -452,6 +451,7 @@
 		B3920A451443C4BC0006E503 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				7A62A8491A08D8CE00AF4E60 /* iap.m */,
 				7AB46E4A19E17C2000841DB3 /* data_store.m */,
 			);
 			name = framework;
@@ -488,6 +488,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = S5UYQQ3K54;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "framework" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -505,10 +510,6 @@
 				{
 					ProductGroup = B39208D71443BE8F0006E503 /* Products */;
 					ProjectRef = B39208D61443BE8F0006E503 /* libpng.xcodeproj */;
-				},
-				{
-					ProductGroup = B39208E01443BE9B0006E503 /* Products */;
-					ProjectRef = B39208DF1443BE9B0006E503 /* lua.xcodeproj */;
 				},
 				{
 					ProductGroup = B39208E61443BEA30006E503 /* Products */;
@@ -548,13 +549,6 @@
 			remoteRef = B39208DD1443BE8F0006E503 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B39208E41443BE9B0006E503 /* liblua.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = liblua.a;
-			remoteRef = B39208E31443BE9B0006E503 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		B39208ED1443BEA30006E503 /* libminizip.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -588,6 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A62A84A1A08D8CE00AF4E60 /* iap.m in Sources */,
 				7A4D88AF19E1712B0059CEBF /* rawbitmapdata.c in Sources */,
 				7A4D88B119E1712B0059CEBF /* resource_loading.c in Sources */,
 				7A4D88B819E1712B0059CEBF /* bitmapdata.c in Sources */,
@@ -647,6 +642,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -658,6 +654,8 @@
 				GCC_PREFIX_HEADER = framework_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 					"$(SRCROOT)/../../../deps/common/gles_headers",
 					"$(SRCROOT)/../../../deps/common/libpng",
 					"$(SRCROOT)/../../../src/common",
@@ -672,14 +670,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/../minizip/build/Debug-iphonesimulator\\\"",
-					"\\\"$(SRCROOT)/../lua/build/Debug-iphonesimulator\\\"",
-					"\\\"$(SRCROOT)/../libpng/build/Debug-iphonesimulator\\\"",
 					"$(SRCROOT)/../../../deps/common/luajit/bin/ios",
-					/Volumes/vmshare/bitbucket/framework/deps/common/luajit/bin/osx,
 					/Volumes/vmshare/bitbucket/framework/deps/common/luajit/bin/ios,
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
+				PROVISIONING_PROFILE = "024ddbe9-61db-44b0-aea1-980a46f8e5d3";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -689,6 +686,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -697,18 +695,30 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = framework_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					"$(SRCROOT)/../../../deps/common/gles_headers",
+					"$(SRCROOT)/../../../deps/common/libpng",
+					"$(SRCROOT)/../../../src/common",
+					"$(SRCROOT)/../../../deps/common/luajit/src",
+					"$(SRCROOT)/../../../deps/common/minizip",
+					"$(SRCROOT)/../../../deps/common/libvorbis/include",
+					"$(SRCROOT)/../../../src/gen",
+					"$(SRCROOT)/../../../deps/common/libogg/include",
+					"$(SRCROOT)/../../../deps/common",
+				);
 				INFOPLIST_FILE = "framework-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/../minizip/build/Debug-iphonesimulator\\\"",
-					"\\\"$(SRCROOT)/../lua/build/Debug-iphonesimulator\\\"",
-					"\\\"$(SRCROOT)/../libpng/build/Debug-iphonesimulator\\\"",
 					"$(SRCROOT)/../../../deps/common/luajit/bin/ios",
-					/Volumes/vmshare/bitbucket/framework/deps/common/luajit/bin/osx,
 					/Volumes/vmshare/bitbucket/framework/deps/common/luajit/bin/ios,
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
+				PROVISIONING_PROFILE = "024ddbe9-61db-44b0-aea1-980a46f8e5d3";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

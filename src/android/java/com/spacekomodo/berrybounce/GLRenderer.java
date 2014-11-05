@@ -37,7 +37,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   public static final  int MAX_EVENTS = 100;
   public GLRenderer.TouchEvent[] eventPool = new GLRenderer.TouchEvent[100];
   public ConcurrentLinkedQueue<GLRenderer.TouchEvent> eventQueue;
-  public boolean shouldPause = false;
+  private boolean shouldPause = false;
 
 
   public boolean inited = false;
@@ -111,7 +111,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   public void onDrawFrame(GL10 gl) {
     if(shouldPause){
       shouldPause = false;
-      GLView.appSetPaused(1);
+      GLView.appSetPaused(1, 0);
     }
 
     if(activity.chartboostDelegate.events.size()!=0){
@@ -123,7 +123,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
           break;
         case ChartboostDelegateImp.Event.clicked:
           activity.interstitialClosed();
-          GLView.appSetPaused(1);
+          GLView.appSetPaused(1, 1);
           break;
         case ChartboostDelegateImp.Event.failedDisplay:
           activity.interstitialFailedDisplay();
@@ -147,6 +147,10 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       e = eventQueue.poll();
     }
     nativeRender();
+  }
+  
+  public void onInterstitialShow(){
+    shouldPause = true;
   }
 
   private void facebookPost(final int score){
@@ -225,7 +229,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     if(activity==null || activity.iap==null || !activity.iap.isAvailable()){
       IAP.onPurchaseComplete(0);
     }else{
-      GLView.appSetPaused(1);
+      GLView.appSetPaused(1, 1);
       activity.runOnUiThread(new Runnable() {
         public void run() {
           parentView.setPreserveContext(true);

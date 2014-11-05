@@ -92,7 +92,7 @@ public class MainActivity extends Activity{
   public void showInterstitial(){
     if(Chartboost.hasInterstitial(CBLocation.LOCATION_DEFAULT)){
       Log.i(TAG, "Showing cached interstitial");
-      view.renderer.shouldPause = true;
+      view.renderer.onInterstitialShow();
       Chartboost.showInterstitial(CBLocation.LOCATION_DEFAULT);
     }else{
       Log.i(TAG, "Tried showing interstitial, but none cached. Cacheing new");

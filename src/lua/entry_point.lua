@@ -410,14 +410,14 @@ local function frameFunc()
   framework.cjs.Bitmap.drawCounter = 0
   main.draw()
   if fps.hasNew() then
-    print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount(), 'T: '..framework.MovieClip.tickCount)
+    --print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount(), 'T: '..framework.MovieClip.tickCount)
     framework.MovieClip.tickCount = 0
   end
   memCheckCounter=memCheckCounter+frameDelta
   if memCheckCounter>MEM_CHECK_INTERVAL*1000 then
     memCheckCounter = 0
     local thisMem = collectgarbage 'count'
-    print ('M: '..math.floor(thisMem).." ("..math.floor((thisMem-lastMem)/MEM_CHECK_INTERVAL)..")")
+    --print ('M: '..math.floor(thisMem).." ("..math.floor((thisMem-lastMem)/MEM_CHECK_INTERVAL)..")")
     lastMem = thisMem
     if thisMem > MAX_MEM_TRIGGER_GC then
       collectgarbage()

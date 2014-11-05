@@ -11,7 +11,7 @@ public class GLView extends GLSurfaceView {
 
 
   private static native void nativeOnStop();
-  public  static native void appSetPaused(int paused);
+  public  static native void appSetPaused(int paused, int pauseAudio);
   private static native void appSuspend();
 
   private static final String TAG = MainActivity.TAG;
@@ -71,7 +71,7 @@ public class GLView extends GLSurfaceView {
     Log.i(TAG,"GLView: Resume");
     super.onResume();
     setPreserveContext(false);
-    appSetPaused(0);
+    appSetPaused(0, 0);
     // Clear events
     /*
     GLRenderer.TouchEvent e;
@@ -85,7 +85,7 @@ public class GLView extends GLSurfaceView {
   public void onPause() {
     Log.i(TAG,"GLView: Pause");
     super.onPause();
-    appSetPaused(1);
+    appSetPaused(1, 1);
     appSuspend();
   }
 }

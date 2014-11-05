@@ -196,6 +196,7 @@
 				GCC_PREFIX_HEADER = minizip_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = minizip;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -210,6 +211,7 @@
 				GCC_PREFIX_HEADER = minizip_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = minizip;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

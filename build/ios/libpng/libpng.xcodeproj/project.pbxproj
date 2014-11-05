@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7ADC6DEA1A0887730050F1B5 /* arm_init.c in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC6DE71A0887730050F1B5 /* arm_init.c */; };
+		7ADC6DEB1A0887730050F1B5 /* filter_neon_intrinsics.c in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC6DE81A0887730050F1B5 /* filter_neon_intrinsics.c */; };
+		7ADC6DEC1A0887730050F1B5 /* filter_neon.S in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC6DE91A0887730050F1B5 /* filter_neon.S */; };
 		AA747D9F0F9514B9006C5449 /* libpng_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* libpng_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
-		B39208141443BD480006E503 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = B39208011443BD480006E503 /* config.h */; };
 		B39208151443BD480006E503 /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = B39208021443BD480006E503 /* png.c */; };
 		B39208161443BD480006E503 /* png.h in Headers */ = {isa = PBXBuildFile; fileRef = B39208031443BD480006E503 /* png.h */; };
 		B39208171443BD480006E503 /* pngconf.h in Headers */ = {isa = PBXBuildFile; fileRef = B39208041443BD480006E503 /* pngconf.h */; };
@@ -31,9 +33,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7ADC6DE71A0887730050F1B5 /* arm_init.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = arm_init.c; path = ../../../deps/common/libpng/arm/arm_init.c; sourceTree = "<group>"; };
+		7ADC6DE81A0887730050F1B5 /* filter_neon_intrinsics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = filter_neon_intrinsics.c; path = ../../../deps/common/libpng/arm/filter_neon_intrinsics.c; sourceTree = "<group>"; };
+		7ADC6DE91A0887730050F1B5 /* filter_neon.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = filter_neon.S; path = ../../../deps/common/libpng/arm/filter_neon.S; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* libpng_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libpng_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B39208011443BD480006E503 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = config.h; path = ../../../deps/common/libpng/config.h; sourceTree = SOURCE_ROOT; };
 		B39208021443BD480006E503 /* png.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = png.c; path = ../../../deps/common/libpng/png.c; sourceTree = SOURCE_ROOT; };
 		B39208031443BD480006E503 /* png.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = png.h; path = ../../../deps/common/libpng/png.h; sourceTree = SOURCE_ROOT; };
 		B39208041443BD480006E503 /* pngconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pngconf.h; path = ../../../deps/common/libpng/pngconf.h; sourceTree = SOURCE_ROOT; };
@@ -104,7 +108,9 @@
 		32C88DFF0371C24200C91783 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B39208011443BD480006E503 /* config.h */,
+				7ADC6DE71A0887730050F1B5 /* arm_init.c */,
+				7ADC6DE81A0887730050F1B5 /* filter_neon_intrinsics.c */,
+				7ADC6DE91A0887730050F1B5 /* filter_neon.S */,
 				B39208021443BD480006E503 /* png.c */,
 				B39208031443BD480006E503 /* png.h */,
 				B39208041443BD480006E503 /* pngconf.h */,
@@ -136,7 +142,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* libpng_Prefix.pch in Headers */,
-				B39208141443BD480006E503 /* config.h in Headers */,
 				B39208161443BD480006E503 /* png.h in Headers */,
 				B39208171443BD480006E503 /* pngconf.h in Headers */,
 				B392081C1443BD480006E503 /* pngpriv.h in Headers */,
@@ -207,9 +212,12 @@
 				B39208201443BD480006E503 /* pngrutil.c in Sources */,
 				B39208211443BD480006E503 /* pngset.c in Sources */,
 				B39208221443BD480006E503 /* pngtrans.c in Sources */,
+				7ADC6DEB1A0887730050F1B5 /* filter_neon_intrinsics.c in Sources */,
 				B39208231443BD480006E503 /* pngwio.c in Sources */,
+				7ADC6DEC1A0887730050F1B5 /* filter_neon.S in Sources */,
 				B39208241443BD480006E503 /* pngwrite.c in Sources */,
 				B39208251443BD480006E503 /* pngwtran.c in Sources */,
+				7ADC6DEA1A0887730050F1B5 /* arm_init.c in Sources */,
 				B39208261443BD480006E503 /* pngwutil.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +240,7 @@
 				GCC_PREFIX_HEADER = libpng_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = libpng;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -246,6 +255,7 @@
 				GCC_PREFIX_HEADER = libpng_Prefix.pch;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = libpng;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

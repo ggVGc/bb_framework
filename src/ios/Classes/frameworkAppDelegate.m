@@ -8,6 +8,7 @@
 
 #import "frameworkAppDelegate.h"
 #import "frameworkViewController.h"
+#import "app.h"
 #import "appConfig.h"
 #import "chartboostDelegateImpl.h"
 #import <Chartboost/Chartboost.h>
@@ -28,15 +29,18 @@ static ChartboostDelegateImpl *cbDelegate;
     return YES;
 }
 
+- (void)orientationChanged:(NSNotification *)notification{
+  NSLog(@"Orientation Changed");
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
   NSLog(@"Will resign active");
-  appSetPaused(1);
+  appSetPaused(1, 1);
   appSuspend();
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   NSLog(@"Did become active");
-  appSetPaused(0);
+  appSetPaused(0, 0);
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -63,7 +67,7 @@ void adShowInterstitial(){
   trace("showInterstitial");
   if([Chartboost hasInterstitial:CBLocationDefault]){
     NSLog(@"Showing cached interstitial");
-    appSetPaused(1);
+    appSetPaused(1, 0);
     [Chartboost showInterstitial:CBLocationDefault];
   }else{
     NSLog(@"Tried showing interstitial, but none cached. Cacheing new");

@@ -55,15 +55,24 @@ int print_lua(lua_State* s){
   int i;
   int accum = 0;
   for(i=1;i<=lua_gettop(s);++i){
-    const char *str = lua_tostring(s, i);
-    int sz = strlen(str);
-    if(accum+sz>=PRINTBUF_SIZE){
-      break;
+    const char *str = 0;
+    if(lua_isnil(s, i)){
+      str = "nil";
+    }else if(lua_isboolean(s, i)){
+      str = lua_toboolean(s,i)?"true":"false";
+    }else{
+      str = lua_tostring(s, i);
     }
-    strcpy(printBuf+accum, str);
-    accum += sz+1;
-    printBuf[accum-1] = '\t';
-    printBuf[accum] = '\0';
+    if(str){
+      int sz = strlen(str);
+      if(accum+sz>=PRINTBUF_SIZE){
+        break;
+      }
+      strcpy(printBuf+accum, str);
+      accum += sz+1;
+      printBuf[accum-1] = '\t';
+      printBuf[accum] = '\0';
+    }
   }
   trace(printBuf);
   return 0;
@@ -306,7 +315,7 @@ void setAppBroken(int isBroken){
 void adInterstitialClosed(){
   if(didInit){
     /*pthread_mutex_lock(&vmMutex);*/
-    appSetPaused(0);
+    appSetPaused(0, 0);
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "Ads");
     lua_getfield(luaVM, -1, "interstitialCloseCallback");
@@ -325,7 +334,7 @@ void adInterstitialDisplayed(int success){
     lua_pushboolean(luaVM, success);
     callLuaFunc(1,0);
     if(success){
-      appSetPaused(1);
+      appSetPaused(1, 0);
     }
     /*pthread_mutex_unlock(&vmMutex);*/
   }else{
@@ -347,10 +356,12 @@ void onPurchaseComplete(int success){
   }
 }
 
-void appSetPaused(int paused){
+void appSetPaused(int paused, int pauseAudio){
   if(didInit){
     /*appPaused = paused;*/
-    audioSetAllPaused(paused);
+    if(paused == pauseAudio){
+      audioSetAllPaused(pauseAudio);
+    }
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "setPaused");
     lua_pushboolean(luaVM, paused);

@@ -86,9 +86,9 @@ Java_com_spacekomodo_berrybounce_GLRenderer_appGraphicsReload( JNIEnv*  env, job
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLView_appSetPaused( JNIEnv*  env, jobject this, jint paused) {
+Java_com_spacekomodo_berrybounce_GLView_appSetPaused( JNIEnv*  env, jobject this, jint paused, jint pauseAudio) {
   trace("Setting app paused");
-  appSetPaused(paused);
+  appSetPaused(paused, pauseAudio);
 }
 
 
