@@ -65,7 +65,8 @@ MY_SOURCES := src/common/app.c \
   src/common/lua_modules/lua_asyncassetloader.c \
   src/android/app_android.c \
   src/android/framework/util.c \
-  deps/common/helper_threads_lua/helper.c \
+  deps/common/helper_threads_lua/helper_posix.c \
+  deps/common/lua-compat-5.2/c-api/compat-5.2.c \
   src/android/framework/audio.c
 
 

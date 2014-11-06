@@ -12,6 +12,7 @@
 #include <lauxlib.h>
 #include <lualib.h>
 
+#include "lua-compat-5.2/c-api/compat-5.2.h"
 #include "helper_threads_lua/helper.h"
 #include "framework/util.h"
 #include "framework/input.h"
@@ -56,6 +57,7 @@ int print_lua(lua_State* s){
   int accum = 0;
   for(i=1;i<=lua_gettop(s);++i){
     const char *str = 0;
+    /*
     if(lua_isnil(s, i)){
       str = "nil";
     }else if(lua_isboolean(s, i)){
@@ -63,8 +65,12 @@ int print_lua(lua_State* s){
     }else{
       str = lua_tostring(s, i);
     }
+    */
+    luaL_tolstring(s, i, 0);
+    str = lua_tostring(s, i);
     if(str){
       int sz = strlen(str);
+	  lua_pop(s,1);
       if(accum+sz>=PRINTBUF_SIZE){
         break;
       }

@@ -143,5 +143,8 @@
     <ClCompile Include="..\..\..\deps\common\helper_threads_lua\helper_posix.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\deps\common\lua-compat-5.2\c-api\compat-5.2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

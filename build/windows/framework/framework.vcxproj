@@ -30,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\deps\common\helper_threads_lua\helper_posix.c" />
+    <ClCompile Include="..\..\..\deps\common\lua-compat-5.2\c-api\compat-5.2.c" />
     <ClCompile Include="..\..\..\src\common\framework\matrix2.c" />
     <ClCompile Include="..\..\..\src\common\app.c" />
     <ClCompile Include="..\..\..\src\common\framework\display_object.c" />

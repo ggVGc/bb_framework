@@ -9,8 +9,11 @@ end
 function framework.StreamingAudio.new(nativeAudio)
   local M = {}
 
-
   function M.play()
+    _c_framework.audioPlay(nativeAudio)
+  end
+  function M.playLooping()
+    M.setLooping(true)
     _c_framework.audioPlay(nativeAudio)
   end
   function M.playIfNotPlaying()

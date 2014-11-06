@@ -62,26 +62,24 @@ void rawBitmapDataPushSWIGPtr(lua_State *L, RawBitmapData *bmData){
   }
 }
 
-
 int screenWidth(void);
 int screenHeight(void);
 int isAppBroken(void);
 void setAppBroken(int);
 int getScreenRefreshRate();
-
+unsigned char* loadBytes(const char* path, int* sz);
 void setScissor(int x, int y, int w, int h);
+void dataStoreCommit(const char* dataString);
 
 // Use these to avoid memory leaks
 void DisplayObject_setTex(DisplayObject *d, Texture *t);
 void DisplayObject_setParent(DisplayObject *d, DisplayObject *p);
 //////
 
-void dataStoreCommit(const char* dataString);
 
-
-%native(loadBytes) int _wrap_loadBytes(lua_State* L);
+%native(loadByteString) int _wrap_loadByteString(lua_State* L);
 %{
-static int _wrap_loadBytes(lua_State* L) {
+static int _wrap_loadByteString(lua_State* L) {
   int sz;
   const char *path = lua_tostring(L, -1);
   const char* result = loadBytes(path, &sz);

@@ -154,6 +154,7 @@ def buildFramework():
   srcFiles = [
       " ./src/gles_imp.c",
       " ./deps/common/helper_threads_lua/helper_posix.c",
+      " ./deps/common/lua-compat-5.2/c-api/compat-5.2.c",
       ]
 
 

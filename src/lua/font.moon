@@ -27,13 +27,13 @@ new: maker (imagePath, texLoadFunc) =>
       curWidth += 20*(reversing and -1 or 1)
     else
       if reversing
-        curWidth-=tex.width*curScale
-      tmpMat.tx = pos.x+curWidth
-      tmpMat.ty = pos.y-tex.height*curScale
+        curWidth-=math.ceil(tex.width*curScale)
+      tmpMat.tx = math.floor(pos.x+curWidth)
+      tmpMat.ty = math.floor(pos.y-tex.height*curScale)
       tmpMat.a = curScale
       tmpMat.d = curScale
       if not reversing
-        curWidth+=tex.width*curScale
+        curWidth+=math.ceil(tex.width*curScale)
       tex.draw tmpMat, curAlpha
 
 

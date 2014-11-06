@@ -1,5 +1,6 @@
 local Button
 Button = {
+clickSfx: nil
 new: maker (mc, initialDoStateSwitch)=>
   @getMc = -> mc
   w = mc.nominalBounds[3]
@@ -7,6 +8,10 @@ new: maker (mc, initialDoStateSwitch)=>
   if mc.stop
     mc.stop!
   
+  playClickSfx = ->
+    if Button.clickSfx and Button.clickSfx.play
+      Button.clickSfx.play!
+
   @doStateSwitch = initialDoStateSwitch==nil and true or initialDoStateSwitch
 
   state = 0
@@ -45,6 +50,7 @@ new: maker (mc, initialDoStateSwitch)=>
       state = 0
       if @doStateSwitch and mc.gotoAndStop
         mc.gotoAndStop stateOffset
+      playClickSfx!
       return true
     else if state ~= 0 and not over
       state = 0

@@ -144,15 +144,26 @@ unsigned char* loadBytesFromZip(const char* inPath, int* outSize){
   return data;
 }
 
-unsigned char* loadBytesFromDisk(const char* inPath) {
-  // TODO: Should check for overflow.
-  char path[2048];
-  sprintf(path, "assets/%s", inPath);
 
-  /*TODO: Implement!*/
-  /*FILE* f = fopen(path);*/
-  /*fclose(path);*/
-  return (unsigned char*)"NOT IMPLEMENTED";
+unsigned char* loadBytesFromDisk(const char* path, int *sz) {
+  unsigned char *data;
+  FILE* f = fopen(path, "rb");
+  if(!f){
+    return 0;
+  }
+  fseek(f, 0, SEEK_END);
+  *sz = ftell(f);
+  fseek(f, 0, SEEK_SET);
+  data = malloc(*sz + 1);
+  fread(data, *sz, 1, f);
+  fclose(f);
+  return data;
+}
+
+unsigned char* loadBytesExternal(const char *inPath, int *sz){
+  char path[2048];
+  sprintf(path, "ext_assets/%s", inPath);
+  return loadBytesFromDisk(path, sz);
 }
 
 
@@ -161,11 +172,16 @@ unsigned char* loadBytes(const char* path, int* sz){
   int i;
   unsigned char *ret;
 
-  if(usingZip)
+  if(usingZip){
     ret = loadBytesFromZip(path, sz);
-  else
-    ret = loadBytesFromDisk(path);
+  }
+  else{
+    ret = loadBytesFromDisk(path, sz);
+  }
 
+  if(!ret){
+    ret = loadBytesExternal(path, sz);
+  }
   if(!ret){
     for(i=0;i<ASSET_COUNT;++i){
       if(strcmp(path, ASSET_KEYS[i])==0){
