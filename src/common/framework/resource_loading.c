@@ -180,9 +180,6 @@ unsigned char* loadBytes(const char* path, int* sz){
   }
 
   if(!ret){
-    ret = loadBytesExternal(path, sz);
-  }
-  if(!ret){
     for(i=0;i<ASSET_COUNT;++i){
       if(strcmp(path, ASSET_KEYS[i])==0){
         if (sz != 0) {
@@ -193,6 +190,13 @@ unsigned char* loadBytes(const char* path, int* sz){
       }
     }
   }
+
+  /*
+  if(!ret){
+    ret = loadBytesExternal(path, sz);
+  }
+  */
+
   return ret;
 }
 

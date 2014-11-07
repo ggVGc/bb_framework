@@ -122,9 +122,11 @@ int audioLoadInto(Audio *a, const char* path){
 
   vi=ov_info(&vf,-1);
   totalSamples = (long)ov_pcm_total(&vf,-1);
+  /*
   printf("\nBitstream is %d channel, %ldHz\n",vi->channels,vi->rate);
   printf("\nDecoded length: %ld samples\n", totalSamples);
   printf("Encoded by: %s\n\n",ov_comment(&vf,-1)->vendor);
+  */
 
 
   bufSize = totalSamples*vi->channels*2;
