@@ -1,17 +1,12 @@
-//
-//  frameworkAppDelegate.m
-//  framework
-//
-//  Created by Walt on 10/11/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import "frameworkAppDelegate.h"
 #import "frameworkViewController.h"
 #import "app.h"
+#import "framework/util.h"
+#import "framework/ads.h"
 #import "appConfig.h"
 #import "chartboostDelegateImpl.h"
 #import <Chartboost/Chartboost.h>
+#import "EAGLView.h"
 
 @implementation frameworkAppDelegate
 
@@ -23,7 +18,8 @@ static ChartboostDelegateImpl *cbDelegate;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.rootViewController = self.viewController;
     cbDelegate = [[ChartboostDelegateImpl alloc] init];
-    [Chartboost startWithAppId:AppConfig.cb.appId appSignature:AppConfig.cb.appSignature delegate:cbDelegate];
+    //[Chartboost startWithAppId:AppConfig.cb.appId appSignature:AppConfig.cb.appSignature delegate:cbDelegate];
+    [Chartboost startWithAppId:@"545d4d160d602524bc431795" appSignature:@"2924db06cc538c1e10016e889607d88c43378e62"  delegate:cbDelegate];
     cbDelegate->cacheing = true;
     [Chartboost cacheInterstitial:CBLocationDefault];
     return YES;
@@ -34,13 +30,23 @@ static ChartboostDelegateImpl *cbDelegate;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
   NSLog(@"Will resign active");
+  EAGLView *v = (EAGLView*)viewController.view;
+  [v setPaused:true];
   appSetPaused(1, 1);
   appSuspend();
+  /*
+  appUnloadTextures();
+  */
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   NSLog(@"Did become active");
+  EAGLView *v = (EAGLView*)viewController.view;
+  /*
+  v->needsReload = true;
+  */
   appSetPaused(0, 0);
+  [v setPaused:false];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -56,12 +62,6 @@ static ChartboostDelegateImpl *cbDelegate;
   NSLog(@"Will enter foreground");
 }
 
-- (void)dealloc {
-    [viewController release];
-    [window release];
-    
-    [super dealloc];
-}
 
 void adShowInterstitial(){
   trace("showInterstitial");

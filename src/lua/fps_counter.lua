@@ -1,5 +1,5 @@
-FpsCounter = {}
-FpsCounter.new = function()
+framework.FpsCounter = {}
+framework.FpsCounter.new = function()
 
 local self = {
   elapsed = 0.0,
@@ -35,6 +35,6 @@ end
 
 
 
-function FpsCounter:update(deltaMs)
+function framework.FpsCounter:update(deltaMs)
 end
 

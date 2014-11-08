@@ -14,7 +14,7 @@
     BOOL didInit;
     BOOL animating;
     NSInteger animationFrameInterval;
-    CADisplayLink *displayLink;
+    CADisplayLink *__weak displayLink;
 }
 
 @property (readonly, nonatomic, getter=isAnimating) BOOL animating;

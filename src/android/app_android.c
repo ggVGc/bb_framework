@@ -13,15 +13,15 @@
 #include "framework/profiler.h"
 
 
-static int lastTime = 0;
+static time_t lastTime = 0;
 static int didInit = 0;
 static const char *apkPath;
 
-  static long
+  static time_t
 _getTime(void) {
   struct timeval  now;
   gettimeofday(&now, NULL);
-  return (long)(now.tv_sec*1000 + now.tv_usec/1000);
+  return now.tv_sec*1000 + now.tv_usec/1000;
 }
 
   void
@@ -114,7 +114,7 @@ Java_com_spacekomodo_berrybounce_GLRenderer_nativeRender( JNIEnv*  env, jobject 
   curEnv = env;
   curThis = this;
   /*(*curEnv)->GetJavaVM(curEnv, &jvm);*/
-  long curTime = _getTime();
+  time_t curTime = _getTime();
   appRender(curTime - lastTime);
   lastTime = curTime;
 }

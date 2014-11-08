@@ -14,8 +14,9 @@ extern void appDeinit(void);
 extern void appSetPaused(int paused, int pauseAudio);
 extern void appSuspend(void);
 void appGraphicsReload(int framebufferWidth, int framebufferHeight);
+void appUnloadTextures();
 
-extern int appRender(long tick);
+extern int appRender(double tick);
 
 extern int screenWidth(void);
 extern int screenHeight(void);

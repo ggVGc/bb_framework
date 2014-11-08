@@ -45,6 +45,7 @@ objectProcessor = (name, content, type, bounds) ->
   content = content\gsub '%]', '}'
   content = content\gsub 'Tween%.get%(%{%}%)', 'Tween.get({state={}})'
   content = content\gsub 'synched', 'independent'
+  content = content\gsub 'undefined', 'nil'
 
   ret = 'lib.'..name..' = {}\n'
   ret=ret..'lib.'..name..'.new = function(mode, startPosition, loop)\n'

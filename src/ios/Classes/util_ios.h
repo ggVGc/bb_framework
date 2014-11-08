@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-void alert(NSString *title, NSString *msg){
+static void alert(NSString *title, NSString *msg){
 
  UIAlertView *av = [[UIAlertView alloc] initWithTitle:title
                                                       message:msg

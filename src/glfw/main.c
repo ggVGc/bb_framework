@@ -52,7 +52,8 @@ static void error_callback(int error, const char* description) {
 static int paused = 0;
 static int shouldReload = 0;
 static int shouldSuspend = 0;
-static int reloadTextures = 1;
+static int reloadTextures = 0;
+static int unloadTextures = 0;
 
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
   int k = key-GLFW_KEY_A+'a';
@@ -62,6 +63,8 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
         appSetPaused(1, 1);
       }else if(key==GLFW_KEY_T){
         reloadTextures = 1;
+      }else if(key==GLFW_KEY_Y){
+        unloadTextures = 1;
       }else if(key==GLFW_KEY_U){
         appSetPaused(0, 0);
       }else if(key==GLFW_KEY_R){
@@ -115,7 +118,7 @@ static void cursor_pos_callback(GLFWwindow* window, double x, double y) {
 int main(int argc, char **argv) {
 	#define PATH_SIZE 2048
   GLFWwindow* window;
-  long curTime, delta, lastTime;
+  time_t curTime, delta, lastTime;
     const char *assets = "assets.zip";
   char execPath[PATH_SIZE+1];
   char fullPath[PATH_SIZE+1];
@@ -207,6 +210,10 @@ int main(int argc, char **argv) {
     if(reloadTextures){
         appGraphicsReload(width, height);
         reloadTextures = 0;
+    }
+    if(unloadTextures){
+      appUnloadTextures();
+      unloadTextures = 0;
     }
     if(shouldReload){
       shouldReload = 0;

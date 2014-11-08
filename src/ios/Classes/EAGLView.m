@@ -1,9 +1,13 @@
 
+#import <stdio.h>
+#import <math.h>
+#import <mach/mach_time.h>
 #import "EAGLView.h"
 #import "app.h"
 #import "framework/input.h"
 #import "framework/Camera.h"
 #import "util_ios.h"
+#import "framework/timing.h"
 
 
 @implementation EAGLView
@@ -21,22 +25,26 @@
   _context = [[EAGLContext alloc] initWithAPI:api];
   if (!_context) {
     NSLog(@"Failed to initialize OpenGLES context");
-    exit(1);
+    //exit(1);
   }
 
   if (![EAGLContext setCurrentContext:_context]) {
     NSLog(@"Failed to set current OpenGL context");
-    exit(1);
+    //exit(1);
   }
 }
 
+
+-(void)setPaused:(BOOL pause){
+  [touchArr removeAllObjects];
+  self->paused = pause;
+}
 
 -(void) setupRenderBuffer{
   glGenRenderbuffers(1, &colorRenderBuffer);
   glBindRenderbuffer(GL_RENDERBUFFER, colorRenderBuffer);        
   [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:_eaglLayer];    
 }
-
 
 
 - (void)setupFrameBuffer {    
@@ -51,30 +59,60 @@
   glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &framebufferHeight);
 }
 
+static mach_timebase_info_data_t timeBase;
+static uint64_t timeZero;
+
+
+double elapsedTime(){
+return ((double)(mach_absolute_time() - timeZero))
+        * ((double)timeBase.numer) / ((double)timeBase.denom) / 1000000000.0;
+}
+
 - (void)render:(CADisplayLink*)displayLink {
+  static double bank = 0;
+  double frameTime = displayLink.duration * displayLink.frameInterval;
+  bank -= frameTime;
+  if( bank > 0 ) {
+    return;
+  }
+  if(paused){
+    return;
+  }
+  if (![EAGLContext setCurrentContext:_context]) {
+    NSLog(@"Failed to set current OpenGL context");
+    return;
+  }
   if(!didInit){
     didInit = true;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"assets" ofType:@"zip"];
     //NSLog(@"path: %@", path);
     //alert(@"Framebuffer size ", [NSString stringWithFormat:@"w:%i, h:%i", framebufferWidth, framebufferHeight ]);
     appInit(1,framebufferWidth, framebufferHeight, [path cStringUsingEncoding:1],1);
-
-
-    NSSet *productIds = [[NSSet alloc] initWithObjects:@"berry_bounce_no_ads", nil];
-    SKProductsRequest *req = [[SKProductsRequest alloc]
-                             initWithProductIdentifiers:
-                             [NSSet setWithObject: @"berry_bounce_no_ads"]];
-    req.delegate = self;
-    NSLog(@"Starting product request");
-    [req start];
-
   }
 
+  /*
   NSDate *now = [NSDate new];
   NSTimeInterval timespan = [now timeIntervalSinceDate:lastTick];
-  appRender(timespan*1000);
+  */
+  if(self->needsReload){
+    appGraphicsReload(framebufferWidth, framebufferHeight);
+    self->needsReload = false;
+  }
 
+  bank = 0;
+  timeZero = mach_absolute_time();
+  CFTimeInterval now = displayLink.timestamp;
+  if(lastTick>0){
+    appRender((now - lastTick)*1000);
+  }else{
+    appRender(1);
+  }
   lastTick = now;
+  double elapsed = elapsedTime();
+  bank = elapsed;
+  if(elapsed>frameTime){
+    bank = frameTime+fmod(elapsed, frameTime);
+  }
 
   [_context presentRenderbuffer:GL_RENDERBUFFER];
 }
@@ -114,7 +152,9 @@
 
 - (void)setupDisplayLink {
   CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
-  lastTick = [NSDate new];
+  displayLink.frameInterval = 1;
+  //lastTick = [NSDate new];
+  lastTick = -1;
   [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];    
 }
 
@@ -123,9 +163,14 @@
   NSLog(@"EAGLView initWithCoder");
   self = [super initWithCoder:coder];
   if (self) {        
+    touchArr = [[NSMutableArray alloc] init];
+    self.multipleTouchEnabled = true;
+    mach_timebase_info( &timeBase );
     self.backgroundColor = [UIColor blackColor];
     self.contentScaleFactor = [[UIScreen mainScreen] scale];
     didInit = false;
+    needsReload = false;
+    paused = false;
     CGSize s = self.bounds.size;
     //alert(@"Window size", [NSString stringWithFormat:@"w:%f, h:%f", s.width, s.height]);
     setScreenWidth(s.width);
@@ -140,29 +185,66 @@
 
 
 - (void)dealloc {
-  [_context release];
   _context = nil;
-  [super dealloc];
 }
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
   NSLog(@"touchesBegan");
-  CGPoint p = [[touches anyObject] locationInView:self];
-  setCursorPos(0, p.x, p.y);
-  setCursorDownState(0, 1);
+  for(UITouch *t in touches){
+    CGPoint p = [t locationInView:self];
+    int ind = -1;
+    for(int i=0;i<touchArr.count;++i){
+      if(touchArr[i] == [NSNull null]){
+        ind = i;
+        break;
+      }
+    }
+    if(ind == -1){
+      ind = touchArr.count;
+      [touchArr addObject:t];
+    }else{
+      touchArr[ind] = t;
+    }
+    setCursorPos(ind, p.x, p.y);
+    setCursorDownState(ind, 1);
+  }
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-  NSLog(@"touchesMoved");
-  CGPoint p = [[touches anyObject] locationInView:self];
-  setCursorPos(0, p.x, p.y);
+  for(UITouch *thisTouch in touches){
+    int ind = -1;
+    for(int i=0;i<touchArr.count;++i){
+      if(touchArr[i] == thisTouch){
+        ind = i;
+        break;
+      }
+    }
+    if(ind>=0){
+      CGPoint p = [thisTouch locationInView:self];
+      setCursorPos(ind, p.x, p.y);
+    }
+  }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
   NSLog(@"touchesEnded");
-  CGPoint p = [[touches anyObject] locationInView:self];
-  setCursorPos(0, p.x, p.y);
-  setCursorDownState(0, 0);
+  for(UITouch *thisTouch in touches){
+    int ind = -1;
+    for(int i=0;i<touchArr.count;++i){
+      if(touchArr[i] == thisTouch){
+        ind = i;
+        break;
+      }
+    }
+    if(ind>=0){
+      CGPoint p = [thisTouch locationInView:self];
+      setCursorPos(ind, p.x, p.y);
+      setCursorDownState(ind, 0);
+      touchArr[ind] = [NSNull null];
+    }
+  }
 }
+
+
 
 
 

@@ -13,7 +13,7 @@
 #endif
 
 
-static long _getTime(void) {
+static time_t  _getTime(void) {
 #ifdef WIN32
 	return timeGetTime();
 #else
@@ -29,7 +29,7 @@ static long _getTime(void) {
   #else
     clock_gettime(CLOCK_MONOTONIC, &ts);
   #endif
-    return (long)(ts.tv_sec*1000 + ts.tv_nsec/1000000);
+    return ts.tv_sec*1000 + ts.tv_nsec/1000000;
 #endif
 }
 

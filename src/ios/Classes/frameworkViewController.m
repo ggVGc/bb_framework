@@ -1,5 +1,5 @@
 #import <QuartzCore/QuartzCore.h>
-//#import "util_ios.h"
+#import "util_ios.h"
 
 #import "frameworkViewController.h"
 #import "EAGLView.h"
@@ -7,8 +7,8 @@
 #import "app.h"
 
 @interface frameworkViewController ()
-@property (nonatomic, retain) EAGLContext *context;
-@property (nonatomic, assign) CADisplayLink *displayLink;
+@property (nonatomic, strong) EAGLContext *context;
+@property (nonatomic, weak) CADisplayLink *displayLink;
 @end
 
 @implementation frameworkViewController
@@ -19,6 +19,9 @@ NSDate *lastTick = 0;
 
 
 @synthesize animating, context, displayLink;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+  return false;
+}
 
 - (void)awakeFromNib {
     /*
@@ -43,19 +46,6 @@ NSDate *lastTick = 0;
     */
 }
 
-- (void)dealloc {
-    
-    /*
-    // Tear down context.
-    if ([EAGLContext currentContext] == context){
-      [EAGLContext setCurrentContext:nil];
-    }
-    
-    [context release];
-    */
-    
-    [super dealloc];
-}
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -164,7 +154,7 @@ NSDate *lastTick = 0;
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
+    //alert(@"mem warning", @"mem warning");
     // Release any cached data, images, etc. that aren't in use.
 }
 

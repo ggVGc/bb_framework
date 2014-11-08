@@ -64,6 +64,10 @@ rebuildCachedTextures: ->
     _c_framework.bitmapDataInit(v, imageData)
     _c_framework.rawBitmapDataCleanup(imageData)
 
+freeCachedTextures: ->
+  for k,v in pairs Tex.bmDataCache
+    print "freeing", k
+    _c_framework.bitmapDataCleanup(v)
 
 }
 

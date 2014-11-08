@@ -216,7 +216,7 @@ void appDeinit(void) {
 }
 
 
-int doFrameBody(long tick){
+int doFrameBody(double tick){
   if (didInit == 0 && appBroken==0){
     didInit = 1;
     if(lua_isnil(luaVM, -1)){
@@ -257,7 +257,7 @@ int doFrameBody(long tick){
   return 0;
 }
 
-int appRender(long tick) {
+int appRender(double tick) {
   int ret;
   if(appBroken!=0 || !luaVM){
     return 0;
@@ -401,4 +401,18 @@ void appGraphicsReload(int framebufferWidth, int framebufferHeight){
     trace("Warning: Called appGraphicsReload when not initialized");
   }
 }
+
+void appUnloadTextures(){
+  if(didInit){
+    /*pthread_mutex_lock(&vmMutex);*/
+    lua_getglobal(luaVM, "framework");
+    lua_getfield(luaVM, -1, "unloadTextures");
+    callLuaFunc(0,0);
+    /*pthread_mutex_unlock(&vmMutex);*/
+  }else{
+    trace("Warning: Called unloadTextures when not initialized");
+  }
+}
+
+
 

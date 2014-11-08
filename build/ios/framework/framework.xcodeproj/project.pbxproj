@@ -35,6 +35,8 @@
 		7A4D88C219E171420059CEBF /* audio_oal.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88C119E171420059CEBF /* audio_oal.c */; };
 		7A62A84A1A08D8CE00AF4E60 /* iap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A8491A08D8CE00AF4E60 /* iap.m */; };
 		7A62A84D1A08DA8200AF4E60 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A62A84C1A08DA8200AF4E60 /* StoreKit.framework */; };
+		7A62A84F1A09133400AF4E60 /* helper_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A84E1A09133400AF4E60 /* helper_posix.c */; };
+		7A62A8511A0913B300AF4E60 /* compat-5.2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A8501A0913B300AF4E60 /* compat-5.2.c */; };
 		7A634B781A0883FA001D6489 /* lib_luajit_armv7.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A634B761A0883FA001D6489 /* lib_luajit_armv7.a */; };
 		7A634B791A0883FA001D6489 /* lib_luajit_armv7s.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A634B771A0883FA001D6489 /* lib_luajit_armv7s.a */; };
 		7A65161A19F122E700D21968 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A65161919F122E700D21968 /* main.m */; };
@@ -47,6 +49,7 @@
 		7A65163019F1234900D21968 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7A65162E19F1234900D21968 /* SimpleVertex.glsl */; };
 		7A65163219F125D700D21968 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A65163119F125D700D21968 /* Chartboost.framework */; };
 		7A6516361A0338E300D21968 /* chartboostDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */; };
+		7A71FB641A0DB4280037C7C4 /* MJGStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A71FB631A0DB4280037C7C4 /* MJGStack.m */; };
 		7A9C65681A05DFA10083B57A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65661A05DFA10083B57A /* Default-568h@2x.png */; };
 		7A9C65691A05DFA10083B57A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65671A05DFA10083B57A /* Default@2x.png */; };
 		7A9C656B1A05E79D0083B57A /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C656A1A05E79D0083B57A /* icon@2x.png */; };
@@ -57,7 +60,6 @@
 		7AB46E4B19E17C2000841DB3 /* data_store.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB46E4A19E17C2000841DB3 /* data_store.m */; };
 		7ADAA00119F0966900DB8738 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADAA00019F0966900DB8738 /* GLKit.framework */; };
 		7ADAA00319F0968700DB8738 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADAA00219F0968700DB8738 /* CoreGraphics.framework */; };
-		7ADAA00F19F0F13900DB8738 /* helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAA00E19F0F13900DB8738 /* helper.c */; };
 		7ADAA01119F0F14F00DB8738 /* lua_asyncassetloader.c in Sources */ = {isa = PBXBuildFile; fileRef = 7ADAA01019F0F14F00DB8738 /* lua_asyncassetloader.c */; };
 		7ADAA01519F1046000DB8738 /* lib_luajit_i386.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADAA01419F1046000DB8738 /* lib_luajit_i386.a */; };
 		7AE0519D198D2E5D003126A1 /* assets.zip in Resources */ = {isa = PBXBuildFile; fileRef = 7AE0519C198D2E5D003126A1 /* assets.zip */; };
@@ -170,6 +172,8 @@
 		7A4D88C119E171420059CEBF /* audio_oal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio_oal.c; sourceTree = "<group>"; };
 		7A62A8491A08D8CE00AF4E60 /* iap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iap.m; sourceTree = "<group>"; };
 		7A62A84C1A08DA8200AF4E60 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		7A62A84E1A09133400AF4E60 /* helper_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = helper_posix.c; path = ../../../deps/common/helper_threads_lua/helper_posix.c; sourceTree = "<group>"; };
+		7A62A8501A0913B300AF4E60 /* compat-5.2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "compat-5.2.c"; path = "../../../deps/common/lua-compat-5.2/c-api/compat-5.2.c"; sourceTree = "<group>"; };
 		7A634B761A0883FA001D6489 /* lib_luajit_armv7.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_luajit_armv7.a; path = ../../../deps/common/luajit/bin/ios/lib_luajit_armv7.a; sourceTree = "<group>"; };
 		7A634B771A0883FA001D6489 /* lib_luajit_armv7s.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_luajit_armv7s.a; path = ../../../deps/common/luajit/bin/ios/lib_luajit_armv7s.a; sourceTree = "<group>"; };
 		7A65161919F122E700D21968 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 		7A6516331A0338E300D21968 /* appConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appConfig.h; sourceTree = "<group>"; };
 		7A6516341A0338E300D21968 /* chartboostDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chartboostDelegateImpl.h; sourceTree = "<group>"; };
 		7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chartboostDelegateImpl.m; sourceTree = "<group>"; };
+		7A71FB621A0DB4280037C7C4 /* MJGStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJGStack.h; sourceTree = "<group>"; };
+		7A71FB631A0DB4280037C7C4 /* MJGStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJGStack.m; sourceTree = "<group>"; };
 		7A9C65661A05DFA10083B57A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7A9C65671A05DFA10083B57A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7A9C656A1A05E79D0083B57A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
@@ -199,7 +205,6 @@
 		7AB46E4A19E17C2000841DB3 /* data_store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = data_store.m; sourceTree = "<group>"; };
 		7ADAA00019F0966900DB8738 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7ADAA00219F0968700DB8738 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7ADAA00E19F0F13900DB8738 /* helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = helper.c; path = ../../../deps/common/helper_threads_lua/helper.c; sourceTree = "<group>"; };
 		7ADAA01019F0F14F00DB8738 /* lua_asyncassetloader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lua_asyncassetloader.c; path = ../../../src/common/lua_modules/lua_asyncassetloader.c; sourceTree = "<group>"; };
 		7ADAA01219F0FD9400DB8738 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libluajit.a; path = ../../../deps/common/luajit/bin/osx/libluajit.a; sourceTree = "<group>"; };
 		7ADAA01419F1046000DB8738 /* lib_luajit_i386.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib_luajit_i386.a; path = ../../../deps/common/luajit/bin/ios/lib_luajit_i386.a; sourceTree = "<group>"; };
@@ -265,8 +270,9 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7A62A8501A0913B300AF4E60 /* compat-5.2.c */,
+				7A62A84E1A09133400AF4E60 /* helper_posix.c */,
 				7ADAA01019F0F14F00DB8738 /* lua_asyncassetloader.c */,
-				7ADAA00E19F0F13900DB8738 /* helper.c */,
 				7A4D88C019E171420059CEBF /* openal */,
 				7A4D887F19E1712B0059CEBF /* common */,
 				B3920A441443C4BC0006E503 /* ios */,
@@ -383,6 +389,8 @@
 		7A65161B19F1233800D21968 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7A71FB621A0DB4280037C7C4 /* MJGStack.h */,
+				7A71FB631A0DB4280037C7C4 /* MJGStack.m */,
 				7A6516331A0338E300D21968 /* appConfig.h */,
 				7A6516341A0338E300D21968 /* chartboostDelegateImpl.h */,
 				7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */,
@@ -595,7 +603,6 @@
 				7A4D88BF19E1712B0059CEBF /* framework_wrap.c in Sources */,
 				7A4D88BE19E1712B0059CEBF /* matrix2.c in Sources */,
 				7A65162719F1233800D21968 /* EAGLView.m in Sources */,
-				7ADAA00F19F0F13900DB8738 /* helper.c in Sources */,
 				7A65161A19F122E700D21968 /* main.m in Sources */,
 				7A65162819F1233800D21968 /* fileUtil.m in Sources */,
 				7A6516361A0338E300D21968 /* chartboostDelegateImpl.m in Sources */,
@@ -604,14 +611,17 @@
 				7A4D88B919E1712B0059CEBF /* camera.c in Sources */,
 				7A4D88C219E171420059CEBF /* audio_oal.c in Sources */,
 				7A4D88B719E1712B0059CEBF /* audio.c in Sources */,
+				7A62A8511A0913B300AF4E60 /* compat-5.2.c in Sources */,
 				7A4D88BC19E1712B0059CEBF /* graphics.c in Sources */,
 				7A4D88BB19E1712B0059CEBF /* facebook.c in Sources */,
 				7A4D88B519E1712B0059CEBF /* util.c in Sources */,
+				7A71FB641A0DB4280037C7C4 /* MJGStack.m in Sources */,
 				7A4D88BD19E1712B0059CEBF /* input.c in Sources */,
 				7A4D88B419E1712B0059CEBF /* texture.c in Sources */,
 				7A4D88B319E1712B0059CEBF /* streaming_audio.c in Sources */,
 				7A65162B19F1233800D21968 /* shaderUtil.c in Sources */,
 				7A4D88BA19E1712B0059CEBF /* display_object.c in Sources */,
+				7A62A84F1A09133400AF4E60 /* helper_posix.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,7 +652,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -675,7 +687,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
-				PROVISIONING_PROFILE = "024ddbe9-61db-44b0-aea1-980a46f8e5d3";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -686,7 +698,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -717,7 +731,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
-				PROVISIONING_PROFILE = "024ddbe9-61db-44b0-aea1-980a46f8e5d3";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};

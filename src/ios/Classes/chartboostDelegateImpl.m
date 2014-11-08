@@ -30,6 +30,10 @@
   cacheing= false;
 }
 
+- (void)didFailToRecordClick:(CBLocation)location withError:(CBClickError)error{
+  appSetPaused(0, 0);
+}
+
 
 - (void)didFailToLoadInterstitial:(NSString *)location withError:(CBLoadError)error {
   if(!cacheing){

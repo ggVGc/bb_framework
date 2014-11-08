@@ -130,7 +130,7 @@ void audioSetPaused(Audio *a, int paused){
   alGetSourcei(a->source, AL_SOURCE_STATE, &state);
   if(paused && state == AL_PLAYING){
     alSourcePause(a->source);
-  }else if(!paused && state == AL_PAUSED){
+  }else if(!globalMute && !paused && state == AL_PAUSED){
     alSourcePlay(a->source);
   }
 }

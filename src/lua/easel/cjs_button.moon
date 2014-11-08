@@ -37,31 +37,30 @@ new: maker (mc, initialDoStateSwitch)=>
     cy = (1-framework.Input.cursorY(cursorIndex))*screenHeight
     return @.isOver cx, cy
   
-  curDownCursorIndex = nil
-  @update = (screenWidth, screenHeight)->
+  @update = (inp, screenWidth, screenHeight)->
     return false if not mc.visible
-    if not curDownCursorIndex
-      for i=1,framework.Input.MAX_CURSORS
-        if framework.Input.cursorDown(i) and isCursorOver(i, screenWidth, screenHeight)
-          curDownCursorIndex = i
-          break
 
-    over = curDownCursorIndex and isCursorOver(curDownCursorIndex, screenWidth, screenHeight)
-    cursorIsDown = curDownCursorIndex and framework.Input.cursorDown(curDownCursorIndex)
-    if not cursorIsDown
-      curDownCursorIndex = nil
-    if state == 0 and over and cursorIsDown
+    if state == 1
+      ind = inp.anyCursorReleased!
+      if ind and isCursorOver(ind, screenWidth, screenHeight)
+        state = 0
+        if @doStateSwitch and mc.gotoAndStop
+          mc.gotoAndStop stateOffset
+        playClickSfx!
+        return true
+
+    local cursorOver
+    for i=1,framework.Input.cursorCount!
+      if framework.Input.cursorDown(i) and isCursorOver(i, screenWidth, screenHeight)
+        cursorOver = i
+        break
+    if state == 0 and cursorOver
       if @doStateSwitch and mc.gotoAndStop
         mc.gotoAndStop stateOffset+1
       state = 1
       return false
-    else if state == 1 and not cursorIsDown
-      state = 0
-      if @doStateSwitch and mc.gotoAndStop
-        mc.gotoAndStop stateOffset
-      playClickSfx!
-      return true
-    else if state ~= 0 and not over
+
+    if state ~= 0 and not cursorOver
       state = 0
       if @doStateSwitch and mc.gotoAndStop
         mc.gotoAndStop stateOffset

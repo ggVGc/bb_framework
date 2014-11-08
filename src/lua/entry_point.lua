@@ -1,3 +1,6 @@
+
+local errorString = nil
+
 if jit then 
   jit.off()
 end
@@ -184,6 +187,7 @@ local function handler(e)
   _c_framework.setAppBroken(1);
 end
 
+
 local function doCall(func)
   callFunc = func
   xpcall(xpCallBody, handler)
@@ -199,6 +203,7 @@ local function doCall(func)
       if rewritten then
         print 'printing rewritten'
         print(rewritten)
+        errorString = rewritten
       else
         print 'failed rewrite'
           -- faield to rewrite, show original
@@ -323,7 +328,7 @@ framework = framework or {}
 framework.cjs = framework.cjs or {}
 
 local main
-local fps = FpsCounter.new()
+local fps = framework.FpsCounter.new()
 
 function fromhex(str)
   return (str:gsub('..', function (cc)
@@ -342,37 +347,56 @@ function framework.init(wasSuspended)
 end
 
 
-local MEM_CHECK_INTERVAL = 1
+local MEM_CHECK_INTERVAL = 10
 local MAX_MEM_TRIGGER_GC = 35000
 local lastMem=0
 local frameDelta
 local memCheckCounter = 0
 
-local dDeltaBuffer = 0
-local dFrameDeltaRemainingsAccumulated = 0
-local dVsyncRefreshRate_p = _c_framework.getScreenRefreshRate() or 60
-if dVsyncRefreshRate_p <=0 or dVsyncRefreshRate_p >120 then
-  dVsyncRefreshRate_p = 60
+local screenRefreshRate = _c_framework.getScreenRefreshRate() or 60
+if screenRefreshRate <=0 or screenRefreshRate >120 then
+  screenRefreshRate = 60
 end
-print("Refresh rate: ", dVsyncRefreshRate_p)
-if dVsyncRefreshRate_p > 80 then
-  dVsyncRefreshRate_p = dVsyncRefreshRate_p/2
+print("Refresh rate: ", screenRefreshRate)
+if screenRefreshRate > 80 then
+  screenRefreshRate = screenRefreshRate/2
 end
-print("Frame render rate", dVsyncRefreshRate_p)
+print("Frame render rate", screenRefreshRate)
 
+local deltaValues = {}
+local tmpDeltas = {}
+local function smoothDelta(inDelta)
+  table.insert(deltaValues, inDelta)
+  if #deltaValues < 11 then
+    return inDelta
+  end
+  for i=1,#deltaValues do
+    tmpDeltas[i] = deltaValues[i]
+  end
+  table.sort(tmpDeltas)
+  local accum = 0
+  for i=3,9 do
+    accum = accum+tmpDeltas[i]
+  end
+  table.remove(deltaValues, 1)
+  return accum/7
+end
+--[[
+local dDeltaBuffer = 0
 local function smoothDelta(inDelta)
   local dDelta_p = inDelta+dDeltaBuffer
-  local frameCount = (dDelta_p * dVsyncRefreshRate_p + 1)
+  local frameCount = (dDelta_p * screenRefreshRate + 1)
   if( frameCount <= 0 )then
     frameCount = 1
   end
   local dOldDelta = dDelta_p
-  dDelta_p = frameCount / dVsyncRefreshRate_p
+  dDelta_p = frameCount / screenRefreshRate
   dDeltaBuffer = dOldDelta - dDelta_p;
   return dDelta_p
 end
 
-local m_dFixedTimeStep = 100/30
+local m_dFixedTimeStep = 1000/60
+]]
 
 
 function framework.suspend()
@@ -390,25 +414,32 @@ function framework.setPaused(paused)
   end
 end
 
+local dFrameDeltaRemainingsAccumulated = 0
 local function frameFunc()
+  if errorString then
+    main.drawError(errorString)
+    return 0
+  end
   fps.update(frameDelta)
   local dDeltaSeconds = smoothDelta(frameDelta)
   if dDeltaSeconds>100 then
     dDeltaSeconds = 1
   end
-
   dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated+dDeltaSeconds
   local dd = 0
 
-  while dFrameDeltaRemainingsAccumulated>=m_dFixedTimeStep do
-    dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated-m_dFixedTimeStep
-    dd = dd+m_dFixedTimeStep
-  end
-  if dd>0 and not appPaused then
-    main.update(dd)
+  --while dFrameDeltaRemainingsAccumulated>=m_dFixedTimeStep do
+    --dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated-m_dFixedTimeStep
+    --dd = dd+m_dFixedTimeStep
+  --end
+  --if dd>0 and not appPaused then
+    --main.update(dd)
+  --end
+  if not appPaused then
+    main.update(dDeltaSeconds)
   end
   framework.cjs.Bitmap.drawCounter = 0
-  main.draw()
+  main.draw(fps.current())
   if fps.hasNew() then
     --print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount(), 'T: '..framework.MovieClip.tickCount)
     framework.MovieClip.tickCount = 0
@@ -440,7 +471,7 @@ function framework.doFrame(deltaMs)
     end
     doCall(frameFunc)
   else
-    return 1
+    --return 1
   end
 end
 
@@ -448,6 +479,11 @@ end
 function framework.reloadTextures()
   print 'Reloading textures'
   framework.Texture.rebuildCachedTextures()
+end
+
+function framework.unloadTextures()
+  print 'Reloading textures'
+  framework.Texture.freeCachedTextures()
 end
 
 
