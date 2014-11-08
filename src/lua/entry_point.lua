@@ -1,5 +1,5 @@
 
-local errorString = nil
+--local errorString = nil
 
 if jit then 
   jit.off()
@@ -203,7 +203,7 @@ local function doCall(func)
       if rewritten then
         print 'printing rewritten'
         print(rewritten)
-        errorString = rewritten
+        --errorString = rewritten
       else
         print 'failed rewrite'
           -- faield to rewrite, show original
@@ -416,10 +416,10 @@ end
 
 local dFrameDeltaRemainingsAccumulated = 0
 local function frameFunc()
-  if errorString then
-    main.drawError(errorString)
-    return 0
-  end
+  --if errorString then
+    --main.drawError(errorString)
+    --return 0
+  --end
   fps.update(frameDelta)
   local dDeltaSeconds = smoothDelta(frameDelta)
   if dDeltaSeconds>100 then
@@ -471,7 +471,7 @@ function framework.doFrame(deltaMs)
     end
     doCall(frameFunc)
   else
-    --return 1
+    return 1
   end
 end
 

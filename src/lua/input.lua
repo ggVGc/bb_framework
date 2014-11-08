@@ -94,9 +94,6 @@ Inp = {
       Inp.State.copy(thisState, Inp.curState)
     end
 
-    function M.cursorPressed(index)
-      return not(lastState.cursorStates[index or 1].down) and thisState.cursorStates[index or 1].down
-    end
 
     function M.anyCursorPressed()
       for i=1,#thisState.cursorStates do
@@ -123,8 +120,14 @@ Inp = {
       end
     end
 
+    function M.cursorPressed(index)
+      local ind = index or 1
+      return (not lastState.cursorStates[ind] or not lastState.cursorStates[ind].down) and thisState.cursorStates[ind].down
+    end
+
     function M.cursorReleased(index)
-      return lastState.cursorStates[index or 1].down and not(thisState.cursorStates[index or 1].down)
+      local ind = index or 1
+      return lastState.cursorStates[ind] and lastState.cursorStates[ind].down and not thisState.cursorStates[ind].down
     end
 
     function M.keyPressed(code)

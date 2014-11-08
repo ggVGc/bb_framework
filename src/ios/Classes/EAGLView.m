@@ -10,6 +10,15 @@
 #import "framework/timing.h"
 
 
+@interface TouchInfo:NSObject{
+  @public UITouch *touch;
+  @public int index;
+}
+@end
+@implementation TouchInfo
+@end
+
+
 @implementation EAGLView
 + (Class)layerClass {
   return [CAEAGLLayer class];
@@ -35,7 +44,7 @@
 }
 
 
--(void)setPaused:(BOOL pause){
+-(void)setPaused:(BOOL)pause{
   [touchArr removeAllObjects];
   self->paused = pause;
 }
@@ -188,58 +197,82 @@ return ((double)(mach_absolute_time() - timeZero))
   _context = nil;
 }
 
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-  NSLog(@"touchesBegan");
-  for(UITouch *t in touches){
-    CGPoint p = [t locationInView:self];
-    int ind = -1;
-    for(int i=0;i<touchArr.count;++i){
-      if(touchArr[i] == [NSNull null]){
-        ind = i;
+-(int)findFreeTouchIndex{
+  int ind;
+  for(ind=0;ind<touchArr.count;++ind){
+    bool exists = false;
+    for(TouchInfo *ti in touchArr){
+      if(ti->index == ind){
+        exists = true;
         break;
       }
     }
-    if(ind == -1){
-      ind = touchArr.count;
-      [touchArr addObject:t];
-    }else{
-      touchArr[ind] = t;
+    if(!exists){
+      break;
     }
+  }
+    return ind;
+}
+
+-(TouchInfo*)infoForTouch:(UITouch*)touch{
+  for(TouchInfo *ti in touchArr){
+    if(ti->touch == touch){
+      return ti;
+    }
+  }
+  return nil;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    //UITouch *thisTouch = [touches anyObject];
+    //CGPoint p = [thisTouch locationInView:self];
+    //setCursorPos(0, p.x, p.y);
+    //setCursorDownState(0, 1);
+
+
+  //NSLog(@"touchesBegan");
+  for(UITouch *thisTouch in touches){
+    CGPoint p = [thisTouch locationInView:self];
+    int ind = [self findFreeTouchIndex];
     setCursorPos(ind, p.x, p.y);
     setCursorDownState(ind, 1);
+    TouchInfo *ti = [[TouchInfo alloc] init];
+    ti->touch = thisTouch;
+    ti->index = ind;
+    [touchArr addObject:ti];
   }
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+
+  //UITouch *thisTouch = [touches anyObject];
+    //CGPoint p = [thisTouch locationInView:self];
+    //setCursorPos(0, p.x, p.y);
+    
   for(UITouch *thisTouch in touches){
-    int ind = -1;
-    for(int i=0;i<touchArr.count;++i){
-      if(touchArr[i] == thisTouch){
-        ind = i;
-        break;
-      }
-    }
-    if(ind>=0){
+    TouchInfo *ti = [self infoForTouch:thisTouch];
+    if(ti){
+      int ind = ti->index;
       CGPoint p = [thisTouch locationInView:self];
       setCursorPos(ind, p.x, p.y);
     }
   }
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-  NSLog(@"touchesEnded");
+   /*
+    UITouch *thisTouch = [touches anyObject];
+    CGPoint p = [thisTouch locationInView:self];
+    setCursorPos(0, p.x, p.y);
+    setCursorDownState(0, 0);
+*/
+    
   for(UITouch *thisTouch in touches){
-    int ind = -1;
-    for(int i=0;i<touchArr.count;++i){
-      if(touchArr[i] == thisTouch){
-        ind = i;
-        break;
-      }
-    }
-    if(ind>=0){
-      CGPoint p = [thisTouch locationInView:self];
+    CGPoint p = [thisTouch locationInView:self];
+    TouchInfo *ti = [self infoForTouch:thisTouch];
+    if(ti){
+      int ind = ti->index;
       setCursorPos(ind, p.x, p.y);
       setCursorDownState(ind, 0);
-      touchArr[ind] = [NSNull null];
+      [touchArr removeObject:ti];
     }
   }
 }

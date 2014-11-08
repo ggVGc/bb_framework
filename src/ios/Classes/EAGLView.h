@@ -20,7 +20,7 @@
     GLuint colorRenderBuffer;
 }
 
--(void)setPaused:(BOOL paused);
+-(void)setPaused:(BOOL)paused;
 
 @end
 

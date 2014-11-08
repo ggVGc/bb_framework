@@ -24,7 +24,7 @@ new: maker (imagePath, texLoadFunc) =>
       c = 'sym_q'
     tex = textures[c]
     if c==' ' or not tex
-      curWidth += 20*(reversing and -1 or 1)
+      curWidth += curScale*20*(reversing and -1 or 1)
     else
       if reversing
         curWidth-=math.ceil(tex.width*curScale)
