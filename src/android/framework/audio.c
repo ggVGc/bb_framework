@@ -12,12 +12,9 @@ static SLObjectItf engine_obj;
 static SLEngineItf engine;
 SLObjectItf output_mix_obj;
 /*SLVolumeItf output_mix_vol;*/
-
 static int initialised = 0;
-static int globalMute = 0;
 
-
-struct Audio_T {
+struct PlatformAudio_T {
   void *sampleData;
   unsigned int sampleCount;
   int loop;
@@ -30,12 +27,11 @@ struct Audio_T {
 };
 
 float gain_to_attenuation( float gain ) {
-    return gain < 0.01F ? -96.0F : 20 * log10( gain );
+  return gain < 0.01F ? -96.0F : 20 * log10( gain );
 }
 
 int audioGlobalPlatformInit(){
   initialised = 0;
-  globalMute = 1;
   slCreateEngine( &engine_obj, 0, 0, 0, 0, 0);
   (*engine_obj)->Realize( engine_obj, SL_BOOLEAN_FALSE );
   (*engine_obj)->GetInterface( engine_obj, SL_IID_ENGINE, &engine );
@@ -45,13 +41,13 @@ int audioGlobalPlatformInit(){
 
   (*engine)->CreateOutputMix( engine, &output_mix_obj, 1, ids, req );
   (*output_mix_obj)->Realize( output_mix_obj, SL_BOOLEAN_FALSE );
-   
+
   /*
-  if((*output_mix_obj)->GetInterface( output_mix_obj, SL_IID_VOLUME, &output_mix_vol ) != SL_RESULT_SUCCESS ){
-    trace("Warning: Global audio volume interface not available");
-    output_mix_vol = 0;
-  }
-  */
+     if((*output_mix_obj)->GetInterface( output_mix_obj, SL_IID_VOLUME, &output_mix_vol ) != SL_RESULT_SUCCESS ){
+     trace("Warning: Global audio volume interface not available");
+     output_mix_vol = 0;
+     }
+     */
 
   initialised = 1;
   return 0;
@@ -61,23 +57,23 @@ void SLAPIENTRY play_callback( SLPlayItf player, void *context, SLuint32 event )
   Audio *a = (Audio*)context;
   if( event & SL_PLAYEVENT_HEADATEND ){
     /*
-    trace("Audio: Buffer finished");
-    */
-    a->is_done_buffer = 1;
+       trace("Audio: Buffer finished");
+       */
+    a->pa->is_done_buffer = 1;
     /*
-    if(a->loop){
-      trace("Audio: Looping");
-    }
-    */
+       if(a->loop){
+       trace("Audio: Looping");
+       }
+       */
   }
 }
- 
 
-Audio* audioAlloc(){
-  return (Audio*)malloc(sizeof(Audio));
+
+PlatformAudio* audioPlatformAlloc(){
+  return (PlatformAudio*)malloc(sizeof(PlatformAudio));
 }
 
-int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
+int audioPlatformInit(PlatformAudio *a, int *buf, int bufSize, int sampleRate, int channels){
   if(!initialised){
     return 0;
   }
@@ -135,28 +131,24 @@ int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
   (*a->player_obj)->GetInterface( a->player_obj,SL_IID_PLAY, &a->player );
   (*a->player_obj)->GetInterface( a->player_obj,SL_IID_ANDROIDSIMPLEBUFFERQUEUE, &a->player_buf_q );
   /*
-  if((*a->player_obj)->GetInterface( a->player_obj, SL_IID_VOLUME, &a->player_vol ) != SL_RESULT_SUCCESS){
-    trace("Warning: Audio instance volume interface not available");
-    a->player_vol = 0;
-  }
-  */
+     if((*a->player_obj)->GetInterface( a->player_obj, SL_IID_VOLUME, &a->player_vol ) != SL_RESULT_SUCCESS){
+     trace("Warning: Audio instance volume interface not available");
+     a->player_vol = 0;
+     }
+     */
 
   (*a->player)->RegisterCallback( a->player, play_callback, a );
   (*a->player)->SetCallbackEventsMask( a->player, SL_PLAYEVENT_HEADATEND );
   return 1;
 }
 
-void audioPlay(Audio* a) {
+void audioPlatformPlay(PlatformAudio* a) {
   if(!initialised){
     return;
   }
   /*
-  trace("Audio: Playing");
-  */
-  audioStop(a);
-  if(globalMute){
-    return;
-  }
+     trace("Audio: Playing");
+     */
   (*a->player_buf_q)->Enqueue(a->player_buf_q, a->sampleData, a->sampleCount );
   (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
   a->is_playing = 1;
@@ -167,19 +159,19 @@ void audioSetLooping(Audio* a, int loop) {
   if(!initialised){
     return;
   }
-  a->loop = loop;
+  a->pa->loop = loop;
 }
 
 void audioStop(Audio* a) {
   if(!initialised){
     return;
   }
-  (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_STOPPED );
-  (*a->player_buf_q)->Clear(a->player_buf_q );
-  a->is_playing = 0;
+  (*a->pa->player)->SetPlayState( a->pa->player, SL_PLAYSTATE_STOPPED );
+  (*a->pa->player_buf_q)->Clear(a->pa->player_buf_q );
+  a->pa->is_playing = 0;
 }
 
-void audioPlatformFree(Audio* a) {
+void audioPlatformFree(PlatformAudio *a) {
   if(!initialised){
     return;
   }
@@ -191,19 +183,19 @@ int audioIsPlaying(Audio *a){
   if(!initialised){
     return 0;
   }
-  if(a->is_playing && a->is_done_buffer ){
+  if(a->pa->is_playing && a->pa->is_done_buffer ){
     audioStop(a);
   }
-  return a->is_playing;
+  return a->pa->is_playing;
 }
 
-void audioSetPaused(Audio *a, int paused){
+void audioPlatformSetPaused(PlatformAudio *a, int paused){
   if(!initialised){
     return;
   }
   if(paused){
     (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PAUSED );
-  }else if (!globalMute){
+  }else{
     (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
   }
 }
@@ -224,35 +216,15 @@ void audioOnFrame(){
   }
   for(i=0;i<MAX_SOUNDS;++i){
     a = soundInstances[i];
-    if(!a){
+    if(!a || !a->pa){
       break;
     }
-    if(a->is_playing && a->is_done_buffer){
-      if(a->loop){
-        audioPlay(a);
+    if(a->pa->is_playing && a->pa->is_done_buffer){
+      if(a->pa->loop){
+        audioPlay(a->pa);
       }else{
-        a->is_playing = 0;
+        a->pa->is_playing = 0;
       }
-    }
-  }
-}
-
-
-void audioSetMuted(int muted){
-  Audio *a;
-  int i;
-  globalMute = muted;
-  if(initialised){
-    for(i=0;i<MAX_SOUNDS;++i){
-      a = soundInstances[i];
-      if(a){
-        audioSetPaused(a, globalMute);
-      }
-      /*
-      if(a && a->player_vol){
-        (*a->player_vol)->SetVolumeLevel( a->player_vol, (SLmillibel)(gain_to_attenuation( vol ) * 100) );
-      }
-      */
     }
   }
 }

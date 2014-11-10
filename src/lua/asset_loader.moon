@@ -49,7 +49,8 @@ new: maker (initialTexSheets) =>
       tasks[t] = nil
       switch o.a.type
         when AL.AssetType.Audio
-          o.a.asset = framework.StreamingAudio.new loadedData
+          o.a.asset = framework.Audio.new loadedData
+          o.a.asset.setGroup o.a.group
           setmetatable o.a, {__index:o.a.asset, __newindex:o.a.asset}
         when AL.AssetType.TexSheet
           rectMap = framework.TextureSheet.parseRectMap o.rectMapText, loadedData.height
@@ -74,7 +75,6 @@ new: maker (initialTexSheets) =>
       if s.path == path
         table.remove @texSheets, i
         framework.Texture.bmDataCache[path] = nil
-        print 'FREEING'
         return
     print 'WARNING!', 'Tried freeing invalid tex sheet: '..path
 
@@ -97,10 +97,11 @@ new: maker (initialTexSheets) =>
     taskCount+=1
     return a
 
-  @loadAudio = (path)->
+  @loadAudio = (path, groupName)->
     a = {
       asset: nil
       type: AL.AssetType.Audio
+      group:groupName
     }
     t = _c_framework.AsyncAssetLoader.loadAudio path
     tasks[t] = {a:a}

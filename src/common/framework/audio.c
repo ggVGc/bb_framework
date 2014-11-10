@@ -8,6 +8,7 @@
 #include "framework/util.h"
 //#include "xmp.h"
 
+static int globalMute = 0;
 
 struct ogg_file {
   char* curPtr;
@@ -22,6 +23,8 @@ int audioGlobalInit(){
   for(i=0;i<MAX_SOUNDS;++i){
     soundInstances[i] = NULL;
   }
+
+  globalMute = 0;
   return audioGlobalPlatformInit();
 }
 
@@ -178,7 +181,8 @@ Audio* audioLoad(const char *path){
 void audioFree(Audio *a){
   int i;
   audioStop(a);
-  audioPlatformFree(a);
+  audioPlatformFree(a->pa);
+  free(a->pa);
   for(i=0;i<MAX_SOUNDS;++i){
     if(soundInstances[i] == a){
       free(soundInstances[i]);
@@ -252,3 +256,48 @@ Audio* audioModLoad(const char *path){
    */
     return 0;
 }
+
+Audio* audioAlloc(){
+  Audio *a = malloc(sizeof(Audio));
+  a->pa = audioPlatformAlloc();
+  return a;
+}
+
+
+int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
+  a->muted = 0;
+  audioPlatformInit(a->pa, buf, bufSize, sampleRate, channels);
+}
+
+void audioSetAllMuted(int muted){
+  Audio *a;
+  int i;
+  globalMute = muted;
+  for(i=0;i<MAX_SOUNDS;++i){
+    a = soundInstances[i];
+    if(a){
+      audioSetPaused(a, globalMute);
+    }
+    /*
+       if(a && a->player_vol){
+       (*a->player_vol)->SetVolumeLevel( a->player_vol, (SLmillibel)(gain_to_attenuation( vol ) * 100) );
+       }
+       */
+  }
+}
+
+void audioPlay(Audio* a) {
+  audioStop(a);
+  if(globalMute || a->muted){
+    return;
+  }
+  audioPlatformPlay(a->pa);
+}
+
+
+void audioSetPaused(Audio *a, int paused){
+  if(paused || (!globalMute && !a->muted)){
+    audioPlatformSetPaused(a->pa, paused);
+  }
+}
+

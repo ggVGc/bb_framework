@@ -298,7 +298,7 @@ dofile({"framework/globals.moon",
 'framework/easel/cjs_button.moon',
 'framework/easel/container.moon',
 'framework/easel/movie_clip.moon',
-'framework/streaming_audio.lua',
+'framework/audio.moon',
 'framework/ads.moon',
 'framework/iap.moon',
 'framework/fps_counter.lua',
@@ -472,7 +472,7 @@ function framework.doFrame(deltaMs)
       frameDelta = 0
     end
     if frameDelta > 100 then
-      frameDelta = 16
+      frameDelta = 1
     end
     doCall(frameFunc)
   else

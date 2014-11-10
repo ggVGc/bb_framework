@@ -11,7 +11,6 @@
 #include "framework/util.h"
 
 
-static int globalMute = 0;
 int hasError = 0;
 int alCheckError(const char* msg){
   int err;
@@ -33,14 +32,14 @@ static int initialised = 0;
 static ALCcontext *context;                                                      
 static ALCdevice *device;                                                       
 
-struct Audio_T {
+struct PlatformAudio_T {
   ALuint source;
   ALuint buffer;
 };
 
 
-Audio* audioAlloc(){
-  return (Audio*)malloc(sizeof(Audio));
+PlatformAudio* audioPlatformAlloc(){
+  return (PlatformAudio*)malloc(sizeof(PlatformAudio));
 }
 
 
@@ -72,18 +71,16 @@ int audioGlobalPlatformInit(){
   return 0;
 }
 
-int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
+int audioPlatformInit(PlatformAudio *a, int *buf, int bufSize, int sampleRate, int channels){
   ALfloat SourcePos[] = { 0.0, 0.0, 0.0 };
   ALfloat SourceVel[] = { 0.0, 0.0, 0.0 };
   if(!initialised){
     return 0;
   }
-
   alGenBuffers(1, &a->buffer);
   if(alCheckError("Failed OpenAL buffer creation")){return 0;}
   alGenSources(1, &a->source);
   if(alCheckError("Failed OpenAL source creation")){return 0;}
-
 
   alBufferData(a->buffer, channels==2?AL_FORMAT_STEREO16:AL_FORMAT_MONO16, buf, bufSize, sampleRate); 
   if(alCheckError("Failed OpenAL setting buffer data")){return 0;}
@@ -96,23 +93,22 @@ int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
   return 1;
 }
 
-void audioPlay(Audio* a) {
-  return;
-  if(globalMute){
+void audioPlatformPlay(PlatformAudio* a) {
+  if(!initialised){
     return;
   }
   alSourcePlay(a->source);
   alCheckError("Failed playing source");
 }
 void audioSetLooping(Audio* a, int loop) {
-  alSourcei (a->source, AL_LOOPING,  loop==0?AL_FALSE:AL_TRUE);
+  alSourcei (a->pa->source, AL_LOOPING,  loop==0?AL_FALSE:AL_TRUE);
 }
 
 void audioStop(Audio* a) {
-  alSourceStop(a->source);
+  alSourceStop(a->pa->source);
 }
 
-void audioPlatformFree(Audio* a) {
+void audioPlatformFree(PlatformAudio* a) {
   alDeleteSources(1, &a->source);
   alDeleteBuffers(1, &a->buffer);
 }
@@ -126,38 +122,23 @@ void audioPlatformCleanup(){
 void audioOnFrame(){
 }
 
-void audioSetPaused(Audio *a, int paused){
+void audioPlatformSetPaused(PlatformAudio *a, int paused){
   int state;
+  if(!initialised){
+    return;
+  }
   alGetSourcei(a->source, AL_SOURCE_STATE, &state);
   if(paused && state == AL_PLAYING){
     alSourcePause(a->source);
-  }else if(!globalMute && !paused && state == AL_PAUSED){
+  }else if(!paused && state == AL_PAUSED){
     alSourcePlay(a->source);
   }
 }
 
-void audioSetMuted(int muted){
-  Audio *a;
-  int i;
-  globalMute = muted;
-  if(initialised){
-    for(i=0;i<MAX_SOUNDS;++i){
-      a = soundInstances[i];
-      if(a){
-        audioSetPaused(a, globalMute);
-      }
-      /*
-      if(a && a->player_vol){
-        (*a->player_vol)->SetVolumeLevel( a->player_vol, (SLmillibel)(gain_to_attenuation( vol ) * 100) );
-      }
-      */
-    }
-  }
-}
 
 int audioIsPlaying(Audio *a){
   int state;
-  alGetSourcei(a->source, AL_SOURCE_STATE, &state);
+  alGetSourcei(a->pa->source, AL_SOURCE_STATE, &state);
   return state==AL_PLAYING?1:0;
 }
 

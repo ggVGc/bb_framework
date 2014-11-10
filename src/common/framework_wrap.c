@@ -2600,21 +2600,22 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_Audio_T swig_types[0]
+#define SWIGTYPE_p_Audio swig_types[0]
 #define SWIGTYPE_p_BitmapData swig_types[1]
 #define SWIGTYPE_p_Camera swig_types[2]
 #define SWIGTYPE_p_DisplayObject swig_types[3]
 #define SWIGTYPE_p_GLfloat swig_types[4]
 #define SWIGTYPE_p_GLuint swig_types[5]
 #define SWIGTYPE_p_Matrix2 swig_types[6]
-#define SWIGTYPE_p_RawBitmapData swig_types[7]
-#define SWIGTYPE_p_Rect swig_types[8]
-#define SWIGTYPE_p_Texture swig_types[9]
-#define SWIGTYPE_p_int swig_types[10]
-#define SWIGTYPE_p_p_Audio_T swig_types[11]
-#define SWIGTYPE_p_unsigned_char swig_types[12]
-static swig_type_info *swig_types[14];
-static swig_module_info swig_module = {swig_types, 13, 0, 0, 0, 0};
+#define SWIGTYPE_p_PlatformAudio_T swig_types[7]
+#define SWIGTYPE_p_RawBitmapData swig_types[8]
+#define SWIGTYPE_p_Rect swig_types[9]
+#define SWIGTYPE_p_Texture swig_types[10]
+#define SWIGTYPE_p_int swig_types[11]
+#define SWIGTYPE_p_p_Audio swig_types[12]
+#define SWIGTYPE_p_unsigned_char swig_types[13]
+static swig_type_info *swig_types[15];
+static swig_module_info swig_module = {swig_types, 14, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2665,7 +2666,7 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
 
 
 void audioPushSWIGPtr(lua_State *L, Audio *a){
-  SWIG_NewPointerObj(L,a,SWIGTYPE_p_Audio_T,0);
+  SWIG_NewPointerObj(L,a,SWIGTYPE_p_Audio,0);
 }
 
 
@@ -5976,6 +5977,176 @@ fail:
 }
 
 
+static int _wrap_Audio_pa_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Audio *arg1 = (struct Audio *) 0 ;
+  PlatformAudio *arg2 = (PlatformAudio *) 0 ;
+  
+  SWIG_check_num_args("Audio::pa",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Audio::pa",1,"struct Audio *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("Audio::pa",2,"PlatformAudio *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("Audio_pa_set",1,SWIGTYPE_p_Audio);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_PlatformAudio_T,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("Audio_pa_set",2,SWIGTYPE_p_PlatformAudio_T);
+  }
+  
+  if (arg1) (arg1)->pa = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Audio_pa_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Audio *arg1 = (struct Audio *) 0 ;
+  PlatformAudio *result = 0 ;
+  
+  SWIG_check_num_args("Audio::pa",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Audio::pa",1,"struct Audio *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("Audio_pa_get",1,SWIGTYPE_p_Audio);
+  }
+  
+  result = (PlatformAudio *) ((arg1)->pa);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_PlatformAudio_T,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Audio_muted_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Audio *arg1 = (struct Audio *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("Audio::muted",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Audio::muted",1,"struct Audio *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Audio::muted",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("Audio_muted_set",1,SWIGTYPE_p_Audio);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->muted = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_Audio_muted_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Audio *arg1 = (struct Audio *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("Audio::muted",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Audio::muted",1,"struct Audio *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("Audio_muted_get",1,SWIGTYPE_p_Audio);
+  }
+  
+  result = (int) ((arg1)->muted);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_Audio(lua_State* L) {
+  int SWIG_arg = 0;
+  struct Audio *result = 0 ;
+  
+  SWIG_check_num_args("Audio::Audio",0,0)
+  result = (struct Audio *)calloc(1, sizeof(struct Audio));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_Audio(void *obj) {
+struct Audio *arg1 = (struct Audio *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_Audio(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_Audio);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_Audio_attributes[] = {
+    { "pa", _wrap_Audio_pa_get, _wrap_Audio_pa_set },
+    { "muted", _wrap_Audio_muted_get, _wrap_Audio_muted_set },
+    {0,0,0}
+};
+static swig_lua_method swig_Audio_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_Audio_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_Audio_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_Audio_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_Audio_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_Audio_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_Audio_Sf_SwigStatic = {
+    "Audio",
+    swig_Audio_Sf_SwigStatic_methods,
+    swig_Audio_Sf_SwigStatic_attributes,
+    swig_Audio_Sf_SwigStatic_constants,
+    swig_Audio_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_Audio_bases[] = {0};
+static const char *swig_Audio_base_names[] = {0};
+static swig_lua_class _wrap_class_Audio = { "Audio", "Audio", &SWIGTYPE_p_Audio,_proxy__wrap_new_Audio, swig_delete_Audio, swig_Audio_methods, swig_Audio_attributes, &swig_Audio_Sf_SwigStatic, swig_Audio_meta, swig_Audio_bases, swig_Audio_base_names };
+
 static int _wrap_audioGlobalInit(lua_State* L) {
   int SWIG_arg = 0;
   int result;
@@ -6010,6 +6181,63 @@ fail:
 }
 
 
+static int _wrap_audioAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  Audio *result = 0 ;
+  
+  SWIG_check_num_args("audioAlloc",0,0)
+  result = (Audio *)audioAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_audioInit(lua_State* L) {
+  int SWIG_arg = 0;
+  Audio *arg1 = (Audio *) 0 ;
+  int *arg2 = (int *) 0 ;
+  int arg3 ;
+  int arg4 ;
+  int arg5 ;
+  int result;
+  
+  SWIG_check_num_args("audioInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioInit",1,"Audio *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("audioInit",2,"int *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("audioInit",3,"int");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("audioInit",4,"int");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("audioInit",5,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("audioInit",1,SWIGTYPE_p_Audio);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_int,0))){
+    SWIG_fail_ptr("audioInit",2,SWIGTYPE_p_int);
+  }
+  
+  arg3 = (int)lua_tonumber(L, 3);
+  arg4 = (int)lua_tonumber(L, 4);
+  arg5 = (int)lua_tonumber(L, 5);
+  result = (int)audioInit(arg1,arg2,arg3,arg4,arg5);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_audioLoad(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
@@ -6019,7 +6247,7 @@ static int _wrap_audioLoad(lua_State* L) {
   if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("audioLoad",1,"char const *");
   arg1 = (char *)lua_tostring(L, 1);
   result = (Audio *)audioLoad((char const *)arg1);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio_T,0); SWIG_arg++; 
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6039,7 +6267,7 @@ static int _wrap_audioModLoad(lua_State* L) {
   if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("audioModLoad",1,"char const *");
   arg1 = (char *)lua_tostring(L, 1);
   result = (Audio *)audioModLoad((char const *)arg1);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio_T,0); SWIG_arg++; 
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6060,8 +6288,8 @@ static int _wrap_audioLoadInto(lua_State* L) {
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioLoadInto",1,"Audio *");
   if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("audioLoadInto",2,"char const *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
-    SWIG_fail_ptr("audioLoadInto",1,SWIGTYPE_p_Audio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("audioLoadInto",1,SWIGTYPE_p_Audio);
   }
   
   arg2 = (char *)lua_tostring(L, 2);
@@ -6084,8 +6312,8 @@ static int _wrap_audioPlay(lua_State* L) {
   SWIG_check_num_args("audioPlay",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioPlay",1,"Audio *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
-    SWIG_fail_ptr("audioPlay",1,SWIGTYPE_p_Audio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("audioPlay",1,SWIGTYPE_p_Audio);
   }
   
   audioPlay(arg1);
@@ -6109,8 +6337,8 @@ static int _wrap_audioSetLooping(lua_State* L) {
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioSetLooping",1,"Audio *");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("audioSetLooping",2,"int");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
-    SWIG_fail_ptr("audioSetLooping",1,SWIGTYPE_p_Audio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("audioSetLooping",1,SWIGTYPE_p_Audio);
   }
   
   arg2 = (int)lua_tonumber(L, 2);
@@ -6133,8 +6361,8 @@ static int _wrap_audioStop(lua_State* L) {
   SWIG_check_num_args("audioStop",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioStop",1,"Audio *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
-    SWIG_fail_ptr("audioStop",1,SWIGTYPE_p_Audio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("audioStop",1,SWIGTYPE_p_Audio);
   }
   
   audioStop(arg1);
@@ -6158,8 +6386,8 @@ static int _wrap_audioSetPaused(lua_State* L) {
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioSetPaused",1,"Audio *");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("audioSetPaused",2,"int");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
-    SWIG_fail_ptr("audioSetPaused",1,SWIGTYPE_p_Audio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("audioSetPaused",1,SWIGTYPE_p_Audio);
   }
   
   arg2 = (int)lua_tonumber(L, 2);
@@ -6182,34 +6410,11 @@ static int _wrap_audioFree(lua_State* L) {
   SWIG_check_num_args("audioFree",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioFree",1,"Audio *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
-    SWIG_fail_ptr("audioFree",1,SWIGTYPE_p_Audio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("audioFree",1,SWIGTYPE_p_Audio);
   }
   
   audioFree(arg1);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
-static int _wrap_audioPlatformFree(lua_State* L) {
-  int SWIG_arg = 0;
-  Audio *arg1 = (Audio *) 0 ;
-  
-  SWIG_check_num_args("audioPlatformFree",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioPlatformFree",1,"Audio *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
-    SWIG_fail_ptr("audioPlatformFree",1,SWIGTYPE_p_Audio_T);
-  }
-  
-  audioPlatformFree(arg1);
   
   return SWIG_arg;
   
@@ -6288,14 +6493,14 @@ fail:
 }
 
 
-static int _wrap_audioSetMuted(lua_State* L) {
+static int _wrap_audioSetAllMuted(lua_State* L) {
   int SWIG_arg = 0;
   int arg1 ;
   
-  SWIG_check_num_args("audioSetMuted",1,1)
-  if(!lua_isnumber(L,1)) SWIG_fail_arg("audioSetMuted",1,"int");
+  SWIG_check_num_args("audioSetAllMuted",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("audioSetAllMuted",1,"int");
   arg1 = (int)lua_tonumber(L, 1);
-  audioSetMuted(arg1);
+  audioSetAllMuted(arg1);
   
   return SWIG_arg;
   
@@ -6315,8 +6520,8 @@ static int _wrap_audioIsPlaying(lua_State* L) {
   SWIG_check_num_args("audioIsPlaying",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioIsPlaying",1,"Audio *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
-    SWIG_fail_ptr("audioIsPlaying",1,SWIGTYPE_p_Audio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
+    SWIG_fail_ptr("audioIsPlaying",1,SWIGTYPE_p_Audio);
   }
   
   result = (int)audioIsPlaying(arg1);
@@ -6331,13 +6536,13 @@ fail:
 }
 
 
-static int _wrap_audioAlloc(lua_State* L) {
+static int _wrap_audioPlatformAlloc(lua_State* L) {
   int SWIG_arg = 0;
-  Audio *result = 0 ;
+  PlatformAudio *result = 0 ;
   
-  SWIG_check_num_args("audioAlloc",0,0)
-  result = (Audio *)audioAlloc();
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio_T,0); SWIG_arg++; 
+  SWIG_check_num_args("audioPlatformAlloc",0,0)
+  result = (PlatformAudio *)audioPlatformAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_PlatformAudio_T,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6348,36 +6553,108 @@ fail:
 }
 
 
-static int _wrap_audioInit(lua_State* L) {
+static int _wrap_audioPlatformInit(lua_State* L) {
   int SWIG_arg = 0;
-  Audio *arg1 = (Audio *) 0 ;
+  PlatformAudio *arg1 = (PlatformAudio *) 0 ;
   int *arg2 = (int *) 0 ;
   int arg3 ;
   int arg4 ;
   int arg5 ;
   int result;
   
-  SWIG_check_num_args("audioInit",5,5)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioInit",1,"Audio *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("audioInit",2,"int *");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("audioInit",3,"int");
-  if(!lua_isnumber(L,4)) SWIG_fail_arg("audioInit",4,"int");
-  if(!lua_isnumber(L,5)) SWIG_fail_arg("audioInit",5,"int");
+  SWIG_check_num_args("audioPlatformInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioPlatformInit",1,"PlatformAudio *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("audioPlatformInit",2,"int *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("audioPlatformInit",3,"int");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("audioPlatformInit",4,"int");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("audioPlatformInit",5,"int");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio_T,0))){
-    SWIG_fail_ptr("audioInit",1,SWIGTYPE_p_Audio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_PlatformAudio_T,0))){
+    SWIG_fail_ptr("audioPlatformInit",1,SWIGTYPE_p_PlatformAudio_T);
   }
   
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_int,0))){
-    SWIG_fail_ptr("audioInit",2,SWIGTYPE_p_int);
+    SWIG_fail_ptr("audioPlatformInit",2,SWIGTYPE_p_int);
   }
   
   arg3 = (int)lua_tonumber(L, 3);
   arg4 = (int)lua_tonumber(L, 4);
   arg5 = (int)lua_tonumber(L, 5);
-  result = (int)audioInit(arg1,arg2,arg3,arg4,arg5);
+  result = (int)audioPlatformInit(arg1,arg2,arg3,arg4,arg5);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_audioPlatformFree(lua_State* L) {
+  int SWIG_arg = 0;
+  PlatformAudio *arg1 = (PlatformAudio *) 0 ;
+  
+  SWIG_check_num_args("audioPlatformFree",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioPlatformFree",1,"PlatformAudio *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_PlatformAudio_T,0))){
+    SWIG_fail_ptr("audioPlatformFree",1,SWIGTYPE_p_PlatformAudio_T);
+  }
+  
+  audioPlatformFree(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_audioPlatformPlay(lua_State* L) {
+  int SWIG_arg = 0;
+  PlatformAudio *arg1 = (PlatformAudio *) 0 ;
+  
+  SWIG_check_num_args("audioPlatformPlay",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioPlatformPlay",1,"PlatformAudio *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_PlatformAudio_T,0))){
+    SWIG_fail_ptr("audioPlatformPlay",1,SWIGTYPE_p_PlatformAudio_T);
+  }
+  
+  audioPlatformPlay(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_audioPlatformSetPaused(lua_State* L) {
+  int SWIG_arg = 0;
+  PlatformAudio *arg1 = (PlatformAudio *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("audioPlatformSetPaused",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioPlatformSetPaused",1,"PlatformAudio *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("audioPlatformSetPaused",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_PlatformAudio_T,0))){
+    SWIG_fail_ptr("audioPlatformSetPaused",1,SWIGTYPE_p_PlatformAudio_T);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  audioPlatformSetPaused(arg1,arg2);
+  
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6395,8 +6672,8 @@ static int _wrap_soundInstances_set(lua_State* L) {
   SWIG_check_num_args("soundInstances",1,1)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("soundInstances",1,"Audio *[512]");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_p_Audio_T,0))){
-    SWIG_fail_ptr("soundInstances_set",1,SWIGTYPE_p_p_Audio_T);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_p_Audio,0))){
+    SWIG_fail_ptr("soundInstances_set",1,SWIGTYPE_p_p_Audio);
   }
   
   {
@@ -6421,7 +6698,7 @@ static int _wrap_soundInstances_get(lua_State* L) {
   
   SWIG_check_num_args("soundInstances",0,0)
   result = (Audio **)(Audio **)soundInstances;
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_p_Audio_T,0); SWIG_arg++; 
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_p_Audio,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -6897,6 +7174,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "setKeyReleased", _wrap_setKeyReleased},
     { "audioGlobalInit", _wrap_audioGlobalInit},
     { "audioGlobalPlatformInit", _wrap_audioGlobalPlatformInit},
+    { "audioAlloc", _wrap_audioAlloc},
+    { "audioInit", _wrap_audioInit},
     { "audioLoad", _wrap_audioLoad},
     { "audioModLoad", _wrap_audioModLoad},
     { "audioLoadInto", _wrap_audioLoadInto},
@@ -6905,15 +7184,17 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "audioStop", _wrap_audioStop},
     { "audioSetPaused", _wrap_audioSetPaused},
     { "audioFree", _wrap_audioFree},
-    { "audioPlatformFree", _wrap_audioPlatformFree},
     { "audioOnFrame", _wrap_audioOnFrame},
     { "audioCleanup", _wrap_audioCleanup},
     { "audioPlatformCleanup", _wrap_audioPlatformCleanup},
     { "audioSetAllPaused", _wrap_audioSetAllPaused},
-    { "audioSetMuted", _wrap_audioSetMuted},
+    { "audioSetAllMuted", _wrap_audioSetAllMuted},
     { "audioIsPlaying", _wrap_audioIsPlaying},
-    { "audioAlloc", _wrap_audioAlloc},
-    { "audioInit", _wrap_audioInit},
+    { "audioPlatformAlloc", _wrap_audioPlatformAlloc},
+    { "audioPlatformInit", _wrap_audioPlatformInit},
+    { "audioPlatformFree", _wrap_audioPlatformFree},
+    { "audioPlatformPlay", _wrap_audioPlatformPlay},
+    { "audioPlatformSetPaused", _wrap_audioPlatformSetPaused},
     { "facebookPost", _wrap_facebookPost},
     { "facebookIsShareAvailable", _wrap_facebookIsShareAvailable},
     { "adPrepareInterstitial", _wrap_adPrepareInterstitial},
@@ -6949,6 +7230,7 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_RawBitmapData,
 &_wrap_class_BitmapData,
 &_wrap_class_Camera,
+&_wrap_class_Audio,
     0
 };
 static swig_lua_namespace* swig_SwigModule_namespaces[] = {
@@ -6969,63 +7251,67 @@ static swig_lua_namespace swig_SwigModule = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
-static swig_type_info _swigt__p_Audio_T = {"_p_Audio_T", "struct Audio_T *|Audio *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Audio = {"_p_Audio", "struct Audio *|Audio *", 0, 0, (void*)&_wrap_class_Audio, 0};
 static swig_type_info _swigt__p_BitmapData = {"_p_BitmapData", "struct BitmapData *|BitmapData *", 0, 0, (void*)&_wrap_class_BitmapData, 0};
 static swig_type_info _swigt__p_Camera = {"_p_Camera", "struct Camera *|Camera *", 0, 0, (void*)&_wrap_class_Camera, 0};
 static swig_type_info _swigt__p_DisplayObject = {"_p_DisplayObject", "struct DisplayObject *|DisplayObject *", 0, 0, (void*)&_wrap_class_DisplayObject, 0};
 static swig_type_info _swigt__p_GLfloat = {"_p_GLfloat", "GLfloat *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GLuint = {"_p_GLuint", "GLuint *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Matrix2 = {"_p_Matrix2", "struct Matrix2 *|Matrix2 *", 0, 0, (void*)&_wrap_class_Matrix2, 0};
+static swig_type_info _swigt__p_PlatformAudio_T = {"_p_PlatformAudio_T", "struct PlatformAudio_T *|PlatformAudio *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_RawBitmapData = {"_p_RawBitmapData", "struct RawBitmapData *|RawBitmapData *", 0, 0, (void*)&_wrap_class_RawBitmapData, 0};
 static swig_type_info _swigt__p_Rect = {"_p_Rect", "Rect *", 0, 0, (void*)&_wrap_class_Rect, 0};
 static swig_type_info _swigt__p_Texture = {"_p_Texture", "struct Texture *|Texture *", 0, 0, (void*)&_wrap_class_Texture, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_p_Audio_T = {"_p_p_Audio_T", "Audio **|struct Audio_T **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_Audio = {"_p_p_Audio", "struct Audio **|Audio **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
-  &_swigt__p_Audio_T,
+  &_swigt__p_Audio,
   &_swigt__p_BitmapData,
   &_swigt__p_Camera,
   &_swigt__p_DisplayObject,
   &_swigt__p_GLfloat,
   &_swigt__p_GLuint,
   &_swigt__p_Matrix2,
+  &_swigt__p_PlatformAudio_T,
   &_swigt__p_RawBitmapData,
   &_swigt__p_Rect,
   &_swigt__p_Texture,
   &_swigt__p_int,
-  &_swigt__p_p_Audio_T,
+  &_swigt__p_p_Audio,
   &_swigt__p_unsigned_char,
 };
 
-static swig_cast_info _swigc__p_Audio_T[] = {  {&_swigt__p_Audio_T, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Audio[] = {  {&_swigt__p_Audio, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_BitmapData[] = {  {&_swigt__p_BitmapData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Camera[] = {  {&_swigt__p_Camera, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_DisplayObject[] = {  {&_swigt__p_DisplayObject, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GLfloat[] = {  {&_swigt__p_GLfloat, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GLuint[] = {  {&_swigt__p_GLuint, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Matrix2[] = {  {&_swigt__p_Matrix2, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_PlatformAudio_T[] = {  {&_swigt__p_PlatformAudio_T, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_RawBitmapData[] = {  {&_swigt__p_RawBitmapData, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Rect[] = {  {&_swigt__p_Rect, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Texture[] = {  {&_swigt__p_Texture, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_p_Audio_T[] = {  {&_swigt__p_p_Audio_T, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_Audio[] = {  {&_swigt__p_p_Audio, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
-  _swigc__p_Audio_T,
+  _swigc__p_Audio,
   _swigc__p_BitmapData,
   _swigc__p_Camera,
   _swigc__p_DisplayObject,
   _swigc__p_GLfloat,
   _swigc__p_GLuint,
   _swigc__p_Matrix2,
+  _swigc__p_PlatformAudio_T,
   _swigc__p_RawBitmapData,
   _swigc__p_Rect,
   _swigc__p_Texture,
   _swigc__p_int,
-  _swigc__p_p_Audio_T,
+  _swigc__p_p_Audio,
   _swigc__p_unsigned_char,
 };
 
