@@ -421,12 +421,14 @@ local function frameFunc()
     --return 0
   --end
   fps.update(frameDelta)
+  --[[
   local dDeltaSeconds = smoothDelta(frameDelta)
   if dDeltaSeconds>100 then
     dDeltaSeconds = 1
   end
   dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated+dDeltaSeconds
   local dd = 0
+  ]]
 
   --while dFrameDeltaRemainingsAccumulated>=m_dFixedTimeStep do
     --dFrameDeltaRemainingsAccumulated = dFrameDeltaRemainingsAccumulated-m_dFixedTimeStep
@@ -436,7 +438,7 @@ local function frameFunc()
     --main.update(dd)
   --end
   if not appPaused then
-    main.update(dDeltaSeconds)
+    main.update(frameDelta)
   end
   framework.cjs.Bitmap.drawCounter = 0
   main.draw(fps.current())
@@ -468,6 +470,9 @@ function framework.doFrame(deltaMs)
     if freezeFrameCount>0 then
       freezeFrameCount = freezeFrameCount-1
       frameDelta = 0
+    end
+    if frameDelta > 100 then
+      frameDelta = 16
     end
     doCall(frameFunc)
   else

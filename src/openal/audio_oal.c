@@ -97,6 +97,7 @@ int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
 }
 
 void audioPlay(Audio* a) {
+  return;
   if(globalMute){
     return;
   }

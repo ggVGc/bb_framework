@@ -32,7 +32,6 @@ static ChartboostDelegateImpl *cbDelegate;
   NSLog(@"Will resign active");
   EAGLView *v = (EAGLView*)viewController.view;
   [v setPaused:true];
-  appSetPaused(1, 1);
   appSuspend();
   /*
   appUnloadTextures();
@@ -45,7 +44,6 @@ static ChartboostDelegateImpl *cbDelegate;
   /*
   v->needsReload = true;
   */
-  appSetPaused(0, 0);
   [v setPaused:false];
 }
 
@@ -56,10 +54,12 @@ static ChartboostDelegateImpl *cbDelegate;
 
 - (void)applicationWillEnterBackground:(UIApplication *)application {
   NSLog(@"Will enter background");
+  appSetPaused(1, 1);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
   NSLog(@"Will enter foreground");
+  appSetPaused(0, 0);
 }
 
 

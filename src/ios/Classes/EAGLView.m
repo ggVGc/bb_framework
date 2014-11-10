@@ -47,6 +47,7 @@
 -(void)setPaused:(BOOL)pause{
   [touchArr removeAllObjects];
   self->paused = pause;
+  ignoreLastTick = true;
 }
 
 -(void) setupRenderBuffer{
@@ -111,9 +112,10 @@ return ((double)(mach_absolute_time() - timeZero))
   bank = 0;
   timeZero = mach_absolute_time();
   CFTimeInterval now = displayLink.timestamp;
-  if(lastTick>0){
+  if(lastTick>0 && !ignoreLastTick){
     appRender((now - lastTick)*1000);
   }else{
+    ignoreLastTick = false;
     appRender(1);
   }
   lastTick = now;
@@ -136,29 +138,6 @@ return ((double)(mach_absolute_time() - timeZero))
 }
 
 
-- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
-    NSLog(@"Product request finihsed");
-    for(SKProduct *p in response.products){
-      NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-      [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
-      [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-      [numberFormatter setLocale:p.priceLocale];
-      NSString *formattedString = [numberFormatter stringFromNumber:p.price];
-      NSString *str = [NSString stringWithFormat:@"Product: %@, %@", p.productIdentifier, formattedString];
-      NSLog(@"%@", str);
-      alert(@"", str);
-    }
-  //self.products = response.products;
-
-  for (NSString *invalidIdentifier in response.invalidProductIdentifiers) {
-      NSLog(@"Invalid product: %@", invalidIdentifier);
-      alert(@"", [NSString stringWithFormat:@"Invalid product: %@", invalidIdentifier]);
-  }
-
-  //[self displayStoreUI]; // Custom method
-}
-
-
 - (void)setupDisplayLink {
   CADisplayLink* displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(render:)];
   displayLink.frameInterval = 1;
@@ -172,6 +151,8 @@ return ((double)(mach_absolute_time() - timeZero))
   NSLog(@"EAGLView initWithCoder");
   self = [super initWithCoder:coder];
   if (self) {        
+    ignoreLastTick = false;
+    iap = [[IAP alloc] init];
     touchArr = [[NSMutableArray alloc] init];
     self.multipleTouchEnabled = true;
     mach_timebase_info( &timeBase );

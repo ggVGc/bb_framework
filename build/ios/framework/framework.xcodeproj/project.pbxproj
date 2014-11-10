@@ -13,6 +13,8 @@
 		28EC4C5A11D54ECE0027AA9F /* frameworkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28EC4C5811D54ECE0027AA9F /* frameworkViewController.xib */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		7A11821F1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A11821E1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.m */; };
+		7A1182231A10431B006DAE45 /* RMStoreTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1182221A10431B006DAE45 /* RMStoreTransaction.m */; };
 		7A4D88AC19E1712B0059CEBF /* app.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D888019E1712B0059CEBF /* app.c */; };
 		7A4D88AD19E1712B0059CEBF /* quad.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D888519E1712B0059CEBF /* quad.c */; };
 		7A4D88AE19E1712B0059CEBF /* random.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D888719E1712B0059CEBF /* random.c */; };
@@ -33,7 +35,6 @@
 		7A4D88BE19E1712B0059CEBF /* matrix2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88AA19E1712B0059CEBF /* matrix2.c */; };
 		7A4D88BF19E1712B0059CEBF /* framework_wrap.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88AB19E1712B0059CEBF /* framework_wrap.c */; };
 		7A4D88C219E171420059CEBF /* audio_oal.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D88C119E171420059CEBF /* audio_oal.c */; };
-		7A62A84A1A08D8CE00AF4E60 /* iap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A8491A08D8CE00AF4E60 /* iap.m */; };
 		7A62A84D1A08DA8200AF4E60 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A62A84C1A08DA8200AF4E60 /* StoreKit.framework */; };
 		7A62A84F1A09133400AF4E60 /* helper_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A84E1A09133400AF4E60 /* helper_posix.c */; };
 		7A62A8511A0913B300AF4E60 /* compat-5.2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A8501A0913B300AF4E60 /* compat-5.2.c */; };
@@ -49,6 +50,8 @@
 		7A65163019F1234900D21968 /* SimpleVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7A65162E19F1234900D21968 /* SimpleVertex.glsl */; };
 		7A65163219F125D700D21968 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A65163119F125D700D21968 /* Chartboost.framework */; };
 		7A6516361A0338E300D21968 /* chartboostDelegateImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */; };
+		7A67BCBA1A0FF07B0028C4D4 /* RMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67BCB91A0FF07B0028C4D4 /* RMStore.m */; };
+		7A67BCBE1A101BDA0028C4D4 /* iap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67BCBD1A101BDA0028C4D4 /* iap.m */; };
 		7A71FB641A0DB4280037C7C4 /* MJGStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A71FB631A0DB4280037C7C4 /* MJGStack.m */; };
 		7A9C65681A05DFA10083B57A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65661A05DFA10083B57A /* Default-568h@2x.png */; };
 		7A9C65691A05DFA10083B57A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65671A05DFA10083B57A /* Default@2x.png */; };
@@ -127,6 +130,10 @@
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* framework_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = framework_Prefix.pch; sourceTree = "<group>"; };
+		7A11821D1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMStoreUserDefaultsPersistence.h; path = "../../../deps/ios/RMStore-master/RMStore/Optional/RMStoreUserDefaultsPersistence.h"; sourceTree = "<group>"; };
+		7A11821E1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMStoreUserDefaultsPersistence.m; path = "../../../deps/ios/RMStore-master/RMStore/Optional/RMStoreUserDefaultsPersistence.m"; sourceTree = "<group>"; };
+		7A1182211A10431B006DAE45 /* RMStoreTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMStoreTransaction.h; path = "../../../deps/ios/RMStore-master/RMStore/Optional/RMStoreTransaction.h"; sourceTree = "<group>"; };
+		7A1182221A10431B006DAE45 /* RMStoreTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMStoreTransaction.m; path = "../../../deps/ios/RMStore-master/RMStore/Optional/RMStoreTransaction.m"; sourceTree = "<group>"; };
 		7A4D888019E1712B0059CEBF /* app.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = app.c; sourceTree = "<group>"; };
 		7A4D888119E1712B0059CEBF /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = app.h; sourceTree = "<group>"; };
 		7A4D888319E1712B0059CEBF /* matrix2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix2.h; sourceTree = "<group>"; };
@@ -170,7 +177,6 @@
 		7A4D88AA19E1712B0059CEBF /* matrix2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix2.c; sourceTree = "<group>"; };
 		7A4D88AB19E1712B0059CEBF /* framework_wrap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = framework_wrap.c; sourceTree = "<group>"; };
 		7A4D88C119E171420059CEBF /* audio_oal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audio_oal.c; sourceTree = "<group>"; };
-		7A62A8491A08D8CE00AF4E60 /* iap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iap.m; sourceTree = "<group>"; };
 		7A62A84C1A08DA8200AF4E60 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7A62A84E1A09133400AF4E60 /* helper_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = helper_posix.c; path = ../../../deps/common/helper_threads_lua/helper_posix.c; sourceTree = "<group>"; };
 		7A62A8501A0913B300AF4E60 /* compat-5.2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = "compat-5.2.c"; path = "../../../deps/common/lua-compat-5.2/c-api/compat-5.2.c"; sourceTree = "<group>"; };
@@ -194,6 +200,10 @@
 		7A6516331A0338E300D21968 /* appConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appConfig.h; sourceTree = "<group>"; };
 		7A6516341A0338E300D21968 /* chartboostDelegateImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chartboostDelegateImpl.h; sourceTree = "<group>"; };
 		7A6516351A0338E300D21968 /* chartboostDelegateImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chartboostDelegateImpl.m; sourceTree = "<group>"; };
+		7A67BCB81A0FF07B0028C4D4 /* RMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMStore.h; path = "../../../deps/ios/RMStore-master/RMStore/RMStore.h"; sourceTree = "<group>"; };
+		7A67BCB91A0FF07B0028C4D4 /* RMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMStore.m; path = "../../../deps/ios/RMStore-master/RMStore/RMStore.m"; sourceTree = "<group>"; };
+		7A67BCBC1A101BDA0028C4D4 /* iap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iap.h; sourceTree = "<group>"; };
+		7A67BCBD1A101BDA0028C4D4 /* iap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iap.m; sourceTree = "<group>"; };
 		7A71FB621A0DB4280037C7C4 /* MJGStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJGStack.h; sourceTree = "<group>"; };
 		7A71FB631A0DB4280037C7C4 /* MJGStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJGStack.m; sourceTree = "<group>"; };
 		7A9C65661A05DFA10083B57A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -270,6 +280,12 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				7A1182211A10431B006DAE45 /* RMStoreTransaction.h */,
+				7A1182221A10431B006DAE45 /* RMStoreTransaction.m */,
+				7A11821D1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.h */,
+				7A11821E1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.m */,
+				7A67BCB81A0FF07B0028C4D4 /* RMStore.h */,
+				7A67BCB91A0FF07B0028C4D4 /* RMStore.m */,
 				7A62A8501A0913B300AF4E60 /* compat-5.2.c */,
 				7A62A84E1A09133400AF4E60 /* helper_posix.c */,
 				7ADAA01019F0F14F00DB8738 /* lua_asyncassetloader.c */,
@@ -389,6 +405,8 @@
 		7A65161B19F1233800D21968 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7A67BCBC1A101BDA0028C4D4 /* iap.h */,
+				7A67BCBD1A101BDA0028C4D4 /* iap.m */,
 				7A71FB621A0DB4280037C7C4 /* MJGStack.h */,
 				7A71FB631A0DB4280037C7C4 /* MJGStack.m */,
 				7A6516331A0338E300D21968 /* appConfig.h */,
@@ -459,7 +477,6 @@
 		B3920A451443C4BC0006E503 /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				7A62A8491A08D8CE00AF4E60 /* iap.m */,
 				7AB46E4A19E17C2000841DB3 /* data_store.m */,
 			);
 			name = framework;
@@ -590,12 +607,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A62A84A1A08D8CE00AF4E60 /* iap.m in Sources */,
 				7A4D88AF19E1712B0059CEBF /* rawbitmapdata.c in Sources */,
 				7A4D88B119E1712B0059CEBF /* resource_loading.c in Sources */,
 				7A4D88B819E1712B0059CEBF /* bitmapdata.c in Sources */,
 				7ADAA01119F0F14F00DB8738 /* lua_asyncassetloader.c in Sources */,
 				7A4D88AE19E1712B0059CEBF /* random.c in Sources */,
+				7A1182231A10431B006DAE45 /* RMStoreTransaction.m in Sources */,
 				7A65162919F1233800D21968 /* frameworkAppDelegate.m in Sources */,
 				7AB46E4B19E17C2000841DB3 /* data_store.m in Sources */,
 				7A65162A19F1233800D21968 /* frameworkViewController.m in Sources */,
@@ -613,14 +630,17 @@
 				7A4D88B719E1712B0059CEBF /* audio.c in Sources */,
 				7A62A8511A0913B300AF4E60 /* compat-5.2.c in Sources */,
 				7A4D88BC19E1712B0059CEBF /* graphics.c in Sources */,
+				7A67BCBA1A0FF07B0028C4D4 /* RMStore.m in Sources */,
 				7A4D88BB19E1712B0059CEBF /* facebook.c in Sources */,
 				7A4D88B519E1712B0059CEBF /* util.c in Sources */,
+				7A67BCBE1A101BDA0028C4D4 /* iap.m in Sources */,
 				7A71FB641A0DB4280037C7C4 /* MJGStack.m in Sources */,
 				7A4D88BD19E1712B0059CEBF /* input.c in Sources */,
 				7A4D88B419E1712B0059CEBF /* texture.c in Sources */,
 				7A4D88B319E1712B0059CEBF /* streaming_audio.c in Sources */,
 				7A65162B19F1233800D21968 /* shaderUtil.c in Sources */,
 				7A4D88BA19E1712B0059CEBF /* display_object.c in Sources */,
+				7A11821F1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.m in Sources */,
 				7A62A84F1A09133400AF4E60 /* helper_posix.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

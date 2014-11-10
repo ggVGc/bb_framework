@@ -4,8 +4,9 @@
 #include <OpenGLES/ES1/gl.h>
 #include <OpenGLES/ES1/glext.h>
 #import "MJGStack.h"
+#import "iap.h"
 
-@interface EAGLView : UIView<SKProductsRequestDelegate>{
+@interface EAGLView : UIView{
     @public BOOL needsReload;
     BOOL paused;
     NSMutableArray *touchArr;
@@ -18,6 +19,8 @@
     GLint framebufferWidth;
     GLint framebufferHeight;
     GLuint colorRenderBuffer;
+    IAP *iap;
+    BOOL ignoreLastTick;
 }
 
 -(void)setPaused:(BOOL)paused;

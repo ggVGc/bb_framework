@@ -1,6 +1,0 @@
-
-
-@interface IAP : NSObject
-@end
-
-

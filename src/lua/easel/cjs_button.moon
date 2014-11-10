@@ -1,7 +1,7 @@
 local Button
 Button = {
 clickSfx: nil
-new: maker (mc, initialDoStateSwitch)=>
+new: maker (mc, initialDoStateSwitch, initialTriggerOnDown)=>
   @getMc = -> mc
   w = mc.nominalBounds[3]
   h = mc.nominalBounds[4]
@@ -13,6 +13,7 @@ new: maker (mc, initialDoStateSwitch)=>
       Button.clickSfx.play!
 
   @doStateSwitch = initialDoStateSwitch==nil and true or initialDoStateSwitch
+  @triggerOnDown = initialTriggerOnDown
 
   state = 0
   stateOffset = 0
@@ -47,7 +48,7 @@ new: maker (mc, initialDoStateSwitch)=>
         if @doStateSwitch and mc.gotoAndStop
           mc.gotoAndStop stateOffset
         playClickSfx!
-        return true
+        return not @triggerOnDown
 
     local cursorOver
     for i=1,framework.Input.cursorCount!
@@ -58,7 +59,7 @@ new: maker (mc, initialDoStateSwitch)=>
       if @doStateSwitch and mc.gotoAndStop
         mc.gotoAndStop stateOffset+1
       state = 1
-      return false
+      return @triggerOnDown
 
     if state ~= 0 and not cursorOver
       state = 0

@@ -350,6 +350,7 @@ void adInterstitialDisplayed(int success){
 
 void onPurchaseComplete(int success){
   if(didInit){
+    appSetPaused(0,0);
     /*pthread_mutex_lock(&vmMutex);*/
     lua_getglobal(luaVM, "framework");
     lua_getfield(luaVM, -1, "IAP");

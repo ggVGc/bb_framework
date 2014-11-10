@@ -1,4 +1,6 @@
 #import "chartboostDelegateImpl.h"
+#import "app.h"
+#import "ads.h"
 
 
 
