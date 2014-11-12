@@ -13,6 +13,8 @@ setGroupMute: (groupName, mute)->
     g.muted = mute
     for m in *g.members
       m.setMuted mute
+  else
+    groups[groupName] =  {muted:mute, members:{}}
 
 new: (nativeAudio)->
   @ = {}
@@ -23,7 +25,7 @@ new: (nativeAudio)->
 
   @playLooping = ->
     @.setLooping true
-    _c_framework.audioPlay nativeAudio
+    @.play!
 
   @playIfNotPlaying = ->
     @.play! if not @.isPlaying!
@@ -39,6 +41,9 @@ new: (nativeAudio)->
 
   @isPlaying = ->
     _c_framework.audioIsPlaying(nativeAudio)==1
+
+  @setPaused = (pause)->
+    _c_framework.audioSetPaused(nativeAudio, pause and 1 or 0)
 
   @setMuted = (mute)->
     nativeAudio.muted = mute and 1 or 0

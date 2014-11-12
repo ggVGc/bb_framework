@@ -71,7 +71,8 @@ int audioGlobalPlatformInit(){
   return 0;
 }
 
-int audioPlatformInit(PlatformAudio *a, int *buf, int bufSize, int sampleRate, int channels){
+int audioPlatformInit(PlatformAudio *a, short *buf, int sampleCount, int sampleRate, int channels){
+  unsigned int bufSize = sampleCount*channels*sizeof(short);
   ALfloat SourcePos[] = { 0.0, 0.0, 0.0 };
   ALfloat SourceVel[] = { 0.0, 0.0, 0.0 };
   if(!initialised){

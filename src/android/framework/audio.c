@@ -1,4 +1,7 @@
 #include <stdlib.h>
+#include <assert.h>
+#include <stdio.h>
+#include <string.h>
 #include <SLES/OpenSLES.h>
 #include <SLES/OpenSLES_Android.h>
 #include <math.h>
@@ -7,6 +10,19 @@
 #include "framework/util.h"
 
 #define MAX_BUFFERS 1
+#define BUF_SIZE 1024
+
+#define CheckErr(x) ErrorFunc(x,__LINE__)
+
+static char errMsgBuf[4096*4];
+
+void ErrorFunc( SLresult result , int line) {
+    if (SL_RESULT_SUCCESS != result) {
+        sprintf(errMsgBuf, "%lu error code encountered at line %d\n", result, line);
+        trace(errMsgBuf);
+        /*exit(EXIT_FAILURE);*/
+    }
+}
 
 static SLObjectItf engine_obj;
 static SLEngineItf engine;
@@ -15,13 +31,14 @@ SLObjectItf output_mix_obj;
 static int initialised = 0;
 
 struct PlatformAudio_T {
-  void *sampleData;
+  short  *sampleData;
+  unsigned int curBufPos;
   unsigned int sampleCount;
   int loop;
   SLPlayItf player;
   SLObjectItf player_obj;
   /*SLVolumeItf player_vol;*/
-  SLAndroidSimpleBufferQueueItf player_buf_q;
+  SLAndroidSimpleBufferQueueItf bufferQueue;
   int is_playing;
   int is_done_buffer;
 };
@@ -53,18 +70,31 @@ int audioGlobalPlatformInit(){
   return 0;
 }
 
+
 void SLAPIENTRY play_callback( SLPlayItf player, void *context, SLuint32 event ){
-  Audio *a = (Audio*)context;
+  PlatformAudio *a = (PlatformAudio*)context;
   if( event & SL_PLAYEVENT_HEADATEND ){
+    trace("Audio: Buffer finished");
+    a->is_done_buffer = 1;
     /*
-       trace("Audio: Buffer finished");
-       */
-    a->pa->is_done_buffer = 1;
-    /*
-       if(a->loop){
-       trace("Audio: Looping");
-       }
-       */
+    if(a->loop){
+      trace("Audio: Looping");
+    }
+    */
+  }
+}
+ 
+
+void buffer_callback(SLAndroidSimpleBufferQueueItf bq, void *context){
+  PlatformAudio *a = (PlatformAudio*)context;
+  if(a->curBufPos<a->sampleCount){
+    unsigned int step = BUF_SIZE;
+    if(a->curBufPos+step > a->sampleCount){
+      step = a->sampleCount-a->curBufPos;
+    }
+    SLresult res = (*bq)->Enqueue(bq, a->sampleData+a->curBufPos, step*sizeof(short));
+    assert(SL_RESULT_SUCCESS == res);
+    a->curBufPos+=step;
   }
 }
 
@@ -73,16 +103,18 @@ PlatformAudio* audioPlatformAlloc(){
   return (PlatformAudio*)malloc(sizeof(PlatformAudio));
 }
 
-int audioPlatformInit(PlatformAudio *a, int *buf, int bufSize, int sampleRate, int channels){
+int audioPlatformInit(PlatformAudio *a, short *buf, int samplesPerChannel, int sampleRate, int channels){
+  int bufSize = samplesPerChannel*channels*sizeof(short);
   if(!initialised){
     return 0;
   }
+  a->curBufPos = 0;
   a->loop = 0;
   a->is_playing = 0;
   a->is_done_buffer = 0;
-  a->sampleData = malloc(sizeof(int)*bufSize);
+  a->sampleData = (short*)malloc(bufSize);
   memcpy(a->sampleData, buf, bufSize);
-  a->sampleCount = bufSize;
+  a->sampleCount = samplesPerChannel*channels;
 
   SLresult result;
   // Configure Buffer Queue.
@@ -129,7 +161,7 @@ int audioPlatformInit(PlatformAudio *a, int *buf, int bufSize, int sampleRate, i
 
   (*a->player_obj)->Realize( a->player_obj, SL_BOOLEAN_FALSE );
   (*a->player_obj)->GetInterface( a->player_obj,SL_IID_PLAY, &a->player );
-  (*a->player_obj)->GetInterface( a->player_obj,SL_IID_ANDROIDSIMPLEBUFFERQUEUE, &a->player_buf_q );
+  (*a->player_obj)->GetInterface( a->player_obj,SL_IID_BUFFERQUEUE, &a->bufferQueue );
   /*
      if((*a->player_obj)->GetInterface( a->player_obj, SL_IID_VOLUME, &a->player_vol ) != SL_RESULT_SUCCESS){
      trace("Warning: Audio instance volume interface not available");
@@ -137,8 +169,11 @@ int audioPlatformInit(PlatformAudio *a, int *buf, int bufSize, int sampleRate, i
      }
      */
 
+  SLresult res = (*a->bufferQueue)->RegisterCallback( a->bufferQueue,buffer_callback, a );
+  CheckErr(res);
   (*a->player)->RegisterCallback( a->player, play_callback, a );
-  (*a->player)->SetCallbackEventsMask( a->player, SL_PLAYEVENT_HEADATEND );
+  res = (*a->player)->SetCallbackEventsMask( a->player, SL_PLAYEVENT_HEADATEND );
+  CheckErr(res);
   return 1;
 }
 
@@ -146,11 +181,11 @@ void audioPlatformPlay(PlatformAudio* a) {
   if(!initialised){
     return;
   }
-  /*
      trace("Audio: Playing");
-     */
-  (*a->player_buf_q)->Enqueue(a->player_buf_q, a->sampleData, a->sampleCount );
+  a->curBufPos = 0;
   (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
+  SLresult res = (*a->bufferQueue)->Enqueue(a->bufferQueue, a->sampleData, BUF_SIZE*sizeof(short));
+  assert(SL_RESULT_SUCCESS == res);
   a->is_playing = 1;
   a->is_done_buffer = 0;
 }
@@ -167,7 +202,7 @@ void audioStop(Audio* a) {
     return;
   }
   (*a->pa->player)->SetPlayState( a->pa->player, SL_PLAYSTATE_STOPPED );
-  (*a->pa->player_buf_q)->Clear(a->pa->player_buf_q );
+  (*a->pa->bufferQueue)->Clear(a->pa->bufferQueue );
   a->pa->is_playing = 0;
 }
 
@@ -221,8 +256,9 @@ void audioOnFrame(){
     }
     if(a->pa->is_playing && a->pa->is_done_buffer){
       if(a->pa->loop){
-        audioPlay(a->pa);
+        audioPlay(a);
       }else{
+        trace("Audio finished");
         a->pa->is_playing = 0;
       }
     }

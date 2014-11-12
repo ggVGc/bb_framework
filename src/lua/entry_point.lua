@@ -1,9 +1,13 @@
+if jit then -- start by trying to force a jit memory allocation
+  print('jit status: ', jit.status())             
+  --require("jit.opt").start("sizemcode=256","maxmcode=256")
+  --for i=1,1000 do end
+  --print(jit.status())
+end
+
 
 --local errorString = nil
 
-if jit then 
-  jit.off()
-end
 
 -- Be compatible with lua 5.2
 loadstring = load
@@ -443,7 +447,7 @@ local function frameFunc()
   framework.cjs.Bitmap.drawCounter = 0
   main.draw(fps.current())
   if fps.hasNew() then
-    --print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount(), 'T: '..framework.MovieClip.tickCount)
+    print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount(), 'T: '..framework.MovieClip.tickCount)
     framework.MovieClip.tickCount = 0
   end
   memCheckCounter=memCheckCounter+frameDelta

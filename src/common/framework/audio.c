@@ -132,8 +132,8 @@ int audioLoadInto(Audio *a, const char* path){
   */
 
 
-  bufSize = totalSamples*vi->channels*2;
-  tmpBuf = (char*)malloc(sizeof(char)*bufSize);
+  bufSize = totalSamples*vi->channels*sizeof(short);
+  tmpBuf = (char*)malloc(bufSize);
 
  
   while(!eof){
@@ -160,7 +160,7 @@ int audioLoadInto(Audio *a, const char* path){
   }
 
 
- if(audioInit(a, (int*)tmpBuf, bufSize, vi->rate, vi->channels)){
+ if(audioInit(a, (short*)tmpBuf, totalSamples, vi->rate, vi->channels)){
    soundInstances[soundIndex] = a;
  }
 
@@ -264,9 +264,9 @@ Audio* audioAlloc(){
 }
 
 
-int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels){
+int audioInit(Audio *a, short *buf, int samplesPerChannel, int sampleRate, int channels){
   a->muted = 0;
-  audioPlatformInit(a->pa, buf, bufSize, sampleRate, channels);
+  audioPlatformInit(a->pa, buf, samplesPerChannel, sampleRate, channels);
 }
 
 void audioSetAllMuted(int muted){

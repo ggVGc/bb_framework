@@ -11,7 +11,7 @@ int audioGlobalInit();
 int audioGlobalPlatformInit();
 
 Audio* audioAlloc();
-int audioInit(Audio *a, int *buf, int bufSize, int sampleRate, int channels);
+int audioInit(Audio *a, short *buf, int samplesPerChannel, int sampleRate, int channels);
 Audio* audioLoad(const char* path);
 Audio* audioModLoad(const char* path);
 int audioLoadInto(Audio *a, const char* path);
@@ -28,7 +28,7 @@ void audioSetAllMuted(int muted);
 int audioIsPlaying(Audio *a);
 
 PlatformAudio *audioPlatformAlloc();
-int audioPlatformInit(PlatformAudio *a, int *buf, int bufSize, int sampleRate, int channels);
+int audioPlatformInit(PlatformAudio *a, short *buf, int samplesPerChannel, int sampleRate, int channels);
 void audioPlatformFree(PlatformAudio *);
 void audioPlatformPlay(PlatformAudio*);
 void audioPlatformSetPaused(PlatformAudio *a, int paused);

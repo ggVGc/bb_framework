@@ -2613,9 +2613,10 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_Texture swig_types[10]
 #define SWIGTYPE_p_int swig_types[11]
 #define SWIGTYPE_p_p_Audio swig_types[12]
-#define SWIGTYPE_p_unsigned_char swig_types[13]
-static swig_type_info *swig_types[15];
-static swig_module_info swig_module = {swig_types, 14, 0, 0, 0, 0};
+#define SWIGTYPE_p_short swig_types[13]
+#define SWIGTYPE_p_unsigned_char swig_types[14]
+static swig_type_info *swig_types[16];
+static swig_module_info swig_module = {swig_types, 15, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -6201,7 +6202,7 @@ fail:
 static int _wrap_audioInit(lua_State* L) {
   int SWIG_arg = 0;
   Audio *arg1 = (Audio *) 0 ;
-  int *arg2 = (int *) 0 ;
+  short *arg2 = (short *) 0 ;
   int arg3 ;
   int arg4 ;
   int arg5 ;
@@ -6209,7 +6210,7 @@ static int _wrap_audioInit(lua_State* L) {
   
   SWIG_check_num_args("audioInit",5,5)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioInit",1,"Audio *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("audioInit",2,"int *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("audioInit",2,"short *");
   if(!lua_isnumber(L,3)) SWIG_fail_arg("audioInit",3,"int");
   if(!lua_isnumber(L,4)) SWIG_fail_arg("audioInit",4,"int");
   if(!lua_isnumber(L,5)) SWIG_fail_arg("audioInit",5,"int");
@@ -6219,8 +6220,8 @@ static int _wrap_audioInit(lua_State* L) {
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_int,0))){
-    SWIG_fail_ptr("audioInit",2,SWIGTYPE_p_int);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_short,0))){
+    SWIG_fail_ptr("audioInit",2,SWIGTYPE_p_short);
   }
   
   arg3 = (int)lua_tonumber(L, 3);
@@ -6556,7 +6557,7 @@ fail:
 static int _wrap_audioPlatformInit(lua_State* L) {
   int SWIG_arg = 0;
   PlatformAudio *arg1 = (PlatformAudio *) 0 ;
-  int *arg2 = (int *) 0 ;
+  short *arg2 = (short *) 0 ;
   int arg3 ;
   int arg4 ;
   int arg5 ;
@@ -6564,7 +6565,7 @@ static int _wrap_audioPlatformInit(lua_State* L) {
   
   SWIG_check_num_args("audioPlatformInit",5,5)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioPlatformInit",1,"PlatformAudio *");
-  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("audioPlatformInit",2,"int *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("audioPlatformInit",2,"short *");
   if(!lua_isnumber(L,3)) SWIG_fail_arg("audioPlatformInit",3,"int");
   if(!lua_isnumber(L,4)) SWIG_fail_arg("audioPlatformInit",4,"int");
   if(!lua_isnumber(L,5)) SWIG_fail_arg("audioPlatformInit",5,"int");
@@ -6574,8 +6575,8 @@ static int _wrap_audioPlatformInit(lua_State* L) {
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_int,0))){
-    SWIG_fail_ptr("audioPlatformInit",2,SWIGTYPE_p_int);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_short,0))){
+    SWIG_fail_ptr("audioPlatformInit",2,SWIGTYPE_p_short);
   }
   
   arg3 = (int)lua_tonumber(L, 3);
@@ -7264,6 +7265,7 @@ static swig_type_info _swigt__p_Rect = {"_p_Rect", "Rect *", 0, 0, (void*)&_wrap
 static swig_type_info _swigt__p_Texture = {"_p_Texture", "struct Texture *|Texture *", 0, 0, (void*)&_wrap_class_Texture, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_Audio = {"_p_p_Audio", "struct Audio **|Audio **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_short = {"_p_short", "short *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
@@ -7280,6 +7282,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Texture,
   &_swigt__p_int,
   &_swigt__p_p_Audio,
+  &_swigt__p_short,
   &_swigt__p_unsigned_char,
 };
 
@@ -7296,6 +7299,7 @@ static swig_cast_info _swigc__p_Rect[] = {  {&_swigt__p_Rect, 0, 0, 0},{0, 0, 0,
 static swig_cast_info _swigc__p_Texture[] = {  {&_swigt__p_Texture, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_Audio[] = {  {&_swigt__p_p_Audio, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_short[] = {  {&_swigt__p_short, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
@@ -7312,6 +7316,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Texture,
   _swigc__p_int,
   _swigc__p_p_Audio,
+  _swigc__p_short,
   _swigc__p_unsigned_char,
 };
 
