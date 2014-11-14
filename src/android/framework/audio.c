@@ -9,19 +9,22 @@
 #include "framework/resource_loading.h"
 #include "framework/util.h"
 
-#define MAX_BUFFERS 1
-#define BUF_SIZE 1024
+#define MAX_BUFFERS 2
+#define MAX_SAMPLES (1024*2)
+
+#define SHORT_SAMPLE_LIMIT (1024*128)
+
 
 #define CheckErr(x) ErrorFunc(x,__LINE__)
 
 static char errMsgBuf[4096*4];
 
 void ErrorFunc( SLresult result , int line) {
-    if (SL_RESULT_SUCCESS != result) {
-        sprintf(errMsgBuf, "%lu error code encountered at line %d\n", result, line);
-        trace(errMsgBuf);
-        /*exit(EXIT_FAILURE);*/
-    }
+  if (SL_RESULT_SUCCESS != result) {
+    sprintf(errMsgBuf, "%lu error code encountered at line %d\n", result, line);
+    trace(errMsgBuf);
+    /*exit(EXIT_FAILURE);*/
+  }
 }
 
 static SLObjectItf engine_obj;
@@ -31,16 +34,18 @@ SLObjectItf output_mix_obj;
 static int initialised = 0;
 
 struct PlatformAudio_T {
-  short  *sampleData;
-  unsigned int curBufPos;
-  unsigned int sampleCount;
-  int loop;
+  int looping;
   SLPlayItf player;
   SLObjectItf player_obj;
   /*SLVolumeItf player_vol;*/
   SLAndroidSimpleBufferQueueItf bufferQueue;
   int is_playing;
   int is_done_buffer;
+  short buffers[MAX_BUFFERS][MAX_SAMPLES];
+  short bufferSizes[MAX_BUFFERS];
+  int bufferIndexToggle;
+  short *shortBuffer;
+  int shortBufLen;
 };
 
 float gain_to_attenuation( float gain ) {
@@ -77,24 +82,26 @@ void SLAPIENTRY play_callback( SLPlayItf player, void *context, SLuint32 event )
     trace("Audio: Buffer finished");
     a->is_done_buffer = 1;
     /*
-    if(a->loop){
-      trace("Audio: Looping");
-    }
-    */
+       if(a->looping){
+       trace("Audio: Looping");
+       }
+       */
   }
 }
- 
+
 
 void buffer_callback(SLAndroidSimpleBufferQueueItf bq, void *context){
-  PlatformAudio *a = (PlatformAudio*)context;
-  if(a->curBufPos<a->sampleCount){
-    unsigned int step = BUF_SIZE;
-    if(a->curBufPos+step > a->sampleCount){
-      step = a->sampleCount-a->curBufPos;
-    }
-    SLresult res = (*bq)->Enqueue(bq, a->sampleData+a->curBufPos, step*sizeof(short));
-    assert(SL_RESULT_SUCCESS == res);
-    a->curBufPos+=step;
+  Audio *a = (Audio*)context;
+  PlatformAudio *pa = a->pa;
+  if(pa->shortBuffer){
+    return;
+  }
+  short *buf = pa->buffers[pa->bufferIndexToggle];
+  int decoded = decoderOgg_decode(&a->decoder, buf, MAX_SAMPLES, pa->looping);
+  if(decoded){
+    SLresult res = (*pa->bufferQueue)->Enqueue(pa->bufferQueue, buf, decoded*sizeof(short));
+    CheckErr(res);
+    pa->bufferIndexToggle = !pa->bufferIndexToggle;
   }
 }
 
@@ -103,18 +110,16 @@ PlatformAudio* audioPlatformAlloc(){
   return (PlatformAudio*)malloc(sizeof(PlatformAudio));
 }
 
-int audioPlatformInit(PlatformAudio *a, short *buf, int samplesPerChannel, int sampleRate, int channels){
-  int bufSize = samplesPerChannel*channels*sizeof(short);
+int audioPlatformInit(Audio *a){
   if(!initialised){
     return 0;
   }
-  a->curBufPos = 0;
-  a->loop = 0;
-  a->is_playing = 0;
-  a->is_done_buffer = 0;
-  a->sampleData = (short*)malloc(bufSize);
-  memcpy(a->sampleData, buf, bufSize);
-  a->sampleCount = samplesPerChannel*channels;
+  a->pa->looping = 0;
+  a->pa->is_playing = 0;
+  a->pa->is_done_buffer = 0;
+  a->pa->bufferIndexToggle = 0;
+  a->pa->shortBuffer = 0;
+  a->pa->shortBufLen = 0;
 
   SLresult result;
   // Configure Buffer Queue.
@@ -124,7 +129,8 @@ int audioPlatformInit(PlatformAudio *a, short *buf, int samplesPerChannel, int s
   // Configure data format.
   SLDataFormat_PCM pcm;
   pcm.formatType = SL_DATAFORMAT_PCM;
-  pcm.numChannels = channels==1?1:2;
+  pcm.numChannels = a->decoder.info->channels==1?1:2;
+  int sampleRate = a->decoder.info->rate;
   if(!(sampleRate==48000 || sampleRate==44100)){
     traceNoNL("Warning! Unhandled sample rate: ");
     traceInt(sampleRate);
@@ -134,7 +140,7 @@ int audioPlatformInit(PlatformAudio *a, short *buf, int samplesPerChannel, int s
   pcm.samplesPerSec = sampleRate*1000;
   pcm.bitsPerSample = SL_PCMSAMPLEFORMAT_FIXED_16;
   pcm.containerSize = SL_PCMSAMPLEFORMAT_FIXED_16;
-  if(channels ==1){
+  if(pcm.numChannels ==1){
     pcm.channelMask = SL_SPEAKER_FRONT_CENTER;
   }else{
     pcm.channelMask = SL_SPEAKER_FRONT_LEFT | SL_SPEAKER_FRONT_RIGHT;
@@ -157,44 +163,87 @@ int audioPlatformInit(PlatformAudio *a, short *buf, int samplesPerChannel, int s
   const SLInterfaceID ids[2] = {SL_IID_ANDROIDSIMPLEBUFFERQUEUE, SL_IID_VOLUME};
   const SLboolean req[2] = {SL_BOOLEAN_TRUE, SL_BOOLEAN_FALSE};
 
-  result = (*engine)->CreateAudioPlayer(engine, &a->player_obj, &source, &sink, 1, ids, req);
+  result = (*engine)->CreateAudioPlayer(engine, &a->pa->player_obj, &source, &sink, 1, ids, req);
 
-  (*a->player_obj)->Realize( a->player_obj, SL_BOOLEAN_FALSE );
-  (*a->player_obj)->GetInterface( a->player_obj,SL_IID_PLAY, &a->player );
-  (*a->player_obj)->GetInterface( a->player_obj,SL_IID_BUFFERQUEUE, &a->bufferQueue );
+  (*a->pa->player_obj)->Realize( a->pa->player_obj, SL_BOOLEAN_FALSE );
+  (*a->pa->player_obj)->GetInterface( a->pa->player_obj,SL_IID_PLAY, &a->pa->player );
+  (*a->pa->player_obj)->GetInterface( a->pa->player_obj,SL_IID_BUFFERQUEUE, &a->pa->bufferQueue );
   /*
-     if((*a->player_obj)->GetInterface( a->player_obj, SL_IID_VOLUME, &a->player_vol ) != SL_RESULT_SUCCESS){
+     if((*a->pa->player_obj)->GetInterface( a->pa->player_obj, SL_IID_VOLUME, &a->pa->player_vol ) != SL_RESULT_SUCCESS){
      trace("Warning: Audio instance volume interface not available");
-     a->player_vol = 0;
+     a->pa->player_vol = 0;
      }
      */
 
-  SLresult res = (*a->bufferQueue)->RegisterCallback( a->bufferQueue,buffer_callback, a );
+  SLresult res = (*a->pa->bufferQueue)->RegisterCallback( a->pa->bufferQueue,buffer_callback, a);
   CheckErr(res);
-  (*a->player)->RegisterCallback( a->player, play_callback, a );
-  res = (*a->player)->SetCallbackEventsMask( a->player, SL_PLAYEVENT_HEADATEND );
+  (*a->pa->player)->RegisterCallback( a->pa->player, play_callback, a->pa );
+  res = (*a->pa->player)->SetCallbackEventsMask( a->pa->player, SL_PLAYEVENT_HEADATEND );
   CheckErr(res);
   return 1;
 }
 
-void audioPlatformPlay(PlatformAudio* a) {
+void loadBuffers(Audio *a){
+  SLresult res;
+  PlatformAudio *pa = a->pa;
+  if(pa->shortBuffer){
+    res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->shortBuffer, pa->shortBufLen*sizeof(short));
+    assert(SL_RESULT_SUCCESS == res);
+    return;
+  }else{
+    int i, decoded;
+    size_t streamSize = DecoderOgg_calcStreamSize(&a->decoder);
+    int isShort = !pa->looping && streamSize<=SHORT_SAMPLE_LIMIT;
+    decoderOgg_reset(&a->decoder);
+    if(isShort){
+      trace("SHORT SAMPLE");
+      traceInt(streamSize);
+      pa->shortBuffer = (short*)malloc(SHORT_SAMPLE_LIMIT);
+      decoded = decoderOgg_decode(&a->decoder, pa->shortBuffer, SHORT_SAMPLE_LIMIT, 0);
+      traceInt(decoded);
+      if(decoded){
+        pa->shortBufLen = decoded*sizeof(short);
+        res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->shortBuffer, pa->shortBufLen*sizeof(short));
+        assert(SL_RESULT_SUCCESS == res);
+      }
+    }else{
+      for(i=0;i<MAX_BUFFERS;++i){
+        decoded = decoderOgg_decode(&a->decoder, pa->buffers[i], MAX_SAMPLES, a->pa->looping);
+        if(decoded){
+          int sz = decoded*sizeof(short);
+          pa->bufferSizes[i] = sz;
+          res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->buffers[i], sz);
+          assert(SL_RESULT_SUCCESS == res);
+        }else{
+          break;
+        }
+      }
+    }
+  }
+}
+
+void audioPlatformPlay(Audio* a) {
+  PlatformAudio *pa = a->pa;
   if(!initialised){
     return;
   }
-     trace("Audio: Playing");
-  a->curBufPos = 0;
-  (*a->player)->SetPlayState( a->player, SL_PLAYSTATE_PLAYING );
-  SLresult res = (*a->bufferQueue)->Enqueue(a->bufferQueue, a->sampleData, BUF_SIZE*sizeof(short));
+  trace("Audio: Playing");
+
+  SLresult res = (*a->pa->player)->SetPlayState( a->pa->player, SL_PLAYSTATE_PLAYING );
   assert(SL_RESULT_SUCCESS == res);
-  a->is_playing = 1;
-  a->is_done_buffer = 0;
+
+  loadBuffers(a);
+
+  a->pa->is_playing = 1;
+  a->pa->is_done_buffer = 0;
+  a->pa->bufferIndexToggle = 0;
 }
 
 void audioSetLooping(Audio* a, int loop) {
   if(!initialised){
     return;
   }
-  a->pa->loop = loop;
+  a->pa->looping = loop;
 }
 
 void audioStop(Audio* a) {
@@ -206,13 +255,6 @@ void audioStop(Audio* a) {
   a->pa->is_playing = 0;
 }
 
-void audioPlatformFree(PlatformAudio *a) {
-  if(!initialised){
-    return;
-  }
-  (*a->player_obj)->Destroy(a->player_obj);
-  free(a->sampleData);
-}
 
 int audioIsPlaying(Audio *a){
   if(!initialised){
@@ -244,12 +286,24 @@ void audioPlatformCleanup(){
 }
 
 void audioInstanceOnFrame(Audio *a){
-  if(a->pa->is_playing && a->pa->is_done_buffer){
-    if(a->pa->loop){
-      audioPlay(a);
-    }else{
-      trace("Audio finished");
-      a->pa->is_playing = 0;
-    }
+  /*
+     if(a->pa->is_playing && a->pa->is_done_buffer){
+     if(a->pa->looping){
+     audioPlay(a);
+     }else{
+     trace("Audio finished");
+     a->pa->is_playing = 0;
+     }
+     }
+     */
+}
+
+void audioPlatformFree(PlatformAudio *a) {
+  if(!initialised){
+    return;
+  }
+  (*a->player_obj)->Destroy(a->player_obj);
+  if(a->shortBuffer){
+    free(a->shortBuffer);
   }
 }

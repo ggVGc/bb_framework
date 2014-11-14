@@ -79,15 +79,12 @@ int decoderOgg_init(DecoderOgg_State *s, char *bytes, int sz){
 }
 
 
-static char pcmout[4096];
-
 int decoderOgg_decode(DecoderOgg_State *s, short *out, int maxSamples, int loop){
   int current_section = 0;
   int c = 0;
   int bufSize = maxSamples*sizeof(short);
-  /*char *tmpBuf = (char*)malloc(bufSize);*/
-  while(!s->eof && (c*sizeof(short)+sizeof(pcmout))<bufSize){
-    long ret=ov_read(&s->vf,pcmout,sizeof(pcmout),0,2,1,&current_section);
+  while(!s->eof && c<maxSamples){
+    long ret=ov_read(&s->vf,(char*)(out+c),(maxSamples-c)*sizeof(short),0,2,1,&current_section);
     /*printf("Decoded %i\n", ret);*/
     if (ret == 0) {
       if(loop){
@@ -97,14 +94,11 @@ int decoderOgg_decode(DecoderOgg_State *s, short *out, int maxSamples, int loop)
       }
     } else if (ret < 0) {
       trace("Vorbis load failed");
-      /*free(tmpBuf);*/
       return 0;
     } else {
-      memcpy(out+c, pcmout, ret);
       c+=ret/sizeof(short);
       if(c>bufSize){
-        trace("Encoded stream larger than buffer. Something is wrong");
-        /*free(tmpBuf);*/
+        trace("BUFFER OVERFLOW - Ogg Decoder");
         return 0;
       }
       // we don't bother dealing with sample rate changes, etc, but you'll have to 
@@ -117,8 +111,9 @@ int decoderOgg_decode(DecoderOgg_State *s, short *out, int maxSamples, int loop)
 void decoderOgg_reset(DecoderOgg_State *s){
   s->eof = 0;
   ov_raw_seek(&s->vf, 0);
-
-  /*s->oggFile.curPtr = s->oggFile.filePtr;*/
+}
+size_t DecoderOgg_calcStreamSize(DecoderOgg_State *s){
+  return s->totalSamples*sizeof(short);
 }
 
 

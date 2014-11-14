@@ -47,6 +47,7 @@ new: maker (initialTexSheets) =>
       loadedData = helper.update t
       o = tasks[t]
       tasks[t] = nil
+      print 'AssetLoader, loaded:', o.a.path
       switch o.a.type
         when AL.AssetType.Audio
           o.a.asset = framework.Audio.new loadedData
@@ -79,6 +80,7 @@ new: maker (initialTexSheets) =>
     a = {
       asset: nil
       type: AL.AssetType.TexSheet
+      path: baseName..'.png'
     }
     data = {
       a:a
@@ -96,6 +98,7 @@ new: maker (initialTexSheets) =>
       asset: nil
       type: AL.AssetType.Audio
       group:groupName
+      path:path
     }
     t = _c_framework.AsyncAssetLoader.loadAudio path
     tasks[t] = {a:a}

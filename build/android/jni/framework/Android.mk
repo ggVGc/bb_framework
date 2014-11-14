@@ -65,6 +65,7 @@ MY_SOURCES := src/common/app.c \
   src/common/framework/matrix2.c \
   src/common/framework/display_object.c \
   src/common/framework/audio.c \
+  src/common/framework/decoder_ogg.c \
   src/common/lua_modules/lua_asyncassetloader.c \
   src/android/app_android.c \
   src/android/framework/util.c \

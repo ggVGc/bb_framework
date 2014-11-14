@@ -24,8 +24,8 @@ typedef struct DecoderOgg_State{
 int decoderOgg_init(DecoderOgg_State *s, char* bytes, int sz);
 int decoderOgg_decode(DecoderOgg_State *s, short *out, int maxSamples, int loop);
 void decoderOgg_free(DecoderOgg_State *s);
-
 void decoderOgg_reset(DecoderOgg_State *s);
+size_t DecoderOgg_calcStreamSize(DecoderOgg_State *s);
 
 #endif /* end of include guard: DECODER_OGG_H_7YA29KAK */
 
