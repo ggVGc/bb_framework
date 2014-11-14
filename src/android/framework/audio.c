@@ -10,7 +10,7 @@
 #include "framework/util.h"
 
 #define MAX_BUFFERS 2
-#define MAX_SAMPLES (1024*2)
+#define MAX_SAMPLES (1024*512)
 
 #define SHORT_SAMPLE_LIMIT (1024*128)
 
@@ -46,6 +46,7 @@ struct PlatformAudio_T {
   int bufferIndexToggle;
   short *shortBuffer;
   int shortBufLen;
+  int needsData;
 };
 
 float gain_to_attenuation( float gain ) {
@@ -97,11 +98,12 @@ void buffer_callback(SLAndroidSimpleBufferQueueItf bq, void *context){
     return;
   }
   short *buf = pa->buffers[pa->bufferIndexToggle];
-  int decoded = decoderOgg_decode(&a->decoder, buf, MAX_SAMPLES, pa->looping);
-  if(decoded){
-    SLresult res = (*pa->bufferQueue)->Enqueue(pa->bufferQueue, buf, decoded*sizeof(short));
+  int sz = pa->bufferSizes[pa->bufferIndexToggle];
+  if(sz>0){
+    SLresult res = (*pa->bufferQueue)->Enqueue(pa->bufferQueue, buf, sz);
     CheckErr(res);
     pa->bufferIndexToggle = !pa->bufferIndexToggle;
+    pa->needsData = 1;
   }
 }
 
@@ -118,6 +120,7 @@ int audioPlatformInit(Audio *a){
   a->pa->is_playing = 0;
   a->pa->is_done_buffer = 0;
   a->pa->bufferIndexToggle = 0;
+  a->pa->needsData = 0;
   a->pa->shortBuffer = 0;
   a->pa->shortBufLen = 0;
 
@@ -212,12 +215,13 @@ void loadBuffers(Audio *a){
         if(decoded){
           int sz = decoded*sizeof(short);
           pa->bufferSizes[i] = sz;
-          res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->buffers[i], sz);
-          assert(SL_RESULT_SUCCESS == res);
         }else{
+          pa->bufferSizes[i] = 0;
           break;
         }
       }
+      res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->buffers[0], pa->bufferSizes[0]);
+      assert(SL_RESULT_SUCCESS == res);
     }
   }
 }
@@ -234,9 +238,11 @@ void audioPlatformPlay(Audio* a) {
 
   loadBuffers(a);
 
+
+  a->pa->needsData = 0;
   a->pa->is_playing = 1;
   a->pa->is_done_buffer = 0;
-  a->pa->bufferIndexToggle = 0;
+  a->pa->bufferIndexToggle = 1;
 }
 
 void audioSetLooping(Audio* a, int loop) {
@@ -286,6 +292,13 @@ void audioPlatformCleanup(){
 }
 
 void audioInstanceOnFrame(Audio *a){
+  int decoded = decoderOgg_decode(&a->decoder, a->pa->buffers[a->pa->bufferIndexToggle], MAX_SAMPLES, a->pa->looping);
+  if(decoded){
+    a->pa->bufferSizes[a->pa->bufferIndexToggle] = decoded*sizeof(short);
+  }else{
+    a->pa->bufferSizes[a->pa->bufferIndexToggle] = 0;
+  }
+  a->pa->needsData = 0;
   /*
      if(a->pa->is_playing && a->pa->is_done_buffer){
      if(a->pa->looping){
