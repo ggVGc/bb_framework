@@ -5,13 +5,9 @@
 #include <float.h>
 #include <assert.h>
 /*#include <pthread.h>*/
-
-
-
 #include <lua.h>
 #include <lauxlib.h>
 #include <lualib.h>
-
 #include "lua-compat-5.2/c-api/compat-5.2.h"
 #include "helper_threads_lua/helper.h"
 #include "framework/util.h"
@@ -22,11 +18,9 @@
 #include "framework/quad.h"
 #include "framework/data_store.h"
 
-
 #ifdef ANDROID_NDK
 #include <android/log.h>
 #endif
-
 
 
 #define RegLuaFuncGlobal(fname) lua_pushcfunction(luaVM, fname##_lua); lua_setglobal(luaVM, #fname);
@@ -43,6 +37,10 @@ int loadstringWithName(lua_State *L, const char *s, const char* name, int size) 
   if(!size){
     size = strlen(s);
   }
+  /*
+  trace("Running string:");
+  trace(s);
+  */
   return luaL_loadbuffer(L, s, size, name);
 }
 
@@ -189,11 +187,16 @@ void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, c
 
   luaVM = luaL_newstate();
   luaL_openlibs(luaVM);
+  /*
+  doStringWithName(luaVM,"if jit then print('jit OS:', jit.os) print('jit status: ', jit.status()) jit.opt.start(\"sizemcode=256\",\"maxmcode=1024\") for i=1,1000 do end \
+    print('jit status2', jit.status()) end", "JIT init", 0);
+  */
+  RegLuaFuncGlobal(print);
+
   luaopen__c_framework(luaVM);
   luaopen_helper(luaVM);
   luaopen_AsyncAssetLoader(luaVM);
 
-  RegLuaFuncGlobal(print);
   graphicsInit(framebufferWidth, framebufferHeight);
 
   /*pthread_mutex_unlock(&vmMutex);*/

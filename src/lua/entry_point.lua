@@ -1,10 +1,7 @@
-if jit then -- start by trying to force a jit memory allocation
-  print('jit status: ', jit.status())             
-  --require("jit.opt").start("sizemcode=256","maxmcode=256")
-  --for i=1,1000 do end
-  --print(jit.status())
-end
 
+if jit then
+  jit.off()
+end
 
 --local errorString = nil
 

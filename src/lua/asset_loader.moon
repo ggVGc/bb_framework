@@ -60,13 +60,10 @@ new: maker (initialTexSheets) =>
           framework.Texture.bmDataCache[o.path] = bmData
           o.a.asset = framework.TextureSheet.new rectMap, bmData
           o.a.asset.path = o.path
-          print o.a.asset.path
           table.insert @texSheets, o.a.asset
 
       queueOut\remove t
       taskCount-=1
-
-
 
   @releaseSheet = (path)->
     for i=1,#@texSheets
@@ -77,9 +74,6 @@ new: maker (initialTexSheets) =>
         framework.Texture.bmDataCache[path] = nil
         return
     print 'WARNING!', 'Tried freeing invalid tex sheet: '..path
-
-
-
 
   @loadTexSheet = (baseName)->
     a = {

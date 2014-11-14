@@ -1,9 +1,12 @@
 #ifndef _H_AUDIO_
 #define _H_AUDIO_
 
+#include "decoder_ogg.h"
+
 typedef struct PlatformAudio_T PlatformAudio;
 typedef struct Audio{
   PlatformAudio *pa;
+  DecoderOgg_State decoder;
   int muted;
 } Audio;
 
@@ -11,7 +14,7 @@ int audioGlobalInit();
 int audioGlobalPlatformInit();
 
 Audio* audioAlloc();
-int audioInit(Audio *a, short *buf, int samplesPerChannel, int sampleRate, int channels);
+int audioInit(Audio *a, char *buf, int sz);
 Audio* audioLoad(const char* path);
 Audio* audioModLoad(const char* path);
 int audioLoadInto(Audio *a, const char* path);
@@ -27,11 +30,14 @@ void audioSetAllPaused(int paused);
 void audioSetAllMuted(int muted);
 int audioIsPlaying(Audio *a);
 
+void audioInstanceOnFrame(Audio *a);
+
 PlatformAudio *audioPlatformAlloc();
-int audioPlatformInit(PlatformAudio *a, short *buf, int samplesPerChannel, int sampleRate, int channels);
+int audioPlatformInit(Audio *a);
 void audioPlatformFree(PlatformAudio *);
-void audioPlatformPlay(PlatformAudio*);
+void audioPlatformPlay(Audio*);
 void audioPlatformSetPaused(PlatformAudio *a, int paused);
+
 
 // Because I am lazy..
 // TODO: Dynamically resize, to support infinite sounds.

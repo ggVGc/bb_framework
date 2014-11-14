@@ -14,26 +14,29 @@
 #
 
 LOCAL_PATH := $(call my-dir)
-include $(CLEAR_VARS)
-
+LOCAL_PATH := $(LOCAL_PATH)/../../../..
 include $(CLEAR_VARS)
 LOCAL_MODULE    := libluajit 
-LOCAL_SRC_FILES := $(TARGET_ARCH_ABI)/libluajit.a
+LOCAL_SRC_FILES := deps/common/luajit/bin/android/$(TARGET_ARCH_ABI)/libluajit.a
+#LOCAL_SRC_FILES := deps/common/luajit/bin/android/$(TARGET_ARCH_ABI)/libluajit.so
+#LOCAL_EXPORT_C_INCLUDES := deps/common/luajit/src
 
 include $(PREBUILT_STATIC_LIBRARY)
+#include $(PREBUILT_SHARED_LIBRARY)
+
 
 include $(CLEAR_VARS)
-
 LOCAL_ARM_MODE  := arm
 
 LOCAL_STATIC_LIBRARIES := minizip libluajit libpng bstring coremod libvorbis libogg
+#LOCAL_STATIC_LIBRARIES := minizip libpng bstring coremod libvorbis libogg
+#LOCAL_SHARED_LIBRARIES := libluajit
 
 LOCAL_CFLAGS := -DANDROID_NDK \
                 -DDISABLE_IMPORTGL
 
 LOCAL_MODULE    := 	jumpz_framework
 
-LOCAL_PATH := $(LOCAL_PATH)/../../../..
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/deps/common/luajit/src/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/minizip/

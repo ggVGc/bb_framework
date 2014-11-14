@@ -243,25 +243,13 @@ void audioPlatformCleanup(){
   }
 }
 
-void audioOnFrame(){
-  Audio *a;
-  int i;
-  if(!initialised){
-    return;
-  }
-  for(i=0;i<MAX_SOUNDS;++i){
-    a = soundInstances[i];
-    if(!a || !a->pa){
-      break;
-    }
-    if(a->pa->is_playing && a->pa->is_done_buffer){
-      if(a->pa->loop){
-        audioPlay(a);
-      }else{
-        trace("Audio finished");
-        a->pa->is_playing = 0;
-      }
+void audioInstanceOnFrame(Audio *a){
+  if(a->pa->is_playing && a->pa->is_done_buffer){
+    if(a->pa->loop){
+      audioPlay(a);
+    }else{
+      trace("Audio finished");
+      a->pa->is_playing = 0;
     }
   }
 }
-
