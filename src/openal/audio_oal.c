@@ -88,13 +88,14 @@ int audioGlobalPlatformInit(){
 static ALfloat SourcePos[] = { 0.0, 0.0, 0.0 };
 static ALfloat SourceVel[] = { 0.0, 0.0, 0.0 };
 
-int audioPlatformInit(Audio *a){
+int audioPlatformInit(Audio *a, int loop){
   if(!initialised){
     return 0;
   }
 
-  a->pa->looping = 0;
+  a->pa->looping = loop;
   a->pa->streaming = !audioIsShort(a);
+
 
   if(a->pa->streaming){
     alGenBuffers(STREAM_BUFFER_COUNT, a->pa->buffers);
@@ -116,6 +117,10 @@ int audioPlatformInit(Audio *a){
     queueBuffer(a->pa->buffers[0], buf, decoded*sizeof(short), a->decoder.info->channels, a->decoder.info->rate);
     alSourcei (a->pa->source, AL_BUFFER,   a->pa->buffers[0]);
     free(buf);
+  }
+
+  if(!a->pa->streaming && a->pa->looping){
+    alSourcei (a->pa->source, AL_LOOPING,  AL_TRUE);
   }
 
   return 1;
@@ -147,12 +152,14 @@ void audioPlatformPlay(Audio* a) {
   alSourcePlay(a->pa->source);
   alCheckError("Failed playing source");
 }
+/*
 void audioSetLooping(Audio* a, int loop) {
   a->pa->looping = loop;
   if(!a->pa->streaming){
     alSourcei (a->pa->source, AL_LOOPING,  loop==0?AL_FALSE:AL_TRUE);
   }
 }
+*/
 
 void processBuffers(Audio *a, int queueNewData){
   ALint processed;

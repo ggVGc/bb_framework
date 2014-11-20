@@ -292,12 +292,14 @@ void audioPlatformPlay(Audio* a) {
   a->pa->is_done_buffer = 0;
 }
 
+/*
 void audioSetLooping(Audio* a, int loop) {
   if(!initialised){
     return;
   }
   a->pa->looping = loop;
 }
+*/
 
 void audioStop(Audio* a) {
   if(!initialised){

@@ -24,7 +24,7 @@ int audioGlobalInit(){
 }
 
 
-int audioLoadInto(Audio *a, const char* path){
+int audioLoadInto(Audio *a, const char* path, int loop){
   int sz;
   char* buf;
   int i;
@@ -47,17 +47,17 @@ int audioLoadInto(Audio *a, const char* path){
     return 0;
   }
 
-  if(audioInit(a, buf, sz)){
+  if(audioInit(a, buf, sz, loop)){
     soundInstances[soundIndex] = a;
   }
   return 1;
 }
 
-Audio* audioLoad(const char *path){
+Audio* audioLoad(const char *path, int loop){
   Audio *a = audioAlloc();
   // Always return this, because we don't want application go crash just because audio failed loading
   // Need to add other way to let user know audio load failed
-  audioLoadInto(a, path);
+  audioLoadInto(a, path, loop);
   return a;
 }
 
@@ -148,10 +148,10 @@ Audio* audioAlloc(){
 }
 
 
-int audioInit(Audio *a, char *buf, int sz){
+int audioInit(Audio *a, char *buf, int sz, int loop){
   decoderOgg_init(&a->decoder, buf, sz);
   a->muted = 0;
-  return audioPlatformInit(a);
+  return audioPlatformInit(a, loop);
 }
 
 void audioSetAllMuted(int muted){

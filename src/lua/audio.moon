@@ -16,6 +16,12 @@ setGroupMute: (groupName, mute)->
   else
     groups[groupName] =  {muted:mute, members:{}}
 
+groupMuted: (groupName)->
+  g = groups[groupName]
+  if not g
+    return false
+  return g.muted
+
 new: (nativeAudio)->
   @ = {}
 
@@ -23,9 +29,9 @@ new: (nativeAudio)->
     if not @group or not @group.muted
       _c_framework.audioPlay(nativeAudio)
 
-  @playLooping = ->
-    @.setLooping true
-    @.play!
+  --@playLooping = ->
+    --@.setLooping true
+    --@.play!
 
   @playIfNotPlaying = ->
     @.play! if not @.isPlaying!
@@ -33,8 +39,8 @@ new: (nativeAudio)->
   @stop = ->
     _c_framework.audioStop nativeAudio
 
-  @setLooping = (loop)->
-    _c_framework.audioSetLooping(nativeAudio, loop and 1 or 0)
+  --@setLooping = (loop)->
+    --_c_framework.audioSetLooping(nativeAudio, loop and 1 or 0)
 
   @free = ->
     _c_framework.audioFree nativeAudio
@@ -71,6 +77,6 @@ new: (nativeAudio)->
   return @
 }
 
-framework.Audio.fromFile = (path)->
-  framework.Audio.new _c_framework.audioLoad(path)
+framework.Audio.fromFile = (path, loop)->
+  framework.Audio.new _c_framework.audioLoad(path, loop)
 

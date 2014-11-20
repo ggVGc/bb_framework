@@ -14,12 +14,12 @@ int audioGlobalInit();
 int audioGlobalPlatformInit();
 
 Audio* audioAlloc();
-int audioInit(Audio *a, char *buf, int sz);
-Audio* audioLoad(const char* path);
+int audioInit(Audio *a, char *buf, int sz, int loop);
+Audio* audioLoad(const char* path, int loop);
 Audio* audioModLoad(const char* path);
-int audioLoadInto(Audio *a, const char* path);
+int audioLoadInto(Audio *a, const char* path, int loop);
 void audioPlay(Audio*);
-void audioSetLooping(Audio*, int);
+//void audioSetLooping(Audio*, int);
 void audioStop(Audio*);
 void audioSetPaused(Audio *a, int paused);
 void audioFree(Audio*);
@@ -33,7 +33,7 @@ int audioIsPlaying(Audio *a);
 void audioInstanceOnFrame(Audio *a);
 
 PlatformAudio *audioPlatformAlloc();
-int audioPlatformInit(Audio *a);
+int audioPlatformInit(Audio *a, int loop);
 void audioPlatformFree(PlatformAudio *);
 void audioPlatformPlay(Audio*);
 void audioPlatformSetPaused(PlatformAudio *a, int paused);
