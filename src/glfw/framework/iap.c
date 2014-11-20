@@ -11,3 +11,12 @@ void purchaseProduct(const char *id){
 const char* getProductPrice(const char *id){
   return 0;
 }
+
+
+int iapCanRestorePurchases(){
+  return 1;
+}
+
+void iapRestorePurchases(void){
+  onPurchaseComplete(1);
+}

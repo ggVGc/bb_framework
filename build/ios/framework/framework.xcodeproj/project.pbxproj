@@ -56,6 +56,7 @@
 		7A9C65681A05DFA10083B57A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65661A05DFA10083B57A /* Default-568h@2x.png */; };
 		7A9C65691A05DFA10083B57A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65671A05DFA10083B57A /* Default@2x.png */; };
 		7A9C656B1A05E79D0083B57A /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C656A1A05E79D0083B57A /* icon@2x.png */; };
+		7AB168A01A10DEFF0066277A /* decoder_ogg.c in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1689E1A10DEFF0066277A /* decoder_ogg.c */; };
 		7AB46E0219E1792400841DB3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB46E0119E1792400841DB3 /* OpenAL.framework */; };
 		7AB46E0419E17AEF00841DB3 /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39208ED1443BEA30006E503 /* libminizip.a */; };
 		7AB46E0619E17AFD00841DB3 /* liblibpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39208DE1443BE8F0006E503 /* liblibpng.a */; };
@@ -209,6 +210,8 @@
 		7A9C65661A05DFA10083B57A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7A9C65671A05DFA10083B57A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7A9C656A1A05E79D0083B57A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		7AB1689E1A10DEFF0066277A /* decoder_ogg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decoder_ogg.c; sourceTree = "<group>"; };
+		7AB1689F1A10DEFF0066277A /* decoder_ogg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoder_ogg.h; sourceTree = "<group>"; };
 		7AB3686D1A089802008E68B3 /* util_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util_ios.h; path = Classes/util_ios.h; sourceTree = "<group>"; };
 		7AB46E0119E1792400841DB3 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		7AB46E3919E17B8C00841DB3 /* vorbis.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vorbis.xcodeproj; path = ../vorbis/vorbis.xcodeproj; sourceTree = "<group>"; };
@@ -350,6 +353,8 @@
 		7A4D888219E1712B0059CEBF /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				7AB1689E1A10DEFF0066277A /* decoder_ogg.c */,
+				7AB1689F1A10DEFF0066277A /* decoder_ogg.h */,
 				7A4D888319E1712B0059CEBF /* matrix2.h */,
 				7A4D888419E1712B0059CEBF /* profiler.h */,
 				7A4D888519E1712B0059CEBF /* quad.c */,
@@ -607,6 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB168A01A10DEFF0066277A /* decoder_ogg.c in Sources */,
 				7A4D88AF19E1712B0059CEBF /* rawbitmapdata.c in Sources */,
 				7A4D88B119E1712B0059CEBF /* resource_loading.c in Sources */,
 				7A4D88B819E1712B0059CEBF /* bitmapdata.c in Sources */,
@@ -673,7 +679,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Valter Sundstrom (YF27MXFWE2)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -706,7 +712,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
-				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
+				PROVISIONING_PROFILE = "2beccefc-3241-48fd-a338-6005c9d89a2f";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -718,7 +724,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Valter Sundstrom (YF27MXFWE2)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -749,7 +755,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
-				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
+				PROVISIONING_PROFILE = "2beccefc-3241-48fd-a338-6005c9d89a2f";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -758,28 +764,28 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Valter Sundstrom (YF27MXFWE2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
-				SDKROOT = iphoneos;
+				PROVISIONING_PROFILE = "2beccefc-3241-48fd-a338-6005c9d89a2f";
+				SDKROOT = iphoneos7.0;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Valter Sundstrom (YF27MXFWE2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
-				SDKROOT = iphoneos;
+				PROVISIONING_PROFILE = "2beccefc-3241-48fd-a338-6005c9d89a2f";
+				SDKROOT = iphoneos7.0;
 			};
 			name = Release;
 		};

@@ -108,6 +108,14 @@ int decoderOgg_decode(DecoderOgg_State *s, short *out, int maxSamples, int loop)
   return c;
 }
 
+
+short* decoderOgg_decodeAll(DecoderOgg_State *s, int *sampleCount){
+  short *ret = (short*)malloc(DecoderOgg_calcStreamSize(s));
+  decoderOgg_reset(s);
+  *sampleCount = decoderOgg_decode(s, ret, s->totalSamples, 0);
+  return ret;
+}
+
 void decoderOgg_reset(DecoderOgg_State *s){
   s->eof = 0;
   ov_raw_seek(&s->vf, 0);

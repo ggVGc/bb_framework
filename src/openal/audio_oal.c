@@ -11,15 +11,17 @@
 #include "framework/util.h"
 
 
-#define MAX_SAMPLES 8192
-#define BUFFER_COUNT 3
+#define MAX_SAMPLES (1024*4)
+#define STREAM_BUFFER_COUNT 20
+
 
 static short decodeBuffer[MAX_SAMPLES];
 
 struct PlatformAudio_T {
   ALuint source;
-  ALuint buffers[BUFFER_COUNT];
+  ALuint buffers[STREAM_BUFFER_COUNT];
   DecoderOgg_State *decoder;
+  int streaming;
   int looping;
 };
 
@@ -87,11 +89,18 @@ static ALfloat SourcePos[] = { 0.0, 0.0, 0.0 };
 static ALfloat SourceVel[] = { 0.0, 0.0, 0.0 };
 
 int audioPlatformInit(Audio *a){
-  /*unsigned int bufSize = sampleCount*channels*sizeof(short);*/
   if(!initialised){
     return 0;
   }
-  alGenBuffers(BUFFER_COUNT, a->pa->buffers);
+
+  a->pa->looping = 0;
+  a->pa->streaming = !audioIsShort(a);
+
+  if(a->pa->streaming){
+    alGenBuffers(STREAM_BUFFER_COUNT, a->pa->buffers);
+  }else{
+    alGenBuffers(1, a->pa->buffers);
+  }
   if(alCheckError("Failed OpenAL buffer creation")){return 0;}
 
   alGenSources(1, &a->pa->source);
@@ -101,7 +110,14 @@ int audioPlatformInit(Audio *a){
   alSourcef (a->pa->source, AL_GAIN,     1.0f     );
   alSourcefv(a->pa->source, AL_POSITION, SourcePos);
   alSourcefv(a->pa->source, AL_VELOCITY, SourceVel);
-  a->pa->looping = 0;
+  if(!a->pa->streaming){
+    int decoded;
+    short *buf = decoderOgg_decodeAll(&a->decoder, &decoded);
+    queueBuffer(a->pa->buffers[0], buf, decoded*sizeof(short), a->decoder.info->channels, a->decoder.info->rate);
+    alSourcei (a->pa->source, AL_BUFFER,   a->pa->buffers[0]);
+    free(buf);
+  }
+
   return 1;
 }
 
@@ -111,19 +127,21 @@ void audioPlatformPlay(Audio* a) {
   if(!initialised){
     return;
   }
-  decoderOgg_reset(&a->decoder);
-  for(i=0;i<BUFFER_COUNT;++i){
-    decoded = decoderOgg_decode(&a->decoder, decodeBuffer, MAX_SAMPLES, a->pa->looping);
-    if(decoded>0){
-      queueBuffer(a->pa->buffers[i], decodeBuffer, decoded*sizeof(short), a->decoder.info->channels, a->decoder.info->rate);
-      ++bufCount;
-    }else{
-      break;
+  if(a->pa->streaming){
+    decoderOgg_reset(&a->decoder);
+    for(i=0;i<STREAM_BUFFER_COUNT;++i){
+      decoded = decoderOgg_decode(&a->decoder, decodeBuffer, MAX_SAMPLES, a->pa->looping);
+      if(decoded>0){
+        queueBuffer(a->pa->buffers[i], decodeBuffer, decoded*sizeof(short), a->decoder.info->channels, a->decoder.info->rate);
+        ++bufCount;
+      }else{
+        break;
+      }
     }
-  }
-  if(bufCount>0){
-    alSourceQueueBuffers( a->pa->source, bufCount, a->pa->buffers);
-    alCheckError("Failed OpenAL queue buffers");
+    if(bufCount>0){
+      alSourceQueueBuffers( a->pa->source, bufCount, a->pa->buffers);
+      alCheckError("Failed OpenAL queue buffers");
+    }
   }
 
   alSourcePlay(a->pa->source);
@@ -131,18 +149,39 @@ void audioPlatformPlay(Audio* a) {
 }
 void audioSetLooping(Audio* a, int loop) {
   a->pa->looping = loop;
-  /*alSourcei (a->pa->source, AL_LOOPING,  loop==0?AL_FALSE:AL_TRUE);*/
+  if(!a->pa->streaming){
+    alSourcei (a->pa->source, AL_LOOPING,  loop==0?AL_FALSE:AL_TRUE);
+  }
+}
+
+void processBuffers(Audio *a, int queueNewData){
+  ALint processed;
+  alGetSourcei(a->pa->source , AL_BUFFERS_PROCESSED, &processed );
+  while ( processed-- ) {
+    ALuint id;
+    alSourceUnqueueBuffers( a->pa->source, 1, &id );
+    if(queueNewData){
+      int decoded = decoderOgg_decode(&a->decoder, decodeBuffer, MAX_SAMPLES, a->pa->looping);
+      if(decoded>0){
+        queueBuffer(id, decodeBuffer, decoded*sizeof(short), a->decoder.info->channels, a->decoder.info->rate);
+        alSourceQueueBuffers( a->pa->source, 1, &id );
+      }
+    }
+  }
 }
 
 void audioStop(Audio* a) {
   alSourceStop(a->pa->source);
+  if(a->pa->streaming){
+    processBuffers(a, 0);
+  }
 }
 
 void audioPlatformFree(PlatformAudio* a) {
   alSourceStop(a->source);
   alSourcei (a->source, AL_BUFFER, 0);
   alDeleteSources(1, &a->source);
-  alDeleteBuffers(BUFFER_COUNT, a->buffers);
+  alDeleteBuffers(STREAM_BUFFER_COUNT, a->buffers);
 }
 
 void audioPlatformCleanup(){
@@ -152,16 +191,8 @@ void audioPlatformCleanup(){
 
 
 void audioInstanceOnFrame(Audio *a){
-  ALint processed;
-  alGetSourcei(a->pa->source , AL_BUFFERS_PROCESSED, &processed );
-  while ( processed-- ) {
-    ALuint id;
-    alSourceUnqueueBuffers( a->pa->source, 1, &id );
-    int decoded = decoderOgg_decode(&a->decoder, decodeBuffer, MAX_SAMPLES, a->pa->looping);
-    if(decoded>0){
-      queueBuffer(id, decodeBuffer, decoded*sizeof(short), a->decoder.info->channels, a->decoder.info->rate);
-      alSourceQueueBuffers( a->pa->source, 1, &id );
-    }
+  if(a->pa->streaming){
+    processBuffers(a, 1);
   }
 }
 

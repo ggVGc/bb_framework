@@ -5,6 +5,8 @@ int userOwnsProduct(const char *id);
 void purchaseProduct(const char *id);
 const char* getProductPrice(const char *id);
 void onPurchaseComplete(int success);
+int iapCanRestorePurchases(void);
+void iapRestorePurchases(void);
 
 
 

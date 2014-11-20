@@ -42,7 +42,10 @@ void audioPlatformSetPaused(PlatformAudio *a, int paused);
 // Because I am lazy..
 // TODO: Dynamically resize, to support infinite sounds.
 #define MAX_SOUNDS 512
-Audio* soundInstances[MAX_SOUNDS];
+static Audio* soundInstances[MAX_SOUNDS];
+
+
+int audioIsShort(Audio *a);
 
 
 #endif

@@ -17,6 +17,14 @@ framework.IAP = {
     c = framework.IAP.callback
     c and c(success==1)
     framework.IAP.callback = nil
+
+
+  canRestorePurchases: ->
+    _c_framework.iapCanRestorePurchases!
+
+  restorePurchases: (callback)->
+    framework.IAP.callback = callback
+    _c_framework.iapRestorePurchases!
 }
 
 framework.IAP

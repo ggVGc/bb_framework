@@ -39,6 +39,7 @@ framework.Ads = {
   setEnabled: (e)->
     framework.Ads.enabled = e
     --framework.Ads.setBannersEnabled e
+
 }
 
 framework.Ads

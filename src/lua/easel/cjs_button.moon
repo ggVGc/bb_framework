@@ -1,10 +1,11 @@
 local Button
 Button = {
 clickSfx: nil
-new: maker (mc, initialDoStateSwitch, initialTriggerOnDown)=>
+new: maker (mc, initialDoStateSwitch, initialTriggerOnDown, hitMc)=>
   @getMc = -> mc
-  w = mc.nominalBounds[3]
-  h = mc.nominalBounds[4]
+  hitMc = hitMc or mc
+  w = hitMc.nominalBounds[3]
+  h = hitMc.nominalBounds[4]
   if mc.stop
     mc.stop!
   
@@ -23,7 +24,7 @@ new: maker (mc, initialDoStateSwitch, initialTriggerOnDown)=>
 
   @isOver = (x,y) ->
     return false if not mc.visible
-    globX, globY = mc.localToGlobal(0,0)
+    globX, globY = hitMc.localToGlobal(0,0)
     return x > globX and x<globX+w and y>globY and y<globY+h
 
   @isPressOver = (screenWidth, screenHeight) ->
@@ -39,7 +40,7 @@ new: maker (mc, initialDoStateSwitch, initialTriggerOnDown)=>
     return @.isOver cx, cy
   
   @update = (inp, screenWidth, screenHeight)->
-    return false if not mc.visible
+    return false, false if not mc.visible
 
     if state == 1
       ind = inp.anyCursorReleased!
@@ -50,7 +51,7 @@ new: maker (mc, initialDoStateSwitch, initialTriggerOnDown)=>
         playClickSfx!
         return not @triggerOnDown
 
-    local cursorOver
+    local cursorOver, clicked
     for i=1,framework.Input.cursorCount!
       if framework.Input.cursorDown(i) and isCursorOver(i, screenWidth, screenHeight)
         cursorOver = i
@@ -65,7 +66,10 @@ new: maker (mc, initialDoStateSwitch, initialTriggerOnDown)=>
       state = 0
       if @doStateSwitch and mc.gotoAndStop
         mc.gotoAndStop stateOffset
-      return false
+      return  false
+
+    --return clicked, cursorOver
+    return clicked
 }
 
 framework.cjs = framework.cjs or {}

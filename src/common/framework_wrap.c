@@ -6667,6 +6667,30 @@ fail:
 }
 
 
+static int _wrap_DecoderOgg_calcStreamSize(lua_State* L) {
+  int SWIG_arg = 0;
+  DecoderOgg_State *arg1 = (DecoderOgg_State *) 0 ;
+  size_t result;
+  
+  SWIG_check_num_args("DecoderOgg_calcStreamSize",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DecoderOgg_calcStreamSize",1,"DecoderOgg_State *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DecoderOgg_State,0))){
+    SWIG_fail_ptr("DecoderOgg_calcStreamSize",1,SWIGTYPE_p_DecoderOgg_State);
+  }
+  
+  result = DecoderOgg_calcStreamSize(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_Audio_pa_set(lua_State* L) {
   int SWIG_arg = 0;
   struct Audio *arg1 = (struct Audio *) 0 ;
@@ -7651,6 +7675,39 @@ fail:
 }
 
 
+static int _wrap_iapCanRestorePurchases(lua_State* L) {
+  int SWIG_arg = 0;
+  int result;
+  
+  SWIG_check_num_args("iapCanRestorePurchases",0,0)
+  result = (int)iapCanRestorePurchases();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_iapRestorePurchases(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("iapRestorePurchases",0,0)
+  iapRestorePurchases();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_screenWidth(lua_State* L) {
   int SWIG_arg = 0;
   int result;
@@ -7918,6 +7975,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "decoderOgg_decode", _wrap_decoderOgg_decode},
     { "decoderOgg_free", _wrap_decoderOgg_free},
     { "decoderOgg_reset", _wrap_decoderOgg_reset},
+    { "DecoderOgg_calcStreamSize", _wrap_DecoderOgg_calcStreamSize},
     { "audioGlobalInit", _wrap_audioGlobalInit},
     { "audioGlobalPlatformInit", _wrap_audioGlobalPlatformInit},
     { "audioAlloc", _wrap_audioAlloc},
@@ -7953,6 +8011,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "purchaseProduct", _wrap_purchaseProduct},
     { "getProductPrice", _wrap_getProductPrice},
     { "onPurchaseComplete", _wrap_onPurchaseComplete},
+    { "iapCanRestorePurchases", _wrap_iapCanRestorePurchases},
+    { "iapRestorePurchases", _wrap_iapRestorePurchases},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},

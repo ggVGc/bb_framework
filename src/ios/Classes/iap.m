@@ -197,3 +197,19 @@ const char* getProductPrice(const char *productId){
   return "    ";
 }
 
+int iapCanRestorePurchases(void){
+  return 1;
+}
+
+void iapRestorePurchases(void){
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setObject:@"yeah" forKey:@"didAttemptPurchase"];
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+  [[RMStore defaultStore] restoreTransactionsOnSuccess:^{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;        
+      onPurchaseComplete(1);
+  } failure:^(NSError *error) {
+      onPurchaseComplete(0);
+  }];
+}
+

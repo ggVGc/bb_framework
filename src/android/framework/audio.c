@@ -9,10 +9,19 @@
 #include "framework/resource_loading.h"
 #include "framework/util.h"
 
-#define MAX_BUFFERS 2
-#define MAX_SAMPLES (1024*512)
+ /*
+ #define MIN(a,b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a < _b ? _a : _b; })
+ */
 
-#define SHORT_SAMPLE_LIMIT (1024*128)
+#define MIN(a,b) ((a) < (b) ? (a) : (b))
+
+#define MAX_BUFFERS (3)
+#define PLAYBACK_BUFFERS (1)
+#define MAX_SAMPLES (1024*512)
+#define DECODE_STEP_SIZE (1024*16)
 
 
 #define CheckErr(x) ErrorFunc(x,__LINE__)
@@ -41,12 +50,14 @@ struct PlatformAudio_T {
   SLAndroidSimpleBufferQueueItf bufferQueue;
   int is_playing;
   int is_done_buffer;
-  short buffers[MAX_BUFFERS][MAX_SAMPLES];
-  short bufferSizes[MAX_BUFFERS];
-  int bufferIndexToggle;
+  short* buffers[MAX_BUFFERS];
+  long bufferSizes[MAX_BUFFERS];
+  int bufWriteIndex;
+  int bufReadIndex;
   short *shortBuffer;
-  int shortBufLen;
-  int needsData;
+  int shortBufSize;
+  int readCounter;
+  long dataWriteCounter;
 };
 
 float gain_to_attenuation( float gain ) {
@@ -80,7 +91,7 @@ int audioGlobalPlatformInit(){
 void SLAPIENTRY play_callback( SLPlayItf player, void *context, SLuint32 event ){
   PlatformAudio *a = (PlatformAudio*)context;
   if( event & SL_PLAYEVENT_HEADATEND ){
-    trace("Audio: Buffer finished");
+    /*trace("Audio: Buffer finished");*/
     a->is_done_buffer = 1;
     /*
        if(a->looping){
@@ -94,41 +105,106 @@ void SLAPIENTRY play_callback( SLPlayItf player, void *context, SLuint32 event )
 void buffer_callback(SLAndroidSimpleBufferQueueItf bq, void *context){
   Audio *a = (Audio*)context;
   PlatformAudio *pa = a->pa;
+  /*
+  trace("Audio: Buffer Callback");
+  */
   if(pa->shortBuffer){
     return;
   }
-  short *buf = pa->buffers[pa->bufferIndexToggle];
-  int sz = pa->bufferSizes[pa->bufferIndexToggle];
+  short *buf = pa->buffers[pa->bufReadIndex];
+  int sz = pa->bufferSizes[pa->bufReadIndex];
   if(sz>0){
+    trace("Audio: Loading new buffer");
+    traceInt(pa->bufReadIndex);
+    traceInt(sz);
     SLresult res = (*pa->bufferQueue)->Enqueue(pa->bufferQueue, buf, sz);
     CheckErr(res);
-    pa->bufferIndexToggle = !pa->bufferIndexToggle;
-    pa->needsData = 1;
+    ++pa->readCounter;
+    ++a->pa->bufReadIndex;
+    if(pa->bufReadIndex>=MAX_BUFFERS){
+      pa->bufReadIndex = 0;
+    }
+  }else{
+    trace("Audio: Buf size zero!");
   }
 }
-
 
 PlatformAudio* audioPlatformAlloc(){
   return (PlatformAudio*)malloc(sizeof(PlatformAudio));
 }
 
+
+void loadBuffers(Audio *a, int checkShort){
+  SLresult res;
+  PlatformAudio *pa = a->pa;
+  if(pa->shortBuffer){
+    return;
+  }else{
+    int i;
+    long decoded;
+    decoderOgg_reset(&a->decoder);
+    if(checkShort && audioIsShort(a) && !a->pa->looping){
+      /*
+      trace("SHORT SAMPLE");
+      */
+      pa->shortBuffer = (short*)malloc(SHORT_SAMPLE_LIMIT);
+      for(i=0;i<MAX_BUFFERS;++i){
+        if(pa->buffers[i]){
+          free(pa->buffers[i]);
+        }
+      }
+      decoded = decoderOgg_decode(&a->decoder, pa->shortBuffer, SHORT_SAMPLE_LIMIT, 0);
+      /*
+      traceInt(decoded);
+      */
+      if(decoded){
+        pa->shortBufSize = decoded*sizeof(short);
+      }
+    }else{
+      pa->readCounter = 0;
+      pa->bufReadIndex = 0;
+      pa->bufWriteIndex = 0;
+      pa->dataWriteCounter = 0;
+      for(pa->bufWriteIndex=0;pa->bufWriteIndex<MAX_BUFFERS;++pa->bufWriteIndex){
+        decoded = decoderOgg_decode(&a->decoder, pa->buffers[pa->bufWriteIndex], MAX_SAMPLES, a->pa->looping);
+        if(decoded){
+          int sz = decoded*sizeof(short);
+          pa->bufferSizes[pa->bufWriteIndex] = sz;
+        }else{
+          pa->bufferSizes[pa->bufWriteIndex] = 0;
+          break;
+        }
+      }
+      if(pa->bufWriteIndex>=MAX_BUFFERS){
+        pa->bufWriteIndex = 0;
+      }
+    }
+  }
+}
+
 int audioPlatformInit(Audio *a){
+  int i;
   if(!initialised){
     return 0;
   }
   a->pa->looping = 0;
   a->pa->is_playing = 0;
   a->pa->is_done_buffer = 0;
-  a->pa->bufferIndexToggle = 0;
-  a->pa->needsData = 0;
+  a->pa->readCounter = 0;
+  a->pa->dataWriteCounter = 0;
   a->pa->shortBuffer = 0;
-  a->pa->shortBufLen = 0;
+  a->pa->shortBufSize = 0;
+  a->pa->bufReadIndex = 0;
+  a->pa->bufWriteIndex = 0;
+  for(i=0;i<MAX_BUFFERS;++i){
+    a->pa->buffers[i] = malloc(MAX_SAMPLES*sizeof(short));
+  }
 
   SLresult result;
   // Configure Buffer Queue.
   SLDataLocator_AndroidSimpleBufferQueue bufferQueue;
   bufferQueue.locatorType = SL_DATALOCATOR_ANDROIDSIMPLEBUFFERQUEUE;
-  bufferQueue.numBuffers = MAX_BUFFERS;
+  bufferQueue.numBuffers = 1;
   // Configure data format.
   SLDataFormat_PCM pcm;
   pcm.formatType = SL_DATAFORMAT_PCM;
@@ -183,47 +259,12 @@ int audioPlatformInit(Audio *a){
   (*a->pa->player)->RegisterCallback( a->pa->player, play_callback, a->pa );
   res = (*a->pa->player)->SetCallbackEventsMask( a->pa->player, SL_PLAYEVENT_HEADATEND );
   CheckErr(res);
-  return 1;
-}
 
-void loadBuffers(Audio *a){
-  SLresult res;
-  PlatformAudio *pa = a->pa;
-  if(pa->shortBuffer){
-    res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->shortBuffer, pa->shortBufLen*sizeof(short));
-    assert(SL_RESULT_SUCCESS == res);
-    return;
-  }else{
-    int i, decoded;
-    size_t streamSize = DecoderOgg_calcStreamSize(&a->decoder);
-    int isShort = !pa->looping && streamSize<=SHORT_SAMPLE_LIMIT;
-    decoderOgg_reset(&a->decoder);
-    if(isShort){
-      trace("SHORT SAMPLE");
-      traceInt(streamSize);
-      pa->shortBuffer = (short*)malloc(SHORT_SAMPLE_LIMIT);
-      decoded = decoderOgg_decode(&a->decoder, pa->shortBuffer, SHORT_SAMPLE_LIMIT, 0);
-      traceInt(decoded);
-      if(decoded){
-        pa->shortBufLen = decoded*sizeof(short);
-        res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->shortBuffer, pa->shortBufLen*sizeof(short));
-        assert(SL_RESULT_SUCCESS == res);
-      }
-    }else{
-      for(i=0;i<MAX_BUFFERS;++i){
-        decoded = decoderOgg_decode(&a->decoder, pa->buffers[i], MAX_SAMPLES, a->pa->looping);
-        if(decoded){
-          int sz = decoded*sizeof(short);
-          pa->bufferSizes[i] = sz;
-        }else{
-          pa->bufferSizes[i] = 0;
-          break;
-        }
-      }
-      res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->buffers[0], pa->bufferSizes[0]);
-      assert(SL_RESULT_SUCCESS == res);
-    }
+  if(audioIsShort(a) && !a->pa->looping){
+    loadBuffers(a, 1);
   }
+
+  return 1;
 }
 
 void audioPlatformPlay(Audio* a) {
@@ -231,18 +272,24 @@ void audioPlatformPlay(Audio* a) {
   if(!initialised){
     return;
   }
+  /*
   trace("Audio: Playing");
+  */
 
   SLresult res = (*a->pa->player)->SetPlayState( a->pa->player, SL_PLAYSTATE_PLAYING );
   assert(SL_RESULT_SUCCESS == res);
 
-  loadBuffers(a);
-
-
-  a->pa->needsData = 0;
+  if(pa->shortBuffer){
+    SLresult res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->shortBuffer, pa->shortBufSize);
+    assert(SL_RESULT_SUCCESS == res);
+  }else{
+    loadBuffers(a, 1);
+    SLresult res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->buffers[0], pa->bufferSizes[0]);
+    assert(SL_RESULT_SUCCESS == res);
+    pa->bufReadIndex = 1;
+  }
   a->pa->is_playing = 1;
   a->pa->is_done_buffer = 0;
-  a->pa->bufferIndexToggle = 1;
 }
 
 void audioSetLooping(Audio* a, int loop) {
@@ -292,31 +339,56 @@ void audioPlatformCleanup(){
 }
 
 void audioInstanceOnFrame(Audio *a){
-  int decoded = decoderOgg_decode(&a->decoder, a->pa->buffers[a->pa->bufferIndexToggle], MAX_SAMPLES, a->pa->looping);
-  if(decoded){
-    a->pa->bufferSizes[a->pa->bufferIndexToggle] = decoded*sizeof(short);
-  }else{
-    a->pa->bufferSizes[a->pa->bufferIndexToggle] = 0;
+  PlatformAudio *pa = a->pa;
+  if(pa->readCounter>PLAYBACK_BUFFERS){
+    short *buf = pa->buffers[pa->bufWriteIndex];
+    long step = MIN(MAX_SAMPLES-pa->dataWriteCounter, DECODE_STEP_SIZE);
+    long decoded = decoderOgg_decode(&a->decoder, buf+pa->dataWriteCounter, step, pa->looping);
+    if(decoded){
+      /*
+      trace("Decoded");
+      traceInt(decoded);
+      */
+      pa->dataWriteCounter+=decoded;
+    }else{
+      /*
+      trace("Audio: Filled buffer");
+      traceInt(pa->bufWriteIndex);
+      */
+      pa->bufferSizes[pa->bufWriteIndex]=pa->dataWriteCounter*sizeof(short);
+      --pa->readCounter;
+      ++pa->bufWriteIndex;
+      if(pa->bufWriteIndex>=MAX_BUFFERS){
+        pa->bufWriteIndex = 0;
+      }
+      pa->dataWriteCounter = 0;
+      pa->bufferSizes[pa->bufWriteIndex] = 0;
+    }
   }
-  a->pa->needsData = 0;
   /*
-     if(a->pa->is_playing && a->pa->is_done_buffer){
-     if(a->pa->looping){
-     audioPlay(a);
-     }else{
-     trace("Audio finished");
-     a->pa->is_playing = 0;
-     }
-     }
-     */
+  if(a->pa->is_playing && a->pa->is_done_buffer){
+    if(a->pa->looping){
+      audioPlay(a);
+    }else{
+      trace("Audio finished");
+      a->pa->is_playing = 0;
+    }
+  }
+  */
 }
 
 void audioPlatformFree(PlatformAudio *a) {
+  int i;
   if(!initialised){
     return;
   }
   (*a->player_obj)->Destroy(a->player_obj);
   if(a->shortBuffer){
     free(a->shortBuffer);
+  }
+  for(i=0;i<MAX_BUFFERS;++i){
+    if(a->buffers[i]){
+      free(a->buffers[i]);
+    }
   }
 }

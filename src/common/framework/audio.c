@@ -9,6 +9,8 @@
 //#include "xmp.h"
 //
 
+#define SHORT_SAMPLE_LIMIT (1024*512)
+
 static int globalMute = 0;
 
 int audioGlobalInit(){
@@ -39,7 +41,6 @@ int audioLoadInto(Audio *a, const char* path){
     trace("WARNING: Max sound instances reached");
     return 0;
   }
-
   buf = (char*)loadBytes(path, &sz);
   if(!buf){
     trace("Failed audio file load");
@@ -150,7 +151,7 @@ Audio* audioAlloc(){
 int audioInit(Audio *a, char *buf, int sz){
   decoderOgg_init(&a->decoder, buf, sz);
   a->muted = 0;
-  audioPlatformInit(a);
+  return audioPlatformInit(a);
 }
 
 void audioSetAllMuted(int muted){
@@ -190,9 +191,13 @@ void audioOnFrame(){
   int i;
   for(i=0;i<MAX_SOUNDS;++i){
     a = soundInstances[i];
-    if(!a || !a->pa){
-      break;
+    if(a && a->pa){
+      audioInstanceOnFrame(a);
     }
-    audioInstanceOnFrame(a);
   }
+}
+
+
+int audioIsShort(Audio *a){
+  return DecoderOgg_calcStreamSize(&a->decoder) <= SHORT_SAMPLE_LIMIT;
 }
