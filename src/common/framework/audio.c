@@ -9,7 +9,6 @@
 //#include "xmp.h"
 //
 
-#define SHORT_SAMPLE_LIMIT (1024*512)
 
 static int globalMute = 0;
 

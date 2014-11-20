@@ -336,3 +336,10 @@ void adSetBannersEnabled(int enable){
   
   (*curEnv)->CallVoidMethod(curEnv, curThis, mid, enable);
 }
+
+
+int iapCanRestorePurchases(void){
+  return 0;
+}
+void iapRestorePurchases(void){
+}

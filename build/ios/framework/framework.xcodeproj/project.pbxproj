@@ -679,7 +679,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Valter Sundstrom (YF27MXFWE2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -712,7 +712,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
-				PROVISIONING_PROFILE = "2beccefc-3241-48fd-a338-6005c9d89a2f";
+				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -724,7 +724,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Valter Sundstrom (YF27MXFWE2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -755,7 +755,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
-				PROVISIONING_PROFILE = "2beccefc-3241-48fd-a338-6005c9d89a2f";
+				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -764,13 +764,13 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Valter Sundstrom (YF27MXFWE2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "2beccefc-3241-48fd-a338-6005c9d89a2f";
+				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
 				SDKROOT = iphoneos7.0;
 			};
 			name = Debug;
@@ -778,13 +778,13 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Valter Sundstrom (YF27MXFWE2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Space Komodo Development Limited (S5UYQQ3K54)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "2beccefc-3241-48fd-a338-6005c9d89a2f";
+				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
 				SDKROOT = iphoneos7.0;
 			};
 			name = Release;

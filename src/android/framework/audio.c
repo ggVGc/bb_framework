@@ -182,12 +182,12 @@ void loadBuffers(Audio *a, int checkShort){
   }
 }
 
-int audioPlatformInit(Audio *a){
+int audioPlatformInit(Audio *a, int loop){
   int i;
   if(!initialised){
     return 0;
   }
-  a->pa->looping = 0;
+  a->pa->looping = loop;
   a->pa->is_playing = 0;
   a->pa->is_done_buffer = 0;
   a->pa->readCounter = 0;

@@ -3,6 +3,9 @@
 
 #include "decoder_ogg.h"
 
+
+#define SHORT_SAMPLE_LIMIT (1024*512)
+
 typedef struct PlatformAudio_T PlatformAudio;
 typedef struct Audio{
   PlatformAudio *pa;
