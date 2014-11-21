@@ -20,7 +20,7 @@
 
 #define MAX_BUFFERS (3)
 #define PLAYBACK_BUFFERS (1)
-#define MAX_SAMPLES (1024*512)
+#define MAX_SAMPLES (1024*256)
 #define DECODE_STEP_SIZE (1024*16)
 
 
@@ -151,6 +151,7 @@ void loadBuffers(Audio *a, int checkShort){
       for(i=0;i<MAX_BUFFERS;++i){
         if(pa->buffers[i]){
           free(pa->buffers[i]);
+          pa->buffers[i] = 0;
         }
       }
       decoded = decoderOgg_decode(&a->decoder, pa->shortBuffer, SHORT_SAMPLE_LIMIT, 0);
@@ -198,6 +199,7 @@ int audioPlatformInit(Audio *a, int loop){
   a->pa->bufWriteIndex = 0;
   for(i=0;i<MAX_BUFFERS;++i){
     a->pa->buffers[i] = malloc(MAX_SAMPLES*sizeof(short));
+    a->pa->bufferSizes[i] = 0;
   }
 
   SLresult result;

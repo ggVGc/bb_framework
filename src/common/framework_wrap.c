@@ -2683,8 +2683,11 @@ void rawBitmapDataPushSWIGPtr(lua_State *L, RawBitmapData *bmData){
 static int _wrap_loadByteString(lua_State* L) {
   int sz;
   const char *path = lua_tostring(L, -1);
-  const char* result = loadBytes(path, &sz);
+  char* result = loadBytes(path, &sz);
   lua_pushlstring(L, result, sz);
+  if(result){
+    free(result);
+  }
   return 1;
 }
 
@@ -7976,6 +7979,7 @@ static swig_lua_attribute swig_SwigModule_attributes[] = {
 };
 static swig_lua_const_info swig_SwigModule_constants[]= {
     {SWIG_LUA_CONSTTAB_INT("MAX_KEYS", 512)},
+    {SWIG_LUA_CONSTTAB_INT("SHORT_SAMPLE_LIMIT", (1024*512))},
     {SWIG_LUA_CONSTTAB_INT("MAX_SOUNDS", 512)},
     {0,0,0,0,0,0}
 };

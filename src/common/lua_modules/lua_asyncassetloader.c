@@ -45,8 +45,10 @@ static int loadAudioUpdate (lua_State *L, void *udata) {
   loadAudioData *td = (loadAudioData *)udata;
   if(td->audio){
     audioPushSWIGPtr(L, td->audio);
+    free(td);
     return 1;
   }
+  free(td);
   return 0;
 }
 
@@ -83,8 +85,10 @@ static int loadImageUpdate (lua_State *L, void *udata) {
   loadImageData *td = (loadImageData *)udata;
   if(td->bmData){
     rawBitmapDataPushSWIGPtr(L, td->bmData);
+    free(td);
     return 1;
   }
+  free(td);
   return 0;
 }
 

@@ -127,6 +127,7 @@ size_t DecoderOgg_calcStreamSize(DecoderOgg_State *s){
 
 void decoderOgg_free(DecoderOgg_State *s){
   ov_clear(&s->vf);
+  free(s->oggFile.filePtr);
 }
 
 

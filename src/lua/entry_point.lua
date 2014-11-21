@@ -7,7 +7,9 @@ end
 
 
 -- Be compatible with lua 5.2
-loadstring = load
+if not loadstring then
+  loadstring = load
+end
 
 
 function loadfile(path, ignoreInvalid, errorReportOffset)
@@ -21,7 +23,7 @@ function loadfile(path, ignoreInvalid, errorReportOffset)
       return nil
     end
   end
-  local ret, err = load(codeString, path)
+  local ret, err = loadstring(codeString, path)
   if ret then
     return ret
   else

@@ -188,7 +188,7 @@ void audioPlatformFree(PlatformAudio* a) {
   alSourceStop(a->source);
   alSourcei (a->source, AL_BUFFER, 0);
   alDeleteSources(1, &a->source);
-  alDeleteBuffers(STREAM_BUFFER_COUNT, a->buffers);
+  alDeleteBuffers(a->streaming?STREAM_BUFFER_COUNT:1, a->buffers);
 }
 
 void audioPlatformCleanup(){

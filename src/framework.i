@@ -82,8 +82,11 @@ void DisplayObject_setParent(DisplayObject *d, DisplayObject *p);
 static int _wrap_loadByteString(lua_State* L) {
   int sz;
   const char *path = lua_tostring(L, -1);
-  const char* result = loadBytes(path, &sz);
+  char* result = loadBytes(path, &sz);
   lua_pushlstring(L, result, sz);
+  if(result){
+    free(result);
+  }
   return 1;
 }
 %}
