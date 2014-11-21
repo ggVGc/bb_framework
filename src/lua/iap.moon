@@ -20,7 +20,7 @@ framework.IAP = {
 
 
   canRestorePurchases: ->
-    _c_framework.iapCanRestorePurchases!
+    _c_framework.iapCanRestorePurchases()==1
 
   restorePurchases: (callback)->
     framework.IAP.callback = callback

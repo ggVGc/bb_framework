@@ -6,6 +6,10 @@
 #include "framework/resource_loading.h"
 #include "framework/audio.h"
 
+
+void audioPushSWIGPtr(lua_State *L, Audio *a);
+void rawBitmapDataPushSWIGPtr(lua_State *L, RawBitmapData *bmData);
+
 typedef struct loadAudioData {
   char *path;
   Audio *audio;

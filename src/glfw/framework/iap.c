@@ -14,7 +14,7 @@ const char* getProductPrice(const char *id){
 
 
 int iapCanRestorePurchases(){
-  return 1;
+  return 0;
 }
 
 void iapRestorePurchases(void){

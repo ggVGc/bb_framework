@@ -2,6 +2,7 @@
 #import <stdio.h>
 #import <math.h>
 #import <mach/mach_time.h>
+#import <OpenGLES/ES2/gl.h>
 #import "EAGLView.h"
 #import "app.h"
 #import "framework/input.h"

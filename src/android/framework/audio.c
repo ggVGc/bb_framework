@@ -276,15 +276,17 @@ void audioPlatformPlay(Audio* a) {
   trace("Audio: Playing");
   */
 
-  SLresult res = (*a->pa->player)->SetPlayState( a->pa->player, SL_PLAYSTATE_PLAYING );
-  assert(SL_RESULT_SUCCESS == res);
 
   if(pa->shortBuffer){
-    SLresult res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->shortBuffer, pa->shortBufSize);
+    SLresult res = (*a->pa->player)->SetPlayState( a->pa->player, SL_PLAYSTATE_PLAYING );
+    assert(SL_RESULT_SUCCESS == res);
+    res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->shortBuffer, pa->shortBufSize);
     assert(SL_RESULT_SUCCESS == res);
   }else{
-    loadBuffers(a, 1);
-    SLresult res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->buffers[0], pa->bufferSizes[0]);
+    loadBuffers(a, 0);
+    SLresult res = (*a->pa->player)->SetPlayState( a->pa->player, SL_PLAYSTATE_PLAYING );
+    assert(SL_RESULT_SUCCESS == res);
+    res = (*a->pa->bufferQueue)->Enqueue(a->pa->bufferQueue, pa->buffers[0], pa->bufferSizes[0]);
     assert(SL_RESULT_SUCCESS == res);
     pa->bufReadIndex = 1;
   }

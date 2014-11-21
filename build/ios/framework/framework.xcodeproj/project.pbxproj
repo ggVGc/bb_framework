@@ -15,6 +15,7 @@
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		7A11821F1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A11821E1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.m */; };
 		7A1182231A10431B006DAE45 /* RMStoreTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1182221A10431B006DAE45 /* RMStoreTransaction.m */; };
+		7A2FB8B31A1EF3BA0041BE50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A2FB8B21A1EF3BA0041BE50 /* Images.xcassets */; };
 		7A4D88AC19E1712B0059CEBF /* app.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D888019E1712B0059CEBF /* app.c */; };
 		7A4D88AD19E1712B0059CEBF /* quad.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D888519E1712B0059CEBF /* quad.c */; };
 		7A4D88AE19E1712B0059CEBF /* random.c in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D888719E1712B0059CEBF /* random.c */; };
@@ -55,7 +56,6 @@
 		7A71FB641A0DB4280037C7C4 /* MJGStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A71FB631A0DB4280037C7C4 /* MJGStack.m */; };
 		7A9C65681A05DFA10083B57A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65661A05DFA10083B57A /* Default-568h@2x.png */; };
 		7A9C65691A05DFA10083B57A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C65671A05DFA10083B57A /* Default@2x.png */; };
-		7A9C656B1A05E79D0083B57A /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C656A1A05E79D0083B57A /* icon@2x.png */; };
 		7AB168A01A10DEFF0066277A /* decoder_ogg.c in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1689E1A10DEFF0066277A /* decoder_ogg.c */; };
 		7AB46E0219E1792400841DB3 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB46E0119E1792400841DB3 /* OpenAL.framework */; };
 		7AB46E0419E17AEF00841DB3 /* libminizip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39208ED1443BEA30006E503 /* libminizip.a */; };
@@ -135,6 +135,7 @@
 		7A11821E1A10415E006DAE45 /* RMStoreUserDefaultsPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMStoreUserDefaultsPersistence.m; path = "../../../deps/ios/RMStore-master/RMStore/Optional/RMStoreUserDefaultsPersistence.m"; sourceTree = "<group>"; };
 		7A1182211A10431B006DAE45 /* RMStoreTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMStoreTransaction.h; path = "../../../deps/ios/RMStore-master/RMStore/Optional/RMStoreTransaction.h"; sourceTree = "<group>"; };
 		7A1182221A10431B006DAE45 /* RMStoreTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMStoreTransaction.m; path = "../../../deps/ios/RMStore-master/RMStore/Optional/RMStoreTransaction.m"; sourceTree = "<group>"; };
+		7A2FB8B21A1EF3BA0041BE50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = framework/Images.xcassets; sourceTree = "<group>"; };
 		7A4D888019E1712B0059CEBF /* app.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = app.c; sourceTree = "<group>"; };
 		7A4D888119E1712B0059CEBF /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = app.h; sourceTree = "<group>"; };
 		7A4D888319E1712B0059CEBF /* matrix2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = matrix2.h; sourceTree = "<group>"; };
@@ -209,7 +210,6 @@
 		7A71FB631A0DB4280037C7C4 /* MJGStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJGStack.m; sourceTree = "<group>"; };
 		7A9C65661A05DFA10083B57A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7A9C65671A05DFA10083B57A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		7A9C656A1A05E79D0083B57A /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		7AB1689E1A10DEFF0066277A /* decoder_ogg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = decoder_ogg.c; sourceTree = "<group>"; };
 		7AB1689F1A10DEFF0066277A /* decoder_ogg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = decoder_ogg.h; sourceTree = "<group>"; };
 		7AB3686D1A089802008E68B3 /* util_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util_ios.h; path = Classes/util_ios.h; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7A9C656A1A05E79D0083B57A /* icon@2x.png */,
+				7A2FB8B21A1EF3BA0041BE50 /* Images.xcassets */,
 				7A9C65661A05DFA10083B57A /* Default-568h@2x.png */,
 				7A9C65671A05DFA10083B57A /* Default@2x.png */,
 				7AE0519C198D2E5D003126A1 /* assets.zip */,
@@ -595,11 +595,11 @@
 			files = (
 				7A4D88B219E1712B0059CEBF /* resource_loading.c.orig in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				7A9C656B1A05E79D0083B57A /* icon@2x.png in Resources */,
 				28EC4C5A11D54ECE0027AA9F /* frameworkViewController.xib in Resources */,
 				7A9C65691A05DFA10083B57A /* Default@2x.png in Resources */,
 				7AE0519D198D2E5D003126A1 /* assets.zip in Resources */,
 				7A65162F19F1234900D21968 /* SimpleFragment.glsl in Resources */,
+				7A2FB8B31A1EF3BA0041BE50 /* Images.xcassets in Resources */,
 				7A9C65681A05DFA10083B57A /* Default-568h@2x.png in Resources */,
 				7A65163019F1234900D21968 /* SimpleVertex.glsl in Resources */,
 			);

@@ -18,6 +18,10 @@
 #include "framework/quad.h"
 #include "framework/data_store.h"
 
+
+int luaopen_AsyncAssetLoader(lua_State *L);
+int luaopen_helper(lua_State *L);
+
 #ifdef ANDROID_NDK
 #include <android/log.h>
 #endif
