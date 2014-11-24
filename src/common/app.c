@@ -371,6 +371,8 @@ void onPurchaseComplete(int success){
 }
 
 void appSetPaused(int paused, int pauseAudio){
+  trace("Setting app paused");
+  traceInt(paused);
   if(didInit){
     /*appPaused = paused;*/
     if(paused == pauseAudio){
