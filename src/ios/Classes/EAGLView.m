@@ -98,6 +98,9 @@ return ((double)(mach_absolute_time() - timeZero))
     NSString *path = [[NSBundle mainBundle] pathForResource:@"assets" ofType:@"zip"];
     //NSLog(@"path: %@", path);
     //alert(@"Framebuffer size ", [NSString stringWithFormat:@"w:%i, h:%i", framebufferWidth, framebufferHeight ]);
+    CGSize s = self.bounds.size;
+    setScreenWidth(s.width);
+    setScreenHeight(s.height);
     appInit(1,framebufferWidth, framebufferHeight, [path cStringUsingEncoding:1],1);
   }
 
@@ -113,6 +116,7 @@ return ((double)(mach_absolute_time() - timeZero))
   bank = 0;
   timeZero = mach_absolute_time();
   CFTimeInterval now = displayLink.timestamp;
+
   if(lastTick>0 && !ignoreLastTick){
     appRender((now - lastTick)*1000);
   }else{
@@ -162,10 +166,6 @@ return ((double)(mach_absolute_time() - timeZero))
     didInit = false;
     needsReload = false;
     paused = false;
-    CGSize s = self.bounds.size;
-    //alert(@"Window size", [NSString stringWithFormat:@"w:%f, h:%f", s.width, s.height]);
-    setScreenWidth(s.width);
-    setScreenHeight(s.height);
     [self setupLayer];        
     [self setupContext];    
     [self setupFrameBuffer];     

@@ -47,11 +47,11 @@ static int usingZip = 0;
 
 
 
-unzFile guf;
 
-void png_zip_read(png_structp png_ptr, png_bytep data, png_size_t length) {
+void png_zip_read(png_structrp png_ptr, png_bytep data, png_size_t length) {
+  unzFile uf = png_get_io_ptr(png_ptr);
   png_ptr = png_ptr;
-  unzReadCurrentFile(guf, data, length);
+  unzReadCurrentFile(uf, data, length);
 }
 
 void setResourcePath(const char* p, int useZip) {
@@ -247,6 +247,7 @@ RawBitmapData* loadImage(const char* inFilename){
 
   ret = unzLocateFile(uf, filename, 0);
   if(ret != UNZ_OK) {
+    trace("loadImage: Could not locate file");
     unzClose(uf);
     return NULL;
   }
@@ -259,6 +260,7 @@ RawBitmapData* loadImage(const char* inFilename){
   //test if png
   is_png = !png_sig_cmp(header, 0, 8);
   if (!is_png) {
+    trace("Not a png file");
     unzCloseCurrentFile(uf);
     unzClose(uf);
     //LOGE("Not a png file : %s", filename);
@@ -266,9 +268,9 @@ RawBitmapData* loadImage(const char* inFilename){
   }
 
   //create png struct
-  png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL,
-      NULL, NULL);
+  png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
   if (!png_ptr) {
+    trace("Could not create PNG read struct");
     unzCloseCurrentFile(uf);
     unzClose(uf);
     //LOGE("Unable to create png struct : %s", filename);
@@ -278,6 +280,7 @@ RawBitmapData* loadImage(const char* inFilename){
   //create png info struct
   info_ptr = png_create_info_struct(png_ptr);
   if (!info_ptr) {
+    trace("Could not create PNG info struct");
     png_destroy_read_struct(&png_ptr, (png_infopp) NULL, (png_infopp) NULL);
     //LOGE("Unable to create png info : %s", filename);
     unzCloseCurrentFile(uf);
@@ -288,6 +291,7 @@ RawBitmapData* loadImage(const char* inFilename){
   //create png info struct
   end_info = png_create_info_struct(png_ptr);
   if (!end_info) {
+    trace("Could not create PNG end info struct");
     png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
     //LOGE("Unable to create png end info : %s", filename);
     unzCloseCurrentFile(uf);
@@ -297,17 +301,17 @@ RawBitmapData* loadImage(const char* inFilename){
 
   //png error stuff, not sure libpng man suggests this.
   if (setjmp(png_jmpbuf(png_ptr))) {
+    trace("PNG: Failed setting error handler");
+    png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
     unzCloseCurrentFile(uf);
     unzClose(uf);
     //LOGE("Error during setjmp : %s", filename);
-    png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
     return NULL;
   }
 
   //init png reading
   //png_init_io(png_ptr, fp);
-  guf = uf;
-  png_set_read_fn(png_ptr, NULL, png_zip_read);
+  png_set_read_fn(png_ptr, uf, png_zip_read);
 
   //let libpng know you already read the first 8 bytes
   png_set_sig_bytes(png_ptr, 8);

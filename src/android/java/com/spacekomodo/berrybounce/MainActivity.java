@@ -1,5 +1,6 @@
 package com.spacekomodo.berrybounce;
 
+import android.content.Context;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,8 @@ import com.facebook.widget.FacebookDialog;
 public class MainActivity extends Activity{
   public static final String TAG = "MainActivity";
 
+  public static Context appContext;
+
   private GLView view;
   //private boolean facebookAvailable = false;
 
@@ -35,6 +38,7 @@ public class MainActivity extends Activity{
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    appContext = getApplicationContext();
     Log.i(TAG,"Activity: Create");
     requestWindowFeature(Window.FEATURE_NO_TITLE);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -92,6 +96,7 @@ public class MainActivity extends Activity{
   public void showInterstitial(){
     if(Chartboost.hasInterstitial(CBLocation.LOCATION_DEFAULT)){
       Log.i(TAG, "Showing cached interstitial");
+      chartboostDelegate.cacheing = false;
       view.renderer.onInterstitialShow();
       Chartboost.showInterstitial(CBLocation.LOCATION_DEFAULT);
     }else{

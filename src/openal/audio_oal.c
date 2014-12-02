@@ -11,8 +11,8 @@
 #include "framework/util.h"
 
 
-#define MAX_SAMPLES (1024*4)
-#define STREAM_BUFFER_COUNT 20
+#define MAX_SAMPLES (1024*2)
+#define STREAM_BUFFER_COUNT 10
 
 
 static short decodeBuffer[MAX_SAMPLES];

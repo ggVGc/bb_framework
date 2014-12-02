@@ -16,6 +16,8 @@
 static time_t lastTime = 0;
 static int didInit = 0;
 static const char *apkPath;
+JavaVM  *jvm;
+
 
   static time_t
 _getTime(void) {
@@ -60,7 +62,8 @@ void stopProfiler(){
 
   void
 Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject this, jstring apkPath_ ) {
-  trace("nativeInit");
+  trace("Android: nativeInit");
+  (*env)->GetJavaVM(env, &jvm);
   apkPath = (*env)->GetStringUTFChars(env, apkPath_, NULL); // Let's leak some memory..
   lastTime = _getTime();
   didInit = 0;
@@ -70,7 +73,7 @@ Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject th
 Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject  this, jint w, jint h, jint wasSuspended) {
   __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "resize w=%d h=%d", w, h);
   if(didInit != 1){
-    trace("appInit");
+    trace("Android: appInit");
     setScreenWidth(w);
     setScreenHeight(h);
     appInit(wasSuspended, w, h, apkPath, 1);
@@ -81,26 +84,28 @@ Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject 
 
   void
 Java_com_spacekomodo_berrybounce_GLRenderer_appGraphicsReload( JNIEnv*  env, jobject  this, jint w, jint h, jint wasSuspended) {
-  trace("appGraphicsReload");
+  trace("Android: appGraphicsReload");
   appGraphicsReload(w, h);
 }
 
   void
 Java_com_spacekomodo_berrybounce_GLView_appSetPaused( JNIEnv*  env, jobject this, jint paused, jint pauseAudio) {
+  trace("Android: appSetPaused");
   appSetPaused(paused, pauseAudio);
 }
 
 
   void
 Java_com_spacekomodo_berrybounce_GLView_appSuspend( JNIEnv*  env ) {
-  trace("Suspending app");
+  trace("Android: appSuspend");
   appSuspend();
 }
 
   void
 Java_com_spacekomodo_berrybounce_GLView_nativeOnStop( JNIEnv*  env ) {
+  trace("Android: Cleaning up");
   appDeinit();
-  trace("Cleaned up app");
+  trace("Android: Cleaned up");
 }
 
 
@@ -134,26 +139,26 @@ Java_com_spacekomodo_berrybounce_MainActivity_setScreenRefreshRate( JNIEnv*  env
 
   void
 Java_com_spacekomodo_berrybounce_MainActivity_interstitialClosed( JNIEnv*  env, jobject this) {
-  trace("interstitialClosed");
+  trace("Android: interstitialClosed");
   adInterstitialClosed();
 }
 
   void
 Java_com_spacekomodo_berrybounce_MainActivity_interstitialDisplayed( JNIEnv*  env, jobject this) {
-  trace("interstitialDisplayed");
+  trace("Android: interstitialDisplayed");
   adInterstitialDisplayed(1);
 }
 
   void
 Java_com_spacekomodo_berrybounce_MainActivity_interstitialFailedDisplay( JNIEnv*  env, jobject this) {
-  trace("interstitialFailedDisplay");
+  trace("Android: interstitialFailedDisplay");
   adInterstitialDisplayed(0);
 }
 
 
 void
 Java_com_spacekomodo_berrybounce_IAP_onPurchaseComplete( JNIEnv*  env, jobject this, jint success) {
-  trace("onPurchaseComplete");
+  trace("Android: onPurchaseComplete");
   onPurchaseComplete(success);
 }
 
@@ -175,7 +180,7 @@ void adPrepareInterstitial(){
 }
 
 void adShowInterstitial(){
-  trace("adShowInterstitial");
+  trace("Android: adShowInterstitial");
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
@@ -190,7 +195,7 @@ void adShowInterstitial(){
 }
 
 void facebookPost(int score){
-  trace("facebookPost");
+  trace("Android: facebookPost");
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
@@ -205,7 +210,7 @@ void facebookPost(int score){
 }
 
 int facebookIsShareAvailable(){
-  trace("facebookIsShareAvailable");
+  trace("Android: facebookIsShareAvailable");
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
@@ -224,26 +229,28 @@ void dataStoreGlobalInit(){
 }
 
 void dataStoreCommit(const char* dataString){
-  trace("dataStoreCommit");
-  jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
+  trace("Android: dataStoreCommit");
+  JNIEnv *env;
+  (*jvm)->AttachCurrentThread(jvm, &env, 0);
+  jclass cls = (*env)->FindClass(env, "com/spacekomodo/berrybounce/GLRenderer");
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
     return;
   }
-  jmethodID mid = (*curEnv)->GetMethodID(curEnv, cls, "dataStoreCommit", "(Ljava/lang/String;)V");
+  jmethodID mid = (*env)->GetStaticMethodID(env, cls, "dataStoreCommit", "(Ljava/lang/String;)V");
   if (mid == 0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
     return;
   }
-  jstring s = (*curEnv)->NewStringUTF(curEnv, dataString);
+  jstring s = (*env)->NewStringUTF(env, dataString);
   __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "DATA_LEN: %d", strlen(dataString));
   /*__android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "DATA: %s", dataString);*/
-  (*curEnv)->CallVoidMethod(curEnv, curThis, mid, s);
-  (*curEnv)->DeleteLocalRef(curEnv, s);
+  (*env)->CallStaticVoidMethod(env, cls, mid, s);
+  (*env)->DeleteLocalRef(env, s);
 }
 
 const char* dataStoreReload(){
-  trace("dataStoreReload");
+  trace("Android: dataStoreReload");
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
@@ -262,7 +269,7 @@ const char* dataStoreReload(){
 
 
 int userOwnsProduct(const char *id){
-  trace("userOwnsProduct");
+  trace("Android: userOwnsProduct");
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
@@ -282,7 +289,7 @@ int userOwnsProduct(const char *id){
 }
 
 void purchaseProduct(const char *id){
-  trace("purchaseProduct");
+  trace("Android: purchaseProduct");
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
@@ -300,7 +307,7 @@ void purchaseProduct(const char *id){
 }
 
 const char* getProductPrice(const char *id){
-  trace("getProductPrice");
+  trace("Android: getProductPrice");
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
@@ -321,7 +328,7 @@ const char* getProductPrice(const char *id){
 }
 
 void adSetBannersEnabled(int enable){
-  trace("adSetBannersEnabled");
+  trace("Android: adSetBannersEnabled");
   jclass cls = (*curEnv)->GetObjectClass(curEnv, curThis);
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");

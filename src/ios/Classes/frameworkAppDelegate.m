@@ -16,13 +16,13 @@
 static ChartboostDelegateImpl *cbDelegate;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window.rootViewController = self.viewController;
-    cbDelegate = [[ChartboostDelegateImpl alloc] init];
-    //[Chartboost startWithAppId:AppConfig.cb.appId appSignature:AppConfig.cb.appSignature delegate:cbDelegate];
-    [Chartboost startWithAppId:@"545d4d160d602524bc431795" appSignature:@"2924db06cc538c1e10016e889607d88c43378e62"  delegate:cbDelegate];
-    cbDelegate->cacheing = true;
-    [Chartboost cacheInterstitial:CBLocationDefault];
-    return YES;
+  self.window.rootViewController = self.viewController;
+  cbDelegate = [[ChartboostDelegateImpl alloc] init];
+  //[Chartboost startWithAppId:AppConfig.cb.appId appSignature:AppConfig.cb.appSignature delegate:cbDelegate];
+  [Chartboost startWithAppId:@"545d4d160d602524bc431795" appSignature:@"2924db06cc538c1e10016e889607d88c43378e62"  delegate:cbDelegate];
+  cbDelegate->cacheing = true;
+  [Chartboost cacheInterstitial:CBLocationDefault];
+  return YES;
 }
 
 - (void)orientationChanged:(NSNotification *)notification{
@@ -34,16 +34,16 @@ static ChartboostDelegateImpl *cbDelegate;
   [v setPaused:true];
   appSuspend();
   /*
-  appUnloadTextures();
-  */
+     appUnloadTextures();
+     */
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
   NSLog(@"Did become active");
   EAGLView *v = (EAGLView*)viewController.view;
   /*
-  v->needsReload = true;
-  */
+     v->needsReload = true;
+     */
   [v setPaused:false];
 }
 

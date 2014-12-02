@@ -18,6 +18,8 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import android.os.Handler;
+import android.os.Looper;
 
 import java.util.LinkedList;
 
@@ -180,18 +182,18 @@ public class GLRenderer implements GLSurfaceView.Renderer {
     });
   }
 
-  private void dataStoreCommit(final String dataString){
-    activity.runOnUiThread(new Runnable() {
+  private static void dataStoreCommit(final String dataString){
+    Handler mainHandler = new Handler(Looper.getMainLooper());
+    mainHandler.post(new Runnable() {
       public void run() {
       try{
-        FileOutputStream f = activity.openFileOutput("datastore", Context.MODE_PRIVATE);
+        FileOutputStream f = MainActivity.appContext.openFileOutput("datastore", Context.MODE_PRIVATE);
         f.write(dataString.getBytes());
         f.close();
       } catch (Exception e) {
         Log.e(TAG, "Failed writing to data store");
       }
-    }
-    });
+    }});
   }
 
   private String dataStoreReload(){

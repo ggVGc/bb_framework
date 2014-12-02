@@ -712,7 +712,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
-				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
+				PROVISIONING_PROFILE = "6cfc6a82-2717-4a65-8c6b-0bca25763330";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -755,7 +755,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Berry Bounce";
-				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
+				PROVISIONING_PROFILE = "6cfc6a82-2717-4a65-8c6b-0bca25763330";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -770,7 +770,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
+				PROVISIONING_PROFILE = "6cfc6a82-2717-4a65-8c6b-0bca25763330";
 				SDKROOT = iphoneos7.0;
 			};
 			name = Debug;
@@ -784,7 +784,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "bfed52df-cf5d-40e8-b9a5-45227d9f5e7b";
+				PROVISIONING_PROFILE = "6cfc6a82-2717-4a65-8c6b-0bca25763330";
 				SDKROOT = iphoneos7.0;
 			};
 			name = Release;
