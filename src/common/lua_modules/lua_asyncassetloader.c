@@ -14,6 +14,7 @@ typedef struct loadAudioData {
   char *path;
   Audio *audio;
   int loop;
+  long introSilenceMs;
 } loadAudioData;
 
 static int loadAudioPrepare (lua_State *L, void **udata) {
@@ -23,6 +24,7 @@ static int loadAudioPrepare (lua_State *L, void **udata) {
   }
   td->path = strdup(luaL_checkstring(L, 1));
   td->loop = lua_toboolean(L, 2);
+  td->introSilenceMs = lua_tointeger(L, 3);
   *udata = td;
   return 0;
 }
@@ -32,7 +34,7 @@ static int loadAudioWork (void *udata) {
   const char *ext = strchr(td->path, '.');
   if(ext && strcmp(ext, ".ogg")==0){
     // load ogg
-    td->audio = audioLoad(td->path, td->loop);
+    td->audio = audioLoad(td->path, td->loop, td->introSilenceMs);
   }else{
     // load mod format
     td->audio = audioModLoad(td->path);

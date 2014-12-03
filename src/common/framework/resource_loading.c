@@ -7,8 +7,6 @@
 #include "resource_loading.h"
 #include "rawbitmapdata.h"
 #include "util.h"
-
-
 #include "assets.c"
 
 

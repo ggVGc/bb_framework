@@ -6,7 +6,7 @@
 #include "util.h"
 
 
-size_t AR_readOgg(void* dst, size_t size1, size_t size2, void* fh) {
+static size_t AR_readOgg(void* dst, size_t size1, size_t size2, void* fh) {
   ogg_file* of = (ogg_file*)(fh);
   size_t len = size1 * size2;
   if ( of->curPtr + len > of->filePtr + of->fileSize ) {
@@ -17,7 +17,7 @@ size_t AR_readOgg(void* dst, size_t size1, size_t size2, void* fh) {
   return len;
 }
 
-int AR_seekOgg( void *fh, ogg_int64_t to, int type ) {
+static int AR_seekOgg( void *fh, ogg_int64_t to, int type ) {
   ogg_file* of = (ogg_file*)(fh);
   switch( type ) {
     case SEEK_CUR:
@@ -43,11 +43,11 @@ int AR_seekOgg( void *fh, ogg_int64_t to, int type ) {
   return 0;
 }
 
-int AR_closeOgg(void* fh) {
+static int AR_closeOgg(void* fh) {
     return 0;
 }
 
-long AR_tellOgg( void *fh ) {
+static long AR_tellOgg( void *fh ) {
     ogg_file* of = (ogg_file*)(fh);
     return (of->curPtr - of->filePtr);
 }
@@ -66,7 +66,8 @@ int decoderOgg_init(DecoderOgg_State *s, char *bytes, int sz){
   }
   s->info=ov_info(&s->vf,-1);
   s->totalSamples = (long)ov_pcm_total(&s->vf,-1)*s->info->channels;
-  s->eof = 0;
+  s->introSilenceSampleCount = 0;
+  decoderOgg_reset(s);
   /*
   s->count = 0;
   */
@@ -79,10 +80,22 @@ int decoderOgg_init(DecoderOgg_State *s, char *bytes, int sz){
 }
 
 
+int genEmptySamples(int emptyCount, short *out, int maxSamples){
+  int i;
+  int count = emptyCount>maxSamples?maxSamples:emptyCount;
+  memset(out, 0, sizeof(short)*count);
+  return count;
+}
+
 int decoderOgg_decode(DecoderOgg_State *s, short *out, int maxSamples, int loop){
   int current_section = 0;
   int c = 0;
   int bufSize = maxSamples*sizeof(short);
+  if(s->remainingSilenceSamples>0){
+    int count = genEmptySamples(s->remainingSilenceSamples, out, maxSamples);
+    s->remainingSilenceSamples -= count;
+    return count;
+  }
   while(!s->eof && c<maxSamples){
     long ret=ov_read(&s->vf,(char*)(out+c),(maxSamples-c)*sizeof(short),0,2,1,&current_section);
     /*printf("Decoded %i\n", ret);*/
@@ -117,6 +130,7 @@ short* decoderOgg_decodeAll(DecoderOgg_State *s, int *sampleCount){
 }
 
 void decoderOgg_reset(DecoderOgg_State *s){
+  s->remainingSilenceSamples = s->introSilenceSampleCount;
   s->eof = 0;
   ov_raw_seek(&s->vf, 0);
 }
@@ -130,28 +144,11 @@ void decoderOgg_free(DecoderOgg_State *s){
   free(s->oggFile.filePtr);
 }
 
+int decoderOgg_msToSamples(DecoderOgg_State *s, long milliseconds){
+  return (milliseconds*s->info->channels*s->info->rate)/1000;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int decoderOgg_setIntroSilence(DecoderOgg_State *s, long milliseconds){
+  s->introSilenceSampleCount = s->remainingSilenceSamples = decoderOgg_msToSamples(s, milliseconds);
+}

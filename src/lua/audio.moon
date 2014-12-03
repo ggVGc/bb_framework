@@ -77,6 +77,6 @@ new: (nativeAudio)->
   return @
 }
 
-framework.Audio.fromFile = (path, loop)->
-  framework.Audio.new _c_framework.audioLoad(path, loop)
+framework.Audio.fromFile = (path, loop, introSilenceMs)->
+  framework.Audio.new _c_framework.audioLoad(path, loop, introSilenceMs)
 

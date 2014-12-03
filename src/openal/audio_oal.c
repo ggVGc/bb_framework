@@ -96,7 +96,6 @@ int audioPlatformInit(Audio *a, int loop){
   a->pa->looping = loop;
   a->pa->streaming = !audioIsShort(a);
 
-
   if(a->pa->streaming){
     alGenBuffers(STREAM_BUFFER_COUNT, a->pa->buffers);
   }else{
@@ -122,7 +121,6 @@ int audioPlatformInit(Audio *a, int loop){
   if(!a->pa->streaming && a->pa->looping){
     alSourcei (a->pa->source, AL_LOOPING,  AL_TRUE);
   }
-
   return 1;
 }
 

@@ -6438,6 +6438,56 @@ fail:
 }
 
 
+static int _wrap_DecoderOgg_State_introSilenceSampleCount_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DecoderOgg_State *arg1 = (struct DecoderOgg_State *) 0 ;
+  long arg2 ;
+  
+  SWIG_check_num_args("DecoderOgg_State::introSilenceSampleCount",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DecoderOgg_State::introSilenceSampleCount",1,"struct DecoderOgg_State *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DecoderOgg_State::introSilenceSampleCount",2,"long");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DecoderOgg_State,0))){
+    SWIG_fail_ptr("DecoderOgg_State_introSilenceSampleCount_set",1,SWIGTYPE_p_DecoderOgg_State);
+  }
+  
+  arg2 = (long)lua_tonumber(L, 2);
+  if (arg1) (arg1)->introSilenceSampleCount = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DecoderOgg_State_introSilenceSampleCount_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DecoderOgg_State *arg1 = (struct DecoderOgg_State *) 0 ;
+  long result;
+  
+  SWIG_check_num_args("DecoderOgg_State::introSilenceSampleCount",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DecoderOgg_State::introSilenceSampleCount",1,"struct DecoderOgg_State *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DecoderOgg_State,0))){
+    SWIG_fail_ptr("DecoderOgg_State_introSilenceSampleCount_get",1,SWIGTYPE_p_DecoderOgg_State);
+  }
+  
+  result = (long) ((arg1)->introSilenceSampleCount);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_DecoderOgg_State_eof_set(lua_State* L) {
   int SWIG_arg = 0;
   struct DecoderOgg_State *arg1 = (struct DecoderOgg_State *) 0 ;
@@ -6488,6 +6538,56 @@ fail:
 }
 
 
+static int _wrap_DecoderOgg_State_remainingSilenceSamples_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DecoderOgg_State *arg1 = (struct DecoderOgg_State *) 0 ;
+  long arg2 ;
+  
+  SWIG_check_num_args("DecoderOgg_State::remainingSilenceSamples",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DecoderOgg_State::remainingSilenceSamples",1,"struct DecoderOgg_State *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("DecoderOgg_State::remainingSilenceSamples",2,"long");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DecoderOgg_State,0))){
+    SWIG_fail_ptr("DecoderOgg_State_remainingSilenceSamples_set",1,SWIGTYPE_p_DecoderOgg_State);
+  }
+  
+  arg2 = (long)lua_tonumber(L, 2);
+  if (arg1) (arg1)->remainingSilenceSamples = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_DecoderOgg_State_remainingSilenceSamples_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct DecoderOgg_State *arg1 = (struct DecoderOgg_State *) 0 ;
+  long result;
+  
+  SWIG_check_num_args("DecoderOgg_State::remainingSilenceSamples",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("DecoderOgg_State::remainingSilenceSamples",1,"struct DecoderOgg_State *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DecoderOgg_State,0))){
+    SWIG_fail_ptr("DecoderOgg_State_remainingSilenceSamples_get",1,SWIGTYPE_p_DecoderOgg_State);
+  }
+  
+  result = (long) ((arg1)->remainingSilenceSamples);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_new_DecoderOgg_State(lua_State* L) {
   int SWIG_arg = 0;
   struct DecoderOgg_State *result = 0 ;
@@ -6522,7 +6622,9 @@ static swig_lua_attribute swig_DecoderOgg_State_attributes[] = {
     { "vf", _wrap_DecoderOgg_State_vf_get, _wrap_DecoderOgg_State_vf_set },
     { "info", _wrap_DecoderOgg_State_info_get, _wrap_DecoderOgg_State_info_set },
     { "oggFile", _wrap_DecoderOgg_State_oggFile_get, _wrap_DecoderOgg_State_oggFile_set },
+    { "introSilenceSampleCount", _wrap_DecoderOgg_State_introSilenceSampleCount_get, _wrap_DecoderOgg_State_introSilenceSampleCount_set },
     { "eof", _wrap_DecoderOgg_State_eof_get, _wrap_DecoderOgg_State_eof_set },
+    { "remainingSilenceSamples", _wrap_DecoderOgg_State_remainingSilenceSamples_get, _wrap_DecoderOgg_State_remainingSilenceSamples_set },
     {0,0,0}
 };
 static swig_lua_method swig_DecoderOgg_State_methods[]= {
@@ -6714,6 +6816,60 @@ static int _wrap_DecoderOgg_calcStreamSize(lua_State* L) {
   }
   
   result = DecoderOgg_calcStreamSize(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_decoderOgg_msToSamples(lua_State* L) {
+  int SWIG_arg = 0;
+  DecoderOgg_State *arg1 = (DecoderOgg_State *) 0 ;
+  long arg2 ;
+  int result;
+  
+  SWIG_check_num_args("decoderOgg_msToSamples",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("decoderOgg_msToSamples",1,"DecoderOgg_State *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("decoderOgg_msToSamples",2,"long");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DecoderOgg_State,0))){
+    SWIG_fail_ptr("decoderOgg_msToSamples",1,SWIGTYPE_p_DecoderOgg_State);
+  }
+  
+  arg2 = (long)lua_tonumber(L, 2);
+  result = (int)decoderOgg_msToSamples(arg1,arg2);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_decoderOgg_setIntroSilence(lua_State* L) {
+  int SWIG_arg = 0;
+  DecoderOgg_State *arg1 = (DecoderOgg_State *) 0 ;
+  long arg2 ;
+  int result;
+  
+  SWIG_check_num_args("decoderOgg_setIntroSilence",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("decoderOgg_setIntroSilence",1,"DecoderOgg_State *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("decoderOgg_setIntroSilence",2,"long");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_DecoderOgg_State,0))){
+    SWIG_fail_ptr("decoderOgg_setIntroSilence",1,SWIGTYPE_p_DecoderOgg_State);
+  }
+  
+  arg2 = (long)lua_tonumber(L, 2);
+  result = (int)decoderOgg_setIntroSilence(arg1,arg2);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -7007,13 +7163,15 @@ static int _wrap_audioInit(lua_State* L) {
   char *arg2 = (char *) 0 ;
   int arg3 ;
   int arg4 ;
+  long arg5 ;
   int result;
   
-  SWIG_check_num_args("audioInit",4,4)
+  SWIG_check_num_args("audioInit",5,5)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioInit",1,"Audio *");
   if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("audioInit",2,"char *");
   if(!lua_isnumber(L,3)) SWIG_fail_arg("audioInit",3,"int");
   if(!lua_isnumber(L,4)) SWIG_fail_arg("audioInit",4,"int");
+  if(!lua_isnumber(L,5)) SWIG_fail_arg("audioInit",5,"long");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
     SWIG_fail_ptr("audioInit",1,SWIGTYPE_p_Audio);
@@ -7022,7 +7180,8 @@ static int _wrap_audioInit(lua_State* L) {
   arg2 = (char *)lua_tostring(L, 2);
   arg3 = (int)lua_tonumber(L, 3);
   arg4 = (int)lua_tonumber(L, 4);
-  result = (int)audioInit(arg1,arg2,arg3,arg4);
+  arg5 = (long)lua_tonumber(L, 5);
+  result = (int)audioInit(arg1,arg2,arg3,arg4,arg5);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -7038,14 +7197,17 @@ static int _wrap_audioLoad(lua_State* L) {
   int SWIG_arg = 0;
   char *arg1 = (char *) 0 ;
   int arg2 ;
+  long arg3 ;
   Audio *result = 0 ;
   
-  SWIG_check_num_args("audioLoad",2,2)
+  SWIG_check_num_args("audioLoad",3,3)
   if(!SWIG_lua_isnilstring(L,1)) SWIG_fail_arg("audioLoad",1,"char const *");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("audioLoad",2,"int");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("audioLoad",3,"long");
   arg1 = (char *)lua_tostring(L, 1);
   arg2 = (int)lua_tonumber(L, 2);
-  result = (Audio *)audioLoad((char const *)arg1,arg2);
+  arg3 = (long)lua_tonumber(L, 3);
+  result = (Audio *)audioLoad((char const *)arg1,arg2,arg3);
   SWIG_NewPointerObj(L,result,SWIGTYPE_p_Audio,0); SWIG_arg++; 
   return SWIG_arg;
   
@@ -7082,12 +7244,14 @@ static int _wrap_audioLoadInto(lua_State* L) {
   Audio *arg1 = (Audio *) 0 ;
   char *arg2 = (char *) 0 ;
   int arg3 ;
+  long arg4 ;
   int result;
   
-  SWIG_check_num_args("audioLoadInto",3,3)
+  SWIG_check_num_args("audioLoadInto",4,4)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("audioLoadInto",1,"Audio *");
   if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("audioLoadInto",2,"char const *");
   if(!lua_isnumber(L,3)) SWIG_fail_arg("audioLoadInto",3,"int");
+  if(!lua_isnumber(L,4)) SWIG_fail_arg("audioLoadInto",4,"long");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Audio,0))){
     SWIG_fail_ptr("audioLoadInto",1,SWIGTYPE_p_Audio);
@@ -7095,7 +7259,8 @@ static int _wrap_audioLoadInto(lua_State* L) {
   
   arg2 = (char *)lua_tostring(L, 2);
   arg3 = (int)lua_tonumber(L, 3);
-  result = (int)audioLoadInto(arg1,(char const *)arg2,arg3);
+  arg4 = (long)lua_tonumber(L, 4);
+  result = (int)audioLoadInto(arg1,(char const *)arg2,arg3,arg4);
   lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
   return SWIG_arg;
   
@@ -8022,6 +8187,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "decoderOgg_free", _wrap_decoderOgg_free},
     { "decoderOgg_reset", _wrap_decoderOgg_reset},
     { "DecoderOgg_calcStreamSize", _wrap_DecoderOgg_calcStreamSize},
+    { "decoderOgg_msToSamples", _wrap_decoderOgg_msToSamples},
+    { "decoderOgg_setIntroSilence", _wrap_decoderOgg_setIntroSilence},
     { "audioGlobalInit", _wrap_audioGlobalInit},
     { "audioGlobalPlatformInit", _wrap_audioGlobalPlatformInit},
     { "audioAlloc", _wrap_audioAlloc},

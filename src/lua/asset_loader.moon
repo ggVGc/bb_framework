@@ -93,14 +93,14 @@ new: maker (initialTexSheets) =>
     taskCount+=1
     return a
 
-  @loadAudio = (path, loop, groupName)->
+  @loadAudio = (path, loop, introSilenceMs, groupName)->
     a = {
       asset: nil
       type: AL.AssetType.Audio
       group:groupName
       path:path
     }
-    t = _c_framework.AsyncAssetLoader.loadAudio path, (loop and true or false)
+    t = _c_framework.AsyncAssetLoader.loadAudio path, (loop and true or false), introSilenceMs
     tasks[t] = {a:a}
     queueIn\addtask t
     taskCount+=1

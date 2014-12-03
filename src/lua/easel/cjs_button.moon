@@ -4,8 +4,10 @@ clickSfx: nil
 new: maker (mc, initialDoStateSwitch, initialTriggerOnDown, hitMc)=>
   @getMc = -> mc
   hitMc = hitMc or mc
-  w = hitMc.nominalBounds[3]
-  h = hitMc.nominalBounds[4]
+  hitX = hitMc.nominalBounds[1]
+  hitY = hitMc.nominalBounds[2]
+  w = hitMc.nominalBounds[3]*mc.scaleX
+  h = hitMc.nominalBounds[4]*mc.scaleY
   if mc.stop
     mc.stop!
   
@@ -24,7 +26,7 @@ new: maker (mc, initialDoStateSwitch, initialTriggerOnDown, hitMc)=>
 
   @isOver = (x,y) ->
     return false if not mc.visible
-    globX, globY = hitMc.localToGlobal(0,0)
+    globX, globY = hitMc.localToGlobal(hitX,hitY)
     return x > globX and x<globX+w and y>globY and y<globY+h
 
   @isPressOver = (screenWidth, screenHeight) ->
