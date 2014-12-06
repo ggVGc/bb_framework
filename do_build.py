@@ -63,7 +63,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
     ofiles += " "+out
     ofiles
     #cmd = "gcc -g -fsanitize=address -fno-omit-frame-pointer "+cflags+" -c "+f+" -o "+out
-    cmd = "gcc -Werror -g "+cflags+" -c "+f+" -o "+out
+    cmd = "gcc -g "+cflags+" -c "+f+" -o "+out
     print cmd
     ret = os.system(cmd)
     if ret != 0:
@@ -71,7 +71,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
   if ret != 0:
     return ret 
   files = cppfiles+" "+ofiles
-  cmd = "gcc -Werror -g "+cflags+" "+files+" -o "+outfile+" "+linkFlags
+  cmd = "gcc -g "+cflags+" "+files+" -o "+outfile+" "+linkFlags
   print cmd
   return os.system(cmd)
 

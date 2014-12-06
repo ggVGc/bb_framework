@@ -9,6 +9,7 @@
 #include "util.h"
 #include "assets.c"
 
+#define RESLOAD_EXTERNAL_ENABLED 1
 
 static char apkPath[2048];
 static int usingZip = 0;
@@ -168,7 +169,15 @@ unsigned char* loadBytesExternal(const char *inPath, int *sz){
 
 unsigned char* loadBytes(const char* path, int* sz){
   int i;
-  unsigned char *ret;
+  unsigned char *ret = 0;
+
+#ifdef RESLOAD_EXTERNAL_ENABLED
+  ret = loadBytesExternal(path, sz);
+  if(ret){
+    printf("Loaded ext asset: %s\n", path);
+    return ret;
+  }
+#endif
 
   if(usingZip){
     ret = loadBytesFromZip(path, sz);
@@ -189,11 +198,6 @@ unsigned char* loadBytes(const char* path, int* sz){
     }
   }
 
-  /*
-  if(!ret){
-    ret = loadBytesExternal(path, sz);
-  }
-  */
 
   return ret;
 }

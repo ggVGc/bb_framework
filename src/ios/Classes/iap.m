@@ -202,6 +202,7 @@ int iapCanRestorePurchases(void){
 }
 
 void iapRestorePurchases(void){
+  appSetPaused(1, 1);
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   [defaults setObject:@"yeah" forKey:@"didAttemptPurchase"];
   [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

@@ -179,8 +179,8 @@ int main(int argc, char **argv) {
   realpath(execPath, fullPath);
   printf("Real path: %s\n", fullPath);
   sprintf(assetPath, "%s/%s", dirname(fullPath), assets);
+  chdir(dirname(fullPath));
   #else
-    
     GetModuleFileName(0, execPath, 512);
 	GetFullPathName(execPath, 512, fullPath, &filePartPtr);
 	*filePartPtr = '\0';
