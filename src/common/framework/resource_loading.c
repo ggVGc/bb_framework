@@ -9,7 +9,7 @@
 #include "util.h"
 #include "assets.c"
 
-#define RESLOAD_EXTERNAL_ENABLED 1
+#define RESLOAD_EXTERNAL_ENABLED 0
 
 static char apkPath[2048];
 static int usingZip = 0;

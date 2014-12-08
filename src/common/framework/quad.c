@@ -128,5 +128,6 @@ void quadDrawCol(float x, float y, float width, float height, float red, float g
   glScalef(width, height, 1);
   glDrawArrays(GL_TRIANGLES, 0, 6);
   glPopMatrix();
+  glColor4f(curR, curG, curB, 1);
 }
 
