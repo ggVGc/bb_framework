@@ -11,7 +11,7 @@
 #include "framework/util.h"
 
 
-#define MAX_SAMPLES (1024*2)
+#define MAX_SAMPLES (1024*4)
 #define STREAM_BUFFER_COUNT 10
 
 
