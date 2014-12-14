@@ -102,6 +102,7 @@ int decoderOgg_decode(DecoderOgg_State *s, short *out, int maxSamples, int loop)
     if (ret == 0) {
       if(loop){
         decoderOgg_reset(s);
+        s->remainingSilenceSamples = 0;
       }else{
         s->eof=1;
       }
