@@ -3,25 +3,29 @@ framework = framework or {}
 framework.Font = {
 new: maker (imagePath, texLoadFunc) =>
   chars = '!+-$abcdefghijklmnopqrstuvxyz1234567890,.'
+  symTable = {
+    '?': 'sym_q'
+    '£': 'sym_gbp'
+    '€': 'sym_euro'
+  }
   textures = {}
 
   string.gsub chars, '.', (c) ->
     textures[c] = texLoadFunc(imagePath..'/'..c)
-  textures['sym_q'] = texLoadFunc(imagePath..'/sym_q')
-
+  for k,v in pairs symTable
+    textures[v] = texLoadFunc(imagePath..'/'..v)
 
   tmpMat = _c_framework.Matrix2!
-
   reversing = false
-
   curWidth = 0
   curScale = 1
   pos = {}
   curAlpha = 1
   drawChar = (c) ->
-    c = c\lower!
-    if c == '?'
-      c = 'sym_q'
+    if symTable[c]
+      c = symTable[c]
+    else
+      c = c\lower!
     tex = textures[c]
     if c==' ' or not tex
       curWidth += curScale*20*(reversing and -1 or 1)
@@ -35,7 +39,6 @@ new: maker (imagePath, texLoadFunc) =>
       if not reversing
         curWidth+=math.ceil(tex.width*curScale)
       tex.draw tmpMat, curAlpha
-
 
   @drawString = (str, x=0, y=0, scale=1, reverse=false, tint, alpha) ->
     if tint
@@ -51,7 +54,7 @@ new: maker (imagePath, texLoadFunc) =>
       str = str\reverse!
     curWidth = 0
     curAlpha = alpha or 1
-    string.gsub str, '.', drawChar
+    string.gsub str, "[%z\1-\127\194-\244][\128-\191]*", drawChar
     if tint
       _c_framework.setTint 1,1,1
 
