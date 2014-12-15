@@ -249,7 +249,8 @@ RawBitmapData* loadImage(const char* inFilename){
 
   ret = unzLocateFile(uf, filename, 0);
   if(ret != UNZ_OK) {
-    trace("loadImage: Could not locate file");
+    trace("loadImage - Could not locate file:");
+    trace(filename);
     unzClose(uf);
     return NULL;
   }
