@@ -166,7 +166,7 @@ int callLuaFunc(int nParams, int nRet) {
 
 
 
-void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, const char* resourcePath, int useAssetZip) {
+void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, const char* resourcePath) {
   trace("---- APP INIT ----");
 
   /*
@@ -181,7 +181,7 @@ void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, c
 
   audioGlobalInit();
   dataStoreGlobalInit();
-  setResourcePath(resourcePath, useAssetZip);
+  setResourcePath(resourcePath);
 
   appBroken = 0;
   /*appPaused = 0;*/

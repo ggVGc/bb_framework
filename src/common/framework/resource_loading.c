@@ -1,20 +1,15 @@
 #include <stdlib.h>
+#include <sys/stat.h>
 #include <stdio.h>
 #include <string.h>
 #include <png.h>
 #include <zip.h>
 #include <unzip.h>
+#include <physfs.h>
 #include "resource_loading.h"
 #include "rawbitmapdata.h"
 #include "util.h"
 #include "assets.c"
-
-#define RESLOAD_EXTERNAL_ENABLED 0
-
-static char apkPath[2048];
-static int usingZip = 0;
-
-
 
 /*
 
@@ -45,161 +40,73 @@ static int usingZip = 0;
 */
 
 
+typedef struct BufFile{
+  int size;
+  int curPos;
+  char *buf;
+} BufFile;
 
-
-void png_zip_read(png_structrp png_ptr, png_bytep data, png_size_t length) {
-  unzFile uf = png_get_io_ptr(png_ptr);
-  png_ptr = png_ptr;
-  unzReadCurrentFile(uf, data, length);
+void BufFileRead(char *out, BufFile *bf, int length){
+  int bytesLeft = bf->size - bf->curPos;
+  int count = length<bytesLeft?length:bytesLeft;
+  memcpy(out, bf->buf+bf->curPos, count);
+  bf->curPos+=count;
 }
 
-void setResourcePath(const char* p, int useZip) {
+void png_buf_read(png_structrp png_ptr, png_bytep data, png_size_t length) {
+  BufFile *bf = png_get_io_ptr(png_ptr);
+  BufFileRead(data, bf, length);
+}
+
+void setResourcePath(const char* rootPath) {
   char msg[2048];
-  sprintf(msg, "Setting resource path: %s", p);
+  char path[4096];
+  sprintf(msg, "Setting resource path: %s", rootPath);
   trace(msg);
-  sprintf(apkPath, "%s", p);
-  usingZip = useZip;
+  PHYSFS_mount("", NULL, 1);
+  sprintf(path, "%s", rootPath);
+  PHYSFS_mount(path, NULL, 1);
+  sprintf(path, "%s%sassets.zip", rootPath, strlen(rootPath)==0?"":"/");
+  PHYSFS_mount(path, NULL, 1);
+  sprintf(path, "%s%sassets_framework.zip", rootPath, strlen(rootPath)==0?"":"/");
+  PHYSFS_mount(path, NULL, 1);
+  sprintf(path, "%s%sframework_src", rootPath, strlen(rootPath)==0?"":"/");
+  PHYSFS_mount(path, NULL, 1);
+  PHYSFS_permitSymbolicLinks(1);
 }
 
-int getFileSizeFromZip(const char* inPath){
-  int ret;
-  unzFile uf;
-  unz_file_info info;
-
-  // TODO: Should check for overflow.
-  char path[2048];
-  char msg[2048];
-  sprintf(path, "assets/%s", inPath);
-
-  uf = unzOpen(apkPath);
-
-  if(!uf){
-    sprintf(msg, "Invalid resource zip: %s", apkPath);
-    trace(msg);
-    return 0;
-  }
-
-  if(unzLocateFile(uf, path, 0)){
-    // Invalid file path
-    unzClose(uf);
-    return 0;
-  }
-
-  
-  info.uncompressed_size = -1;
-  unzGetCurrentFileInfo(uf, &info, NULL, 0, NULL, 0, NULL, 0);
-  ret =  info.uncompressed_size;
-  unzClose(uf);
-  return ret;
-}
-
-
+/*
 int getFileSize(const char *path){
-  if(usingZip){
-    return getFileSizeFromZip(path);
-  }else{
-    return -1;
-  }
+  PHYSFS_file* f = PHYSFS_openRead("myfile.txt");
+  int sz = PHYSFS_fileLength(f);
+  PHYSFS_close(f);
+  return sz;
 }
-
-int loadBytesIntoBuffer(const char *inPath, unsigned char *data, int bufferSize){
-  // TODO: Should check for overflow.
-  char path[2048];
-
-  unzFile uf = unzOpen(apkPath);
-
-  sprintf(path, "assets/%s", inPath);
-
-  if(unzLocateFile(uf, path, 0)){
-    // Invalid file path
-    return -1;
-  }
-  unzOpenCurrentFile(uf);
-  unzReadCurrentFile(uf, data, bufferSize);
-
-  unzCloseCurrentFile(uf);
-  unzClose(uf);
-  return 0;
-}
-
-
-
-
-unsigned char* loadBytesFromZip(const char* inPath, int* outSize){
-  unsigned char* data;
-  int size = getFileSizeFromZip(inPath);
-  if(size<=0){
-    return NULL;
-  }
-  data = (unsigned char*)malloc(size);
-  if(loadBytesIntoBuffer(inPath, data, size) !=0){
-    return NULL;
-  }
-
-  if (outSize != 0) {
-    *outSize = size;
-  }
-
-  return data;
-}
-
-
-unsigned char* loadBytesFromDisk(const char* path, int *sz) {
-  unsigned char *data;
-  FILE* f = fopen(path, "rb");
-  if(!f){
-    return 0;
-  }
-  fseek(f, 0, SEEK_END);
-  *sz = ftell(f);
-  fseek(f, 0, SEEK_SET);
-  data = malloc(*sz + 1);
-  fread(data, *sz, 1, f);
-  fclose(f);
-  return data;
-}
-
-unsigned char* loadBytesExternal(const char *inPath, int *sz){
-  char path[2048];
-  sprintf(path, "ext_assets/%s", inPath);
-  return loadBytesFromDisk(path, sz);
-}
-
-
+*/
 
 unsigned char* loadBytes(const char* path, int* sz){
   int i;
-  unsigned char *ret = 0;
-
-#ifdef RESLOAD_EXTERNAL_ENABLED
-  ret = loadBytesExternal(path, sz);
-  if(ret){
-    printf("Loaded ext asset: %s\n", path);
-    return ret;
-  }
-#endif
-
-  if(usingZip){
-    ret = loadBytesFromZip(path, sz);
-  }
-  else{
-    ret = loadBytesFromDisk(path, sz);
-  }
-
-  if(!ret){
+  unsigned char *outData = NULL;
+  if(PHYSFS_exists(path)){
+    PHYSFS_file* f = PHYSFS_openRead(path);
+    *sz = PHYSFS_fileLength(f);
+    outData = malloc(*sz);
+    int length_read = PHYSFS_readBytes(f, outData, *sz);
+    PHYSFS_close(f);
+  }else{
     for(i=0;i<ASSET_COUNT;++i){
       if(strcmp(path, ASSET_KEYS[i])==0){
         if (sz != 0) {
           *sz = ASSET_SIZES[i];
         }
-        ret = (unsigned char*)malloc(sizeof(unsigned char)*(ASSET_SIZES[i]));
-        memcpy(ret, ASSET_DATA[i], sizeof(unsigned char)*ASSET_SIZES[i]);
+        outData = (unsigned char*)malloc(ASSET_SIZES[i]);
+        memcpy(outData, ASSET_DATA[i], ASSET_SIZES[i]);
       }
     }
   }
 
 
-  return ret;
+  return outData;
 }
 
 
@@ -217,7 +124,7 @@ void multiplyPixelAt(int x,int y, int height,unsigned char *data){
 }
 
 RawBitmapData* loadImage(const char* inFilename){
-  unzFile uf;
+  BufFile bf;
   png_structp png_ptr;
   png_infop info_ptr;
   png_infop end_info;
@@ -235,49 +142,58 @@ RawBitmapData* loadImage(const char* inFilename){
   png_bytep * row_pointers;
   png_byte *image_data;
   int i, width, height;
-  RawBitmapData* d;
-  char filename[2048];
+  RawBitmapData* d = NULL;
   int x,y;
+  printf("loadimage: %s\n", inFilename);
+  /*
+  char filename[2048];
   sprintf(filename, "assets/%s", inFilename);
+  */
 
-
+  /*
   uf = unzOpen(apkPath);
-
   if(uf == NULL) {
     return NULL;
   }
+  */
 
+  /*
   ret = unzLocateFile(uf, filename, 0);
   if(ret != UNZ_OK) {
+  */
+
+  
+  bf.buf = loadBytes(inFilename, &bf.size);
+  bf.curPos = 0;
+  if(!bf.buf){
     trace("loadImage - Could not locate file:");
-    trace(filename);
-    unzClose(uf);
-    return NULL;
+    trace(inFilename);
+    goto cleanup;
   }
 
+  /*
   unzOpenCurrentFile(uf);
+  */
 
   //read the header for testing if it is a png
+  /*
   unzReadCurrentFile(uf, header, 8);
+  */
+  BufFileRead(header, &bf, sizeof(png_byte)*8);
+
 
   //test if png
   is_png = !png_sig_cmp(header, 0, 8);
   if (!is_png) {
     trace("Not a png file");
-    unzCloseCurrentFile(uf);
-    unzClose(uf);
-    //LOGE("Not a png file : %s", filename);
-    return NULL;
+    goto cleanup;
   }
 
   //create png struct
   png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
   if (!png_ptr) {
     trace("Could not create PNG read struct");
-    unzCloseCurrentFile(uf);
-    unzClose(uf);
-    //LOGE("Unable to create png struct : %s", filename);
-    return NULL;
+    goto cleanup;
   }
 
   //create png info struct
@@ -286,9 +202,7 @@ RawBitmapData* loadImage(const char* inFilename){
     trace("Could not create PNG info struct");
     png_destroy_read_struct(&png_ptr, (png_infopp) NULL, (png_infopp) NULL);
     //LOGE("Unable to create png info : %s", filename);
-    unzCloseCurrentFile(uf);
-    unzClose(uf);
-    return NULL;
+    goto cleanup;
   }
 
   //create png info struct
@@ -297,24 +211,19 @@ RawBitmapData* loadImage(const char* inFilename){
     trace("Could not create PNG end info struct");
     png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) NULL);
     //LOGE("Unable to create png end info : %s", filename);
-    unzCloseCurrentFile(uf);
-    unzClose(uf);
-    return NULL;
+    goto cleanup;
   }
 
   //png error stuff, not sure libpng man suggests this.
   if (setjmp(png_jmpbuf(png_ptr))) {
     trace("PNG: Failed setting error handler");
     png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
-    unzCloseCurrentFile(uf);
-    unzClose(uf);
     //LOGE("Error during setjmp : %s", filename);
-    return NULL;
+    goto cleanup;
   }
 
   //init png reading
-  //png_init_io(png_ptr, fp);
-  png_set_read_fn(png_ptr, uf, png_zip_read);
+  png_set_read_fn(png_ptr, &bf, png_buf_read);
 
   //let libpng know you already read the first 8 bytes
   png_set_sig_bytes(png_ptr, 8);
@@ -331,9 +240,7 @@ RawBitmapData* loadImage(const char* inFilename){
     sprintf(msg, "ERROR: Invalid PNG color type: %d (we only support type 6) - %s", color_type, inFilename);
     png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
     trace(msg);
-    unzCloseCurrentFile(uf);
-    unzClose(uf);
-    return NULL;
+    goto cleanup;
   }
 
 
@@ -353,9 +260,7 @@ RawBitmapData* loadImage(const char* inFilename){
     //clean up memory and close stuff
     png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
     //LOGE("Unable to allocate image_data while loading %s ", filename);
-    unzCloseCurrentFile(uf);
-    unzClose(uf);
-    return NULL;
+    goto cleanup;
   }
 
   //row_pointers is for pointing to image_data for reading the png with libpng
@@ -364,10 +269,7 @@ RawBitmapData* loadImage(const char* inFilename){
     //clean up memory and close stuff
     png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
     free(image_data);
-    //LOGE("Unable to allocate row_pointer while loading %s ", filename);
-    unzCloseCurrentFile(uf);
-    unzClose(uf);
-    return NULL;
+    goto cleanup;
   }
   // set the individual row_pointers to point at the correct offsets of image_data
   for (i = 0; i < height; ++i)
@@ -379,15 +281,9 @@ RawBitmapData* loadImage(const char* inFilename){
   d = (RawBitmapData*)malloc(sizeof(RawBitmapData));
   d->width = width;
   d->height = height;
-
   d->data = image_data;
-
   png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
-
   free(row_pointers);
-
-  unzCloseCurrentFile(uf);
-  unzClose(uf);
 
   for(x=0;x<width;++x){
     for(y=0;y<height;++y){
@@ -395,32 +291,33 @@ RawBitmapData* loadImage(const char* inFilename){
     }
   }
 
+cleanup:
+  if(bf.buf){
+    free(bf.buf);
+  }
   return d;
 }
 
 
 char* loadText(const char* path){
-  int i;
-  unsigned char* data = 0;
-  int size = getFileSizeFromZip(path);
-  if(size>0){
-    data = (unsigned char*)malloc(size+1);
-    if(loadBytesIntoBuffer(path, data, size) !=0){
-      free(data);
-      return NULL;
-    }
-  }else{
+  int size;
+  unsigned char* data = loadBytes(path, &size);
+  if(!data){
+    int i;
     for(i=0;i<ASSET_COUNT;++i){
       if(strcmp(path, ASSET_KEYS[i])==0){
         size = ASSET_SIZES[i];
-        data = (unsigned char*)malloc(sizeof(unsigned char)*(size+1));
-        memcpy(data, ASSET_DATA[i], sizeof(unsigned char)*size);
+        data = (unsigned char*)malloc(size);
+        memcpy(data, ASSET_DATA[i], size);
         break;
       }
     }
   }
   if(data){
-    data[size] = '\0';
+    data = realloc(data, size+1);
+    if(data){
+      data[size] = '\0';
+    }
   }
 
   return (char*)data;

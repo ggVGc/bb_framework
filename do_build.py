@@ -113,6 +113,9 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
 def buildCoreMod():
   return buildLib("bin/libcoremod.a", ["./deps/common/coremod/src", "./deps/common/coremod/src/loaders"], [], "-I./deps/common/coremod/src -I./deps/common/coremod/include -DLIBXMP_CORE_PLAYER")
 
+def buildPhysFS():
+  return buildLib("bin/libphysfs.a", ["./deps/common/physfs/src"], [], "-I./deps/common/physfs/src")
+
 def buildLua():
   return buildLib("bin/libluaa.a", ["./deps/common/lua"], [], "")
 
@@ -169,10 +172,11 @@ def buildFramework():
       "-I./deps/common/glfw/include",
       "-I./deps/common/libogg/include",
       "-I./deps/common/libvorbis/include",
-      "-I./deps/common/coremod/include"
+      "-I./deps/common/coremod/include",
+      "-I./deps/common/physfs/src"
       ])
 
-  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3 -lvorbisa -logga'
+  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3 -lvorbisa -logga -lphysfs'
   commonLibString += ' -lluajit '
   cflags += ' -I./deps/common/luajit/src '
   if sys.platform == "darwin":
@@ -210,6 +214,8 @@ if __name__ == '__main__':
       ret = buildPng()
     if ret == 0:
       ret = buildCoreMod()
+    if ret == 0:
+      ret = buildPhysFS()
   if ret == 0 and not 'only_libs' in sys.argv:
     ret = buildFramework()
   else:

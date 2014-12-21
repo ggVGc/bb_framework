@@ -4,11 +4,10 @@
 #include "rawbitmapdata.h"
 
 
-void setResourcePath(const char* path, int useZip);
+void setResourcePath(const char* path);
 int loadBytesIntoBuffer(const char *inPath, unsigned char *data, int bufferSize);
 unsigned char* loadBytes(const char* path, int* sz);
 char* loadText(const char* path);
 RawBitmapData* loadImage(const char* filePath);
-int getFileSizeFromZip(const char* inPath);
 
 #endif

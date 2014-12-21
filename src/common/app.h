@@ -9,7 +9,7 @@ extern "C" {
 #include <lua.h>
 
 // The simple framework expects the application code to define these functions.
-extern void appInit(int wasSuspended, int framebufferWidth, int framebufferHeight, const char* assetPath, int useAssetZip);
+extern void appInit(int wasSuspended, int framebufferWidth, int framebufferHeight, const char* assetPath);
 extern void appDeinit(void);
 extern void appSetPaused(int paused, int pauseAudio);
 extern void appSuspend(void);

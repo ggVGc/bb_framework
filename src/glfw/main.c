@@ -32,21 +32,18 @@
 
 
 #define glError() { \
-    GLenum err = glGetError(); \
-    while (err != GL_NO_ERROR) { \
-        fprintf(stderr, "glError: %s caught at %s:%u\n", (char *)gluErrorString(err), __FILE__, __LINE__); \
-        err = glGetError(); \
-    } \
+  GLenum err = glGetError(); \
+  while (err != GL_NO_ERROR) { \
+    fprintf(stderr, "glError: %s caught at %s:%u\n", (char *)gluErrorString(err), __FILE__, __LINE__); \
+    err = glGetError(); \
+  } \
 }
-
-
 
 const int SCREEN_WIDTH = 960;
 const int SCREEN_HEIGHT = 640;
 
-
 static void error_callback(int error, const char* description) {
-    fputs(description, stderr);
+  fputs(description, stderr);
 }
 
 static int paused = 0;
@@ -116,19 +113,18 @@ static void cursor_pos_callback(GLFWwindow* window, double x, double y) {
 }
 
 int main(int argc, char **argv) {
-	#define PATH_SIZE 2048
+  PHYSFS_init(argv[0]);
+  #define PATH_SIZE 2048
   GLFWwindow* window;
   time_t curTime, delta, lastTime;
-    const char *assets = "assets.zip";
   char execPath[PATH_SIZE+1];
   char fullPath[PATH_SIZE+1];
   char assetPath[PATH_SIZE+1];
   char *filePartPtr;
   int width, height;
-	  int screenW, screenH;
+  int screenW, screenH;
 
   glfwSetErrorCallback(error_callback);
-
 
   if (!glfwInit()){
     exit(EXIT_FAILURE);
@@ -151,13 +147,10 @@ int main(int argc, char **argv) {
 
   glfwSwapInterval(1);
 
-
 #if defined(__APPLE__) || defined(WIN32)
   #ifndef PATH_MAX
     #define PATH_MAX MAX_PATH
   #endif
-
-
 
 #ifdef __APPLE__
     uint32_t pathSize = PATH_SIZE;
@@ -178,28 +171,30 @@ int main(int argc, char **argv) {
   }
   realpath(execPath, fullPath);
   printf("Real path: %s\n", fullPath);
-  sprintf(assetPath, "%s/%s", dirname(fullPath), assets);
+  sprintf(assetPath, "%s", dirname(fullPath));
   chdir(dirname(fullPath));
   #else
     GetModuleFileName(0, execPath, 512);
 	GetFullPathName(execPath, 512, fullPath, &filePartPtr);
 	*filePartPtr = '\0';
-	sprintf(assetPath, "%s%s", fullPath, assets);
+	sprintf(assetPath, "%s", fullPath);
 	/*printf("%s", assetPath);*/
   #endif
 #else
-  strcpy(assetPath, "assets.zip");
+  strcpy(assetPath, "");
 #endif
-
-
   
   glfwGetWindowSize(window, &screenW, &screenH);
   setScreenWidth(screenW);
   setScreenHeight(screenH);
   
   glfwGetFramebufferSize(window, &width, &height);
-  appInit(0, width, height, assetPath, 1);
-
+  if(argc>=2){
+    realpath(argv[1], fullPath);
+    appInit(0, width, height, fullPath);
+  }else{
+    appInit(0, width, height, assetPath);
+  }
 
   lastTime = _getTime();
   while (!glfwWindowShouldClose(window)) {
@@ -218,7 +213,7 @@ int main(int argc, char **argv) {
     if(shouldReload){
       shouldReload = 0;
       printf(assetPath);
-      appInit(1, width, height, assetPath, 1);
+      appInit(1, width, height, assetPath);
       paused = 0;
     }
 
@@ -241,6 +236,7 @@ int main(int argc, char **argv) {
       paused = 1;
     }
   }
+
   appDeinit();
   fflush(stdout);
 
@@ -249,12 +245,8 @@ int main(int argc, char **argv) {
   exit(EXIT_SUCCESS);
 }
 
-
-void startProfiler(){
-}
-
-void stopProfiler(){
-}
+void startProfiler(){}
+void stopProfiler(){}
 
 int getScreenRefreshRate(){
   return 60;

@@ -52,7 +52,7 @@ def handleMoonFiles(zipOut, r, prefix, filePaths, stripCode):
       sourceMappings+='["%s"]={%s},'%(fileKey, translateMapping(mapping))
 
     if not stripCode:
-      zipOut.write(luaFilePath, os.path.join("assets", prefix, rp))
+      zipOut.write(luaFilePath, os.path.join(prefix, rp))
       os.remove(luaFilePath)
 
   return sourceMappings
@@ -86,7 +86,7 @@ def zipDir(zipOut, r, stripCode=False, prefix=""):
           moonFiles.append(p)
         else:
           #print rp, '<-', p
-          zipOut.write(p, os.path.join("assets", prefix, rp))
+          zipOut.write(p, os.path.join(prefix, rp))
   return handleMoonFiles(zipOut, r, prefix, moonFiles, stripCode)
 
 
@@ -128,7 +128,7 @@ if __name__ == '__main__':
   with open('moon_source_mappings.lua', 'w') as out:
     out.write('return {%s}'%moonSourceMappings.replace("\\", "/"));
   if not stripCode:
-    zipOutFile.write('moon_source_mappings.lua', os.path.join('assets', 'moon_source_mappings.lua'))
+    zipOutFile.write('moon_source_mappings.lua', 'moon_source_mappings.lua')
   os.remove('moon_source_mappings.lua')
 
   zipOutFile.close() 
