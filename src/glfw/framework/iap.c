@@ -20,3 +20,7 @@ int iapCanRestorePurchases(){
 void iapRestorePurchases(void){
   onPurchaseComplete(1);
 }
+
+int iapAvailable(){
+  return 0;
+}

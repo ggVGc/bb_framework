@@ -7,6 +7,7 @@ const char* getProductPrice(const char *id);
 void onPurchaseComplete(int success);
 int iapCanRestorePurchases(void);
 void iapRestorePurchases(void);
+int iapAvailable(void);
 
 
 

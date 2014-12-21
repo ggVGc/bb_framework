@@ -131,17 +131,20 @@ NSLog(@"Invalid product: %@", invalidIdentifier);
 
 
 int userOwnsProduct(const char *productId){
-  /*
-  for(NSString *s in persistor->ownedProducts){
-    if(0 == strcmp([s UTF8String], productId)){
-      return 1;
-    }
-  }
-  */
+  //TODO: Disabled for now
+  return 0;
+}
+/*
+int userOwnsProduct(const char *productId){
   return [persistor countProductOfdentifier:[NSString stringWithUTF8String:productId]]>0;
 }
+*/
 
 
+void purchaseProduct(const char *productId){
+  //TODO: Disabled for now
+}
+/*
 void purchaseProduct(const char *productId){
   //alert(@"Purchasing", idStr);
   NSString *idStr = [NSString stringWithUTF8String:productId];
@@ -151,12 +154,9 @@ void purchaseProduct(const char *productId){
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
   NSString *attempted = [defaults objectForKey:@"didAttemptPurchase"];
   if(attempted){
-    [[RMStore defaultStore] addPayment:idStr success:^(SKPaymentTransaction *transaction) {
-      //alert(@"", @"Product purchased");
-      /*
-      onPurchaseComplete(1);
-      */
-    } failure:^(SKPaymentTransaction *transaction, NSError *error) {
+    [[RMStore defaultStore] addPayment:idStr
+    success:^(SKPaymentTransaction *transaction) {}
+    failure:^(SKPaymentTransaction *transaction, NSError *error) {
       NSLog(@"Something went wrong");
       onPurchaseComplete(0);
       [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
@@ -176,6 +176,7 @@ void purchaseProduct(const char *productId){
     }];
   }
 }
+*/
 
 
 const char* getProductPrice(const char *productId){
@@ -198,9 +199,13 @@ const char* getProductPrice(const char *productId){
 }
 
 int iapCanRestorePurchases(void){
-  return 1;
+  return 0;
 }
 
+void iapRestorePurchases(void){
+  //TODO: Disabled for now
+}
+/*
 void iapRestorePurchases(void){
   appSetPaused(1, 1);
   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -212,5 +217,10 @@ void iapRestorePurchases(void){
   } failure:^(NSError *error) {
       onPurchaseComplete(0);
   }];
+}
+*/
+
+int iapAvailable(){
+  return 0;
 }
 

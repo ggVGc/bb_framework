@@ -157,7 +157,9 @@ return ((double)(mach_absolute_time() - timeZero))
   self = [super initWithCoder:coder];
   if (self) {        
     ignoreLastTick = false;
+    /*
     iap = [[IAP alloc] init];
+    */
     touchArr = [[NSMutableArray alloc] init];
     self.multipleTouchEnabled = true;
     mach_timebase_info( &timeBase );

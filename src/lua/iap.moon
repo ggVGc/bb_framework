@@ -25,6 +25,9 @@ framework.IAP = {
   restorePurchases: (callback)->
     framework.IAP.callback = callback
     _c_framework.iapRestorePurchases!
+
+  available: ->
+    return _c_framework.iapAvailable()==1
 }
 
 framework.IAP

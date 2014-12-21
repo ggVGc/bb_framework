@@ -2,7 +2,7 @@ package com.spacekomodo.berrybounce;
 
 
 public class AppConfig{
-  public static final boolean development = true;
+  public static final boolean development = false;
   public static final String packageName = "com.spacekomodo.berrybounce";
 
   public static class iap{
