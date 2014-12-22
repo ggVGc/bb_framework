@@ -63,8 +63,9 @@ void setResourcePath(const char* rootPath) {
   char path[4096];
   sprintf(msg, "Setting resource path: %s", rootPath);
   trace(msg);
-  PHYSFS_mount("", NULL, 1);
   sprintf(path, "%s", rootPath);
+  PHYSFS_mount(path, NULL, 1);
+  sprintf(path, "%s%sassets", rootPath, strlen(rootPath)==0?"":"/");
   PHYSFS_mount(path, NULL, 1);
   sprintf(path, "%s%sassets.zip", rootPath, strlen(rootPath)==0?"":"/");
   PHYSFS_mount(path, NULL, 1);
@@ -72,7 +73,11 @@ void setResourcePath(const char* rootPath) {
   PHYSFS_mount(path, NULL, 1);
   sprintf(path, "%s%sframework_src", rootPath, strlen(rootPath)==0?"":"/");
   PHYSFS_mount(path, NULL, 1);
-  PHYSFS_permitSymbolicLinks(1);
+  PHYSFS_mount("assets.zip", NULL, 1);
+  PHYSFS_mount("framework_src", NULL, 1);
+  PHYSFS_mount("", NULL, 1);
+  PHYSFS_mount("assets", NULL, 1);
+  PHYSFS_mount("compiled", NULL, 1);
 }
 
 /*

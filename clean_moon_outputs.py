@@ -9,6 +9,9 @@ def cleanMoonOutputs(path):
         luaPath = p.replace('.moon', '.lua')
         if os.path.exists(luaPath):
           os.remove(luaPath)
+        luaPath = p.replace('.moon', '.luac')
+        if os.path.exists(luaPath):
+          os.remove(luaPath)
 
 
 

@@ -83,9 +83,11 @@ static int _wrap_loadByteString(lua_State* L) {
   int sz;
   const char *path = lua_tostring(L, -1);
   char* result = loadBytes(path, &sz);
-  lua_pushlstring(L, result, sz);
   if(result){
+    lua_pushlstring(L, result, sz);
     free(result);
+  }else{
+    lua_pushnil(L);
   }
   return 1;
 }

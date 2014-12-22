@@ -33,10 +33,9 @@ def processPath(path, prefix=''):
 appPath = PJ("..", "bounce")
 frameworkSrcPath = PJ('src', 'lua')
 
-processPath(appPath)
-processPath(frameworkSrcPath, 'framework')
-
-
+if not '-e' in sys.argv:
+  processPath(appPath)
+  processPath(frameworkSrcPath, 'framework')
 
 if __name__ == '__main__':
   with open(PJ('src', 'gen', 'assets.c'), 'w') as f:
