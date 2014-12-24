@@ -252,3 +252,7 @@ int getScreenRefreshRate(){
   return 60;
 }
 
+void giftizCompleteMission(void){
+  trace("GIFTIZ COMPLETE MISSION");
+}
+

@@ -306,6 +306,7 @@ dofile({"framework/globals.moon",
 'framework/iap.moon',
 'framework/fps_counter.lua',
 'framework/object_proxy.lua',
+'framework/giftiz.moon',
 })
 
 dofile "main.moon"

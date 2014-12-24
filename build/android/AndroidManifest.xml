@@ -35,5 +35,9 @@
         <meta-data android:value="@string/facebook_app_id" android:name="com.facebook.sdk.ApplicationId"/>
         <meta-data android:name="ADFLAKE_KEY" android:value="541ee0b3a391bc8b063e453a" />
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+        <meta-data android:name="GIFTIZ_PARTNER_KEY" android:value="TEST_PARTNER_KEY"/>
+
+        <activity android:name="com.purplebrain.giftiz.sdk.GiftizWebViewActivity" />
+
     </application>
 </manifest> 

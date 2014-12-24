@@ -1,5 +1,7 @@
 package com.spacekomodo.berrybounce;
 
+import com.purplebrain.giftiz.sdk.GiftizSDK;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Scanner;

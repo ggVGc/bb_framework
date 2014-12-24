@@ -23,10 +23,13 @@ import com.purplebrain.adbuddiz.sdk.AdBuddizDelegate;
 import com.purplebrain.adbuddiz.sdk.AdBuddizError;
 import com.purplebrain.adbuddiz.sdk.AdBuddizLogLevel;
 
+import com.purplebrain.giftiz.sdk.GiftizSDK;
+
 public class MainActivity extends Activity{
   public static final String TAG = "MainActivity";
 
   public static Context appContext;
+  public static Activity curActivityInstance;
 
   private GLView view;
   //private boolean facebookAvailable = false;
@@ -49,6 +52,7 @@ public class MainActivity extends Activity{
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    curActivityInstance = this;
     appContext = getApplicationContext();
     Log.i(TAG,"Activity: Create");
     requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -187,6 +191,7 @@ public class MainActivity extends Activity{
     Chartboost.onPause(this);
     */
     view.onPause();
+    GiftizSDK.onPauseMainActivity(this);
   }
 
   @Override
@@ -200,6 +205,7 @@ public class MainActivity extends Activity{
     Chartboost.onResume(this);
     */
     view.onResume();
+    GiftizSDK.onResumeMainActivity(this);
   }
 
 
@@ -219,6 +225,10 @@ public class MainActivity extends Activity{
     /*
     Chartboost.onStop(this);
     */
+  }
+
+  static void giftizCompleteMission(){
+    GiftizSDK.missionComplete(MainActivity.curActivityInstance);
   }
 
 

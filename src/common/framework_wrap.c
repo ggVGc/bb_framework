@@ -7936,6 +7936,22 @@ fail:
 }
 
 
+static int _wrap_giftizCompleteMission(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("giftizCompleteMission",0,0)
+  giftizCompleteMission();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_screenWidth(lua_State* L) {
   int SWIG_arg = 0;
   int result;
@@ -8246,6 +8262,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "iapCanRestorePurchases", _wrap_iapCanRestorePurchases},
     { "iapRestorePurchases", _wrap_iapRestorePurchases},
     { "iapAvailable", _wrap_iapAvailable},
+    { "giftizCompleteMission", _wrap_giftizCompleteMission},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},

@@ -114,9 +114,11 @@ void buffer_callback(SLAndroidSimpleBufferQueueItf bq, void *context){
   short *buf = pa->buffers[pa->bufReadIndex];
   int sz = pa->bufferSizes[pa->bufReadIndex];
   if(sz>0){
+    /*
     trace("Audio: Loading new buffer");
     traceInt(pa->bufReadIndex);
     traceInt(sz);
+    */
     SLresult res = (*pa->bufferQueue)->Enqueue(pa->bufferQueue, buf, sz);
     CheckErr(res);
     ++pa->readCounter;
