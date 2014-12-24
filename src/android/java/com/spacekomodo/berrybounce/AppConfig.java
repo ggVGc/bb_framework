@@ -17,7 +17,8 @@ public class AppConfig{
   }
 
   public static class AdBuddiz{
-    public static final String publisherKey = "TEST_PUBLISHER_KEY";
+    //public static final String publisherKey = "TEST_PUBLISHER_KEY";
+    public static final String publisherKey = "09e379bc-c54e-4f96-a916-f3e1becc5fc8";
     public static final boolean testing = development;
   }
 
