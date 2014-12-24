@@ -62,3 +62,5 @@ glob:bin/*.txt
 glob:bin/data
 glob:bin/framework_src
 glob:bin/compiled
+glob:GiftizSDKLibrary/gen
+glob:GiftizSDKLibrary/bin
