@@ -116,20 +116,24 @@ public class GLRenderer implements GLSurfaceView.Renderer {
       GLView.appSetPaused(1, 0);
     }
 
+    /*
     if(activity.chartboostDelegate.events.size()!=0){
       int e = activity.chartboostDelegate.events.remove().intValue();
+    */
+    if(activity.adBuddizDel.events.size()!=0){
+      int e = activity.adBuddizDel.events.remove().intValue();
       Log.i(TAG, "Handling chartboost event: "+e);
       switch (e){
-        case ChartboostDelegateImp.Event.closed:
+        case AdMediator.Event.closed:
           activity.interstitialClosed();
           break;
-        case ChartboostDelegateImp.Event.clicked:
+        case AdMediator.Event.clicked:
           activity.interstitialClosed();
           break;
-        case ChartboostDelegateImp.Event.failedDisplay:
+        case AdMediator.Event.failedDisplay:
           activity.interstitialFailedDisplay();
           break;
-        case ChartboostDelegateImp.Event.displayed:
+        case AdMediator.Event.displayed:
           activity.interstitialDisplayed();
           break;
       }

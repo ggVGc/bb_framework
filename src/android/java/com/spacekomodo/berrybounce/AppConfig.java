@@ -16,6 +16,11 @@ public class AppConfig{
     public static final String appSignature = "57f6d5ff55b433c3eb75b0fd9261ef781c5e4f26";
   }
 
+  public static class AdBuddiz{
+    public static final String publisherKey = "TEST_PUBLISHER_KEY";
+    public static final boolean testing = development;
+  }
+
   public static class adFlake{
     public static final boolean testMode = development;
     public static final String sdkKey = "541ee0b3a391bc8b063e453a";

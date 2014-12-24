@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.partner.example"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="1" android:targetSdkVersion="19" />
+    
+    <!-- Mandatory permission -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Optional, but without them, you might get less ads and tracking could be less accurate -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:allowBackup="false"
+        android:label="AdBuddiz SDK Example Partner"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        
+        <activity android:name="com.partner.example.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Add this activity with this theme --> 
+        <activity android:name="com.purplebrain.adbuddiz.sdk.AdBuddizActivity"
+                  android:theme="@android:style/Theme.Translucent" />
+
+	</application>
+
+</manifest>

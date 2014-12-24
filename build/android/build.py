@@ -41,7 +41,7 @@ if len(errlines) == 0:
     shutil.rmtree("assets")
   #shutil.copytree("../../../bounce", "assets") 
   #shutil.copytree("../../src/lua", "assets/framework") 
-  os.system('unzip ../../bin/assets.zip -d .')
+  os.system('unzip ../../bin/assets.zip -d assets')
   for root, dirs, files in os.walk('assets'):
     for f in files:
       if f.endswith('.moon'):
@@ -49,9 +49,9 @@ if len(errlines) == 0:
 
   if os.system("ant debug") == 0:
     adb = "~/stuff/work/android/adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb "
-    os.system(adb+" -d install -r bin/FrameworkTest-debug.apk")
-    os.system(adb+" -d shell am kill com.spacekomodo.berrybounce/.MainActivity")
-    os.system(adb+" -d shell am start -n com.spacekomodo.berrybounce/.MainActivity")
+    os.system(adb+"  install -r bin/FrameworkTest-debug.apk")
+    os.system(adb+"  shell am kill com.spacekomodo.berrybounce/.MainActivity")
+    os.system(adb+"  shell am start -n com.spacekomodo.berrybounce/.MainActivity")
 else:
   for e in errlines:
     fileName = e[:e.find(":")]

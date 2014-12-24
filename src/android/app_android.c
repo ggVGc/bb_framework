@@ -74,9 +74,10 @@ Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject 
   __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "resize w=%d h=%d", w, h);
   if(didInit != 1){
     trace("Android: appInit");
+    PHYSFS_init(NULL);
     setScreenWidth(w);
     setScreenHeight(h);
-    appInit(wasSuspended, w, h, apkPath, 1);
+    appInit(wasSuspended, w, h, apkPath);
     didInit = 1;
   }
 }
@@ -348,4 +349,8 @@ int iapCanRestorePurchases(void){
   return 0;
 }
 void iapRestorePurchases(void){
+}
+
+int iapAvailable(){
+  return 1;
 }

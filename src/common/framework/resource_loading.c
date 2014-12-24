@@ -11,6 +11,12 @@
 #include "util.h"
 #include "assets.c"
 
+
+enum{
+  TMP_PATH_SIZE = 4096
+};
+
+
 /*
 
    unsigned long hex2int(char *a, unsigned int len){
@@ -63,21 +69,22 @@ void setResourcePath(const char* rootPath) {
   char path[4096];
   sprintf(msg, "Setting resource path: %s", rootPath);
   trace(msg);
+  PHYSFS_mount(rootPath, NULL, 1); // for android, since the APK contains a folder called assets
   sprintf(path, "%s", rootPath);
-  PHYSFS_mount(path, NULL, 1);
+  PHYSFS_mount(path, "assets", 1);
   sprintf(path, "%s%sassets", rootPath, strlen(rootPath)==0?"":"/");
-  PHYSFS_mount(path, NULL, 1);
+  PHYSFS_mount(path, "assets", 1);
   sprintf(path, "%s%sassets.zip", rootPath, strlen(rootPath)==0?"":"/");
-  PHYSFS_mount(path, NULL, 1);
+  PHYSFS_mount(path, "assets", 1);
   sprintf(path, "%s%sassets_framework.zip", rootPath, strlen(rootPath)==0?"":"/");
-  PHYSFS_mount(path, NULL, 1);
+  PHYSFS_mount(path, "assets", 1);
   sprintf(path, "%s%sframework_src", rootPath, strlen(rootPath)==0?"":"/");
-  PHYSFS_mount(path, NULL, 1);
-  PHYSFS_mount("assets.zip", NULL, 1);
-  PHYSFS_mount("framework_src", NULL, 1);
-  PHYSFS_mount("", NULL, 1);
-  PHYSFS_mount("assets", NULL, 1);
-  PHYSFS_mount("compiled", NULL, 1);
+  PHYSFS_mount(path, "assets", 1);
+  PHYSFS_mount("assets.zip", "assets", 1);
+  PHYSFS_mount("framework_src", "assets", 1);
+  PHYSFS_mount("", "assets", 1);
+  PHYSFS_mount("assets", "assets", 1);
+  PHYSFS_mount("compiled", "assets", 1);
 }
 
 /*
@@ -89,9 +96,15 @@ int getFileSize(const char *path){
 }
 */
 
-unsigned char* loadBytes(const char* path, int* sz){
-  int i;
+unsigned char* loadBytes(const char* inPath, int* sz){
   unsigned char *outData = NULL;
+  char path[TMP_PATH_SIZE];
+  if(strlen(inPath)+8>=TMP_PATH_SIZE){
+    trace("loadBytes - Path is too long");
+    return NULL;
+  }
+  sprintf(path, "assets/%s", inPath);
+  int i;
   if(PHYSFS_exists(path)){
     PHYSFS_file* f = PHYSFS_openRead(path);
     *sz = PHYSFS_fileLength(f);
@@ -100,7 +113,7 @@ unsigned char* loadBytes(const char* path, int* sz){
     PHYSFS_close(f);
   }else{
     for(i=0;i<ASSET_COUNT;++i){
-      if(strcmp(path, ASSET_KEYS[i])==0){
+      if(strcmp(inPath, ASSET_KEYS[i])==0){
         if (sz != 0) {
           *sz = ASSET_SIZES[i];
         }
@@ -109,8 +122,10 @@ unsigned char* loadBytes(const char* path, int* sz){
       }
     }
   }
-
-
+  if(!outData){
+    trace("Could not locate file:");
+    trace(inPath);
+  }
   return outData;
 }
 

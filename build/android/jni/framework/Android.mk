@@ -28,7 +28,7 @@ include $(PREBUILT_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_ARM_MODE  := arm
 
-LOCAL_STATIC_LIBRARIES := minizip libluajit libpng bstring coremod libvorbis libogg
+LOCAL_STATIC_LIBRARIES := minizip libluajit libpng bstring coremod libvorbis libogg physfs
 #LOCAL_STATIC_LIBRARIES := minizip libpng bstring coremod libvorbis libogg
 #LOCAL_SHARED_LIBRARIES := libluajit
 
@@ -45,6 +45,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/bstring/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/coremod/include/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libogg/include/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/libvorbis/include/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/physfs/src/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/deps/common/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/common/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/android/

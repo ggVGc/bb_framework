@@ -60,3 +60,5 @@ glob:._*
 glob:*:Zone.Identifier
 glob:bin/*.txt
 glob:bin/data
+glob:bin/framework_src
+glob:bin/compiled

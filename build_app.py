@@ -115,14 +115,15 @@ else:
       if not os.path.exists(d):
         os.makedirs(d)
       shutil.copy(f, dest)
+      os.remove(f)
 
   copyMoonFiles(appMoonFiles, rootPath)
   copyMoonFiles(frameworkMoonFiles, frameworkSrcPath, 'framework')
 
-  if ('-f', '') in opts:
+  frameworkDest = os.path.join('bin', 'framework_src', 'framework')
+  if ('-f', '') in opts or not os.path.exists(frameworkDest):
     if not os.path.exists(os.path.join('bin', 'framework_src')):
       os.makedirs(os.path.join('bin', 'framework_src'))
-    frameworkDest = os.path.join('bin', 'framework_src', 'framework')
     if os.path.exists(frameworkDest):
       shutil.rmtree(frameworkDest)
     shutil.copytree(frameworkSrcPath, frameworkDest)

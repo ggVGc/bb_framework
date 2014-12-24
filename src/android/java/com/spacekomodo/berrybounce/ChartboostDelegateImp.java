@@ -11,14 +11,6 @@ import com.chartboost.sdk.Model.CBError.CBImpressionError;
 
 public  class ChartboostDelegateImp extends ChartboostDelegate{
 
-  public static final class Event{
-    public static final int none = 0;
-    public static final int closed = 1;
-    public static final int displayed = 2;
-    public static final int failedDisplay = 3;
-    public static final int clicked = 4;
-  }
-
   private static final String TAG = "Chartboost";
   public LinkedList<Integer> events = new LinkedList<Integer>();
 
@@ -41,21 +33,21 @@ public  class ChartboostDelegateImp extends ChartboostDelegate{
   @Override
   public void didClickInterstitial(String location) {
     Log.i(TAG, "DID CLICK INTERSTITIAL: "+ (location != null ? location : "null"));
-    setEvent(Event.clicked);
+    setEvent(AdMediator.Event.clicked);
   }
 
 
   @Override
   public void didDisplayInterstitial(String location) {
     Log.i(TAG, "DID DISPLAY INTERSTITIAL: " +  (location != null ? location : "null"));
-    setEvent(Event.displayed);
+    setEvent(AdMediator.Event.displayed);
   }
 
 
   @Override
   public void didCloseInterstitial(String location) {
     Log.i(TAG, "DID CLOSE INTERSTITIAL: "+ (location != null ? location : "null"));
-    setEvent(Event.closed);
+    setEvent(AdMediator.Event.closed);
   }
 
 
@@ -72,7 +64,7 @@ public  class ChartboostDelegateImp extends ChartboostDelegate{
   public void didFailToLoadInterstitial(String location, CBImpressionError error) {
     Log.i(TAG, "DID FAIL TO LOAD INTERSTITIAL '"+ (location != null ? location : "null")+ " Error: " + error.name());
     if(!cacheing){
-      setEvent(Event.failedDisplay);
+      setEvent(AdMediator.Event.failedDisplay);
     }
     cacheing = false;
   }
