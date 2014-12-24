@@ -6,9 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
+
+import com.purplebrain.giftiz.sdk.GiftizSDK.Inner.ButtonNeedsUpdateDelegate;
 
 /*
 import com.chartboost.sdk.Chartboost;
@@ -25,11 +31,11 @@ import com.purplebrain.adbuddiz.sdk.AdBuddizLogLevel;
 
 import com.purplebrain.giftiz.sdk.GiftizSDK;
 
-public class MainActivity extends Activity{
+public class MainActivity extends Activity implements ButtonNeedsUpdateDelegate{
   public static final String TAG = "MainActivity";
 
   public static Context appContext;
-  public static Activity curActivityInstance;
+  public static MainActivity curActivityInstance;
 
   private GLView view;
   //private boolean facebookAvailable = false;
@@ -42,6 +48,8 @@ public class MainActivity extends Activity{
   /*
   private UiLifecycleHelper uiHelper;
   */
+  
+  public ImageView giftizButton;
 
   static {
     System.loadLibrary("jumpz_framework");
@@ -62,8 +70,9 @@ public class MainActivity extends Activity{
 
     iap = new IAP(this);
 
+    RelativeLayout rootLayout = new RelativeLayout(this);
     view = new GLView(this);
-    setContentView(view);
+    setContentView(rootLayout);
 
 /*
     chartboostDelegate = new ChartboostDelegateImp();
@@ -85,7 +94,40 @@ public class MainActivity extends Activity{
     uiHelper = new UiLifecycleHelper(this, null);
     uiHelper.onCreate(savedInstanceState);
     */
+
+    giftizButton = new ImageView(this);
+    giftizButton.setOnClickListener(new OnClickListener() {
+      @Override public void onClick(View v) {
+          GiftizSDK.Inner.buttonClicked(MainActivity.this);
+      }
+    });
+    rootLayout.addView(view);
+    rootLayout.addView(giftizButton);
+    RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT); //The WRAP_CONTENT parameters can be replaced by an absolute width and height or the FILL_PARENT option)
+    lp.topMargin = 4;
+    lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+    giftizButton.setLayoutParams(lp);
+    updateButtonImage();
+    giftizButton.setVisibility(View.GONE);
   }
+	@Override // Callback to update button
+	public void buttonNeedsUpdate() {
+		updateButtonImage();
+	}
+
+	public void updateButtonImage() { // pick the right button image according to the button status
+        switch (GiftizSDK.Inner.getButtonStatus(this)) {
+        case ButtonInvisible : giftizButton.setVisibility(View.GONE);break;
+        case ButtonNaked : giftizButton.setImageResource(R.drawable.giftiz_logo);break;
+        case ButtonBadge : giftizButton.setImageResource(R.drawable.giftiz_logo_badge);break;
+        case ButtonWarning : giftizButton.setImageResource(R.drawable.giftiz_logo_warning);break;
+        }
+	}
+    
+    public void missionCompleted(View v) {
+    	GiftizSDK.missionComplete(this);
+    }
+
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -118,7 +160,7 @@ public class MainActivity extends Activity{
     chartboostDelegate.onStart();
     */
     //facebookAvailable = FacebookDialog.canPresentShareDialog(getApplicationContext(),  FacebookDialog.ShareDialogFeature.SHARE_DIALOG);
-  }
+    }
 
   public void prepareInterstitial(){
     //Chartboost.cacheInterstitial(CBLocation.LOCATION_DEFAULT);
@@ -229,6 +271,16 @@ public class MainActivity extends Activity{
 
   static void giftizCompleteMission(){
     GiftizSDK.missionComplete(MainActivity.curActivityInstance);
+  }
+
+  static void giftizSetButtonVisible(final int v){
+    final MainActivity a = MainActivity.curActivityInstance;
+    a.runOnUiThread(new Runnable() {
+      public void run() {
+        a.giftizButton.setVisibility(v==1?View.VISIBLE:View.GONE);
+        a.updateButtonImage();
+      }
+    });
   }
 
 

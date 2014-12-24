@@ -7952,6 +7952,25 @@ fail:
 }
 
 
+static int _wrap_giftizSetButtonVisible(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  
+  SWIG_check_num_args("giftizSetButtonVisible",1,1)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("giftizSetButtonVisible",1,"int");
+  arg1 = (int)lua_tonumber(L, 1);
+  giftizSetButtonVisible(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_screenWidth(lua_State* L) {
   int SWIG_arg = 0;
   int result;
@@ -8263,6 +8282,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "iapRestorePurchases", _wrap_iapRestorePurchases},
     { "iapAvailable", _wrap_iapAvailable},
     { "giftizCompleteMission", _wrap_giftizCompleteMission},
+    { "giftizSetButtonVisible", _wrap_giftizSetButtonVisible},
     { "screenWidth", _wrap_screenWidth},
     { "screenHeight", _wrap_screenHeight},
     { "isAppBroken", _wrap_isAppBroken},

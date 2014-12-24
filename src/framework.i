@@ -43,6 +43,7 @@ void DisplayObject_setParent(DisplayObject *d, DisplayObject *p){
 /*#include "common/framework/profiler.h"*/
 
 void giftizCompleteMission(void);
+void giftizSetButtonVisible(int visible);
 
 %{
 void audioPushSWIGPtr(lua_State *L, Audio *a){

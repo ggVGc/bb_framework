@@ -370,3 +370,21 @@ void giftizCompleteMission(void){
   }
   (*env)->CallStaticVoidMethod(env, cls, mid);
 }
+
+
+void giftizSetButtonVisible(int visible){
+  trace("Android: giftizSetButtonVisible");
+  JNIEnv *env;
+  (*jvm)->AttachCurrentThread(jvm, &env, 0);
+  jclass cls = (*env)->FindClass(env, "com/spacekomodo/berrybounce/MainActivity");
+  if(cls ==0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
+    return;
+  }
+  jmethodID mid = (*env)->GetStaticMethodID(env, cls, "giftizSetButtonVisible", "(I)V");
+  if (mid == 0){
+    __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding method id");
+    return;
+  }
+  (*env)->CallStaticVoidMethod(env, cls, mid, visible);
+}
