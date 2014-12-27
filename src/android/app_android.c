@@ -17,6 +17,10 @@ static time_t lastTime = 0;
 static int didInit = 0;
 static const char *apkPath;
 JavaVM  *jvm;
+static int shouldInit = 0;
+static int initW = 0;
+static int initH = 0;
+static int initWasSuspended = 0;
 
 
   static time_t
@@ -60,25 +64,37 @@ void stopProfiler(){
   */
 }
 
-  void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject this, jstring apkPath_ ) {
-  trace("Android: nativeInit");
+
+void
+Java_com_spacekomodo_berrybounce_MainActivity_preInit(JNIEnv*  env, jobject this, jstring apkPath_ ) {
+  trace("Android: preInit");
   (*env)->GetJavaVM(env, &jvm);
   apkPath = (*env)->GetStringUTFChars(env, apkPath_, NULL); // Let's leak some memory..
+  if(!PHYSFS_init(NULL)){
+    trace("PhysFs: Init failed");
+    traceInt(PHYSFS_getLastErrorCode());
+    trace(PHYSFS_getLastError());
+  }
+}
+
+  void
+Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject this) {
+  trace("Android: nativeInit");
+  (*env)->GetJavaVM(env, &jvm);
   lastTime = _getTime();
   didInit = 0;
+  shouldInit = 0;
 }
+
 
   void
 Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject  this, jint w, jint h, jint wasSuspended) {
   __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "resize w=%d h=%d", w, h);
   if(didInit != 1){
-    trace("Android: appInit");
-    PHYSFS_init(NULL);
-    setScreenWidth(w);
-    setScreenHeight(h);
-    appInit(wasSuspended, w, h, apkPath);
-    didInit = 1;
+    initW = w;
+    initH = h;
+    initWasSuspended = wasSuspended;
+    shouldInit = 1;
   }
 }
 
@@ -118,6 +134,14 @@ static JNIEnv* curEnv;
 Java_com_spacekomodo_berrybounce_GLRenderer_nativeRender( JNIEnv*  env, jobject this) {
   curEnv = env;
   curThis = this;
+  if(shouldInit){
+    trace("Android: appInit");
+    setScreenWidth(initW);
+    setScreenHeight(initH);
+    appInit(initWasSuspended, initW, initH, apkPath);
+    didInit = 1;
+    shouldInit = 0;
+  }
   /*(*curEnv)->GetJavaVM(curEnv, &jvm);*/
   time_t curTime = _getTime();
   appRender(curTime - lastTime);

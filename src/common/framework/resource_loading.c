@@ -70,6 +70,7 @@ void setResourcePath(const char* rootPath) {
   sprintf(msg, "Setting resource path: %s", rootPath);
   trace(msg);
   PHYSFS_mount(rootPath, NULL, 1); // for android, since the APK contains a folder called assets
+  /*
   sprintf(path, "%s", rootPath);
   PHYSFS_mount(path, "assets", 1);
   sprintf(path, "%s%sassets", rootPath, strlen(rootPath)==0?"":"/");
@@ -85,6 +86,7 @@ void setResourcePath(const char* rootPath) {
   PHYSFS_mount("", "assets", 1);
   PHYSFS_mount("assets", "assets", 1);
   PHYSFS_mount("compiled", "assets", 1);
+  */
 }
 
 /*

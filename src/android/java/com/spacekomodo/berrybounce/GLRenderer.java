@@ -14,9 +14,6 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -50,7 +47,7 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   private static native void nativeOnCursorDown(int ind);
   private static native void nativeOnCursorUp(int ind);
   private static native void nativeOnCursorMove(int ind, int x, int y);
-  private static native void nativeInit(String apkPath);
+  private static native void nativeInit();
   private static native void nativeResize(int w, int h, int wasSuspended);
   private static native void appGraphicsReload(int w, int h);
   private native void nativeRender();
@@ -78,18 +75,9 @@ public class GLRenderer implements GLSurfaceView.Renderer {
   public void onSurfaceChanged(GL10 gl, int w, int h) {
     Log.i(TAG,"GLRenderer: Surface changed");
 
-    String apkFilePath = null;
-    ApplicationInfo appInfo = null;
-    PackageManager packMgmr = activity.getPackageManager();
-    try {
-      appInfo = packMgmr.getApplicationInfo(AppConfig.packageName, 0);
-    } catch (NameNotFoundException e) {
-      e.printStackTrace();
-      throw new RuntimeException("Unable to locate assets, aborting...");
-    }
-    apkFilePath = appInfo.sourceDir;
+
     if(!inited){
-      nativeInit(apkFilePath);
+      nativeInit();
       nativeResize(w, h, 1);
       inited = true;
       needsReload = false;

@@ -1,5 +1,8 @@
 package com.spacekomodo.berrybounce;
 
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.Context;
 import android.app.Activity;
 import android.content.Intent;
@@ -53,6 +56,18 @@ public class MainActivity extends Activity implements ButtonNeedsUpdateDelegate{
 
   static {
     System.loadLibrary("jumpz_framework");
+  }
+
+  public String getApkPath(){
+    ApplicationInfo appInfo = null;
+    PackageManager packMgmr = this.getPackageManager();
+    try {
+      appInfo = packMgmr.getApplicationInfo(AppConfig.packageName, 0);
+    } catch (NameNotFoundException e) {
+      e.printStackTrace();
+      throw new RuntimeException("Unable to locate assets, aborting...");
+    }
+    return appInfo.sourceDir;
   }
 
   public MainActivity(){}
@@ -109,6 +124,7 @@ public class MainActivity extends Activity implements ButtonNeedsUpdateDelegate{
     giftizButton.setLayoutParams(lp);
     updateButtonImage();
     giftizButton.setVisibility(View.GONE);
+    preInit(getApkPath());
   }
 	@Override // Callback to update button
 	public void buttonNeedsUpdate() {
@@ -184,6 +200,8 @@ public class MainActivity extends Activity implements ButtonNeedsUpdateDelegate{
 	AdBuddiz.showAd(this);
   }
 
+
+  native void preInit(String apkPath);
 
   public native void setScreenRefreshRate(int rate);
   public native void interstitialClosed();
