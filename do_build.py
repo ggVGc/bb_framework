@@ -116,6 +116,9 @@ def buildCoreMod():
 def buildPhysFS():
   return buildLib("bin/libphysfs.a", ["./deps/common/physfs/src"], [], "-I./deps/common/physfs/src")
 
+def buildChipmunk():
+  return buildLib("bin/libchipmunk.a", ["./deps/common/chipmunk-6.2.1/src", "./deps/common/chipmunk-6.2.1/src/constraints"], [], " -std=c99 -I./deps/common/chipmunk-6.2.1/include/chipmunk")
+
 def buildLua():
   return buildLib("bin/libluaa.a", ["./deps/common/lua"], [], "")
 
@@ -173,10 +176,11 @@ def buildFramework():
       "-I./deps/common/libogg/include",
       "-I./deps/common/libvorbis/include",
       "-I./deps/common/coremod/include",
-      "-I./deps/common/physfs/src"
+      "-I./deps/common/physfs/src",
+      "-I./deps/common/chipmunk-6.2.1/include"
       ])
 
-  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3 -lvorbisa -logga -lphysfs'
+  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3 -lvorbisa -logga -lphysfs -lchipmunk'
   commonLibString += ' -lluajit '
   cflags += ' -I./deps/common/luajit/src '
   if sys.platform == "darwin":
@@ -216,6 +220,8 @@ if __name__ == '__main__':
       ret = buildCoreMod()
     if ret == 0:
       ret = buildPhysFS()
+    if ret == 0:
+      ret = buildChipmunk()
   if ret == 0 and not 'only_libs' in sys.argv:
     ret = buildFramework()
   else:

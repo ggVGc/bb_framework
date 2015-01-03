@@ -256,3 +256,6 @@ void giftizCompleteMission(void){
   trace("GIFTIZ COMPLETE MISSION");
 }
 
+void giftizSetButtonVisible(int _){
+}
+

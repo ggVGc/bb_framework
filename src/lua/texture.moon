@@ -7,7 +7,7 @@ new: (bmData, x, y, w, h)->
   with M
     .tex = _c_framework.Texture()
 
-    tmpRect = _c_framework.Rect()
+    tmpRect = _c_framework.Rekt()
     _c_framework.rectInit(tmpRect, x/bmData.width,y/bmData.height,w/bmData.width, h/bmData.height)
     _c_framework.textureInit(.tex, bmData, tmpRect)
 

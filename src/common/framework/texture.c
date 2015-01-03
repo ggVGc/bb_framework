@@ -7,7 +7,7 @@
 
 
 
-void textureInit(Texture* tex, BitmapData* data, Rect sourceRect) {
+void textureInit(Texture* tex, BitmapData* data, Rekt sourceRect) {
   float x = sourceRect.x;
   float y = sourceRect.y;
   float w = sourceRect.w;

@@ -6,8 +6,8 @@ typedef struct {
   float y;
   float w;
   float h;
-} Rect;
+} Rekt;
 
-void rectInit(Rect* r, float x, float y, float w, float h);
+void rectInit(Rekt* r, float x, float y, float w, float h);
 
 #endif

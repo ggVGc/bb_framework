@@ -1,6 +1,6 @@
 #include "rect.h"
 
-void rectInit(Rect* r, float x, float y, float w, float h)
+void rectInit(Rekt* r, float x, float y, float w, float h)
 {
   r->x = x;
   r->y = y;

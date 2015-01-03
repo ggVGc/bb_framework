@@ -2611,16 +2611,102 @@ SWIG_Lua_dostring(lua_State *L, const char *str) {
 #define SWIGTYPE_p_OggVorbis_File swig_types[8]
 #define SWIGTYPE_p_PlatformAudio_T swig_types[9]
 #define SWIGTYPE_p_RawBitmapData swig_types[10]
-#define SWIGTYPE_p_Rect swig_types[11]
+#define SWIGTYPE_p_Rekt swig_types[11]
 #define SWIGTYPE_p_Texture swig_types[12]
-#define SWIGTYPE_p_int swig_types[13]
-#define SWIGTYPE_p_ogg_file swig_types[14]
-#define SWIGTYPE_p_p_Audio swig_types[15]
-#define SWIGTYPE_p_short swig_types[16]
-#define SWIGTYPE_p_unsigned_char swig_types[17]
-#define SWIGTYPE_p_vorbis_info swig_types[18]
-static swig_type_info *swig_types[20];
-static swig_module_info swig_module = {swig_types, 19, 0, 0, 0, 0};
+#define SWIGTYPE_p_cpArbiter swig_types[13]
+#define SWIGTYPE_p_cpArbiterState swig_types[14]
+#define SWIGTYPE_p_cpArbiterThread swig_types[15]
+#define SWIGTYPE_p_cpBB swig_types[16]
+#define SWIGTYPE_p_cpBBTree swig_types[17]
+#define SWIGTYPE_p_cpBody swig_types[18]
+#define SWIGTYPE_p_cpBool swig_types[19]
+#define SWIGTYPE_p_cpCircleShape swig_types[20]
+#define SWIGTYPE_p_cpCollisionHandler swig_types[21]
+#define SWIGTYPE_p_cpCollisionType swig_types[22]
+#define SWIGTYPE_p_cpComponentNode swig_types[23]
+#define SWIGTYPE_p_cpConstraint swig_types[24]
+#define SWIGTYPE_p_cpConstraintClass swig_types[25]
+#define SWIGTYPE_p_cpContact swig_types[26]
+#define SWIGTYPE_p_cpContactBufferHeader swig_types[27]
+#define SWIGTYPE_p_cpContactPointSet swig_types[28]
+#define SWIGTYPE_p_cpContactPointSet_points swig_types[29]
+#define SWIGTYPE_p_cpDampedRotarySpring swig_types[30]
+#define SWIGTYPE_p_cpDampedSpring swig_types[31]
+#define SWIGTYPE_p_cpDataPointer swig_types[32]
+#define SWIGTYPE_p_cpFloat swig_types[33]
+#define SWIGTYPE_p_cpGearJoint swig_types[34]
+#define SWIGTYPE_p_cpGrooveJoint swig_types[35]
+#define SWIGTYPE_p_cpGroup swig_types[36]
+#define SWIGTYPE_p_cpHashValue swig_types[37]
+#define SWIGTYPE_p_cpLayers swig_types[38]
+#define SWIGTYPE_p_cpMat2x2 swig_types[39]
+#define SWIGTYPE_p_cpNearestPointQueryInfo swig_types[40]
+#define SWIGTYPE_p_cpPinJoint swig_types[41]
+#define SWIGTYPE_p_cpPivotJoint swig_types[42]
+#define SWIGTYPE_p_cpPolyShape swig_types[43]
+#define SWIGTYPE_p_cpRatchetJoint swig_types[44]
+#define SWIGTYPE_p_cpRotaryLimitJoint swig_types[45]
+#define SWIGTYPE_p_cpSegmentQueryInfo swig_types[46]
+#define SWIGTYPE_p_cpSegmentShape swig_types[47]
+#define SWIGTYPE_p_cpShape swig_types[48]
+#define SWIGTYPE_p_cpShapeClass swig_types[49]
+#define SWIGTYPE_p_cpShapeType swig_types[50]
+#define SWIGTYPE_p_cpSimpleMotor swig_types[51]
+#define SWIGTYPE_p_cpSlideJoint swig_types[52]
+#define SWIGTYPE_p_cpSpace swig_types[53]
+#define SWIGTYPE_p_cpSpaceHash swig_types[54]
+#define SWIGTYPE_p_cpSpatialIndex swig_types[55]
+#define SWIGTYPE_p_cpSpatialIndexClass swig_types[56]
+#define SWIGTYPE_p_cpSplittingPlane swig_types[57]
+#define SWIGTYPE_p_cpSweep1D swig_types[58]
+#define SWIGTYPE_p_cpTimestamp swig_types[59]
+#define SWIGTYPE_p_cpVect swig_types[60]
+#define SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool swig_types[61]
+#define SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void swig_types[62]
+#define SWIGTYPE_p_f_p_cpBody_cpFloat__void swig_types[63]
+#define SWIGTYPE_p_f_p_cpBody_cpVect_cpFloat_cpFloat__void swig_types[64]
+#define SWIGTYPE_p_f_p_cpBody_p_cpArbiter_p_void__void swig_types[65]
+#define SWIGTYPE_p_f_p_cpBody_p_cpConstraint_p_void__void swig_types[66]
+#define SWIGTYPE_p_f_p_cpBody_p_cpShape_p_void__void swig_types[67]
+#define SWIGTYPE_p_f_p_cpBody_p_void__void swig_types[68]
+#define SWIGTYPE_p_f_p_cpConstraint__cpFloat swig_types[69]
+#define SWIGTYPE_p_f_p_cpConstraint_cpFloat__cpFloat swig_types[70]
+#define SWIGTYPE_p_f_p_cpConstraint_cpFloat__void swig_types[71]
+#define SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void swig_types[72]
+#define SWIGTYPE_p_f_p_cpConstraint_p_void__void swig_types[73]
+#define SWIGTYPE_p_f_p_cpShape__void swig_types[74]
+#define SWIGTYPE_p_f_p_cpShape_cpFloat_cpVect_p_void__void swig_types[75]
+#define SWIGTYPE_p_f_p_cpShape_cpVect_cpVect__cpBB swig_types[76]
+#define SWIGTYPE_p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void swig_types[77]
+#define SWIGTYPE_p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void swig_types[78]
+#define SWIGTYPE_p_f_p_cpShape_p_struct_cpContactPointSet_p_void__void swig_types[79]
+#define SWIGTYPE_p_f_p_cpShape_p_void__void swig_types[80]
+#define SWIGTYPE_p_f_p_cpSpace_p_void_p_void__void swig_types[81]
+#define SWIGTYPE_p_f_p_struct_cpConstraint_cpFloat__cpFloat swig_types[82]
+#define SWIGTYPE_p_f_p_struct_cpSpatialIndex__int swig_types[83]
+#define SWIGTYPE_p_f_p_struct_cpSpatialIndex__void swig_types[84]
+#define SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void swig_types[85]
+#define SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void swig_types[86]
+#define SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool swig_types[87]
+#define SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void swig_types[88]
+#define SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void swig_types[89]
+#define SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void swig_types[90]
+#define SWIGTYPE_p_f_p_void__cpBB swig_types[91]
+#define SWIGTYPE_p_f_p_void__cpVect swig_types[92]
+#define SWIGTYPE_p_f_p_void_p_void__void swig_types[93]
+#define SWIGTYPE_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID swig_types[94]
+#define SWIGTYPE_p_f_p_void_p_void_p_void__cpFloat swig_types[95]
+#define SWIGTYPE_p_int swig_types[96]
+#define SWIGTYPE_p_ogg_file swig_types[97]
+#define SWIGTYPE_p_p_Audio swig_types[98]
+#define SWIGTYPE_p_p_cpBody swig_types[99]
+#define SWIGTYPE_p_p_cpShape swig_types[100]
+#define SWIGTYPE_p_short swig_types[101]
+#define SWIGTYPE_p_unsigned_char swig_types[102]
+#define SWIGTYPE_p_void swig_types[103]
+#define SWIGTYPE_p_vorbis_info swig_types[104]
+static swig_type_info *swig_types[106];
+static swig_module_info swig_module = {swig_types, 105, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2649,6 +2735,7 @@ static swig_module_info swig_module = {swig_types, 19, 0, 0, 0, 0};
 #include "framework/input.h"
 #include "framework/audio.h"
 #include "app.h"
+#include "chipmunk/chipmunk.h"
 
 void DisplayObject_setTex(DisplayObject *d, Texture *t){
   d->tex = t;
@@ -2668,6 +2755,14 @@ SWIGINTERN int SWIG_lua_isnilstring(lua_State *L, int idx) {
    ret = lua_isnil(L, idx);
   return ret;
 }
+
+typedef struct {
+  cpVect point;
+  
+  cpVect normal;
+  
+  cpFloat dist;
+} cpContactPointSet_points;
 
 
 void audioPushSWIGPtr(lua_State *L, Audio *a){
@@ -3375,17 +3470,17 @@ fail:
 }
 
 
-static int _wrap_Rect_x_set(lua_State* L) {
+static int _wrap_Rekt_x_set(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *arg1 = (Rect *) 0 ;
+  Rekt *arg1 = (Rekt *) 0 ;
   float arg2 ;
   
-  SWIG_check_num_args("Rect::x",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rect::x",1,"Rect *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Rect::x",2,"float");
+  SWIG_check_num_args("Rekt::x",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rekt::x",1,"Rekt *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Rekt::x",2,"float");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("Rect_x_set",1,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("Rekt_x_set",1,SWIGTYPE_p_Rekt);
   }
   
   arg2 = (float)lua_tonumber(L, 2);
@@ -3401,16 +3496,16 @@ fail:
 }
 
 
-static int _wrap_Rect_x_get(lua_State* L) {
+static int _wrap_Rekt_x_get(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *arg1 = (Rect *) 0 ;
+  Rekt *arg1 = (Rekt *) 0 ;
   float result;
   
-  SWIG_check_num_args("Rect::x",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rect::x",1,"Rect *");
+  SWIG_check_num_args("Rekt::x",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rekt::x",1,"Rekt *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("Rect_x_get",1,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("Rekt_x_get",1,SWIGTYPE_p_Rekt);
   }
   
   result = (float) ((arg1)->x);
@@ -3425,17 +3520,17 @@ fail:
 }
 
 
-static int _wrap_Rect_y_set(lua_State* L) {
+static int _wrap_Rekt_y_set(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *arg1 = (Rect *) 0 ;
+  Rekt *arg1 = (Rekt *) 0 ;
   float arg2 ;
   
-  SWIG_check_num_args("Rect::y",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rect::y",1,"Rect *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Rect::y",2,"float");
+  SWIG_check_num_args("Rekt::y",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rekt::y",1,"Rekt *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Rekt::y",2,"float");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("Rect_y_set",1,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("Rekt_y_set",1,SWIGTYPE_p_Rekt);
   }
   
   arg2 = (float)lua_tonumber(L, 2);
@@ -3451,16 +3546,16 @@ fail:
 }
 
 
-static int _wrap_Rect_y_get(lua_State* L) {
+static int _wrap_Rekt_y_get(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *arg1 = (Rect *) 0 ;
+  Rekt *arg1 = (Rekt *) 0 ;
   float result;
   
-  SWIG_check_num_args("Rect::y",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rect::y",1,"Rect *");
+  SWIG_check_num_args("Rekt::y",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rekt::y",1,"Rekt *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("Rect_y_get",1,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("Rekt_y_get",1,SWIGTYPE_p_Rekt);
   }
   
   result = (float) ((arg1)->y);
@@ -3475,17 +3570,17 @@ fail:
 }
 
 
-static int _wrap_Rect_w_set(lua_State* L) {
+static int _wrap_Rekt_w_set(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *arg1 = (Rect *) 0 ;
+  Rekt *arg1 = (Rekt *) 0 ;
   float arg2 ;
   
-  SWIG_check_num_args("Rect::w",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rect::w",1,"Rect *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Rect::w",2,"float");
+  SWIG_check_num_args("Rekt::w",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rekt::w",1,"Rekt *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Rekt::w",2,"float");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("Rect_w_set",1,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("Rekt_w_set",1,SWIGTYPE_p_Rekt);
   }
   
   arg2 = (float)lua_tonumber(L, 2);
@@ -3501,16 +3596,16 @@ fail:
 }
 
 
-static int _wrap_Rect_w_get(lua_State* L) {
+static int _wrap_Rekt_w_get(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *arg1 = (Rect *) 0 ;
+  Rekt *arg1 = (Rekt *) 0 ;
   float result;
   
-  SWIG_check_num_args("Rect::w",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rect::w",1,"Rect *");
+  SWIG_check_num_args("Rekt::w",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rekt::w",1,"Rekt *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("Rect_w_get",1,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("Rekt_w_get",1,SWIGTYPE_p_Rekt);
   }
   
   result = (float) ((arg1)->w);
@@ -3525,17 +3620,17 @@ fail:
 }
 
 
-static int _wrap_Rect_h_set(lua_State* L) {
+static int _wrap_Rekt_h_set(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *arg1 = (Rect *) 0 ;
+  Rekt *arg1 = (Rekt *) 0 ;
   float arg2 ;
   
-  SWIG_check_num_args("Rect::h",2,2)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rect::h",1,"Rect *");
-  if(!lua_isnumber(L,2)) SWIG_fail_arg("Rect::h",2,"float");
+  SWIG_check_num_args("Rekt::h",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rekt::h",1,"Rekt *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("Rekt::h",2,"float");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("Rect_h_set",1,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("Rekt_h_set",1,SWIGTYPE_p_Rekt);
   }
   
   arg2 = (float)lua_tonumber(L, 2);
@@ -3551,16 +3646,16 @@ fail:
 }
 
 
-static int _wrap_Rect_h_get(lua_State* L) {
+static int _wrap_Rekt_h_get(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *arg1 = (Rect *) 0 ;
+  Rekt *arg1 = (Rekt *) 0 ;
   float result;
   
-  SWIG_check_num_args("Rect::h",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rect::h",1,"Rect *");
+  SWIG_check_num_args("Rekt::h",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Rekt::h",1,"Rekt *");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("Rect_h_get",1,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("Rekt_h_get",1,SWIGTYPE_p_Rekt);
   }
   
   result = (float) ((arg1)->h);
@@ -3575,13 +3670,13 @@ fail:
 }
 
 
-static int _wrap_new_Rect(lua_State* L) {
+static int _wrap_new_Rekt(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *result = 0 ;
+  Rekt *result = 0 ;
   
-  SWIG_check_num_args("Rect::Rect",0,0)
-  result = (Rect *)calloc(1, sizeof(Rect));
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Rect,1); SWIG_arg++; 
+  SWIG_check_num_args("Rekt::Rekt",0,0)
+  result = (Rekt *)calloc(1, sizeof(Rekt));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_Rekt,1); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -3592,74 +3687,74 @@ fail:
 }
 
 
-static void swig_delete_Rect(void *obj) {
-Rect *arg1 = (Rect *) obj;
+static void swig_delete_Rekt(void *obj) {
+Rekt *arg1 = (Rekt *) obj;
 free((char *) arg1);
 }
-static int _proxy__wrap_new_Rect(lua_State *L) {
+static int _proxy__wrap_new_Rekt(lua_State *L) {
     assert(lua_istable(L,1));
-    lua_pushcfunction(L,_wrap_new_Rect);
+    lua_pushcfunction(L,_wrap_new_Rekt);
     assert(!lua_isnil(L,-1));
     lua_replace(L,1); /* replace our table with real constructor */
     lua_call(L,lua_gettop(L)-1,1);
     return 1;
 }
-static swig_lua_attribute swig_Rect_attributes[] = {
-    { "x", _wrap_Rect_x_get, _wrap_Rect_x_set },
-    { "y", _wrap_Rect_y_get, _wrap_Rect_y_set },
-    { "w", _wrap_Rect_w_get, _wrap_Rect_w_set },
-    { "h", _wrap_Rect_h_get, _wrap_Rect_h_set },
+static swig_lua_attribute swig_Rekt_attributes[] = {
+    { "x", _wrap_Rekt_x_get, _wrap_Rekt_x_set },
+    { "y", _wrap_Rekt_y_get, _wrap_Rekt_y_set },
+    { "w", _wrap_Rekt_w_get, _wrap_Rekt_w_set },
+    { "h", _wrap_Rekt_h_get, _wrap_Rekt_h_set },
     {0,0,0}
 };
-static swig_lua_method swig_Rect_methods[]= {
+static swig_lua_method swig_Rekt_methods[]= {
     {0,0}
 };
-static swig_lua_method swig_Rect_meta[] = {
+static swig_lua_method swig_Rekt_meta[] = {
     {0,0}
 };
 
-static swig_lua_attribute swig_Rect_Sf_SwigStatic_attributes[] = {
+static swig_lua_attribute swig_Rekt_Sf_SwigStatic_attributes[] = {
     {0,0,0}
 };
-static swig_lua_const_info swig_Rect_Sf_SwigStatic_constants[]= {
+static swig_lua_const_info swig_Rekt_Sf_SwigStatic_constants[]= {
     {0,0,0,0,0,0}
 };
-static swig_lua_method swig_Rect_Sf_SwigStatic_methods[]= {
+static swig_lua_method swig_Rekt_Sf_SwigStatic_methods[]= {
     {0,0}
 };
-static swig_lua_class* swig_Rect_Sf_SwigStatic_classes[]= {
+static swig_lua_class* swig_Rekt_Sf_SwigStatic_classes[]= {
     0
 };
 
-static swig_lua_namespace swig_Rect_Sf_SwigStatic = {
-    "Rect",
-    swig_Rect_Sf_SwigStatic_methods,
-    swig_Rect_Sf_SwigStatic_attributes,
-    swig_Rect_Sf_SwigStatic_constants,
-    swig_Rect_Sf_SwigStatic_classes,
+static swig_lua_namespace swig_Rekt_Sf_SwigStatic = {
+    "Rekt",
+    swig_Rekt_Sf_SwigStatic_methods,
+    swig_Rekt_Sf_SwigStatic_attributes,
+    swig_Rekt_Sf_SwigStatic_constants,
+    swig_Rekt_Sf_SwigStatic_classes,
     0
 };
-static swig_lua_class *swig_Rect_bases[] = {0};
-static const char *swig_Rect_base_names[] = {0};
-static swig_lua_class _wrap_class_Rect = { "Rect", "Rect", &SWIGTYPE_p_Rect,_proxy__wrap_new_Rect, swig_delete_Rect, swig_Rect_methods, swig_Rect_attributes, &swig_Rect_Sf_SwigStatic, swig_Rect_meta, swig_Rect_bases, swig_Rect_base_names };
+static swig_lua_class *swig_Rekt_bases[] = {0};
+static const char *swig_Rekt_base_names[] = {0};
+static swig_lua_class _wrap_class_Rekt = { "Rekt", "Rekt", &SWIGTYPE_p_Rekt,_proxy__wrap_new_Rekt, swig_delete_Rekt, swig_Rekt_methods, swig_Rekt_attributes, &swig_Rekt_Sf_SwigStatic, swig_Rekt_meta, swig_Rekt_bases, swig_Rekt_base_names };
 
 static int _wrap_rectInit(lua_State* L) {
   int SWIG_arg = 0;
-  Rect *arg1 = (Rect *) 0 ;
+  Rekt *arg1 = (Rekt *) 0 ;
   float arg2 ;
   float arg3 ;
   float arg4 ;
   float arg5 ;
   
   SWIG_check_num_args("rectInit",5,5)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("rectInit",1,"Rect *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("rectInit",1,"Rekt *");
   if(!lua_isnumber(L,2)) SWIG_fail_arg("rectInit",2,"float");
   if(!lua_isnumber(L,3)) SWIG_fail_arg("rectInit",3,"float");
   if(!lua_isnumber(L,4)) SWIG_fail_arg("rectInit",4,"float");
   if(!lua_isnumber(L,5)) SWIG_fail_arg("rectInit",5,"float");
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("rectInit",1,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("rectInit",1,SWIGTYPE_p_Rekt);
   }
   
   arg2 = (float)lua_tonumber(L, 2);
@@ -3962,13 +4057,13 @@ static int _wrap_textureInit(lua_State* L) {
   int SWIG_arg = 0;
   Texture *arg1 = (Texture *) 0 ;
   struct BitmapData *arg2 = (struct BitmapData *) 0 ;
-  Rect arg3 ;
-  Rect *argp3 ;
+  Rekt arg3 ;
+  Rekt *argp3 ;
   
   SWIG_check_num_args("textureInit",3,3)
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("textureInit",1,"Texture *");
   if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("textureInit",2,"struct BitmapData *");
-  if(!lua_isuserdata(L,3)) SWIG_fail_arg("textureInit",3,"Rect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("textureInit",3,"Rekt");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Texture,0))){
     SWIG_fail_ptr("textureInit",1,SWIGTYPE_p_Texture);
@@ -3980,8 +4075,8 @@ static int _wrap_textureInit(lua_State* L) {
   }
   
   
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Rect,0))){
-    SWIG_fail_ptr("textureInit",3,SWIGTYPE_p_Rect);
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_Rekt,0))){
+    SWIG_fail_ptr("textureInit",3,SWIGTYPE_p_Rekt);
   }
   arg3 = *argp3;
   
@@ -7936,6 +8031,28106 @@ fail:
 }
 
 
+static int _wrap_cpvzero_get(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvzero",0,0)
+  result = (cpVect)cpvzero;
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect const));
+    memmove(resultptr, &result, sizeof(cpVect const));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpv(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpFloat arg2 ;
+  cpFloat *argp1 ;
+  cpFloat *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpv",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpv",1,"cpFloat const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpv",2,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpv",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpv",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  result = cpv(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvslerp(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpFloat arg3 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat *argp3 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvslerp",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvslerp",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvslerp",2,"cpVect const");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpvslerp",3,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvslerp",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvslerp",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpvslerp",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = cpvslerp(arg1,arg2,arg3);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvslerpconst(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpFloat arg3 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat *argp3 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvslerpconst",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvslerpconst",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvslerpconst",2,"cpVect const");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpvslerpconst",3,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvslerpconst",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvslerpconst",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpvslerpconst",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = cpvslerpconst(arg1,arg2,arg3);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvstr(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect *argp1 ;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("cpvstr",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvstr",1,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvstr",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  result = (char *)cpvstr(arg1);
+  lua_pushstring(L,(const char *)result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpveql(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpveql",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpveql",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpveql",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpveql",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpveql",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpveql(arg1,arg2);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvadd(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvadd",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvadd",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvadd",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvadd",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvadd",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpvadd(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvsub(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvsub",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvsub",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvsub",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvsub",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvsub",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpvsub(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvneg(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect *argp1 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvneg",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvneg",1,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvneg",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  result = cpvneg(arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvmult(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpFloat arg2 ;
+  cpVect *argp1 ;
+  cpFloat *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvmult",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvmult",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvmult",2,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvmult",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpvmult",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  result = cpvmult(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvdot(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpvdot",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvdot",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvdot",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvdot",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvdot",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpvdot(arg1,arg2);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvcross(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpvcross",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvcross",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvcross",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvcross",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvcross",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpvcross(arg1,arg2);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvperp(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect *argp1 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvperp",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvperp",1,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvperp",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  result = cpvperp(arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvrperp(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect *argp1 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvrperp",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvrperp",1,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvrperp",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  result = cpvrperp(arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvproject(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvproject",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvproject",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvproject",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvproject",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvproject",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpvproject(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvforangle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpFloat *argp1 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvforangle",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvforangle",1,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpvforangle",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  result = cpvforangle(arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvtoangle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect *argp1 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpvtoangle",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvtoangle",1,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvtoangle",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  result = cpvtoangle(arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvrotate(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvrotate",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvrotate",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvrotate",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvrotate",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvrotate",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpvrotate(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvunrotate(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvunrotate",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvunrotate",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvunrotate",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvunrotate",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvunrotate",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpvunrotate(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvlengthsq(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect *argp1 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpvlengthsq",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvlengthsq",1,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvlengthsq",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  result = cpvlengthsq(arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvlength(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect *argp1 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpvlength",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvlength",1,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvlength",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  result = cpvlength(arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvlerp(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpFloat arg3 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat *argp3 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvlerp",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvlerp",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvlerp",2,"cpVect const");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpvlerp",3,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvlerp",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvlerp",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpvlerp",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = cpvlerp(arg1,arg2,arg3);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvnormalize(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect *argp1 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvnormalize",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvnormalize",1,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvnormalize",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  result = cpvnormalize(arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvnormalize_safe(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect *argp1 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvnormalize_safe",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvnormalize_safe",1,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvnormalize_safe",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  result = cpvnormalize_safe(arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvclamp(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpFloat arg2 ;
+  cpVect *argp1 ;
+  cpFloat *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvclamp",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvclamp",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvclamp",2,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvclamp",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpvclamp",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  result = cpvclamp(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvlerpconst(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpFloat arg3 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat *argp3 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpvlerpconst",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvlerpconst",1,"cpVect");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvlerpconst",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpvlerpconst",3,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvlerpconst",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvlerpconst",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpvlerpconst",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = cpvlerpconst(arg1,arg2,arg3);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvdist(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpvdist",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvdist",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvdist",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvdist",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvdist",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpvdist(arg1,arg2);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvdistsq(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpvdistsq",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvdistsq",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvdistsq",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvdistsq",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvdistsq",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpvdistsq(arg1,arg2);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpvnear(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpFloat arg3 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat *argp3 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpvnear",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpvnear",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpvnear",2,"cpVect const");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpvnear",3,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvnear",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpvnear",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpvnear",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = cpvnear(arg1,arg2,arg3);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpMat2x2New(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpFloat arg2 ;
+  cpFloat arg3 ;
+  cpFloat arg4 ;
+  cpFloat *argp1 ;
+  cpFloat *argp2 ;
+  cpFloat *argp3 ;
+  cpFloat *argp4 ;
+  cpMat2x2 result;
+  
+  SWIG_check_num_args("cpMat2x2New",4,4)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpMat2x2New",1,"cpFloat");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpMat2x2New",2,"cpFloat");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpMat2x2New",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpMat2x2New",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMat2x2New",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMat2x2New",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMat2x2New",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMat2x2New",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  result = cpMat2x2New(arg1,arg2,arg3,arg4);
+  {
+    cpMat2x2 * resultptr;
+    resultptr = (cpMat2x2 *) malloc(sizeof(cpMat2x2));
+    memmove(resultptr, &result, sizeof(cpMat2x2));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpMat2x2,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpMat2x2Transform(lua_State* L) {
+  int SWIG_arg = 0;
+  cpMat2x2 arg1 ;
+  cpVect arg2 ;
+  cpMat2x2 *argp1 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpMat2x2Transform",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpMat2x2Transform",1,"cpMat2x2");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpMat2x2Transform",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpMat2x2,0))){
+    SWIG_fail_ptr("cpMat2x2Transform",1,SWIGTYPE_p_cpMat2x2);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpMat2x2Transform",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpMat2x2Transform(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBB_l_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBB *arg1 = (struct cpBB *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBB::l",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBB::l",1,"struct cpBB *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBB::l",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBB_l_set",1,SWIGTYPE_p_cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBB_l_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->l = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBB_l_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBB *arg1 = (struct cpBB *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBB::l",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBB::l",1,"struct cpBB *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBB_l_get",1,SWIGTYPE_p_cpBB);
+  }
+  
+  result =  ((arg1)->l);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBB_b_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBB *arg1 = (struct cpBB *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBB::b",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBB::b",1,"struct cpBB *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBB::b",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBB_b_set",1,SWIGTYPE_p_cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBB_b_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->b = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBB_b_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBB *arg1 = (struct cpBB *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBB::b",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBB::b",1,"struct cpBB *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBB_b_get",1,SWIGTYPE_p_cpBB);
+  }
+  
+  result =  ((arg1)->b);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBB_r_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBB *arg1 = (struct cpBB *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBB::r",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBB::r",1,"struct cpBB *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBB::r",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBB_r_set",1,SWIGTYPE_p_cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBB_r_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBB_r_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBB *arg1 = (struct cpBB *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBB::r",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBB::r",1,"struct cpBB *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBB_r_get",1,SWIGTYPE_p_cpBB);
+  }
+  
+  result =  ((arg1)->r);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBB_t_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBB *arg1 = (struct cpBB *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBB::t",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBB::t",1,"struct cpBB *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBB::t",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBB_t_set",1,SWIGTYPE_p_cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBB_t_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->t = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBB_t_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBB *arg1 = (struct cpBB *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBB::t",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBB::t",1,"struct cpBB *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBB_t_get",1,SWIGTYPE_p_cpBB);
+  }
+  
+  result =  ((arg1)->t);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpBB(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBB *result = 0 ;
+  
+  SWIG_check_num_args("cpBB::cpBB",0,0)
+  result = (struct cpBB *)calloc(1, sizeof(struct cpBB));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBB,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpBB(void *obj) {
+struct cpBB *arg1 = (struct cpBB *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpBB(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpBB);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpBB_attributes[] = {
+    { "l", _wrap_cpBB_l_get, _wrap_cpBB_l_set },
+    { "b", _wrap_cpBB_b_get, _wrap_cpBB_b_set },
+    { "r", _wrap_cpBB_r_get, _wrap_cpBB_r_set },
+    { "t", _wrap_cpBB_t_get, _wrap_cpBB_t_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpBB_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpBB_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpBB_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpBB_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpBB_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpBB_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpBB_Sf_SwigStatic = {
+    "cpBB",
+    swig_cpBB_Sf_SwigStatic_methods,
+    swig_cpBB_Sf_SwigStatic_attributes,
+    swig_cpBB_Sf_SwigStatic_constants,
+    swig_cpBB_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpBB_bases[] = {0};
+static const char *swig_cpBB_base_names[] = {0};
+static swig_lua_class _wrap_class_cpBB = { "cpBB", "cpBB", &SWIGTYPE_p_cpBB,_proxy__wrap_new_cpBB, swig_delete_cpBB, swig_cpBB_methods, swig_cpBB_attributes, &swig_cpBB_Sf_SwigStatic, swig_cpBB_meta, swig_cpBB_bases, swig_cpBB_base_names };
+
+static int _wrap_cpBBNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpFloat arg2 ;
+  cpFloat arg3 ;
+  cpFloat arg4 ;
+  cpFloat *argp1 ;
+  cpFloat *argp2 ;
+  cpFloat *argp3 ;
+  cpFloat *argp4 ;
+  cpBB result;
+  
+  SWIG_check_num_args("cpBBNew",4,4)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBNew",1,"cpFloat const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBNew",2,"cpFloat const");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBBNew",3,"cpFloat const");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpBBNew",4,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBBNew",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBBNew",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBBNew",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBBNew",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  result = cpBBNew(arg1,arg2,arg3,arg4);
+  {
+    cpBB * resultptr;
+    resultptr = (cpBB *) malloc(sizeof(cpBB));
+    memmove(resultptr, &result, sizeof(cpBB));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBB,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBNewForCircle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpFloat arg2 ;
+  cpVect *argp1 ;
+  cpFloat *argp2 ;
+  cpBB result;
+  
+  SWIG_check_num_args("cpBBNewForCircle",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBNewForCircle",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBNewForCircle",2,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBBNewForCircle",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBBNewForCircle",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  result = cpBBNewForCircle(arg1,arg2);
+  {
+    cpBB * resultptr;
+    resultptr = (cpBB *) malloc(sizeof(cpBB));
+    memmove(resultptr, &result, sizeof(cpBB));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBB,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBIntersects(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpBB arg2 ;
+  cpBB *argp1 ;
+  cpBB *argp2 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpBBIntersects",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBIntersects",1,"cpBB const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBIntersects",2,"cpBB const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBIntersects",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBIntersects",2,SWIGTYPE_p_cpBB);
+  }
+  arg2 = *argp2;
+  
+  result = cpBBIntersects(arg1,arg2);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBContainsBB(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpBB arg2 ;
+  cpBB *argp1 ;
+  cpBB *argp2 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpBBContainsBB",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBContainsBB",1,"cpBB const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBContainsBB",2,"cpBB const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBContainsBB",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBContainsBB",2,SWIGTYPE_p_cpBB);
+  }
+  arg2 = *argp2;
+  
+  result = cpBBContainsBB(arg1,arg2);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBContainsVect(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpVect arg2 ;
+  cpBB *argp1 ;
+  cpVect *argp2 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpBBContainsVect",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBContainsVect",1,"cpBB const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBContainsVect",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBContainsVect",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBBContainsVect",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpBBContainsVect(arg1,arg2);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBMerge(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpBB arg2 ;
+  cpBB *argp1 ;
+  cpBB *argp2 ;
+  cpBB result;
+  
+  SWIG_check_num_args("cpBBMerge",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBMerge",1,"cpBB const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBMerge",2,"cpBB const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBMerge",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBMerge",2,SWIGTYPE_p_cpBB);
+  }
+  arg2 = *argp2;
+  
+  result = cpBBMerge(arg1,arg2);
+  {
+    cpBB * resultptr;
+    resultptr = (cpBB *) malloc(sizeof(cpBB));
+    memmove(resultptr, &result, sizeof(cpBB));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBB,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBExpand(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpVect arg2 ;
+  cpBB *argp1 ;
+  cpVect *argp2 ;
+  cpBB result;
+  
+  SWIG_check_num_args("cpBBExpand",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBExpand",1,"cpBB const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBExpand",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBExpand",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBBExpand",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpBBExpand(arg1,arg2);
+  {
+    cpBB * resultptr;
+    resultptr = (cpBB *) malloc(sizeof(cpBB));
+    memmove(resultptr, &result, sizeof(cpBB));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBB,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBCenter(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpBB *argp1 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBBCenter",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBCenter",1,"cpBB");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBCenter",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  result = cpBBCenter(arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBArea(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpBB *argp1 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBBArea",1,1)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBArea",1,"cpBB");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBArea",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  result = cpBBArea(arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBMergedArea(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpBB arg2 ;
+  cpBB *argp1 ;
+  cpBB *argp2 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBBMergedArea",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBMergedArea",1,"cpBB");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBMergedArea",2,"cpBB");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBMergedArea",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBMergedArea",2,SWIGTYPE_p_cpBB);
+  }
+  arg2 = *argp2;
+  
+  result = cpBBMergedArea(arg1,arg2);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBSegmentQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpBB *argp1 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBBSegmentQuery",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBSegmentQuery",1,"cpBB");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBSegmentQuery",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBBSegmentQuery",3,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBSegmentQuery",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBBSegmentQuery",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBBSegmentQuery",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  result = cpBBSegmentQuery(arg1,arg2,arg3);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBIntersectsSegment(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpBB *argp1 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpBBIntersectsSegment",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBIntersectsSegment",1,"cpBB");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBIntersectsSegment",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBBIntersectsSegment",3,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBIntersectsSegment",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBBIntersectsSegment",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBBIntersectsSegment",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  result = cpBBIntersectsSegment(arg1,arg2,arg3);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBClampVect(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpVect arg2 ;
+  cpBB *argp1 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBBClampVect",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBClampVect",1,"cpBB const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBClampVect",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBClampVect",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBBClampVect",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpBBClampVect(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBWrapVect(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBB arg1 ;
+  cpVect arg2 ;
+  cpBB *argp1 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBBWrapVect",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBBWrapVect",1,"cpBB const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBBWrapVect",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBBWrapVect",1,SWIGTYPE_p_cpBB);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBBWrapVect",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpBBWrapVect(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndex_klass_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndex *arg1 = (struct cpSpatialIndex *) 0 ;
+  cpSpatialIndexClass *arg2 = (cpSpatialIndexClass *) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndex::klass",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndex::klass",1,"struct cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndex::klass",2,"cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndex_klass_set",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpSpatialIndexClass,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpSpatialIndex_klass_set",2,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  if (arg1) (arg1)->klass = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndex_klass_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndex *arg1 = (struct cpSpatialIndex *) 0 ;
+  cpSpatialIndexClass *result = 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndex::klass",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndex::klass",1,"struct cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndex_klass_get",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndexClass *) ((arg1)->klass);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndexClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndex_bbfunc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndex *arg1 = (struct cpSpatialIndex *) 0 ;
+  cpSpatialIndexBBFunc arg2 = (cpSpatialIndexBBFunc) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndex::bbfunc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndex::bbfunc",1,"struct cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndex::bbfunc",2,"cpSpatialIndexBBFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndex_bbfunc_set",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_void__cpBB,0))){
+    SWIG_fail_ptr("cpSpatialIndex_bbfunc_set",2,SWIGTYPE_p_f_p_void__cpBB);
+  }
+  
+  if (arg1) (arg1)->bbfunc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndex_bbfunc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndex *arg1 = (struct cpSpatialIndex *) 0 ;
+  cpSpatialIndexBBFunc result;
+  
+  SWIG_check_num_args("cpSpatialIndex::bbfunc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndex::bbfunc",1,"struct cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndex_bbfunc_get",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndexBBFunc) ((arg1)->bbfunc);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_void__cpBB,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndex_staticIndex_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndex *arg1 = (struct cpSpatialIndex *) 0 ;
+  cpSpatialIndex *arg2 = (cpSpatialIndex *) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndex::staticIndex",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndex::staticIndex",1,"struct cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndex::staticIndex",2,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndex_staticIndex_set",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpSpatialIndex,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpSpatialIndex_staticIndex_set",2,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  if (arg1) (arg1)->staticIndex = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndex_staticIndex_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndex *arg1 = (struct cpSpatialIndex *) 0 ;
+  cpSpatialIndex *result = 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndex::staticIndex",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndex::staticIndex",1,"struct cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndex_staticIndex_get",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndex *) ((arg1)->staticIndex);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndex,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndex_dynamicIndex_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndex *arg1 = (struct cpSpatialIndex *) 0 ;
+  cpSpatialIndex *arg2 = (cpSpatialIndex *) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndex::dynamicIndex",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndex::dynamicIndex",1,"struct cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndex::dynamicIndex",2,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndex_dynamicIndex_set",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpSpatialIndex,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpSpatialIndex_dynamicIndex_set",2,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  if (arg1) (arg1)->dynamicIndex = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndex_dynamicIndex_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndex *arg1 = (struct cpSpatialIndex *) 0 ;
+  cpSpatialIndex *result = 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndex::dynamicIndex",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndex::dynamicIndex",1,"struct cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndex_dynamicIndex_get",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndex *) ((arg1)->dynamicIndex);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndex,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpSpatialIndex(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndex *result = 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndex::cpSpatialIndex",0,0)
+  result = (struct cpSpatialIndex *)calloc(1, sizeof(struct cpSpatialIndex));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndex,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpSpatialIndex(void *obj) {
+struct cpSpatialIndex *arg1 = (struct cpSpatialIndex *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpSpatialIndex(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpSpatialIndex);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpSpatialIndex_attributes[] = {
+    { "klass", _wrap_cpSpatialIndex_klass_get, _wrap_cpSpatialIndex_klass_set },
+    { "bbfunc", _wrap_cpSpatialIndex_bbfunc_get, _wrap_cpSpatialIndex_bbfunc_set },
+    { "staticIndex", _wrap_cpSpatialIndex_staticIndex_get, _wrap_cpSpatialIndex_staticIndex_set },
+    { "dynamicIndex", _wrap_cpSpatialIndex_dynamicIndex_get, _wrap_cpSpatialIndex_dynamicIndex_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpSpatialIndex_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpSpatialIndex_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpSpatialIndex_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpSpatialIndex_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpSpatialIndex_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpSpatialIndex_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpSpatialIndex_Sf_SwigStatic = {
+    "cpSpatialIndex",
+    swig_cpSpatialIndex_Sf_SwigStatic_methods,
+    swig_cpSpatialIndex_Sf_SwigStatic_attributes,
+    swig_cpSpatialIndex_Sf_SwigStatic_constants,
+    swig_cpSpatialIndex_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpSpatialIndex_bases[] = {0};
+static const char *swig_cpSpatialIndex_base_names[] = {0};
+static swig_lua_class _wrap_class_cpSpatialIndex = { "cpSpatialIndex", "cpSpatialIndex", &SWIGTYPE_p_cpSpatialIndex,_proxy__wrap_new_cpSpatialIndex, swig_delete_cpSpatialIndex, swig_cpSpatialIndex_methods, swig_cpSpatialIndex_attributes, &swig_cpSpatialIndex_Sf_SwigStatic, swig_cpSpatialIndex_meta, swig_cpSpatialIndex_bases, swig_cpSpatialIndex_base_names };
+
+static int _wrap_cpSpaceHashAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpaceHash *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceHashAlloc",0,0)
+  result = (cpSpaceHash *)cpSpaceHashAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpaceHash,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceHashInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpaceHash *arg1 = (cpSpaceHash *) 0 ;
+  cpFloat arg2 ;
+  int arg3 ;
+  cpSpatialIndexBBFunc arg4 = (cpSpatialIndexBBFunc) 0 ;
+  cpSpatialIndex *arg5 = (cpSpatialIndex *) 0 ;
+  cpFloat *argp2 ;
+  cpSpatialIndex *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceHashInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceHashInit",1,"cpSpaceHash *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceHashInit",2,"cpFloat");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("cpSpaceHashInit",3,"int");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpSpaceHashInit",4,"cpSpatialIndexBBFunc");
+  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("cpSpaceHashInit",5,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpaceHash,0))){
+    SWIG_fail_ptr("cpSpaceHashInit",1,SWIGTYPE_p_cpSpaceHash);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceHashInit",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  arg3 = (int)lua_tonumber(L, 3);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_f_p_void__cpBB,0))){
+    SWIG_fail_ptr("cpSpaceHashInit",4,SWIGTYPE_p_f_p_void__cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&arg5,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpaceHashInit",5,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndex *)cpSpaceHashInit(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndex,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceHashNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  int arg2 ;
+  cpSpatialIndexBBFunc arg3 = (cpSpatialIndexBBFunc) 0 ;
+  cpSpatialIndex *arg4 = (cpSpatialIndex *) 0 ;
+  cpFloat *argp1 ;
+  cpSpatialIndex *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceHashNew",4,4)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpSpaceHashNew",1,"cpFloat");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpSpaceHashNew",2,"int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpaceHashNew",3,"cpSpatialIndexBBFunc");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpSpaceHashNew",4,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceHashNew",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_f_p_void__cpBB,0))){
+    SWIG_fail_ptr("cpSpaceHashNew",3,SWIGTYPE_p_f_p_void__cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpaceHashNew",4,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndex *)cpSpaceHashNew(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndex,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceHashResize(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpaceHash *arg1 = (cpSpaceHash *) 0 ;
+  cpFloat arg2 ;
+  int arg3 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceHashResize",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceHashResize",1,"cpSpaceHash *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceHashResize",2,"cpFloat");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("cpSpaceHashResize",3,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpaceHash,0))){
+    SWIG_fail_ptr("cpSpaceHashResize",1,SWIGTYPE_p_cpSpaceHash);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceHashResize",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  arg3 = (int)lua_tonumber(L, 3);
+  cpSpaceHashResize(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBTreeAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBBTree *result = 0 ;
+  
+  SWIG_check_num_args("cpBBTreeAlloc",0,0)
+  result = (cpBBTree *)cpBBTreeAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBBTree,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBTreeInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBBTree *arg1 = (cpBBTree *) 0 ;
+  cpSpatialIndexBBFunc arg2 = (cpSpatialIndexBBFunc) 0 ;
+  cpSpatialIndex *arg3 = (cpSpatialIndex *) 0 ;
+  cpSpatialIndex *result = 0 ;
+  
+  SWIG_check_num_args("cpBBTreeInit",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBBTreeInit",1,"cpBBTree *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBBTreeInit",2,"cpSpatialIndexBBFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpBBTreeInit",3,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBBTree,0))){
+    SWIG_fail_ptr("cpBBTreeInit",1,SWIGTYPE_p_cpBBTree);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_void__cpBB,0))){
+    SWIG_fail_ptr("cpBBTreeInit",2,SWIGTYPE_p_f_p_void__cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpBBTreeInit",3,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndex *)cpBBTreeInit(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndex,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBTreeNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndexBBFunc arg1 = (cpSpatialIndexBBFunc) 0 ;
+  cpSpatialIndex *arg2 = (cpSpatialIndex *) 0 ;
+  cpSpatialIndex *result = 0 ;
+  
+  SWIG_check_num_args("cpBBTreeNew",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBBTreeNew",1,"cpSpatialIndexBBFunc");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBBTreeNew",2,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_f_p_void__cpBB,0))){
+    SWIG_fail_ptr("cpBBTreeNew",1,SWIGTYPE_p_f_p_void__cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpBBTreeNew",2,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndex *)cpBBTreeNew(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndex,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBTreeOptimize(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  
+  SWIG_check_num_args("cpBBTreeOptimize",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBBTreeOptimize",1,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpBBTreeOptimize",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  cpBBTreeOptimize(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBBTreeSetVelocityFunc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  cpBBTreeVelocityFunc arg2 = (cpBBTreeVelocityFunc) 0 ;
+  
+  SWIG_check_num_args("cpBBTreeSetVelocityFunc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBBTreeSetVelocityFunc",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBBTreeSetVelocityFunc",2,"cpBBTreeVelocityFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpBBTreeSetVelocityFunc",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_void__cpVect,0))){
+    SWIG_fail_ptr("cpBBTreeSetVelocityFunc",2,SWIGTYPE_p_f_p_void__cpVect);
+  }
+  
+  cpBBTreeSetVelocityFunc(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSweep1DAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSweep1D *result = 0 ;
+  
+  SWIG_check_num_args("cpSweep1DAlloc",0,0)
+  result = (cpSweep1D *)cpSweep1DAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSweep1D,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSweep1DInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSweep1D *arg1 = (cpSweep1D *) 0 ;
+  cpSpatialIndexBBFunc arg2 = (cpSpatialIndexBBFunc) 0 ;
+  cpSpatialIndex *arg3 = (cpSpatialIndex *) 0 ;
+  cpSpatialIndex *result = 0 ;
+  
+  SWIG_check_num_args("cpSweep1DInit",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSweep1DInit",1,"cpSweep1D *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSweep1DInit",2,"cpSpatialIndexBBFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSweep1DInit",3,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSweep1D,0))){
+    SWIG_fail_ptr("cpSweep1DInit",1,SWIGTYPE_p_cpSweep1D);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_void__cpBB,0))){
+    SWIG_fail_ptr("cpSweep1DInit",2,SWIGTYPE_p_f_p_void__cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSweep1DInit",3,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndex *)cpSweep1DInit(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndex,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSweep1DNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndexBBFunc arg1 = (cpSpatialIndexBBFunc) 0 ;
+  cpSpatialIndex *arg2 = (cpSpatialIndex *) 0 ;
+  cpSpatialIndex *result = 0 ;
+  
+  SWIG_check_num_args("cpSweep1DNew",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSweep1DNew",1,"cpSpatialIndexBBFunc");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSweep1DNew",2,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_f_p_void__cpBB,0))){
+    SWIG_fail_ptr("cpSweep1DNew",1,SWIGTYPE_p_f_p_void__cpBB);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSweep1DNew",2,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (cpSpatialIndex *)cpSweep1DNew(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndex,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_destroy_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexDestroyImpl arg2 = (cpSpatialIndexDestroyImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::destroy",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::destroy",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::destroy",2,"cpSpatialIndexDestroyImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_destroy_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_destroy_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex__void);
+  }
+  
+  if (arg1) (arg1)->destroy = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_destroy_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexDestroyImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::destroy",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::destroy",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_destroy_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexDestroyImpl) ((arg1)->destroy);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_count_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexCountImpl arg2 = (cpSpatialIndexCountImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::count",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::count",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::count",2,"cpSpatialIndexCountImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_count_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex__int,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_count_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex__int);
+  }
+  
+  if (arg1) (arg1)->count = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_count_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexCountImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::count",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::count",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_count_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexCountImpl) ((arg1)->count);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex__int,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_each_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexEachImpl arg2 = (cpSpatialIndexEachImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::each",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::each",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::each",2,"cpSpatialIndexEachImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_each_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_each_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void);
+  }
+  
+  if (arg1) (arg1)->each = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_each_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexEachImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::each",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::each",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_each_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexEachImpl) ((arg1)->each);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_contains_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexContainsImpl arg2 = (cpSpatialIndexContainsImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::contains",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::contains",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::contains",2,"cpSpatialIndexContainsImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_contains_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_contains_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool);
+  }
+  
+  if (arg1) (arg1)->contains = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_contains_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexContainsImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::contains",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::contains",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_contains_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexContainsImpl) ((arg1)->contains);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_insert_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexInsertImpl arg2 = (cpSpatialIndexInsertImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::insert",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::insert",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::insert",2,"cpSpatialIndexInsertImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_insert_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_insert_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void);
+  }
+  
+  if (arg1) (arg1)->insert = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_insert_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexInsertImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::insert",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::insert",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_insert_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexInsertImpl) ((arg1)->insert);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_remove_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexRemoveImpl arg2 = (cpSpatialIndexRemoveImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::remove",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::remove",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::remove",2,"cpSpatialIndexRemoveImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_remove_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_remove_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void);
+  }
+  
+  if (arg1) (arg1)->remove = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_remove_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexRemoveImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::remove",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::remove",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_remove_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexRemoveImpl) ((arg1)->remove);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_reindex_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexReindexImpl arg2 = (cpSpatialIndexReindexImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::reindex",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::reindex",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::reindex",2,"cpSpatialIndexReindexImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_reindex_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_reindex_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex__void);
+  }
+  
+  if (arg1) (arg1)->reindex = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_reindex_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexReindexImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::reindex",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::reindex",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_reindex_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexReindexImpl) ((arg1)->reindex);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_reindexObject_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexReindexObjectImpl arg2 = (cpSpatialIndexReindexObjectImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::reindexObject",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::reindexObject",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::reindexObject",2,"cpSpatialIndexReindexObjectImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_reindexObject_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_reindexObject_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void);
+  }
+  
+  if (arg1) (arg1)->reindexObject = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_reindexObject_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexReindexObjectImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::reindexObject",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::reindexObject",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_reindexObject_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexReindexObjectImpl) ((arg1)->reindexObject);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_reindexQuery_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexReindexQueryImpl arg2 = (cpSpatialIndexReindexQueryImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::reindexQuery",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::reindexQuery",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::reindexQuery",2,"cpSpatialIndexReindexQueryImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_reindexQuery_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_reindexQuery_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void);
+  }
+  
+  if (arg1) (arg1)->reindexQuery = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_reindexQuery_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexReindexQueryImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::reindexQuery",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::reindexQuery",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_reindexQuery_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexReindexQueryImpl) ((arg1)->reindexQuery);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_query_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexQueryImpl arg2 = (cpSpatialIndexQueryImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::query",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::query",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::query",2,"cpSpatialIndexQueryImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_query_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_query_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void);
+  }
+  
+  if (arg1) (arg1)->query = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_query_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexQueryImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::query",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::query",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_query_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexQueryImpl) ((arg1)->query);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_segmentQuery_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexSegmentQueryImpl arg2 = (cpSpatialIndexSegmentQueryImpl) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::segmentQuery",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::segmentQuery",1,"struct cpSpatialIndexClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexClass::segmentQuery",2,"cpSpatialIndexSegmentQueryImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_segmentQuery_set",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_segmentQuery_set",2,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void);
+  }
+  
+  if (arg1) (arg1)->segmentQuery = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexClass_segmentQuery_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) 0 ;
+  cpSpatialIndexSegmentQueryImpl result;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::segmentQuery",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexClass::segmentQuery",1,"struct cpSpatialIndexClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndexClass,0))){
+    SWIG_fail_ptr("cpSpatialIndexClass_segmentQuery_get",1,SWIGTYPE_p_cpSpatialIndexClass);
+  }
+  
+  result = (cpSpatialIndexSegmentQueryImpl) ((arg1)->segmentQuery);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpSpatialIndexClass(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpatialIndexClass *result = 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexClass::cpSpatialIndexClass",0,0)
+  result = (struct cpSpatialIndexClass *)calloc(1, sizeof(struct cpSpatialIndexClass));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpatialIndexClass,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpSpatialIndexClass(void *obj) {
+struct cpSpatialIndexClass *arg1 = (struct cpSpatialIndexClass *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpSpatialIndexClass(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpSpatialIndexClass);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpSpatialIndexClass_attributes[] = {
+    { "destroy", _wrap_cpSpatialIndexClass_destroy_get, _wrap_cpSpatialIndexClass_destroy_set },
+    { "count", _wrap_cpSpatialIndexClass_count_get, _wrap_cpSpatialIndexClass_count_set },
+    { "each", _wrap_cpSpatialIndexClass_each_get, _wrap_cpSpatialIndexClass_each_set },
+    { "contains", _wrap_cpSpatialIndexClass_contains_get, _wrap_cpSpatialIndexClass_contains_set },
+    { "insert", _wrap_cpSpatialIndexClass_insert_get, _wrap_cpSpatialIndexClass_insert_set },
+    { "remove", _wrap_cpSpatialIndexClass_remove_get, _wrap_cpSpatialIndexClass_remove_set },
+    { "reindex", _wrap_cpSpatialIndexClass_reindex_get, _wrap_cpSpatialIndexClass_reindex_set },
+    { "reindexObject", _wrap_cpSpatialIndexClass_reindexObject_get, _wrap_cpSpatialIndexClass_reindexObject_set },
+    { "reindexQuery", _wrap_cpSpatialIndexClass_reindexQuery_get, _wrap_cpSpatialIndexClass_reindexQuery_set },
+    { "query", _wrap_cpSpatialIndexClass_query_get, _wrap_cpSpatialIndexClass_query_set },
+    { "segmentQuery", _wrap_cpSpatialIndexClass_segmentQuery_get, _wrap_cpSpatialIndexClass_segmentQuery_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpSpatialIndexClass_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpSpatialIndexClass_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpSpatialIndexClass_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpSpatialIndexClass_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpSpatialIndexClass_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpSpatialIndexClass_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpSpatialIndexClass_Sf_SwigStatic = {
+    "cpSpatialIndexClass",
+    swig_cpSpatialIndexClass_Sf_SwigStatic_methods,
+    swig_cpSpatialIndexClass_Sf_SwigStatic_attributes,
+    swig_cpSpatialIndexClass_Sf_SwigStatic_constants,
+    swig_cpSpatialIndexClass_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpSpatialIndexClass_bases[] = {0};
+static const char *swig_cpSpatialIndexClass_base_names[] = {0};
+static swig_lua_class _wrap_class_cpSpatialIndexClass = { "cpSpatialIndexClass", "cpSpatialIndexClass", &SWIGTYPE_p_cpSpatialIndexClass,_proxy__wrap_new_cpSpatialIndexClass, swig_delete_cpSpatialIndexClass, swig_cpSpatialIndexClass_methods, swig_cpSpatialIndexClass_attributes, &swig_cpSpatialIndexClass_Sf_SwigStatic, swig_cpSpatialIndexClass_meta, swig_cpSpatialIndexClass_bases, swig_cpSpatialIndexClass_base_names };
+
+static int _wrap_cpSpatialIndexFree(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexFree",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexFree",1,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexFree",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  cpSpatialIndexFree(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexCollideStatic(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  cpSpatialIndex *arg2 = (cpSpatialIndex *) 0 ;
+  cpSpatialIndexQueryFunc arg3 = (cpSpatialIndexQueryFunc) 0 ;
+  void *arg4 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexCollideStatic",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexCollideStatic",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexCollideStatic",2,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpatialIndexCollideStatic",3,"cpSpatialIndexQueryFunc");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpSpatialIndexCollideStatic",4,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexCollideStatic",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexCollideStatic",2,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID,0))){
+    SWIG_fail_ptr("cpSpatialIndexCollideStatic",3,SWIGTYPE_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID);
+  }
+  
+  arg4=(void *)SWIG_MustGetPtr(L,4,0,0,4,"cpSpatialIndexCollideStatic");
+  cpSpatialIndexCollideStatic(arg1,arg2,arg3,arg4);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexDestroy(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexDestroy",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexDestroy",1,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexDestroy",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  cpSpatialIndexDestroy(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexCount(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("cpSpatialIndexCount",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexCount",1,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexCount",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  result = (int)cpSpatialIndexCount(arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexEach(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  cpSpatialIndexIteratorFunc arg2 = (cpSpatialIndexIteratorFunc) 0 ;
+  void *arg3 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexEach",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexEach",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexEach",2,"cpSpatialIndexIteratorFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpatialIndexEach",3,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexEach",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_void_p_void__void,0))){
+    SWIG_fail_ptr("cpSpatialIndexEach",2,SWIGTYPE_p_f_p_void_p_void__void);
+  }
+  
+  arg3=(void *)SWIG_MustGetPtr(L,3,0,0,3,"cpSpatialIndexEach");
+  cpSpatialIndexEach(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexContains(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  void *arg2 = (void *) 0 ;
+  cpHashValue arg3 ;
+  cpHashValue *argp3 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpSpatialIndexContains",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexContains",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexContains",2,"void *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpatialIndexContains",3,"cpHashValue");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexContains",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  arg2=(void *)SWIG_MustGetPtr(L,2,0,0,2,"cpSpatialIndexContains");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpHashValue,0))){
+    SWIG_fail_ptr("cpSpatialIndexContains",3,SWIGTYPE_p_cpHashValue);
+  }
+  arg3 = *argp3;
+  
+  result = cpSpatialIndexContains(arg1,arg2,arg3);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexInsert(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  void *arg2 = (void *) 0 ;
+  cpHashValue arg3 ;
+  cpHashValue *argp3 ;
+  
+  SWIG_check_num_args("cpSpatialIndexInsert",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexInsert",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexInsert",2,"void *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpatialIndexInsert",3,"cpHashValue");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexInsert",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  arg2=(void *)SWIG_MustGetPtr(L,2,0,0,2,"cpSpatialIndexInsert");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpHashValue,0))){
+    SWIG_fail_ptr("cpSpatialIndexInsert",3,SWIGTYPE_p_cpHashValue);
+  }
+  arg3 = *argp3;
+  
+  cpSpatialIndexInsert(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexRemove(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  void *arg2 = (void *) 0 ;
+  cpHashValue arg3 ;
+  cpHashValue *argp3 ;
+  
+  SWIG_check_num_args("cpSpatialIndexRemove",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexRemove",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexRemove",2,"void *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpatialIndexRemove",3,"cpHashValue");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexRemove",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  arg2=(void *)SWIG_MustGetPtr(L,2,0,0,2,"cpSpatialIndexRemove");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpHashValue,0))){
+    SWIG_fail_ptr("cpSpatialIndexRemove",3,SWIGTYPE_p_cpHashValue);
+  }
+  arg3 = *argp3;
+  
+  cpSpatialIndexRemove(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexReindex(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexReindex",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexReindex",1,"cpSpatialIndex *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexReindex",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  cpSpatialIndexReindex(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexReindexObject(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  void *arg2 = (void *) 0 ;
+  cpHashValue arg3 ;
+  cpHashValue *argp3 ;
+  
+  SWIG_check_num_args("cpSpatialIndexReindexObject",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexReindexObject",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexReindexObject",2,"void *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpatialIndexReindexObject",3,"cpHashValue");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexReindexObject",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  arg2=(void *)SWIG_MustGetPtr(L,2,0,0,2,"cpSpatialIndexReindexObject");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpHashValue,0))){
+    SWIG_fail_ptr("cpSpatialIndexReindexObject",3,SWIGTYPE_p_cpHashValue);
+  }
+  arg3 = *argp3;
+  
+  cpSpatialIndexReindexObject(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  void *arg2 = (void *) 0 ;
+  cpBB arg3 ;
+  cpSpatialIndexQueryFunc arg4 = (cpSpatialIndexQueryFunc) 0 ;
+  void *arg5 = (void *) 0 ;
+  cpBB *argp3 ;
+  
+  SWIG_check_num_args("cpSpatialIndexQuery",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexQuery",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexQuery",2,"void *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpatialIndexQuery",3,"cpBB");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpSpatialIndexQuery",4,"cpSpatialIndexQueryFunc");
+  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("cpSpatialIndexQuery",5,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexQuery",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  arg2=(void *)SWIG_MustGetPtr(L,2,0,0,2,"cpSpatialIndexQuery");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpSpatialIndexQuery",3,SWIGTYPE_p_cpBB);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID,0))){
+    SWIG_fail_ptr("cpSpatialIndexQuery",4,SWIGTYPE_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID);
+  }
+  
+  arg5=(void *)SWIG_MustGetPtr(L,5,0,0,5,"cpSpatialIndexQuery");
+  cpSpatialIndexQuery(arg1,arg2,arg3,arg4,arg5);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexSegmentQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  void *arg2 = (void *) 0 ;
+  cpVect arg3 ;
+  cpVect arg4 ;
+  cpFloat arg5 ;
+  cpSpatialIndexSegmentQueryFunc arg6 = (cpSpatialIndexSegmentQueryFunc) 0 ;
+  void *arg7 = (void *) 0 ;
+  cpVect *argp3 ;
+  cpVect *argp4 ;
+  cpFloat *argp5 ;
+  
+  SWIG_check_num_args("cpSpatialIndexSegmentQuery",7,7)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexSegmentQuery",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexSegmentQuery",2,"void *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpatialIndexSegmentQuery",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSpatialIndexSegmentQuery",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpSpatialIndexSegmentQuery",5,"cpFloat");
+  if(!SWIG_isptrtype(L,6)) SWIG_fail_arg("cpSpatialIndexSegmentQuery",6,"cpSpatialIndexSegmentQueryFunc");
+  if(!SWIG_isptrtype(L,7)) SWIG_fail_arg("cpSpatialIndexSegmentQuery",7,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexSegmentQuery",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  arg2=(void *)SWIG_MustGetPtr(L,2,0,0,2,"cpSpatialIndexSegmentQuery");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpatialIndexSegmentQuery",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpatialIndexSegmentQuery",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpatialIndexSegmentQuery",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&arg6,SWIGTYPE_p_f_p_void_p_void_p_void__cpFloat,0))){
+    SWIG_fail_ptr("cpSpatialIndexSegmentQuery",6,SWIGTYPE_p_f_p_void_p_void_p_void__cpFloat);
+  }
+  
+  arg7=(void *)SWIG_MustGetPtr(L,7,0,0,7,"cpSpatialIndexSegmentQuery");
+  cpSpatialIndexSegmentQuery(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpatialIndexReindexQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpatialIndex *arg1 = (cpSpatialIndex *) 0 ;
+  cpSpatialIndexQueryFunc arg2 = (cpSpatialIndexQueryFunc) 0 ;
+  void *arg3 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpSpatialIndexReindexQuery",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpatialIndexReindexQuery",1,"cpSpatialIndex *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpatialIndexReindexQuery",2,"cpSpatialIndexQueryFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpatialIndexReindexQuery",3,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpatialIndex,0))){
+    SWIG_fail_ptr("cpSpatialIndexReindexQuery",1,SWIGTYPE_p_cpSpatialIndex);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID,0))){
+    SWIG_fail_ptr("cpSpatialIndexReindexQuery",2,SWIGTYPE_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID);
+  }
+  
+  arg3=(void *)SWIG_MustGetPtr(L,3,0,0,3,"cpSpatialIndexReindexQuery");
+  cpSpatialIndexReindexQuery(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpComponentNode_root_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpComponentNode *arg1 = (struct cpComponentNode *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpComponentNode::root",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpComponentNode::root",1,"struct cpComponentNode *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpComponentNode::root",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpComponentNode,0))){
+    SWIG_fail_ptr("cpComponentNode_root_set",1,SWIGTYPE_p_cpComponentNode);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpComponentNode_root_set",2,SWIGTYPE_p_cpBody);
+  }
+  
+  if (arg1) (arg1)->root = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpComponentNode_root_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpComponentNode *arg1 = (struct cpComponentNode *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpComponentNode::root",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpComponentNode::root",1,"struct cpComponentNode *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpComponentNode,0))){
+    SWIG_fail_ptr("cpComponentNode_root_get",1,SWIGTYPE_p_cpComponentNode);
+  }
+  
+  result = (cpBody *) ((arg1)->root);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpComponentNode_next_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpComponentNode *arg1 = (struct cpComponentNode *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpComponentNode::next",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpComponentNode::next",1,"struct cpComponentNode *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpComponentNode::next",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpComponentNode,0))){
+    SWIG_fail_ptr("cpComponentNode_next_set",1,SWIGTYPE_p_cpComponentNode);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpComponentNode_next_set",2,SWIGTYPE_p_cpBody);
+  }
+  
+  if (arg1) (arg1)->next = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpComponentNode_next_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpComponentNode *arg1 = (struct cpComponentNode *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpComponentNode::next",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpComponentNode::next",1,"struct cpComponentNode *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpComponentNode,0))){
+    SWIG_fail_ptr("cpComponentNode_next_get",1,SWIGTYPE_p_cpComponentNode);
+  }
+  
+  result = (cpBody *) ((arg1)->next);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpComponentNode_idleTime_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpComponentNode *arg1 = (struct cpComponentNode *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpComponentNode::idleTime",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpComponentNode::idleTime",1,"struct cpComponentNode *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpComponentNode::idleTime",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpComponentNode,0))){
+    SWIG_fail_ptr("cpComponentNode_idleTime_set",1,SWIGTYPE_p_cpComponentNode);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpComponentNode_idleTime_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->idleTime = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpComponentNode_idleTime_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpComponentNode *arg1 = (struct cpComponentNode *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpComponentNode::idleTime",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpComponentNode::idleTime",1,"struct cpComponentNode *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpComponentNode,0))){
+    SWIG_fail_ptr("cpComponentNode_idleTime_get",1,SWIGTYPE_p_cpComponentNode);
+  }
+  
+  result =  ((arg1)->idleTime);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpComponentNode(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpComponentNode *result = 0 ;
+  
+  SWIG_check_num_args("cpComponentNode::cpComponentNode",0,0)
+  result = (struct cpComponentNode *)calloc(1, sizeof(struct cpComponentNode));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpComponentNode,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpComponentNode(void *obj) {
+struct cpComponentNode *arg1 = (struct cpComponentNode *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpComponentNode(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpComponentNode);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpComponentNode_attributes[] = {
+    { "root", _wrap_cpComponentNode_root_get, _wrap_cpComponentNode_root_set },
+    { "next", _wrap_cpComponentNode_next_get, _wrap_cpComponentNode_next_set },
+    { "idleTime", _wrap_cpComponentNode_idleTime_get, _wrap_cpComponentNode_idleTime_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpComponentNode_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpComponentNode_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpComponentNode_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpComponentNode_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpComponentNode_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpComponentNode_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpComponentNode_Sf_SwigStatic = {
+    "cpComponentNode",
+    swig_cpComponentNode_Sf_SwigStatic_methods,
+    swig_cpComponentNode_Sf_SwigStatic_attributes,
+    swig_cpComponentNode_Sf_SwigStatic_constants,
+    swig_cpComponentNode_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpComponentNode_bases[] = {0};
+static const char *swig_cpComponentNode_base_names[] = {0};
+static swig_lua_class _wrap_class_cpComponentNode = { "cpComponentNode", "cpComponentNode", &SWIGTYPE_p_cpComponentNode,_proxy__wrap_new_cpComponentNode, swig_delete_cpComponentNode, swig_cpComponentNode_methods, swig_cpComponentNode_attributes, &swig_cpComponentNode_Sf_SwigStatic, swig_cpComponentNode_meta, swig_cpComponentNode_bases, swig_cpComponentNode_base_names };
+
+static int _wrap_cpBody_velocity_func_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpBodyVelocityFunc arg2 = (cpBodyVelocityFunc) 0 ;
+  
+  SWIG_check_num_args("cpBody::velocity_func",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::velocity_func",1,"struct cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBody::velocity_func",2,"cpBodyVelocityFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_velocity_func_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpBody_cpVect_cpFloat_cpFloat__void,0))){
+    SWIG_fail_ptr("cpBody_velocity_func_set",2,SWIGTYPE_p_f_p_cpBody_cpVect_cpFloat_cpFloat__void);
+  }
+  
+  if (arg1) (arg1)->velocity_func = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_velocity_func_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpBodyVelocityFunc result;
+  
+  SWIG_check_num_args("cpBody::velocity_func",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::velocity_func",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_velocity_func_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = (cpBodyVelocityFunc) ((arg1)->velocity_func);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpBody_cpVect_cpFloat_cpFloat__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_position_func_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpBodyPositionFunc arg2 = (cpBodyPositionFunc) 0 ;
+  
+  SWIG_check_num_args("cpBody::position_func",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::position_func",1,"struct cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBody::position_func",2,"cpBodyPositionFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_position_func_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpBody_cpFloat__void,0))){
+    SWIG_fail_ptr("cpBody_position_func_set",2,SWIGTYPE_p_f_p_cpBody_cpFloat__void);
+  }
+  
+  if (arg1) (arg1)->position_func = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_position_func_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpBodyPositionFunc result;
+  
+  SWIG_check_num_args("cpBody::position_func",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::position_func",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_position_func_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = (cpBodyPositionFunc) ((arg1)->position_func);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpBody_cpFloat__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_m_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBody::m",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::m",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::m",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_m_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBody_m_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->m = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_m_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBody::m",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::m",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_m_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->m);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_m_inv_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBody::m_inv",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::m_inv",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::m_inv",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_m_inv_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBody_m_inv_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->m_inv = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_m_inv_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBody::m_inv",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::m_inv",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_m_inv_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->m_inv);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_i_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBody::i",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::i",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::i",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_i_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBody_i_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->i = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_i_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBody::i",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::i",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_i_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->i);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_i_inv_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBody::i_inv",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::i_inv",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::i_inv",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_i_inv_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBody_i_inv_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->i_inv = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_i_inv_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBody::i_inv",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::i_inv",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_i_inv_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->i_inv);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_p_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpBody::p",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::p",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::p",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_p_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBody_p_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->p = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_p_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBody::p",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::p",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_p_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->p);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_v_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpBody::v",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::v",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::v",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_v_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBody_v_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->v = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_v_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBody::v",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::v",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_v_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->v);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_f_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpBody::f",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::f",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::f",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_f_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBody_f_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->f = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_f_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBody::f",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::f",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_f_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->f);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_a_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBody::a",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::a",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::a",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_a_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBody_a_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->a = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_a_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBody::a",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::a",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_a_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->a);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_w_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBody::w",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::w",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::w",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_w_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBody_w_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->w = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_w_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBody::w",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::w",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_w_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->w);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_t_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBody::t",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::t",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::t",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_t_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBody_t_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->t = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_t_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBody::t",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::t",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_t_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->t);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_rot_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpBody::rot",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::rot",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::rot",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_rot_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBody_rot_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->rot = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_rot_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBody::rot",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::rot",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_rot_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->rot);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_data_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpBody::data",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::data",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::data",2,"cpDataPointer");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_data_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpBody_data_set",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->data = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_data_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpBody::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::data",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_data_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->data);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_v_limit_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBody::v_limit",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::v_limit",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::v_limit",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_v_limit_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBody_v_limit_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->v_limit = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_v_limit_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBody::v_limit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::v_limit",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_v_limit_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->v_limit);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_w_limit_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBody::w_limit",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::w_limit",1,"struct cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBody::w_limit",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_w_limit_set",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBody_w_limit_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->w_limit = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBody_w_limit_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *arg1 = (struct cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBody::w_limit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBody::w_limit",1,"struct cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBody_w_limit_get",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result =  ((arg1)->w_limit);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpBody(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpBody::cpBody",0,0)
+  result = (struct cpBody *)calloc(1, sizeof(struct cpBody));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpBody(void *obj) {
+struct cpBody *arg1 = (struct cpBody *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpBody(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpBody);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpBody_attributes[] = {
+    { "velocity_func", _wrap_cpBody_velocity_func_get, _wrap_cpBody_velocity_func_set },
+    { "position_func", _wrap_cpBody_position_func_get, _wrap_cpBody_position_func_set },
+    { "m", _wrap_cpBody_m_get, _wrap_cpBody_m_set },
+    { "m_inv", _wrap_cpBody_m_inv_get, _wrap_cpBody_m_inv_set },
+    { "i", _wrap_cpBody_i_get, _wrap_cpBody_i_set },
+    { "i_inv", _wrap_cpBody_i_inv_get, _wrap_cpBody_i_inv_set },
+    { "p", _wrap_cpBody_p_get, _wrap_cpBody_p_set },
+    { "v", _wrap_cpBody_v_get, _wrap_cpBody_v_set },
+    { "f", _wrap_cpBody_f_get, _wrap_cpBody_f_set },
+    { "a", _wrap_cpBody_a_get, _wrap_cpBody_a_set },
+    { "w", _wrap_cpBody_w_get, _wrap_cpBody_w_set },
+    { "t", _wrap_cpBody_t_get, _wrap_cpBody_t_set },
+    { "rot", _wrap_cpBody_rot_get, _wrap_cpBody_rot_set },
+    { "data", _wrap_cpBody_data_get, _wrap_cpBody_data_set },
+    { "v_limit", _wrap_cpBody_v_limit_get, _wrap_cpBody_v_limit_set },
+    { "w_limit", _wrap_cpBody_w_limit_get, _wrap_cpBody_w_limit_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpBody_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpBody_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpBody_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpBody_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpBody_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpBody_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpBody_Sf_SwigStatic = {
+    "cpBody",
+    swig_cpBody_Sf_SwigStatic_methods,
+    swig_cpBody_Sf_SwigStatic_attributes,
+    swig_cpBody_Sf_SwigStatic_constants,
+    swig_cpBody_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpBody_bases[] = {0};
+static const char *swig_cpBody_base_names[] = {0};
+static swig_lua_class _wrap_class_cpBody = { "cpBody", "cpBody", &SWIGTYPE_p_cpBody,_proxy__wrap_new_cpBody, swig_delete_cpBody, swig_cpBody_methods, swig_cpBody_attributes, &swig_cpBody_Sf_SwigStatic, swig_cpBody_meta, swig_cpBody_bases, swig_cpBody_base_names };
+
+static int _wrap_cpBodyAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpBodyAlloc",0,0)
+  result = (cpBody *)cpBodyAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat arg3 ;
+  cpFloat *argp2 ;
+  cpFloat *argp3 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpBodyInit",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyInit",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyInit",2,"cpFloat");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBodyInit",3,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyInit",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodyInit",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodyInit",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = (cpBody *)cpBodyInit(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpFloat arg2 ;
+  cpFloat *argp1 ;
+  cpFloat *argp2 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpBodyNew",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpBodyNew",1,"cpFloat");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyNew",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodyNew",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodyNew",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  result = (cpBody *)cpBodyNew(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyInitStatic(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpBodyInitStatic",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyInitStatic",1,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyInitStatic",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = (cpBody *)cpBodyInitStatic(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyNewStatic(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpBodyNewStatic",0,0)
+  result = (cpBody *)cpBodyNewStatic();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyDestroy(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpBodyDestroy",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyDestroy",1,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyDestroy",1,SWIGTYPE_p_cpBody);
+  }
+  
+  cpBodyDestroy(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyFree(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpBodyFree",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyFree",1,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyFree",1,SWIGTYPE_p_cpBody);
+  }
+  
+  cpBodyFree(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySanityCheck(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpBodySanityCheck",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySanityCheck",1,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySanityCheck",1,SWIGTYPE_p_cpBody);
+  }
+  
+  cpBodySanityCheck(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyActivate(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpBodyActivate",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyActivate",1,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyActivate",1,SWIGTYPE_p_cpBody);
+  }
+  
+  cpBodyActivate(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyActivateStatic(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  
+  SWIG_check_num_args("cpBodyActivateStatic",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyActivateStatic",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBodyActivateStatic",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyActivateStatic",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpBodyActivateStatic",2,SWIGTYPE_p_cpShape);
+  }
+  
+  cpBodyActivateStatic(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySleep(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpBodySleep",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySleep",1,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySleep",1,SWIGTYPE_p_cpBody);
+  }
+  
+  cpBodySleep(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySleepWithGroup(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpBodySleepWithGroup",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySleepWithGroup",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBodySleepWithGroup",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySleepWithGroup",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySleepWithGroup",2,SWIGTYPE_p_cpBody);
+  }
+  
+  cpBodySleepWithGroup(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyIsSleeping(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpBodyIsSleeping",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyIsSleeping",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyIsSleeping",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyIsSleeping((cpBody const *)arg1);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyIsStatic(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpBodyIsStatic",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyIsStatic",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyIsStatic",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyIsStatic((cpBody const *)arg1);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyIsRogue(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpBodyIsRogue",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyIsRogue",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyIsRogue",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyIsRogue((cpBody const *)arg1);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetSpace(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpSpace *result = 0 ;
+  
+  SWIG_check_num_args("cpBodyGetSpace",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetSpace",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetSpace",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = (cpSpace *)cpBodyGetSpace((cpBody const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpace,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetMass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBodyGetMass",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetMass",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetMass",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetMass((cpBody const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetMass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetMass",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetMass",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetMass",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetMass",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodySetMass",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetMass(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetMoment(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBodyGetMoment",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetMoment",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetMoment",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetMoment((cpBody const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetMoment(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetMoment",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetMoment",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetMoment",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetMoment",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodySetMoment",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetMoment(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetPos(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBodyGetPos",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetPos",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetPos",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetPos((cpBody const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetPos(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetPos",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetPos",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetPos",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetPos",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodySetPos",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetPos(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetVel(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBodyGetVel",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetVel",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetVel",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetVel((cpBody const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetVel(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetVel",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetVel",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetVel",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetVel",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodySetVel",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetVel(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetForce(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBodyGetForce",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetForce",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetForce",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetForce((cpBody const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetForce(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetForce",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetForce",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetForce",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetForce",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodySetForce",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetForce(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetAngle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBodyGetAngle",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetAngle",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetAngle",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetAngle((cpBody const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetAngle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetAngle",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetAngle",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetAngle",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetAngle",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodySetAngle",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetAngle(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetAngVel(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBodyGetAngVel",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetAngVel",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetAngVel",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetAngVel((cpBody const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetAngVel(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetAngVel",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetAngVel",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetAngVel",2,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetAngVel",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodySetAngVel",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetAngVel(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetTorque(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBodyGetTorque",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetTorque",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetTorque",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetTorque((cpBody const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetTorque(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetTorque",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetTorque",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetTorque",2,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetTorque",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodySetTorque",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetTorque(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetRot(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBodyGetRot",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetRot",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetRot",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetRot((cpBody const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetVelLimit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBodyGetVelLimit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetVelLimit",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetVelLimit",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetVelLimit((cpBody const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetVelLimit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetVelLimit",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetVelLimit",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetVelLimit",2,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetVelLimit",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodySetVelLimit",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetVelLimit(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetAngVelLimit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBodyGetAngVelLimit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetAngVelLimit",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetAngVelLimit",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetAngVelLimit((cpBody const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetAngVelLimit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetAngVelLimit",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetAngVelLimit",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetAngVelLimit",2,"cpFloat const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetAngVelLimit",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodySetAngVelLimit",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetAngVelLimit(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpBodyGetUserData",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetUserData",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetUserData",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyGetUserData((cpBody const *)arg1);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodySetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpBodySetUserData",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodySetUserData",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodySetUserData",2,"cpDataPointer const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodySetUserData",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpBodySetUserData",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  cpBodySetUserData(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyUpdateVelocity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpFloat arg3 ;
+  cpFloat arg4 ;
+  cpVect *argp2 ;
+  cpFloat *argp3 ;
+  cpFloat *argp4 ;
+  
+  SWIG_check_num_args("cpBodyUpdateVelocity",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyUpdateVelocity",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyUpdateVelocity",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBodyUpdateVelocity",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpBodyUpdateVelocity",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyUpdateVelocity",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodyUpdateVelocity",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodyUpdateVelocity",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodyUpdateVelocity",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  cpBodyUpdateVelocity(arg1,arg2,arg3,arg4);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyUpdatePosition(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpBodyUpdatePosition",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyUpdatePosition",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyUpdatePosition",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyUpdatePosition",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBodyUpdatePosition",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpBodyUpdatePosition(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyLocal2World(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBodyLocal2World",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyLocal2World",1,"cpBody const *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyLocal2World",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyLocal2World",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodyLocal2World",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpBodyLocal2World((cpBody const *)arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyWorld2Local(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBodyWorld2Local",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyWorld2Local",1,"cpBody const *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyWorld2Local",2,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyWorld2Local",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodyWorld2Local",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpBodyWorld2Local((cpBody const *)arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyResetForces(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpBodyResetForces",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyResetForces",1,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyResetForces",1,SWIGTYPE_p_cpBody);
+  }
+  
+  cpBodyResetForces(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyApplyForce(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  
+  SWIG_check_num_args("cpBodyApplyForce",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyApplyForce",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyApplyForce",2,"cpVect const");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBodyApplyForce",3,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyApplyForce",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodyApplyForce",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodyApplyForce",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  cpBodyApplyForce(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyApplyImpulse(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  
+  SWIG_check_num_args("cpBodyApplyImpulse",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyApplyImpulse",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyApplyImpulse",2,"cpVect const");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBodyApplyImpulse",3,"cpVect const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyApplyImpulse",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodyApplyImpulse",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodyApplyImpulse",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  cpBodyApplyImpulse(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetVelAtWorldPoint(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBodyGetVelAtWorldPoint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetVelAtWorldPoint",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyGetVelAtWorldPoint",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetVelAtWorldPoint",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodyGetVelAtWorldPoint",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpBodyGetVelAtWorldPoint(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyGetVelAtLocalPoint(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpBodyGetVelAtLocalPoint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyGetVelAtLocalPoint",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBodyGetVelAtLocalPoint",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyGetVelAtLocalPoint",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpBodyGetVelAtLocalPoint",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpBodyGetVelAtLocalPoint(arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyKineticEnergy(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpBodyKineticEnergy",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyKineticEnergy",1,"cpBody const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyKineticEnergy",1,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpBodyKineticEnergy((cpBody const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyEachShape(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBodyShapeIteratorFunc arg2 = (cpBodyShapeIteratorFunc) 0 ;
+  void *arg3 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpBodyEachShape",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyEachShape",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBodyEachShape",2,"cpBodyShapeIteratorFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpBodyEachShape",3,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyEachShape",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpBody_p_cpShape_p_void__void,0))){
+    SWIG_fail_ptr("cpBodyEachShape",2,SWIGTYPE_p_f_p_cpBody_p_cpShape_p_void__void);
+  }
+  
+  arg3=(void *)SWIG_MustGetPtr(L,3,0,0,3,"cpBodyEachShape");
+  cpBodyEachShape(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyEachConstraint(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBodyConstraintIteratorFunc arg2 = (cpBodyConstraintIteratorFunc) 0 ;
+  void *arg3 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpBodyEachConstraint",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyEachConstraint",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBodyEachConstraint",2,"cpBodyConstraintIteratorFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpBodyEachConstraint",3,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyEachConstraint",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpBody_p_cpConstraint_p_void__void,0))){
+    SWIG_fail_ptr("cpBodyEachConstraint",2,SWIGTYPE_p_f_p_cpBody_p_cpConstraint_p_void__void);
+  }
+  
+  arg3=(void *)SWIG_MustGetPtr(L,3,0,0,3,"cpBodyEachConstraint");
+  cpBodyEachConstraint(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBodyEachArbiter(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBodyArbiterIteratorFunc arg2 = (cpBodyArbiterIteratorFunc) 0 ;
+  void *arg3 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpBodyEachArbiter",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBodyEachArbiter",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBodyEachArbiter",2,"cpBodyArbiterIteratorFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpBodyEachArbiter",3,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBodyEachArbiter",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpBody_p_cpArbiter_p_void__void,0))){
+    SWIG_fail_ptr("cpBodyEachArbiter",2,SWIGTYPE_p_f_p_cpBody_p_cpArbiter_p_void__void);
+  }
+  
+  arg3=(void *)SWIG_MustGetPtr(L,3,0,0,3,"cpBodyEachArbiter");
+  cpBodyEachArbiter(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpNearestPointQueryInfo_shape_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpNearestPointQueryInfo *arg1 = (struct cpNearestPointQueryInfo *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  
+  SWIG_check_num_args("cpNearestPointQueryInfo::shape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpNearestPointQueryInfo::shape",1,"struct cpNearestPointQueryInfo *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpNearestPointQueryInfo::shape",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_shape_set",1,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_shape_set",2,SWIGTYPE_p_cpShape);
+  }
+  
+  if (arg1) (arg1)->shape = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpNearestPointQueryInfo_shape_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpNearestPointQueryInfo *arg1 = (struct cpNearestPointQueryInfo *) 0 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpNearestPointQueryInfo::shape",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpNearestPointQueryInfo::shape",1,"struct cpNearestPointQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_shape_get",1,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  result = (cpShape *) ((arg1)->shape);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpNearestPointQueryInfo_p_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpNearestPointQueryInfo *arg1 = (struct cpNearestPointQueryInfo *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpNearestPointQueryInfo::p",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpNearestPointQueryInfo::p",1,"struct cpNearestPointQueryInfo *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpNearestPointQueryInfo::p",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_p_set",1,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_p_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->p = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpNearestPointQueryInfo_p_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpNearestPointQueryInfo *arg1 = (struct cpNearestPointQueryInfo *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpNearestPointQueryInfo::p",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpNearestPointQueryInfo::p",1,"struct cpNearestPointQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_p_get",1,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  result =  ((arg1)->p);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpNearestPointQueryInfo_d_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpNearestPointQueryInfo *arg1 = (struct cpNearestPointQueryInfo *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpNearestPointQueryInfo::d",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpNearestPointQueryInfo::d",1,"struct cpNearestPointQueryInfo *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpNearestPointQueryInfo::d",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_d_set",1,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_d_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->d = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpNearestPointQueryInfo_d_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpNearestPointQueryInfo *arg1 = (struct cpNearestPointQueryInfo *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpNearestPointQueryInfo::d",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpNearestPointQueryInfo::d",1,"struct cpNearestPointQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_d_get",1,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  result =  ((arg1)->d);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpNearestPointQueryInfo_g_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpNearestPointQueryInfo *arg1 = (struct cpNearestPointQueryInfo *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpNearestPointQueryInfo::g",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpNearestPointQueryInfo::g",1,"struct cpNearestPointQueryInfo *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpNearestPointQueryInfo::g",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_g_set",1,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_g_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->g = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpNearestPointQueryInfo_g_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpNearestPointQueryInfo *arg1 = (struct cpNearestPointQueryInfo *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpNearestPointQueryInfo::g",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpNearestPointQueryInfo::g",1,"struct cpNearestPointQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpNearestPointQueryInfo_g_get",1,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  result =  ((arg1)->g);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpNearestPointQueryInfo(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpNearestPointQueryInfo *result = 0 ;
+  
+  SWIG_check_num_args("cpNearestPointQueryInfo::cpNearestPointQueryInfo",0,0)
+  result = (struct cpNearestPointQueryInfo *)calloc(1, sizeof(struct cpNearestPointQueryInfo));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpNearestPointQueryInfo,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpNearestPointQueryInfo(void *obj) {
+struct cpNearestPointQueryInfo *arg1 = (struct cpNearestPointQueryInfo *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpNearestPointQueryInfo(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpNearestPointQueryInfo);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpNearestPointQueryInfo_attributes[] = {
+    { "shape", _wrap_cpNearestPointQueryInfo_shape_get, _wrap_cpNearestPointQueryInfo_shape_set },
+    { "p", _wrap_cpNearestPointQueryInfo_p_get, _wrap_cpNearestPointQueryInfo_p_set },
+    { "d", _wrap_cpNearestPointQueryInfo_d_get, _wrap_cpNearestPointQueryInfo_d_set },
+    { "g", _wrap_cpNearestPointQueryInfo_g_get, _wrap_cpNearestPointQueryInfo_g_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpNearestPointQueryInfo_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpNearestPointQueryInfo_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpNearestPointQueryInfo_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpNearestPointQueryInfo_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpNearestPointQueryInfo_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpNearestPointQueryInfo_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpNearestPointQueryInfo_Sf_SwigStatic = {
+    "cpNearestPointQueryInfo",
+    swig_cpNearestPointQueryInfo_Sf_SwigStatic_methods,
+    swig_cpNearestPointQueryInfo_Sf_SwigStatic_attributes,
+    swig_cpNearestPointQueryInfo_Sf_SwigStatic_constants,
+    swig_cpNearestPointQueryInfo_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpNearestPointQueryInfo_bases[] = {0};
+static const char *swig_cpNearestPointQueryInfo_base_names[] = {0};
+static swig_lua_class _wrap_class_cpNearestPointQueryInfo = { "cpNearestPointQueryInfo", "cpNearestPointQueryInfo", &SWIGTYPE_p_cpNearestPointQueryInfo,_proxy__wrap_new_cpNearestPointQueryInfo, swig_delete_cpNearestPointQueryInfo, swig_cpNearestPointQueryInfo_methods, swig_cpNearestPointQueryInfo_attributes, &swig_cpNearestPointQueryInfo_Sf_SwigStatic, swig_cpNearestPointQueryInfo_meta, swig_cpNearestPointQueryInfo_bases, swig_cpNearestPointQueryInfo_base_names };
+
+static int _wrap_cpSegmentQueryInfo_shape_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentQueryInfo *arg1 = (struct cpSegmentQueryInfo *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  
+  SWIG_check_num_args("cpSegmentQueryInfo::shape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentQueryInfo::shape",1,"struct cpSegmentQueryInfo *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSegmentQueryInfo::shape",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpSegmentQueryInfo_shape_set",1,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpSegmentQueryInfo_shape_set",2,SWIGTYPE_p_cpShape);
+  }
+  
+  if (arg1) (arg1)->shape = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentQueryInfo_shape_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentQueryInfo *arg1 = (struct cpSegmentQueryInfo *) 0 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSegmentQueryInfo::shape",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentQueryInfo::shape",1,"struct cpSegmentQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpSegmentQueryInfo_shape_get",1,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  
+  result = (cpShape *) ((arg1)->shape);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentQueryInfo_t_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentQueryInfo *arg1 = (struct cpSegmentQueryInfo *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentQueryInfo::t",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentQueryInfo::t",1,"struct cpSegmentQueryInfo *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentQueryInfo::t",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpSegmentQueryInfo_t_set",1,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSegmentQueryInfo_t_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->t = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentQueryInfo_t_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentQueryInfo *arg1 = (struct cpSegmentQueryInfo *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSegmentQueryInfo::t",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentQueryInfo::t",1,"struct cpSegmentQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpSegmentQueryInfo_t_get",1,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  
+  result =  ((arg1)->t);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentQueryInfo_n_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentQueryInfo *arg1 = (struct cpSegmentQueryInfo *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentQueryInfo::n",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentQueryInfo::n",1,"struct cpSegmentQueryInfo *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentQueryInfo::n",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpSegmentQueryInfo_n_set",1,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentQueryInfo_n_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->n = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentQueryInfo_n_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentQueryInfo *arg1 = (struct cpSegmentQueryInfo *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentQueryInfo::n",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentQueryInfo::n",1,"struct cpSegmentQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpSegmentQueryInfo_n_get",1,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  
+  result =  ((arg1)->n);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpSegmentQueryInfo(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentQueryInfo *result = 0 ;
+  
+  SWIG_check_num_args("cpSegmentQueryInfo::cpSegmentQueryInfo",0,0)
+  result = (struct cpSegmentQueryInfo *)calloc(1, sizeof(struct cpSegmentQueryInfo));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSegmentQueryInfo,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpSegmentQueryInfo(void *obj) {
+struct cpSegmentQueryInfo *arg1 = (struct cpSegmentQueryInfo *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpSegmentQueryInfo(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpSegmentQueryInfo);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpSegmentQueryInfo_attributes[] = {
+    { "shape", _wrap_cpSegmentQueryInfo_shape_get, _wrap_cpSegmentQueryInfo_shape_set },
+    { "t", _wrap_cpSegmentQueryInfo_t_get, _wrap_cpSegmentQueryInfo_t_set },
+    { "n", _wrap_cpSegmentQueryInfo_n_get, _wrap_cpSegmentQueryInfo_n_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpSegmentQueryInfo_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpSegmentQueryInfo_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpSegmentQueryInfo_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpSegmentQueryInfo_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpSegmentQueryInfo_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpSegmentQueryInfo_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpSegmentQueryInfo_Sf_SwigStatic = {
+    "cpSegmentQueryInfo",
+    swig_cpSegmentQueryInfo_Sf_SwigStatic_methods,
+    swig_cpSegmentQueryInfo_Sf_SwigStatic_attributes,
+    swig_cpSegmentQueryInfo_Sf_SwigStatic_constants,
+    swig_cpSegmentQueryInfo_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpSegmentQueryInfo_bases[] = {0};
+static const char *swig_cpSegmentQueryInfo_base_names[] = {0};
+static swig_lua_class _wrap_class_cpSegmentQueryInfo = { "cpSegmentQueryInfo", "cpSegmentQueryInfo", &SWIGTYPE_p_cpSegmentQueryInfo,_proxy__wrap_new_cpSegmentQueryInfo, swig_delete_cpSegmentQueryInfo, swig_cpSegmentQueryInfo_methods, swig_cpSegmentQueryInfo_attributes, &swig_cpSegmentQueryInfo_Sf_SwigStatic, swig_cpSegmentQueryInfo_meta, swig_cpSegmentQueryInfo_bases, swig_cpSegmentQueryInfo_base_names };
+
+static int _wrap_cpShapeClass_type_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeType arg2 ;
+  
+  SWIG_check_num_args("cpShapeClass::type",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::type",1,"struct cpShapeClass *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpShapeClass::type",2,"cpShapeType");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_type_set",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  arg2 = (cpShapeType)(int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->type = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeClass_type_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeType result;
+  
+  SWIG_check_num_args("cpShapeClass::type",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::type",1,"struct cpShapeClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_type_get",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  result = (cpShapeType) ((arg1)->type);
+  lua_pushnumber(L, (lua_Number)(int)(result)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeClass_cacheData_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeCacheDataImpl arg2 = (cpShapeCacheDataImpl) 0 ;
+  
+  SWIG_check_num_args("cpShapeClass::cacheData",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::cacheData",1,"struct cpShapeClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpShapeClass::cacheData",2,"cpShapeCacheDataImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_cacheData_set",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpShape_cpVect_cpVect__cpBB,0))){
+    SWIG_fail_ptr("cpShapeClass_cacheData_set",2,SWIGTYPE_p_f_p_cpShape_cpVect_cpVect__cpBB);
+  }
+  
+  if (arg1) (arg1)->cacheData = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeClass_cacheData_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeCacheDataImpl result;
+  
+  SWIG_check_num_args("cpShapeClass::cacheData",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::cacheData",1,"struct cpShapeClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_cacheData_get",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  result = (cpShapeCacheDataImpl) ((arg1)->cacheData);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpShape_cpVect_cpVect__cpBB,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeClass_destroy_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeDestroyImpl arg2 = (cpShapeDestroyImpl) 0 ;
+  
+  SWIG_check_num_args("cpShapeClass::destroy",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::destroy",1,"struct cpShapeClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpShapeClass::destroy",2,"cpShapeDestroyImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_destroy_set",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpShape__void,0))){
+    SWIG_fail_ptr("cpShapeClass_destroy_set",2,SWIGTYPE_p_f_p_cpShape__void);
+  }
+  
+  if (arg1) (arg1)->destroy = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeClass_destroy_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeDestroyImpl result;
+  
+  SWIG_check_num_args("cpShapeClass::destroy",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::destroy",1,"struct cpShapeClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_destroy_get",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  result = (cpShapeDestroyImpl) ((arg1)->destroy);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpShape__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeClass_nearestPointQuery_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeNearestPointQueryImpl arg2 = (cpShapeNearestPointQueryImpl) 0 ;
+  
+  SWIG_check_num_args("cpShapeClass::nearestPointQuery",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::nearestPointQuery",1,"struct cpShapeClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpShapeClass::nearestPointQuery",2,"cpShapeNearestPointQueryImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_nearestPointQuery_set",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void,0))){
+    SWIG_fail_ptr("cpShapeClass_nearestPointQuery_set",2,SWIGTYPE_p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void);
+  }
+  
+  if (arg1) (arg1)->nearestPointQuery = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeClass_nearestPointQuery_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeNearestPointQueryImpl result;
+  
+  SWIG_check_num_args("cpShapeClass::nearestPointQuery",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::nearestPointQuery",1,"struct cpShapeClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_nearestPointQuery_get",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  result = (cpShapeNearestPointQueryImpl) ((arg1)->nearestPointQuery);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeClass_segmentQuery_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeSegmentQueryImpl arg2 = (cpShapeSegmentQueryImpl) 0 ;
+  
+  SWIG_check_num_args("cpShapeClass::segmentQuery",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::segmentQuery",1,"struct cpShapeClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpShapeClass::segmentQuery",2,"cpShapeSegmentQueryImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_segmentQuery_set",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void,0))){
+    SWIG_fail_ptr("cpShapeClass_segmentQuery_set",2,SWIGTYPE_p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void);
+  }
+  
+  if (arg1) (arg1)->segmentQuery = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeClass_segmentQuery_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *arg1 = (struct cpShapeClass *) 0 ;
+  cpShapeSegmentQueryImpl result;
+  
+  SWIG_check_num_args("cpShapeClass::segmentQuery",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeClass::segmentQuery",1,"struct cpShapeClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShapeClass,0))){
+    SWIG_fail_ptr("cpShapeClass_segmentQuery_get",1,SWIGTYPE_p_cpShapeClass);
+  }
+  
+  result = (cpShapeSegmentQueryImpl) ((arg1)->segmentQuery);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpShapeClass(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShapeClass *result = 0 ;
+  
+  SWIG_check_num_args("cpShapeClass::cpShapeClass",0,0)
+  result = (struct cpShapeClass *)calloc(1, sizeof(struct cpShapeClass));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShapeClass,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpShapeClass(void *obj) {
+struct cpShapeClass *arg1 = (struct cpShapeClass *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpShapeClass(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpShapeClass);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpShapeClass_attributes[] = {
+    { "type", _wrap_cpShapeClass_type_get, _wrap_cpShapeClass_type_set },
+    { "cacheData", _wrap_cpShapeClass_cacheData_get, _wrap_cpShapeClass_cacheData_set },
+    { "destroy", _wrap_cpShapeClass_destroy_get, _wrap_cpShapeClass_destroy_set },
+    { "nearestPointQuery", _wrap_cpShapeClass_nearestPointQuery_get, _wrap_cpShapeClass_nearestPointQuery_set },
+    { "segmentQuery", _wrap_cpShapeClass_segmentQuery_get, _wrap_cpShapeClass_segmentQuery_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpShapeClass_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpShapeClass_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpShapeClass_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpShapeClass_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpShapeClass_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpShapeClass_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpShapeClass_Sf_SwigStatic = {
+    "cpShapeClass",
+    swig_cpShapeClass_Sf_SwigStatic_methods,
+    swig_cpShapeClass_Sf_SwigStatic_attributes,
+    swig_cpShapeClass_Sf_SwigStatic_constants,
+    swig_cpShapeClass_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpShapeClass_bases[] = {0};
+static const char *swig_cpShapeClass_base_names[] = {0};
+static swig_lua_class _wrap_class_cpShapeClass = { "cpShapeClass", "cpShapeClass", &SWIGTYPE_p_cpShapeClass,_proxy__wrap_new_cpShapeClass, swig_delete_cpShapeClass, swig_cpShapeClass_methods, swig_cpShapeClass_attributes, &swig_cpShapeClass_Sf_SwigStatic, swig_cpShapeClass_meta, swig_cpShapeClass_bases, swig_cpShapeClass_base_names };
+
+static int _wrap_cpShape_body_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpShape::body",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::body",1,"struct cpShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpShape::body",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_body_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpShape_body_set",2,SWIGTYPE_p_cpBody);
+  }
+  
+  if (arg1) (arg1)->body = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_body_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpShape::body",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::body",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_body_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = (cpBody *) ((arg1)->body);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_bb_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpBB *arg2 = (cpBB *) 0 ;
+  
+  SWIG_check_num_args("cpShape::bb",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::bb",1,"struct cpShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpShape::bb",2,"cpBB *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_bb_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpShape_bb_set",2,SWIGTYPE_p_cpBB);
+  }
+  
+  if (arg1) (arg1)->bb = *arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_bb_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpBB *result = 0 ;
+  
+  SWIG_check_num_args("cpShape::bb",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::bb",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_bb_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = (cpBB *)& ((arg1)->bb);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBB,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_sensor_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpBool arg2 ;
+  cpBool *argp2 ;
+  
+  SWIG_check_num_args("cpShape::sensor",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::sensor",1,"struct cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShape::sensor",2,"cpBool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_sensor_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBool,0))){
+    SWIG_fail_ptr("cpShape_sensor_set",2,SWIGTYPE_p_cpBool);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->sensor = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_sensor_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpShape::sensor",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::sensor",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_sensor_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result =  ((arg1)->sensor);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_e_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpShape::e",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::e",1,"struct cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShape::e",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_e_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpShape_e_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->e = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_e_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpShape::e",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::e",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_e_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result =  ((arg1)->e);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_u_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpShape::u",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::u",1,"struct cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShape::u",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_u_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpShape_u_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->u = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_u_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpShape::u",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::u",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_u_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result =  ((arg1)->u);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_surface_v_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpShape::surface_v",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::surface_v",1,"struct cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShape::surface_v",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_surface_v_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpShape_surface_v_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->surface_v = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_surface_v_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpShape::surface_v",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::surface_v",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_surface_v_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result =  ((arg1)->surface_v);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_data_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpShape::data",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::data",1,"struct cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShape::data",2,"cpDataPointer");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_data_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpShape_data_set",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->data = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_data_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpShape::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::data",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_data_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result =  ((arg1)->data);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_collision_type_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpCollisionType arg2 ;
+  cpCollisionType *argp2 ;
+  
+  SWIG_check_num_args("cpShape::collision_type",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::collision_type",1,"struct cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShape::collision_type",2,"cpCollisionType");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_collision_type_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpCollisionType,0))){
+    SWIG_fail_ptr("cpShape_collision_type_set",2,SWIGTYPE_p_cpCollisionType);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->collision_type = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_collision_type_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpCollisionType result;
+  
+  SWIG_check_num_args("cpShape::collision_type",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::collision_type",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_collision_type_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result =  ((arg1)->collision_type);
+  {
+    cpCollisionType * resultptr;
+    resultptr = (cpCollisionType *) malloc(sizeof(cpCollisionType));
+    memmove(resultptr, &result, sizeof(cpCollisionType));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpCollisionType,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_group_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpGroup arg2 ;
+  cpGroup *argp2 ;
+  
+  SWIG_check_num_args("cpShape::group",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::group",1,"struct cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShape::group",2,"cpGroup");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_group_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpGroup,0))){
+    SWIG_fail_ptr("cpShape_group_set",2,SWIGTYPE_p_cpGroup);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->group = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_group_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpGroup result;
+  
+  SWIG_check_num_args("cpShape::group",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::group",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_group_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result =  ((arg1)->group);
+  {
+    cpGroup * resultptr;
+    resultptr = (cpGroup *) malloc(sizeof(cpGroup));
+    memmove(resultptr, &result, sizeof(cpGroup));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpGroup,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_layers_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpLayers arg2 ;
+  cpLayers *argp2 ;
+  
+  SWIG_check_num_args("cpShape::layers",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::layers",1,"struct cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShape::layers",2,"cpLayers");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_layers_set",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpLayers,0))){
+    SWIG_fail_ptr("cpShape_layers_set",2,SWIGTYPE_p_cpLayers);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->layers = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShape_layers_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *arg1 = (struct cpShape *) 0 ;
+  cpLayers result;
+  
+  SWIG_check_num_args("cpShape::layers",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShape::layers",1,"struct cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShape_layers_get",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result =  ((arg1)->layers);
+  {
+    cpLayers * resultptr;
+    resultptr = (cpLayers *) malloc(sizeof(cpLayers));
+    memmove(resultptr, &result, sizeof(cpLayers));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpLayers,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpShape(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpShape::cpShape",0,0)
+  result = (struct cpShape *)calloc(1, sizeof(struct cpShape));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpShape(void *obj) {
+struct cpShape *arg1 = (struct cpShape *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpShape(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpShape);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpShape_attributes[] = {
+    { "body", _wrap_cpShape_body_get, _wrap_cpShape_body_set },
+    { "bb", _wrap_cpShape_bb_get, _wrap_cpShape_bb_set },
+    { "sensor", _wrap_cpShape_sensor_get, _wrap_cpShape_sensor_set },
+    { "e", _wrap_cpShape_e_get, _wrap_cpShape_e_set },
+    { "u", _wrap_cpShape_u_get, _wrap_cpShape_u_set },
+    { "surface_v", _wrap_cpShape_surface_v_get, _wrap_cpShape_surface_v_set },
+    { "data", _wrap_cpShape_data_get, _wrap_cpShape_data_set },
+    { "collision_type", _wrap_cpShape_collision_type_get, _wrap_cpShape_collision_type_set },
+    { "group", _wrap_cpShape_group_get, _wrap_cpShape_group_set },
+    { "layers", _wrap_cpShape_layers_get, _wrap_cpShape_layers_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpShape_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpShape_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpShape_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpShape_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpShape_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpShape_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpShape_Sf_SwigStatic = {
+    "cpShape",
+    swig_cpShape_Sf_SwigStatic_methods,
+    swig_cpShape_Sf_SwigStatic_attributes,
+    swig_cpShape_Sf_SwigStatic_constants,
+    swig_cpShape_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpShape_bases[] = {0};
+static const char *swig_cpShape_base_names[] = {0};
+static swig_lua_class _wrap_class_cpShape = { "cpShape", "cpShape", &SWIGTYPE_p_cpShape,_proxy__wrap_new_cpShape, swig_delete_cpShape, swig_cpShape_methods, swig_cpShape_attributes, &swig_cpShape_Sf_SwigStatic, swig_cpShape_meta, swig_cpShape_bases, swig_cpShape_base_names };
+
+static int _wrap_cpShapeDestroy(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  
+  SWIG_check_num_args("cpShapeDestroy",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeDestroy",1,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeDestroy",1,SWIGTYPE_p_cpShape);
+  }
+  
+  cpShapeDestroy(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeFree(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  
+  SWIG_check_num_args("cpShapeFree",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeFree",1,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeFree",1,SWIGTYPE_p_cpShape);
+  }
+  
+  cpShapeFree(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeCacheBB(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpBB result;
+  
+  SWIG_check_num_args("cpShapeCacheBB",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeCacheBB",1,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeCacheBB",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeCacheBB(arg1);
+  {
+    cpBB * resultptr;
+    resultptr = (cpBB *) malloc(sizeof(cpBB));
+    memmove(resultptr, &result, sizeof(cpBB));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBB,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeUpdate(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  cpBB result;
+  
+  SWIG_check_num_args("cpShapeUpdate",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeUpdate",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeUpdate",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpShapeUpdate",3,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeUpdate",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpShapeUpdate",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpShapeUpdate",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  result = cpShapeUpdate(arg1,arg2,arg3);
+  {
+    cpBB * resultptr;
+    resultptr = (cpBB *) malloc(sizeof(cpBB));
+    memmove(resultptr, &result, sizeof(cpBB));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBB,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapePointQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpShapePointQuery",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapePointQuery",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapePointQuery",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapePointQuery",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpShapePointQuery",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  result = cpShapePointQuery(arg1,arg2);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeNearestPointQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect arg2 ;
+  cpNearestPointQueryInfo *arg3 = (cpNearestPointQueryInfo *) 0 ;
+  cpVect *argp2 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpShapeNearestPointQuery",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeNearestPointQuery",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeNearestPointQuery",2,"cpVect");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpShapeNearestPointQuery",3,"cpNearestPointQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeNearestPointQuery",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpShapeNearestPointQuery",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpShapeNearestPointQuery",3,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  result = cpShapeNearestPointQuery(arg1,arg2,arg3);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSegmentQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpSegmentQueryInfo *arg4 = (cpSegmentQueryInfo *) 0 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpShapeSegmentQuery",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSegmentQuery",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeSegmentQuery",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpShapeSegmentQuery",3,"cpVect");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpShapeSegmentQuery",4,"cpSegmentQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSegmentQuery",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpShapeSegmentQuery",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpShapeSegmentQuery",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpShapeSegmentQuery",4,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  
+  result = cpShapeSegmentQuery(arg1,arg2,arg3,arg4);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentQueryHitPoint(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpSegmentQueryInfo arg3 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpSegmentQueryInfo *argp3 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentQueryHitPoint",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpSegmentQueryHitPoint",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentQueryHitPoint",2,"cpVect const");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSegmentQueryHitPoint",3,"cpSegmentQueryInfo const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentQueryHitPoint",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentQueryHitPoint",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpSegmentQueryHitPoint",3,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  arg3 = *argp3;
+  
+  result = cpSegmentQueryHitPoint(arg1,arg2,arg3);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentQueryHitDist(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpSegmentQueryInfo arg3 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpSegmentQueryInfo *argp3 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSegmentQueryHitDist",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpSegmentQueryHitDist",1,"cpVect const");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentQueryHitDist",2,"cpVect const");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSegmentQueryHitDist",3,"cpSegmentQueryInfo const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentQueryHitDist",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentQueryHitDist",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpSegmentQueryHitDist",3,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  arg3 = *argp3;
+  
+  result = cpSegmentQueryHitDist(arg1,arg2,arg3);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetSpace(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpSpace *result = 0 ;
+  
+  SWIG_check_num_args("cpShapeGetSpace",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetSpace",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetSpace",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = (cpSpace *)cpShapeGetSpace((cpShape const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpace,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetBody(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpShapeGetBody",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetBody",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetBody",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = (cpBody *)cpShapeGetBody((cpShape const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSetBody(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpShapeSetBody",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSetBody",1,"cpShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpShapeSetBody",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSetBody",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpShapeSetBody",2,SWIGTYPE_p_cpBody);
+  }
+  
+  cpShapeSetBody(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetBB(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpBB result;
+  
+  SWIG_check_num_args("cpShapeGetBB",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetBB",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetBB",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeGetBB((cpShape const *)arg1);
+  {
+    cpBB * resultptr;
+    resultptr = (cpBB *) malloc(sizeof(cpBB));
+    memmove(resultptr, &result, sizeof(cpBB));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBB,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetSensor(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpShapeGetSensor",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetSensor",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetSensor",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeGetSensor((cpShape const *)arg1);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSetSensor(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpBool arg2 ;
+  cpBool *argp2 ;
+  
+  SWIG_check_num_args("cpShapeSetSensor",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSetSensor",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeSetSensor",2,"cpBool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSetSensor",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBool,0))){
+    SWIG_fail_ptr("cpShapeSetSensor",2,SWIGTYPE_p_cpBool);
+  }
+  arg2 = *argp2;
+  
+  cpShapeSetSensor(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetElasticity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpShapeGetElasticity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetElasticity",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetElasticity",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeGetElasticity((cpShape const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSetElasticity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpShapeSetElasticity",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSetElasticity",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeSetElasticity",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSetElasticity",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpShapeSetElasticity",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpShapeSetElasticity(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetFriction(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpShapeGetFriction",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetFriction",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetFriction",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeGetFriction((cpShape const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSetFriction(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpShapeSetFriction",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSetFriction",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeSetFriction",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSetFriction",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpShapeSetFriction",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpShapeSetFriction(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetSurfaceVelocity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpShapeGetSurfaceVelocity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetSurfaceVelocity",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetSurfaceVelocity",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeGetSurfaceVelocity((cpShape const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSetSurfaceVelocity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpShapeSetSurfaceVelocity",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSetSurfaceVelocity",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeSetSurfaceVelocity",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSetSurfaceVelocity",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpShapeSetSurfaceVelocity",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpShapeSetSurfaceVelocity(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpShapeGetUserData",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetUserData",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetUserData",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeGetUserData((cpShape const *)arg1);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpShapeSetUserData",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSetUserData",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeSetUserData",2,"cpDataPointer");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSetUserData",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpShapeSetUserData",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  cpShapeSetUserData(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetCollisionType(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpCollisionType result;
+  
+  SWIG_check_num_args("cpShapeGetCollisionType",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetCollisionType",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetCollisionType",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeGetCollisionType((cpShape const *)arg1);
+  {
+    cpCollisionType * resultptr;
+    resultptr = (cpCollisionType *) malloc(sizeof(cpCollisionType));
+    memmove(resultptr, &result, sizeof(cpCollisionType));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpCollisionType,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSetCollisionType(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpCollisionType arg2 ;
+  cpCollisionType *argp2 ;
+  
+  SWIG_check_num_args("cpShapeSetCollisionType",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSetCollisionType",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeSetCollisionType",2,"cpCollisionType");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSetCollisionType",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpCollisionType,0))){
+    SWIG_fail_ptr("cpShapeSetCollisionType",2,SWIGTYPE_p_cpCollisionType);
+  }
+  arg2 = *argp2;
+  
+  cpShapeSetCollisionType(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetGroup(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpGroup result;
+  
+  SWIG_check_num_args("cpShapeGetGroup",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetGroup",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetGroup",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeGetGroup((cpShape const *)arg1);
+  {
+    cpGroup * resultptr;
+    resultptr = (cpGroup *) malloc(sizeof(cpGroup));
+    memmove(resultptr, &result, sizeof(cpGroup));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpGroup,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSetGroup(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpGroup arg2 ;
+  cpGroup *argp2 ;
+  
+  SWIG_check_num_args("cpShapeSetGroup",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSetGroup",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeSetGroup",2,"cpGroup");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSetGroup",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpGroup,0))){
+    SWIG_fail_ptr("cpShapeSetGroup",2,SWIGTYPE_p_cpGroup);
+  }
+  arg2 = *argp2;
+  
+  cpShapeSetGroup(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeGetLayers(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpLayers result;
+  
+  SWIG_check_num_args("cpShapeGetLayers",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeGetLayers",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeGetLayers",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpShapeGetLayers((cpShape const *)arg1);
+  {
+    cpLayers * resultptr;
+    resultptr = (cpLayers *) malloc(sizeof(cpLayers));
+    memmove(resultptr, &result, sizeof(cpLayers));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpLayers,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpShapeSetLayers(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpLayers arg2 ;
+  cpLayers *argp2 ;
+  
+  SWIG_check_num_args("cpShapeSetLayers",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpShapeSetLayers",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpShapeSetLayers",2,"cpLayers");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpShapeSetLayers",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpLayers,0))){
+    SWIG_fail_ptr("cpShapeSetLayers",2,SWIGTYPE_p_cpLayers);
+  }
+  arg2 = *argp2;
+  
+  cpShapeSetLayers(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpResetShapeIdCounter(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("cpResetShapeIdCounter",0,0)
+  cpResetShapeIdCounter();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShape_shape_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCircleShape *arg1 = (struct cpCircleShape *) 0 ;
+  cpShape arg2 ;
+  cpShape *argp2 ;
+  
+  SWIG_check_num_args("cpCircleShape::shape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShape::shape",1,"struct cpCircleShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpCircleShape::shape",2,"cpShape");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCircleShape,0))){
+    SWIG_fail_ptr("cpCircleShape_shape_set",1,SWIGTYPE_p_cpCircleShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpCircleShape_shape_set",2,SWIGTYPE_p_cpShape);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->shape = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShape_shape_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCircleShape *arg1 = (struct cpCircleShape *) 0 ;
+  cpShape result;
+  
+  SWIG_check_num_args("cpCircleShape::shape",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShape::shape",1,"struct cpCircleShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCircleShape,0))){
+    SWIG_fail_ptr("cpCircleShape_shape_get",1,SWIGTYPE_p_cpCircleShape);
+  }
+  
+  result =  ((arg1)->shape);
+  {
+    cpShape * resultptr;
+    resultptr = (cpShape *) malloc(sizeof(cpShape));
+    memmove(resultptr, &result, sizeof(cpShape));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpShape,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShape_c_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCircleShape *arg1 = (struct cpCircleShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpCircleShape::c",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShape::c",1,"struct cpCircleShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpCircleShape::c",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCircleShape,0))){
+    SWIG_fail_ptr("cpCircleShape_c_set",1,SWIGTYPE_p_cpCircleShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpCircleShape_c_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->c = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShape_c_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCircleShape *arg1 = (struct cpCircleShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpCircleShape::c",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShape::c",1,"struct cpCircleShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCircleShape,0))){
+    SWIG_fail_ptr("cpCircleShape_c_get",1,SWIGTYPE_p_cpCircleShape);
+  }
+  
+  result =  ((arg1)->c);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShape_tc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCircleShape *arg1 = (struct cpCircleShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpCircleShape::tc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShape::tc",1,"struct cpCircleShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpCircleShape::tc",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCircleShape,0))){
+    SWIG_fail_ptr("cpCircleShape_tc_set",1,SWIGTYPE_p_cpCircleShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpCircleShape_tc_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->tc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShape_tc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCircleShape *arg1 = (struct cpCircleShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpCircleShape::tc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShape::tc",1,"struct cpCircleShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCircleShape,0))){
+    SWIG_fail_ptr("cpCircleShape_tc_get",1,SWIGTYPE_p_cpCircleShape);
+  }
+  
+  result =  ((arg1)->tc);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShape_r_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCircleShape *arg1 = (struct cpCircleShape *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpCircleShape::r",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShape::r",1,"struct cpCircleShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpCircleShape::r",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCircleShape,0))){
+    SWIG_fail_ptr("cpCircleShape_r_set",1,SWIGTYPE_p_cpCircleShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpCircleShape_r_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShape_r_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCircleShape *arg1 = (struct cpCircleShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpCircleShape::r",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShape::r",1,"struct cpCircleShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCircleShape,0))){
+    SWIG_fail_ptr("cpCircleShape_r_get",1,SWIGTYPE_p_cpCircleShape);
+  }
+  
+  result =  ((arg1)->r);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpCircleShape(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCircleShape *result = 0 ;
+  
+  SWIG_check_num_args("cpCircleShape::cpCircleShape",0,0)
+  result = (struct cpCircleShape *)calloc(1, sizeof(struct cpCircleShape));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpCircleShape,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpCircleShape(void *obj) {
+struct cpCircleShape *arg1 = (struct cpCircleShape *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpCircleShape(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpCircleShape);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpCircleShape_attributes[] = {
+    { "shape", _wrap_cpCircleShape_shape_get, _wrap_cpCircleShape_shape_set },
+    { "c", _wrap_cpCircleShape_c_get, _wrap_cpCircleShape_c_set },
+    { "tc", _wrap_cpCircleShape_tc_get, _wrap_cpCircleShape_tc_set },
+    { "r", _wrap_cpCircleShape_r_get, _wrap_cpCircleShape_r_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpCircleShape_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpCircleShape_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpCircleShape_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpCircleShape_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpCircleShape_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpCircleShape_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpCircleShape_Sf_SwigStatic = {
+    "cpCircleShape",
+    swig_cpCircleShape_Sf_SwigStatic_methods,
+    swig_cpCircleShape_Sf_SwigStatic_attributes,
+    swig_cpCircleShape_Sf_SwigStatic_constants,
+    swig_cpCircleShape_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpCircleShape_bases[] = {0};
+static const char *swig_cpCircleShape_base_names[] = {0};
+static swig_lua_class _wrap_class_cpCircleShape = { "cpCircleShape", "cpCircleShape", &SWIGTYPE_p_cpCircleShape,_proxy__wrap_new_cpCircleShape, swig_delete_cpCircleShape, swig_cpCircleShape_methods, swig_cpCircleShape_attributes, &swig_cpCircleShape_Sf_SwigStatic, swig_cpCircleShape_meta, swig_cpCircleShape_bases, swig_cpCircleShape_base_names };
+
+static int _wrap_cpCircleShapeAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpCircleShape *result = 0 ;
+  
+  SWIG_check_num_args("cpCircleShapeAlloc",0,0)
+  result = (cpCircleShape *)cpCircleShapeAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpCircleShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShapeInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpCircleShape *arg1 = (cpCircleShape *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpFloat arg3 ;
+  cpVect arg4 ;
+  cpFloat *argp3 ;
+  cpVect *argp4 ;
+  cpCircleShape *result = 0 ;
+  
+  SWIG_check_num_args("cpCircleShapeInit",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShapeInit",1,"cpCircleShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpCircleShapeInit",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpCircleShapeInit",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpCircleShapeInit",4,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCircleShape,0))){
+    SWIG_fail_ptr("cpCircleShapeInit",1,SWIGTYPE_p_cpCircleShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpCircleShapeInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpCircleShapeInit",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpCircleShapeInit",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  result = (cpCircleShape *)cpCircleShapeInit(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpCircleShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShapeNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpVect arg3 ;
+  cpFloat *argp2 ;
+  cpVect *argp3 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpCircleShapeNew",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShapeNew",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpCircleShapeNew",2,"cpFloat");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpCircleShapeNew",3,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpCircleShapeNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpCircleShapeNew",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpCircleShapeNew",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  result = (cpShape *)cpCircleShapeNew(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShapeGetOffset(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpCircleShapeGetOffset",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShapeGetOffset",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpCircleShapeGetOffset",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpCircleShapeGetOffset((cpShape const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCircleShapeGetRadius(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpCircleShapeGetRadius",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCircleShapeGetRadius",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpCircleShapeGetRadius",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpCircleShapeGetRadius((cpShape const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_shape_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpShape arg2 ;
+  cpShape *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::shape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::shape",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::shape",2,"cpShape");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_shape_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_shape_set",2,SWIGTYPE_p_cpShape);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->shape = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_shape_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpShape result;
+  
+  SWIG_check_num_args("cpSegmentShape::shape",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::shape",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_shape_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->shape);
+  {
+    cpShape * resultptr;
+    resultptr = (cpShape *) malloc(sizeof(cpShape));
+    memmove(resultptr, &result, sizeof(cpShape));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpShape,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_a_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::a",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::a",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::a",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_a_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShape_a_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->a = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_a_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShape::a",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::a",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_a_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->a);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_b_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::b",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::b",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::b",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_b_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShape_b_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->b = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_b_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShape::b",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::b",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_b_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->b);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_n_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::n",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::n",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::n",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_n_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShape_n_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->n = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_n_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShape::n",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::n",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_n_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->n);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_ta_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::ta",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::ta",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::ta",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_ta_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShape_ta_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->ta = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_ta_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShape::ta",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::ta",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_ta_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->ta);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_tb_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::tb",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::tb",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::tb",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_tb_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShape_tb_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->tb = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_tb_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShape::tb",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::tb",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_tb_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->tb);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_tn_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::tn",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::tn",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::tn",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_tn_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShape_tn_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->tn = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_tn_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShape::tn",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::tn",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_tn_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->tn);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_r_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::r",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::r",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::r",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_r_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSegmentShape_r_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_r_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSegmentShape::r",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::r",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_r_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->r);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_a_tangent_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::a_tangent",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::a_tangent",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::a_tangent",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_a_tangent_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShape_a_tangent_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->a_tangent = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_a_tangent_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShape::a_tangent",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::a_tangent",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_a_tangent_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->a_tangent);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_b_tangent_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSegmentShape::b_tangent",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::b_tangent",1,"struct cpSegmentShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShape::b_tangent",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_b_tangent_set",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShape_b_tangent_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->b_tangent = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShape_b_tangent_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *arg1 = (struct cpSegmentShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShape::b_tangent",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShape::b_tangent",1,"struct cpSegmentShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShape_b_tangent_get",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  result =  ((arg1)->b_tangent);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpSegmentShape(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSegmentShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSegmentShape::cpSegmentShape",0,0)
+  result = (struct cpSegmentShape *)calloc(1, sizeof(struct cpSegmentShape));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSegmentShape,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpSegmentShape(void *obj) {
+struct cpSegmentShape *arg1 = (struct cpSegmentShape *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpSegmentShape(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpSegmentShape);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpSegmentShape_attributes[] = {
+    { "shape", _wrap_cpSegmentShape_shape_get, _wrap_cpSegmentShape_shape_set },
+    { "a", _wrap_cpSegmentShape_a_get, _wrap_cpSegmentShape_a_set },
+    { "b", _wrap_cpSegmentShape_b_get, _wrap_cpSegmentShape_b_set },
+    { "n", _wrap_cpSegmentShape_n_get, _wrap_cpSegmentShape_n_set },
+    { "ta", _wrap_cpSegmentShape_ta_get, _wrap_cpSegmentShape_ta_set },
+    { "tb", _wrap_cpSegmentShape_tb_get, _wrap_cpSegmentShape_tb_set },
+    { "tn", _wrap_cpSegmentShape_tn_get, _wrap_cpSegmentShape_tn_set },
+    { "r", _wrap_cpSegmentShape_r_get, _wrap_cpSegmentShape_r_set },
+    { "a_tangent", _wrap_cpSegmentShape_a_tangent_get, _wrap_cpSegmentShape_a_tangent_set },
+    { "b_tangent", _wrap_cpSegmentShape_b_tangent_get, _wrap_cpSegmentShape_b_tangent_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpSegmentShape_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpSegmentShape_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpSegmentShape_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpSegmentShape_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpSegmentShape_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpSegmentShape_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpSegmentShape_Sf_SwigStatic = {
+    "cpSegmentShape",
+    swig_cpSegmentShape_Sf_SwigStatic_methods,
+    swig_cpSegmentShape_Sf_SwigStatic_attributes,
+    swig_cpSegmentShape_Sf_SwigStatic_constants,
+    swig_cpSegmentShape_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpSegmentShape_bases[] = {0};
+static const char *swig_cpSegmentShape_base_names[] = {0};
+static swig_lua_class _wrap_class_cpSegmentShape = { "cpSegmentShape", "cpSegmentShape", &SWIGTYPE_p_cpSegmentShape,_proxy__wrap_new_cpSegmentShape, swig_delete_cpSegmentShape, swig_cpSegmentShape_methods, swig_cpSegmentShape_attributes, &swig_cpSegmentShape_Sf_SwigStatic, swig_cpSegmentShape_meta, swig_cpSegmentShape_bases, swig_cpSegmentShape_base_names };
+
+static int _wrap_cpSegmentShapeAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSegmentShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSegmentShapeAlloc",0,0)
+  result = (cpSegmentShape *)cpSegmentShapeAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSegmentShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShapeInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSegmentShape *arg1 = (cpSegmentShape *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpVect arg3 ;
+  cpVect arg4 ;
+  cpFloat arg5 ;
+  cpVect *argp3 ;
+  cpVect *argp4 ;
+  cpFloat *argp5 ;
+  cpSegmentShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSegmentShapeInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShapeInit",1,"cpSegmentShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSegmentShapeInit",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSegmentShapeInit",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSegmentShapeInit",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpSegmentShapeInit",5,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSegmentShape,0))){
+    SWIG_fail_ptr("cpSegmentShapeInit",1,SWIGTYPE_p_cpSegmentShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSegmentShapeInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShapeInit",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShapeInit",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSegmentShapeInit",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  result = (cpSegmentShape *)cpSegmentShapeInit(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSegmentShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShapeNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpFloat arg4 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  cpFloat *argp4 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSegmentShapeNew",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShapeNew",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShapeNew",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSegmentShapeNew",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSegmentShapeNew",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSegmentShapeNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShapeNew",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShapeNew",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSegmentShapeNew",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  result = (cpShape *)cpSegmentShapeNew(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShapeSetNeighbors(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  
+  SWIG_check_num_args("cpSegmentShapeSetNeighbors",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShapeSetNeighbors",1,"cpShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSegmentShapeSetNeighbors",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSegmentShapeSetNeighbors",3,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSegmentShapeSetNeighbors",1,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShapeSetNeighbors",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSegmentShapeSetNeighbors",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  cpSegmentShapeSetNeighbors(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShapeGetA(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShapeGetA",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShapeGetA",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSegmentShapeGetA",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpSegmentShapeGetA((cpShape const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShapeGetB(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShapeGetB",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShapeGetB",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSegmentShapeGetB",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpSegmentShapeGetB((cpShape const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShapeGetNormal(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSegmentShapeGetNormal",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShapeGetNormal",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSegmentShapeGetNormal",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpSegmentShapeGetNormal((cpShape const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSegmentShapeGetRadius(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSegmentShapeGetRadius",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSegmentShapeGetRadius",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSegmentShapeGetRadius",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpSegmentShapeGetRadius((cpShape const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSplittingPlane_n_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSplittingPlane *arg1 = (struct cpSplittingPlane *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSplittingPlane::n",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSplittingPlane::n",1,"struct cpSplittingPlane *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSplittingPlane::n",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSplittingPlane,0))){
+    SWIG_fail_ptr("cpSplittingPlane_n_set",1,SWIGTYPE_p_cpSplittingPlane);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSplittingPlane_n_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->n = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSplittingPlane_n_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSplittingPlane *arg1 = (struct cpSplittingPlane *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSplittingPlane::n",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSplittingPlane::n",1,"struct cpSplittingPlane *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSplittingPlane,0))){
+    SWIG_fail_ptr("cpSplittingPlane_n_get",1,SWIGTYPE_p_cpSplittingPlane);
+  }
+  
+  result =  ((arg1)->n);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSplittingPlane_d_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSplittingPlane *arg1 = (struct cpSplittingPlane *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSplittingPlane::d",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSplittingPlane::d",1,"struct cpSplittingPlane *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSplittingPlane::d",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSplittingPlane,0))){
+    SWIG_fail_ptr("cpSplittingPlane_d_set",1,SWIGTYPE_p_cpSplittingPlane);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSplittingPlane_d_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->d = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSplittingPlane_d_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSplittingPlane *arg1 = (struct cpSplittingPlane *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSplittingPlane::d",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSplittingPlane::d",1,"struct cpSplittingPlane *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSplittingPlane,0))){
+    SWIG_fail_ptr("cpSplittingPlane_d_get",1,SWIGTYPE_p_cpSplittingPlane);
+  }
+  
+  result =  ((arg1)->d);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpSplittingPlane(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSplittingPlane *result = 0 ;
+  
+  SWIG_check_num_args("cpSplittingPlane::cpSplittingPlane",0,0)
+  result = (struct cpSplittingPlane *)calloc(1, sizeof(struct cpSplittingPlane));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSplittingPlane,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpSplittingPlane(void *obj) {
+struct cpSplittingPlane *arg1 = (struct cpSplittingPlane *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpSplittingPlane(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpSplittingPlane);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpSplittingPlane_attributes[] = {
+    { "n", _wrap_cpSplittingPlane_n_get, _wrap_cpSplittingPlane_n_set },
+    { "d", _wrap_cpSplittingPlane_d_get, _wrap_cpSplittingPlane_d_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpSplittingPlane_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpSplittingPlane_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpSplittingPlane_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpSplittingPlane_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpSplittingPlane_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpSplittingPlane_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpSplittingPlane_Sf_SwigStatic = {
+    "cpSplittingPlane",
+    swig_cpSplittingPlane_Sf_SwigStatic_methods,
+    swig_cpSplittingPlane_Sf_SwigStatic_attributes,
+    swig_cpSplittingPlane_Sf_SwigStatic_constants,
+    swig_cpSplittingPlane_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpSplittingPlane_bases[] = {0};
+static const char *swig_cpSplittingPlane_base_names[] = {0};
+static swig_lua_class _wrap_class_cpSplittingPlane = { "cpSplittingPlane", "cpSplittingPlane", &SWIGTYPE_p_cpSplittingPlane,_proxy__wrap_new_cpSplittingPlane, swig_delete_cpSplittingPlane, swig_cpSplittingPlane_methods, swig_cpSplittingPlane_attributes, &swig_cpSplittingPlane_Sf_SwigStatic, swig_cpSplittingPlane_meta, swig_cpSplittingPlane_bases, swig_cpSplittingPlane_base_names };
+
+static int _wrap_cpPolyShape_shape_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpShape arg2 ;
+  cpShape *argp2 ;
+  
+  SWIG_check_num_args("cpPolyShape::shape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::shape",1,"struct cpPolyShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPolyShape::shape",2,"cpShape");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_shape_set",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpPolyShape_shape_set",2,SWIGTYPE_p_cpShape);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->shape = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_shape_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpShape result;
+  
+  SWIG_check_num_args("cpPolyShape::shape",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::shape",1,"struct cpPolyShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_shape_get",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  result =  ((arg1)->shape);
+  {
+    cpShape * resultptr;
+    resultptr = (cpShape *) malloc(sizeof(cpShape));
+    memmove(resultptr, &result, sizeof(cpShape));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpShape,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_numVerts_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("cpPolyShape::numVerts",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::numVerts",1,"struct cpPolyShape *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpPolyShape::numVerts",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_numVerts_set",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->numVerts = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_numVerts_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("cpPolyShape::numVerts",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::numVerts",1,"struct cpPolyShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_numVerts_get",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  result = (int) ((arg1)->numVerts);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_verts_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpVect *arg2 = (cpVect *) 0 ;
+  
+  SWIG_check_num_args("cpPolyShape::verts",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::verts",1,"struct cpPolyShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPolyShape::verts",2,"cpVect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_verts_set",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpVect,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpPolyShape_verts_set",2,SWIGTYPE_p_cpVect);
+  }
+  
+  if (arg1) (arg1)->verts = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_verts_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpVect *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShape::verts",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::verts",1,"struct cpPolyShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_verts_get",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  result = (cpVect *) ((arg1)->verts);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpVect,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_tVerts_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpVect *arg2 = (cpVect *) 0 ;
+  
+  SWIG_check_num_args("cpPolyShape::tVerts",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::tVerts",1,"struct cpPolyShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPolyShape::tVerts",2,"cpVect *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_tVerts_set",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpVect,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpPolyShape_tVerts_set",2,SWIGTYPE_p_cpVect);
+  }
+  
+  if (arg1) (arg1)->tVerts = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_tVerts_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpVect *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShape::tVerts",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::tVerts",1,"struct cpPolyShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_tVerts_get",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  result = (cpVect *) ((arg1)->tVerts);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpVect,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_planes_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpSplittingPlane *arg2 = (cpSplittingPlane *) 0 ;
+  
+  SWIG_check_num_args("cpPolyShape::planes",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::planes",1,"struct cpPolyShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPolyShape::planes",2,"cpSplittingPlane *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_planes_set",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpSplittingPlane,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpPolyShape_planes_set",2,SWIGTYPE_p_cpSplittingPlane);
+  }
+  
+  if (arg1) (arg1)->planes = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_planes_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpSplittingPlane *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShape::planes",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::planes",1,"struct cpPolyShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_planes_get",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  result = (cpSplittingPlane *) ((arg1)->planes);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSplittingPlane,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_tPlanes_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpSplittingPlane *arg2 = (cpSplittingPlane *) 0 ;
+  
+  SWIG_check_num_args("cpPolyShape::tPlanes",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::tPlanes",1,"struct cpPolyShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPolyShape::tPlanes",2,"cpSplittingPlane *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_tPlanes_set",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpSplittingPlane,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpPolyShape_tPlanes_set",2,SWIGTYPE_p_cpSplittingPlane);
+  }
+  
+  if (arg1) (arg1)->tPlanes = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_tPlanes_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpSplittingPlane *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShape::tPlanes",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::tPlanes",1,"struct cpPolyShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_tPlanes_get",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  result = (cpSplittingPlane *) ((arg1)->tPlanes);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSplittingPlane,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_r_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpPolyShape::r",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::r",1,"struct cpPolyShape *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPolyShape::r",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_r_set",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpPolyShape_r_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShape_r_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *arg1 = (struct cpPolyShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpPolyShape::r",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShape::r",1,"struct cpPolyShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShape_r_get",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  result =  ((arg1)->r);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpPolyShape(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPolyShape *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShape::cpPolyShape",0,0)
+  result = (struct cpPolyShape *)calloc(1, sizeof(struct cpPolyShape));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPolyShape,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpPolyShape(void *obj) {
+struct cpPolyShape *arg1 = (struct cpPolyShape *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpPolyShape(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpPolyShape);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpPolyShape_attributes[] = {
+    { "shape", _wrap_cpPolyShape_shape_get, _wrap_cpPolyShape_shape_set },
+    { "numVerts", _wrap_cpPolyShape_numVerts_get, _wrap_cpPolyShape_numVerts_set },
+    { "verts", _wrap_cpPolyShape_verts_get, _wrap_cpPolyShape_verts_set },
+    { "tVerts", _wrap_cpPolyShape_tVerts_get, _wrap_cpPolyShape_tVerts_set },
+    { "planes", _wrap_cpPolyShape_planes_get, _wrap_cpPolyShape_planes_set },
+    { "tPlanes", _wrap_cpPolyShape_tPlanes_get, _wrap_cpPolyShape_tPlanes_set },
+    { "r", _wrap_cpPolyShape_r_get, _wrap_cpPolyShape_r_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpPolyShape_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpPolyShape_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpPolyShape_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpPolyShape_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpPolyShape_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpPolyShape_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpPolyShape_Sf_SwigStatic = {
+    "cpPolyShape",
+    swig_cpPolyShape_Sf_SwigStatic_methods,
+    swig_cpPolyShape_Sf_SwigStatic_attributes,
+    swig_cpPolyShape_Sf_SwigStatic_constants,
+    swig_cpPolyShape_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpPolyShape_bases[] = {0};
+static const char *swig_cpPolyShape_base_names[] = {0};
+static swig_lua_class _wrap_class_cpPolyShape = { "cpPolyShape", "cpPolyShape", &SWIGTYPE_p_cpPolyShape,_proxy__wrap_new_cpPolyShape, swig_delete_cpPolyShape, swig_cpPolyShape_methods, swig_cpPolyShape_attributes, &swig_cpPolyShape_Sf_SwigStatic, swig_cpPolyShape_meta, swig_cpPolyShape_bases, swig_cpPolyShape_base_names };
+
+static int _wrap_cpPolyShapeAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPolyShape *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShapeAlloc",0,0)
+  result = (cpPolyShape *)cpPolyShapeAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPolyShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShapeInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPolyShape *arg1 = (cpPolyShape *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  int arg3 ;
+  cpVect *arg4 = (cpVect *) 0 ;
+  cpVect arg5 ;
+  cpVect *argp5 ;
+  cpPolyShape *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShapeInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShapeInit",1,"cpPolyShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPolyShapeInit",2,"cpBody *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("cpPolyShapeInit",3,"int");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpPolyShapeInit",4,"cpVect const *");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpPolyShapeInit",5,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShapeInit",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPolyShapeInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  arg3 = (int)lua_tonumber(L, 3);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPolyShapeInit",4,SWIGTYPE_p_cpVect);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPolyShapeInit",5,SWIGTYPE_p_cpVect);
+  }
+  arg5 = *argp5;
+  
+  result = (cpPolyShape *)cpPolyShapeInit(arg1,arg2,arg3,(cpVect const *)arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPolyShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShapeInit2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPolyShape *arg1 = (cpPolyShape *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  int arg3 ;
+  cpVect *arg4 = (cpVect *) 0 ;
+  cpVect arg5 ;
+  cpFloat arg6 ;
+  cpVect *argp5 ;
+  cpFloat *argp6 ;
+  cpPolyShape *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShapeInit2",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShapeInit2",1,"cpPolyShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPolyShapeInit2",2,"cpBody *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("cpPolyShapeInit2",3,"int");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpPolyShapeInit2",4,"cpVect const *");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpPolyShapeInit2",5,"cpVect");
+  if(!lua_isuserdata(L,6)) SWIG_fail_arg("cpPolyShapeInit2",6,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpPolyShapeInit2",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPolyShapeInit2",2,SWIGTYPE_p_cpBody);
+  }
+  
+  arg3 = (int)lua_tonumber(L, 3);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPolyShapeInit2",4,SWIGTYPE_p_cpVect);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPolyShapeInit2",5,SWIGTYPE_p_cpVect);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&argp6,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpPolyShapeInit2",6,SWIGTYPE_p_cpFloat);
+  }
+  arg6 = *argp6;
+  
+  result = (cpPolyShape *)cpPolyShapeInit2(arg1,arg2,arg3,(cpVect const *)arg4,arg5,arg6);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPolyShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShapeNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  int arg2 ;
+  cpVect *arg3 = (cpVect *) 0 ;
+  cpVect arg4 ;
+  cpVect *argp4 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShapeNew",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShapeNew",1,"cpBody *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpPolyShapeNew",2,"int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpPolyShapeNew",3,"cpVect const *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpPolyShapeNew",4,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPolyShapeNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPolyShapeNew",3,SWIGTYPE_p_cpVect);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPolyShapeNew",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  result = (cpShape *)cpPolyShapeNew(arg1,arg2,(cpVect const *)arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShapeNew2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  int arg2 ;
+  cpVect *arg3 = (cpVect *) 0 ;
+  cpVect arg4 ;
+  cpFloat arg5 ;
+  cpVect *argp4 ;
+  cpFloat *argp5 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpPolyShapeNew2",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShapeNew2",1,"cpBody *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpPolyShapeNew2",2,"int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpPolyShapeNew2",3,"cpVect const *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpPolyShapeNew2",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpPolyShapeNew2",5,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPolyShapeNew2",1,SWIGTYPE_p_cpBody);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPolyShapeNew2",3,SWIGTYPE_p_cpVect);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPolyShapeNew2",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpPolyShapeNew2",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  result = (cpShape *)cpPolyShapeNew2(arg1,arg2,(cpVect const *)arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBoxShapeInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPolyShape *arg1 = (cpPolyShape *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpFloat arg3 ;
+  cpFloat arg4 ;
+  cpFloat *argp3 ;
+  cpFloat *argp4 ;
+  cpPolyShape *result = 0 ;
+  
+  SWIG_check_num_args("cpBoxShapeInit",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBoxShapeInit",1,"cpPolyShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBoxShapeInit",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBoxShapeInit",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpBoxShapeInit",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpBoxShapeInit",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBoxShapeInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBoxShapeInit",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBoxShapeInit",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  result = (cpPolyShape *)cpBoxShapeInit(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPolyShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBoxShapeInit2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPolyShape *arg1 = (cpPolyShape *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBB arg3 ;
+  cpBB *argp3 ;
+  cpPolyShape *result = 0 ;
+  
+  SWIG_check_num_args("cpBoxShapeInit2",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBoxShapeInit2",1,"cpPolyShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBoxShapeInit2",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBoxShapeInit2",3,"cpBB");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpBoxShapeInit2",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBoxShapeInit2",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBoxShapeInit2",3,SWIGTYPE_p_cpBB);
+  }
+  arg3 = *argp3;
+  
+  result = (cpPolyShape *)cpBoxShapeInit2(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPolyShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBoxShapeInit3(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPolyShape *arg1 = (cpPolyShape *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBB arg3 ;
+  cpFloat arg4 ;
+  cpBB *argp3 ;
+  cpFloat *argp4 ;
+  cpPolyShape *result = 0 ;
+  
+  SWIG_check_num_args("cpBoxShapeInit3",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBoxShapeInit3",1,"cpPolyShape *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpBoxShapeInit3",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBoxShapeInit3",3,"cpBB");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpBoxShapeInit3",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPolyShape,0))){
+    SWIG_fail_ptr("cpBoxShapeInit3",1,SWIGTYPE_p_cpPolyShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBoxShapeInit3",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBoxShapeInit3",3,SWIGTYPE_p_cpBB);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBoxShapeInit3",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  result = (cpPolyShape *)cpBoxShapeInit3(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPolyShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBoxShapeNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpFloat arg2 ;
+  cpFloat arg3 ;
+  cpFloat *argp2 ;
+  cpFloat *argp3 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpBoxShapeNew",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBoxShapeNew",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBoxShapeNew",2,"cpFloat");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBoxShapeNew",3,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBoxShapeNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBoxShapeNew",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBoxShapeNew",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = (cpShape *)cpBoxShapeNew(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBoxShapeNew2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBB arg2 ;
+  cpBB *argp2 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpBoxShapeNew2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBoxShapeNew2",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBoxShapeNew2",2,"cpBB");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBoxShapeNew2",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBoxShapeNew2",2,SWIGTYPE_p_cpBB);
+  }
+  arg2 = *argp2;
+  
+  result = (cpShape *)cpBoxShapeNew2(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpBoxShapeNew3(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBB arg2 ;
+  cpFloat arg3 ;
+  cpBB *argp2 ;
+  cpFloat *argp3 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpBoxShapeNew3",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpBoxShapeNew3",1,"cpBody *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpBoxShapeNew3",2,"cpBB");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpBoxShapeNew3",3,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpBoxShapeNew3",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpBoxShapeNew3",2,SWIGTYPE_p_cpBB);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpBoxShapeNew3",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = (cpShape *)cpBoxShapeNew3(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyValidate(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect *arg1 = (cpVect *) 0 ;
+  int arg2 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpPolyValidate",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyValidate",1,"cpVect const *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpPolyValidate",2,"int const");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPolyValidate",1,SWIGTYPE_p_cpVect);
+  }
+  
+  arg2 = (int const)lua_tonumber(L, 2);
+  result = cpPolyValidate((cpVect const *)arg1,arg2);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShapeGetNumVerts(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("cpPolyShapeGetNumVerts",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShapeGetNumVerts",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpPolyShapeGetNumVerts",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = (int)cpPolyShapeGetNumVerts((cpShape const *)arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShapeGetVert(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  int arg2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPolyShapeGetVert",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShapeGetVert",1,"cpShape const *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpPolyShapeGetVert",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpPolyShapeGetVert",1,SWIGTYPE_p_cpShape);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = cpPolyShapeGetVert((cpShape const *)arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPolyShapeGetRadius(lua_State* L) {
+  int SWIG_arg = 0;
+  cpShape *arg1 = (cpShape *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpPolyShapeGetRadius",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPolyShapeGetRadius",1,"cpShape const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpPolyShapeGetRadius",1,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpPolyShapeGetRadius((cpShape const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_a_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionType arg2 ;
+  cpCollisionType *argp2 ;
+  
+  SWIG_check_num_args("cpCollisionHandler::a",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::a",1,"struct cpCollisionHandler *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpCollisionHandler::a",2,"cpCollisionType");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_a_set",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpCollisionType,0))){
+    SWIG_fail_ptr("cpCollisionHandler_a_set",2,SWIGTYPE_p_cpCollisionType);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->a = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_a_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionType result;
+  
+  SWIG_check_num_args("cpCollisionHandler::a",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::a",1,"struct cpCollisionHandler *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_a_get",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  result =  ((arg1)->a);
+  {
+    cpCollisionType * resultptr;
+    resultptr = (cpCollisionType *) malloc(sizeof(cpCollisionType));
+    memmove(resultptr, &result, sizeof(cpCollisionType));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpCollisionType,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_b_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionType arg2 ;
+  cpCollisionType *argp2 ;
+  
+  SWIG_check_num_args("cpCollisionHandler::b",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::b",1,"struct cpCollisionHandler *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpCollisionHandler::b",2,"cpCollisionType");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_b_set",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpCollisionType,0))){
+    SWIG_fail_ptr("cpCollisionHandler_b_set",2,SWIGTYPE_p_cpCollisionType);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->b = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_b_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionType result;
+  
+  SWIG_check_num_args("cpCollisionHandler::b",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::b",1,"struct cpCollisionHandler *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_b_get",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  result =  ((arg1)->b);
+  {
+    cpCollisionType * resultptr;
+    resultptr = (cpCollisionType *) malloc(sizeof(cpCollisionType));
+    memmove(resultptr, &result, sizeof(cpCollisionType));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpCollisionType,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_begin_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionBeginFunc arg2 = (cpCollisionBeginFunc) 0 ;
+  
+  SWIG_check_num_args("cpCollisionHandler::begin",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::begin",1,"struct cpCollisionHandler *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpCollisionHandler::begin",2,"cpCollisionBeginFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_begin_set",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,0))){
+    SWIG_fail_ptr("cpCollisionHandler_begin_set",2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool);
+  }
+  
+  if (arg1) (arg1)->begin = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_begin_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionBeginFunc result;
+  
+  SWIG_check_num_args("cpCollisionHandler::begin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::begin",1,"struct cpCollisionHandler *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_begin_get",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  result = (cpCollisionBeginFunc) ((arg1)->begin);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_preSolve_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionPreSolveFunc arg2 = (cpCollisionPreSolveFunc) 0 ;
+  
+  SWIG_check_num_args("cpCollisionHandler::preSolve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::preSolve",1,"struct cpCollisionHandler *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpCollisionHandler::preSolve",2,"cpCollisionPreSolveFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_preSolve_set",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,0))){
+    SWIG_fail_ptr("cpCollisionHandler_preSolve_set",2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool);
+  }
+  
+  if (arg1) (arg1)->preSolve = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_preSolve_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionPreSolveFunc result;
+  
+  SWIG_check_num_args("cpCollisionHandler::preSolve",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::preSolve",1,"struct cpCollisionHandler *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_preSolve_get",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  result = (cpCollisionPreSolveFunc) ((arg1)->preSolve);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_postSolve_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionPostSolveFunc arg2 = (cpCollisionPostSolveFunc) 0 ;
+  
+  SWIG_check_num_args("cpCollisionHandler::postSolve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::postSolve",1,"struct cpCollisionHandler *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpCollisionHandler::postSolve",2,"cpCollisionPostSolveFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_postSolve_set",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void,0))){
+    SWIG_fail_ptr("cpCollisionHandler_postSolve_set",2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void);
+  }
+  
+  if (arg1) (arg1)->postSolve = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_postSolve_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionPostSolveFunc result;
+  
+  SWIG_check_num_args("cpCollisionHandler::postSolve",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::postSolve",1,"struct cpCollisionHandler *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_postSolve_get",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  result = (cpCollisionPostSolveFunc) ((arg1)->postSolve);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_separate_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionSeparateFunc arg2 = (cpCollisionSeparateFunc) 0 ;
+  
+  SWIG_check_num_args("cpCollisionHandler::separate",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::separate",1,"struct cpCollisionHandler *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpCollisionHandler::separate",2,"cpCollisionSeparateFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_separate_set",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void,0))){
+    SWIG_fail_ptr("cpCollisionHandler_separate_set",2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void);
+  }
+  
+  if (arg1) (arg1)->separate = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_separate_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  cpCollisionSeparateFunc result;
+  
+  SWIG_check_num_args("cpCollisionHandler::separate",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::separate",1,"struct cpCollisionHandler *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_separate_get",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  result = (cpCollisionSeparateFunc) ((arg1)->separate);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_data_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  void *arg2 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpCollisionHandler::data",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::data",1,"struct cpCollisionHandler *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpCollisionHandler::data",2,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_data_set",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  arg2=(void *)SWIG_MustGetPtr(L,2,0,0,2,"cpCollisionHandler_data_set");
+  if (arg1) (arg1)->data = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCollisionHandler_data_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) 0 ;
+  void *result = 0 ;
+  
+  SWIG_check_num_args("cpCollisionHandler::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpCollisionHandler::data",1,"struct cpCollisionHandler *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpCollisionHandler,0))){
+    SWIG_fail_ptr("cpCollisionHandler_data_get",1,SWIGTYPE_p_cpCollisionHandler);
+  }
+  
+  result = (void *) ((arg1)->data);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpCollisionHandler(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpCollisionHandler *result = 0 ;
+  
+  SWIG_check_num_args("cpCollisionHandler::cpCollisionHandler",0,0)
+  result = (struct cpCollisionHandler *)calloc(1, sizeof(struct cpCollisionHandler));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpCollisionHandler,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpCollisionHandler(void *obj) {
+struct cpCollisionHandler *arg1 = (struct cpCollisionHandler *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpCollisionHandler(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpCollisionHandler);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpCollisionHandler_attributes[] = {
+    { "a", _wrap_cpCollisionHandler_a_get, _wrap_cpCollisionHandler_a_set },
+    { "b", _wrap_cpCollisionHandler_b_get, _wrap_cpCollisionHandler_b_set },
+    { "begin", _wrap_cpCollisionHandler_begin_get, _wrap_cpCollisionHandler_begin_set },
+    { "preSolve", _wrap_cpCollisionHandler_preSolve_get, _wrap_cpCollisionHandler_preSolve_set },
+    { "postSolve", _wrap_cpCollisionHandler_postSolve_get, _wrap_cpCollisionHandler_postSolve_set },
+    { "separate", _wrap_cpCollisionHandler_separate_get, _wrap_cpCollisionHandler_separate_set },
+    { "data", _wrap_cpCollisionHandler_data_get, _wrap_cpCollisionHandler_data_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpCollisionHandler_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpCollisionHandler_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpCollisionHandler_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpCollisionHandler_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpCollisionHandler_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpCollisionHandler_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpCollisionHandler_Sf_SwigStatic = {
+    "cpCollisionHandler",
+    swig_cpCollisionHandler_Sf_SwigStatic_methods,
+    swig_cpCollisionHandler_Sf_SwigStatic_attributes,
+    swig_cpCollisionHandler_Sf_SwigStatic_constants,
+    swig_cpCollisionHandler_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpCollisionHandler_bases[] = {0};
+static const char *swig_cpCollisionHandler_base_names[] = {0};
+static swig_lua_class _wrap_class_cpCollisionHandler = { "cpCollisionHandler", "cpCollisionHandler", &SWIGTYPE_p_cpCollisionHandler,_proxy__wrap_new_cpCollisionHandler, swig_delete_cpCollisionHandler, swig_cpCollisionHandler_methods, swig_cpCollisionHandler_attributes, &swig_cpCollisionHandler_Sf_SwigStatic, swig_cpCollisionHandler_meta, swig_cpCollisionHandler_bases, swig_cpCollisionHandler_base_names };
+
+static int _wrap_cpArbiterThread_next_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiterThread *arg1 = (struct cpArbiterThread *) 0 ;
+  struct cpArbiter *arg2 = (struct cpArbiter *) 0 ;
+  
+  SWIG_check_num_args("cpArbiterThread::next",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterThread::next",1,"struct cpArbiterThread *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpArbiterThread::next",2,"struct cpArbiter *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiterThread,0))){
+    SWIG_fail_ptr("cpArbiterThread_next_set",1,SWIGTYPE_p_cpArbiterThread);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpArbiter,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpArbiterThread_next_set",2,SWIGTYPE_p_cpArbiter);
+  }
+  
+  if (arg1) (arg1)->next = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterThread_next_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiterThread *arg1 = (struct cpArbiterThread *) 0 ;
+  struct cpArbiter *result = 0 ;
+  
+  SWIG_check_num_args("cpArbiterThread::next",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterThread::next",1,"struct cpArbiterThread *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiterThread,0))){
+    SWIG_fail_ptr("cpArbiterThread_next_get",1,SWIGTYPE_p_cpArbiterThread);
+  }
+  
+  result = (struct cpArbiter *) ((arg1)->next);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpArbiter,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterThread_prev_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiterThread *arg1 = (struct cpArbiterThread *) 0 ;
+  struct cpArbiter *arg2 = (struct cpArbiter *) 0 ;
+  
+  SWIG_check_num_args("cpArbiterThread::prev",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterThread::prev",1,"struct cpArbiterThread *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpArbiterThread::prev",2,"struct cpArbiter *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiterThread,0))){
+    SWIG_fail_ptr("cpArbiterThread_prev_set",1,SWIGTYPE_p_cpArbiterThread);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpArbiter,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpArbiterThread_prev_set",2,SWIGTYPE_p_cpArbiter);
+  }
+  
+  if (arg1) (arg1)->prev = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterThread_prev_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiterThread *arg1 = (struct cpArbiterThread *) 0 ;
+  struct cpArbiter *result = 0 ;
+  
+  SWIG_check_num_args("cpArbiterThread::prev",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterThread::prev",1,"struct cpArbiterThread *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiterThread,0))){
+    SWIG_fail_ptr("cpArbiterThread_prev_get",1,SWIGTYPE_p_cpArbiterThread);
+  }
+  
+  result = (struct cpArbiter *) ((arg1)->prev);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpArbiter,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpArbiterThread(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiterThread *result = 0 ;
+  
+  SWIG_check_num_args("cpArbiterThread::cpArbiterThread",0,0)
+  result = (struct cpArbiterThread *)calloc(1, sizeof(struct cpArbiterThread));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpArbiterThread,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpArbiterThread(void *obj) {
+struct cpArbiterThread *arg1 = (struct cpArbiterThread *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpArbiterThread(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpArbiterThread);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpArbiterThread_attributes[] = {
+    { "next", _wrap_cpArbiterThread_next_get, _wrap_cpArbiterThread_next_set },
+    { "prev", _wrap_cpArbiterThread_prev_get, _wrap_cpArbiterThread_prev_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpArbiterThread_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpArbiterThread_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpArbiterThread_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpArbiterThread_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpArbiterThread_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpArbiterThread_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpArbiterThread_Sf_SwigStatic = {
+    "cpArbiterThread",
+    swig_cpArbiterThread_Sf_SwigStatic_methods,
+    swig_cpArbiterThread_Sf_SwigStatic_attributes,
+    swig_cpArbiterThread_Sf_SwigStatic_constants,
+    swig_cpArbiterThread_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpArbiterThread_bases[] = {0};
+static const char *swig_cpArbiterThread_base_names[] = {0};
+static swig_lua_class _wrap_class_cpArbiterThread = { "cpArbiterThread", "cpArbiterThread", &SWIGTYPE_p_cpArbiterThread,_proxy__wrap_new_cpArbiterThread, swig_delete_cpArbiterThread, swig_cpArbiterThread_methods, swig_cpArbiterThread_attributes, &swig_cpArbiterThread_Sf_SwigStatic, swig_cpArbiterThread_meta, swig_cpArbiterThread_bases, swig_cpArbiterThread_base_names };
+
+static int _wrap_cpArbiter_e_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiter *arg1 = (struct cpArbiter *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpArbiter::e",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiter::e",1,"struct cpArbiter *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpArbiter::e",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiter_e_set",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpArbiter_e_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->e = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiter_e_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiter *arg1 = (struct cpArbiter *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpArbiter::e",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiter::e",1,"struct cpArbiter *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiter_e_get",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result =  ((arg1)->e);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiter_u_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiter *arg1 = (struct cpArbiter *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpArbiter::u",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiter::u",1,"struct cpArbiter *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpArbiter::u",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiter_u_set",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpArbiter_u_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->u = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiter_u_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiter *arg1 = (struct cpArbiter *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpArbiter::u",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiter::u",1,"struct cpArbiter *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiter_u_get",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result =  ((arg1)->u);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiter_surface_vr_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiter *arg1 = (struct cpArbiter *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpArbiter::surface_vr",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiter::surface_vr",1,"struct cpArbiter *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpArbiter::surface_vr",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiter_surface_vr_set",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpArbiter_surface_vr_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->surface_vr = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiter_surface_vr_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiter *arg1 = (struct cpArbiter *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpArbiter::surface_vr",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiter::surface_vr",1,"struct cpArbiter *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiter_surface_vr_get",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result =  ((arg1)->surface_vr);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiter_data_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiter *arg1 = (struct cpArbiter *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpArbiter::data",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiter::data",1,"struct cpArbiter *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpArbiter::data",2,"cpDataPointer");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiter_data_set",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpArbiter_data_set",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->data = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiter_data_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiter *arg1 = (struct cpArbiter *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpArbiter::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiter::data",1,"struct cpArbiter *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiter_data_get",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result =  ((arg1)->data);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpArbiter(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpArbiter *result = 0 ;
+  
+  SWIG_check_num_args("cpArbiter::cpArbiter",0,0)
+  result = (struct cpArbiter *)calloc(1, sizeof(struct cpArbiter));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpArbiter,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpArbiter(void *obj) {
+struct cpArbiter *arg1 = (struct cpArbiter *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpArbiter(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpArbiter);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpArbiter_attributes[] = {
+    { "e", _wrap_cpArbiter_e_get, _wrap_cpArbiter_e_set },
+    { "u", _wrap_cpArbiter_u_get, _wrap_cpArbiter_u_set },
+    { "surface_vr", _wrap_cpArbiter_surface_vr_get, _wrap_cpArbiter_surface_vr_set },
+    { "data", _wrap_cpArbiter_data_get, _wrap_cpArbiter_data_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpArbiter_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpArbiter_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpArbiter_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpArbiter_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpArbiter_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpArbiter_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpArbiter_Sf_SwigStatic = {
+    "cpArbiter",
+    swig_cpArbiter_Sf_SwigStatic_methods,
+    swig_cpArbiter_Sf_SwigStatic_attributes,
+    swig_cpArbiter_Sf_SwigStatic_constants,
+    swig_cpArbiter_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpArbiter_bases[] = {0};
+static const char *swig_cpArbiter_base_names[] = {0};
+static swig_lua_class _wrap_class_cpArbiter = { "cpArbiter", "cpArbiter", &SWIGTYPE_p_cpArbiter,_proxy__wrap_new_cpArbiter, swig_delete_cpArbiter, swig_cpArbiter_methods, swig_cpArbiter_attributes, &swig_cpArbiter_Sf_SwigStatic, swig_cpArbiter_meta, swig_cpArbiter_bases, swig_cpArbiter_base_names };
+
+static int _wrap_cpArbiterGetElasticity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpArbiterGetElasticity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetElasticity",1,"cpArbiter const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetElasticity",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = cpArbiterGetElasticity((cpArbiter const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterSetElasticity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpArbiterSetElasticity",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterSetElasticity",1,"cpArbiter *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpArbiterSetElasticity",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterSetElasticity",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpArbiterSetElasticity",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpArbiterSetElasticity(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterGetFriction(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpArbiterGetFriction",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetFriction",1,"cpArbiter const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetFriction",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = cpArbiterGetFriction((cpArbiter const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterSetFriction(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpArbiterSetFriction",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterSetFriction",1,"cpArbiter *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpArbiterSetFriction",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterSetFriction",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpArbiterSetFriction",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpArbiterSetFriction(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterGetSurfaceVelocity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpArbiterGetSurfaceVelocity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetSurfaceVelocity",1,"cpArbiter *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetSurfaceVelocity",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = cpArbiterGetSurfaceVelocity(arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterSetSurfaceVelocity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpArbiterSetSurfaceVelocity",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterSetSurfaceVelocity",1,"cpArbiter *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpArbiterSetSurfaceVelocity",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterSetSurfaceVelocity",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpArbiterSetSurfaceVelocity",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpArbiterSetSurfaceVelocity(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterGetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpArbiterGetUserData",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetUserData",1,"cpArbiter const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetUserData",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = cpArbiterGetUserData((cpArbiter const *)arg1);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterSetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpArbiterSetUserData",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterSetUserData",1,"cpArbiter *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpArbiterSetUserData",2,"cpDataPointer");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterSetUserData",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpArbiterSetUserData",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  cpArbiterSetUserData(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterTotalImpulse(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpArbiterTotalImpulse",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterTotalImpulse",1,"cpArbiter const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterTotalImpulse",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = cpArbiterTotalImpulse((cpArbiter const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterTotalImpulseWithFriction(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpArbiterTotalImpulseWithFriction",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterTotalImpulseWithFriction",1,"cpArbiter const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterTotalImpulseWithFriction",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = cpArbiterTotalImpulseWithFriction((cpArbiter const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterTotalKE(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpArbiterTotalKE",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterTotalKE",1,"cpArbiter const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterTotalKE",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = cpArbiterTotalKE((cpArbiter const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterIgnore(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  
+  SWIG_check_num_args("cpArbiterIgnore",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterIgnore",1,"cpArbiter *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterIgnore",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  cpArbiterIgnore(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterGetShapes(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpShape **arg2 = (cpShape **) 0 ;
+  cpShape **arg3 = (cpShape **) 0 ;
+  
+  SWIG_check_num_args("cpArbiterGetShapes",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetShapes",1,"cpArbiter const *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpArbiterGetShapes",2,"cpShape **");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpArbiterGetShapes",3,"cpShape **");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetShapes",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_p_cpShape,0))){
+    SWIG_fail_ptr("cpArbiterGetShapes",2,SWIGTYPE_p_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_p_cpShape,0))){
+    SWIG_fail_ptr("cpArbiterGetShapes",3,SWIGTYPE_p_p_cpShape);
+  }
+  
+  cpArbiterGetShapes((cpArbiter const *)arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterGetBodies(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpBody **arg2 = (cpBody **) 0 ;
+  cpBody **arg3 = (cpBody **) 0 ;
+  
+  SWIG_check_num_args("cpArbiterGetBodies",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetBodies",1,"cpArbiter const *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpArbiterGetBodies",2,"cpBody **");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpArbiterGetBodies",3,"cpBody **");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetBodies",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_p_cpBody,0))){
+    SWIG_fail_ptr("cpArbiterGetBodies",2,SWIGTYPE_p_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_p_cpBody,0))){
+    SWIG_fail_ptr("cpArbiterGetBodies",3,SWIGTYPE_p_p_cpBody);
+  }
+  
+  cpArbiterGetBodies((cpArbiter const *)arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpContactPointSet_count_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpContactPointSet *arg1 = (struct cpContactPointSet *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("cpContactPointSet::count",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpContactPointSet::count",1,"struct cpContactPointSet *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpContactPointSet::count",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpContactPointSet,0))){
+    SWIG_fail_ptr("cpContactPointSet_count_set",1,SWIGTYPE_p_cpContactPointSet);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->count = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpContactPointSet_count_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpContactPointSet *arg1 = (struct cpContactPointSet *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("cpContactPointSet::count",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpContactPointSet::count",1,"struct cpContactPointSet *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpContactPointSet,0))){
+    SWIG_fail_ptr("cpContactPointSet_count_get",1,SWIGTYPE_p_cpContactPointSet);
+  }
+  
+  result = (int) ((arg1)->count);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpContactPointSet_points_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpContactPointSet *arg1 = (struct cpContactPointSet *) 0 ;
+  cpContactPointSet_points *result = 0 ;
+  
+  SWIG_check_num_args("cpContactPointSet::points",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpContactPointSet::points",1,"struct cpContactPointSet *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpContactPointSet,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_get",1,SWIGTYPE_p_cpContactPointSet);
+  }
+  
+  result = (cpContactPointSet_points *)(cpContactPointSet_points *) ((arg1)->points);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpContactPointSet_points,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpContactPointSet(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpContactPointSet *result = 0 ;
+  
+  SWIG_check_num_args("cpContactPointSet::cpContactPointSet",0,0)
+  result = (struct cpContactPointSet *)calloc(1, sizeof(struct cpContactPointSet));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpContactPointSet,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpContactPointSet(void *obj) {
+struct cpContactPointSet *arg1 = (struct cpContactPointSet *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpContactPointSet(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpContactPointSet);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpContactPointSet_attributes[] = {
+    { "count", _wrap_cpContactPointSet_count_get, _wrap_cpContactPointSet_count_set },
+    { "points", _wrap_cpContactPointSet_points_get, SWIG_Lua_set_immutable },
+    {0,0,0}
+};
+static swig_lua_method swig_cpContactPointSet_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpContactPointSet_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpContactPointSet_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpContactPointSet_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpContactPointSet_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpContactPointSet_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpContactPointSet_Sf_SwigStatic = {
+    "cpContactPointSet",
+    swig_cpContactPointSet_Sf_SwigStatic_methods,
+    swig_cpContactPointSet_Sf_SwigStatic_attributes,
+    swig_cpContactPointSet_Sf_SwigStatic_constants,
+    swig_cpContactPointSet_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpContactPointSet_bases[] = {0};
+static const char *swig_cpContactPointSet_base_names[] = {0};
+static swig_lua_class _wrap_class_cpContactPointSet = { "cpContactPointSet", "cpContactPointSet", &SWIGTYPE_p_cpContactPointSet,_proxy__wrap_new_cpContactPointSet, swig_delete_cpContactPointSet, swig_cpContactPointSet_methods, swig_cpContactPointSet_attributes, &swig_cpContactPointSet_Sf_SwigStatic, swig_cpContactPointSet_meta, swig_cpContactPointSet_bases, swig_cpContactPointSet_base_names };
+
+static int _wrap_cpContactPointSet_points_point_set(lua_State* L) {
+  int SWIG_arg = 0;
+  cpContactPointSet_points *arg1 = (cpContactPointSet_points *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpContactPointSet::cpContactPointSet_points::point",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpContactPointSet::cpContactPointSet_points::point",1,"cpContactPointSet_points *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpContactPointSet::cpContactPointSet_points::point",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpContactPointSet_points,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_point_set",1,SWIGTYPE_p_cpContactPointSet_points);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_point_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->point = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpContactPointSet_points_point_get(lua_State* L) {
+  int SWIG_arg = 0;
+  cpContactPointSet_points *arg1 = (cpContactPointSet_points *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpContactPointSet::cpContactPointSet_points::point",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpContactPointSet::cpContactPointSet_points::point",1,"cpContactPointSet_points *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpContactPointSet_points,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_point_get",1,SWIGTYPE_p_cpContactPointSet_points);
+  }
+  
+  result =  ((arg1)->point);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpContactPointSet_points_normal_set(lua_State* L) {
+  int SWIG_arg = 0;
+  cpContactPointSet_points *arg1 = (cpContactPointSet_points *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpContactPointSet::cpContactPointSet_points::normal",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpContactPointSet::cpContactPointSet_points::normal",1,"cpContactPointSet_points *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpContactPointSet::cpContactPointSet_points::normal",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpContactPointSet_points,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_normal_set",1,SWIGTYPE_p_cpContactPointSet_points);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_normal_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->normal = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpContactPointSet_points_normal_get(lua_State* L) {
+  int SWIG_arg = 0;
+  cpContactPointSet_points *arg1 = (cpContactPointSet_points *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpContactPointSet::cpContactPointSet_points::normal",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpContactPointSet::cpContactPointSet_points::normal",1,"cpContactPointSet_points *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpContactPointSet_points,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_normal_get",1,SWIGTYPE_p_cpContactPointSet_points);
+  }
+  
+  result =  ((arg1)->normal);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpContactPointSet_points_dist_set(lua_State* L) {
+  int SWIG_arg = 0;
+  cpContactPointSet_points *arg1 = (cpContactPointSet_points *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpContactPointSet::cpContactPointSet_points::dist",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpContactPointSet::cpContactPointSet_points::dist",1,"cpContactPointSet_points *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpContactPointSet::cpContactPointSet_points::dist",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpContactPointSet_points,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_dist_set",1,SWIGTYPE_p_cpContactPointSet_points);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_dist_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->dist = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpContactPointSet_points_dist_get(lua_State* L) {
+  int SWIG_arg = 0;
+  cpContactPointSet_points *arg1 = (cpContactPointSet_points *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpContactPointSet::cpContactPointSet_points::dist",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpContactPointSet::cpContactPointSet_points::dist",1,"cpContactPointSet_points *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpContactPointSet_points,0))){
+    SWIG_fail_ptr("cpContactPointSet_points_dist_get",1,SWIGTYPE_p_cpContactPointSet_points);
+  }
+  
+  result =  ((arg1)->dist);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpContactPointSet_points(lua_State* L) {
+  int SWIG_arg = 0;
+  cpContactPointSet_points *result = 0 ;
+  
+  SWIG_check_num_args("cpContactPointSet::cpContactPointSet_points::cpContactPointSet_points",0,0)
+  result = (cpContactPointSet_points *)calloc(1, sizeof(cpContactPointSet_points));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpContactPointSet_points,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpContactPointSet_points(void *obj) {
+cpContactPointSet_points *arg1 = (cpContactPointSet_points *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpContactPointSet_points(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpContactPointSet_points);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpContactPointSet_points_attributes[] = {
+    { "point", _wrap_cpContactPointSet_points_point_get, _wrap_cpContactPointSet_points_point_set },
+    { "normal", _wrap_cpContactPointSet_points_normal_get, _wrap_cpContactPointSet_points_normal_set },
+    { "dist", _wrap_cpContactPointSet_points_dist_get, _wrap_cpContactPointSet_points_dist_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpContactPointSet_points_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpContactPointSet_points_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpContactPointSet_points_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpContactPointSet_points_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpContactPointSet_points_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpContactPointSet_points_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpContactPointSet_points_Sf_SwigStatic = {
+    "cpContactPointSet_points",
+    swig_cpContactPointSet_points_Sf_SwigStatic_methods,
+    swig_cpContactPointSet_points_Sf_SwigStatic_attributes,
+    swig_cpContactPointSet_points_Sf_SwigStatic_constants,
+    swig_cpContactPointSet_points_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpContactPointSet_points_bases[] = {0};
+static const char *swig_cpContactPointSet_points_base_names[] = {0};
+static swig_lua_class _wrap_class_cpContactPointSet_points = { "cpContactPointSet_points", "cpContactPointSet_points", &SWIGTYPE_p_cpContactPointSet_points,_proxy__wrap_new_cpContactPointSet_points, swig_delete_cpContactPointSet_points, swig_cpContactPointSet_points_methods, swig_cpContactPointSet_points_attributes, &swig_cpContactPointSet_points_Sf_SwigStatic, swig_cpContactPointSet_points_meta, swig_cpContactPointSet_points_bases, swig_cpContactPointSet_points_base_names };
+
+static int _wrap_cpArbiterGetContactPointSet(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpContactPointSet result;
+  
+  SWIG_check_num_args("cpArbiterGetContactPointSet",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetContactPointSet",1,"cpArbiter const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetContactPointSet",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = cpArbiterGetContactPointSet((cpArbiter const *)arg1);
+  {
+    cpContactPointSet * resultptr;
+    resultptr = (cpContactPointSet *) malloc(sizeof(cpContactPointSet));
+    memmove(resultptr, &result, sizeof(cpContactPointSet));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpContactPointSet,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterSetContactPointSet(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpContactPointSet *arg2 = (cpContactPointSet *) 0 ;
+  
+  SWIG_check_num_args("cpArbiterSetContactPointSet",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterSetContactPointSet",1,"cpArbiter *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpArbiterSetContactPointSet",2,"cpContactPointSet *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterSetContactPointSet",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpContactPointSet,0))){
+    SWIG_fail_ptr("cpArbiterSetContactPointSet",2,SWIGTYPE_p_cpContactPointSet);
+  }
+  
+  cpArbiterSetContactPointSet(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterIsFirstContact(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpArbiterIsFirstContact",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterIsFirstContact",1,"cpArbiter const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterIsFirstContact",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = cpArbiterIsFirstContact((cpArbiter const *)arg1);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterGetCount(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("cpArbiterGetCount",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetCount",1,"cpArbiter const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetCount",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  result = (int)cpArbiterGetCount((cpArbiter const *)arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterGetNormal(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  int arg2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpArbiterGetNormal",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetNormal",1,"cpArbiter const *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpArbiterGetNormal",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetNormal",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = cpArbiterGetNormal((cpArbiter const *)arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterGetPoint(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  int arg2 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpArbiterGetPoint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetPoint",1,"cpArbiter const *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpArbiterGetPoint",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetPoint",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = cpArbiterGetPoint((cpArbiter const *)arg1,arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpArbiterGetDepth(lua_State* L) {
+  int SWIG_arg = 0;
+  cpArbiter *arg1 = (cpArbiter *) 0 ;
+  int arg2 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpArbiterGetDepth",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpArbiterGetDepth",1,"cpArbiter const *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpArbiterGetDepth",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpArbiter,0))){
+    SWIG_fail_ptr("cpArbiterGetDepth",1,SWIGTYPE_p_cpArbiter);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  result = cpArbiterGetDepth((cpArbiter const *)arg1,arg2);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_iterations_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("cpSpace::iterations",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::iterations",1,"struct cpSpace *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpSpace::iterations",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_iterations_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  if (arg1) (arg1)->iterations = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_iterations_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("cpSpace::iterations",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::iterations",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_iterations_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = (int) ((arg1)->iterations);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_gravity_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSpace::gravity",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::gravity",1,"struct cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpace::gravity",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_gravity_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpace_gravity_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->gravity = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_gravity_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSpace::gravity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::gravity",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_gravity_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result =  ((arg1)->gravity);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_damping_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpace::damping",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::damping",1,"struct cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpace::damping",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_damping_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpace_damping_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->damping = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_damping_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpace::damping",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::damping",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_damping_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result =  ((arg1)->damping);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_idleSpeedThreshold_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpace::idleSpeedThreshold",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::idleSpeedThreshold",1,"struct cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpace::idleSpeedThreshold",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_idleSpeedThreshold_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpace_idleSpeedThreshold_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->idleSpeedThreshold = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_idleSpeedThreshold_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpace::idleSpeedThreshold",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::idleSpeedThreshold",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_idleSpeedThreshold_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result =  ((arg1)->idleSpeedThreshold);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_sleepTimeThreshold_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpace::sleepTimeThreshold",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::sleepTimeThreshold",1,"struct cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpace::sleepTimeThreshold",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_sleepTimeThreshold_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpace_sleepTimeThreshold_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->sleepTimeThreshold = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_sleepTimeThreshold_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpace::sleepTimeThreshold",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::sleepTimeThreshold",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_sleepTimeThreshold_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result =  ((arg1)->sleepTimeThreshold);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_collisionSlop_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpace::collisionSlop",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::collisionSlop",1,"struct cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpace::collisionSlop",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_collisionSlop_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpace_collisionSlop_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->collisionSlop = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_collisionSlop_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpace::collisionSlop",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::collisionSlop",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_collisionSlop_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result =  ((arg1)->collisionSlop);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_collisionBias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpace::collisionBias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::collisionBias",1,"struct cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpace::collisionBias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_collisionBias_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpace_collisionBias_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->collisionBias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_collisionBias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpace::collisionBias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::collisionBias",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_collisionBias_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result =  ((arg1)->collisionBias);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_collisionPersistence_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpTimestamp arg2 ;
+  cpTimestamp *argp2 ;
+  
+  SWIG_check_num_args("cpSpace::collisionPersistence",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::collisionPersistence",1,"struct cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpace::collisionPersistence",2,"cpTimestamp");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_collisionPersistence_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpTimestamp,0))){
+    SWIG_fail_ptr("cpSpace_collisionPersistence_set",2,SWIGTYPE_p_cpTimestamp);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->collisionPersistence = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_collisionPersistence_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpTimestamp result;
+  
+  SWIG_check_num_args("cpSpace::collisionPersistence",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::collisionPersistence",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_collisionPersistence_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result =  ((arg1)->collisionPersistence);
+  {
+    cpTimestamp * resultptr;
+    resultptr = (cpTimestamp *) malloc(sizeof(cpTimestamp));
+    memmove(resultptr, &result, sizeof(cpTimestamp));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpTimestamp,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_enableContactGraph_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpBool arg2 ;
+  cpBool *argp2 ;
+  
+  SWIG_check_num_args("cpSpace::enableContactGraph",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::enableContactGraph",1,"struct cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpace::enableContactGraph",2,"cpBool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_enableContactGraph_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBool,0))){
+    SWIG_fail_ptr("cpSpace_enableContactGraph_set",2,SWIGTYPE_p_cpBool);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->enableContactGraph = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_enableContactGraph_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpSpace::enableContactGraph",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::enableContactGraph",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_enableContactGraph_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result =  ((arg1)->enableContactGraph);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_data_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpSpace::data",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::data",1,"struct cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpace::data",2,"cpDataPointer");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_data_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpSpace_data_set",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->data = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_data_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpSpace::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::data",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_data_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result =  ((arg1)->data);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_staticBody_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpSpace::staticBody",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::staticBody",1,"struct cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpace::staticBody",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_staticBody_set",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpSpace_staticBody_set",2,SWIGTYPE_p_cpBody);
+  }
+  
+  if (arg1) (arg1)->staticBody = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpace_staticBody_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *arg1 = (struct cpSpace *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpSpace::staticBody",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpace::staticBody",1,"struct cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpace_staticBody_get",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = (cpBody *) ((arg1)->staticBody);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpSpace(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSpace *result = 0 ;
+  
+  SWIG_check_num_args("cpSpace::cpSpace",0,0)
+  result = (struct cpSpace *)calloc(1, sizeof(struct cpSpace));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpace,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpSpace(void *obj) {
+struct cpSpace *arg1 = (struct cpSpace *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpSpace(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpSpace);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpSpace_attributes[] = {
+    { "iterations", _wrap_cpSpace_iterations_get, _wrap_cpSpace_iterations_set },
+    { "gravity", _wrap_cpSpace_gravity_get, _wrap_cpSpace_gravity_set },
+    { "damping", _wrap_cpSpace_damping_get, _wrap_cpSpace_damping_set },
+    { "idleSpeedThreshold", _wrap_cpSpace_idleSpeedThreshold_get, _wrap_cpSpace_idleSpeedThreshold_set },
+    { "sleepTimeThreshold", _wrap_cpSpace_sleepTimeThreshold_get, _wrap_cpSpace_sleepTimeThreshold_set },
+    { "collisionSlop", _wrap_cpSpace_collisionSlop_get, _wrap_cpSpace_collisionSlop_set },
+    { "collisionBias", _wrap_cpSpace_collisionBias_get, _wrap_cpSpace_collisionBias_set },
+    { "collisionPersistence", _wrap_cpSpace_collisionPersistence_get, _wrap_cpSpace_collisionPersistence_set },
+    { "enableContactGraph", _wrap_cpSpace_enableContactGraph_get, _wrap_cpSpace_enableContactGraph_set },
+    { "data", _wrap_cpSpace_data_get, _wrap_cpSpace_data_set },
+    { "staticBody", _wrap_cpSpace_staticBody_get, _wrap_cpSpace_staticBody_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpSpace_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpSpace_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpSpace_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpSpace_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpSpace_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpSpace_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpSpace_Sf_SwigStatic = {
+    "cpSpace",
+    swig_cpSpace_Sf_SwigStatic_methods,
+    swig_cpSpace_Sf_SwigStatic_attributes,
+    swig_cpSpace_Sf_SwigStatic_constants,
+    swig_cpSpace_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpSpace_bases[] = {0};
+static const char *swig_cpSpace_base_names[] = {0};
+static swig_lua_class _wrap_class_cpSpace = { "cpSpace", "cpSpace", &SWIGTYPE_p_cpSpace,_proxy__wrap_new_cpSpace, swig_delete_cpSpace, swig_cpSpace_methods, swig_cpSpace_attributes, &swig_cpSpace_Sf_SwigStatic, swig_cpSpace_meta, swig_cpSpace_bases, swig_cpSpace_base_names };
+
+static int _wrap_cpSpaceAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceAlloc",0,0)
+  result = (cpSpace *)cpSpaceAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpace,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpSpace *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceInit",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceInit",1,"cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceInit",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = (cpSpace *)cpSpaceInit(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpace,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceNew",0,0)
+  result = (cpSpace *)cpSpaceNew();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpace,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceDestroy(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceDestroy",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceDestroy",1,"cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceDestroy",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  cpSpaceDestroy(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceFree(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceFree",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceFree",1,"cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceFree",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  cpSpaceFree(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetIterations(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  int result;
+  
+  SWIG_check_num_args("cpSpaceGetIterations",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetIterations",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetIterations",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = (int)cpSpaceGetIterations((cpSpace const *)arg1);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetIterations(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  int arg2 ;
+  
+  SWIG_check_num_args("cpSpaceSetIterations",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetIterations",1,"cpSpace *");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpSpaceSetIterations",2,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetIterations",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  cpSpaceSetIterations(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetGravity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSpaceGetGravity",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetGravity",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetGravity",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetGravity((cpSpace const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetGravity(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceSetGravity",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetGravity",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSetGravity",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetGravity",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpaceSetGravity",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceSetGravity(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetDamping(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpaceGetDamping",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetDamping",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetDamping",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetDamping((cpSpace const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetDamping(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceSetDamping",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetDamping",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSetDamping",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetDamping",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceSetDamping",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceSetDamping(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetIdleSpeedThreshold(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpaceGetIdleSpeedThreshold",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetIdleSpeedThreshold",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetIdleSpeedThreshold",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetIdleSpeedThreshold((cpSpace const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetIdleSpeedThreshold(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceSetIdleSpeedThreshold",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetIdleSpeedThreshold",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSetIdleSpeedThreshold",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetIdleSpeedThreshold",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceSetIdleSpeedThreshold",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceSetIdleSpeedThreshold(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetSleepTimeThreshold(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpaceGetSleepTimeThreshold",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetSleepTimeThreshold",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetSleepTimeThreshold",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetSleepTimeThreshold((cpSpace const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetSleepTimeThreshold(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceSetSleepTimeThreshold",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetSleepTimeThreshold",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSetSleepTimeThreshold",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetSleepTimeThreshold",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceSetSleepTimeThreshold",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceSetSleepTimeThreshold(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetCollisionSlop(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpaceGetCollisionSlop",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetCollisionSlop",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetCollisionSlop",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetCollisionSlop((cpSpace const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetCollisionSlop(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceSetCollisionSlop",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetCollisionSlop",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSetCollisionSlop",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetCollisionSlop",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceSetCollisionSlop",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceSetCollisionSlop(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetCollisionBias(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpaceGetCollisionBias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetCollisionBias",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetCollisionBias",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetCollisionBias((cpSpace const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetCollisionBias(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceSetCollisionBias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetCollisionBias",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSetCollisionBias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetCollisionBias",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceSetCollisionBias",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceSetCollisionBias(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetCollisionPersistence(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpTimestamp result;
+  
+  SWIG_check_num_args("cpSpaceGetCollisionPersistence",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetCollisionPersistence",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetCollisionPersistence",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetCollisionPersistence((cpSpace const *)arg1);
+  {
+    cpTimestamp * resultptr;
+    resultptr = (cpTimestamp *) malloc(sizeof(cpTimestamp));
+    memmove(resultptr, &result, sizeof(cpTimestamp));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpTimestamp,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetCollisionPersistence(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpTimestamp arg2 ;
+  cpTimestamp *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceSetCollisionPersistence",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetCollisionPersistence",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSetCollisionPersistence",2,"cpTimestamp");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetCollisionPersistence",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpTimestamp,0))){
+    SWIG_fail_ptr("cpSpaceSetCollisionPersistence",2,SWIGTYPE_p_cpTimestamp);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceSetCollisionPersistence(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetEnableContactGraph(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpSpaceGetEnableContactGraph",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetEnableContactGraph",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetEnableContactGraph",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetEnableContactGraph((cpSpace const *)arg1);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetEnableContactGraph(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBool arg2 ;
+  cpBool *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceSetEnableContactGraph",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetEnableContactGraph",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSetEnableContactGraph",2,"cpBool");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetEnableContactGraph",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBool,0))){
+    SWIG_fail_ptr("cpSpaceSetEnableContactGraph",2,SWIGTYPE_p_cpBool);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceSetEnableContactGraph(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpSpaceGetUserData",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetUserData",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetUserData",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetUserData((cpSpace const *)arg1);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceSetUserData",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetUserData",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSetUserData",2,"cpDataPointer");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetUserData",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpSpaceSetUserData",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceSetUserData(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetStaticBody(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceGetStaticBody",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetStaticBody",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetStaticBody",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = (cpBody *)cpSpaceGetStaticBody((cpSpace const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceGetCurrentTimeStep(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSpaceGetCurrentTimeStep",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceGetCurrentTimeStep",1,"cpSpace const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceGetCurrentTimeStep",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceGetCurrentTimeStep((cpSpace const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceIsLocked(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpSpaceIsLocked",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceIsLocked",1,"cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceIsLocked",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  result = cpSpaceIsLocked(arg1);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSetDefaultCollisionHandler(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpCollisionBeginFunc arg2 = (cpCollisionBeginFunc) 0 ;
+  cpCollisionPreSolveFunc arg3 = (cpCollisionPreSolveFunc) 0 ;
+  cpCollisionPostSolveFunc arg4 = (cpCollisionPostSolveFunc) 0 ;
+  cpCollisionSeparateFunc arg5 = (cpCollisionSeparateFunc) 0 ;
+  void *arg6 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceSetDefaultCollisionHandler",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSetDefaultCollisionHandler",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceSetDefaultCollisionHandler",2,"cpCollisionBeginFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpaceSetDefaultCollisionHandler",3,"cpCollisionPreSolveFunc");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpSpaceSetDefaultCollisionHandler",4,"cpCollisionPostSolveFunc");
+  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("cpSpaceSetDefaultCollisionHandler",5,"cpCollisionSeparateFunc");
+  if(!SWIG_isptrtype(L,6)) SWIG_fail_arg("cpSpaceSetDefaultCollisionHandler",6,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSetDefaultCollisionHandler",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,0))){
+    SWIG_fail_ptr("cpSpaceSetDefaultCollisionHandler",2,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,0))){
+    SWIG_fail_ptr("cpSpaceSetDefaultCollisionHandler",3,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceSetDefaultCollisionHandler",4,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&arg5,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceSetDefaultCollisionHandler",5,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void);
+  }
+  
+  arg6=(void *)SWIG_MustGetPtr(L,6,0,0,6,"cpSpaceSetDefaultCollisionHandler");
+  cpSpaceSetDefaultCollisionHandler(arg1,arg2,arg3,arg4,arg5,arg6);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceAddCollisionHandler(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpCollisionType arg2 ;
+  cpCollisionType arg3 ;
+  cpCollisionBeginFunc arg4 = (cpCollisionBeginFunc) 0 ;
+  cpCollisionPreSolveFunc arg5 = (cpCollisionPreSolveFunc) 0 ;
+  cpCollisionPostSolveFunc arg6 = (cpCollisionPostSolveFunc) 0 ;
+  cpCollisionSeparateFunc arg7 = (cpCollisionSeparateFunc) 0 ;
+  void *arg8 = (void *) 0 ;
+  cpCollisionType *argp2 ;
+  cpCollisionType *argp3 ;
+  
+  SWIG_check_num_args("cpSpaceAddCollisionHandler",8,8)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceAddCollisionHandler",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceAddCollisionHandler",2,"cpCollisionType");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpaceAddCollisionHandler",3,"cpCollisionType");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpSpaceAddCollisionHandler",4,"cpCollisionBeginFunc");
+  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("cpSpaceAddCollisionHandler",5,"cpCollisionPreSolveFunc");
+  if(!SWIG_isptrtype(L,6)) SWIG_fail_arg("cpSpaceAddCollisionHandler",6,"cpCollisionPostSolveFunc");
+  if(!SWIG_isptrtype(L,7)) SWIG_fail_arg("cpSpaceAddCollisionHandler",7,"cpCollisionSeparateFunc");
+  if(!SWIG_isptrtype(L,8)) SWIG_fail_arg("cpSpaceAddCollisionHandler",8,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceAddCollisionHandler",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpCollisionType,0))){
+    SWIG_fail_ptr("cpSpaceAddCollisionHandler",2,SWIGTYPE_p_cpCollisionType);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpCollisionType,0))){
+    SWIG_fail_ptr("cpSpaceAddCollisionHandler",3,SWIGTYPE_p_cpCollisionType);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,0))){
+    SWIG_fail_ptr("cpSpaceAddCollisionHandler",4,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&arg5,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,0))){
+    SWIG_fail_ptr("cpSpaceAddCollisionHandler",5,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&arg6,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceAddCollisionHandler",6,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,7,(void**)&arg7,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceAddCollisionHandler",7,SWIGTYPE_p_f_p_cpArbiter_p_cpSpace_p_void__void);
+  }
+  
+  arg8=(void *)SWIG_MustGetPtr(L,8,0,0,8,"cpSpaceAddCollisionHandler");
+  cpSpaceAddCollisionHandler(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceRemoveCollisionHandler(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpCollisionType arg2 ;
+  cpCollisionType arg3 ;
+  cpCollisionType *argp2 ;
+  cpCollisionType *argp3 ;
+  
+  SWIG_check_num_args("cpSpaceRemoveCollisionHandler",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceRemoveCollisionHandler",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceRemoveCollisionHandler",2,"cpCollisionType");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpaceRemoveCollisionHandler",3,"cpCollisionType");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceRemoveCollisionHandler",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpCollisionType,0))){
+    SWIG_fail_ptr("cpSpaceRemoveCollisionHandler",2,SWIGTYPE_p_cpCollisionType);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpCollisionType,0))){
+    SWIG_fail_ptr("cpSpaceRemoveCollisionHandler",3,SWIGTYPE_p_cpCollisionType);
+  }
+  arg3 = *argp3;
+  
+  cpSpaceRemoveCollisionHandler(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceAddShape(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceAddShape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceAddShape",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceAddShape",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceAddShape",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSpaceAddShape",2,SWIGTYPE_p_cpShape);
+  }
+  
+  result = (cpShape *)cpSpaceAddShape(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceAddStaticShape(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceAddStaticShape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceAddStaticShape",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceAddStaticShape",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceAddStaticShape",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSpaceAddStaticShape",2,SWIGTYPE_p_cpShape);
+  }
+  
+  result = (cpShape *)cpSpaceAddStaticShape(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceAddBody(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceAddBody",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceAddBody",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceAddBody",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceAddBody",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSpaceAddBody",2,SWIGTYPE_p_cpBody);
+  }
+  
+  result = (cpBody *)cpSpaceAddBody(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceAddConstraint(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpConstraint *arg2 = (cpConstraint *) 0 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceAddConstraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceAddConstraint",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceAddConstraint",2,"cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceAddConstraint",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSpaceAddConstraint",2,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpConstraint *)cpSpaceAddConstraint(arg1,arg2);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceRemoveShape(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceRemoveShape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceRemoveShape",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceRemoveShape",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceRemoveShape",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSpaceRemoveShape",2,SWIGTYPE_p_cpShape);
+  }
+  
+  cpSpaceRemoveShape(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceRemoveStaticShape(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceRemoveStaticShape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceRemoveStaticShape",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceRemoveStaticShape",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceRemoveStaticShape",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSpaceRemoveStaticShape",2,SWIGTYPE_p_cpShape);
+  }
+  
+  cpSpaceRemoveStaticShape(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceRemoveBody(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceRemoveBody",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceRemoveBody",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceRemoveBody",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceRemoveBody",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSpaceRemoveBody",2,SWIGTYPE_p_cpBody);
+  }
+  
+  cpSpaceRemoveBody(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceRemoveConstraint(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpConstraint *arg2 = (cpConstraint *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceRemoveConstraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceRemoveConstraint",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceRemoveConstraint",2,"cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceRemoveConstraint",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSpaceRemoveConstraint",2,SWIGTYPE_p_cpConstraint);
+  }
+  
+  cpSpaceRemoveConstraint(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceContainsShape(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpSpaceContainsShape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceContainsShape",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceContainsShape",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceContainsShape",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSpaceContainsShape",2,SWIGTYPE_p_cpShape);
+  }
+  
+  result = cpSpaceContainsShape(arg1,arg2);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceContainsBody(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpSpaceContainsBody",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceContainsBody",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceContainsBody",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceContainsBody",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSpaceContainsBody",2,SWIGTYPE_p_cpBody);
+  }
+  
+  result = cpSpaceContainsBody(arg1,arg2);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceContainsConstraint(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpConstraint *arg2 = (cpConstraint *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpSpaceContainsConstraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceContainsConstraint",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceContainsConstraint",2,"cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceContainsConstraint",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSpaceContainsConstraint",2,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpSpaceContainsConstraint(arg1,arg2);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceConvertBodyToStatic(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceConvertBodyToStatic",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceConvertBodyToStatic",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceConvertBodyToStatic",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceConvertBodyToStatic",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSpaceConvertBodyToStatic",2,SWIGTYPE_p_cpBody);
+  }
+  
+  cpSpaceConvertBodyToStatic(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceConvertBodyToDynamic(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpFloat arg3 ;
+  cpFloat arg4 ;
+  cpFloat *argp3 ;
+  cpFloat *argp4 ;
+  
+  SWIG_check_num_args("cpSpaceConvertBodyToDynamic",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceConvertBodyToDynamic",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceConvertBodyToDynamic",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpaceConvertBodyToDynamic",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSpaceConvertBodyToDynamic",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceConvertBodyToDynamic",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSpaceConvertBodyToDynamic",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceConvertBodyToDynamic",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceConvertBodyToDynamic",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  cpSpaceConvertBodyToDynamic(arg1,arg2,arg3,arg4);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceAddPostStepCallback(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpPostStepFunc arg2 = (cpPostStepFunc) 0 ;
+  void *arg3 = (void *) 0 ;
+  void *arg4 = (void *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpSpaceAddPostStepCallback",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceAddPostStepCallback",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceAddPostStepCallback",2,"cpPostStepFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpaceAddPostStepCallback",3,"void *");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpSpaceAddPostStepCallback",4,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceAddPostStepCallback",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpSpace_p_void_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceAddPostStepCallback",2,SWIGTYPE_p_f_p_cpSpace_p_void_p_void__void);
+  }
+  
+  arg3=(void *)SWIG_MustGetPtr(L,3,0,0,3,"cpSpaceAddPostStepCallback");
+  arg4=(void *)SWIG_MustGetPtr(L,4,0,0,4,"cpSpaceAddPostStepCallback");
+  result = cpSpaceAddPostStepCallback(arg1,arg2,arg3,arg4);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpacePointQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpVect arg2 ;
+  cpLayers arg3 ;
+  cpGroup arg4 ;
+  cpSpacePointQueryFunc arg5 = (cpSpacePointQueryFunc) 0 ;
+  void *arg6 = (void *) 0 ;
+  cpVect *argp2 ;
+  cpLayers *argp3 ;
+  cpGroup *argp4 ;
+  
+  SWIG_check_num_args("cpSpacePointQuery",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpacePointQuery",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpacePointQuery",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpacePointQuery",3,"cpLayers");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSpacePointQuery",4,"cpGroup");
+  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("cpSpacePointQuery",5,"cpSpacePointQueryFunc");
+  if(!SWIG_isptrtype(L,6)) SWIG_fail_arg("cpSpacePointQuery",6,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpacePointQuery",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpacePointQuery",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpLayers,0))){
+    SWIG_fail_ptr("cpSpacePointQuery",3,SWIGTYPE_p_cpLayers);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpGroup,0))){
+    SWIG_fail_ptr("cpSpacePointQuery",4,SWIGTYPE_p_cpGroup);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&arg5,SWIGTYPE_p_f_p_cpShape_p_void__void,0))){
+    SWIG_fail_ptr("cpSpacePointQuery",5,SWIGTYPE_p_f_p_cpShape_p_void__void);
+  }
+  
+  arg6=(void *)SWIG_MustGetPtr(L,6,0,0,6,"cpSpacePointQuery");
+  cpSpacePointQuery(arg1,arg2,arg3,arg4,arg5,arg6);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpacePointQueryFirst(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpVect arg2 ;
+  cpLayers arg3 ;
+  cpGroup arg4 ;
+  cpVect *argp2 ;
+  cpLayers *argp3 ;
+  cpGroup *argp4 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSpacePointQueryFirst",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpacePointQueryFirst",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpacePointQueryFirst",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpacePointQueryFirst",3,"cpLayers");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSpacePointQueryFirst",4,"cpGroup");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpacePointQueryFirst",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpacePointQueryFirst",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpLayers,0))){
+    SWIG_fail_ptr("cpSpacePointQueryFirst",3,SWIGTYPE_p_cpLayers);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpGroup,0))){
+    SWIG_fail_ptr("cpSpacePointQueryFirst",4,SWIGTYPE_p_cpGroup);
+  }
+  arg4 = *argp4;
+  
+  result = (cpShape *)cpSpacePointQueryFirst(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceNearestPointQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpVect arg2 ;
+  cpFloat arg3 ;
+  cpLayers arg4 ;
+  cpGroup arg5 ;
+  cpSpaceNearestPointQueryFunc arg6 = (cpSpaceNearestPointQueryFunc) 0 ;
+  void *arg7 = (void *) 0 ;
+  cpVect *argp2 ;
+  cpFloat *argp3 ;
+  cpLayers *argp4 ;
+  cpGroup *argp5 ;
+  
+  SWIG_check_num_args("cpSpaceNearestPointQuery",7,7)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceNearestPointQuery",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceNearestPointQuery",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpaceNearestPointQuery",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSpaceNearestPointQuery",4,"cpLayers");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpSpaceNearestPointQuery",5,"cpGroup");
+  if(!SWIG_isptrtype(L,6)) SWIG_fail_arg("cpSpaceNearestPointQuery",6,"cpSpaceNearestPointQueryFunc");
+  if(!SWIG_isptrtype(L,7)) SWIG_fail_arg("cpSpaceNearestPointQuery",7,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQuery",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQuery",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQuery",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpLayers,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQuery",4,SWIGTYPE_p_cpLayers);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpGroup,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQuery",5,SWIGTYPE_p_cpGroup);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&arg6,SWIGTYPE_p_f_p_cpShape_cpFloat_cpVect_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQuery",6,SWIGTYPE_p_f_p_cpShape_cpFloat_cpVect_p_void__void);
+  }
+  
+  arg7=(void *)SWIG_MustGetPtr(L,7,0,0,7,"cpSpaceNearestPointQuery");
+  cpSpaceNearestPointQuery(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceNearestPointQueryNearest(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpVect arg2 ;
+  cpFloat arg3 ;
+  cpLayers arg4 ;
+  cpGroup arg5 ;
+  cpNearestPointQueryInfo *arg6 = (cpNearestPointQueryInfo *) 0 ;
+  cpVect *argp2 ;
+  cpFloat *argp3 ;
+  cpLayers *argp4 ;
+  cpGroup *argp5 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceNearestPointQueryNearest",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceNearestPointQueryNearest",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceNearestPointQueryNearest",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpaceNearestPointQueryNearest",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSpaceNearestPointQueryNearest",4,"cpLayers");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpSpaceNearestPointQueryNearest",5,"cpGroup");
+  if(!SWIG_isptrtype(L,6)) SWIG_fail_arg("cpSpaceNearestPointQueryNearest",6,"cpNearestPointQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQueryNearest",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQueryNearest",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQueryNearest",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpLayers,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQueryNearest",4,SWIGTYPE_p_cpLayers);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpGroup,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQueryNearest",5,SWIGTYPE_p_cpGroup);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&arg6,SWIGTYPE_p_cpNearestPointQueryInfo,0))){
+    SWIG_fail_ptr("cpSpaceNearestPointQueryNearest",6,SWIGTYPE_p_cpNearestPointQueryInfo);
+  }
+  
+  result = (cpShape *)cpSpaceNearestPointQueryNearest(arg1,arg2,arg3,arg4,arg5,arg6);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSegmentQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpLayers arg4 ;
+  cpGroup arg5 ;
+  cpSpaceSegmentQueryFunc arg6 = (cpSpaceSegmentQueryFunc) 0 ;
+  void *arg7 = (void *) 0 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  cpLayers *argp4 ;
+  cpGroup *argp5 ;
+  
+  SWIG_check_num_args("cpSpaceSegmentQuery",7,7)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSegmentQuery",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSegmentQuery",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpaceSegmentQuery",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSpaceSegmentQuery",4,"cpLayers");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpSpaceSegmentQuery",5,"cpGroup");
+  if(!SWIG_isptrtype(L,6)) SWIG_fail_arg("cpSpaceSegmentQuery",6,"cpSpaceSegmentQueryFunc");
+  if(!SWIG_isptrtype(L,7)) SWIG_fail_arg("cpSpaceSegmentQuery",7,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQuery",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQuery",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQuery",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpLayers,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQuery",4,SWIGTYPE_p_cpLayers);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpGroup,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQuery",5,SWIGTYPE_p_cpGroup);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&arg6,SWIGTYPE_p_f_p_cpShape_cpFloat_cpVect_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQuery",6,SWIGTYPE_p_f_p_cpShape_cpFloat_cpVect_p_void__void);
+  }
+  
+  arg7=(void *)SWIG_MustGetPtr(L,7,0,0,7,"cpSpaceSegmentQuery");
+  cpSpaceSegmentQuery(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceSegmentQueryFirst(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpLayers arg4 ;
+  cpGroup arg5 ;
+  cpSegmentQueryInfo *arg6 = (cpSegmentQueryInfo *) 0 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  cpLayers *argp4 ;
+  cpGroup *argp5 ;
+  cpShape *result = 0 ;
+  
+  SWIG_check_num_args("cpSpaceSegmentQueryFirst",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceSegmentQueryFirst",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceSegmentQueryFirst",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpaceSegmentQueryFirst",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSpaceSegmentQueryFirst",4,"cpLayers");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpSpaceSegmentQueryFirst",5,"cpGroup");
+  if(!SWIG_isptrtype(L,6)) SWIG_fail_arg("cpSpaceSegmentQueryFirst",6,"cpSegmentQueryInfo *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQueryFirst",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQueryFirst",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQueryFirst",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpLayers,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQueryFirst",4,SWIGTYPE_p_cpLayers);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpGroup,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQueryFirst",5,SWIGTYPE_p_cpGroup);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&arg6,SWIGTYPE_p_cpSegmentQueryInfo,0))){
+    SWIG_fail_ptr("cpSpaceSegmentQueryFirst",6,SWIGTYPE_p_cpSegmentQueryInfo);
+  }
+  
+  result = (cpShape *)cpSpaceSegmentQueryFirst(arg1,arg2,arg3,arg4,arg5,arg6);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpShape,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceBBQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBB arg2 ;
+  cpLayers arg3 ;
+  cpGroup arg4 ;
+  cpSpaceBBQueryFunc arg5 = (cpSpaceBBQueryFunc) 0 ;
+  void *arg6 = (void *) 0 ;
+  cpBB *argp2 ;
+  cpLayers *argp3 ;
+  cpGroup *argp4 ;
+  
+  SWIG_check_num_args("cpSpaceBBQuery",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceBBQuery",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceBBQuery",2,"cpBB");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSpaceBBQuery",3,"cpLayers");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSpaceBBQuery",4,"cpGroup");
+  if(!SWIG_isptrtype(L,5)) SWIG_fail_arg("cpSpaceBBQuery",5,"cpSpaceBBQueryFunc");
+  if(!SWIG_isptrtype(L,6)) SWIG_fail_arg("cpSpaceBBQuery",6,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceBBQuery",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpSpaceBBQuery",2,SWIGTYPE_p_cpBB);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpLayers,0))){
+    SWIG_fail_ptr("cpSpaceBBQuery",3,SWIGTYPE_p_cpLayers);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpGroup,0))){
+    SWIG_fail_ptr("cpSpaceBBQuery",4,SWIGTYPE_p_cpGroup);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&arg5,SWIGTYPE_p_f_p_cpShape_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceBBQuery",5,SWIGTYPE_p_f_p_cpShape_p_void__void);
+  }
+  
+  arg6=(void *)SWIG_MustGetPtr(L,6,0,0,6,"cpSpaceBBQuery");
+  cpSpaceBBQuery(arg1,arg2,arg3,arg4,arg5,arg6);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceShapeQuery(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  cpSpaceShapeQueryFunc arg3 = (cpSpaceShapeQueryFunc) 0 ;
+  void *arg4 = (void *) 0 ;
+  cpBool result;
+  
+  SWIG_check_num_args("cpSpaceShapeQuery",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceShapeQuery",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceShapeQuery",2,"cpShape *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpaceShapeQuery",3,"cpSpaceShapeQueryFunc");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpSpaceShapeQuery",4,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceShapeQuery",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSpaceShapeQuery",2,SWIGTYPE_p_cpShape);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_f_p_cpShape_p_struct_cpContactPointSet_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceShapeQuery",3,SWIGTYPE_p_f_p_cpShape_p_struct_cpContactPointSet_p_void__void);
+  }
+  
+  arg4=(void *)SWIG_MustGetPtr(L,4,0,0,4,"cpSpaceShapeQuery");
+  result = cpSpaceShapeQuery(arg1,arg2,arg3,arg4);
+  {
+    cpBool * resultptr;
+    resultptr = (cpBool *) malloc(sizeof(cpBool));
+    memmove(resultptr, &result, sizeof(cpBool));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpBool,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceActivateShapesTouchingShape(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceActivateShapesTouchingShape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceActivateShapesTouchingShape",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceActivateShapesTouchingShape",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceActivateShapesTouchingShape",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSpaceActivateShapesTouchingShape",2,SWIGTYPE_p_cpShape);
+  }
+  
+  cpSpaceActivateShapesTouchingShape(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceEachBody(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpSpaceBodyIteratorFunc arg2 = (cpSpaceBodyIteratorFunc) 0 ;
+  void *arg3 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceEachBody",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceEachBody",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceEachBody",2,"cpSpaceBodyIteratorFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpaceEachBody",3,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceEachBody",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpBody_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceEachBody",2,SWIGTYPE_p_f_p_cpBody_p_void__void);
+  }
+  
+  arg3=(void *)SWIG_MustGetPtr(L,3,0,0,3,"cpSpaceEachBody");
+  cpSpaceEachBody(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceEachShape(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpSpaceShapeIteratorFunc arg2 = (cpSpaceShapeIteratorFunc) 0 ;
+  void *arg3 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceEachShape",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceEachShape",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceEachShape",2,"cpSpaceShapeIteratorFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpaceEachShape",3,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceEachShape",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpShape_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceEachShape",2,SWIGTYPE_p_f_p_cpShape_p_void__void);
+  }
+  
+  arg3=(void *)SWIG_MustGetPtr(L,3,0,0,3,"cpSpaceEachShape");
+  cpSpaceEachShape(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceEachConstraint(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpSpaceConstraintIteratorFunc arg2 = (cpSpaceConstraintIteratorFunc) 0 ;
+  void *arg3 = (void *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceEachConstraint",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceEachConstraint",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceEachConstraint",2,"cpSpaceConstraintIteratorFunc");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSpaceEachConstraint",3,"void *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceEachConstraint",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_p_void__void,0))){
+    SWIG_fail_ptr("cpSpaceEachConstraint",2,SWIGTYPE_p_f_p_cpConstraint_p_void__void);
+  }
+  
+  arg3=(void *)SWIG_MustGetPtr(L,3,0,0,3,"cpSpaceEachConstraint");
+  cpSpaceEachConstraint(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceReindexStatic(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceReindexStatic",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceReindexStatic",1,"cpSpace *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceReindexStatic",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  cpSpaceReindexStatic(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceReindexShape(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpShape *arg2 = (cpShape *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceReindexShape",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceReindexShape",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceReindexShape",2,"cpShape *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceReindexShape",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpShape,0))){
+    SWIG_fail_ptr("cpSpaceReindexShape",2,SWIGTYPE_p_cpShape);
+  }
+  
+  cpSpaceReindexShape(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceReindexShapesForBody(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpSpaceReindexShapesForBody",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceReindexShapesForBody",1,"cpSpace *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSpaceReindexShapesForBody",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceReindexShapesForBody",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSpaceReindexShapesForBody",2,SWIGTYPE_p_cpBody);
+  }
+  
+  cpSpaceReindexShapesForBody(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceUseSpatialHash(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat arg2 ;
+  int arg3 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceUseSpatialHash",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceUseSpatialHash",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceUseSpatialHash",2,"cpFloat");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("cpSpaceUseSpatialHash",3,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceUseSpatialHash",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceUseSpatialHash",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  arg3 = (int)lua_tonumber(L, 3);
+  cpSpaceUseSpatialHash(arg1,arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSpaceStep(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSpace *arg1 = (cpSpace *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSpaceStep",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSpaceStep",1,"cpSpace *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSpaceStep",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSpace,0))){
+    SWIG_fail_ptr("cpSpaceStep",1,SWIGTYPE_p_cpSpace);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSpaceStep",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpSpaceStep(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintClass_preStep_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraintClass *arg1 = (struct cpConstraintClass *) 0 ;
+  cpConstraintPreStepImpl arg2 = (cpConstraintPreStepImpl) 0 ;
+  
+  SWIG_check_num_args("cpConstraintClass::preStep",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintClass::preStep",1,"struct cpConstraintClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraintClass::preStep",2,"cpConstraintPreStepImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraintClass,0))){
+    SWIG_fail_ptr("cpConstraintClass_preStep_set",1,SWIGTYPE_p_cpConstraintClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__void,0))){
+    SWIG_fail_ptr("cpConstraintClass_preStep_set",2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__void);
+  }
+  
+  if (arg1) (arg1)->preStep = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintClass_preStep_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraintClass *arg1 = (struct cpConstraintClass *) 0 ;
+  cpConstraintPreStepImpl result;
+  
+  SWIG_check_num_args("cpConstraintClass::preStep",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintClass::preStep",1,"struct cpConstraintClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraintClass,0))){
+    SWIG_fail_ptr("cpConstraintClass_preStep_get",1,SWIGTYPE_p_cpConstraintClass);
+  }
+  
+  result = (cpConstraintPreStepImpl) ((arg1)->preStep);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint_cpFloat__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintClass_applyCachedImpulse_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraintClass *arg1 = (struct cpConstraintClass *) 0 ;
+  cpConstraintApplyCachedImpulseImpl arg2 = (cpConstraintApplyCachedImpulseImpl) 0 ;
+  
+  SWIG_check_num_args("cpConstraintClass::applyCachedImpulse",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintClass::applyCachedImpulse",1,"struct cpConstraintClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraintClass::applyCachedImpulse",2,"cpConstraintApplyCachedImpulseImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraintClass,0))){
+    SWIG_fail_ptr("cpConstraintClass_applyCachedImpulse_set",1,SWIGTYPE_p_cpConstraintClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__void,0))){
+    SWIG_fail_ptr("cpConstraintClass_applyCachedImpulse_set",2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__void);
+  }
+  
+  if (arg1) (arg1)->applyCachedImpulse = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintClass_applyCachedImpulse_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraintClass *arg1 = (struct cpConstraintClass *) 0 ;
+  cpConstraintApplyCachedImpulseImpl result;
+  
+  SWIG_check_num_args("cpConstraintClass::applyCachedImpulse",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintClass::applyCachedImpulse",1,"struct cpConstraintClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraintClass,0))){
+    SWIG_fail_ptr("cpConstraintClass_applyCachedImpulse_get",1,SWIGTYPE_p_cpConstraintClass);
+  }
+  
+  result = (cpConstraintApplyCachedImpulseImpl) ((arg1)->applyCachedImpulse);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint_cpFloat__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintClass_applyImpulse_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraintClass *arg1 = (struct cpConstraintClass *) 0 ;
+  cpConstraintApplyImpulseImpl arg2 = (cpConstraintApplyImpulseImpl) 0 ;
+  
+  SWIG_check_num_args("cpConstraintClass::applyImpulse",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintClass::applyImpulse",1,"struct cpConstraintClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraintClass::applyImpulse",2,"cpConstraintApplyImpulseImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraintClass,0))){
+    SWIG_fail_ptr("cpConstraintClass_applyImpulse_set",1,SWIGTYPE_p_cpConstraintClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__void,0))){
+    SWIG_fail_ptr("cpConstraintClass_applyImpulse_set",2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__void);
+  }
+  
+  if (arg1) (arg1)->applyImpulse = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintClass_applyImpulse_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraintClass *arg1 = (struct cpConstraintClass *) 0 ;
+  cpConstraintApplyImpulseImpl result;
+  
+  SWIG_check_num_args("cpConstraintClass::applyImpulse",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintClass::applyImpulse",1,"struct cpConstraintClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraintClass,0))){
+    SWIG_fail_ptr("cpConstraintClass_applyImpulse_get",1,SWIGTYPE_p_cpConstraintClass);
+  }
+  
+  result = (cpConstraintApplyImpulseImpl) ((arg1)->applyImpulse);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint_cpFloat__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintClass_getImpulse_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraintClass *arg1 = (struct cpConstraintClass *) 0 ;
+  cpConstraintGetImpulseImpl arg2 = (cpConstraintGetImpulseImpl) 0 ;
+  
+  SWIG_check_num_args("cpConstraintClass::getImpulse",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintClass::getImpulse",1,"struct cpConstraintClass *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraintClass::getImpulse",2,"cpConstraintGetImpulseImpl");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraintClass,0))){
+    SWIG_fail_ptr("cpConstraintClass_getImpulse_set",1,SWIGTYPE_p_cpConstraintClass);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint__cpFloat,0))){
+    SWIG_fail_ptr("cpConstraintClass_getImpulse_set",2,SWIGTYPE_p_f_p_cpConstraint__cpFloat);
+  }
+  
+  if (arg1) (arg1)->getImpulse = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintClass_getImpulse_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraintClass *arg1 = (struct cpConstraintClass *) 0 ;
+  cpConstraintGetImpulseImpl result;
+  
+  SWIG_check_num_args("cpConstraintClass::getImpulse",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintClass::getImpulse",1,"struct cpConstraintClass *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraintClass,0))){
+    SWIG_fail_ptr("cpConstraintClass_getImpulse_get",1,SWIGTYPE_p_cpConstraintClass);
+  }
+  
+  result = (cpConstraintGetImpulseImpl) ((arg1)->getImpulse);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint__cpFloat,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpConstraintClass(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpConstraintClass::cpConstraintClass",0,0)
+  result = (struct cpConstraintClass *)calloc(1, sizeof(struct cpConstraintClass));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpConstraintClass(void *obj) {
+struct cpConstraintClass *arg1 = (struct cpConstraintClass *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpConstraintClass(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpConstraintClass);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpConstraintClass_attributes[] = {
+    { "preStep", _wrap_cpConstraintClass_preStep_get, _wrap_cpConstraintClass_preStep_set },
+    { "applyCachedImpulse", _wrap_cpConstraintClass_applyCachedImpulse_get, _wrap_cpConstraintClass_applyCachedImpulse_set },
+    { "applyImpulse", _wrap_cpConstraintClass_applyImpulse_get, _wrap_cpConstraintClass_applyImpulse_set },
+    { "getImpulse", _wrap_cpConstraintClass_getImpulse_get, _wrap_cpConstraintClass_getImpulse_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpConstraintClass_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpConstraintClass_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpConstraintClass_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpConstraintClass_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpConstraintClass_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpConstraintClass_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpConstraintClass_Sf_SwigStatic = {
+    "cpConstraintClass",
+    swig_cpConstraintClass_Sf_SwigStatic_methods,
+    swig_cpConstraintClass_Sf_SwigStatic_attributes,
+    swig_cpConstraintClass_Sf_SwigStatic_constants,
+    swig_cpConstraintClass_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpConstraintClass_bases[] = {0};
+static const char *swig_cpConstraintClass_base_names[] = {0};
+static swig_lua_class _wrap_class_cpConstraintClass = { "cpConstraintClass", "cpConstraintClass", &SWIGTYPE_p_cpConstraintClass,_proxy__wrap_new_cpConstraintClass, swig_delete_cpConstraintClass, swig_cpConstraintClass_methods, swig_cpConstraintClass_attributes, &swig_cpConstraintClass_Sf_SwigStatic, swig_cpConstraintClass_meta, swig_cpConstraintClass_bases, swig_cpConstraintClass_base_names };
+
+static int _wrap_cpConstraint_a_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpConstraint::a",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::a",1,"struct cpConstraint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraint::a",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_a_set",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpConstraint_a_set",2,SWIGTYPE_p_cpBody);
+  }
+  
+  if (arg1) (arg1)->a = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_a_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpConstraint::a",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::a",1,"struct cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_a_get",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpBody *) ((arg1)->a);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_b_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  
+  SWIG_check_num_args("cpConstraint::b",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::b",1,"struct cpConstraint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraint::b",2,"cpBody *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_b_set",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,SWIG_POINTER_DISOWN))){
+    SWIG_fail_ptr("cpConstraint_b_set",2,SWIGTYPE_p_cpBody);
+  }
+  
+  if (arg1) (arg1)->b = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_b_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpConstraint::b",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::b",1,"struct cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_b_get",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpBody *) ((arg1)->b);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_maxForce_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpConstraint::maxForce",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::maxForce",1,"struct cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpConstraint::maxForce",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_maxForce_set",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpConstraint_maxForce_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->maxForce = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_maxForce_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpConstraint::maxForce",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::maxForce",1,"struct cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_maxForce_get",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result =  ((arg1)->maxForce);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_errorBias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpConstraint::errorBias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::errorBias",1,"struct cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpConstraint::errorBias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_errorBias_set",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpConstraint_errorBias_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->errorBias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_errorBias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpConstraint::errorBias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::errorBias",1,"struct cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_errorBias_get",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result =  ((arg1)->errorBias);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_maxBias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpConstraint::maxBias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::maxBias",1,"struct cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpConstraint::maxBias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_maxBias_set",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpConstraint_maxBias_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->maxBias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_maxBias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpConstraint::maxBias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::maxBias",1,"struct cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_maxBias_get",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result =  ((arg1)->maxBias);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_preSolve_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpConstraintPreSolveFunc arg2 = (cpConstraintPreSolveFunc) 0 ;
+  
+  SWIG_check_num_args("cpConstraint::preSolve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::preSolve",1,"struct cpConstraint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraint::preSolve",2,"cpConstraintPreSolveFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_preSolve_set",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void,0))){
+    SWIG_fail_ptr("cpConstraint_preSolve_set",2,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void);
+  }
+  
+  if (arg1) (arg1)->preSolve = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_preSolve_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpConstraintPreSolveFunc result;
+  
+  SWIG_check_num_args("cpConstraint::preSolve",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::preSolve",1,"struct cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_preSolve_get",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpConstraintPreSolveFunc) ((arg1)->preSolve);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_postSolve_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpConstraintPostSolveFunc arg2 = (cpConstraintPostSolveFunc) 0 ;
+  
+  SWIG_check_num_args("cpConstraint::postSolve",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::postSolve",1,"struct cpConstraint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraint::postSolve",2,"cpConstraintPostSolveFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_postSolve_set",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void,0))){
+    SWIG_fail_ptr("cpConstraint_postSolve_set",2,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void);
+  }
+  
+  if (arg1) (arg1)->postSolve = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_postSolve_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpConstraintPostSolveFunc result;
+  
+  SWIG_check_num_args("cpConstraint::postSolve",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::postSolve",1,"struct cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_postSolve_get",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpConstraintPostSolveFunc) ((arg1)->postSolve);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_data_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpConstraint::data",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::data",1,"struct cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpConstraint::data",2,"cpDataPointer");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_data_set",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpConstraint_data_set",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->data = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraint_data_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *arg1 = (struct cpConstraint *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpConstraint::data",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraint::data",1,"struct cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraint_data_get",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result =  ((arg1)->data);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpConstraint(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpConstraint::cpConstraint",0,0)
+  result = (struct cpConstraint *)calloc(1, sizeof(struct cpConstraint));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpConstraint(void *obj) {
+struct cpConstraint *arg1 = (struct cpConstraint *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpConstraint(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpConstraint);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpConstraint_attributes[] = {
+    { "a", _wrap_cpConstraint_a_get, _wrap_cpConstraint_a_set },
+    { "b", _wrap_cpConstraint_b_get, _wrap_cpConstraint_b_set },
+    { "maxForce", _wrap_cpConstraint_maxForce_get, _wrap_cpConstraint_maxForce_set },
+    { "errorBias", _wrap_cpConstraint_errorBias_get, _wrap_cpConstraint_errorBias_set },
+    { "maxBias", _wrap_cpConstraint_maxBias_get, _wrap_cpConstraint_maxBias_set },
+    { "preSolve", _wrap_cpConstraint_preSolve_get, _wrap_cpConstraint_preSolve_set },
+    { "postSolve", _wrap_cpConstraint_postSolve_get, _wrap_cpConstraint_postSolve_set },
+    { "data", _wrap_cpConstraint_data_get, _wrap_cpConstraint_data_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpConstraint_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpConstraint_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpConstraint_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpConstraint_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpConstraint_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpConstraint_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpConstraint_Sf_SwigStatic = {
+    "cpConstraint",
+    swig_cpConstraint_Sf_SwigStatic_methods,
+    swig_cpConstraint_Sf_SwigStatic_attributes,
+    swig_cpConstraint_Sf_SwigStatic_constants,
+    swig_cpConstraint_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpConstraint_bases[] = {0};
+static const char *swig_cpConstraint_base_names[] = {0};
+static swig_lua_class _wrap_class_cpConstraint = { "cpConstraint", "cpConstraint", &SWIGTYPE_p_cpConstraint,_proxy__wrap_new_cpConstraint, swig_delete_cpConstraint, swig_cpConstraint_methods, swig_cpConstraint_attributes, &swig_cpConstraint_Sf_SwigStatic, swig_cpConstraint_meta, swig_cpConstraint_bases, swig_cpConstraint_base_names };
+
+static int _wrap_cpConstraintDestroy(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  
+  SWIG_check_num_args("cpConstraintDestroy",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintDestroy",1,"cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintDestroy",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  cpConstraintDestroy(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintFree(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  
+  SWIG_check_num_args("cpConstraintFree",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintFree",1,"cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintFree",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  cpConstraintFree(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintActivateBodies(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  
+  SWIG_check_num_args("cpConstraintActivateBodies",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintActivateBodies",1,"cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintActivateBodies",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  cpConstraintActivateBodies(arg1);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetSpace(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpSpace *result = 0 ;
+  
+  SWIG_check_num_args("cpConstraintGetSpace",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetSpace",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetSpace",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpSpace *)cpConstraintGetSpace((cpConstraint const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSpace,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetA(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpConstraintGetA",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetA",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetA",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpBody *)cpConstraintGetA((cpConstraint const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetB(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpBody *result = 0 ;
+  
+  SWIG_check_num_args("cpConstraintGetB",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetB",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetB",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpBody *)cpConstraintGetB((cpConstraint const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpBody,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetMaxForce(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpConstraintGetMaxForce",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetMaxForce",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetMaxForce",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpConstraintGetMaxForce((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintSetMaxForce(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpConstraintSetMaxForce",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintSetMaxForce",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpConstraintSetMaxForce",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintSetMaxForce",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpConstraintSetMaxForce",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpConstraintSetMaxForce(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetErrorBias(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpConstraintGetErrorBias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetErrorBias",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetErrorBias",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpConstraintGetErrorBias((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintSetErrorBias(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpConstraintSetErrorBias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintSetErrorBias",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpConstraintSetErrorBias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintSetErrorBias",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpConstraintSetErrorBias",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpConstraintSetErrorBias(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetMaxBias(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpConstraintGetMaxBias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetMaxBias",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetMaxBias",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpConstraintGetMaxBias((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintSetMaxBias(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpConstraintSetMaxBias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintSetMaxBias",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpConstraintSetMaxBias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintSetMaxBias",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpConstraintSetMaxBias",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpConstraintSetMaxBias(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetPreSolveFunc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpConstraintPreSolveFunc result;
+  
+  SWIG_check_num_args("cpConstraintGetPreSolveFunc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetPreSolveFunc",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetPreSolveFunc",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpConstraintPreSolveFunc)cpConstraintGetPreSolveFunc((cpConstraint const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintSetPreSolveFunc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpConstraintPreSolveFunc arg2 = (cpConstraintPreSolveFunc) 0 ;
+  
+  SWIG_check_num_args("cpConstraintSetPreSolveFunc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintSetPreSolveFunc",1,"cpConstraint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraintSetPreSolveFunc",2,"cpConstraintPreSolveFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintSetPreSolveFunc",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void,0))){
+    SWIG_fail_ptr("cpConstraintSetPreSolveFunc",2,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void);
+  }
+  
+  cpConstraintSetPreSolveFunc(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetPostSolveFunc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpConstraintPostSolveFunc result;
+  
+  SWIG_check_num_args("cpConstraintGetPostSolveFunc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetPostSolveFunc",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetPostSolveFunc",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpConstraintPostSolveFunc)cpConstraintGetPostSolveFunc((cpConstraint const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintSetPostSolveFunc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpConstraintPostSolveFunc arg2 = (cpConstraintPostSolveFunc) 0 ;
+  
+  SWIG_check_num_args("cpConstraintSetPostSolveFunc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintSetPostSolveFunc",1,"cpConstraint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConstraintSetPostSolveFunc",2,"cpConstraintPostSolveFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintSetPostSolveFunc",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void,0))){
+    SWIG_fail_ptr("cpConstraintSetPostSolveFunc",2,SWIGTYPE_p_f_p_cpConstraint_p_cpSpace__void);
+  }
+  
+  cpConstraintSetPostSolveFunc(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpDataPointer result;
+  
+  SWIG_check_num_args("cpConstraintGetUserData",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetUserData",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetUserData",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpConstraintGetUserData((cpConstraint const *)arg1);
+  {
+    cpDataPointer * resultptr;
+    resultptr = (cpDataPointer *) malloc(sizeof(cpDataPointer));
+    memmove(resultptr, &result, sizeof(cpDataPointer));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpDataPointer,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintSetUserData(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpDataPointer arg2 ;
+  cpDataPointer *argp2 ;
+  
+  SWIG_check_num_args("cpConstraintSetUserData",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintSetUserData",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpConstraintSetUserData",2,"cpDataPointer");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintSetUserData",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpDataPointer,0))){
+    SWIG_fail_ptr("cpConstraintSetUserData",2,SWIGTYPE_p_cpDataPointer);
+  }
+  arg2 = *argp2;
+  
+  cpConstraintSetUserData(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConstraintGetImpulse(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpConstraintGetImpulse",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpConstraintGetImpulse",1,"cpConstraint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpConstraintGetImpulse",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpConstraintGetImpulse(arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJointGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpPinJointGetClass",0,0)
+  result = (cpConstraintClass *)cpPinJointGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::constraint",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_constraint_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPinJoint_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpPinJoint::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::constraint",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_constraint_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_anchr1_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::anchr1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::anchr1",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::anchr1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_anchr1_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJoint_anchr1_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->anchr1 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_anchr1_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPinJoint::anchr1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::anchr1",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_anchr1_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->anchr1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_anchr2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::anchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::anchr2",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::anchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_anchr2_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJoint_anchr2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->anchr2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_anchr2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPinJoint::anchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::anchr2",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_anchr2_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->anchr2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_dist_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::dist",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::dist",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::dist",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_dist_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpPinJoint_dist_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->dist = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_dist_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpPinJoint::dist",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::dist",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_dist_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->dist);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_r1_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::r1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::r1",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::r1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_r1_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJoint_r1_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r1 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_r1_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPinJoint::r1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::r1",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_r1_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->r1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_r2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::r2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::r2",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::r2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_r2_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJoint_r2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_r2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPinJoint::r2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::r2",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_r2_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->r2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_n_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::n",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::n",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::n",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_n_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJoint_n_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->n = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_n_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPinJoint::n",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::n",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_n_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->n);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_nMass_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::nMass",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::nMass",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::nMass",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_nMass_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpPinJoint_nMass_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->nMass = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_nMass_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpPinJoint::nMass",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::nMass",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_nMass_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->nMass);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_jnAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::jnAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::jnAcc",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::jnAcc",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_jnAcc_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpPinJoint_jnAcc_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jnAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_jnAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpPinJoint::jnAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::jnAcc",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_jnAcc_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->jnAcc);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_bias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpPinJoint::bias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::bias",1,"struct cpPinJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJoint::bias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_bias_set",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpPinJoint_bias_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->bias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJoint_bias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *arg1 = (struct cpPinJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpPinJoint::bias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJoint::bias",1,"struct cpPinJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJoint_bias_get",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  result =  ((arg1)->bias);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpPinJoint(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPinJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpPinJoint::cpPinJoint",0,0)
+  result = (struct cpPinJoint *)calloc(1, sizeof(struct cpPinJoint));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPinJoint,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpPinJoint(void *obj) {
+struct cpPinJoint *arg1 = (struct cpPinJoint *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpPinJoint(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpPinJoint);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpPinJoint_attributes[] = {
+    { "constraint", _wrap_cpPinJoint_constraint_get, _wrap_cpPinJoint_constraint_set },
+    { "anchr1", _wrap_cpPinJoint_anchr1_get, _wrap_cpPinJoint_anchr1_set },
+    { "anchr2", _wrap_cpPinJoint_anchr2_get, _wrap_cpPinJoint_anchr2_set },
+    { "dist", _wrap_cpPinJoint_dist_get, _wrap_cpPinJoint_dist_set },
+    { "r1", _wrap_cpPinJoint_r1_get, _wrap_cpPinJoint_r1_set },
+    { "r2", _wrap_cpPinJoint_r2_get, _wrap_cpPinJoint_r2_set },
+    { "n", _wrap_cpPinJoint_n_get, _wrap_cpPinJoint_n_set },
+    { "nMass", _wrap_cpPinJoint_nMass_get, _wrap_cpPinJoint_nMass_set },
+    { "jnAcc", _wrap_cpPinJoint_jnAcc_get, _wrap_cpPinJoint_jnAcc_set },
+    { "bias", _wrap_cpPinJoint_bias_get, _wrap_cpPinJoint_bias_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpPinJoint_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpPinJoint_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpPinJoint_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpPinJoint_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpPinJoint_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpPinJoint_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpPinJoint_Sf_SwigStatic = {
+    "cpPinJoint",
+    swig_cpPinJoint_Sf_SwigStatic_methods,
+    swig_cpPinJoint_Sf_SwigStatic_attributes,
+    swig_cpPinJoint_Sf_SwigStatic_constants,
+    swig_cpPinJoint_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpPinJoint_bases[] = {0};
+static const char *swig_cpPinJoint_base_names[] = {0};
+static swig_lua_class _wrap_class_cpPinJoint = { "cpPinJoint", "cpPinJoint", &SWIGTYPE_p_cpPinJoint,_proxy__wrap_new_cpPinJoint, swig_delete_cpPinJoint, swig_cpPinJoint_methods, swig_cpPinJoint_attributes, &swig_cpPinJoint_Sf_SwigStatic, swig_cpPinJoint_meta, swig_cpPinJoint_bases, swig_cpPinJoint_base_names };
+
+static int _wrap_cpPinJointAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPinJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpPinJointAlloc",0,0)
+  result = (cpPinJoint *)cpPinJointAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPinJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJointInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPinJoint *arg1 = (cpPinJoint *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpVect arg4 ;
+  cpVect arg5 ;
+  cpVect *argp4 ;
+  cpVect *argp5 ;
+  cpPinJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpPinJointInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJointInit",1,"cpPinJoint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPinJointInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpPinJointInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpPinJointInit",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpPinJointInit",5,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPinJoint,0))){
+    SWIG_fail_ptr("cpPinJointInit",1,SWIGTYPE_p_cpPinJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPinJointInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPinJointInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJointInit",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJointInit",5,SWIGTYPE_p_cpVect);
+  }
+  arg5 = *argp5;
+  
+  result = (cpPinJoint *)cpPinJointInit(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPinJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJointNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpVect arg3 ;
+  cpVect arg4 ;
+  cpVect *argp3 ;
+  cpVect *argp4 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpPinJointNew",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJointNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPinJointNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpPinJointNew",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpPinJointNew",4,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPinJointNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPinJointNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJointNew",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJointNew",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  result = (cpConstraint *)cpPinJointNew(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJointGetAnchr1(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPinJointGetAnchr1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJointGetAnchr1",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPinJointGetAnchr1",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpPinJointGetAnchr1((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJointSetAnchr1(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPinJointSetAnchr1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJointSetAnchr1",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJointSetAnchr1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPinJointSetAnchr1",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJointSetAnchr1",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpPinJointSetAnchr1(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJointGetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPinJointGetAnchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJointGetAnchr2",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPinJointGetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpPinJointGetAnchr2((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJointSetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPinJointSetAnchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJointSetAnchr2",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJointSetAnchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPinJointSetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPinJointSetAnchr2",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpPinJointSetAnchr2(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJointGetDist(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpPinJointGetDist",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJointGetDist",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPinJointGetDist",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpPinJointGetDist((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPinJointSetDist(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpPinJointSetDist",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPinJointSetDist",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPinJointSetDist",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPinJointSetDist",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpPinJointSetDist",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpPinJointSetDist(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpSlideJointGetClass",0,0)
+  result = (cpConstraintClass *)cpSlideJointGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::constraint",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_constraint_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSlideJoint_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpSlideJoint::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::constraint",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_constraint_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_anchr1_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::anchr1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::anchr1",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::anchr1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_anchr1_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJoint_anchr1_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->anchr1 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_anchr1_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSlideJoint::anchr1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::anchr1",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_anchr1_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->anchr1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_anchr2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::anchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::anchr2",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::anchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_anchr2_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJoint_anchr2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->anchr2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_anchr2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSlideJoint::anchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::anchr2",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_anchr2_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->anchr2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_min_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::min",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::min",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::min",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_min_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJoint_min_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->min = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_min_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSlideJoint::min",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::min",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_min_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->min);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_max_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::max",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::max",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::max",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_max_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJoint_max_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->max = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_max_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSlideJoint::max",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::max",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_max_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->max);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_r1_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::r1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::r1",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::r1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_r1_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJoint_r1_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r1 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_r1_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSlideJoint::r1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::r1",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_r1_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->r1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_r2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::r2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::r2",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::r2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_r2_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJoint_r2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_r2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSlideJoint::r2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::r2",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_r2_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->r2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_n_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::n",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::n",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::n",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_n_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJoint_n_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->n = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_n_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSlideJoint::n",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::n",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_n_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->n);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_nMass_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::nMass",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::nMass",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::nMass",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_nMass_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJoint_nMass_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->nMass = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_nMass_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSlideJoint::nMass",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::nMass",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_nMass_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->nMass);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_jnAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::jnAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::jnAcc",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::jnAcc",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_jnAcc_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJoint_jnAcc_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jnAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_jnAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSlideJoint::jnAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::jnAcc",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_jnAcc_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->jnAcc);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_bias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJoint::bias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::bias",1,"struct cpSlideJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJoint::bias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_bias_set",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJoint_bias_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->bias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJoint_bias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *arg1 = (struct cpSlideJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSlideJoint::bias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJoint::bias",1,"struct cpSlideJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJoint_bias_get",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  result =  ((arg1)->bias);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpSlideJoint(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSlideJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpSlideJoint::cpSlideJoint",0,0)
+  result = (struct cpSlideJoint *)calloc(1, sizeof(struct cpSlideJoint));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSlideJoint,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpSlideJoint(void *obj) {
+struct cpSlideJoint *arg1 = (struct cpSlideJoint *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpSlideJoint(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpSlideJoint);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpSlideJoint_attributes[] = {
+    { "constraint", _wrap_cpSlideJoint_constraint_get, _wrap_cpSlideJoint_constraint_set },
+    { "anchr1", _wrap_cpSlideJoint_anchr1_get, _wrap_cpSlideJoint_anchr1_set },
+    { "anchr2", _wrap_cpSlideJoint_anchr2_get, _wrap_cpSlideJoint_anchr2_set },
+    { "min", _wrap_cpSlideJoint_min_get, _wrap_cpSlideJoint_min_set },
+    { "max", _wrap_cpSlideJoint_max_get, _wrap_cpSlideJoint_max_set },
+    { "r1", _wrap_cpSlideJoint_r1_get, _wrap_cpSlideJoint_r1_set },
+    { "r2", _wrap_cpSlideJoint_r2_get, _wrap_cpSlideJoint_r2_set },
+    { "n", _wrap_cpSlideJoint_n_get, _wrap_cpSlideJoint_n_set },
+    { "nMass", _wrap_cpSlideJoint_nMass_get, _wrap_cpSlideJoint_nMass_set },
+    { "jnAcc", _wrap_cpSlideJoint_jnAcc_get, _wrap_cpSlideJoint_jnAcc_set },
+    { "bias", _wrap_cpSlideJoint_bias_get, _wrap_cpSlideJoint_bias_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpSlideJoint_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpSlideJoint_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpSlideJoint_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpSlideJoint_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpSlideJoint_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpSlideJoint_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpSlideJoint_Sf_SwigStatic = {
+    "cpSlideJoint",
+    swig_cpSlideJoint_Sf_SwigStatic_methods,
+    swig_cpSlideJoint_Sf_SwigStatic_attributes,
+    swig_cpSlideJoint_Sf_SwigStatic_constants,
+    swig_cpSlideJoint_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpSlideJoint_bases[] = {0};
+static const char *swig_cpSlideJoint_base_names[] = {0};
+static swig_lua_class _wrap_class_cpSlideJoint = { "cpSlideJoint", "cpSlideJoint", &SWIGTYPE_p_cpSlideJoint,_proxy__wrap_new_cpSlideJoint, swig_delete_cpSlideJoint, swig_cpSlideJoint_methods, swig_cpSlideJoint_attributes, &swig_cpSlideJoint_Sf_SwigStatic, swig_cpSlideJoint_meta, swig_cpSlideJoint_bases, swig_cpSlideJoint_base_names };
+
+static int _wrap_cpSlideJointAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSlideJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpSlideJointAlloc",0,0)
+  result = (cpSlideJoint *)cpSlideJointAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSlideJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSlideJoint *arg1 = (cpSlideJoint *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpVect arg4 ;
+  cpVect arg5 ;
+  cpFloat arg6 ;
+  cpFloat arg7 ;
+  cpVect *argp4 ;
+  cpVect *argp5 ;
+  cpFloat *argp6 ;
+  cpFloat *argp7 ;
+  cpSlideJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpSlideJointInit",7,7)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointInit",1,"cpSlideJoint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSlideJointInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSlideJointInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSlideJointInit",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpSlideJointInit",5,"cpVect");
+  if(!lua_isuserdata(L,6)) SWIG_fail_arg("cpSlideJointInit",6,"cpFloat");
+  if(!lua_isuserdata(L,7)) SWIG_fail_arg("cpSlideJointInit",7,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSlideJoint,0))){
+    SWIG_fail_ptr("cpSlideJointInit",1,SWIGTYPE_p_cpSlideJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSlideJointInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSlideJointInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJointInit",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJointInit",5,SWIGTYPE_p_cpVect);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&argp6,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJointInit",6,SWIGTYPE_p_cpFloat);
+  }
+  arg6 = *argp6;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,7,(void**)&argp7,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJointInit",7,SWIGTYPE_p_cpFloat);
+  }
+  arg7 = *argp7;
+  
+  result = (cpSlideJoint *)cpSlideJointInit(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSlideJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpVect arg3 ;
+  cpVect arg4 ;
+  cpFloat arg5 ;
+  cpFloat arg6 ;
+  cpVect *argp3 ;
+  cpVect *argp4 ;
+  cpFloat *argp5 ;
+  cpFloat *argp6 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpSlideJointNew",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSlideJointNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSlideJointNew",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSlideJointNew",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpSlideJointNew",5,"cpFloat");
+  if(!lua_isuserdata(L,6)) SWIG_fail_arg("cpSlideJointNew",6,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSlideJointNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSlideJointNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJointNew",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJointNew",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJointNew",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&argp6,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJointNew",6,SWIGTYPE_p_cpFloat);
+  }
+  arg6 = *argp6;
+  
+  result = (cpConstraint *)cpSlideJointNew(arg1,arg2,arg3,arg4,arg5,arg6);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointGetAnchr1(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSlideJointGetAnchr1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointGetAnchr1",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSlideJointGetAnchr1",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpSlideJointGetAnchr1((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointSetAnchr1(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJointSetAnchr1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointSetAnchr1",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJointSetAnchr1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSlideJointSetAnchr1",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJointSetAnchr1",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpSlideJointSetAnchr1(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointGetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpSlideJointGetAnchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointGetAnchr2",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSlideJointGetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpSlideJointGetAnchr2((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointSetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJointSetAnchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointSetAnchr2",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJointSetAnchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSlideJointSetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpSlideJointSetAnchr2",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpSlideJointSetAnchr2(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointGetMin(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSlideJointGetMin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointGetMin",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSlideJointGetMin",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpSlideJointGetMin((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointSetMin(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJointSetMin",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointSetMin",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJointSetMin",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSlideJointSetMin",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJointSetMin",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpSlideJointSetMin(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointGetMax(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSlideJointGetMax",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointGetMax",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSlideJointGetMax",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpSlideJointGetMax((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSlideJointSetMax(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSlideJointSetMax",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSlideJointSetMax",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSlideJointSetMax",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSlideJointSetMax",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSlideJointSetMax",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpSlideJointSetMax(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJointGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpPivotJointGetClass",0,0)
+  result = (cpConstraintClass *)cpPivotJointGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJoint::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::constraint",1,"struct cpPivotJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJoint::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_constraint_set",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPivotJoint_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpPivotJoint::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::constraint",1,"struct cpPivotJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_constraint_get",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_anchr1_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJoint::anchr1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::anchr1",1,"struct cpPivotJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJoint::anchr1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_anchr1_set",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJoint_anchr1_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->anchr1 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_anchr1_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPivotJoint::anchr1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::anchr1",1,"struct cpPivotJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_anchr1_get",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  result =  ((arg1)->anchr1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_anchr2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJoint::anchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::anchr2",1,"struct cpPivotJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJoint::anchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_anchr2_set",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJoint_anchr2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->anchr2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_anchr2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPivotJoint::anchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::anchr2",1,"struct cpPivotJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_anchr2_get",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  result =  ((arg1)->anchr2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_r1_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJoint::r1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::r1",1,"struct cpPivotJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJoint::r1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_r1_set",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJoint_r1_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r1 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_r1_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPivotJoint::r1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::r1",1,"struct cpPivotJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_r1_get",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  result =  ((arg1)->r1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_r2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJoint::r2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::r2",1,"struct cpPivotJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJoint::r2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_r2_set",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJoint_r2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_r2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPivotJoint::r2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::r2",1,"struct cpPivotJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_r2_get",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  result =  ((arg1)->r2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_k_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpMat2x2 arg2 ;
+  cpMat2x2 *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJoint::k",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::k",1,"struct cpPivotJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJoint::k",2,"cpMat2x2");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_k_set",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpMat2x2,0))){
+    SWIG_fail_ptr("cpPivotJoint_k_set",2,SWIGTYPE_p_cpMat2x2);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->k = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_k_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpMat2x2 result;
+  
+  SWIG_check_num_args("cpPivotJoint::k",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::k",1,"struct cpPivotJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_k_get",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  result =  ((arg1)->k);
+  {
+    cpMat2x2 * resultptr;
+    resultptr = (cpMat2x2 *) malloc(sizeof(cpMat2x2));
+    memmove(resultptr, &result, sizeof(cpMat2x2));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpMat2x2,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_jAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJoint::jAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::jAcc",1,"struct cpPivotJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJoint::jAcc",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_jAcc_set",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJoint_jAcc_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_jAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPivotJoint::jAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::jAcc",1,"struct cpPivotJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_jAcc_get",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  result =  ((arg1)->jAcc);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_bias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJoint::bias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::bias",1,"struct cpPivotJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJoint::bias",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_bias_set",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJoint_bias_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->bias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJoint_bias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *arg1 = (struct cpPivotJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPivotJoint::bias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJoint::bias",1,"struct cpPivotJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJoint_bias_get",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  result =  ((arg1)->bias);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpPivotJoint(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpPivotJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpPivotJoint::cpPivotJoint",0,0)
+  result = (struct cpPivotJoint *)calloc(1, sizeof(struct cpPivotJoint));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPivotJoint,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpPivotJoint(void *obj) {
+struct cpPivotJoint *arg1 = (struct cpPivotJoint *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpPivotJoint(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpPivotJoint);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpPivotJoint_attributes[] = {
+    { "constraint", _wrap_cpPivotJoint_constraint_get, _wrap_cpPivotJoint_constraint_set },
+    { "anchr1", _wrap_cpPivotJoint_anchr1_get, _wrap_cpPivotJoint_anchr1_set },
+    { "anchr2", _wrap_cpPivotJoint_anchr2_get, _wrap_cpPivotJoint_anchr2_set },
+    { "r1", _wrap_cpPivotJoint_r1_get, _wrap_cpPivotJoint_r1_set },
+    { "r2", _wrap_cpPivotJoint_r2_get, _wrap_cpPivotJoint_r2_set },
+    { "k", _wrap_cpPivotJoint_k_get, _wrap_cpPivotJoint_k_set },
+    { "jAcc", _wrap_cpPivotJoint_jAcc_get, _wrap_cpPivotJoint_jAcc_set },
+    { "bias", _wrap_cpPivotJoint_bias_get, _wrap_cpPivotJoint_bias_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpPivotJoint_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpPivotJoint_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpPivotJoint_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpPivotJoint_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpPivotJoint_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpPivotJoint_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpPivotJoint_Sf_SwigStatic = {
+    "cpPivotJoint",
+    swig_cpPivotJoint_Sf_SwigStatic_methods,
+    swig_cpPivotJoint_Sf_SwigStatic_attributes,
+    swig_cpPivotJoint_Sf_SwigStatic_constants,
+    swig_cpPivotJoint_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpPivotJoint_bases[] = {0};
+static const char *swig_cpPivotJoint_base_names[] = {0};
+static swig_lua_class _wrap_class_cpPivotJoint = { "cpPivotJoint", "cpPivotJoint", &SWIGTYPE_p_cpPivotJoint,_proxy__wrap_new_cpPivotJoint, swig_delete_cpPivotJoint, swig_cpPivotJoint_methods, swig_cpPivotJoint_attributes, &swig_cpPivotJoint_Sf_SwigStatic, swig_cpPivotJoint_meta, swig_cpPivotJoint_bases, swig_cpPivotJoint_base_names };
+
+static int _wrap_cpPivotJointAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPivotJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpPivotJointAlloc",0,0)
+  result = (cpPivotJoint *)cpPivotJointAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPivotJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJointInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpPivotJoint *arg1 = (cpPivotJoint *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpVect arg4 ;
+  cpVect arg5 ;
+  cpVect *argp4 ;
+  cpVect *argp5 ;
+  cpPivotJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpPivotJointInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJointInit",1,"cpPivotJoint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPivotJointInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpPivotJointInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpPivotJointInit",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpPivotJointInit",5,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpPivotJoint,0))){
+    SWIG_fail_ptr("cpPivotJointInit",1,SWIGTYPE_p_cpPivotJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPivotJointInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPivotJointInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJointInit",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJointInit",5,SWIGTYPE_p_cpVect);
+  }
+  arg5 = *argp5;
+  
+  result = (cpPivotJoint *)cpPivotJointInit(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpPivotJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJointNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpVect arg3 ;
+  cpVect *argp3 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpPivotJointNew",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJointNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPivotJointNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpPivotJointNew",3,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPivotJointNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPivotJointNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJointNew",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  result = (cpConstraint *)cpPivotJointNew(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJointNew2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpVect arg3 ;
+  cpVect arg4 ;
+  cpVect *argp3 ;
+  cpVect *argp4 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpPivotJointNew2",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJointNew2",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpPivotJointNew2",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpPivotJointNew2",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpPivotJointNew2",4,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPivotJointNew2",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpPivotJointNew2",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJointNew2",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJointNew2",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  result = (cpConstraint *)cpPivotJointNew2(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJointGetAnchr1(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPivotJointGetAnchr1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJointGetAnchr1",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPivotJointGetAnchr1",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpPivotJointGetAnchr1((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJointSetAnchr1(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJointSetAnchr1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJointSetAnchr1",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJointSetAnchr1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPivotJointSetAnchr1",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJointSetAnchr1",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpPivotJointSetAnchr1(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJointGetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpPivotJointGetAnchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJointGetAnchr2",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPivotJointGetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpPivotJointGetAnchr2((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpPivotJointSetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpPivotJointSetAnchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpPivotJointSetAnchr2",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpPivotJointSetAnchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpPivotJointSetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpPivotJointSetAnchr2",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpPivotJointSetAnchr2(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJointGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpGrooveJointGetClass",0,0)
+  result = (cpConstraintClass *)cpGrooveJointGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::constraint",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_constraint_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpGrooveJoint::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::constraint",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_constraint_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_grv_n_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::grv_n",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::grv_n",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::grv_n",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_n_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_n_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->grv_n = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_grv_n_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJoint::grv_n",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::grv_n",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_n_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->grv_n);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_grv_a_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::grv_a",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::grv_a",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::grv_a",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_a_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_a_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->grv_a = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_grv_a_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJoint::grv_a",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::grv_a",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_a_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->grv_a);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_grv_b_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::grv_b",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::grv_b",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::grv_b",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_b_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_b_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->grv_b = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_grv_b_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJoint::grv_b",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::grv_b",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_b_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->grv_b);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_anchr2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::anchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::anchr2",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::anchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_anchr2_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJoint_anchr2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->anchr2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_anchr2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJoint::anchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::anchr2",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_anchr2_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->anchr2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_grv_tn_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::grv_tn",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::grv_tn",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::grv_tn",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_tn_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_tn_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->grv_tn = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_grv_tn_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJoint::grv_tn",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::grv_tn",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_grv_tn_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->grv_tn);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_clamp_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::clamp",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::clamp",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::clamp",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_clamp_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGrooveJoint_clamp_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->clamp = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_clamp_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpGrooveJoint::clamp",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::clamp",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_clamp_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->clamp);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_r1_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::r1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::r1",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::r1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_r1_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJoint_r1_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r1 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_r1_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJoint::r1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::r1",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_r1_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->r1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_r2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::r2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::r2",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::r2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_r2_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJoint_r2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_r2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJoint::r2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::r2",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_r2_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->r2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_k_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpMat2x2 arg2 ;
+  cpMat2x2 *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::k",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::k",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::k",2,"cpMat2x2");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_k_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpMat2x2,0))){
+    SWIG_fail_ptr("cpGrooveJoint_k_set",2,SWIGTYPE_p_cpMat2x2);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->k = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_k_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpMat2x2 result;
+  
+  SWIG_check_num_args("cpGrooveJoint::k",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::k",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_k_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->k);
+  {
+    cpMat2x2 * resultptr;
+    resultptr = (cpMat2x2 *) malloc(sizeof(cpMat2x2));
+    memmove(resultptr, &result, sizeof(cpMat2x2));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpMat2x2,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_jAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::jAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::jAcc",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::jAcc",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_jAcc_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJoint_jAcc_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_jAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJoint::jAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::jAcc",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_jAcc_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->jAcc);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_bias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::bias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::bias",1,"struct cpGrooveJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJoint::bias",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_bias_set",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJoint_bias_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->bias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJoint_bias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJoint::bias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJoint::bias",1,"struct cpGrooveJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJoint_bias_get",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  result =  ((arg1)->bias);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpGrooveJoint(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGrooveJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpGrooveJoint::cpGrooveJoint",0,0)
+  result = (struct cpGrooveJoint *)calloc(1, sizeof(struct cpGrooveJoint));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpGrooveJoint,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpGrooveJoint(void *obj) {
+struct cpGrooveJoint *arg1 = (struct cpGrooveJoint *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpGrooveJoint(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpGrooveJoint);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpGrooveJoint_attributes[] = {
+    { "constraint", _wrap_cpGrooveJoint_constraint_get, _wrap_cpGrooveJoint_constraint_set },
+    { "grv_n", _wrap_cpGrooveJoint_grv_n_get, _wrap_cpGrooveJoint_grv_n_set },
+    { "grv_a", _wrap_cpGrooveJoint_grv_a_get, _wrap_cpGrooveJoint_grv_a_set },
+    { "grv_b", _wrap_cpGrooveJoint_grv_b_get, _wrap_cpGrooveJoint_grv_b_set },
+    { "anchr2", _wrap_cpGrooveJoint_anchr2_get, _wrap_cpGrooveJoint_anchr2_set },
+    { "grv_tn", _wrap_cpGrooveJoint_grv_tn_get, _wrap_cpGrooveJoint_grv_tn_set },
+    { "clamp", _wrap_cpGrooveJoint_clamp_get, _wrap_cpGrooveJoint_clamp_set },
+    { "r1", _wrap_cpGrooveJoint_r1_get, _wrap_cpGrooveJoint_r1_set },
+    { "r2", _wrap_cpGrooveJoint_r2_get, _wrap_cpGrooveJoint_r2_set },
+    { "k", _wrap_cpGrooveJoint_k_get, _wrap_cpGrooveJoint_k_set },
+    { "jAcc", _wrap_cpGrooveJoint_jAcc_get, _wrap_cpGrooveJoint_jAcc_set },
+    { "bias", _wrap_cpGrooveJoint_bias_get, _wrap_cpGrooveJoint_bias_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpGrooveJoint_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpGrooveJoint_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpGrooveJoint_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpGrooveJoint_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpGrooveJoint_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpGrooveJoint_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpGrooveJoint_Sf_SwigStatic = {
+    "cpGrooveJoint",
+    swig_cpGrooveJoint_Sf_SwigStatic_methods,
+    swig_cpGrooveJoint_Sf_SwigStatic_attributes,
+    swig_cpGrooveJoint_Sf_SwigStatic_constants,
+    swig_cpGrooveJoint_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpGrooveJoint_bases[] = {0};
+static const char *swig_cpGrooveJoint_base_names[] = {0};
+static swig_lua_class _wrap_class_cpGrooveJoint = { "cpGrooveJoint", "cpGrooveJoint", &SWIGTYPE_p_cpGrooveJoint,_proxy__wrap_new_cpGrooveJoint, swig_delete_cpGrooveJoint, swig_cpGrooveJoint_methods, swig_cpGrooveJoint_attributes, &swig_cpGrooveJoint_Sf_SwigStatic, swig_cpGrooveJoint_meta, swig_cpGrooveJoint_bases, swig_cpGrooveJoint_base_names };
+
+static int _wrap_cpGrooveJointAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpGrooveJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpGrooveJointAlloc",0,0)
+  result = (cpGrooveJoint *)cpGrooveJointAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpGrooveJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJointInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpGrooveJoint *arg1 = (cpGrooveJoint *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpVect arg4 ;
+  cpVect arg5 ;
+  cpVect arg6 ;
+  cpVect *argp4 ;
+  cpVect *argp5 ;
+  cpVect *argp6 ;
+  cpGrooveJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpGrooveJointInit",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJointInit",1,"cpGrooveJoint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpGrooveJointInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpGrooveJointInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpGrooveJointInit",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpGrooveJointInit",5,"cpVect");
+  if(!lua_isuserdata(L,6)) SWIG_fail_arg("cpGrooveJointInit",6,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGrooveJoint,0))){
+    SWIG_fail_ptr("cpGrooveJointInit",1,SWIGTYPE_p_cpGrooveJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpGrooveJointInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpGrooveJointInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJointInit",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJointInit",5,SWIGTYPE_p_cpVect);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&argp6,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJointInit",6,SWIGTYPE_p_cpVect);
+  }
+  arg6 = *argp6;
+  
+  result = (cpGrooveJoint *)cpGrooveJointInit(arg1,arg2,arg3,arg4,arg5,arg6);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpGrooveJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJointNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpVect arg3 ;
+  cpVect arg4 ;
+  cpVect arg5 ;
+  cpVect *argp3 ;
+  cpVect *argp4 ;
+  cpVect *argp5 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpGrooveJointNew",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJointNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpGrooveJointNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpGrooveJointNew",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpGrooveJointNew",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpGrooveJointNew",5,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpGrooveJointNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpGrooveJointNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJointNew",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJointNew",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJointNew",5,SWIGTYPE_p_cpVect);
+  }
+  arg5 = *argp5;
+  
+  result = (cpConstraint *)cpGrooveJointNew(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJointGetGrooveA(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJointGetGrooveA",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJointGetGrooveA",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGrooveJointGetGrooveA",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpGrooveJointGetGrooveA((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJointSetGrooveA(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJointSetGrooveA",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJointSetGrooveA",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJointSetGrooveA",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGrooveJointSetGrooveA",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJointSetGrooveA",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpGrooveJointSetGrooveA(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJointGetGrooveB(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJointGetGrooveB",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJointGetGrooveB",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGrooveJointGetGrooveB",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpGrooveJointGetGrooveB((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJointSetGrooveB(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJointSetGrooveB",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJointSetGrooveB",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJointSetGrooveB",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGrooveJointSetGrooveB",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJointSetGrooveB",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpGrooveJointSetGrooveB(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJointGetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpGrooveJointGetAnchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJointGetAnchr2",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGrooveJointGetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpGrooveJointGetAnchr2((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGrooveJointSetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpGrooveJointSetAnchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGrooveJointSetAnchr2",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGrooveJointSetAnchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGrooveJointSetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpGrooveJointSetAnchr2",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpGrooveJointSetAnchr2(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedSpringGetClass",0,0)
+  result = (cpConstraintClass *)cpDampedSpringGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::constraint",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_constraint_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpring_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpDampedSpring::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::constraint",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_constraint_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_anchr1_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::anchr1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::anchr1",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::anchr1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_anchr1_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpring_anchr1_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->anchr1 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_anchr1_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpDampedSpring::anchr1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::anchr1",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_anchr1_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->anchr1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_anchr2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::anchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::anchr2",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::anchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_anchr2_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpring_anchr2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->anchr2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_anchr2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpDampedSpring::anchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::anchr2",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_anchr2_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->anchr2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_restLength_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::restLength",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::restLength",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::restLength",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_restLength_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpring_restLength_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->restLength = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_restLength_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpring::restLength",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::restLength",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_restLength_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->restLength);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_stiffness_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::stiffness",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::stiffness",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::stiffness",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_stiffness_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpring_stiffness_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->stiffness = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_stiffness_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpring::stiffness",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::stiffness",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_stiffness_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->stiffness);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_damping_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::damping",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::damping",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::damping",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_damping_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpring_damping_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->damping = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_damping_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpring::damping",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::damping",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_damping_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->damping);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_springForceFunc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpDampedSpringForceFunc arg2 = (cpDampedSpringForceFunc) 0 ;
+  
+  SWIG_check_num_args("cpDampedSpring::springForceFunc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::springForceFunc",1,"struct cpDampedSpring *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpDampedSpring::springForceFunc",2,"cpDampedSpringForceFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_springForceFunc_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpring_springForceFunc_set",2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__cpFloat);
+  }
+  
+  if (arg1) (arg1)->springForceFunc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_springForceFunc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpDampedSpringForceFunc result;
+  
+  SWIG_check_num_args("cpDampedSpring::springForceFunc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::springForceFunc",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_springForceFunc_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result = (cpDampedSpringForceFunc) ((arg1)->springForceFunc);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint_cpFloat__cpFloat,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_target_vrn_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::target_vrn",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::target_vrn",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::target_vrn",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_target_vrn_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpring_target_vrn_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->target_vrn = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_target_vrn_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpring::target_vrn",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::target_vrn",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_target_vrn_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->target_vrn);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_v_coef_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::v_coef",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::v_coef",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::v_coef",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_v_coef_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpring_v_coef_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->v_coef = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_v_coef_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpring::v_coef",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::v_coef",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_v_coef_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->v_coef);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_r1_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::r1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::r1",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::r1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_r1_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpring_r1_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r1 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_r1_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpDampedSpring::r1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::r1",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_r1_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->r1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_r2_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::r2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::r2",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::r2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_r2_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpring_r2_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->r2 = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_r2_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpDampedSpring::r2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::r2",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_r2_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->r2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_nMass_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::nMass",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::nMass",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::nMass",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_nMass_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpring_nMass_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->nMass = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_nMass_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpring::nMass",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::nMass",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_nMass_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->nMass);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_n_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::n",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::n",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::n",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_n_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpring_n_set",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->n = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_n_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpDampedSpring::n",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::n",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_n_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->n);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_jAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpring::jAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::jAcc",1,"struct cpDampedSpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpring::jAcc",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_jAcc_set",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpring_jAcc_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpring_jAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *arg1 = (struct cpDampedSpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpring::jAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpring::jAcc",1,"struct cpDampedSpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpring_jAcc_get",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  result =  ((arg1)->jAcc);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpDampedSpring(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedSpring *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedSpring::cpDampedSpring",0,0)
+  result = (struct cpDampedSpring *)calloc(1, sizeof(struct cpDampedSpring));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpDampedSpring,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpDampedSpring(void *obj) {
+struct cpDampedSpring *arg1 = (struct cpDampedSpring *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpDampedSpring(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpDampedSpring);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpDampedSpring_attributes[] = {
+    { "constraint", _wrap_cpDampedSpring_constraint_get, _wrap_cpDampedSpring_constraint_set },
+    { "anchr1", _wrap_cpDampedSpring_anchr1_get, _wrap_cpDampedSpring_anchr1_set },
+    { "anchr2", _wrap_cpDampedSpring_anchr2_get, _wrap_cpDampedSpring_anchr2_set },
+    { "restLength", _wrap_cpDampedSpring_restLength_get, _wrap_cpDampedSpring_restLength_set },
+    { "stiffness", _wrap_cpDampedSpring_stiffness_get, _wrap_cpDampedSpring_stiffness_set },
+    { "damping", _wrap_cpDampedSpring_damping_get, _wrap_cpDampedSpring_damping_set },
+    { "springForceFunc", _wrap_cpDampedSpring_springForceFunc_get, _wrap_cpDampedSpring_springForceFunc_set },
+    { "target_vrn", _wrap_cpDampedSpring_target_vrn_get, _wrap_cpDampedSpring_target_vrn_set },
+    { "v_coef", _wrap_cpDampedSpring_v_coef_get, _wrap_cpDampedSpring_v_coef_set },
+    { "r1", _wrap_cpDampedSpring_r1_get, _wrap_cpDampedSpring_r1_set },
+    { "r2", _wrap_cpDampedSpring_r2_get, _wrap_cpDampedSpring_r2_set },
+    { "nMass", _wrap_cpDampedSpring_nMass_get, _wrap_cpDampedSpring_nMass_set },
+    { "n", _wrap_cpDampedSpring_n_get, _wrap_cpDampedSpring_n_set },
+    { "jAcc", _wrap_cpDampedSpring_jAcc_get, _wrap_cpDampedSpring_jAcc_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpDampedSpring_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpDampedSpring_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpDampedSpring_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpDampedSpring_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpDampedSpring_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpDampedSpring_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpDampedSpring_Sf_SwigStatic = {
+    "cpDampedSpring",
+    swig_cpDampedSpring_Sf_SwigStatic_methods,
+    swig_cpDampedSpring_Sf_SwigStatic_attributes,
+    swig_cpDampedSpring_Sf_SwigStatic_constants,
+    swig_cpDampedSpring_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpDampedSpring_bases[] = {0};
+static const char *swig_cpDampedSpring_base_names[] = {0};
+static swig_lua_class _wrap_class_cpDampedSpring = { "cpDampedSpring", "cpDampedSpring", &SWIGTYPE_p_cpDampedSpring,_proxy__wrap_new_cpDampedSpring, swig_delete_cpDampedSpring, swig_cpDampedSpring_methods, swig_cpDampedSpring_attributes, &swig_cpDampedSpring_Sf_SwigStatic, swig_cpDampedSpring_meta, swig_cpDampedSpring_bases, swig_cpDampedSpring_base_names };
+
+static int _wrap_cpDampedSpringAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpDampedSpring *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedSpringAlloc",0,0)
+  result = (cpDampedSpring *)cpDampedSpringAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpDampedSpring,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpDampedSpring *arg1 = (cpDampedSpring *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpVect arg4 ;
+  cpVect arg5 ;
+  cpFloat arg6 ;
+  cpFloat arg7 ;
+  cpFloat arg8 ;
+  cpVect *argp4 ;
+  cpVect *argp5 ;
+  cpFloat *argp6 ;
+  cpFloat *argp7 ;
+  cpFloat *argp8 ;
+  cpDampedSpring *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedSpringInit",8,8)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringInit",1,"cpDampedSpring *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpDampedSpringInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpDampedSpringInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpDampedSpringInit",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpDampedSpringInit",5,"cpVect");
+  if(!lua_isuserdata(L,6)) SWIG_fail_arg("cpDampedSpringInit",6,"cpFloat");
+  if(!lua_isuserdata(L,7)) SWIG_fail_arg("cpDampedSpringInit",7,"cpFloat");
+  if(!lua_isuserdata(L,8)) SWIG_fail_arg("cpDampedSpringInit",8,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedSpring,0))){
+    SWIG_fail_ptr("cpDampedSpringInit",1,SWIGTYPE_p_cpDampedSpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpDampedSpringInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpDampedSpringInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpringInit",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpringInit",5,SWIGTYPE_p_cpVect);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&argp6,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringInit",6,SWIGTYPE_p_cpFloat);
+  }
+  arg6 = *argp6;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,7,(void**)&argp7,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringInit",7,SWIGTYPE_p_cpFloat);
+  }
+  arg7 = *argp7;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,8,(void**)&argp8,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringInit",8,SWIGTYPE_p_cpFloat);
+  }
+  arg8 = *argp8;
+  
+  result = (cpDampedSpring *)cpDampedSpringInit(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpDampedSpring,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpVect arg3 ;
+  cpVect arg4 ;
+  cpFloat arg5 ;
+  cpFloat arg6 ;
+  cpFloat arg7 ;
+  cpVect *argp3 ;
+  cpVect *argp4 ;
+  cpFloat *argp5 ;
+  cpFloat *argp6 ;
+  cpFloat *argp7 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedSpringNew",7,7)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpDampedSpringNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpDampedSpringNew",3,"cpVect");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpDampedSpringNew",4,"cpVect");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpDampedSpringNew",5,"cpFloat");
+  if(!lua_isuserdata(L,6)) SWIG_fail_arg("cpDampedSpringNew",6,"cpFloat");
+  if(!lua_isuserdata(L,7)) SWIG_fail_arg("cpDampedSpringNew",7,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpDampedSpringNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpDampedSpringNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpringNew",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpringNew",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringNew",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&argp6,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringNew",6,SWIGTYPE_p_cpFloat);
+  }
+  arg6 = *argp6;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,7,(void**)&argp7,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringNew",7,SWIGTYPE_p_cpFloat);
+  }
+  arg7 = *argp7;
+  
+  result = (cpConstraint *)cpDampedSpringNew(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringGetAnchr1(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpDampedSpringGetAnchr1",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringGetAnchr1",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringGetAnchr1",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpDampedSpringGetAnchr1((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringSetAnchr1(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpringSetAnchr1",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringSetAnchr1",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpringSetAnchr1",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringSetAnchr1",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpringSetAnchr1",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpDampedSpringSetAnchr1(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringGetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpDampedSpringGetAnchr2",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringGetAnchr2",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringGetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpDampedSpringGetAnchr2((cpConstraint const *)arg1);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringSetAnchr2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpVect arg2 ;
+  cpVect *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpringSetAnchr2",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringSetAnchr2",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpringSetAnchr2",2,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringSetAnchr2",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpDampedSpringSetAnchr2",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  cpDampedSpringSetAnchr2(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringGetRestLength(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpringGetRestLength",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringGetRestLength",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringGetRestLength",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpDampedSpringGetRestLength((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringSetRestLength(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpringSetRestLength",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringSetRestLength",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpringSetRestLength",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringSetRestLength",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringSetRestLength",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpDampedSpringSetRestLength(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringGetStiffness(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpringGetStiffness",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringGetStiffness",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringGetStiffness",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpDampedSpringGetStiffness((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringSetStiffness(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpringSetStiffness",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringSetStiffness",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpringSetStiffness",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringSetStiffness",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringSetStiffness",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpDampedSpringSetStiffness(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringGetDamping(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedSpringGetDamping",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringGetDamping",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringGetDamping",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpDampedSpringGetDamping((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringSetDamping(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedSpringSetDamping",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringSetDamping",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedSpringSetDamping",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringSetDamping",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringSetDamping",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpDampedSpringSetDamping(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringGetSpringForceFunc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpDampedSpringForceFunc result;
+  
+  SWIG_check_num_args("cpDampedSpringGetSpringForceFunc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringGetSpringForceFunc",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringGetSpringForceFunc",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpDampedSpringForceFunc)cpDampedSpringGetSpringForceFunc((cpConstraint const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_cpConstraint_cpFloat__cpFloat,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedSpringSetSpringForceFunc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpDampedSpringForceFunc arg2 = (cpDampedSpringForceFunc) 0 ;
+  
+  SWIG_check_num_args("cpDampedSpringSetSpringForceFunc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedSpringSetSpringForceFunc",1,"cpConstraint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpDampedSpringSetSpringForceFunc",2,"cpDampedSpringForceFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedSpringSetSpringForceFunc",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__cpFloat,0))){
+    SWIG_fail_ptr("cpDampedSpringSetSpringForceFunc",2,SWIGTYPE_p_f_p_cpConstraint_cpFloat__cpFloat);
+  }
+  
+  cpDampedSpringSetSpringForceFunc(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpringGetClass",0,0)
+  result = (cpConstraintClass *)cpDampedRotarySpringGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::constraint",1,"struct cpDampedRotarySpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpring::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_constraint_set",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::constraint",1,"struct cpDampedRotarySpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_constraint_get",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_restAngle_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::restAngle",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::restAngle",1,"struct cpDampedRotarySpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpring::restAngle",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_restAngle_set",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_restAngle_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->restAngle = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_restAngle_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::restAngle",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::restAngle",1,"struct cpDampedRotarySpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_restAngle_get",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  result =  ((arg1)->restAngle);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_stiffness_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::stiffness",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::stiffness",1,"struct cpDampedRotarySpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpring::stiffness",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_stiffness_set",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_stiffness_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->stiffness = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_stiffness_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::stiffness",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::stiffness",1,"struct cpDampedRotarySpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_stiffness_get",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  result =  ((arg1)->stiffness);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_damping_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::damping",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::damping",1,"struct cpDampedRotarySpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpring::damping",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_damping_set",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_damping_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->damping = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_damping_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::damping",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::damping",1,"struct cpDampedRotarySpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_damping_get",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  result =  ((arg1)->damping);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_springTorqueFunc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpDampedRotarySpringTorqueFunc arg2 = (cpDampedRotarySpringTorqueFunc) 0 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::springTorqueFunc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::springTorqueFunc",1,"struct cpDampedRotarySpring *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpDampedRotarySpring::springTorqueFunc",2,"cpDampedRotarySpringTorqueFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_springTorqueFunc_set",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpConstraint_cpFloat__cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_springTorqueFunc_set",2,SWIGTYPE_p_f_p_struct_cpConstraint_cpFloat__cpFloat);
+  }
+  
+  if (arg1) (arg1)->springTorqueFunc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_springTorqueFunc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpDampedRotarySpringTorqueFunc result;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::springTorqueFunc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::springTorqueFunc",1,"struct cpDampedRotarySpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_springTorqueFunc_get",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  result = (cpDampedRotarySpringTorqueFunc) ((arg1)->springTorqueFunc);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpConstraint_cpFloat__cpFloat,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_target_wrn_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::target_wrn",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::target_wrn",1,"struct cpDampedRotarySpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpring::target_wrn",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_target_wrn_set",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_target_wrn_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->target_wrn = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_target_wrn_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::target_wrn",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::target_wrn",1,"struct cpDampedRotarySpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_target_wrn_get",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  result =  ((arg1)->target_wrn);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_w_coef_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::w_coef",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::w_coef",1,"struct cpDampedRotarySpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpring::w_coef",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_w_coef_set",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_w_coef_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->w_coef = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_w_coef_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::w_coef",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::w_coef",1,"struct cpDampedRotarySpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_w_coef_get",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  result =  ((arg1)->w_coef);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_iSum_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::iSum",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::iSum",1,"struct cpDampedRotarySpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpring::iSum",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_iSum_set",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_iSum_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->iSum = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_iSum_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::iSum",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::iSum",1,"struct cpDampedRotarySpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_iSum_get",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  result =  ((arg1)->iSum);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_jAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::jAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::jAcc",1,"struct cpDampedRotarySpring *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpring::jAcc",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_jAcc_set",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_jAcc_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpring_jAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::jAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpring::jAcc",1,"struct cpDampedRotarySpring *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpring_jAcc_get",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  result =  ((arg1)->jAcc);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpDampedRotarySpring(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpDampedRotarySpring *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpring::cpDampedRotarySpring",0,0)
+  result = (struct cpDampedRotarySpring *)calloc(1, sizeof(struct cpDampedRotarySpring));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpDampedRotarySpring,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpDampedRotarySpring(void *obj) {
+struct cpDampedRotarySpring *arg1 = (struct cpDampedRotarySpring *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpDampedRotarySpring(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpDampedRotarySpring);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpDampedRotarySpring_attributes[] = {
+    { "constraint", _wrap_cpDampedRotarySpring_constraint_get, _wrap_cpDampedRotarySpring_constraint_set },
+    { "restAngle", _wrap_cpDampedRotarySpring_restAngle_get, _wrap_cpDampedRotarySpring_restAngle_set },
+    { "stiffness", _wrap_cpDampedRotarySpring_stiffness_get, _wrap_cpDampedRotarySpring_stiffness_set },
+    { "damping", _wrap_cpDampedRotarySpring_damping_get, _wrap_cpDampedRotarySpring_damping_set },
+    { "springTorqueFunc", _wrap_cpDampedRotarySpring_springTorqueFunc_get, _wrap_cpDampedRotarySpring_springTorqueFunc_set },
+    { "target_wrn", _wrap_cpDampedRotarySpring_target_wrn_get, _wrap_cpDampedRotarySpring_target_wrn_set },
+    { "w_coef", _wrap_cpDampedRotarySpring_w_coef_get, _wrap_cpDampedRotarySpring_w_coef_set },
+    { "iSum", _wrap_cpDampedRotarySpring_iSum_get, _wrap_cpDampedRotarySpring_iSum_set },
+    { "jAcc", _wrap_cpDampedRotarySpring_jAcc_get, _wrap_cpDampedRotarySpring_jAcc_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpDampedRotarySpring_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpDampedRotarySpring_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpDampedRotarySpring_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpDampedRotarySpring_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpDampedRotarySpring_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpDampedRotarySpring_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpDampedRotarySpring_Sf_SwigStatic = {
+    "cpDampedRotarySpring",
+    swig_cpDampedRotarySpring_Sf_SwigStatic_methods,
+    swig_cpDampedRotarySpring_Sf_SwigStatic_attributes,
+    swig_cpDampedRotarySpring_Sf_SwigStatic_constants,
+    swig_cpDampedRotarySpring_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpDampedRotarySpring_bases[] = {0};
+static const char *swig_cpDampedRotarySpring_base_names[] = {0};
+static swig_lua_class _wrap_class_cpDampedRotarySpring = { "cpDampedRotarySpring", "cpDampedRotarySpring", &SWIGTYPE_p_cpDampedRotarySpring,_proxy__wrap_new_cpDampedRotarySpring, swig_delete_cpDampedRotarySpring, swig_cpDampedRotarySpring_methods, swig_cpDampedRotarySpring_attributes, &swig_cpDampedRotarySpring_Sf_SwigStatic, swig_cpDampedRotarySpring_meta, swig_cpDampedRotarySpring_bases, swig_cpDampedRotarySpring_base_names };
+
+static int _wrap_cpDampedRotarySpringAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpDampedRotarySpring *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpringAlloc",0,0)
+  result = (cpDampedRotarySpring *)cpDampedRotarySpringAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpDampedRotarySpring,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpDampedRotarySpring *arg1 = (cpDampedRotarySpring *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpFloat arg4 ;
+  cpFloat arg5 ;
+  cpFloat arg6 ;
+  cpFloat *argp4 ;
+  cpFloat *argp5 ;
+  cpFloat *argp6 ;
+  cpDampedRotarySpring *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpringInit",6,6)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringInit",1,"cpDampedRotarySpring *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpDampedRotarySpringInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpDampedRotarySpringInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpDampedRotarySpringInit",4,"cpFloat");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpDampedRotarySpringInit",5,"cpFloat");
+  if(!lua_isuserdata(L,6)) SWIG_fail_arg("cpDampedRotarySpringInit",6,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpDampedRotarySpring,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringInit",1,SWIGTYPE_p_cpDampedRotarySpring);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringInit",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringInit",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,6,(void**)&argp6,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringInit",6,SWIGTYPE_p_cpFloat);
+  }
+  arg6 = *argp6;
+  
+  result = (cpDampedRotarySpring *)cpDampedRotarySpringInit(arg1,arg2,arg3,arg4,arg5,arg6);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpDampedRotarySpring,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpFloat arg3 ;
+  cpFloat arg4 ;
+  cpFloat arg5 ;
+  cpFloat *argp3 ;
+  cpFloat *argp4 ;
+  cpFloat *argp5 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpringNew",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpDampedRotarySpringNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpDampedRotarySpringNew",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpDampedRotarySpringNew",4,"cpFloat");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpDampedRotarySpringNew",5,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringNew",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringNew",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringNew",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  result = (cpConstraint *)cpDampedRotarySpringNew(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringGetRestAngle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpringGetRestAngle",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringGetRestAngle",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringGetRestAngle",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpDampedRotarySpringGetRestAngle((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringSetRestAngle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpringSetRestAngle",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringSetRestAngle",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpringSetRestAngle",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringSetRestAngle",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringSetRestAngle",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpDampedRotarySpringSetRestAngle(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringGetStiffness(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpringGetStiffness",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringGetStiffness",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringGetStiffness",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpDampedRotarySpringGetStiffness((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringSetStiffness(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpringSetStiffness",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringSetStiffness",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpringSetStiffness",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringSetStiffness",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringSetStiffness",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpDampedRotarySpringSetStiffness(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringGetDamping(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpDampedRotarySpringGetDamping",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringGetDamping",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringGetDamping",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpDampedRotarySpringGetDamping((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringSetDamping(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpringSetDamping",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringSetDamping",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpDampedRotarySpringSetDamping",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringSetDamping",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringSetDamping",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpDampedRotarySpringSetDamping(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringGetSpringTorqueFunc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpDampedRotarySpringTorqueFunc result;
+  
+  SWIG_check_num_args("cpDampedRotarySpringGetSpringTorqueFunc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringGetSpringTorqueFunc",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringGetSpringTorqueFunc",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = (cpDampedRotarySpringTorqueFunc)cpDampedRotarySpringGetSpringTorqueFunc((cpConstraint const *)arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_f_p_struct_cpConstraint_cpFloat__cpFloat,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpDampedRotarySpringSetSpringTorqueFunc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpDampedRotarySpringTorqueFunc arg2 = (cpDampedRotarySpringTorqueFunc) 0 ;
+  
+  SWIG_check_num_args("cpDampedRotarySpringSetSpringTorqueFunc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpDampedRotarySpringSetSpringTorqueFunc",1,"cpConstraint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpDampedRotarySpringSetSpringTorqueFunc",2,"cpDampedRotarySpringTorqueFunc");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringSetSpringTorqueFunc",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_f_p_struct_cpConstraint_cpFloat__cpFloat,0))){
+    SWIG_fail_ptr("cpDampedRotarySpringSetSpringTorqueFunc",2,SWIGTYPE_p_f_p_struct_cpConstraint_cpFloat__cpFloat);
+  }
+  
+  cpDampedRotarySpringSetSpringTorqueFunc(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJointGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJointGetClass",0,0)
+  result = (cpConstraintClass *)cpRotaryLimitJointGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::constraint",1,"struct cpRotaryLimitJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRotaryLimitJoint::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_constraint_set",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::constraint",1,"struct cpRotaryLimitJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_constraint_get",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_min_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::min",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::min",1,"struct cpRotaryLimitJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRotaryLimitJoint::min",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_min_set",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_min_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->min = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_min_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::min",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::min",1,"struct cpRotaryLimitJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_min_get",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  result =  ((arg1)->min);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_max_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::max",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::max",1,"struct cpRotaryLimitJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRotaryLimitJoint::max",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_max_set",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_max_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->max = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_max_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::max",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::max",1,"struct cpRotaryLimitJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_max_get",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  result =  ((arg1)->max);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_iSum_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::iSum",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::iSum",1,"struct cpRotaryLimitJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRotaryLimitJoint::iSum",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_iSum_set",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_iSum_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->iSum = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_iSum_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::iSum",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::iSum",1,"struct cpRotaryLimitJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_iSum_get",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  result =  ((arg1)->iSum);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_bias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::bias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::bias",1,"struct cpRotaryLimitJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRotaryLimitJoint::bias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_bias_set",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_bias_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->bias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_bias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::bias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::bias",1,"struct cpRotaryLimitJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_bias_get",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  result =  ((arg1)->bias);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_jAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::jAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::jAcc",1,"struct cpRotaryLimitJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRotaryLimitJoint::jAcc",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_jAcc_set",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_jAcc_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJoint_jAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::jAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJoint::jAcc",1,"struct cpRotaryLimitJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJoint_jAcc_get",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  result =  ((arg1)->jAcc);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpRotaryLimitJoint(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRotaryLimitJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJoint::cpRotaryLimitJoint",0,0)
+  result = (struct cpRotaryLimitJoint *)calloc(1, sizeof(struct cpRotaryLimitJoint));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpRotaryLimitJoint,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpRotaryLimitJoint(void *obj) {
+struct cpRotaryLimitJoint *arg1 = (struct cpRotaryLimitJoint *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpRotaryLimitJoint(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpRotaryLimitJoint);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpRotaryLimitJoint_attributes[] = {
+    { "constraint", _wrap_cpRotaryLimitJoint_constraint_get, _wrap_cpRotaryLimitJoint_constraint_set },
+    { "min", _wrap_cpRotaryLimitJoint_min_get, _wrap_cpRotaryLimitJoint_min_set },
+    { "max", _wrap_cpRotaryLimitJoint_max_get, _wrap_cpRotaryLimitJoint_max_set },
+    { "iSum", _wrap_cpRotaryLimitJoint_iSum_get, _wrap_cpRotaryLimitJoint_iSum_set },
+    { "bias", _wrap_cpRotaryLimitJoint_bias_get, _wrap_cpRotaryLimitJoint_bias_set },
+    { "jAcc", _wrap_cpRotaryLimitJoint_jAcc_get, _wrap_cpRotaryLimitJoint_jAcc_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpRotaryLimitJoint_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpRotaryLimitJoint_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpRotaryLimitJoint_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpRotaryLimitJoint_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpRotaryLimitJoint_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpRotaryLimitJoint_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpRotaryLimitJoint_Sf_SwigStatic = {
+    "cpRotaryLimitJoint",
+    swig_cpRotaryLimitJoint_Sf_SwigStatic_methods,
+    swig_cpRotaryLimitJoint_Sf_SwigStatic_attributes,
+    swig_cpRotaryLimitJoint_Sf_SwigStatic_constants,
+    swig_cpRotaryLimitJoint_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpRotaryLimitJoint_bases[] = {0};
+static const char *swig_cpRotaryLimitJoint_base_names[] = {0};
+static swig_lua_class _wrap_class_cpRotaryLimitJoint = { "cpRotaryLimitJoint", "cpRotaryLimitJoint", &SWIGTYPE_p_cpRotaryLimitJoint,_proxy__wrap_new_cpRotaryLimitJoint, swig_delete_cpRotaryLimitJoint, swig_cpRotaryLimitJoint_methods, swig_cpRotaryLimitJoint_attributes, &swig_cpRotaryLimitJoint_Sf_SwigStatic, swig_cpRotaryLimitJoint_meta, swig_cpRotaryLimitJoint_bases, swig_cpRotaryLimitJoint_base_names };
+
+static int _wrap_cpRotaryLimitJointAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpRotaryLimitJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJointAlloc",0,0)
+  result = (cpRotaryLimitJoint *)cpRotaryLimitJointAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpRotaryLimitJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJointInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpRotaryLimitJoint *arg1 = (cpRotaryLimitJoint *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpFloat arg4 ;
+  cpFloat arg5 ;
+  cpFloat *argp4 ;
+  cpFloat *argp5 ;
+  cpRotaryLimitJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJointInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJointInit",1,"cpRotaryLimitJoint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpRotaryLimitJointInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpRotaryLimitJointInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpRotaryLimitJointInit",4,"cpFloat");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpRotaryLimitJointInit",5,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRotaryLimitJoint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointInit",1,SWIGTYPE_p_cpRotaryLimitJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointInit",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointInit",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  result = (cpRotaryLimitJoint *)cpRotaryLimitJointInit(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpRotaryLimitJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJointNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpFloat arg3 ;
+  cpFloat arg4 ;
+  cpFloat *argp3 ;
+  cpFloat *argp4 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJointNew",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJointNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpRotaryLimitJointNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpRotaryLimitJointNew",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpRotaryLimitJointNew",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointNew",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointNew",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  result = (cpConstraint *)cpRotaryLimitJointNew(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJointGetMin(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRotaryLimitJointGetMin",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJointGetMin",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointGetMin",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpRotaryLimitJointGetMin((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJointSetMin(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJointSetMin",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJointSetMin",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRotaryLimitJointSetMin",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointSetMin",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointSetMin",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpRotaryLimitJointSetMin(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJointGetMax(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRotaryLimitJointGetMax",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJointGetMax",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointGetMax",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpRotaryLimitJointGetMax((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRotaryLimitJointSetMax(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRotaryLimitJointSetMax",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRotaryLimitJointSetMax",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRotaryLimitJointSetMax",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointSetMax",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRotaryLimitJointSetMax",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpRotaryLimitJointSetMax(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJointGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpRatchetJointGetClass",0,0)
+  result = (cpConstraintClass *)cpRatchetJointGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJoint::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::constraint",1,"struct cpRatchetJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJoint::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_constraint_set",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpRatchetJoint::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::constraint",1,"struct cpRatchetJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_constraint_get",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_angle_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJoint::angle",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::angle",1,"struct cpRatchetJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJoint::angle",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_angle_set",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJoint_angle_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->angle = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_angle_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRatchetJoint::angle",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::angle",1,"struct cpRatchetJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_angle_get",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  result =  ((arg1)->angle);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_phase_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJoint::phase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::phase",1,"struct cpRatchetJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJoint::phase",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_phase_set",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJoint_phase_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->phase = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_phase_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRatchetJoint::phase",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::phase",1,"struct cpRatchetJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_phase_get",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  result =  ((arg1)->phase);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_ratchet_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJoint::ratchet",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::ratchet",1,"struct cpRatchetJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJoint::ratchet",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_ratchet_set",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJoint_ratchet_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->ratchet = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_ratchet_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRatchetJoint::ratchet",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::ratchet",1,"struct cpRatchetJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_ratchet_get",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  result =  ((arg1)->ratchet);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_iSum_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJoint::iSum",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::iSum",1,"struct cpRatchetJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJoint::iSum",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_iSum_set",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJoint_iSum_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->iSum = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_iSum_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRatchetJoint::iSum",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::iSum",1,"struct cpRatchetJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_iSum_get",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  result =  ((arg1)->iSum);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_bias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJoint::bias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::bias",1,"struct cpRatchetJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJoint::bias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_bias_set",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJoint_bias_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->bias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_bias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRatchetJoint::bias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::bias",1,"struct cpRatchetJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_bias_get",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  result =  ((arg1)->bias);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_jAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJoint::jAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::jAcc",1,"struct cpRatchetJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJoint::jAcc",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_jAcc_set",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJoint_jAcc_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJoint_jAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRatchetJoint::jAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJoint::jAcc",1,"struct cpRatchetJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJoint_jAcc_get",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  result =  ((arg1)->jAcc);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpRatchetJoint(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpRatchetJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpRatchetJoint::cpRatchetJoint",0,0)
+  result = (struct cpRatchetJoint *)calloc(1, sizeof(struct cpRatchetJoint));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpRatchetJoint,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpRatchetJoint(void *obj) {
+struct cpRatchetJoint *arg1 = (struct cpRatchetJoint *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpRatchetJoint(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpRatchetJoint);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpRatchetJoint_attributes[] = {
+    { "constraint", _wrap_cpRatchetJoint_constraint_get, _wrap_cpRatchetJoint_constraint_set },
+    { "angle", _wrap_cpRatchetJoint_angle_get, _wrap_cpRatchetJoint_angle_set },
+    { "phase", _wrap_cpRatchetJoint_phase_get, _wrap_cpRatchetJoint_phase_set },
+    { "ratchet", _wrap_cpRatchetJoint_ratchet_get, _wrap_cpRatchetJoint_ratchet_set },
+    { "iSum", _wrap_cpRatchetJoint_iSum_get, _wrap_cpRatchetJoint_iSum_set },
+    { "bias", _wrap_cpRatchetJoint_bias_get, _wrap_cpRatchetJoint_bias_set },
+    { "jAcc", _wrap_cpRatchetJoint_jAcc_get, _wrap_cpRatchetJoint_jAcc_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpRatchetJoint_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpRatchetJoint_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpRatchetJoint_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpRatchetJoint_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpRatchetJoint_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpRatchetJoint_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpRatchetJoint_Sf_SwigStatic = {
+    "cpRatchetJoint",
+    swig_cpRatchetJoint_Sf_SwigStatic_methods,
+    swig_cpRatchetJoint_Sf_SwigStatic_attributes,
+    swig_cpRatchetJoint_Sf_SwigStatic_constants,
+    swig_cpRatchetJoint_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpRatchetJoint_bases[] = {0};
+static const char *swig_cpRatchetJoint_base_names[] = {0};
+static swig_lua_class _wrap_class_cpRatchetJoint = { "cpRatchetJoint", "cpRatchetJoint", &SWIGTYPE_p_cpRatchetJoint,_proxy__wrap_new_cpRatchetJoint, swig_delete_cpRatchetJoint, swig_cpRatchetJoint_methods, swig_cpRatchetJoint_attributes, &swig_cpRatchetJoint_Sf_SwigStatic, swig_cpRatchetJoint_meta, swig_cpRatchetJoint_bases, swig_cpRatchetJoint_base_names };
+
+static int _wrap_cpRatchetJointAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpRatchetJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpRatchetJointAlloc",0,0)
+  result = (cpRatchetJoint *)cpRatchetJointAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpRatchetJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJointInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpRatchetJoint *arg1 = (cpRatchetJoint *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpFloat arg4 ;
+  cpFloat arg5 ;
+  cpFloat *argp4 ;
+  cpFloat *argp5 ;
+  cpRatchetJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpRatchetJointInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJointInit",1,"cpRatchetJoint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpRatchetJointInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpRatchetJointInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpRatchetJointInit",4,"cpFloat");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpRatchetJointInit",5,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpRatchetJoint,0))){
+    SWIG_fail_ptr("cpRatchetJointInit",1,SWIGTYPE_p_cpRatchetJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpRatchetJointInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpRatchetJointInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJointInit",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJointInit",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  result = (cpRatchetJoint *)cpRatchetJointInit(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpRatchetJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJointNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpFloat arg3 ;
+  cpFloat arg4 ;
+  cpFloat *argp3 ;
+  cpFloat *argp4 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpRatchetJointNew",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJointNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpRatchetJointNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpRatchetJointNew",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpRatchetJointNew",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpRatchetJointNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpRatchetJointNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJointNew",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJointNew",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  result = (cpConstraint *)cpRatchetJointNew(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJointGetAngle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRatchetJointGetAngle",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJointGetAngle",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRatchetJointGetAngle",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpRatchetJointGetAngle((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJointSetAngle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJointSetAngle",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJointSetAngle",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJointSetAngle",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRatchetJointSetAngle",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJointSetAngle",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpRatchetJointSetAngle(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJointGetPhase(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRatchetJointGetPhase",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJointGetPhase",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRatchetJointGetPhase",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpRatchetJointGetPhase((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJointSetPhase(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJointSetPhase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJointSetPhase",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJointSetPhase",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRatchetJointSetPhase",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJointSetPhase",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpRatchetJointSetPhase(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJointGetRatchet(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpRatchetJointGetRatchet",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJointGetRatchet",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRatchetJointGetRatchet",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpRatchetJointGetRatchet((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRatchetJointSetRatchet(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpRatchetJointSetRatchet",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpRatchetJointSetRatchet",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpRatchetJointSetRatchet",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpRatchetJointSetRatchet",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpRatchetJointSetRatchet",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpRatchetJointSetRatchet(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJointGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpGearJointGetClass",0,0)
+  result = (cpConstraintClass *)cpGearJointGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpGearJoint::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::constraint",1,"struct cpGearJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGearJoint::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_constraint_set",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGearJoint_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpGearJoint::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::constraint",1,"struct cpGearJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_constraint_get",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_phase_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpGearJoint::phase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::phase",1,"struct cpGearJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGearJoint::phase",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_phase_set",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJoint_phase_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->phase = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_phase_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpGearJoint::phase",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::phase",1,"struct cpGearJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_phase_get",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  result =  ((arg1)->phase);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_ratio_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpGearJoint::ratio",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::ratio",1,"struct cpGearJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGearJoint::ratio",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_ratio_set",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJoint_ratio_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->ratio = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_ratio_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpGearJoint::ratio",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::ratio",1,"struct cpGearJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_ratio_get",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  result =  ((arg1)->ratio);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_ratio_inv_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpGearJoint::ratio_inv",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::ratio_inv",1,"struct cpGearJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGearJoint::ratio_inv",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_ratio_inv_set",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJoint_ratio_inv_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->ratio_inv = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_ratio_inv_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpGearJoint::ratio_inv",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::ratio_inv",1,"struct cpGearJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_ratio_inv_get",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  result =  ((arg1)->ratio_inv);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_iSum_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpGearJoint::iSum",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::iSum",1,"struct cpGearJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGearJoint::iSum",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_iSum_set",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJoint_iSum_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->iSum = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_iSum_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpGearJoint::iSum",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::iSum",1,"struct cpGearJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_iSum_get",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  result =  ((arg1)->iSum);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_bias_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpGearJoint::bias",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::bias",1,"struct cpGearJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGearJoint::bias",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_bias_set",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJoint_bias_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->bias = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_bias_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpGearJoint::bias",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::bias",1,"struct cpGearJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_bias_get",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  result =  ((arg1)->bias);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_jAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpGearJoint::jAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::jAcc",1,"struct cpGearJoint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGearJoint::jAcc",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_jAcc_set",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJoint_jAcc_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJoint_jAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *arg1 = (struct cpGearJoint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpGearJoint::jAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJoint::jAcc",1,"struct cpGearJoint *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJoint_jAcc_get",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  result =  ((arg1)->jAcc);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpGearJoint(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpGearJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpGearJoint::cpGearJoint",0,0)
+  result = (struct cpGearJoint *)calloc(1, sizeof(struct cpGearJoint));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpGearJoint,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpGearJoint(void *obj) {
+struct cpGearJoint *arg1 = (struct cpGearJoint *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpGearJoint(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpGearJoint);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpGearJoint_attributes[] = {
+    { "constraint", _wrap_cpGearJoint_constraint_get, _wrap_cpGearJoint_constraint_set },
+    { "phase", _wrap_cpGearJoint_phase_get, _wrap_cpGearJoint_phase_set },
+    { "ratio", _wrap_cpGearJoint_ratio_get, _wrap_cpGearJoint_ratio_set },
+    { "ratio_inv", _wrap_cpGearJoint_ratio_inv_get, _wrap_cpGearJoint_ratio_inv_set },
+    { "iSum", _wrap_cpGearJoint_iSum_get, _wrap_cpGearJoint_iSum_set },
+    { "bias", _wrap_cpGearJoint_bias_get, _wrap_cpGearJoint_bias_set },
+    { "jAcc", _wrap_cpGearJoint_jAcc_get, _wrap_cpGearJoint_jAcc_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpGearJoint_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpGearJoint_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpGearJoint_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpGearJoint_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpGearJoint_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpGearJoint_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpGearJoint_Sf_SwigStatic = {
+    "cpGearJoint",
+    swig_cpGearJoint_Sf_SwigStatic_methods,
+    swig_cpGearJoint_Sf_SwigStatic_attributes,
+    swig_cpGearJoint_Sf_SwigStatic_constants,
+    swig_cpGearJoint_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpGearJoint_bases[] = {0};
+static const char *swig_cpGearJoint_base_names[] = {0};
+static swig_lua_class _wrap_class_cpGearJoint = { "cpGearJoint", "cpGearJoint", &SWIGTYPE_p_cpGearJoint,_proxy__wrap_new_cpGearJoint, swig_delete_cpGearJoint, swig_cpGearJoint_methods, swig_cpGearJoint_attributes, &swig_cpGearJoint_Sf_SwigStatic, swig_cpGearJoint_meta, swig_cpGearJoint_bases, swig_cpGearJoint_base_names };
+
+static int _wrap_cpGearJointAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpGearJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpGearJointAlloc",0,0)
+  result = (cpGearJoint *)cpGearJointAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpGearJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJointInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpGearJoint *arg1 = (cpGearJoint *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpFloat arg4 ;
+  cpFloat arg5 ;
+  cpFloat *argp4 ;
+  cpFloat *argp5 ;
+  cpGearJoint *result = 0 ;
+  
+  SWIG_check_num_args("cpGearJointInit",5,5)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJointInit",1,"cpGearJoint *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpGearJointInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpGearJointInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpGearJointInit",4,"cpFloat");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpGearJointInit",5,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpGearJoint,0))){
+    SWIG_fail_ptr("cpGearJointInit",1,SWIGTYPE_p_cpGearJoint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpGearJointInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpGearJointInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJointInit",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJointInit",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  result = (cpGearJoint *)cpGearJointInit(arg1,arg2,arg3,arg4,arg5);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpGearJoint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJointNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpFloat arg3 ;
+  cpFloat arg4 ;
+  cpFloat *argp3 ;
+  cpFloat *argp4 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpGearJointNew",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJointNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpGearJointNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpGearJointNew",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpGearJointNew",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpGearJointNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpGearJointNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJointNew",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJointNew",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  result = (cpConstraint *)cpGearJointNew(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJointGetPhase(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpGearJointGetPhase",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJointGetPhase",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGearJointGetPhase",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpGearJointGetPhase((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJointSetPhase(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpGearJointSetPhase",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJointSetPhase",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGearJointSetPhase",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGearJointSetPhase",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJointSetPhase",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpGearJointSetPhase(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJointGetRatio(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpGearJointGetRatio",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJointGetRatio",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGearJointGetRatio",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpGearJointGetRatio((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpGearJointSetRatio(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpGearJointSetRatio",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpGearJointSetRatio",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpGearJointSetRatio",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpGearJointSetRatio",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpGearJointSetRatio",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpGearJointSetRatio(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotorGetClass(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraintClass *result = 0 ;
+  
+  SWIG_check_num_args("cpSimpleMotorGetClass",0,0)
+  result = (cpConstraintClass *)cpSimpleMotorGetClass();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraintClass,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotor_constraint_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSimpleMotor *arg1 = (struct cpSimpleMotor *) 0 ;
+  cpConstraint arg2 ;
+  cpConstraint *argp2 ;
+  
+  SWIG_check_num_args("cpSimpleMotor::constraint",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotor::constraint",1,"struct cpSimpleMotor *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSimpleMotor::constraint",2,"cpConstraint");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSimpleMotor,0))){
+    SWIG_fail_ptr("cpSimpleMotor_constraint_set",1,SWIGTYPE_p_cpSimpleMotor);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSimpleMotor_constraint_set",2,SWIGTYPE_p_cpConstraint);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->constraint = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotor_constraint_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSimpleMotor *arg1 = (struct cpSimpleMotor *) 0 ;
+  cpConstraint result;
+  
+  SWIG_check_num_args("cpSimpleMotor::constraint",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotor::constraint",1,"struct cpSimpleMotor *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSimpleMotor,0))){
+    SWIG_fail_ptr("cpSimpleMotor_constraint_get",1,SWIGTYPE_p_cpSimpleMotor);
+  }
+  
+  result =  ((arg1)->constraint);
+  {
+    cpConstraint * resultptr;
+    resultptr = (cpConstraint *) malloc(sizeof(cpConstraint));
+    memmove(resultptr, &result, sizeof(cpConstraint));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpConstraint,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotor_rate_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSimpleMotor *arg1 = (struct cpSimpleMotor *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSimpleMotor::rate",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotor::rate",1,"struct cpSimpleMotor *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSimpleMotor::rate",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSimpleMotor,0))){
+    SWIG_fail_ptr("cpSimpleMotor_rate_set",1,SWIGTYPE_p_cpSimpleMotor);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSimpleMotor_rate_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->rate = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotor_rate_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSimpleMotor *arg1 = (struct cpSimpleMotor *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSimpleMotor::rate",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotor::rate",1,"struct cpSimpleMotor *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSimpleMotor,0))){
+    SWIG_fail_ptr("cpSimpleMotor_rate_get",1,SWIGTYPE_p_cpSimpleMotor);
+  }
+  
+  result =  ((arg1)->rate);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotor_iSum_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSimpleMotor *arg1 = (struct cpSimpleMotor *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSimpleMotor::iSum",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotor::iSum",1,"struct cpSimpleMotor *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSimpleMotor::iSum",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSimpleMotor,0))){
+    SWIG_fail_ptr("cpSimpleMotor_iSum_set",1,SWIGTYPE_p_cpSimpleMotor);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSimpleMotor_iSum_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->iSum = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotor_iSum_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSimpleMotor *arg1 = (struct cpSimpleMotor *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSimpleMotor::iSum",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotor::iSum",1,"struct cpSimpleMotor *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSimpleMotor,0))){
+    SWIG_fail_ptr("cpSimpleMotor_iSum_get",1,SWIGTYPE_p_cpSimpleMotor);
+  }
+  
+  result =  ((arg1)->iSum);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotor_jAcc_set(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSimpleMotor *arg1 = (struct cpSimpleMotor *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSimpleMotor::jAcc",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotor::jAcc",1,"struct cpSimpleMotor *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSimpleMotor::jAcc",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSimpleMotor,0))){
+    SWIG_fail_ptr("cpSimpleMotor_jAcc_set",1,SWIGTYPE_p_cpSimpleMotor);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSimpleMotor_jAcc_set",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  if (arg1) (arg1)->jAcc = arg2;
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotor_jAcc_get(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSimpleMotor *arg1 = (struct cpSimpleMotor *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSimpleMotor::jAcc",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotor::jAcc",1,"struct cpSimpleMotor *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSimpleMotor,0))){
+    SWIG_fail_ptr("cpSimpleMotor_jAcc_get",1,SWIGTYPE_p_cpSimpleMotor);
+  }
+  
+  result =  ((arg1)->jAcc);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_new_cpSimpleMotor(lua_State* L) {
+  int SWIG_arg = 0;
+  struct cpSimpleMotor *result = 0 ;
+  
+  SWIG_check_num_args("cpSimpleMotor::cpSimpleMotor",0,0)
+  result = (struct cpSimpleMotor *)calloc(1, sizeof(struct cpSimpleMotor));
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSimpleMotor,1); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static void swig_delete_cpSimpleMotor(void *obj) {
+struct cpSimpleMotor *arg1 = (struct cpSimpleMotor *) obj;
+free((char *) arg1);
+}
+static int _proxy__wrap_new_cpSimpleMotor(lua_State *L) {
+    assert(lua_istable(L,1));
+    lua_pushcfunction(L,_wrap_new_cpSimpleMotor);
+    assert(!lua_isnil(L,-1));
+    lua_replace(L,1); /* replace our table with real constructor */
+    lua_call(L,lua_gettop(L)-1,1);
+    return 1;
+}
+static swig_lua_attribute swig_cpSimpleMotor_attributes[] = {
+    { "constraint", _wrap_cpSimpleMotor_constraint_get, _wrap_cpSimpleMotor_constraint_set },
+    { "rate", _wrap_cpSimpleMotor_rate_get, _wrap_cpSimpleMotor_rate_set },
+    { "iSum", _wrap_cpSimpleMotor_iSum_get, _wrap_cpSimpleMotor_iSum_set },
+    { "jAcc", _wrap_cpSimpleMotor_jAcc_get, _wrap_cpSimpleMotor_jAcc_set },
+    {0,0,0}
+};
+static swig_lua_method swig_cpSimpleMotor_methods[]= {
+    {0,0}
+};
+static swig_lua_method swig_cpSimpleMotor_meta[] = {
+    {0,0}
+};
+
+static swig_lua_attribute swig_cpSimpleMotor_Sf_SwigStatic_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_const_info swig_cpSimpleMotor_Sf_SwigStatic_constants[]= {
+    {0,0,0,0,0,0}
+};
+static swig_lua_method swig_cpSimpleMotor_Sf_SwigStatic_methods[]= {
+    {0,0}
+};
+static swig_lua_class* swig_cpSimpleMotor_Sf_SwigStatic_classes[]= {
+    0
+};
+
+static swig_lua_namespace swig_cpSimpleMotor_Sf_SwigStatic = {
+    "cpSimpleMotor",
+    swig_cpSimpleMotor_Sf_SwigStatic_methods,
+    swig_cpSimpleMotor_Sf_SwigStatic_attributes,
+    swig_cpSimpleMotor_Sf_SwigStatic_constants,
+    swig_cpSimpleMotor_Sf_SwigStatic_classes,
+    0
+};
+static swig_lua_class *swig_cpSimpleMotor_bases[] = {0};
+static const char *swig_cpSimpleMotor_base_names[] = {0};
+static swig_lua_class _wrap_class_cpSimpleMotor = { "cpSimpleMotor", "cpSimpleMotor", &SWIGTYPE_p_cpSimpleMotor,_proxy__wrap_new_cpSimpleMotor, swig_delete_cpSimpleMotor, swig_cpSimpleMotor_methods, swig_cpSimpleMotor_attributes, &swig_cpSimpleMotor_Sf_SwigStatic, swig_cpSimpleMotor_meta, swig_cpSimpleMotor_bases, swig_cpSimpleMotor_base_names };
+
+static int _wrap_cpSimpleMotorAlloc(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSimpleMotor *result = 0 ;
+  
+  SWIG_check_num_args("cpSimpleMotorAlloc",0,0)
+  result = (cpSimpleMotor *)cpSimpleMotorAlloc();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSimpleMotor,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotorInit(lua_State* L) {
+  int SWIG_arg = 0;
+  cpSimpleMotor *arg1 = (cpSimpleMotor *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpBody *arg3 = (cpBody *) 0 ;
+  cpFloat arg4 ;
+  cpFloat *argp4 ;
+  cpSimpleMotor *result = 0 ;
+  
+  SWIG_check_num_args("cpSimpleMotorInit",4,4)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotorInit",1,"cpSimpleMotor *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSimpleMotorInit",2,"cpBody *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpSimpleMotorInit",3,"cpBody *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpSimpleMotorInit",4,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpSimpleMotor,0))){
+    SWIG_fail_ptr("cpSimpleMotorInit",1,SWIGTYPE_p_cpSimpleMotor);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSimpleMotorInit",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSimpleMotorInit",3,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSimpleMotorInit",4,SWIGTYPE_p_cpFloat);
+  }
+  arg4 = *argp4;
+  
+  result = (cpSimpleMotor *)cpSimpleMotorInit(arg1,arg2,arg3,arg4);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpSimpleMotor,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotorNew(lua_State* L) {
+  int SWIG_arg = 0;
+  cpBody *arg1 = (cpBody *) 0 ;
+  cpBody *arg2 = (cpBody *) 0 ;
+  cpFloat arg3 ;
+  cpFloat *argp3 ;
+  cpConstraint *result = 0 ;
+  
+  SWIG_check_num_args("cpSimpleMotorNew",3,3)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotorNew",1,"cpBody *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpSimpleMotorNew",2,"cpBody *");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpSimpleMotorNew",3,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSimpleMotorNew",1,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpBody,0))){
+    SWIG_fail_ptr("cpSimpleMotorNew",2,SWIGTYPE_p_cpBody);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSimpleMotorNew",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = (cpConstraint *)cpSimpleMotorNew(arg1,arg2,arg3);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_cpConstraint,0); SWIG_arg++; 
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotorGetRate(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpSimpleMotorGetRate",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotorGetRate",1,"cpConstraint const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSimpleMotorGetRate",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  result = cpSimpleMotorGetRate((cpConstraint const *)arg1);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpSimpleMotorSetRate(lua_State* L) {
+  int SWIG_arg = 0;
+  cpConstraint *arg1 = (cpConstraint *) 0 ;
+  cpFloat arg2 ;
+  cpFloat *argp2 ;
+  
+  SWIG_check_num_args("cpSimpleMotorSetRate",2,2)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cpSimpleMotorSetRate",1,"cpConstraint *");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpSimpleMotorSetRate",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_cpConstraint,0))){
+    SWIG_fail_ptr("cpSimpleMotorSetRate",1,SWIGTYPE_p_cpConstraint);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpSimpleMotorSetRate",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  cpSimpleMotorSetRate(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpInitChipmunk(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("cpInitChipmunk",0,0)
+  cpInitChipmunk();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpEnableSegmentToSegmentCollisions(lua_State* L) {
+  int SWIG_arg = 0;
+  
+  SWIG_check_num_args("cpEnableSegmentToSegmentCollisions",0,0)
+  cpEnableSegmentToSegmentCollisions();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpMomentForCircle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpFloat arg2 ;
+  cpFloat arg3 ;
+  cpVect arg4 ;
+  cpFloat *argp1 ;
+  cpFloat *argp2 ;
+  cpFloat *argp3 ;
+  cpVect *argp4 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpMomentForCircle",4,4)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpMomentForCircle",1,"cpFloat");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpMomentForCircle",2,"cpFloat");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpMomentForCircle",3,"cpFloat");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpMomentForCircle",4,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMomentForCircle",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMomentForCircle",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMomentForCircle",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpMomentForCircle",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  result = cpMomentForCircle(arg1,arg2,arg3,arg4);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpAreaForCircle(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpFloat arg2 ;
+  cpFloat *argp1 ;
+  cpFloat *argp2 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpAreaForCircle",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpAreaForCircle",1,"cpFloat");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpAreaForCircle",2,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpAreaForCircle",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpAreaForCircle",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  result = cpAreaForCircle(arg1,arg2);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpMomentForSegment(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpVect arg2 ;
+  cpVect arg3 ;
+  cpFloat *argp1 ;
+  cpVect *argp2 ;
+  cpVect *argp3 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpMomentForSegment",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpMomentForSegment",1,"cpFloat");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpMomentForSegment",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpMomentForSegment",3,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMomentForSegment",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpMomentForSegment",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpMomentForSegment",3,SWIGTYPE_p_cpVect);
+  }
+  arg3 = *argp3;
+  
+  result = cpMomentForSegment(arg1,arg2,arg3);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpAreaForSegment(lua_State* L) {
+  int SWIG_arg = 0;
+  cpVect arg1 ;
+  cpVect arg2 ;
+  cpFloat arg3 ;
+  cpVect *argp1 ;
+  cpVect *argp2 ;
+  cpFloat *argp3 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpAreaForSegment",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpAreaForSegment",1,"cpVect");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpAreaForSegment",2,"cpVect");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpAreaForSegment",3,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpAreaForSegment",1,SWIGTYPE_p_cpVect);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpAreaForSegment",2,SWIGTYPE_p_cpVect);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpAreaForSegment",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = cpAreaForSegment(arg1,arg2,arg3);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpMomentForPoly(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  int arg2 ;
+  cpVect *arg3 = (cpVect *) 0 ;
+  cpVect arg4 ;
+  cpFloat *argp1 ;
+  cpVect *argp4 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpMomentForPoly",4,4)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpMomentForPoly",1,"cpFloat");
+  if(!lua_isnumber(L,2)) SWIG_fail_arg("cpMomentForPoly",2,"int");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpMomentForPoly",3,"cpVect const *");
+  if(!lua_isuserdata(L,4)) SWIG_fail_arg("cpMomentForPoly",4,"cpVect");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMomentForPoly",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  arg2 = (int)lua_tonumber(L, 2);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpMomentForPoly",3,SWIGTYPE_p_cpVect);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&argp4,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpMomentForPoly",4,SWIGTYPE_p_cpVect);
+  }
+  arg4 = *argp4;
+  
+  result = cpMomentForPoly(arg1,arg2,(cpVect const *)arg3,arg4);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpAreaForPoly(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  cpVect *arg2 = (cpVect *) 0 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpAreaForPoly",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("cpAreaForPoly",1,"int const");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpAreaForPoly",2,"cpVect const *");
+  arg1 = (int const)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpAreaForPoly",2,SWIGTYPE_p_cpVect);
+  }
+  
+  result = cpAreaForPoly(arg1,(cpVect const *)arg2);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpCentroidForPoly(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  cpVect *arg2 = (cpVect *) 0 ;
+  cpVect result;
+  
+  SWIG_check_num_args("cpCentroidForPoly",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("cpCentroidForPoly",1,"int const");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpCentroidForPoly",2,"cpVect const *");
+  arg1 = (int const)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpCentroidForPoly",2,SWIGTYPE_p_cpVect);
+  }
+  
+  result = cpCentroidForPoly(arg1,(cpVect const *)arg2);
+  {
+    cpVect * resultptr;
+    resultptr = (cpVect *) malloc(sizeof(cpVect));
+    memmove(resultptr, &result, sizeof(cpVect));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpVect,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpRecenterPoly(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  cpVect *arg2 = (cpVect *) 0 ;
+  
+  SWIG_check_num_args("cpRecenterPoly",2,2)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("cpRecenterPoly",1,"int const");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpRecenterPoly",2,"cpVect *");
+  arg1 = (int const)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpRecenterPoly",2,SWIGTYPE_p_cpVect);
+  }
+  
+  cpRecenterPoly(arg1,arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpMomentForBox(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpFloat arg2 ;
+  cpFloat arg3 ;
+  cpFloat *argp1 ;
+  cpFloat *argp2 ;
+  cpFloat *argp3 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpMomentForBox",3,3)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpMomentForBox",1,"cpFloat");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpMomentForBox",2,"cpFloat");
+  if(!lua_isuserdata(L,3)) SWIG_fail_arg("cpMomentForBox",3,"cpFloat");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMomentForBox",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMomentForBox",2,SWIGTYPE_p_cpFloat);
+  }
+  arg2 = *argp2;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&argp3,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMomentForBox",3,SWIGTYPE_p_cpFloat);
+  }
+  arg3 = *argp3;
+  
+  result = cpMomentForBox(arg1,arg2,arg3);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpMomentForBox2(lua_State* L) {
+  int SWIG_arg = 0;
+  cpFloat arg1 ;
+  cpBB arg2 ;
+  cpFloat *argp1 ;
+  cpBB *argp2 ;
+  cpFloat result;
+  
+  SWIG_check_num_args("cpMomentForBox2",2,2)
+  if(!lua_isuserdata(L,1)) SWIG_fail_arg("cpMomentForBox2",1,"cpFloat");
+  if(!lua_isuserdata(L,2)) SWIG_fail_arg("cpMomentForBox2",2,"cpBB");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&argp1,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpMomentForBox2",1,SWIGTYPE_p_cpFloat);
+  }
+  arg1 = *argp1;
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&argp2,SWIGTYPE_p_cpBB,0))){
+    SWIG_fail_ptr("cpMomentForBox2",2,SWIGTYPE_p_cpBB);
+  }
+  arg2 = *argp2;
+  
+  result = cpMomentForBox2(arg1,arg2);
+  {
+    cpFloat * resultptr;
+    resultptr = (cpFloat *) malloc(sizeof(cpFloat));
+    memmove(resultptr, &result, sizeof(cpFloat));
+    SWIG_NewPointerObj(L,(void *) resultptr,SWIGTYPE_p_cpFloat,1); SWIG_arg++;
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cpConvexHull(lua_State* L) {
+  int SWIG_arg = 0;
+  int arg1 ;
+  cpVect *arg2 = (cpVect *) 0 ;
+  cpVect *arg3 = (cpVect *) 0 ;
+  int *arg4 = (int *) 0 ;
+  cpFloat arg5 ;
+  cpFloat *argp5 ;
+  int result;
+  
+  SWIG_check_num_args("cpConvexHull",5,5)
+  if(!lua_isnumber(L,1)) SWIG_fail_arg("cpConvexHull",1,"int");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("cpConvexHull",2,"cpVect *");
+  if(!SWIG_isptrtype(L,3)) SWIG_fail_arg("cpConvexHull",3,"cpVect *");
+  if(!SWIG_isptrtype(L,4)) SWIG_fail_arg("cpConvexHull",4,"int *");
+  if(!lua_isuserdata(L,5)) SWIG_fail_arg("cpConvexHull",5,"cpFloat");
+  arg1 = (int)lua_tonumber(L, 1);
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpConvexHull",2,SWIGTYPE_p_cpVect);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,3,(void**)&arg3,SWIGTYPE_p_cpVect,0))){
+    SWIG_fail_ptr("cpConvexHull",3,SWIGTYPE_p_cpVect);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,4,(void**)&arg4,SWIGTYPE_p_int,0))){
+    SWIG_fail_ptr("cpConvexHull",4,SWIGTYPE_p_int);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,5,(void**)&argp5,SWIGTYPE_p_cpFloat,0))){
+    SWIG_fail_ptr("cpConvexHull",5,SWIGTYPE_p_cpFloat);
+  }
+  arg5 = *argp5;
+  
+  result = (int)cpConvexHull(arg1,arg2,arg3,arg4,arg5);
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_giftizCompleteMission(lua_State* L) {
   int SWIG_arg = 0;
   
@@ -8194,12 +36389,22 @@ fail:
 
 static swig_lua_attribute swig_SwigModule_attributes[] = {
     { "soundInstances", _wrap_soundInstances_get, _wrap_soundInstances_set },
+    { "cpvzero", _wrap_cpvzero_get, SWIG_Lua_set_immutable },
     {0,0,0}
 };
 static swig_lua_const_info swig_SwigModule_constants[]= {
     {SWIG_LUA_CONSTTAB_INT("MAX_KEYS", 512)},
     {SWIG_LUA_CONSTTAB_INT("SHORT_SAMPLE_LIMIT", (1024*512))},
     {SWIG_LUA_CONSTTAB_INT("MAX_SOUNDS", 512)},
+    {SWIG_LUA_CONSTTAB_INT("CP_CIRCLE_SHAPE", CP_CIRCLE_SHAPE)},
+    {SWIG_LUA_CONSTTAB_INT("CP_SEGMENT_SHAPE", CP_SEGMENT_SHAPE)},
+    {SWIG_LUA_CONSTTAB_INT("CP_POLY_SHAPE", CP_POLY_SHAPE)},
+    {SWIG_LUA_CONSTTAB_INT("CP_NUM_SHAPES", CP_NUM_SHAPES)},
+    {SWIG_LUA_CONSTTAB_INT("CP_MAX_CONTACTS_PER_ARBITER", 2)},
+    {SWIG_LUA_CONSTTAB_INT("cpArbiterStateFirstColl", cpArbiterStateFirstColl)},
+    {SWIG_LUA_CONSTTAB_INT("cpArbiterStateNormal", cpArbiterStateNormal)},
+    {SWIG_LUA_CONSTTAB_INT("cpArbiterStateIgnore", cpArbiterStateIgnore)},
+    {SWIG_LUA_CONSTTAB_INT("cpArbiterStateCached", cpArbiterStateCached)},
     {0,0,0,0,0,0}
 };
 static swig_lua_method swig_SwigModule_methods[]= {
@@ -8281,6 +36486,401 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "iapCanRestorePurchases", _wrap_iapCanRestorePurchases},
     { "iapRestorePurchases", _wrap_iapRestorePurchases},
     { "iapAvailable", _wrap_iapAvailable},
+    { "cpv", _wrap_cpv},
+    { "cpvslerp", _wrap_cpvslerp},
+    { "cpvslerpconst", _wrap_cpvslerpconst},
+    { "cpvstr", _wrap_cpvstr},
+    { "cpveql", _wrap_cpveql},
+    { "cpvadd", _wrap_cpvadd},
+    { "cpvsub", _wrap_cpvsub},
+    { "cpvneg", _wrap_cpvneg},
+    { "cpvmult", _wrap_cpvmult},
+    { "cpvdot", _wrap_cpvdot},
+    { "cpvcross", _wrap_cpvcross},
+    { "cpvperp", _wrap_cpvperp},
+    { "cpvrperp", _wrap_cpvrperp},
+    { "cpvproject", _wrap_cpvproject},
+    { "cpvforangle", _wrap_cpvforangle},
+    { "cpvtoangle", _wrap_cpvtoangle},
+    { "cpvrotate", _wrap_cpvrotate},
+    { "cpvunrotate", _wrap_cpvunrotate},
+    { "cpvlengthsq", _wrap_cpvlengthsq},
+    { "cpvlength", _wrap_cpvlength},
+    { "cpvlerp", _wrap_cpvlerp},
+    { "cpvnormalize", _wrap_cpvnormalize},
+    { "cpvnormalize_safe", _wrap_cpvnormalize_safe},
+    { "cpvclamp", _wrap_cpvclamp},
+    { "cpvlerpconst", _wrap_cpvlerpconst},
+    { "cpvdist", _wrap_cpvdist},
+    { "cpvdistsq", _wrap_cpvdistsq},
+    { "cpvnear", _wrap_cpvnear},
+    { "cpMat2x2New", _wrap_cpMat2x2New},
+    { "cpMat2x2Transform", _wrap_cpMat2x2Transform},
+    { "cpBBNew", _wrap_cpBBNew},
+    { "cpBBNewForCircle", _wrap_cpBBNewForCircle},
+    { "cpBBIntersects", _wrap_cpBBIntersects},
+    { "cpBBContainsBB", _wrap_cpBBContainsBB},
+    { "cpBBContainsVect", _wrap_cpBBContainsVect},
+    { "cpBBMerge", _wrap_cpBBMerge},
+    { "cpBBExpand", _wrap_cpBBExpand},
+    { "cpBBCenter", _wrap_cpBBCenter},
+    { "cpBBArea", _wrap_cpBBArea},
+    { "cpBBMergedArea", _wrap_cpBBMergedArea},
+    { "cpBBSegmentQuery", _wrap_cpBBSegmentQuery},
+    { "cpBBIntersectsSegment", _wrap_cpBBIntersectsSegment},
+    { "cpBBClampVect", _wrap_cpBBClampVect},
+    { "cpBBWrapVect", _wrap_cpBBWrapVect},
+    { "cpSpaceHashAlloc", _wrap_cpSpaceHashAlloc},
+    { "cpSpaceHashInit", _wrap_cpSpaceHashInit},
+    { "cpSpaceHashNew", _wrap_cpSpaceHashNew},
+    { "cpSpaceHashResize", _wrap_cpSpaceHashResize},
+    { "cpBBTreeAlloc", _wrap_cpBBTreeAlloc},
+    { "cpBBTreeInit", _wrap_cpBBTreeInit},
+    { "cpBBTreeNew", _wrap_cpBBTreeNew},
+    { "cpBBTreeOptimize", _wrap_cpBBTreeOptimize},
+    { "cpBBTreeSetVelocityFunc", _wrap_cpBBTreeSetVelocityFunc},
+    { "cpSweep1DAlloc", _wrap_cpSweep1DAlloc},
+    { "cpSweep1DInit", _wrap_cpSweep1DInit},
+    { "cpSweep1DNew", _wrap_cpSweep1DNew},
+    { "cpSpatialIndexFree", _wrap_cpSpatialIndexFree},
+    { "cpSpatialIndexCollideStatic", _wrap_cpSpatialIndexCollideStatic},
+    { "cpSpatialIndexDestroy", _wrap_cpSpatialIndexDestroy},
+    { "cpSpatialIndexCount", _wrap_cpSpatialIndexCount},
+    { "cpSpatialIndexEach", _wrap_cpSpatialIndexEach},
+    { "cpSpatialIndexContains", _wrap_cpSpatialIndexContains},
+    { "cpSpatialIndexInsert", _wrap_cpSpatialIndexInsert},
+    { "cpSpatialIndexRemove", _wrap_cpSpatialIndexRemove},
+    { "cpSpatialIndexReindex", _wrap_cpSpatialIndexReindex},
+    { "cpSpatialIndexReindexObject", _wrap_cpSpatialIndexReindexObject},
+    { "cpSpatialIndexQuery", _wrap_cpSpatialIndexQuery},
+    { "cpSpatialIndexSegmentQuery", _wrap_cpSpatialIndexSegmentQuery},
+    { "cpSpatialIndexReindexQuery", _wrap_cpSpatialIndexReindexQuery},
+    { "cpBodyAlloc", _wrap_cpBodyAlloc},
+    { "cpBodyInit", _wrap_cpBodyInit},
+    { "cpBodyNew", _wrap_cpBodyNew},
+    { "cpBodyInitStatic", _wrap_cpBodyInitStatic},
+    { "cpBodyNewStatic", _wrap_cpBodyNewStatic},
+    { "cpBodyDestroy", _wrap_cpBodyDestroy},
+    { "cpBodyFree", _wrap_cpBodyFree},
+    { "cpBodySanityCheck", _wrap_cpBodySanityCheck},
+    { "cpBodyActivate", _wrap_cpBodyActivate},
+    { "cpBodyActivateStatic", _wrap_cpBodyActivateStatic},
+    { "cpBodySleep", _wrap_cpBodySleep},
+    { "cpBodySleepWithGroup", _wrap_cpBodySleepWithGroup},
+    { "cpBodyIsSleeping", _wrap_cpBodyIsSleeping},
+    { "cpBodyIsStatic", _wrap_cpBodyIsStatic},
+    { "cpBodyIsRogue", _wrap_cpBodyIsRogue},
+    { "cpBodyGetSpace", _wrap_cpBodyGetSpace},
+    { "cpBodyGetMass", _wrap_cpBodyGetMass},
+    { "cpBodySetMass", _wrap_cpBodySetMass},
+    { "cpBodyGetMoment", _wrap_cpBodyGetMoment},
+    { "cpBodySetMoment", _wrap_cpBodySetMoment},
+    { "cpBodyGetPos", _wrap_cpBodyGetPos},
+    { "cpBodySetPos", _wrap_cpBodySetPos},
+    { "cpBodyGetVel", _wrap_cpBodyGetVel},
+    { "cpBodySetVel", _wrap_cpBodySetVel},
+    { "cpBodyGetForce", _wrap_cpBodyGetForce},
+    { "cpBodySetForce", _wrap_cpBodySetForce},
+    { "cpBodyGetAngle", _wrap_cpBodyGetAngle},
+    { "cpBodySetAngle", _wrap_cpBodySetAngle},
+    { "cpBodyGetAngVel", _wrap_cpBodyGetAngVel},
+    { "cpBodySetAngVel", _wrap_cpBodySetAngVel},
+    { "cpBodyGetTorque", _wrap_cpBodyGetTorque},
+    { "cpBodySetTorque", _wrap_cpBodySetTorque},
+    { "cpBodyGetRot", _wrap_cpBodyGetRot},
+    { "cpBodyGetVelLimit", _wrap_cpBodyGetVelLimit},
+    { "cpBodySetVelLimit", _wrap_cpBodySetVelLimit},
+    { "cpBodyGetAngVelLimit", _wrap_cpBodyGetAngVelLimit},
+    { "cpBodySetAngVelLimit", _wrap_cpBodySetAngVelLimit},
+    { "cpBodyGetUserData", _wrap_cpBodyGetUserData},
+    { "cpBodySetUserData", _wrap_cpBodySetUserData},
+    { "cpBodyUpdateVelocity", _wrap_cpBodyUpdateVelocity},
+    { "cpBodyUpdatePosition", _wrap_cpBodyUpdatePosition},
+    { "cpBodyLocal2World", _wrap_cpBodyLocal2World},
+    { "cpBodyWorld2Local", _wrap_cpBodyWorld2Local},
+    { "cpBodyResetForces", _wrap_cpBodyResetForces},
+    { "cpBodyApplyForce", _wrap_cpBodyApplyForce},
+    { "cpBodyApplyImpulse", _wrap_cpBodyApplyImpulse},
+    { "cpBodyGetVelAtWorldPoint", _wrap_cpBodyGetVelAtWorldPoint},
+    { "cpBodyGetVelAtLocalPoint", _wrap_cpBodyGetVelAtLocalPoint},
+    { "cpBodyKineticEnergy", _wrap_cpBodyKineticEnergy},
+    { "cpBodyEachShape", _wrap_cpBodyEachShape},
+    { "cpBodyEachConstraint", _wrap_cpBodyEachConstraint},
+    { "cpBodyEachArbiter", _wrap_cpBodyEachArbiter},
+    { "cpShapeDestroy", _wrap_cpShapeDestroy},
+    { "cpShapeFree", _wrap_cpShapeFree},
+    { "cpShapeCacheBB", _wrap_cpShapeCacheBB},
+    { "cpShapeUpdate", _wrap_cpShapeUpdate},
+    { "cpShapePointQuery", _wrap_cpShapePointQuery},
+    { "cpShapeNearestPointQuery", _wrap_cpShapeNearestPointQuery},
+    { "cpShapeSegmentQuery", _wrap_cpShapeSegmentQuery},
+    { "cpSegmentQueryHitPoint", _wrap_cpSegmentQueryHitPoint},
+    { "cpSegmentQueryHitDist", _wrap_cpSegmentQueryHitDist},
+    { "cpShapeGetSpace", _wrap_cpShapeGetSpace},
+    { "cpShapeGetBody", _wrap_cpShapeGetBody},
+    { "cpShapeSetBody", _wrap_cpShapeSetBody},
+    { "cpShapeGetBB", _wrap_cpShapeGetBB},
+    { "cpShapeGetSensor", _wrap_cpShapeGetSensor},
+    { "cpShapeSetSensor", _wrap_cpShapeSetSensor},
+    { "cpShapeGetElasticity", _wrap_cpShapeGetElasticity},
+    { "cpShapeSetElasticity", _wrap_cpShapeSetElasticity},
+    { "cpShapeGetFriction", _wrap_cpShapeGetFriction},
+    { "cpShapeSetFriction", _wrap_cpShapeSetFriction},
+    { "cpShapeGetSurfaceVelocity", _wrap_cpShapeGetSurfaceVelocity},
+    { "cpShapeSetSurfaceVelocity", _wrap_cpShapeSetSurfaceVelocity},
+    { "cpShapeGetUserData", _wrap_cpShapeGetUserData},
+    { "cpShapeSetUserData", _wrap_cpShapeSetUserData},
+    { "cpShapeGetCollisionType", _wrap_cpShapeGetCollisionType},
+    { "cpShapeSetCollisionType", _wrap_cpShapeSetCollisionType},
+    { "cpShapeGetGroup", _wrap_cpShapeGetGroup},
+    { "cpShapeSetGroup", _wrap_cpShapeSetGroup},
+    { "cpShapeGetLayers", _wrap_cpShapeGetLayers},
+    { "cpShapeSetLayers", _wrap_cpShapeSetLayers},
+    { "cpResetShapeIdCounter", _wrap_cpResetShapeIdCounter},
+    { "cpCircleShapeAlloc", _wrap_cpCircleShapeAlloc},
+    { "cpCircleShapeInit", _wrap_cpCircleShapeInit},
+    { "cpCircleShapeNew", _wrap_cpCircleShapeNew},
+    { "cpCircleShapeGetOffset", _wrap_cpCircleShapeGetOffset},
+    { "cpCircleShapeGetRadius", _wrap_cpCircleShapeGetRadius},
+    { "cpSegmentShapeAlloc", _wrap_cpSegmentShapeAlloc},
+    { "cpSegmentShapeInit", _wrap_cpSegmentShapeInit},
+    { "cpSegmentShapeNew", _wrap_cpSegmentShapeNew},
+    { "cpSegmentShapeSetNeighbors", _wrap_cpSegmentShapeSetNeighbors},
+    { "cpSegmentShapeGetA", _wrap_cpSegmentShapeGetA},
+    { "cpSegmentShapeGetB", _wrap_cpSegmentShapeGetB},
+    { "cpSegmentShapeGetNormal", _wrap_cpSegmentShapeGetNormal},
+    { "cpSegmentShapeGetRadius", _wrap_cpSegmentShapeGetRadius},
+    { "cpPolyShapeAlloc", _wrap_cpPolyShapeAlloc},
+    { "cpPolyShapeInit", _wrap_cpPolyShapeInit},
+    { "cpPolyShapeInit2", _wrap_cpPolyShapeInit2},
+    { "cpPolyShapeNew", _wrap_cpPolyShapeNew},
+    { "cpPolyShapeNew2", _wrap_cpPolyShapeNew2},
+    { "cpBoxShapeInit", _wrap_cpBoxShapeInit},
+    { "cpBoxShapeInit2", _wrap_cpBoxShapeInit2},
+    { "cpBoxShapeInit3", _wrap_cpBoxShapeInit3},
+    { "cpBoxShapeNew", _wrap_cpBoxShapeNew},
+    { "cpBoxShapeNew2", _wrap_cpBoxShapeNew2},
+    { "cpBoxShapeNew3", _wrap_cpBoxShapeNew3},
+    { "cpPolyValidate", _wrap_cpPolyValidate},
+    { "cpPolyShapeGetNumVerts", _wrap_cpPolyShapeGetNumVerts},
+    { "cpPolyShapeGetVert", _wrap_cpPolyShapeGetVert},
+    { "cpPolyShapeGetRadius", _wrap_cpPolyShapeGetRadius},
+    { "cpArbiterGetElasticity", _wrap_cpArbiterGetElasticity},
+    { "cpArbiterSetElasticity", _wrap_cpArbiterSetElasticity},
+    { "cpArbiterGetFriction", _wrap_cpArbiterGetFriction},
+    { "cpArbiterSetFriction", _wrap_cpArbiterSetFriction},
+    { "cpArbiterGetSurfaceVelocity", _wrap_cpArbiterGetSurfaceVelocity},
+    { "cpArbiterSetSurfaceVelocity", _wrap_cpArbiterSetSurfaceVelocity},
+    { "cpArbiterGetUserData", _wrap_cpArbiterGetUserData},
+    { "cpArbiterSetUserData", _wrap_cpArbiterSetUserData},
+    { "cpArbiterTotalImpulse", _wrap_cpArbiterTotalImpulse},
+    { "cpArbiterTotalImpulseWithFriction", _wrap_cpArbiterTotalImpulseWithFriction},
+    { "cpArbiterTotalKE", _wrap_cpArbiterTotalKE},
+    { "cpArbiterIgnore", _wrap_cpArbiterIgnore},
+    { "cpArbiterGetShapes", _wrap_cpArbiterGetShapes},
+    { "cpArbiterGetBodies", _wrap_cpArbiterGetBodies},
+    { "cpArbiterGetContactPointSet", _wrap_cpArbiterGetContactPointSet},
+    { "cpArbiterSetContactPointSet", _wrap_cpArbiterSetContactPointSet},
+    { "cpArbiterIsFirstContact", _wrap_cpArbiterIsFirstContact},
+    { "cpArbiterGetCount", _wrap_cpArbiterGetCount},
+    { "cpArbiterGetNormal", _wrap_cpArbiterGetNormal},
+    { "cpArbiterGetPoint", _wrap_cpArbiterGetPoint},
+    { "cpArbiterGetDepth", _wrap_cpArbiterGetDepth},
+    { "cpSpaceAlloc", _wrap_cpSpaceAlloc},
+    { "cpSpaceInit", _wrap_cpSpaceInit},
+    { "cpSpaceNew", _wrap_cpSpaceNew},
+    { "cpSpaceDestroy", _wrap_cpSpaceDestroy},
+    { "cpSpaceFree", _wrap_cpSpaceFree},
+    { "cpSpaceGetIterations", _wrap_cpSpaceGetIterations},
+    { "cpSpaceSetIterations", _wrap_cpSpaceSetIterations},
+    { "cpSpaceGetGravity", _wrap_cpSpaceGetGravity},
+    { "cpSpaceSetGravity", _wrap_cpSpaceSetGravity},
+    { "cpSpaceGetDamping", _wrap_cpSpaceGetDamping},
+    { "cpSpaceSetDamping", _wrap_cpSpaceSetDamping},
+    { "cpSpaceGetIdleSpeedThreshold", _wrap_cpSpaceGetIdleSpeedThreshold},
+    { "cpSpaceSetIdleSpeedThreshold", _wrap_cpSpaceSetIdleSpeedThreshold},
+    { "cpSpaceGetSleepTimeThreshold", _wrap_cpSpaceGetSleepTimeThreshold},
+    { "cpSpaceSetSleepTimeThreshold", _wrap_cpSpaceSetSleepTimeThreshold},
+    { "cpSpaceGetCollisionSlop", _wrap_cpSpaceGetCollisionSlop},
+    { "cpSpaceSetCollisionSlop", _wrap_cpSpaceSetCollisionSlop},
+    { "cpSpaceGetCollisionBias", _wrap_cpSpaceGetCollisionBias},
+    { "cpSpaceSetCollisionBias", _wrap_cpSpaceSetCollisionBias},
+    { "cpSpaceGetCollisionPersistence", _wrap_cpSpaceGetCollisionPersistence},
+    { "cpSpaceSetCollisionPersistence", _wrap_cpSpaceSetCollisionPersistence},
+    { "cpSpaceGetEnableContactGraph", _wrap_cpSpaceGetEnableContactGraph},
+    { "cpSpaceSetEnableContactGraph", _wrap_cpSpaceSetEnableContactGraph},
+    { "cpSpaceGetUserData", _wrap_cpSpaceGetUserData},
+    { "cpSpaceSetUserData", _wrap_cpSpaceSetUserData},
+    { "cpSpaceGetStaticBody", _wrap_cpSpaceGetStaticBody},
+    { "cpSpaceGetCurrentTimeStep", _wrap_cpSpaceGetCurrentTimeStep},
+    { "cpSpaceIsLocked", _wrap_cpSpaceIsLocked},
+    { "cpSpaceSetDefaultCollisionHandler", _wrap_cpSpaceSetDefaultCollisionHandler},
+    { "cpSpaceAddCollisionHandler", _wrap_cpSpaceAddCollisionHandler},
+    { "cpSpaceRemoveCollisionHandler", _wrap_cpSpaceRemoveCollisionHandler},
+    { "cpSpaceAddShape", _wrap_cpSpaceAddShape},
+    { "cpSpaceAddStaticShape", _wrap_cpSpaceAddStaticShape},
+    { "cpSpaceAddBody", _wrap_cpSpaceAddBody},
+    { "cpSpaceAddConstraint", _wrap_cpSpaceAddConstraint},
+    { "cpSpaceRemoveShape", _wrap_cpSpaceRemoveShape},
+    { "cpSpaceRemoveStaticShape", _wrap_cpSpaceRemoveStaticShape},
+    { "cpSpaceRemoveBody", _wrap_cpSpaceRemoveBody},
+    { "cpSpaceRemoveConstraint", _wrap_cpSpaceRemoveConstraint},
+    { "cpSpaceContainsShape", _wrap_cpSpaceContainsShape},
+    { "cpSpaceContainsBody", _wrap_cpSpaceContainsBody},
+    { "cpSpaceContainsConstraint", _wrap_cpSpaceContainsConstraint},
+    { "cpSpaceConvertBodyToStatic", _wrap_cpSpaceConvertBodyToStatic},
+    { "cpSpaceConvertBodyToDynamic", _wrap_cpSpaceConvertBodyToDynamic},
+    { "cpSpaceAddPostStepCallback", _wrap_cpSpaceAddPostStepCallback},
+    { "cpSpacePointQuery", _wrap_cpSpacePointQuery},
+    { "cpSpacePointQueryFirst", _wrap_cpSpacePointQueryFirst},
+    { "cpSpaceNearestPointQuery", _wrap_cpSpaceNearestPointQuery},
+    { "cpSpaceNearestPointQueryNearest", _wrap_cpSpaceNearestPointQueryNearest},
+    { "cpSpaceSegmentQuery", _wrap_cpSpaceSegmentQuery},
+    { "cpSpaceSegmentQueryFirst", _wrap_cpSpaceSegmentQueryFirst},
+    { "cpSpaceBBQuery", _wrap_cpSpaceBBQuery},
+    { "cpSpaceShapeQuery", _wrap_cpSpaceShapeQuery},
+    { "cpSpaceActivateShapesTouchingShape", _wrap_cpSpaceActivateShapesTouchingShape},
+    { "cpSpaceEachBody", _wrap_cpSpaceEachBody},
+    { "cpSpaceEachShape", _wrap_cpSpaceEachShape},
+    { "cpSpaceEachConstraint", _wrap_cpSpaceEachConstraint},
+    { "cpSpaceReindexStatic", _wrap_cpSpaceReindexStatic},
+    { "cpSpaceReindexShape", _wrap_cpSpaceReindexShape},
+    { "cpSpaceReindexShapesForBody", _wrap_cpSpaceReindexShapesForBody},
+    { "cpSpaceUseSpatialHash", _wrap_cpSpaceUseSpatialHash},
+    { "cpSpaceStep", _wrap_cpSpaceStep},
+    { "cpConstraintDestroy", _wrap_cpConstraintDestroy},
+    { "cpConstraintFree", _wrap_cpConstraintFree},
+    { "cpConstraintActivateBodies", _wrap_cpConstraintActivateBodies},
+    { "cpConstraintGetSpace", _wrap_cpConstraintGetSpace},
+    { "cpConstraintGetA", _wrap_cpConstraintGetA},
+    { "cpConstraintGetB", _wrap_cpConstraintGetB},
+    { "cpConstraintGetMaxForce", _wrap_cpConstraintGetMaxForce},
+    { "cpConstraintSetMaxForce", _wrap_cpConstraintSetMaxForce},
+    { "cpConstraintGetErrorBias", _wrap_cpConstraintGetErrorBias},
+    { "cpConstraintSetErrorBias", _wrap_cpConstraintSetErrorBias},
+    { "cpConstraintGetMaxBias", _wrap_cpConstraintGetMaxBias},
+    { "cpConstraintSetMaxBias", _wrap_cpConstraintSetMaxBias},
+    { "cpConstraintGetPreSolveFunc", _wrap_cpConstraintGetPreSolveFunc},
+    { "cpConstraintSetPreSolveFunc", _wrap_cpConstraintSetPreSolveFunc},
+    { "cpConstraintGetPostSolveFunc", _wrap_cpConstraintGetPostSolveFunc},
+    { "cpConstraintSetPostSolveFunc", _wrap_cpConstraintSetPostSolveFunc},
+    { "cpConstraintGetUserData", _wrap_cpConstraintGetUserData},
+    { "cpConstraintSetUserData", _wrap_cpConstraintSetUserData},
+    { "cpConstraintGetImpulse", _wrap_cpConstraintGetImpulse},
+    { "cpPinJointGetClass", _wrap_cpPinJointGetClass},
+    { "cpPinJointAlloc", _wrap_cpPinJointAlloc},
+    { "cpPinJointInit", _wrap_cpPinJointInit},
+    { "cpPinJointNew", _wrap_cpPinJointNew},
+    { "cpPinJointGetAnchr1", _wrap_cpPinJointGetAnchr1},
+    { "cpPinJointSetAnchr1", _wrap_cpPinJointSetAnchr1},
+    { "cpPinJointGetAnchr2", _wrap_cpPinJointGetAnchr2},
+    { "cpPinJointSetAnchr2", _wrap_cpPinJointSetAnchr2},
+    { "cpPinJointGetDist", _wrap_cpPinJointGetDist},
+    { "cpPinJointSetDist", _wrap_cpPinJointSetDist},
+    { "cpSlideJointGetClass", _wrap_cpSlideJointGetClass},
+    { "cpSlideJointAlloc", _wrap_cpSlideJointAlloc},
+    { "cpSlideJointInit", _wrap_cpSlideJointInit},
+    { "cpSlideJointNew", _wrap_cpSlideJointNew},
+    { "cpSlideJointGetAnchr1", _wrap_cpSlideJointGetAnchr1},
+    { "cpSlideJointSetAnchr1", _wrap_cpSlideJointSetAnchr1},
+    { "cpSlideJointGetAnchr2", _wrap_cpSlideJointGetAnchr2},
+    { "cpSlideJointSetAnchr2", _wrap_cpSlideJointSetAnchr2},
+    { "cpSlideJointGetMin", _wrap_cpSlideJointGetMin},
+    { "cpSlideJointSetMin", _wrap_cpSlideJointSetMin},
+    { "cpSlideJointGetMax", _wrap_cpSlideJointGetMax},
+    { "cpSlideJointSetMax", _wrap_cpSlideJointSetMax},
+    { "cpPivotJointGetClass", _wrap_cpPivotJointGetClass},
+    { "cpPivotJointAlloc", _wrap_cpPivotJointAlloc},
+    { "cpPivotJointInit", _wrap_cpPivotJointInit},
+    { "cpPivotJointNew", _wrap_cpPivotJointNew},
+    { "cpPivotJointNew2", _wrap_cpPivotJointNew2},
+    { "cpPivotJointGetAnchr1", _wrap_cpPivotJointGetAnchr1},
+    { "cpPivotJointSetAnchr1", _wrap_cpPivotJointSetAnchr1},
+    { "cpPivotJointGetAnchr2", _wrap_cpPivotJointGetAnchr2},
+    { "cpPivotJointSetAnchr2", _wrap_cpPivotJointSetAnchr2},
+    { "cpGrooveJointGetClass", _wrap_cpGrooveJointGetClass},
+    { "cpGrooveJointAlloc", _wrap_cpGrooveJointAlloc},
+    { "cpGrooveJointInit", _wrap_cpGrooveJointInit},
+    { "cpGrooveJointNew", _wrap_cpGrooveJointNew},
+    { "cpGrooveJointGetGrooveA", _wrap_cpGrooveJointGetGrooveA},
+    { "cpGrooveJointSetGrooveA", _wrap_cpGrooveJointSetGrooveA},
+    { "cpGrooveJointGetGrooveB", _wrap_cpGrooveJointGetGrooveB},
+    { "cpGrooveJointSetGrooveB", _wrap_cpGrooveJointSetGrooveB},
+    { "cpGrooveJointGetAnchr2", _wrap_cpGrooveJointGetAnchr2},
+    { "cpGrooveJointSetAnchr2", _wrap_cpGrooveJointSetAnchr2},
+    { "cpDampedSpringGetClass", _wrap_cpDampedSpringGetClass},
+    { "cpDampedSpringAlloc", _wrap_cpDampedSpringAlloc},
+    { "cpDampedSpringInit", _wrap_cpDampedSpringInit},
+    { "cpDampedSpringNew", _wrap_cpDampedSpringNew},
+    { "cpDampedSpringGetAnchr1", _wrap_cpDampedSpringGetAnchr1},
+    { "cpDampedSpringSetAnchr1", _wrap_cpDampedSpringSetAnchr1},
+    { "cpDampedSpringGetAnchr2", _wrap_cpDampedSpringGetAnchr2},
+    { "cpDampedSpringSetAnchr2", _wrap_cpDampedSpringSetAnchr2},
+    { "cpDampedSpringGetRestLength", _wrap_cpDampedSpringGetRestLength},
+    { "cpDampedSpringSetRestLength", _wrap_cpDampedSpringSetRestLength},
+    { "cpDampedSpringGetStiffness", _wrap_cpDampedSpringGetStiffness},
+    { "cpDampedSpringSetStiffness", _wrap_cpDampedSpringSetStiffness},
+    { "cpDampedSpringGetDamping", _wrap_cpDampedSpringGetDamping},
+    { "cpDampedSpringSetDamping", _wrap_cpDampedSpringSetDamping},
+    { "cpDampedSpringGetSpringForceFunc", _wrap_cpDampedSpringGetSpringForceFunc},
+    { "cpDampedSpringSetSpringForceFunc", _wrap_cpDampedSpringSetSpringForceFunc},
+    { "cpDampedRotarySpringGetClass", _wrap_cpDampedRotarySpringGetClass},
+    { "cpDampedRotarySpringAlloc", _wrap_cpDampedRotarySpringAlloc},
+    { "cpDampedRotarySpringInit", _wrap_cpDampedRotarySpringInit},
+    { "cpDampedRotarySpringNew", _wrap_cpDampedRotarySpringNew},
+    { "cpDampedRotarySpringGetRestAngle", _wrap_cpDampedRotarySpringGetRestAngle},
+    { "cpDampedRotarySpringSetRestAngle", _wrap_cpDampedRotarySpringSetRestAngle},
+    { "cpDampedRotarySpringGetStiffness", _wrap_cpDampedRotarySpringGetStiffness},
+    { "cpDampedRotarySpringSetStiffness", _wrap_cpDampedRotarySpringSetStiffness},
+    { "cpDampedRotarySpringGetDamping", _wrap_cpDampedRotarySpringGetDamping},
+    { "cpDampedRotarySpringSetDamping", _wrap_cpDampedRotarySpringSetDamping},
+    { "cpDampedRotarySpringGetSpringTorqueFunc", _wrap_cpDampedRotarySpringGetSpringTorqueFunc},
+    { "cpDampedRotarySpringSetSpringTorqueFunc", _wrap_cpDampedRotarySpringSetSpringTorqueFunc},
+    { "cpRotaryLimitJointGetClass", _wrap_cpRotaryLimitJointGetClass},
+    { "cpRotaryLimitJointAlloc", _wrap_cpRotaryLimitJointAlloc},
+    { "cpRotaryLimitJointInit", _wrap_cpRotaryLimitJointInit},
+    { "cpRotaryLimitJointNew", _wrap_cpRotaryLimitJointNew},
+    { "cpRotaryLimitJointGetMin", _wrap_cpRotaryLimitJointGetMin},
+    { "cpRotaryLimitJointSetMin", _wrap_cpRotaryLimitJointSetMin},
+    { "cpRotaryLimitJointGetMax", _wrap_cpRotaryLimitJointGetMax},
+    { "cpRotaryLimitJointSetMax", _wrap_cpRotaryLimitJointSetMax},
+    { "cpRatchetJointGetClass", _wrap_cpRatchetJointGetClass},
+    { "cpRatchetJointAlloc", _wrap_cpRatchetJointAlloc},
+    { "cpRatchetJointInit", _wrap_cpRatchetJointInit},
+    { "cpRatchetJointNew", _wrap_cpRatchetJointNew},
+    { "cpRatchetJointGetAngle", _wrap_cpRatchetJointGetAngle},
+    { "cpRatchetJointSetAngle", _wrap_cpRatchetJointSetAngle},
+    { "cpRatchetJointGetPhase", _wrap_cpRatchetJointGetPhase},
+    { "cpRatchetJointSetPhase", _wrap_cpRatchetJointSetPhase},
+    { "cpRatchetJointGetRatchet", _wrap_cpRatchetJointGetRatchet},
+    { "cpRatchetJointSetRatchet", _wrap_cpRatchetJointSetRatchet},
+    { "cpGearJointGetClass", _wrap_cpGearJointGetClass},
+    { "cpGearJointAlloc", _wrap_cpGearJointAlloc},
+    { "cpGearJointInit", _wrap_cpGearJointInit},
+    { "cpGearJointNew", _wrap_cpGearJointNew},
+    { "cpGearJointGetPhase", _wrap_cpGearJointGetPhase},
+    { "cpGearJointSetPhase", _wrap_cpGearJointSetPhase},
+    { "cpGearJointGetRatio", _wrap_cpGearJointGetRatio},
+    { "cpGearJointSetRatio", _wrap_cpGearJointSetRatio},
+    { "cpSimpleMotorGetClass", _wrap_cpSimpleMotorGetClass},
+    { "cpSimpleMotorAlloc", _wrap_cpSimpleMotorAlloc},
+    { "cpSimpleMotorInit", _wrap_cpSimpleMotorInit},
+    { "cpSimpleMotorNew", _wrap_cpSimpleMotorNew},
+    { "cpSimpleMotorGetRate", _wrap_cpSimpleMotorGetRate},
+    { "cpSimpleMotorSetRate", _wrap_cpSimpleMotorSetRate},
+    { "cpInitChipmunk", _wrap_cpInitChipmunk},
+    { "cpEnableSegmentToSegmentCollisions", _wrap_cpEnableSegmentToSegmentCollisions},
+    { "cpMomentForCircle", _wrap_cpMomentForCircle},
+    { "cpAreaForCircle", _wrap_cpAreaForCircle},
+    { "cpMomentForSegment", _wrap_cpMomentForSegment},
+    { "cpAreaForSegment", _wrap_cpAreaForSegment},
+    { "cpMomentForPoly", _wrap_cpMomentForPoly},
+    { "cpAreaForPoly", _wrap_cpAreaForPoly},
+    { "cpCentroidForPoly", _wrap_cpCentroidForPoly},
+    { "cpRecenterPoly", _wrap_cpRecenterPoly},
+    { "cpMomentForBox", _wrap_cpMomentForBox},
+    { "cpMomentForBox2", _wrap_cpMomentForBox2},
+    { "cpConvexHull", _wrap_cpConvexHull},
     { "giftizCompleteMission", _wrap_giftizCompleteMission},
     { "giftizSetButtonVisible", _wrap_giftizSetButtonVisible},
     { "screenWidth", _wrap_screenWidth},
@@ -8301,7 +36901,7 @@ static swig_lua_method swig_SwigModule_methods[]= {
 };
 static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_Matrix2,
-&_wrap_class_Rect,
+&_wrap_class_Rekt,
 &_wrap_class_Texture,
 &_wrap_class_DisplayObject,
 &_wrap_class_RawBitmapData,
@@ -8310,6 +36910,37 @@ static swig_lua_class* swig_SwigModule_classes[]= {
 &_wrap_class_ogg_file,
 &_wrap_class_DecoderOgg_State,
 &_wrap_class_Audio,
+&_wrap_class_cpBB,
+&_wrap_class_cpSpatialIndex,
+&_wrap_class_cpSpatialIndexClass,
+&_wrap_class_cpComponentNode,
+&_wrap_class_cpBody,
+&_wrap_class_cpNearestPointQueryInfo,
+&_wrap_class_cpSegmentQueryInfo,
+&_wrap_class_cpShapeClass,
+&_wrap_class_cpShape,
+&_wrap_class_cpCircleShape,
+&_wrap_class_cpSegmentShape,
+&_wrap_class_cpSplittingPlane,
+&_wrap_class_cpPolyShape,
+&_wrap_class_cpCollisionHandler,
+&_wrap_class_cpArbiterThread,
+&_wrap_class_cpArbiter,
+&_wrap_class_cpContactPointSet,
+&_wrap_class_cpContactPointSet_points,
+&_wrap_class_cpSpace,
+&_wrap_class_cpConstraintClass,
+&_wrap_class_cpConstraint,
+&_wrap_class_cpPinJoint,
+&_wrap_class_cpSlideJoint,
+&_wrap_class_cpPivotJoint,
+&_wrap_class_cpGrooveJoint,
+&_wrap_class_cpDampedSpring,
+&_wrap_class_cpDampedRotarySpring,
+&_wrap_class_cpRotaryLimitJoint,
+&_wrap_class_cpRatchetJoint,
+&_wrap_class_cpGearJoint,
+&_wrap_class_cpSimpleMotor,
     0
 };
 static swig_lua_namespace* swig_SwigModule_namespaces[] = {
@@ -8341,13 +36972,99 @@ static swig_type_info _swigt__p_Matrix2 = {"_p_Matrix2", "struct Matrix2 *|Matri
 static swig_type_info _swigt__p_OggVorbis_File = {"_p_OggVorbis_File", "OggVorbis_File *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_PlatformAudio_T = {"_p_PlatformAudio_T", "struct PlatformAudio_T *|PlatformAudio *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_RawBitmapData = {"_p_RawBitmapData", "struct RawBitmapData *|RawBitmapData *", 0, 0, (void*)&_wrap_class_RawBitmapData, 0};
-static swig_type_info _swigt__p_Rect = {"_p_Rect", "Rect *", 0, 0, (void*)&_wrap_class_Rect, 0};
+static swig_type_info _swigt__p_Rekt = {"_p_Rekt", "Rekt *", 0, 0, (void*)&_wrap_class_Rekt, 0};
 static swig_type_info _swigt__p_Texture = {"_p_Texture", "struct Texture *|Texture *", 0, 0, (void*)&_wrap_class_Texture, 0};
+static swig_type_info _swigt__p_cpArbiter = {"_p_cpArbiter", "struct cpArbiter *|cpArbiter *", 0, 0, (void*)&_wrap_class_cpArbiter, 0};
+static swig_type_info _swigt__p_cpArbiterState = {"_p_cpArbiterState", "enum cpArbiterState *|cpArbiterState *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpArbiterThread = {"_p_cpArbiterThread", "struct cpArbiterThread *|cpArbiterThread *", 0, 0, (void*)&_wrap_class_cpArbiterThread, 0};
+static swig_type_info _swigt__p_cpBB = {"_p_cpBB", "struct cpBB *|cpBB *", 0, 0, (void*)&_wrap_class_cpBB, 0};
+static swig_type_info _swigt__p_cpBBTree = {"_p_cpBBTree", "struct cpBBTree *|cpBBTree *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpBody = {"_p_cpBody", "cpBody *|struct cpBody *", 0, 0, (void*)&_wrap_class_cpBody, 0};
+static swig_type_info _swigt__p_cpBool = {"_p_cpBool", "cpBool *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpCircleShape = {"_p_cpCircleShape", "struct cpCircleShape *|cpCircleShape *", 0, 0, (void*)&_wrap_class_cpCircleShape, 0};
+static swig_type_info _swigt__p_cpCollisionHandler = {"_p_cpCollisionHandler", "struct cpCollisionHandler *|cpCollisionHandler *", 0, 0, (void*)&_wrap_class_cpCollisionHandler, 0};
+static swig_type_info _swigt__p_cpCollisionType = {"_p_cpCollisionType", "cpCollisionType *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpComponentNode = {"_p_cpComponentNode", "struct cpComponentNode *|cpComponentNode *", 0, 0, (void*)&_wrap_class_cpComponentNode, 0};
+static swig_type_info _swigt__p_cpConstraint = {"_p_cpConstraint", "cpConstraint *|struct cpConstraint *", 0, 0, (void*)&_wrap_class_cpConstraint, 0};
+static swig_type_info _swigt__p_cpConstraintClass = {"_p_cpConstraintClass", "struct cpConstraintClass *|cpConstraintClass *", 0, 0, (void*)&_wrap_class_cpConstraintClass, 0};
+static swig_type_info _swigt__p_cpContact = {"_p_cpContact", "struct cpContact *|cpContact *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpContactBufferHeader = {"_p_cpContactBufferHeader", "struct cpContactBufferHeader *|cpContactBufferHeader *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpContactPointSet = {"_p_cpContactPointSet", "struct cpContactPointSet *|cpContactPointSet *", 0, 0, (void*)&_wrap_class_cpContactPointSet, 0};
+static swig_type_info _swigt__p_cpContactPointSet_points = {"_p_cpContactPointSet_points", "cpContactPointSet_points *", 0, 0, (void*)&_wrap_class_cpContactPointSet_points, 0};
+static swig_type_info _swigt__p_cpDampedRotarySpring = {"_p_cpDampedRotarySpring", "struct cpDampedRotarySpring *|cpDampedRotarySpring *", 0, 0, (void*)&_wrap_class_cpDampedRotarySpring, 0};
+static swig_type_info _swigt__p_cpDampedSpring = {"_p_cpDampedSpring", "struct cpDampedSpring *|cpDampedSpring *", 0, 0, (void*)&_wrap_class_cpDampedSpring, 0};
+static swig_type_info _swigt__p_cpDataPointer = {"_p_cpDataPointer", "cpDataPointer *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpFloat = {"_p_cpFloat", "cpFloat *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpGearJoint = {"_p_cpGearJoint", "struct cpGearJoint *|cpGearJoint *", 0, 0, (void*)&_wrap_class_cpGearJoint, 0};
+static swig_type_info _swigt__p_cpGrooveJoint = {"_p_cpGrooveJoint", "struct cpGrooveJoint *|cpGrooveJoint *", 0, 0, (void*)&_wrap_class_cpGrooveJoint, 0};
+static swig_type_info _swigt__p_cpGroup = {"_p_cpGroup", "cpGroup *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpHashValue = {"_p_cpHashValue", "cpHashValue *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpLayers = {"_p_cpLayers", "cpLayers *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpMat2x2 = {"_p_cpMat2x2", "cpMat2x2 *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpNearestPointQueryInfo = {"_p_cpNearestPointQueryInfo", "struct cpNearestPointQueryInfo *|cpNearestPointQueryInfo *", 0, 0, (void*)&_wrap_class_cpNearestPointQueryInfo, 0};
+static swig_type_info _swigt__p_cpPinJoint = {"_p_cpPinJoint", "struct cpPinJoint *|cpPinJoint *", 0, 0, (void*)&_wrap_class_cpPinJoint, 0};
+static swig_type_info _swigt__p_cpPivotJoint = {"_p_cpPivotJoint", "struct cpPivotJoint *|cpPivotJoint *", 0, 0, (void*)&_wrap_class_cpPivotJoint, 0};
+static swig_type_info _swigt__p_cpPolyShape = {"_p_cpPolyShape", "struct cpPolyShape *|cpPolyShape *", 0, 0, (void*)&_wrap_class_cpPolyShape, 0};
+static swig_type_info _swigt__p_cpRatchetJoint = {"_p_cpRatchetJoint", "struct cpRatchetJoint *|cpRatchetJoint *", 0, 0, (void*)&_wrap_class_cpRatchetJoint, 0};
+static swig_type_info _swigt__p_cpRotaryLimitJoint = {"_p_cpRotaryLimitJoint", "struct cpRotaryLimitJoint *|cpRotaryLimitJoint *", 0, 0, (void*)&_wrap_class_cpRotaryLimitJoint, 0};
+static swig_type_info _swigt__p_cpSegmentQueryInfo = {"_p_cpSegmentQueryInfo", "struct cpSegmentQueryInfo *|cpSegmentQueryInfo *", 0, 0, (void*)&_wrap_class_cpSegmentQueryInfo, 0};
+static swig_type_info _swigt__p_cpSegmentShape = {"_p_cpSegmentShape", "struct cpSegmentShape *|cpSegmentShape *", 0, 0, (void*)&_wrap_class_cpSegmentShape, 0};
+static swig_type_info _swigt__p_cpShape = {"_p_cpShape", "cpShape *|struct cpShape *", 0, 0, (void*)&_wrap_class_cpShape, 0};
+static swig_type_info _swigt__p_cpShapeClass = {"_p_cpShapeClass", "struct cpShapeClass *|cpShapeClass *", 0, 0, (void*)&_wrap_class_cpShapeClass, 0};
+static swig_type_info _swigt__p_cpShapeType = {"_p_cpShapeType", "enum cpShapeType *|cpShapeType *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpSimpleMotor = {"_p_cpSimpleMotor", "struct cpSimpleMotor *|cpSimpleMotor *", 0, 0, (void*)&_wrap_class_cpSimpleMotor, 0};
+static swig_type_info _swigt__p_cpSlideJoint = {"_p_cpSlideJoint", "struct cpSlideJoint *|cpSlideJoint *", 0, 0, (void*)&_wrap_class_cpSlideJoint, 0};
+static swig_type_info _swigt__p_cpSpace = {"_p_cpSpace", "cpSpace *|struct cpSpace *", 0, 0, (void*)&_wrap_class_cpSpace, 0};
+static swig_type_info _swigt__p_cpSpaceHash = {"_p_cpSpaceHash", "struct cpSpaceHash *|cpSpaceHash *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpSpatialIndex = {"_p_cpSpatialIndex", "struct cpSpatialIndex *|cpSpatialIndex *", 0, 0, (void*)&_wrap_class_cpSpatialIndex, 0};
+static swig_type_info _swigt__p_cpSpatialIndexClass = {"_p_cpSpatialIndexClass", "struct cpSpatialIndexClass *|cpSpatialIndexClass *", 0, 0, (void*)&_wrap_class_cpSpatialIndexClass, 0};
+static swig_type_info _swigt__p_cpSplittingPlane = {"_p_cpSplittingPlane", "struct cpSplittingPlane *|cpSplittingPlane *", 0, 0, (void*)&_wrap_class_cpSplittingPlane, 0};
+static swig_type_info _swigt__p_cpSweep1D = {"_p_cpSweep1D", "struct cpSweep1D *|cpSweep1D *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpTimestamp = {"_p_cpTimestamp", "cpTimestamp *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_cpVect = {"_p_cpVect", "cpVect *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpArbiter_p_cpSpace_p_void__cpBool = {"_p_f_p_cpArbiter_p_cpSpace_p_void__cpBool", "cpCollisionPreSolveFunc|cpBool (*)(cpArbiter *,cpSpace *,void *)|cpCollisionBeginFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpArbiter_p_cpSpace_p_void__void = {"_p_f_p_cpArbiter_p_cpSpace_p_void__void", "cpCollisionPostSolveFunc|void (*)(cpArbiter *,cpSpace *,void *)|cpCollisionSeparateFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpBody_cpFloat__void = {"_p_f_p_cpBody_cpFloat__void", "void (*)(cpBody *,cpFloat)|cpBodyPositionFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpBody_cpVect_cpFloat_cpFloat__void = {"_p_f_p_cpBody_cpVect_cpFloat_cpFloat__void", "void (*)(cpBody *,cpVect,cpFloat,cpFloat)|cpBodyVelocityFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpBody_p_cpArbiter_p_void__void = {"_p_f_p_cpBody_p_cpArbiter_p_void__void", "cpBodyArbiterIteratorFunc|void (*)(cpBody *,cpArbiter *,void *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpBody_p_cpConstraint_p_void__void = {"_p_f_p_cpBody_p_cpConstraint_p_void__void", "cpBodyConstraintIteratorFunc|void (*)(cpBody *,cpConstraint *,void *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpBody_p_cpShape_p_void__void = {"_p_f_p_cpBody_p_cpShape_p_void__void", "cpBodyShapeIteratorFunc|void (*)(cpBody *,cpShape *,void *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpBody_p_void__void = {"_p_f_p_cpBody_p_void__void", "cpSpaceBodyIteratorFunc|void (*)(cpBody *,void *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpConstraint__cpFloat = {"_p_f_p_cpConstraint__cpFloat", "cpFloat (*)(cpConstraint *)|cpConstraintGetImpulseImpl", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpConstraint_cpFloat__cpFloat = {"_p_f_p_cpConstraint_cpFloat__cpFloat", "cpFloat (*)(cpConstraint *,cpFloat)|cpDampedSpringForceFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpConstraint_cpFloat__void = {"_p_f_p_cpConstraint_cpFloat__void", "void (*)(cpConstraint *,cpFloat)|cpConstraintApplyCachedImpulseImpl|cpConstraintApplyImpulseImpl|cpConstraintPreStepImpl", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpConstraint_p_cpSpace__void = {"_p_f_p_cpConstraint_p_cpSpace__void", "void (*)(cpConstraint *,cpSpace *)|cpConstraintPreSolveFunc|cpConstraintPostSolveFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpConstraint_p_void__void = {"_p_f_p_cpConstraint_p_void__void", "cpSpaceConstraintIteratorFunc|void (*)(cpConstraint *,void *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpShape__void = {"_p_f_p_cpShape__void", "cpShapeDestroyImpl|void (*)(cpShape *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpShape_cpFloat_cpVect_p_void__void = {"_p_f_p_cpShape_cpFloat_cpVect_p_void__void", "void (*)(cpShape *,cpFloat,cpVect,void *)|cpSpaceNearestPointQueryFunc|cpSpaceSegmentQueryFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpShape_cpVect_cpVect__cpBB = {"_p_f_p_cpShape_cpVect_cpVect__cpBB", "cpShapeCacheDataImpl|struct cpBB (*)(cpShape *,cpVect,cpVect)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void = {"_p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void", "void (*)(cpShape *,cpVect,cpVect,struct cpSegmentQueryInfo *)|cpShapeSegmentQueryImpl", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void = {"_p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void", "cpShapeNearestPointQueryImpl|void (*)(cpShape *,cpVect,struct cpNearestPointQueryInfo *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpShape_p_struct_cpContactPointSet_p_void__void = {"_p_f_p_cpShape_p_struct_cpContactPointSet_p_void__void", "void (*)(cpShape *,struct cpContactPointSet *,void *)|cpSpaceShapeQueryFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpShape_p_void__void = {"_p_f_p_cpShape_p_void__void", "cpSpaceShapeIteratorFunc|void (*)(cpShape *,void *)|cpSpacePointQueryFunc|cpSpaceBBQueryFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_cpSpace_p_void_p_void__void = {"_p_f_p_cpSpace_p_void_p_void__void", "cpPostStepFunc|void (*)(cpSpace *,void *,void *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_cpConstraint_cpFloat__cpFloat = {"_p_f_p_struct_cpConstraint_cpFloat__cpFloat", "cpFloat (*)(struct cpConstraint *,cpFloat)|cpDampedRotarySpringTorqueFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_cpSpatialIndex__int = {"_p_f_p_struct_cpSpatialIndex__int", "int (*)(struct cpSpatialIndex *)|cpSpatialIndexCountImpl", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_cpSpatialIndex__void = {"_p_f_p_struct_cpSpatialIndex__void", "void (*)(struct cpSpatialIndex *)|cpSpatialIndexReindexImpl|cpSpatialIndexDestroyImpl", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void = {"_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void", "void (*)(struct cpSpatialIndex *,void (*)(void *,void *),void *)|cpSpatialIndexEachImpl", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void = {"_p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void", "void (*)(struct cpSpatialIndex *,cpCollisionID (*)(void *,void *,cpCollisionID,void *),void *)|cpSpatialIndexReindexQueryImpl", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool = {"_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool", "cpSpatialIndexContainsImpl|cpBool (*)(struct cpSpatialIndex *,void *,cpHashValue)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void = {"_p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void", "cpSpatialIndexRemoveImpl|cpSpatialIndexReindexObjectImpl|void (*)(struct cpSpatialIndex *,void *,cpHashValue)|cpSpatialIndexInsertImpl", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void = {"_p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void", "void (*)(struct cpSpatialIndex *,void *,cpVect,cpVect,cpFloat,cpFloat (*)(void *,void *,void *),void *)|cpSpatialIndexSegmentQueryImpl", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void = {"_p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void", "cpSpatialIndexQueryImpl|void (*)(struct cpSpatialIndex *,void *,struct cpBB,cpCollisionID (*)(void *,void *,cpCollisionID,void *),void *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_void__cpBB = {"_p_f_p_void__cpBB", "struct cpBB (*)(void *)|cpSpatialIndexBBFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_void__cpVect = {"_p_f_p_void__cpVect", "cpBBTreeVelocityFunc|cpVect (*)(void *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_void_p_void__void = {"_p_f_p_void_p_void__void", "cpSpatialIndexIteratorFunc|void (*)(void *,void *)", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID = {"_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID", "cpCollisionID (*)(void *,void *,cpCollisionID,void *)|cpSpatialIndexQueryFunc", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_f_p_void_p_void_p_void__cpFloat = {"_p_f_p_void_p_void_p_void__cpFloat", "cpFloat (*)(void *,void *,void *)|cpSpatialIndexSegmentQueryFunc", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ogg_file = {"_p_ogg_file", "struct ogg_file *|ogg_file *", 0, 0, (void*)&_wrap_class_ogg_file, 0};
 static swig_type_info _swigt__p_p_Audio = {"_p_p_Audio", "struct Audio **|Audio **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_cpBody = {"_p_p_cpBody", "cpBody **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_p_cpShape = {"_p_p_cpShape", "cpShape **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_short = {"_p_short", "short *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_char = {"_p_unsigned_char", "unsigned char *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_vorbis_info = {"_p_vorbis_info", "vorbis_info *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
@@ -8362,13 +37079,99 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_OggVorbis_File,
   &_swigt__p_PlatformAudio_T,
   &_swigt__p_RawBitmapData,
-  &_swigt__p_Rect,
+  &_swigt__p_Rekt,
   &_swigt__p_Texture,
+  &_swigt__p_cpArbiter,
+  &_swigt__p_cpArbiterState,
+  &_swigt__p_cpArbiterThread,
+  &_swigt__p_cpBB,
+  &_swigt__p_cpBBTree,
+  &_swigt__p_cpBody,
+  &_swigt__p_cpBool,
+  &_swigt__p_cpCircleShape,
+  &_swigt__p_cpCollisionHandler,
+  &_swigt__p_cpCollisionType,
+  &_swigt__p_cpComponentNode,
+  &_swigt__p_cpConstraint,
+  &_swigt__p_cpConstraintClass,
+  &_swigt__p_cpContact,
+  &_swigt__p_cpContactBufferHeader,
+  &_swigt__p_cpContactPointSet,
+  &_swigt__p_cpContactPointSet_points,
+  &_swigt__p_cpDampedRotarySpring,
+  &_swigt__p_cpDampedSpring,
+  &_swigt__p_cpDataPointer,
+  &_swigt__p_cpFloat,
+  &_swigt__p_cpGearJoint,
+  &_swigt__p_cpGrooveJoint,
+  &_swigt__p_cpGroup,
+  &_swigt__p_cpHashValue,
+  &_swigt__p_cpLayers,
+  &_swigt__p_cpMat2x2,
+  &_swigt__p_cpNearestPointQueryInfo,
+  &_swigt__p_cpPinJoint,
+  &_swigt__p_cpPivotJoint,
+  &_swigt__p_cpPolyShape,
+  &_swigt__p_cpRatchetJoint,
+  &_swigt__p_cpRotaryLimitJoint,
+  &_swigt__p_cpSegmentQueryInfo,
+  &_swigt__p_cpSegmentShape,
+  &_swigt__p_cpShape,
+  &_swigt__p_cpShapeClass,
+  &_swigt__p_cpShapeType,
+  &_swigt__p_cpSimpleMotor,
+  &_swigt__p_cpSlideJoint,
+  &_swigt__p_cpSpace,
+  &_swigt__p_cpSpaceHash,
+  &_swigt__p_cpSpatialIndex,
+  &_swigt__p_cpSpatialIndexClass,
+  &_swigt__p_cpSplittingPlane,
+  &_swigt__p_cpSweep1D,
+  &_swigt__p_cpTimestamp,
+  &_swigt__p_cpVect,
+  &_swigt__p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,
+  &_swigt__p_f_p_cpArbiter_p_cpSpace_p_void__void,
+  &_swigt__p_f_p_cpBody_cpFloat__void,
+  &_swigt__p_f_p_cpBody_cpVect_cpFloat_cpFloat__void,
+  &_swigt__p_f_p_cpBody_p_cpArbiter_p_void__void,
+  &_swigt__p_f_p_cpBody_p_cpConstraint_p_void__void,
+  &_swigt__p_f_p_cpBody_p_cpShape_p_void__void,
+  &_swigt__p_f_p_cpBody_p_void__void,
+  &_swigt__p_f_p_cpConstraint__cpFloat,
+  &_swigt__p_f_p_cpConstraint_cpFloat__cpFloat,
+  &_swigt__p_f_p_cpConstraint_cpFloat__void,
+  &_swigt__p_f_p_cpConstraint_p_cpSpace__void,
+  &_swigt__p_f_p_cpConstraint_p_void__void,
+  &_swigt__p_f_p_cpShape__void,
+  &_swigt__p_f_p_cpShape_cpFloat_cpVect_p_void__void,
+  &_swigt__p_f_p_cpShape_cpVect_cpVect__cpBB,
+  &_swigt__p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void,
+  &_swigt__p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void,
+  &_swigt__p_f_p_cpShape_p_struct_cpContactPointSet_p_void__void,
+  &_swigt__p_f_p_cpShape_p_void__void,
+  &_swigt__p_f_p_cpSpace_p_void_p_void__void,
+  &_swigt__p_f_p_struct_cpConstraint_cpFloat__cpFloat,
+  &_swigt__p_f_p_struct_cpSpatialIndex__int,
+  &_swigt__p_f_p_struct_cpSpatialIndex__void,
+  &_swigt__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void,
+  &_swigt__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void,
+  &_swigt__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool,
+  &_swigt__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void,
+  &_swigt__p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void,
+  &_swigt__p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void,
+  &_swigt__p_f_p_void__cpBB,
+  &_swigt__p_f_p_void__cpVect,
+  &_swigt__p_f_p_void_p_void__void,
+  &_swigt__p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID,
+  &_swigt__p_f_p_void_p_void_p_void__cpFloat,
   &_swigt__p_int,
   &_swigt__p_ogg_file,
   &_swigt__p_p_Audio,
+  &_swigt__p_p_cpBody,
+  &_swigt__p_p_cpShape,
   &_swigt__p_short,
   &_swigt__p_unsigned_char,
+  &_swigt__p_void,
   &_swigt__p_vorbis_info,
 };
 
@@ -8383,13 +37186,99 @@ static swig_cast_info _swigc__p_Matrix2[] = {  {&_swigt__p_Matrix2, 0, 0, 0},{0,
 static swig_cast_info _swigc__p_OggVorbis_File[] = {  {&_swigt__p_OggVorbis_File, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_PlatformAudio_T[] = {  {&_swigt__p_PlatformAudio_T, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_RawBitmapData[] = {  {&_swigt__p_RawBitmapData, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Rect[] = {  {&_swigt__p_Rect, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Rekt[] = {  {&_swigt__p_Rekt, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Texture[] = {  {&_swigt__p_Texture, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpArbiter[] = {  {&_swigt__p_cpArbiter, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpArbiterState[] = {  {&_swigt__p_cpArbiterState, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpArbiterThread[] = {  {&_swigt__p_cpArbiterThread, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpBB[] = {  {&_swigt__p_cpBB, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpBBTree[] = {  {&_swigt__p_cpBBTree, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpBody[] = {  {&_swigt__p_cpBody, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpBool[] = {  {&_swigt__p_cpBool, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpCircleShape[] = {  {&_swigt__p_cpCircleShape, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpCollisionHandler[] = {  {&_swigt__p_cpCollisionHandler, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpCollisionType[] = {  {&_swigt__p_cpCollisionType, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpComponentNode[] = {  {&_swigt__p_cpComponentNode, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpConstraint[] = {  {&_swigt__p_cpConstraint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpConstraintClass[] = {  {&_swigt__p_cpConstraintClass, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpContact[] = {  {&_swigt__p_cpContact, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpContactBufferHeader[] = {  {&_swigt__p_cpContactBufferHeader, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpContactPointSet[] = {  {&_swigt__p_cpContactPointSet, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpContactPointSet_points[] = {  {&_swigt__p_cpContactPointSet_points, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpDampedRotarySpring[] = {  {&_swigt__p_cpDampedRotarySpring, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpDampedSpring[] = {  {&_swigt__p_cpDampedSpring, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpDataPointer[] = {  {&_swigt__p_cpDataPointer, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpFloat[] = {  {&_swigt__p_cpFloat, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpGearJoint[] = {  {&_swigt__p_cpGearJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpGrooveJoint[] = {  {&_swigt__p_cpGrooveJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpGroup[] = {  {&_swigt__p_cpGroup, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpHashValue[] = {  {&_swigt__p_cpHashValue, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpLayers[] = {  {&_swigt__p_cpLayers, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpMat2x2[] = {  {&_swigt__p_cpMat2x2, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpNearestPointQueryInfo[] = {  {&_swigt__p_cpNearestPointQueryInfo, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpPinJoint[] = {  {&_swigt__p_cpPinJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpPivotJoint[] = {  {&_swigt__p_cpPivotJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpPolyShape[] = {  {&_swigt__p_cpPolyShape, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpRatchetJoint[] = {  {&_swigt__p_cpRatchetJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpRotaryLimitJoint[] = {  {&_swigt__p_cpRotaryLimitJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSegmentQueryInfo[] = {  {&_swigt__p_cpSegmentQueryInfo, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSegmentShape[] = {  {&_swigt__p_cpSegmentShape, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpShape[] = {  {&_swigt__p_cpShape, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpShapeClass[] = {  {&_swigt__p_cpShapeClass, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpShapeType[] = {  {&_swigt__p_cpShapeType, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSimpleMotor[] = {  {&_swigt__p_cpSimpleMotor, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSlideJoint[] = {  {&_swigt__p_cpSlideJoint, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSpace[] = {  {&_swigt__p_cpSpace, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSpaceHash[] = {  {&_swigt__p_cpSpaceHash, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSpatialIndex[] = {  {&_swigt__p_cpSpatialIndex, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSpatialIndexClass[] = {  {&_swigt__p_cpSpatialIndexClass, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSplittingPlane[] = {  {&_swigt__p_cpSplittingPlane, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpSweep1D[] = {  {&_swigt__p_cpSweep1D, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpTimestamp[] = {  {&_swigt__p_cpTimestamp, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_cpVect[] = {  {&_swigt__p_cpVect, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpArbiter_p_cpSpace_p_void__cpBool[] = {  {&_swigt__p_f_p_cpArbiter_p_cpSpace_p_void__cpBool, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpArbiter_p_cpSpace_p_void__void[] = {  {&_swigt__p_f_p_cpArbiter_p_cpSpace_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpBody_cpFloat__void[] = {  {&_swigt__p_f_p_cpBody_cpFloat__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpBody_cpVect_cpFloat_cpFloat__void[] = {  {&_swigt__p_f_p_cpBody_cpVect_cpFloat_cpFloat__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpBody_p_cpArbiter_p_void__void[] = {  {&_swigt__p_f_p_cpBody_p_cpArbiter_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpBody_p_cpConstraint_p_void__void[] = {  {&_swigt__p_f_p_cpBody_p_cpConstraint_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpBody_p_cpShape_p_void__void[] = {  {&_swigt__p_f_p_cpBody_p_cpShape_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpBody_p_void__void[] = {  {&_swigt__p_f_p_cpBody_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpConstraint__cpFloat[] = {  {&_swigt__p_f_p_cpConstraint__cpFloat, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpConstraint_cpFloat__cpFloat[] = {  {&_swigt__p_f_p_cpConstraint_cpFloat__cpFloat, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpConstraint_cpFloat__void[] = {  {&_swigt__p_f_p_cpConstraint_cpFloat__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpConstraint_p_cpSpace__void[] = {  {&_swigt__p_f_p_cpConstraint_p_cpSpace__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpConstraint_p_void__void[] = {  {&_swigt__p_f_p_cpConstraint_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpShape__void[] = {  {&_swigt__p_f_p_cpShape__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpShape_cpFloat_cpVect_p_void__void[] = {  {&_swigt__p_f_p_cpShape_cpFloat_cpVect_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpShape_cpVect_cpVect__cpBB[] = {  {&_swigt__p_f_p_cpShape_cpVect_cpVect__cpBB, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void[] = {  {&_swigt__p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void[] = {  {&_swigt__p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpShape_p_struct_cpContactPointSet_p_void__void[] = {  {&_swigt__p_f_p_cpShape_p_struct_cpContactPointSet_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpShape_p_void__void[] = {  {&_swigt__p_f_p_cpShape_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_cpSpace_p_void_p_void__void[] = {  {&_swigt__p_f_p_cpSpace_p_void_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_cpConstraint_cpFloat__cpFloat[] = {  {&_swigt__p_f_p_struct_cpConstraint_cpFloat__cpFloat, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_cpSpatialIndex__int[] = {  {&_swigt__p_f_p_struct_cpSpatialIndex__int, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_cpSpatialIndex__void[] = {  {&_swigt__p_f_p_struct_cpSpatialIndex__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void[] = {  {&_swigt__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void[] = {  {&_swigt__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool[] = {  {&_swigt__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void[] = {  {&_swigt__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void[] = {  {&_swigt__p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void[] = {  {&_swigt__p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_void__cpBB[] = {  {&_swigt__p_f_p_void__cpBB, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_void__cpVect[] = {  {&_swigt__p_f_p_void__cpVect, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_void_p_void__void[] = {  {&_swigt__p_f_p_void_p_void__void, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID[] = {  {&_swigt__p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_f_p_void_p_void_p_void__cpFloat[] = {  {&_swigt__p_f_p_void_p_void_p_void__cpFloat, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ogg_file[] = {  {&_swigt__p_ogg_file, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_Audio[] = {  {&_swigt__p_p_Audio, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_cpBody[] = {  {&_swigt__p_p_cpBody, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_p_cpShape[] = {  {&_swigt__p_p_cpShape, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_short[] = {  {&_swigt__p_short, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_char[] = {  {&_swigt__p_unsigned_char, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_vorbis_info[] = {  {&_swigt__p_vorbis_info, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
@@ -8404,13 +37293,99 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_OggVorbis_File,
   _swigc__p_PlatformAudio_T,
   _swigc__p_RawBitmapData,
-  _swigc__p_Rect,
+  _swigc__p_Rekt,
   _swigc__p_Texture,
+  _swigc__p_cpArbiter,
+  _swigc__p_cpArbiterState,
+  _swigc__p_cpArbiterThread,
+  _swigc__p_cpBB,
+  _swigc__p_cpBBTree,
+  _swigc__p_cpBody,
+  _swigc__p_cpBool,
+  _swigc__p_cpCircleShape,
+  _swigc__p_cpCollisionHandler,
+  _swigc__p_cpCollisionType,
+  _swigc__p_cpComponentNode,
+  _swigc__p_cpConstraint,
+  _swigc__p_cpConstraintClass,
+  _swigc__p_cpContact,
+  _swigc__p_cpContactBufferHeader,
+  _swigc__p_cpContactPointSet,
+  _swigc__p_cpContactPointSet_points,
+  _swigc__p_cpDampedRotarySpring,
+  _swigc__p_cpDampedSpring,
+  _swigc__p_cpDataPointer,
+  _swigc__p_cpFloat,
+  _swigc__p_cpGearJoint,
+  _swigc__p_cpGrooveJoint,
+  _swigc__p_cpGroup,
+  _swigc__p_cpHashValue,
+  _swigc__p_cpLayers,
+  _swigc__p_cpMat2x2,
+  _swigc__p_cpNearestPointQueryInfo,
+  _swigc__p_cpPinJoint,
+  _swigc__p_cpPivotJoint,
+  _swigc__p_cpPolyShape,
+  _swigc__p_cpRatchetJoint,
+  _swigc__p_cpRotaryLimitJoint,
+  _swigc__p_cpSegmentQueryInfo,
+  _swigc__p_cpSegmentShape,
+  _swigc__p_cpShape,
+  _swigc__p_cpShapeClass,
+  _swigc__p_cpShapeType,
+  _swigc__p_cpSimpleMotor,
+  _swigc__p_cpSlideJoint,
+  _swigc__p_cpSpace,
+  _swigc__p_cpSpaceHash,
+  _swigc__p_cpSpatialIndex,
+  _swigc__p_cpSpatialIndexClass,
+  _swigc__p_cpSplittingPlane,
+  _swigc__p_cpSweep1D,
+  _swigc__p_cpTimestamp,
+  _swigc__p_cpVect,
+  _swigc__p_f_p_cpArbiter_p_cpSpace_p_void__cpBool,
+  _swigc__p_f_p_cpArbiter_p_cpSpace_p_void__void,
+  _swigc__p_f_p_cpBody_cpFloat__void,
+  _swigc__p_f_p_cpBody_cpVect_cpFloat_cpFloat__void,
+  _swigc__p_f_p_cpBody_p_cpArbiter_p_void__void,
+  _swigc__p_f_p_cpBody_p_cpConstraint_p_void__void,
+  _swigc__p_f_p_cpBody_p_cpShape_p_void__void,
+  _swigc__p_f_p_cpBody_p_void__void,
+  _swigc__p_f_p_cpConstraint__cpFloat,
+  _swigc__p_f_p_cpConstraint_cpFloat__cpFloat,
+  _swigc__p_f_p_cpConstraint_cpFloat__void,
+  _swigc__p_f_p_cpConstraint_p_cpSpace__void,
+  _swigc__p_f_p_cpConstraint_p_void__void,
+  _swigc__p_f_p_cpShape__void,
+  _swigc__p_f_p_cpShape_cpFloat_cpVect_p_void__void,
+  _swigc__p_f_p_cpShape_cpVect_cpVect__cpBB,
+  _swigc__p_f_p_cpShape_cpVect_cpVect_p_struct_cpSegmentQueryInfo__void,
+  _swigc__p_f_p_cpShape_cpVect_p_struct_cpNearestPointQueryInfo__void,
+  _swigc__p_f_p_cpShape_p_struct_cpContactPointSet_p_void__void,
+  _swigc__p_f_p_cpShape_p_void__void,
+  _swigc__p_f_p_cpSpace_p_void_p_void__void,
+  _swigc__p_f_p_struct_cpConstraint_cpFloat__cpFloat,
+  _swigc__p_f_p_struct_cpSpatialIndex__int,
+  _swigc__p_f_p_struct_cpSpatialIndex__void,
+  _swigc__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void__void_p_void__void,
+  _swigc__p_f_p_struct_cpSpatialIndex_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void,
+  _swigc__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__cpBool,
+  _swigc__p_f_p_struct_cpSpatialIndex_p_void_cpHashValue__void,
+  _swigc__p_f_p_struct_cpSpatialIndex_p_void_cpVect_cpVect_cpFloat_p_f_p_void_p_void_p_void__cpFloat_p_void__void,
+  _swigc__p_f_p_struct_cpSpatialIndex_p_void_struct_cpBB_p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID_p_void__void,
+  _swigc__p_f_p_void__cpBB,
+  _swigc__p_f_p_void__cpVect,
+  _swigc__p_f_p_void_p_void__void,
+  _swigc__p_f_p_void_p_void_cpCollisionID_p_void__cpCollisionID,
+  _swigc__p_f_p_void_p_void_p_void__cpFloat,
   _swigc__p_int,
   _swigc__p_ogg_file,
   _swigc__p_p_Audio,
+  _swigc__p_p_cpBody,
+  _swigc__p_p_cpShape,
   _swigc__p_short,
   _swigc__p_unsigned_char,
+  _swigc__p_void,
   _swigc__p_vorbis_info,
 };
 

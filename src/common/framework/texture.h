@@ -16,7 +16,7 @@ struct Texture{
 typedef struct Texture Texture;
 
 
-void textureInit(Texture *tex, struct BitmapData *data, Rect sourceRect);
+void textureInit(Texture *tex, struct BitmapData *data, Rekt sourceRect);
 
 
 #endif

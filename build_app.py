@@ -72,8 +72,8 @@ def compileDir(r, moonFiles=None):
     for f in files:
       p = os.path.join(root, f)
       rp = os.path.relpath(p, r)
-      if not rp.startswith(".") and not 'moonscript' in p and p.endswith('.moon'):
-        if moonFiles:
+      if not 'moonscript' in p and p.endswith('.moon'):
+        if moonFiles != None:
           moonFiles.append(p)
         localMoonFiles.append(p)
 
