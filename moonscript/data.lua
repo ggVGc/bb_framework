@@ -24,7 +24,7 @@ do
     push = function(self, value, ...)
       insert(self, value)
       if ... then
-        return self:push(...)
+        return self.push(...)
       else
         return value
       end
@@ -36,7 +36,7 @@ do
   _base_0.__index = _base_0
   local _class_0 = setmetatable({
     __init = function(self, ...)
-      self:push(...)
+      self.push(...)
       return nil
     end,
     __base = _base_0,

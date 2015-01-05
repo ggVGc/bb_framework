@@ -30,6 +30,7 @@ int luaopen_helper(lua_State *L);
 #define RegLuaFuncGlobal(fname) lua_pushcfunction(luaVM, fname##_lua); lua_setglobal(luaVM, #fname);
 
 extern int luaopen__c_framework(lua_State*);
+extern int luaopen_chipmunk(lua_State*);
 
 static int appBroken = 0;
 /*static int appPaused = 0;*/
@@ -198,6 +199,7 @@ void appInit(int appWasSuspended, int framebufferWidth, int framebufferHeight, c
   RegLuaFuncGlobal(print);
 
   luaopen__c_framework(luaVM);
+  luaopen_chipmunk(luaVM);
   luaopen_helper(luaVM);
   luaopen_AsyncAssetLoader(luaVM);
 

@@ -23,7 +23,6 @@
 #define MAX_SAMPLES (1024*256)
 #define DECODE_STEP_SIZE (1024*16)
 
-
 #define CheckErr(x) ErrorFunc(x,__LINE__)
 
 static char errMsgBuf[4096*4];

@@ -309,7 +309,6 @@ dofile({"framework/globals.moon",
 'framework/giftiz.moon',
 })
 
-dofile "main.moon"
 --dofile("framework/test/temp_test.moon")
 --dofile("framework/test/sheet_mem_test.moon")
 --dofile("framework/test/parent_test.moon")
@@ -345,7 +344,8 @@ end
 local freezeFrameCount = 0
 function framework.init(wasSuspended)
   framework.DataStore.reload()
-  main = doCall(Main.new)
+  --main = doCall(Main.new)
+  main = dofile "main.moon"
   freezeFrameCount = 2
   collectgarbage()
   collectgarbage 'stop'

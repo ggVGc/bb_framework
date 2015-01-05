@@ -152,7 +152,7 @@ do
     pos = nil,
     append_list = function(self, items, delim)
       for i = 1, #items do
-        self:append(items[i])
+        self.append(items[i])
         if i < #items then
           insert(self, delim)
         end
@@ -166,13 +166,13 @@ do
         end
         for _index_0 = 1, #first do
           local value = first[_index_0]
-          self:append(value)
+          self.append(value)
         end
       else
         insert(self, first)
       end
       if ... then
-        return self:append(...)
+        return self.append(...)
       end
     end,
     render = function(self, buffer)
@@ -230,7 +230,7 @@ do
   local _base_0 = {
     prepare = function() end,
     render = function(self)
-      self:prepare()
+      self.prepare()
       return concat(self)
     end
   }
@@ -313,12 +313,12 @@ do
             elseif "string" == _exp_0 then
               real_name = name
             end
-            if not (is_local or real_name and not self:has_name(real_name, true)) then
+            if not (is_local or real_name and not self.has_name(real_name, true)) then
               _continue_0 = true
               break
             end
-            self:put_name(real_name)
-            if self:name_exported(real_name) then
+            self.put_name(real_name)
+            if self.name_exported(real_name) then
               _continue_0 = true
               break
             end
@@ -357,7 +357,7 @@ do
       self._names[name] = value
     end,
     has_name = function(self, name, skip_exports)
-      if not skip_exports and self:name_exported(name) then
+      if not skip_exports and self.name_exported(name) then
         return true
       end
       local yes = self._names[name]
@@ -372,14 +372,14 @@ do
     is_local = function(self, node)
       local t = mtype(node)
       if t == "string" then
-        return self:has_name(node, false)
+        return self.has_name(node, false)
       end
       if t == NameProxy or t == LocalName then
         return true
       end
       if t == "table" then
         if node[1] == "ref" or (node[1] == "chain" and #node == 2) then
-          return self:is_local(node[2])
+          return self.is_local(node[2])
         end
       end
       return false
@@ -395,16 +395,16 @@ do
           i
         }, "_")
         i = i + 1
-        searching = self:has_name(name, true)
+        searching = self.has_name(name, true)
       end
       if not dont_put then
-        self:put_name(name)
+        self.put_name(name)
       end
       return name
     end,
     init_free_var = function(self, prefix, value)
-      local name = self:free_name(prefix, true)
-      self:stm({
+      local name = self.free_name(prefix, true)
+      self.stm({
         "assign",
         {
           name
@@ -457,7 +457,7 @@ do
       if type(node) == "string" then
         return node
       else
-        return self:value(node, ...)
+        return self.value(node, ...)
       end
     end,
     value = function(self, node, ...)
@@ -498,7 +498,7 @@ do
           local _len_0 = 1
           for _index_0 = 1, #values do
             local v = values[_index_0]
-            _accum_0[_len_0] = self:value(v)
+            _accum_0[_len_0] = self.value(v)
             _len_0 = _len_0 + 1
           end
           return _accum_0
@@ -518,7 +518,7 @@ do
           result = fn(self, node, ...)
         else
           if has_value(node) then
-            result = self:stm({
+            result = self.stm({
               "assign",
               {
                 "_"
@@ -528,7 +528,7 @@ do
               }
             })
           else
-            result = self:value(node)
+            result = self.value(node)
           end
         end
       end
@@ -536,7 +536,7 @@ do
         if type(node) == "table" and type(result) == "table" and node[-1] then
           result.pos = node[-1]
         end
-        self:add(result)
+        self.add(result)
       end
       return nil
     end,
@@ -549,7 +549,7 @@ do
       self.current_stms = stms
       for i = 1, #stms do
         self.current_stm_i = i
-        self:stm(stms[i])
+        self.stm(stms[i])
       end
       self.current_stms = current_stms
       self.current_stm_i = current_stm_i
@@ -561,7 +561,7 @@ do
         self._lines
       }
       self._lines = Lines()
-      return self:stms(fn(lines))
+      return self.stms(fn(lines))
     end
   }
   _base_0.__index = _base_0
@@ -614,7 +614,7 @@ do
       if not (self.options.implicitly_return_root == false) then
         stms = transform.Statement.transformers.root_stms(self, stms)
       end
-      return self:stms(stms)
+      return self.stms(stms)
     end,
     render = function(self)
       local buffer = self._lines:flatten()

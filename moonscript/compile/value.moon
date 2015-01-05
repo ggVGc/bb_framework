@@ -70,8 +70,9 @@ string_chars = {
       else
         error "Unknown chain action: #{t}"
 
-    if (callee_type == "self" or callee_type == "self_class") and node[3] and ntype(node[3]) == "call"
-      callee[1] = callee_type.."_colon"
+    -- EDIT: Made @foo! evaluate to self.foo() rather than self:foo() - Walt
+    --if (callee_type == "self" or callee_type == "self_class") and node[3] and ntype(node[3]) == "call"
+      --callee[1] = callee_type.."_colon"
 
     callee_value = @value callee
     callee_value = @line "(", callee_value, ")" if ntype(callee) == "exp"

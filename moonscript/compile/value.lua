@@ -108,9 +108,11 @@ return {
         return error("Unknown chain action: " .. tostring(t))
       end
     end
+    --[[
     if (callee_type == "self" or callee_type == "self_class") and node[3] and ntype(node[3]) == "call" then
       callee[1] = callee_type .. "_colon"
     end
+    ]]
     local callee_value = self:value(callee)
     if ntype(callee) == "exp" then
       callee_value = self:line("(", callee_value, ")")
