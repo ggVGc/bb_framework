@@ -152,10 +152,10 @@ with_continue_listener = function(body)
   local continue_name = nil
   return {
     Run(function(self)
-      return self.listen("continue", function()
+      return self:listen("continue", function()
         if not (continue_name) then
           continue_name = NameProxy("continue")
-          self.put_name(continue_name)
+          self:put_name(continue_name)
         end
         return continue_name
       end)
@@ -165,8 +165,8 @@ with_continue_listener = function(body)
       if not (continue_name) then
         return 
       end
-      self.put_name(continue_name, nil)
-      return self.splice(function(lines)
+      self:put_name(continue_name, nil)
+      return self:splice(function(lines)
         return {
           {
             "assign",
@@ -246,11 +246,11 @@ do
     end,
     bind = function(self, scope)
       return function(...)
-        return self.transform(scope, ...)
+        return self:transform(scope, ...)
       end
     end,
     __call = function(self, ...)
-      return self.transform(...)
+      return self:transform(...)
     end,
     can_transform = function(self, node)
       return self.transformers[ntype(node)] ~= nil
@@ -457,7 +457,7 @@ Statement = Transformer({
     return node
   end,
   continue = function(self, node)
-    local continue_name = self.send("continue")
+    local continue_name = self:send("continue")
     if not (continue_name) then
       error("continue must be inside of a loop")
     end
@@ -710,14 +710,14 @@ Statement = Transformer({
           values
         }
       end
-    elseif self.is_local(exp) then
+    elseif self:is_local(exp) then
       scope_name = exp
       copy_scope = false
     end
     scope_name = scope_name or NameProxy("with")
     return build["do"]({
       Run(function(self)
-        return self.set("scope_var", scope_name)
+        return self:set("scope_var", scope_name)
       end),
       copy_scope and build.assign_one(scope_name, exp) or NOOP,
       named_assign or NOOP,
@@ -757,14 +757,14 @@ Statement = Transformer({
     if ntype(source) == "unpack" then
       local list = source[2]
       local index_name = NameProxy("index")
-      local list_name = self.is_local(list) and list or NameProxy("list")
+      local list_name = self:is_local(list) and list or NameProxy("list")
       local slice_var = nil
       local bounds
       if is_slice(list) then
         local slice = list[#list]
         table.remove(list)
         table.remove(slice, 1)
-        if self.is_local(list) then
+        if self:is_local(list) then
           list_name = list
         end
         if slice[2] and slice[2] ~= "" then
@@ -1128,9 +1128,9 @@ Statement = Transformer({
       local out_body = {
         Run(function(self)
           if name then
-            self.put_name(name)
+            self:put_name(name)
           end
-          return self.set("super", function(block, chain)
+          return self:set("super", function(block, chain)
             if chain then
               local slice
               do
@@ -1287,8 +1287,8 @@ do
     },
     convert = function(self, node)
       local index = self.body_idx[ntype(node)]
-      node[index] = self.mutate_body(node[index])
-      return self.wrap(node)
+      node[index] = self:mutate_body(node[index])
+      return self:wrap(node)
     end,
     wrap = function(self, node, group_type)
       if group_type == nil then
@@ -1504,7 +1504,7 @@ Value = Transformer({
     node.body = apply_to_last(node.body, implicitly_return(self))
     node.body = {
       Run(function(self)
-        return self.listen("varargs", function() end)
+        return self:listen("varargs", function() end)
       end),
       unpack(node.body)
     }
@@ -1607,12 +1607,12 @@ Value = Transformer({
     fn = smart_node(build.fndef({
       body = {
         Run(function(self)
-          return self.listen("varargs", function()
+          return self:listen("varargs", function()
             insert(arg_list, "...")
             insert(fn.args, {
               "..."
             })
-            return self.unlisten("varargs")
+            return self:unlisten("varargs")
           end)
         end),
         unpack(body)
