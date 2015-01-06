@@ -32,6 +32,9 @@ function loadfile(path, ignoreInvalid, errorReportOffset)
 end
 
 local function dofile_raw(path, ignoreInvalid)
+  if not (path:find('.moon') or path:find('.lua')) then
+    path = path..'.lua'
+  end
   local f = loadfile(path, ignoreInvalid, 1);
   if f then
     return f()
@@ -345,7 +348,7 @@ local freezeFrameCount = 0
 function framework.init(wasSuspended)
   framework.DataStore.reload()
   --main = doCall(Main.new)
-  main = dofile "main.moon"
+  main = doCall(function() return dofile "main.moon" end)
   freezeFrameCount = 2
   collectgarbage()
   collectgarbage 'stop'
@@ -446,7 +449,7 @@ local function frameFunc()
     main.update(frameDelta)
   end
   framework.cjs.Bitmap.drawCounter = 0
-  main.draw(fps.current())
+  main.draw()
   if fps.hasNew() then
     print ( 'fps: '..fps.current(), 'B: '..framework.cjs.Bitmap.drawCounter, 'D: '.._c_framework.getDrawCallCount(), 'T: '..framework.MovieClip.tickCount)
     framework.MovieClip.tickCount = 0

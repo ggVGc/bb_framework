@@ -21,10 +21,8 @@ function framework.Camera.new(width, height)
     _c_framework.cameraSetActive(cam)
   end
 
-  mt.__newindex = function(table, key, value)
-    rawset(table, key, value)
-    cam[key] = value
-  end
+  mt.__newindex = cam
+  mt.__index = cam
 
   setmetatable(M, mt)
   return M
