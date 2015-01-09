@@ -22,11 +22,6 @@
 int luaopen_AsyncAssetLoader(lua_State *L);
 int luaopen_helper(lua_State *L);
 
-#ifdef ANDROID_NDK
-#include <android/log.h>
-#endif
-
-
 #define RegLuaFuncGlobal(fname) lua_pushcfunction(luaVM, fname##_lua); lua_setglobal(luaVM, #fname);
 
 extern int luaopen__c_framework(lua_State*);

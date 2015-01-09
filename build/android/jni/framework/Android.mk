@@ -54,6 +54,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/src/gen/
 
 MY_SOURCES := src/common/app.c \
   src/common/framework_wrap.c \
+  src/common/chipmunk_wrap.c \
   src/common/framework/bitmapdata.c \
   src/common/framework/camera.c \
   src/common/framework/graphics.c \

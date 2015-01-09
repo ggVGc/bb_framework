@@ -1,5 +1,6 @@
 #!/bin/python2
 import os
+import getopt
 import sys
 import subprocess
 import binascii
@@ -30,10 +31,14 @@ def processPath(path, prefix=''):
         with open(compPath) as rf:
           hexDict[p] = binascii.hexlify(rf.read())
 
+opts, args = getopt.getopt(sys.argv[1:],"e")
+
 appPath = PJ("..", "bounce")
+if len(args)>0:
+  appPath = args[0]
 frameworkSrcPath = PJ('src', 'lua')
 
-if not '-e' in sys.argv:
+if not ('-e','') in opts:
   processPath(appPath)
   processPath(frameworkSrcPath, 'framework')
 

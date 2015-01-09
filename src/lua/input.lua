@@ -74,8 +74,8 @@ Inp = {
 
   cursorCount= function() return #Inp.curState.cursorStates end,
 
-  anyCursorDown = function(index)
-    for s in Inp.curState.cursorStates do
+  anyCursorDown = function()
+    for i,s in pairs(Inp.curState.cursorStates) do
       if s.down then
         return i
       end

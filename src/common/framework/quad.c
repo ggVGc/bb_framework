@@ -39,6 +39,7 @@ void quadGlobalInit(){
   for(i=0;i<BUF_SIZE;++i){
     vertexBuf[i] = texCoordBuf[i] = 0;
   }
+  glTexCoordPointer(2, GL_FLOAT, 0, texCoordBuf);
 }
 
 void quadBeginFrame(){
