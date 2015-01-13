@@ -31,17 +31,17 @@ _getTime(void) {
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeOnCursorMove( JNIEnv*  env, jobject this, jint index, jint x, jint y) {
+Java_com_spacekomodo_framework_GLRenderer_nativeOnCursorMove( JNIEnv*  env, jobject this, jint index, jint x, jint y) {
   setCursorPos(index, x, y);
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeOnCursorUp( JNIEnv*  env, jobject this, jint index) {
+Java_com_spacekomodo_framework_GLRenderer_nativeOnCursorUp( JNIEnv*  env, jobject this, jint index) {
   setCursorDownState(index, 0);
 }
 
     void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeOnCursorDown( JNIEnv*  env, jobject this, jint index) {
+Java_com_spacekomodo_framework_GLRenderer_nativeOnCursorDown( JNIEnv*  env, jobject this, jint index) {
   setCursorDownState(index, 1);
 }
 
@@ -58,7 +58,7 @@ void startProfiler(){
 void stopProfiler(){
   /*
   trace("stopping profiler");
-  setenv("CPUPROFILE", "/data/data/com.spacekomodo.berrybounce/files/gmon.out", 1);
+  setenv("CPUPROFILE", "/data/data/com.spacekomodo.framework/files/gmon.out", 1);
   moncleanup();
   trace("Cleaned up profiler");
   */
@@ -66,7 +66,7 @@ void stopProfiler(){
 
 
 void
-Java_com_spacekomodo_berrybounce_MainActivity_preInit(JNIEnv*  env, jobject this, jstring apkPath_ ) {
+Java_com_spacekomodo_framework_MainActivity_preInit(JNIEnv*  env, jobject this, jstring apkPath_ ) {
   trace("Android: preInit");
   (*env)->GetJavaVM(env, &jvm);
   apkPath = (*env)->GetStringUTFChars(env, apkPath_, NULL); // Let's leak some memory..
@@ -78,7 +78,7 @@ Java_com_spacekomodo_berrybounce_MainActivity_preInit(JNIEnv*  env, jobject this
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject this) {
+Java_com_spacekomodo_framework_GLRenderer_nativeInit( JNIEnv*  env, jobject this) {
   trace("Android: nativeInit");
   (*env)->GetJavaVM(env, &jvm);
   lastTime = _getTime();
@@ -88,7 +88,7 @@ Java_com_spacekomodo_berrybounce_GLRenderer_nativeInit( JNIEnv*  env, jobject th
 
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject  this, jint w, jint h, jint wasSuspended) {
+Java_com_spacekomodo_framework_GLRenderer_nativeResize( JNIEnv*  env, jobject  this, jint w, jint h, jint wasSuspended) {
   __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "resize w=%d h=%d", w, h);
   if(didInit != 1){
     initW = w;
@@ -100,26 +100,26 @@ Java_com_spacekomodo_berrybounce_GLRenderer_nativeResize( JNIEnv*  env, jobject 
 
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_appGraphicsReload( JNIEnv*  env, jobject  this, jint w, jint h, jint wasSuspended) {
+Java_com_spacekomodo_framework_GLRenderer_appGraphicsReload( JNIEnv*  env, jobject  this, jint w, jint h, jint wasSuspended) {
   trace("Android: appGraphicsReload");
   appGraphicsReload(w, h);
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLView_appSetPaused( JNIEnv*  env, jobject this, jint paused, jint pauseAudio) {
+Java_com_spacekomodo_framework_GLView_appSetPaused( JNIEnv*  env, jobject this, jint paused, jint pauseAudio) {
   trace("Android: appSetPaused");
   appSetPaused(paused, pauseAudio);
 }
 
 
   void
-Java_com_spacekomodo_berrybounce_GLView_appSuspend( JNIEnv*  env ) {
+Java_com_spacekomodo_framework_GLView_appSuspend( JNIEnv*  env ) {
   trace("Android: appSuspend");
   appSuspend();
 }
 
   void
-Java_com_spacekomodo_berrybounce_GLView_nativeOnStop( JNIEnv*  env ) {
+Java_com_spacekomodo_framework_GLView_nativeOnStop( JNIEnv*  env ) {
   trace("Android: Cleaning up");
   appDeinit();
   trace("Android: Cleaned up");
@@ -131,7 +131,7 @@ static JNIEnv* curEnv;
 /*static JavaVM *jvm;*/
 
   void
-Java_com_spacekomodo_berrybounce_GLRenderer_nativeRender( JNIEnv*  env, jobject this) {
+Java_com_spacekomodo_framework_GLRenderer_nativeRender( JNIEnv*  env, jobject this) {
   curEnv = env;
   curThis = this;
   if(shouldInit){
@@ -156,33 +156,33 @@ int getScreenRefreshRate(){
 }
 
 void
-Java_com_spacekomodo_berrybounce_MainActivity_setScreenRefreshRate( JNIEnv*  env, jobject this, jint rate) {
+Java_com_spacekomodo_framework_MainActivity_setScreenRefreshRate( JNIEnv*  env, jobject this, jint rate) {
   if(rate >= 30&&rate<=120){
     screenRefreshRate = rate;
   }
 }
 
   void
-Java_com_spacekomodo_berrybounce_MainActivity_interstitialClosed( JNIEnv*  env, jobject this) {
+Java_com_spacekomodo_framework_MainActivity_interstitialClosed( JNIEnv*  env, jobject this) {
   trace("Android: interstitialClosed");
   adInterstitialClosed();
 }
 
   void
-Java_com_spacekomodo_berrybounce_MainActivity_interstitialDisplayed( JNIEnv*  env, jobject this) {
+Java_com_spacekomodo_framework_MainActivity_interstitialDisplayed( JNIEnv*  env, jobject this) {
   trace("Android: interstitialDisplayed");
   adInterstitialDisplayed(1);
 }
 
   void
-Java_com_spacekomodo_berrybounce_MainActivity_interstitialFailedDisplay( JNIEnv*  env, jobject this) {
+Java_com_spacekomodo_framework_MainActivity_interstitialFailedDisplay( JNIEnv*  env, jobject this) {
   trace("Android: interstitialFailedDisplay");
   adInterstitialDisplayed(0);
 }
 
 
 void
-Java_com_spacekomodo_berrybounce_IAP_onPurchaseComplete( JNIEnv*  env, jobject this, jint success) {
+Java_com_spacekomodo_framework_IAP_onPurchaseComplete( JNIEnv*  env, jobject this, jint success) {
   trace("Android: onPurchaseComplete");
   onPurchaseComplete(success);
 }
@@ -257,7 +257,7 @@ void dataStoreCommit(const char* dataString){
   trace("Android: dataStoreCommit");
   JNIEnv *env;
   (*jvm)->AttachCurrentThread(jvm, &env, 0);
-  jclass cls = (*env)->FindClass(env, "com/spacekomodo/berrybounce/GLRenderer");
+  jclass cls = (*env)->FindClass(env, "com/spacekomodo/framework/GLRenderer");
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
     return;
@@ -382,7 +382,7 @@ void giftizCompleteMission(void){
   trace("Android: giftizCompleteMission");
   JNIEnv *env;
   (*jvm)->AttachCurrentThread(jvm, &env, 0);
-  jclass cls = (*env)->FindClass(env, "com/spacekomodo/berrybounce/MainActivity");
+  jclass cls = (*env)->FindClass(env, "com/spacekomodo/framework/MainActivity");
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
     return;
@@ -400,7 +400,7 @@ void giftizSetButtonVisible(int visible){
   trace("Android: giftizSetButtonVisible");
   JNIEnv *env;
   (*jvm)->AttachCurrentThread(jvm, &env, 0);
-  jclass cls = (*env)->FindClass(env, "com/spacekomodo/berrybounce/MainActivity");
+  jclass cls = (*env)->FindClass(env, "com/spacekomodo/framework/MainActivity");
   if(cls ==0){
     __android_log_print(ANDROID_LOG_INFO, "FrameworkTest", "failed finding class");
     return;

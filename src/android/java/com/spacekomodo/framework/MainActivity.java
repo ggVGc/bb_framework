@@ -1,4 +1,4 @@
-package com.spacekomodo.berrybounce;
+package com.spacekomodo.framework;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -33,6 +33,7 @@ import com.purplebrain.adbuddiz.sdk.AdBuddizError;
 import com.purplebrain.adbuddiz.sdk.AdBuddizLogLevel;
 
 import com.purplebrain.giftiz.sdk.GiftizSDK;
+import com.spacekomodo.framework.R;
 
 public class MainActivity extends Activity implements ButtonNeedsUpdateDelegate{
   public static final String TAG = "MainActivity";

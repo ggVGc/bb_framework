@@ -1,4 +1,4 @@
-package com.spacekomodo.berrybounce;
+package com.spacekomodo.framework;
 
 import java.util.Arrays;
 

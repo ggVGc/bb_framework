@@ -1,4 +1,4 @@
-package com.spacekomodo.berrybounce;
+package com.spacekomodo.framework;
 
 import android.util.Log;
 import android.view.MotionEvent;

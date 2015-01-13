@@ -1,4 +1,4 @@
-package com.spacekomodo.berrybounce;
+package com.spacekomodo.framework;
 
 import com.purplebrain.adbuddiz.sdk.AdBuddizDelegate;
 import com.purplebrain.adbuddiz.sdk.AdBuddizError;

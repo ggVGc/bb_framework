@@ -49,7 +49,7 @@ if len(errlines) == 0:
 
   if os.system("ant debug") == 0:
     adb = "~/stuff/work/android/adt-bundle-linux-x86_64-20140702/sdk/platform-tools/adb "
-    os.system(adb+"  install -r bin/FrameworkTest-debug.apk")
+    os.system(adb+"  install -r bin/Framework-debug.apk")
     os.system(adb+"  shell am kill com.spacekomodo.berrybounce/.MainActivity")
     os.system(adb+"  shell am start -n com.spacekomodo.berrybounce/.MainActivity")
 else:

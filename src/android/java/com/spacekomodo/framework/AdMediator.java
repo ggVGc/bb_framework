@@ -1,4 +1,4 @@
-package com.spacekomodo.berrybounce;
+package com.spacekomodo.framework;
 
 public  class AdMediator{
   public static final class Event{
