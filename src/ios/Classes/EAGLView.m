@@ -101,7 +101,7 @@ return ((double)(mach_absolute_time() - timeZero))
     CGSize s = self.bounds.size;
     setScreenWidth(s.width);
     setScreenHeight(s.height);
-    appInit(1,framebufferWidth, framebufferHeight, [path cStringUsingEncoding:1],1);
+    appInit(1,framebufferWidth, framebufferHeight, [path cStringUsingEncoding:1]);
   }
 
   /*

@@ -103,8 +103,6 @@ else:
     moonSourceMappings += compileDir("src/luatest", "framework/test")
     moonSourceMappings += compileDir("src/luatest/data", "framework/testdata")
 
-  with open(os.path.join(outDir, 'moon_source_mappings.lua'), 'w') as out:
-    out.write('return {%s}'%moonSourceMappings.replace("\\", "/"));
 
   
   def copyMoonFiles(files, srcPath, destSubPath=''):
@@ -127,7 +125,10 @@ else:
     if os.path.exists(frameworkDest):
       shutil.rmtree(frameworkDest)
     shutil.copytree(frameworkSrcPath, frameworkDest)
-    compileDir(frameworkDest)
+    moonSourceMappings+=compileDir(frameworkDest)
       
+  with open(os.path.join(outDir, 'moon_source_mappings.lua'), 'w') as out:
+    out.write('return {%s}'%moonSourceMappings.replace("\\", "/"));
+
   print('')
   print('Done')
