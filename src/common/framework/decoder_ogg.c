@@ -10,7 +10,7 @@ static size_t AR_readOgg(void* dst, size_t size1, size_t size2, void* fh) {
   ogg_file* of = (ogg_file*)(fh);
   size_t len = size1 * size2;
   if ( of->curPtr + len > of->filePtr + of->fileSize ) {
-      len = of->filePtr + of->fileSize - of->curPtr;
+    len = of->filePtr + of->fileSize - of->curPtr;
   }
   memcpy( dst, of->curPtr, len );
   of->curPtr += len;
@@ -44,12 +44,12 @@ static int AR_seekOgg( void *fh, ogg_int64_t to, int type ) {
 }
 
 static int AR_closeOgg(void* fh) {
-    return 0;
+  return 0;
 }
 
 static long AR_tellOgg( void *fh ) {
-    ogg_file* of = (ogg_file*)(fh);
-    return (of->curPtr - of->filePtr);
+  ogg_file* of = (ogg_file*)(fh);
+  return (of->curPtr - of->filePtr);
 }
 
 int decoderOgg_init(DecoderOgg_State *s, char *bytes, int sz){
@@ -69,13 +69,13 @@ int decoderOgg_init(DecoderOgg_State *s, char *bytes, int sz){
   s->introSilenceSampleCount = 0;
   decoderOgg_reset(s);
   /*
-  s->count = 0;
-  */
+     s->count = 0;
+     */
   /*
-  printf("\nBitstream is %d channel, %ldHz\n",vi->channels,vi->rate);
-  printf("\nDecoded length: %ld samples\n", totalSamples);
-  printf("Encoded by: %s\n\n",ov_comment(&vf,-1)->vendor);
-  */
+     printf("\nBitstream is %d channel, %ldHz\n",vi->channels,vi->rate);
+     printf("\nDecoded length: %ld samples\n", totalSamples);
+     printf("Encoded by: %s\n\n",ov_comment(&vf,-1)->vendor);
+     */
   return 1;
 }
 
@@ -139,7 +139,6 @@ size_t DecoderOgg_calcStreamSize(DecoderOgg_State *s){
   return s->totalSamples*sizeof(short);
 }
 
-
 void decoderOgg_free(DecoderOgg_State *s){
   ov_clear(&s->vf);
   free(s->oggFile.filePtr);
@@ -152,4 +151,5 @@ int decoderOgg_msToSamples(DecoderOgg_State *s, long milliseconds){
 
 int decoderOgg_setIntroSilence(DecoderOgg_State *s, long milliseconds){
   s->introSilenceSampleCount = s->remainingSilenceSamples = decoderOgg_msToSamples(s, milliseconds);
+  return s->introSilenceSampleCount;
 }
