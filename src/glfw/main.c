@@ -8,6 +8,7 @@
 #include "framework/input.h"
 #include "framework/profiler.h"
 #include "framework/timing.h"
+#include "app_conf/config.h"
 
 #ifdef __APPLE__
   #include <mach-o/dyld.h>
@@ -39,12 +40,6 @@
   } \
 }
 
-/*
-const int SCREEN_WIDTH = 960;
-const int SCREEN_HEIGHT = 640;
-*/
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 960;
 
 static void error_callback(int error, const char* description) {
   fputs(description, stderr);

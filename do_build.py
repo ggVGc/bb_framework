@@ -2,10 +2,11 @@
 
 import os
 import sys
+import getopt
 
 def buildLib(outfile, srcDirs, srcFiles, cflags):
   if os.path.exists(outfile):
-    print 'removing ', outfile
+    print ('removing ', outfile)
     os.remove(outfile)
   objDir = os.path.join("obj", os.path.split(outfile)[1])
 
@@ -21,7 +22,7 @@ def buildLib(outfile, srcDirs, srcFiles, cflags):
     objFile = os.path.join(objDir, fileName[:-2]+".o")
     objFiles += " "+objFile
     cmd = ("cc -g "+cflags+" -c -o "+objFile+" "+fullPath)
-    print cmd
+    print(cmd)
     return os.system(cmd)
 
   ret = 0
@@ -33,13 +34,13 @@ def buildLib(outfile, srcDirs, srcFiles, cflags):
           return ret
         
   for f in srcFiles:
-    print objFiles+" "
+    print(objFiles+" ")
     ret = compile(f)
     if ret != 0:
       return ret
 
   cmd = "ar -cvq "+outfile+" "+objFiles
-  print cmd
+  print(cmd)
   return os.system(cmd)
 
 
@@ -64,7 +65,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
     ofiles
     #cmd = "gcc -g -fsanitize=address -fno-omit-frame-pointer "+cflags+" -c "+f+" -o "+out
     cmd = "gcc -g "+cflags+" -c "+f+" -o "+out
-    print cmd
+    print(cmd)
     ret = os.system(cmd)
     if ret != 0:
       break
@@ -72,7 +73,7 @@ def buildApp(outfile, srcDirs, srcFiles, cflags, linkFlags):
     return ret 
   files = cppfiles+" "+ofiles
   cmd = "gcc -g "+cflags+" "+files+" -o "+outfile+" "+linkFlags
-  print cmd
+  print(cmd)
   return os.system(cmd)
 
 
@@ -147,7 +148,7 @@ def buildOgg():
     ], [], "-I./deps/common/libogg/include")
 
 
-def buildFramework():
+def buildFramework(appPath):
   srcDirs = [
       "./src/common",
       "./src/common/framework",
@@ -177,7 +178,8 @@ def buildFramework():
       "-I./deps/common/libvorbis/include",
       "-I./deps/common/coremod/include",
       "-I./deps/common/physfs/src",
-      "-I./deps/common/chipmunk-6.2.1/include"
+      "-I./deps/common/chipmunk-6.2.1/include",
+      "-I"+appPath
       ])
 
   commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3 -lvorbisa -logga -lphysfs -lchipmunk'
@@ -197,14 +199,13 @@ def buildFramework():
 
 
 if __name__ == '__main__':
+  import sys
+  opts, args = getopt.getopt(sys.argv[1:],"e")
   if not os.path.exists("obj"):
     os.mkdir("obj")
   if not os.path.exists("bin"):
     os.mkdir("bin")
-  import sys
-  compileLibs = True
-  if len(sys.argv) >= 2 and sys.argv[1] == "only_exe":
-    compileLibs = False
+  compileLibs = not ('-e','') in opts
   ret = 0
   if compileLibs:
     ret = buildOgg()
@@ -223,10 +224,10 @@ if __name__ == '__main__':
     if ret == 0:
       ret = buildChipmunk()
   if ret == 0 and not 'only_libs' in sys.argv:
-    ret = buildFramework()
+    ret = buildFramework(args[0])
   else:
     sys.exit(0)
   if ret >=255:
     ret = 255
-  print ret
+  print(ret)
   sys.exit(ret)
