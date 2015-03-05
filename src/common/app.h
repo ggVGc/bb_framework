@@ -1,40 +1,23 @@
-#ifndef APP_H_INCLUDED
-#define APP_H_INCLUDED
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
+/* This file was automatically generated.  Do not edit! */
 #include <lua.h>
-
-// The simple framework expects the application code to define these functions.
-extern void appInit(int wasSuspended, int framebufferWidth, int framebufferHeight, const char* assetPath);
-extern void appDeinit(void);
-extern void appSetPaused(int paused, int pauseAudio);
-extern void appSuspend(void);
-void appGraphicsReload(int framebufferWidth, int framebufferHeight);
+#include "framework/camera.h"
 void appUnloadTextures();
-
-extern int appRender(double tick);
-
-extern int screenWidth(void);
-extern int screenHeight(void);
-extern void setScreenWidth(int);
-extern void setScreenHeight(int);
-
-extern int isAppBroken(void);
-extern void setAppBroken(int isBroken);
-
-extern int getScreenRefreshRate();
-
-lua_State* luaVM;
-int callLuaFunc(int nParams, int nRet);
-
-
-#ifdef __cplusplus
-}
-#endif
-
-
-#endif // !APP_H_INCLUDED
+void appGraphicsReload(int framebufferWidth,int framebufferHeight);
+void appSuspend();
+void onPurchaseComplete(int success);
+void adInterstitialDisplayed(int success);
+void appSetPaused(int paused,int pauseAudio);
+void adInterstitialClosed();
+void setAppBroken(int isBroken);
+int isAppBroken(void);
+void setScreenHeight(int h);
+void setScreenWidth(int w);
+int screenHeight(void);
+int screenWidth(void);
+int appRender(double tick);
+void appDeinit(void);
+void dataStoreGlobalInit();
+void appInit(int appWasSuspended,int framebufferWidth,int framebufferHeight,const char *resourcePath);
+int callLuaFunc(int nParams,int nRet);
+extern lua_State *luaVM;
+#define INTERFACE 0

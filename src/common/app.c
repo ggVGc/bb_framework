@@ -1,3 +1,9 @@
+#if INTERFACE
+#include <lua.h>
+#include "framework/camera.h"
+#endif
+
+#include "app.h"
 #include "framework/resource_loading.h"
 #include <stdlib.h>
 #include <string.h>
@@ -5,10 +11,7 @@
 #include <float.h>
 #include <assert.h>
 /*#include <pthread.h>*/
-#include <lua.h>
 #include <lauxlib.h>
-#include <lualib.h>
-#include "lua-compat-5.2/c-api/compat-5.2.h"
 #include "helper_threads_lua/helper.h"
 #include "framework/util.h"
 #include "framework/input.h"
@@ -18,14 +21,16 @@
 #include "framework/quad.h"
 #include "framework/data_store.h"
 
+// Global lua VM... Not amazing
+lua_State* luaVM;
 
-int luaopen_AsyncAssetLoader(lua_State *L);
-int luaopen_helper(lua_State *L);
+static int luaopen_AsyncAssetLoader(lua_State *L);
+static int luaopen_helper(lua_State *L);
 
 #define RegLuaFuncGlobal(fname) lua_pushcfunction(luaVM, fname##_lua); lua_setglobal(luaVM, #fname);
 
-extern int luaopen__c_framework(lua_State*);
-extern int luaopen_chipmunk(lua_State*);
+static int luaopen__c_framework(lua_State*);
+static int luaopen_chipmunk(lua_State*);
 
 static int appBroken = 0;
 /*static int appPaused = 0;*/
@@ -33,7 +38,7 @@ static int didInit = 0;
 static int wasSuspended = 0;
 /*pthread_mutex_t vmMutex;*/
 
-int loadstringWithName(lua_State *L, const char *s, const char* name, int size) {
+static int loadstringWithName(lua_State *L, const char *s, const char* name, int size) {
   if(!size){
     size = strlen(s);
   }
@@ -50,7 +55,7 @@ int loadstringWithName(lua_State *L, const char *s, const char* name, int size) 
 
 #define PRINTBUF_SIZE 4096
 static char printBuf[PRINTBUF_SIZE];
-int print_lua(lua_State* s){
+static int print_lua(lua_State* s){
   int i;
   int accum = 0;
   for(i=1;i<=lua_gettop(s);++i){
@@ -82,7 +87,7 @@ int print_lua(lua_State* s){
   return 0;
 }
 
-int dofile(const char* filePath){
+static int dofile(const char* filePath){
   int ret;
   int sz;
   char* file = loadBytes(filePath, &sz);
@@ -98,7 +103,7 @@ int dofile(const char* filePath){
   return ret;
 }
 
-  int luaErrorHandler(lua_State *L) {
+static int luaErrorHandler(lua_State *L) {
   trace("\n------- STACK TRACE ----------");
   /*
   lua_getfield(L, LUA_GLOBALSINDEX, "debug");
@@ -220,7 +225,7 @@ void appDeinit(void) {
 }
 
 
-int doFrameBody(double tick){
+static int doFrameBody(double tick){
   if (didInit == 0 && appBroken==0){
     didInit = 1;
     if(lua_isnil(luaVM, -1)){
