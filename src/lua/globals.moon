@@ -48,8 +48,8 @@ table.numericClear = (t) ->
 table.clear = (t, ...)->
   for k,_ in pairs t
     t[k] = nil
-    if (select '#', ...)> 0
-      table.clear ...
+  if (select '#', ...)> 0
+    table.clear ...
 
 table.insertRet = (table, posOrValue, value) ->
   if value

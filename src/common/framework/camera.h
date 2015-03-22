@@ -1,15 +1,11 @@
-#ifndef _H_CAMERA_H_
-#define _H_CAMERA_H_
-
-typedef struct Camera {
+/* This file was automatically generated.  Do not edit! */
+typedef struct Camera Camera;
+void cameraInit(Camera *cam,float x,float y,int width,int height);
+void cameraSetActive(Camera *cam);
+struct Camera {
   float posX;
   float posY;
   int width;
   int height;
-} Camera;
-
-
-void cameraSetActive(Camera*);
-void cameraInit(Camera*, float x, float y, int width, int height);
-
-#endif
+};
+#define INTERFACE 0
