@@ -21,16 +21,16 @@
 #include "framework/quad.h"
 #include "framework/data_store.h"
 
-// Global lua VM... Not amazing
+
 lua_State* luaVM;
 
-static int luaopen_AsyncAssetLoader(lua_State *L);
-static int luaopen_helper(lua_State *L);
+extern int luaopen_AsyncAssetLoader(lua_State *L);
+extern int luaopen_helper(lua_State *L);
 
 #define RegLuaFuncGlobal(fname) lua_pushcfunction(luaVM, fname##_lua); lua_setglobal(luaVM, #fname);
 
-static int luaopen__c_framework(lua_State*);
-static int luaopen_chipmunk(lua_State*);
+extern int luaopen__c_framework(lua_State*);
+extern int luaopen_chipmunk(lua_State*);
 
 static int appBroken = 0;
 /*static int appPaused = 0;*/

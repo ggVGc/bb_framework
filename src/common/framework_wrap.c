@@ -5626,29 +5626,6 @@ static swig_lua_class *swig_Camera_bases[] = {0};
 static const char *swig_Camera_base_names[] = {0};
 static swig_lua_class _wrap_class_Camera = { "Camera", "Camera", &SWIGTYPE_p_Camera,_proxy__wrap_new_Camera, swig_delete_Camera, swig_Camera_methods, swig_Camera_attributes, &swig_Camera_Sf_SwigStatic, swig_Camera_meta, swig_Camera_bases, swig_Camera_base_names };
 
-static int _wrap_cameraSetActive(lua_State* L) {
-  int SWIG_arg = 0;
-  Camera *arg1 = (Camera *) 0 ;
-  
-  SWIG_check_num_args("cameraSetActive",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cameraSetActive",1,"Camera *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
-    SWIG_fail_ptr("cameraSetActive",1,SWIGTYPE_p_Camera);
-  }
-  
-  cameraSetActive(arg1);
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static int _wrap_cameraInit(lua_State* L) {
   int SWIG_arg = 0;
   Camera *arg1 = (Camera *) 0 ;
@@ -5673,6 +5650,29 @@ static int _wrap_cameraInit(lua_State* L) {
   arg4 = (int)lua_tonumber(L, 4);
   arg5 = (int)lua_tonumber(L, 5);
   cameraInit(arg1,arg2,arg3,arg4,arg5);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_cameraSetActive(lua_State* L) {
+  int SWIG_arg = 0;
+  Camera *arg1 = (Camera *) 0 ;
+  
+  SWIG_check_num_args("cameraSetActive",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("cameraSetActive",1,"Camera *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_Camera,0))){
+    SWIG_fail_ptr("cameraSetActive",1,SWIGTYPE_p_Camera);
+  }
+  
+  cameraSetActive(arg1);
   
   return SWIG_arg;
   
@@ -8220,8 +8220,8 @@ static swig_lua_method swig_SwigModule_methods[]= {
     { "rawBitmapDataCleanup", _wrap_rawBitmapDataCleanup},
     { "bitmapDataInit", _wrap_bitmapDataInit},
     { "bitmapDataCleanup", _wrap_bitmapDataCleanup},
-    { "cameraSetActive", _wrap_cameraSetActive},
     { "cameraInit", _wrap_cameraInit},
+    { "cameraSetActive", _wrap_cameraSetActive},
     { "quadGlobalInit", _wrap_quadGlobalInit},
     { "quadBeginFrame", _wrap_quadBeginFrame},
     { "setTint", _wrap_setTint},

@@ -2,14 +2,6 @@
 #include "camera.h"
 #include "framework/util.h"
 
-#if INTERFACE
-struct Camera {
-  float posX;
-  float posY;
-  int width;
-  int height;
-};
-#endif // INTERFACE
 
 void cameraSetActive(Camera* cam) {
   glMatrixMode(GL_PROJECTION);

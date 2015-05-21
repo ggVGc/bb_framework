@@ -182,8 +182,8 @@ def buildFramework(appPath):
       "-I"+appPath
       ])
 
-  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw3 -lvorbisa -logga -lphysfs -lchipmunk'
-  commonLibString += ' -lluajit '
+  commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw -lvorbisa -logga -lphysfs -lchipmunk'
+  commonLibString += ' -lluajit-5.1 '
   cflags += ' -I./deps/common/luajit/src '
   if sys.platform == "darwin":
     cflags += ' -pagezero_size 10000 -image_base 100000000 '
@@ -194,7 +194,8 @@ def buildFramework(appPath):
     #cflags += ' -I./deps/common/lua '
     #commonLibString += ' -lluaa '
     #extraLibFolderString = ''
-    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g "+extraLibFolderString+" -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU -lopenal ")
+    return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g "+extraLibFolderString+" -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU -lopenal ")
+    #return buildApp("bin/framework",srcDirs, srcFiles,cflags, "-g "+extraLibFolderString+" -L"+os.getcwd()+"/deps/common/glfw/bin/linux -L"+os.getcwd()+"/bin "+commonLibString+" -lX11 -lXxf86vm -lXrandr -lpthread -lXi -lGL -lGLU -lopenal ")
 
 
 
