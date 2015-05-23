@@ -162,6 +162,8 @@ def buildFrameworkLib(appPath):
       " ./src/gles_imp.c",
       " ./deps/common/helper_threads_lua/helper_posix.c",
       " ./deps/common/lua-compat-5.2/c-api/compat-5.2.c",
+      "./src/nim_app/nimcache/nimapp.c",
+      "./src/nim_app/nimcache/system.c"
       ]
 
   cflags =" ".join([
@@ -178,6 +180,8 @@ def buildFrameworkLib(appPath):
       "-I./deps/common/coremod/include",
       "-I./deps/common/physfs/src",
       "-I./deps/common/chipmunk-6.2.1/include",
+      "-I./src/nim_app/nimcache",
+      "-I/lib/nim",
       "-I"+appPath
       ])
 
@@ -193,9 +197,10 @@ def buildFrameworkLib(appPath):
 
 def buildFrameworkApp(appPath):
   buildFrameworkLib(appPath)
-  srcDirs = ["./src/app"]
+  srcDirs = []
  
-  srcFiles = []
+  srcFiles = [
+    ]
 
   cflags =" ".join([
       "-I./deps/common",
@@ -211,6 +216,8 @@ def buildFrameworkApp(appPath):
       "-I./deps/common/coremod/include",
       "-I./deps/common/physfs/src",
       "-I./deps/common/chipmunk-6.2.1/include",
+      "-I./src/nim_app/nimcache",
+      "-I/lib/nim",
       "-I"+appPath
       ])
 

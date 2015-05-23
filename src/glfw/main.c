@@ -3,6 +3,8 @@
 #include <limits.h>
 #include <string.h>
 
+#include "nimapp.h"
+
 #include "GLFW/glfw3.h"
 #include "app.h"
 #include "framework/input.h"
@@ -112,6 +114,7 @@ static void cursor_pos_callback(GLFWwindow* window, double x, double y) {
 }
 
 int main(int argc, char **argv) {
+  NimMain();
   PHYSFS_init(argv[0]);
   #define PATH_SIZE 2048
   GLFWwindow* window;
