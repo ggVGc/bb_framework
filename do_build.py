@@ -148,11 +148,11 @@ def buildOgg():
     ], [], "-I./deps/common/libogg/include")
 
 
-def buildFramework(appPath):
+def buildFrameworkLib(appPath):
   srcDirs = [
-      "./src/common",
       "./src/common/framework",
       "./src/common/lua_modules/",
+      "./src/common/",
       "./src/glfw",
       "./src/glfw/framework",
       "./src/openal"
@@ -163,7 +163,6 @@ def buildFramework(appPath):
       " ./deps/common/helper_threads_lua/helper_posix.c",
       " ./deps/common/lua-compat-5.2/c-api/compat-5.2.c",
       ]
-
 
   cflags =" ".join([
       "-I./deps/common",
@@ -183,6 +182,39 @@ def buildFramework(appPath):
       ])
 
   commonLibString = ' -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw -lvorbisa -logga -lphysfs -lchipmunk'
+  commonLibString += ' -lluajit-5.1 '
+  cflags += ' -I./deps/common/luajit/src '
+  extraLibFolderString = ' -L'+os.getcwd()+'/deps/common/luajit/bin/linux '
+  #cflags += ' -I./deps/common/lua '
+  #commonLibString += ' -lluaa '
+  #extraLibFolderString = ''
+  return buildLib("bin/libframework.a",srcDirs, srcFiles,cflags)
+
+
+def buildFrameworkApp(appPath):
+  buildFrameworkLib(appPath)
+  srcDirs = ["./src/app"]
+ 
+  srcFiles = []
+
+  cflags =" ".join([
+      "-I./deps/common",
+      "-I./deps/common/gles_headers",
+      "-I./deps/common/libpng",
+      "-I./deps/common/minizip",
+      "-I./src/common",
+      "-I./src/common/framework",
+      "-I./src/gen",
+      "-I./deps/common/glfw/include",
+      "-I./deps/common/libogg/include",
+      "-I./deps/common/libvorbis/include",
+      "-I./deps/common/coremod/include",
+      "-I./deps/common/physfs/src",
+      "-I./deps/common/chipmunk-6.2.1/include",
+      "-I"+appPath
+      ])
+
+  commonLibString = ' -lframework -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw -lvorbisa -logga -lphysfs -lchipmunk '
   commonLibString += ' -lluajit-5.1 '
   cflags += ' -I./deps/common/luajit/src '
   if sys.platform == "darwin":
@@ -225,7 +257,7 @@ if __name__ == '__main__':
     if ret == 0:
       ret = buildChipmunk()
   if ret == 0 and not 'only_libs' in sys.argv:
-    ret = buildFramework(args[0])
+    ret = buildFrameworkApp(args[0])
   else:
     sys.exit(0)
   if ret >=255:
