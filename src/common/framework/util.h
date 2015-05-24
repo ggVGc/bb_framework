@@ -1,5 +1,5 @@
-#ifndef _H_UTIL_
-#define _H_UTIL_
+#ifndef H_UTIL
+#define H_UTIL
 
 
 void trace(const char* msg);

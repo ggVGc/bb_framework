@@ -1,5 +1,5 @@
-#ifndef _H_RANDOM_
-#define _H_RANDOM_
+#ifndef H_RANDOM
+#define H_RANDOM
 
 void randomSeed(int);
 int randomRandom(void);

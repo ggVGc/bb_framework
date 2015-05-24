@@ -1,5 +1,5 @@
-#ifndef _H_INPUT_H_
-#define _H_INPUT_H_
+#ifndef H_INPUT_H
+#define H_INPUT_H
 
 #define MAX_KEYS 512
 

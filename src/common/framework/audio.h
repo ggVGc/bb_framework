@@ -1,5 +1,5 @@
-#ifndef _H_AUDIO_
-#define _H_AUDIO_
+#ifndef H_AUDIO
+#define H_AUDIO
 
 #include "decoder_ogg.h"
 

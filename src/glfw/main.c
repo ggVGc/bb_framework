@@ -189,7 +189,7 @@ int main(int argc, char **argv) {
   glfwGetWindowSize(window, &screenW, &screenH);
   setScreenWidth(screenW);
   setScreenHeight(screenH);
-  
+
   glfwGetFramebufferSize(window, &width, &height);
   if(argc>=2){
     realpath(argv[1], fullPath);
@@ -205,8 +205,8 @@ int main(int argc, char **argv) {
     lastTime = curTime;
 
     if(reloadTextures){
-        appGraphicsReload(width, height);
-        reloadTextures = 0;
+      appGraphicsReload(width, height);
+      reloadTextures = 0;
     }
     if(unloadTextures){
       appUnloadTextures();

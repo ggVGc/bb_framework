@@ -19,5 +19,4 @@ void appDeinit(void);
 void dataStoreGlobalInit();
 void appInit(int appWasSuspended,int framebufferWidth,int framebufferHeight,const char *resourcePath);
 int callLuaFunc(int nParams,int nRet);
-extern lua_State *luaVM;
 #define INTERFACE 0

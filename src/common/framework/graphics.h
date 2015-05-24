@@ -1,5 +1,5 @@
-#ifndef _H_GRAPHICS_
-#define _H_GRAPHICS_
+#ifndef H_GRAPHICS
+#define H_GRAPHICS
 
 
 void graphicsInit(int framebufferWidth, int framebufferHeight);

@@ -1,5 +1,5 @@
-#ifndef _H_STREAMING_AUDIO_
-#define _H_STREAMING_AUDIO_
+#ifndef H_STREAMING_AUDIO
+#define H_STREAMING_AUDIO
 
 typedef struct StreamingAudio_T StreamingAudio;
 

@@ -162,8 +162,6 @@ def buildFrameworkLib(appPath):
       " ./src/gles_imp.c",
       " ./deps/common/helper_threads_lua/helper_posix.c",
       " ./deps/common/lua-compat-5.2/c-api/compat-5.2.c",
-      "./src/nim_app/nimcache/nimapp.c",
-      "./src/nim_app/nimcache/system.c"
       ]
 
   cflags =" ".join([
@@ -196,11 +194,16 @@ def buildFrameworkLib(appPath):
 
 
 def buildFrameworkApp(appPath):
-  buildFrameworkLib(appPath)
+  ret = buildFrameworkLib(appPath)
+  if ret != 0:
+    return ret
   srcDirs = []
  
   srcFiles = [
-    ]
+      "./src/nim_app/nimcache/nimapp.c",
+      "./src/nim_app/nimcache/system.c",
+      "./src/nim_app/app.c"
+  ]
 
   cflags =" ".join([
       "-I./deps/common",

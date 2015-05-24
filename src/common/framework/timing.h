@@ -1,3 +1,5 @@
+#ifndef C2NIM
+
 #ifndef TIME_H_AHU9LJXW
 #define TIME_H_AHU9LJXW
 
@@ -36,3 +38,4 @@ static time_t  _getTime(void) {
 
 #endif /* end of include guard: TIME_H_AHU9LJXW */
 
+#endif

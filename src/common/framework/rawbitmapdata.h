@@ -1,5 +1,5 @@
-#ifndef _H_RAWBITMAPDATA_H_
-#define _H_RAWBITMAPDATA_H_
+#ifndef H_RAWBITMAPDATA_H
+#define H_RAWBITMAPDATA_H
 typedef struct RawBitmapData {
     unsigned char* data; // RGBA
     unsigned int width;

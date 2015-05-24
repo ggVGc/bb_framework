@@ -22,7 +22,7 @@
 #include "framework/data_store.h"
 
 
-lua_State* luaVM;
+static lua_State* luaVM;
 
 extern int luaopen_AsyncAssetLoader(lua_State *L);
 extern int luaopen_helper(lua_State *L);

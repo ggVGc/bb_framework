@@ -1,5 +1,5 @@
-#ifndef _H_RECT_H_
-#define _H_RECT_H_
+#ifndef H_RECT_H
+#define H_RECT_H
 
 typedef struct {
   float x;

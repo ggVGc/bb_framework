@@ -1,5 +1,5 @@
-#ifndef _H_RESOURCE_LOADING
-#define _H_RESOURCE_LOADING
+#ifndef H_RESOURCE_LOADING
+#define H_RESOURCE_LOADING
 
 #include "rawbitmapdata.h"
 

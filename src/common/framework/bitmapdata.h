@@ -1,5 +1,5 @@
-#ifndef _H_BITMAPDATA_
-#define _H_BITMAPDATA_
+#ifndef H_BITMAPDATA
+#define H_BITMAPDATA
 
 #include <GLES/gl.h>
 #include "rawbitmapdata.h"
