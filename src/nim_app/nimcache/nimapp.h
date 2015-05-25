@@ -3,7 +3,7 @@
 /* The generated code is subject to the original license. */
 /* Compiled for: Linux, amd64, gcc */
 /* Command for C compiler:
-   gcc -c  -w  -I/usr/lib/nim -I../common/framework -o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/nimapp.o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/nimapp.h */
+   gcc -c  -w  -I/usr/lib/nim -I/media/data/vmshare/bitbucket/framework/src/nim_app/../common/framework -o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/nimapp.o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/nimapp.h */
 #ifndef __nimapp__
 #define __nimapp__
 #define NIM_INTBITS 64

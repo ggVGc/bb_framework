@@ -1,10 +1,10 @@
+import app_main
 proc nimInit(appWasSuspended:cint): void {.exportc.} =
   return
 
-let cam = new Camera
-cameraInit(cast[ptr Camera](cam), 0,0,400,400)
 
 proc nimDoFrame(tick:cint): cint {.exportc.} =
-  cameraSetActive(cast[ptr Camera](cam))
+  app_main.update(tick)
+  app_main.draw()
   return 0
 

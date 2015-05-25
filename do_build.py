@@ -193,35 +193,19 @@ def buildFrameworkLib(appPath):
   return buildLib("bin/libframework.a",srcDirs, srcFiles,cflags)
 
 
-def buildFrameworkApp(appPath):
-  ret = buildFrameworkLib(appPath)
-  if ret != 0:
-    return ret
-  srcDirs = []
+def buildFrameworkApp():
+  srcDirs = [
+      "./src/nim_app/nimcache/",
+      ]
  
   srcFiles = [
-      "./src/nim_app/nimcache/nimapp.c",
-      "./src/nim_app/nimcache/system.c",
       "./src/nim_app/app.c"
   ]
 
   cflags =" ".join([
-      "-I./deps/common",
-      "-I./deps/common/gles_headers",
-      "-I./deps/common/libpng",
-      "-I./deps/common/minizip",
       "-I./src/common",
       "-I./src/common/framework",
-      "-I./src/gen",
-      "-I./deps/common/glfw/include",
-      "-I./deps/common/libogg/include",
-      "-I./deps/common/libvorbis/include",
-      "-I./deps/common/coremod/include",
-      "-I./deps/common/physfs/src",
-      "-I./deps/common/chipmunk-6.2.1/include",
-      "-I./src/nim_app/nimcache",
       "-I/lib/nim",
-      "-I"+appPath
       ])
 
   commonLibString = ' -lframework -lm -ldl -lpnga -lz -lminizipa -lcoremod -lglfw -lvorbisa -logga -lphysfs -lchipmunk '
@@ -266,8 +250,10 @@ if __name__ == '__main__':
       ret = buildPhysFS()
     if ret == 0:
       ret = buildChipmunk()
+    if ret == 0:
+      ret = buildFrameworkLib(args[0])
   if ret == 0 and not 'only_libs' in sys.argv:
-    ret = buildFrameworkApp(args[0])
+    ret = buildFrameworkApp()
   else:
     sys.exit(0)
   if ret >=255:

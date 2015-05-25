@@ -3,176 +3,25 @@
 /* The generated code is subject to the original license. */
 /* Compiled for: Linux, amd64, gcc */
 /* Command for C compiler:
-   gcc -c  -w  -I/usr/lib/nim -I../common/framework -o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/nimapp.o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/nimapp.c */
+   gcc -c  -w  -I/usr/lib/nim -I/media/data/vmshare/bitbucket/framework/src/nim_app/../common/framework -o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/nimapp.o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/nimapp.c */
 #define NIM_INTBITS 64
 #include "nimbase.h"
-
-#include "camera.h"
-typedef struct TNimType TNimType;
-typedef struct TNimNode TNimNode;
-typedef struct Tcell46747 Tcell46747;
-typedef struct Tcellseq46763 Tcellseq46763;
-typedef struct Tgcheap48616 Tgcheap48616;
-typedef struct Tcellset46759 Tcellset46759;
-typedef struct Tpagedesc46755 Tpagedesc46755;
-typedef struct Tmemregion28610 Tmemregion28610;
-typedef struct Tsmallchunk27840 Tsmallchunk27840;
-typedef struct Tllchunk28604 Tllchunk28604;
-typedef struct Tbigchunk27842 Tbigchunk27842;
-typedef struct Tintset27817 Tintset27817;
-typedef struct Ttrunk27813 Ttrunk27813;
-typedef struct Tavlnode28608 Tavlnode28608;
-typedef struct Tgcstat48614 Tgcstat48614;
-typedef struct Tbasechunk27838 Tbasechunk27838;
-typedef struct Tfreecell27830 Tfreecell27830;
-typedef N_NIMCALL_PTR(void, TY3289) (void* p, NI op);
-typedef N_NIMCALL_PTR(void*, TY3294) (void* p);
-struct  TNimType  {
-NI size;
-NU8 kind;
-NU8 flags;
-TNimType* base;
-TNimNode* node;
-void* finalizer;
-TY3289 marker;
-TY3294 deepcopy;
-};
-struct  TNimNode  {
-NU8 kind;
-NI offset;
-TNimType* typ;
-NCSTRING name;
-NI len;
-TNimNode** sons;
-};
-struct  Tcell46747  {
-NI refcount;
-TNimType* typ;
-};
-struct  Tcellseq46763  {
-NI len;
-NI cap;
-Tcell46747** d;
-};
-struct  Tcellset46759  {
-NI counter;
-NI max;
-Tpagedesc46755* head;
-Tpagedesc46755** data;
-};
-typedef Tsmallchunk27840* TY28622[512];
-typedef Ttrunk27813* Ttrunkbuckets27815[256];
-struct  Tintset27817  {
-Ttrunkbuckets27815 data;
-};
-struct  Tmemregion28610  {
-NI minlargeobj;
-NI maxlargeobj;
-TY28622 freesmallchunks;
-Tllchunk28604* llmem;
-NI currmem;
-NI maxmem;
-NI freemem;
-NI lastsize;
-Tbigchunk27842* freechunkslist;
-Tintset27817 chunkstarts;
-Tavlnode28608* root;
-Tavlnode28608* deleted;
-Tavlnode28608* last;
-Tavlnode28608* freeavlnodes;
-};
-struct  Tgcstat48614  {
-NI stackscans;
-NI cyclecollections;
-NI maxthreshold;
-NI maxstacksize;
-NI maxstackcells;
-NI cycletablesize;
-NI64 maxpause;
-};
-struct  Tgcheap48616  {
-void* stackbottom;
-NI cyclethreshold;
-Tcellseq46763 zct;
-Tcellseq46763 decstack;
-Tcellset46759 cycleroots;
-Tcellseq46763 tempstack;
-NI recgclock;
-Tmemregion28610 region;
-Tgcstat48614 stat;
-};
-typedef NI TY27820[8];
-struct  Tpagedesc46755  {
-Tpagedesc46755* next;
-NI key;
-TY27820 bits;
-};
-struct  Tbasechunk27838  {
-NI prevsize;
-NI size;
-NIM_BOOL used;
-};
-struct  Tsmallchunk27840  {
-  Tbasechunk27838 Sup;
-Tsmallchunk27840* next;
-Tsmallchunk27840* prev;
-Tfreecell27830* freelist;
-NI free;
-NI acc;
-NF data;
-};
-struct  Tllchunk28604  {
-NI size;
-NI acc;
-Tllchunk28604* next;
-};
-struct  Tbigchunk27842  {
-  Tbasechunk27838 Sup;
-Tbigchunk27842* next;
-Tbigchunk27842* prev;
-NI align;
-NF data;
-};
-struct  Ttrunk27813  {
-Ttrunk27813* next;
-NI key;
-TY27820 bits;
-};
-typedef Tavlnode28608* TY28614[2];
-struct  Tavlnode28608  {
-TY28614 link;
-NI key;
-NI upperbound;
-NI level;
-};
-struct  Tfreecell27830  {
-Tfreecell27830* next;
-NI zerofield;
-};
 N_NIMCALL(void, nimInit)(int appwassuspended);
 static N_INLINE(void, nimFrame)(TFrame* s);
 N_NOINLINE(void, stackoverflow_20001)(void);
 static N_INLINE(void, popFrame)(void);
-N_NIMCALL(Camera*, new_90644)(void);
-N_NIMCALL(void, TMP142)(void* p, NI op);
-static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src);
-static N_INLINE(Tcell46747*, usrtocell_50246)(void* usr);
-static N_INLINE(void, rtladdzct_51804)(Tcell46747* c);
-N_NOINLINE(void, addzct_50217)(Tcellseq46763* s, Tcell46747* c);
 N_NIMCALL(int, nimDoFrame)(int tick);
+N_NIMCALL(void, update_91284)(NI tick);
+N_NIMCALL(void, draw_91268)(void);
 static N_INLINE(void, initStackBottomWith)(void* locals);
 N_NOINLINE(void, setStackBottom)(void* thestackbottom);
 NIM_EXTERNC N_NOINLINE(void, systemInit)(void);
 NIM_EXTERNC N_NOINLINE(void, systemDatInit)(void);
+NIM_EXTERNC N_NOINLINE(void, HEX00_app_mainInit)(void);
+NIM_EXTERNC N_NOINLINE(void, HEX00_app_mainDatInit)(void);
 NIM_EXTERNC N_NOINLINE(void, nimappInit)(void);
 NIM_EXTERNC N_NOINLINE(void, nimappDatInit)(void);
 extern TFrame* frameptr_17042;
-TNimType NTI90403; /* Camera */
-extern TNimType NTI5817; /* cfloat */
-extern TNimType NTI5811; /* cint */
-TNimType NTI90649; /* ref Camera */
-Camera* cam_90662;
-extern Tgcheap48616 gch_48644;
 
 static N_INLINE(void, nimFrame)(TFrame* s) {
 	NI LOC1;
@@ -203,65 +52,9 @@ static N_INLINE(void, popFrame)(void) {
 
 N_NIMCALL(void, nimInit)(int appwassuspended) {
 	nimfr("nimInit", "nimapp.nim")
-{	nimln(2, "nimapp.nim");
+{	nimln(3, "nimapp.nim");
 	goto BeforeRet;
 	}BeforeRet: ;
-	popFrame();
-}
-N_NIMCALL(void, TMP142)(void* p, NI op) {
-	Camera* a;
-	a = (Camera*)p;
-}
-
-static N_INLINE(Tcell46747*, usrtocell_50246)(void* usr) {
-	Tcell46747* result;
-	nimfr("usrToCell", "gc.nim")
-	result = 0;
-	nimln(118, "gc.nim");
-	result = ((Tcell46747*) ((NI)((NU64)(((NI) (usr))) - (NU64)(((NI)sizeof(Tcell46747))))));
-	popFrame();
-	return result;
-}
-
-static N_INLINE(void, rtladdzct_51804)(Tcell46747* c) {
-	nimfr("rtlAddZCT", "gc.nim")
-	nimln(199, "gc.nim");
-	addzct_50217((&gch_48644.zct), c);
-	popFrame();
-}
-
-static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src) {
-	nimfr("asgnRefNoCycle", "gc.nim")
-	nimln(251, "gc.nim");
-	{
-		Tcell46747* c;
-		if (!!((src == NIM_NIL))) goto LA3;
-		nimln(252, "gc.nim");
-		c = usrtocell_50246(src);
-		nimln(169, "gc.nim");
-		(*c).refcount += ((NI) 8);
-	}
-	LA3: ;
-	nimln(254, "gc.nim");
-	{
-		Tcell46747* c;
-		if (!!(((*dest) == NIM_NIL))) goto LA7;
-		nimln(255, "gc.nim");
-		c = usrtocell_50246((*dest));
-		nimln(256, "gc.nim");
-		{
-			nimln(167, "gc.nim");
-			(*c).refcount -= ((NI) 8);
-			nimln(168, "gc.nim");
-			if (!((NU64)((*c).refcount) < (NU64)(((NI) 8)))) goto LA11;
-			nimln(257, "gc.nim");
-			rtladdzct_51804(c);
-		}
-		LA11: ;
-	}
-	LA7: ;
-	nimln(258, "gc.nim");
-	(*dest) = src;
 	popFrame();
 }
 
@@ -269,8 +62,10 @@ N_NIMCALL(int, nimDoFrame)(int tick) {
 	int result;
 	nimfr("nimDoFrame", "nimapp.nim")
 {	result = 0;
+	nimln(7, "nimapp.nim");
+	update_91284(((NI) (tick)));
 	nimln(8, "nimapp.nim");
-	cameraSetActive(((Camera*) (cam_90662)));
+	draw_91268();
 	nimln(9, "nimapp.nim");
 	result = ((int) 0);
 	goto BeforeRet;
@@ -284,7 +79,9 @@ static N_INLINE(void, initStackBottomWith)(void* locals) {
 }
 void PreMainInner() {
 	systemInit();
+	HEX00_app_mainDatInit();
 	nimappDatInit();
+	HEX00_app_mainInit();
 }
 
 void PreMain() {
@@ -312,46 +109,9 @@ N_CDECL(void, NimMain)(void) {
 
 NIM_EXTERNC N_NOINLINE(void, nimappInit)(void) {
 	nimfr("nimapp", "nimapp.nim")
-	nimln(4, "nimapp.nim");
-	asgnRefNoCycle((void**) (&cam_90662), new_90644());
-	nimln(5, "nimapp.nim");
-	cameraInit(((Camera*) (cam_90662)), 0.0, 0.0, ((int) 400), ((int) 400));
 	popFrame();
 }
 
 NIM_EXTERNC N_NOINLINE(void, nimappDatInit)(void) {
-static TNimNode* TMP141[4];
-static TNimNode TMP139[5];
-NTI90403.size = sizeof(Camera);
-NTI90403.kind = 18;
-NTI90403.base = 0;
-NTI90403.flags = 3;
-TMP141[0] = &TMP139[1];
-TMP139[1].kind = 1;
-TMP139[1].offset = offsetof(Camera, posX);
-TMP139[1].typ = (&NTI5817);
-TMP139[1].name = "posX";
-TMP141[1] = &TMP139[2];
-TMP139[2].kind = 1;
-TMP139[2].offset = offsetof(Camera, posY);
-TMP139[2].typ = (&NTI5817);
-TMP139[2].name = "posY";
-TMP141[2] = &TMP139[3];
-TMP139[3].kind = 1;
-TMP139[3].offset = offsetof(Camera, width);
-TMP139[3].typ = (&NTI5811);
-TMP139[3].name = "width";
-TMP141[3] = &TMP139[4];
-TMP139[4].kind = 1;
-TMP139[4].offset = offsetof(Camera, height);
-TMP139[4].typ = (&NTI5811);
-TMP139[4].name = "height";
-TMP139[0].len = 4; TMP139[0].kind = 2; TMP139[0].sons = &TMP141[0];
-NTI90403.node = &TMP139[0];
-NTI90649.size = sizeof(Camera*);
-NTI90649.kind = 22;
-NTI90649.base = (&NTI90403);
-NTI90649.flags = 2;
-NTI90649.marker = TMP142;
 }
 

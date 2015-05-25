@@ -3,7 +3,7 @@
 /* The generated code is subject to the original license. */
 /* Compiled for: Linux, amd64, gcc */
 /* Command for C compiler:
-   gcc -c  -w  -I/usr/lib/nim -I../common/framework -o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/system.o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/system.c */
+   gcc -c  -w  -I/usr/lib/nim -I/media/data/vmshare/bitbucket/framework/src/nim_app/../common/framework -o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/system.o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/system.c */
 #define NIM_INTBITS 64
 #include "nimbase.h"
 
@@ -837,7 +837,7 @@ TNimType NTI3447; /* AssertionError */
 TNimType NTI87001; /* ref AssertionError */
 TNimType NTI5817; /* cfloat */
 TNimType NTI5811; /* cint */
-extern TNimType NTI90649; /* ref Camera */
+extern TNimType NTI91240; /* ref Camera */
 
 N_NIMCALL(NI, min_7291)(NI x, NI y) {
 	NI result;
@@ -11131,12 +11131,12 @@ N_NIMCALL(NI, xlen_89639)(NimStringDesc* x) {
 	return result;
 }
 
-N_NIMCALL(Camera*, new_90644)(void) {
+N_NIMCALL(Camera*, new_91235)(void) {
 	Camera* result;
 	nimfr("new", "system.nim")
 	result = 0;
 	nimln(178, "system.nim");
-	result = (Camera*) newObj((&NTI90649), sizeof(Camera));
+	result = (Camera*) newObj((&NTI91240), sizeof(Camera));
 	popFrame();
 	return result;
 }
