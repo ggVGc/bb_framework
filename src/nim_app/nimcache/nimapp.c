@@ -11,12 +11,14 @@ static N_INLINE(void, nimFrame)(TFrame* s);
 N_NOINLINE(void, stackoverflow_20001)(void);
 static N_INLINE(void, popFrame)(void);
 N_NIMCALL(int, nimDoFrame)(int tick);
-N_NIMCALL(void, update_91284)(NI tick);
-N_NIMCALL(void, draw_91268)(void);
+N_NIMCALL(void, update_91048)(NI tick);
+N_NIMCALL(void, draw_91034)(void);
 static N_INLINE(void, initStackBottomWith)(void* locals);
 N_NOINLINE(void, setStackBottom)(void* thestackbottom);
 NIM_EXTERNC N_NOINLINE(void, systemInit)(void);
 NIM_EXTERNC N_NOINLINE(void, systemDatInit)(void);
+NIM_EXTERNC N_NOINLINE(void, HEX00_frameworkInit)(void);
+NIM_EXTERNC N_NOINLINE(void, HEX00_frameworkDatInit)(void);
 NIM_EXTERNC N_NOINLINE(void, HEX00_app_mainInit)(void);
 NIM_EXTERNC N_NOINLINE(void, HEX00_app_mainDatInit)(void);
 NIM_EXTERNC N_NOINLINE(void, nimappInit)(void);
@@ -63,9 +65,9 @@ N_NIMCALL(int, nimDoFrame)(int tick) {
 	nimfr("nimDoFrame", "nimapp.nim")
 {	result = 0;
 	nimln(7, "nimapp.nim");
-	update_91284(((NI) (tick)));
+	update_91048(((NI) (tick)));
 	nimln(8, "nimapp.nim");
-	draw_91268();
+	draw_91034();
 	nimln(9, "nimapp.nim");
 	result = ((int) 0);
 	goto BeforeRet;
@@ -79,8 +81,10 @@ static N_INLINE(void, initStackBottomWith)(void* locals) {
 }
 void PreMainInner() {
 	systemInit();
+	HEX00_frameworkDatInit();
 	HEX00_app_mainDatInit();
 	nimappDatInit();
+	HEX00_frameworkInit();
 	HEX00_app_mainInit();
 }
 

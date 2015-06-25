@@ -837,7 +837,7 @@ TNimType NTI3447; /* AssertionError */
 TNimType NTI87001; /* ref AssertionError */
 TNimType NTI5817; /* cfloat */
 TNimType NTI5811; /* cint */
-extern TNimType NTI91240; /* ref Camera */
+extern TNimType NTI91011; /* ref Camera */
 
 N_NIMCALL(NI, min_7291)(NI x, NI y) {
 	NI result;
@@ -11131,12 +11131,12 @@ N_NIMCALL(NI, xlen_89639)(NimStringDesc* x) {
 	return result;
 }
 
-N_NIMCALL(Camera*, new_91235)(void) {
+N_NIMCALL(Camera*, new_91006)(void) {
 	Camera* result;
 	nimfr("new", "system.nim")
 	result = 0;
 	nimln(178, "system.nim");
-	result = (Camera*) newObj((&NTI91240), sizeof(Camera));
+	result = (Camera*) newObj((&NTI91011), sizeof(Camera));
 	popFrame();
 	return result;
 }

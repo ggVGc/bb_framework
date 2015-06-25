@@ -3,10 +3,10 @@
 /* The generated code is subject to the original license. */
 /* Compiled for: Linux, amd64, gcc */
 /* Command for C compiler:
-   gcc -c  -w  -I/usr/lib/nim -I../common/framework -o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/foo.o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/foo.c */
+   gcc -c  -w  -I/usr/lib/nim -I/media/data/vmshare/bitbucket/framework/src/nim_app/../common/framework -o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/foo.o /media/data/vmshare/bitbucket/framework/src/nim_app/nimcache/foo.c */
 #define NIM_INTBITS 64
 #include "nimbase.h"
-N_NIMCALL(int, lol_91233)(void);
+N_NIMCALL(NI, lol_91833)(void);
 static N_INLINE(void, nimFrame)(TFrame* s);
 N_NOINLINE(void, stackoverflow_20001)(void);
 static N_INLINE(void, popFrame)(void);
@@ -39,12 +39,12 @@ static N_INLINE(void, popFrame)(void) {
 	frameptr_17042 = (*frameptr_17042).prev;
 }
 
-N_NIMCALL(int, lol_91233)(void) {
-	int result;
+N_NIMCALL(NI, lol_91833)(void) {
+	NI result;
 	nimfr("lol", "foo.nim")
 {	result = 0;
-	nimln(2, "foo.nim");
-	result = ((int) 88);
+	nimln(4, "foo.nim");
+	result = ((NI) 8);
 	goto BeforeRet;
 	}BeforeRet: ;
 	popFrame();

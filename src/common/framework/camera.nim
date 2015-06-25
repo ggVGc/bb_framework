@@ -8,8 +8,8 @@ when not defined(CAMERA_H_D4FVIPNE):
       width* {.importc: "width".}: cint
       height* {.importc: "height".}: cint
 
-  proc cameraInit*(cam: ptr Camera; x: cfloat; y: cfloat; width: cint; 
+  proc cameraInit*(cam: ref Camera; x: cfloat; y: cfloat; width: cint; 
                    height: cint) {.importc: "cameraInit", header: "camera.h".}
-  proc cameraSetActive*(cam: ptr Camera) {.importc: "cameraSetActive", 
+  proc cameraSetActive*(cam: ref Camera) {.importc: "cameraSetActive", 
       header: "camera.h".}
 
